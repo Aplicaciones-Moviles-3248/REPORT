@@ -566,6 +566,14 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 
 ### 1.1.1. Descripción de la Startup
 
+En un contexto donde la práctica deportiva se ha vuelto cada vez más relevante tanto para la salud como para la vida social, surgen nuevas necesidades relacionadas con la organización, accesibilidad y coordinación de actividades deportivas. Muchas veces, los deportistas aficionados enfrentan dificultades para encontrar canchas disponibles, organizar partidos o coordinar con otras personas de manera eficiente. Asimismo, los entrenadores independientes carecen de plataformas centralizadas que les permitan promocionar sus servicios y gestionar su disponibilidad de forma profesional.
+
+Frente a esta problemática nace **Mova**, una startup orientada al desarrollo de soluciones tecnológicas que buscan mejorar la experiencia deportiva mediante el uso de herramientas digitales. Su enfoque principal está en simplificar los procesos de organización y conexión dentro de la comunidad deportiva, aprovechando el potencial de las aplicaciones móviles.
+
+Como primer producto, Mova presenta **Courtly**, una aplicación móvil diseñada para facilitar la reserva de canchas deportivas, la organización de partidos y la conexión entre jugadores y entrenadores. A través de una interfaz intuitiva y funcionalidades centradas en el usuario, Courtly permite visualizar disponibilidad en tiempo real, gestionar reservas, realizar pagos digitales y acceder a perfiles con información relevante.
+
+Más allá de ser una simple aplicación, Courtly busca convertirse en un ecosistema que impulse la práctica deportiva, reduciendo fricciones en la organización y generando nuevas oportunidades tanto para deportistas como para entrenadores, promoviendo así una experiencia más accesible, confiable y eficiente.
+
 ### 1.1.2. Perfiles de integrantes del equipo
 
 ---
