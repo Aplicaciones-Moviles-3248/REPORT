@@ -58,7 +58,6 @@ INGENIERÍA DE SOFTWARE
     <td style="border: 1px solid #ddd; padding: 8px;">
       <ul>
         <li>Juan Carlos Angulo</li>
-
       </ul>
     </td>
     <td style="border: 1px solid #ddd; padding: 8px;">            
