@@ -380,57 +380,62 @@ INGENIERÍA DE SOFTWARE
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; vertical-align: top;">
-            5.c1. Trabaja en equipo para proporcionar liderazgo en forma conjunta</td>
-            <td style="border: 1px solid #ddd; vertical-align: top;">
-                <strong>Juan Carlos Angulo</strong><br>
-                TB1:<br> Durante el desarrollo del TB1,<br>
-                <strong>TB2:</strong><br> Lideré el
-                <strong>Integrante 2</strong><br>
-                TB1: <br>Durante el desarrollo del TB1 <br>
-                TP: Durante el desarrollo <br>
-                <strong>TB2:</strong><br> Desarrollé las APIs 
-                <strong>Integrante 3a</strong><br>
-                TB1: <br>Durante el desarrollo <br>
-                TP1: <br>Durante esta entrega,<br>
-                <strong>TB2:</strong><br> Lideré el
-                <strong>Integrante 4</strong><br>
-                TB1:  <br>Durante el TB1<br>
-                TP1: <br> En esta fase<br>
-                <strong>TB2:</strong><br> Me encargué de
-                <strong>Integrante 5</strong><br>
-                TB1:  <br>
-                Durante el TB1,<br>
-                <strong>TB2:</strong><br> Me enfoqué
-            <td style="border: 1px solid #ddd; vertical-align: top;">
-            5.c2. Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos</td>
-            <td style="border: 1px solid #ddd; vertical-align: top;">
-                <strong>Juan Carlos Angulo</strong><br>
-                TB1: Durante el TB1, <br><br>
-                <strong>TB2:</strong><br> Durante el TB2,
-                <strong>Integrante 2</strong><br>
-                TB1: <br>Durante el TB1,<br>
-                <strong>TB2:</strong><br> En el TB2, 
-                <strong>Integrante 3</strong><br>
-                TB1: <br>En el transcurso del proyecto,<br>
-                TP1: <br>En este proceso,<br>
-                <strong>TB2:</strong><br> Durante el TB2, 
-                <strong>Integrante 4</strong><br>
-                TB1:
-                <br>En el TB1 contribuí<br>
-                TP1: <br>A lo largo de esta etapa,<br>
-                <strong>TB2:</strong><br> En el TB2,
-                <strong>Integrante 5</strong><br>
-                TB1: <br>
-                Contribuí a crear un entorno 
-                <br><br>
-                <strong>TP1:</strong><br>
-                En esta entrega, diseñé y 
-                <br><br>
-                <strong>TB2:</strong><br> Durante el TB2, 
+                5.c1. Trabaja en equipo para proporcionar liderazgo en forma conjunta
             </td>
-            <td style="border: 1px solid #ddd; vertical-align: top;">El equipo demostró un efectivo liderazgo conjunto durante el TB1, donde cada miembro asumió responsabilidades compartidas de coordinación y toma de decisiones. Se evidenció una colaboración fluida que abarcó desde aspectos estratégicos y técnicos del proyecto hasta la planificación operativa y distribución de tareas. La comunicación continua, las reuniones regulares y el trabajo colaborativo en el desarrollo de componentes clave como wireframes, mockups, database diagrams y landing page fueron fundamentales. El compromiso colectivo por mantener una sana relación de equipo y la capacidad para resolver conflictos de manera conjunta permitieron lograr consensos efectivos y entregar un trabajo cohesivo y de calidad, demostrando que el liderazgo fue verdaderamente compartido y distribuido entre todos los integrantes.</td>
+            <td style="border: 1px solid #ddd; vertical-align: top;">
+                <strong>Juan Carlos Angulo</strong><br>
+                TB1:<br>Durante el desarrollo del TB1,<br>
+                <strong>TB2:</strong><br>Lideré el<br><br>
+                <strong>Integrante 2</strong><br>
+                TB1:<br>Durante el desarrollo del TB1<br>
+                TP: Durante el desarrollo<br>
+                <strong>TB2:</strong><br>Desarrollé las APIs<br><br>
+                <strong>Integrante 3</strong><br>
+                TB1:<br>Durante el desarrollo<br>
+                TP1:<br>Durante esta entrega,<br>
+                <strong>TB2:</strong><br>Lideré el<br><br>
+                <strong>Integrante 4</strong><br>
+                TB1:<br>Durante el TB1<br>
+                TP1:<br>En esta fase<br>
+                <strong>TB2:</strong><br>Me encargué de<br><br>
+                <strong>Integrante 5</strong><br>
+                TB1:<br>Durante el TB1,<br>
+                <strong>TB2:</strong><br>Me enfoqué
+            </td>
+            <td style="border: 1px solid #ddd; vertical-align: top;">
+                El equipo demostró un efectivo liderazgo conjunto durante el TB1, donde cada miembro asumió responsabilidades compartidas de coordinación y toma de decisiones. Se evidenció una colaboración fluida que abarcó desde aspectos estratégicos y técnicos del proyecto hasta la planificación operativa y distribución de tareas. La comunicación continua, las reuniones regulares y el trabajo colaborativo en el desarrollo de componentes clave como wireframes, mockups, database diagrams y landing page fueron fundamentales. El compromiso colectivo por mantener una sana relación de equipo y la capacidad para resolver conflictos de manera conjunta permitieron lograr consensos efectivos y entregar un trabajo cohesivo y de calidad, demostrando que el liderazgo fue verdaderamente compartido y distribuido entre todos los integrantes.
+            </td>
         </tr>
-
+        <tr>
+            <td style="border: 1px solid #ddd; vertical-align: top;">
+                5.c2. Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos
+            </td>
+            <td style="border: 1px solid #ddd; vertical-align: top;">
+                <strong>Juan Carlos Angulo</strong><br>
+                TB1: Durante el TB1,<br><br>
+                <strong>TB2:</strong><br>Durante el TB2,<br><br>
+                <strong>Integrante 2</strong><br>
+                TB1:<br>Durante el TB1,<br>
+                <strong>TB2:</strong><br>En el TB2,<br><br>
+                <strong>Integrante 3</strong><br>
+                TB1:<br>En el transcurso del proyecto,<br>
+                TP1:<br>En este proceso,<br>
+                <strong>TB2:</strong><br>Durante el TB2,<br><br>
+                <strong>Integrante 4</strong><br>
+                TB1:<br>En el TB1 contribuí<br>
+                TP1:<br>A lo largo de esta etapa,<br>
+                <strong>TB2:</strong><br>En el TB2,<br><br>
+                <strong>Integrante 5</strong><br>
+                TB1:<br>Contribuí a crear un entorno<br><br>
+                <strong>TP1:</strong><br>En esta entrega, diseñé y<br><br>
+                <strong>TB2:</strong><br>Durante el TB2,
+            </td>
+            <td style="border: 1px solid #ddd; vertical-align: top;">
+                El equipo logró mantener un entorno colaborativo e inclusivo mediante la distribución clara de responsabilidades, la coordinación constante y la planificación progresiva de actividades durante las entregas. Cada integrante aportó desde su área de trabajo, lo que permitió avanzar de manera ordenada y alineada con los objetivos del proyecto. La organización de tareas, el seguimiento de avances y la comunicación permanente favorecieron el cumplimiento de metas parciales y la construcción de un proceso de trabajo más estructurado y cooperativo.
+            </td>
+        </tr>
+    </table>
+</div>
 
 <!--TODAS LAS SECCIONES A COMPLETAR-->
 
@@ -554,3 +559,121 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 
 
 ---
+
+# Capítulo I: Presentación
+
+## 1.1. Startup Profile
+
+### 1.1.1. Descripción de la Startup
+
+### 1.1.2. Perfiles de integrantes del equipo
+
+---
+
+## 1.2. Solution Profile
+
+### 1.2.1. Antecedentes y problemática
+
+### 1.2.2. Lean UX Process
+
+#### 1.2.2.1. Lean UX Problem Statements
+
+#### 1.2.2.2. Lean UX Assumptions
+
+#### 1.2.2.3. Lean UX Hypothesis Statements
+
+#### 1.2.2.4. Lean UX Canvas
+
+---
+
+## 1.3. Segmentos objetivo
+
+---
+
+# Capítulo II: Requirements Development and Software Solution Design
+
+## 2.1. Competidores
+
+### 2.1.1. Análisis competitivo
+
+### 2.1.2. Estrategias y tácticas frente a competidores
+
+---
+
+## 2.2. Entrevistas
+
+### 2.2.1. Diseño de entrevistas
+
+### 2.2.2. Registro de entrevistas
+
+### 2.2.3. Análisis de entrevistas
+
+---
+
+## 2.3. Needfinding
+
+### 2.3.1. User Personas
+
+### 2.3.2. User Task Matrix
+
+### 2.3.3. User Journey Mapping
+
+### 2.3.4. Empathy Mapping
+
+### 2.3.5. Big Picture EventStorming
+
+### 2.3.6. Ubiquitous Language
+
+---
+
+## 2.4. Requirements specification
+
+### 2.4.1. User Stories
+
+### 2.4.2. Impact Mapping
+
+### 2.4.3. Product Backlog
+
+---
+
+## 2.5. Strategic-Level Domain-Driven Design
+
+### 2.5.1. EventStorming
+
+#### 2.5.1.1. Candidate Context Discovery
+
+#### 2.5.1.2. Domain Message Flows Modeling
+
+#### 2.5.1.3. Bounded Context Canvases
+
+### 2.5.2. Context Mapping
+
+### 2.5.3. Software Architecture
+
+#### 2.5.3.1. Software Architecture Context Level Diagrams
+
+#### 2.5.3.2. Software Architecture Container Level Diagrams
+
+#### 2.5.3.3. Software Architecture Deployment Diagrams
+
+---
+
+## 2.6. Tactical-Level Domain-Driven Design
+
+### 2.6.x. Bounded Context: <Bounded Context Name>
+
+#### 2.6.x.1. Domain Layer
+
+#### 2.6.x.2. Interface Layer
+
+#### 2.6.x.3. Application Layer
+
+#### 2.6.x.4. Infrastructure Layer
+
+#### 2.6.x.5. Bounded Context Software Architecture Component Level Diagrams
+
+#### 2.6.x.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 2.6.x.6.1. Bounded Context Domain Layer Class Diagrams
+
+##### 2.6.x.6.2. Bounded Context Database Design Diagram
