@@ -439,7 +439,7 @@ INGENIERÍA DE SOFTWARE
 
 En esta sección, cada miembro del equipo de trabajo formulará al menos dos objetivos SMART que se centren en el desarrollo profesional una vez finalizada su carrera. Estos objetivos deben ser claros, medibles y alcanzables, reflejando cómo cada integrante planea continuar con su crecimiento profesional después de la graduación.
 
-### Miembro 1: [Renzo Uribe]
+### Miembro 1: [Juan Carlos Angulo]
 
 **Objetivo 1:**   
 <br>**Específico:** Obtener certificaciones en Azure y MongoDB, y participar en proyectos reales de monitoreo de infraestructura para empresas medianas y grandes, aplicando conocimientos en C++ y JavaScript para automatización de procesos.  </br>
@@ -456,7 +456,7 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 <br>**Tiempo:** Desarrollar el proyecto completo en un plazo de 10 meses, con prototipos funcionales cada 3 meses para validar el progreso y recibir feedback continuo.  </br>
 
 ---
-## Miembro 2: [Oscar Espinoza]
+## Miembro 2: []
 
 ### Objetivo 1
 **Específico:** Entregar el **MVP funcional de STAYCLEAN** (app móvil + backend básico) con registro/login, registro de residuos (online/offline), mapa de centros de acopio y notificaciones.
@@ -497,7 +497,7 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 
 ---
 
-### Miembro 3: [Karito Medina]
+### Miembro 3: []
 
 **Objetivo 1:**  
 <br>**Específico:** Mejorar mis habilidades en programación, especialmente en lenguajes y herramientas utilizados en inteligencia artificial y desarrollo de videojuegos.</br>
@@ -515,7 +515,7 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 
 ---
 
-### Miembro 4: [Diego]
+### Miembro 4: []
 
 **Objetivo 1:**  
 <br>**Específico:** Desarrollar experiencia profesional como desarrollador de software en una empresa tecnológica reconocida, participando en proyectos reales de frontend y backend.  
@@ -534,7 +534,7 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 ---
 
 
-### Miembro 5: [Leonardo]
+### Miembro 5: []
 
 
 **Objetivo 1:**  
