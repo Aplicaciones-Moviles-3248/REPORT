@@ -614,6 +614,16 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 
 ### 2.3.1. User Personas
 
+En esta sección se presentan los User Personas definidos a partir del análisis de entrevistas realizada. Estos representan a cada segmento objetivo identificado para nuestra solución: Deportistas Aficionados y Entrenadores Independientes. Con esto, se nos permite comprender mejor las necesidades, comportamientos y motivaciones de los usuarios, facilitando el diseño de una solución alineada a sus expectativas.
+
+**Deportistas Aficionados:**
+
+![UserPersona-DiegoRojas](./assets/chapter2/UserPersona-DiegoRojas.png)
+
+**Entrenadores Independientes:**
+
+![UserPersona-CésarFalcón](./assets/chapter2/UserPersona-CésarFalcón.png)
+
 ### 2.3.2. User Task Matrix
 
 ### 2.3.3. User Journey Mapping
