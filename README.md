@@ -608,114 +608,111 @@ Se han seleccionado tres competidores relevantes que presentan modelos de negoci
   </tr>
   <tr>
     <th>¿Por qué llevar a cabo este análisis?</th>
-    <th colspan="5" align="center">¿Cómo se posicionan los competidores en el mercado de soluciones deportivas digitales y qué oportunidades existen para que Courtly se diferencie mediante una experiencia móvil más rápida, intuitiva y centrada en el usuario?</th>
+    <th colspan="5" align="center">¿Cómo se posicionan los competidores en el mercado de aplicaciones móviles deportivas y qué oportunidades existen para que Courtly se diferencie mediante una experiencia más rápida, intuitiva y centrada en el usuario?</th>
   </tr>
   <tr>
     <th>Categoría</th>
     <th>Subcategoría</th>
     <th>Courtly (Startup)</th>
-    <th>ATC</th>
-    <th>Serpar</th>
-    <th>BuscaEntrenador</th>
+    <th>Playtomic</th>
+    <th>MATCHi</th>
+    <th>RacketPal</th>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td align="center"><img src="URL_COURTLY" width="80"/></td>
-    <td align="center"><img src="URL_ATC" width="80"/></td>
-    <td align="center"><img src="URL_SERPAR" width="80"/></td>
-    <td align="center"><img src="URL_BUSCAENTRENADOR" width="80"/></td>
+    <td align="center"><img src="URL_PLAYTOMIC" width="80"/></td>
+    <td align="center"><img src="URL_MATCHI" width="80"/></td>
+    <td align="center"><img src="URL_RACKETPAL" width="80"/></td>
   </tr>
   <tr>
     <td>Perfil</td>
     <td>Overview</td>
     <td>Aplicación móvil orientada a facilitar la búsqueda, reserva y gestión de canchas deportivas en tiempo real, priorizando una experiencia rápida, intuitiva y centrada en el usuario.</td>
-    <td>Plataforma digital que permite reservar canchas y organizar partidos con otros usuarios dentro de una comunidad deportiva.</td>
-    <td>Plataforma administrada por el Estado enfocada en el alquiler de espacios deportivos físicos en centros recreativos públicos.</td>
-    <td>Plataforma digital especializada en la búsqueda y contratación de entrenadores deportivos para distintos niveles.</td>
+    <td>Aplicación móvil global que permite reservar canchas, encontrar jugadores y organizar partidos dentro de una comunidad activa.</td>
+    <td>Aplicación móvil enfocada en la reserva de instalaciones deportivas y gestión de actividades para clubes y usuarios.</td>
+    <td>Aplicación móvil orientada a conectar jugadores, organizar partidos y descubrir espacios deportivos cercanos.</td>
   </tr>
   <tr>
     <td>Perfil</td>
     <td>Ventaja competitiva / valor</td>
     <td>Experiencia mobile-first optimizada; flujo de reserva rápido; integración de servicios; sistema de reseñas.</td>
-    <td>Amplia disponibilidad de canchas; presencia internacional; organización de partidos.</td>
-    <td>Precios accesibles; infraestructura confiable; respaldo institucional.</td>
-    <td>Especialización en entrenadores; amplia oferta profesional; enfoque en desarrollo deportivo.</td>
+    <td>Gran base de usuarios, red internacional de canchas y funcionalidades sociales avanzadas.</td>
+    <td>Versatilidad multi-deporte y herramientas de gestión para clubes deportivos.</td>
+    <td>Enfoque en comunidad y emparejamiento de jugadores según nivel y ubicación.</td>
   </tr>
   <tr>
     <td>Perfil de Marketing</td>
     <td>Mercado objetivo</td>
     <td>Deportistas urbanos que buscan soluciones rápidas desde el móvil.</td>
-    <td>Deportistas amateurs en América.</td>
-    <td>Usuarios locales de Lima.</td>
-    <td>Clubes y deportistas.</td>
+    <td>Jugadores de deportes de raqueta a nivel global.</td>
+    <td>Clubes deportivos y usuarios que practican distintas disciplinas.</td>
+    <td>Deportistas amateurs que buscan compañeros de juego.</td>
   </tr>
   <tr>
     <td>Perfil de Marketing</td>
     <td>Estrategias de marketing</td>
     <td>Posicionamiento en simplicidad; confianza mediante reseñas; enfoque mobile.</td>
-    <td>Expansión internacional; alianzas deportivas.</td>
-    <td>Promoción de seguridad; beneficios adicionales.</td>
-    <td>Especialización; expansión regional.</td>
+    <td>Construcción de comunidad global; alianzas con clubes y centros deportivos.</td>
+    <td>Alianzas con clubes; enfoque en gestión integral de actividades.</td>
+    <td>Marketing basado en comunidad y engagement entre usuarios.</td>
   </tr>
   <tr>
     <td>Perfil de Producto</td>
     <td>Productos &amp; Servicios</td>
     <td>Reserva de canchas; gestión de reservas; evaluación de servicios.</td>
-    <td>Reserva de canchas; organización de partidos.</td>
-    <td>Reserva de canchas.</td>
-    <td>Contratación de entrenadores.</td>
+    <td>Reserva de canchas; organización de partidos; ranking y comunidad.</td>
+    <td>Reserva de instalaciones; gestión de membresías; organización de actividades.</td>
+    <td>Búsqueda de jugadores; organización de partidos; descubrimiento de canchas.</td>
   </tr>
   <tr>
     <td>Perfil de Producto</td>
     <td>Precios &amp; Costos</td>
     <td>Modelo freemium (gratis + premium).</td>
-    <td>Variable según país.</td>
-    <td>Tarifas por hora (S/.165 – S/.215).</td>
-    <td>Variable según entrenador.</td>
+    <td>Variable según ubicación y club.</td>
+    <td>Variable según servicio y club.</td>
+    <td>Modelo freemium.</td>
   </tr>
   <tr>
     <td>Perfil de Producto</td>
     <td>Canales de distribución</td>
     <td>Móvil (principal) y web.</td>
-    <td>Web y móvil.</td>
-    <td>Web.</td>
-    <td>Web.</td>
+    <td>Móvil (iOS y Android).</td>
+    <td>Móvil y web.</td>
+    <td>Móvil (principal).</td>
   </tr>
   <tr>
     <td>Análisis SWOT</td>
     <td>Fortalezas</td>
-    <td>Experiencia mobile-first, flujo de reserva más ágil e integración de servicios, lo que le permite diferenciarse de competidores centrados principalmente en web o en servicios fragmentados.</td>
-    <td>Amplia oferta de canchas, presencia internacional y posibilidad de organizar partidos entre usuarios.</td>
-    <td>Respaldo institucional, infraestructura relativamente confiable y percepción de seguridad en espacios públicos administrados.</td>
-    <td>Alta especialización en entrenadores y oferta enfocada en usuarios que buscan acompañamiento deportivo personalizado
-    </td>
+    <td>Experiencia mobile-first, flujo de reserva más ágil e integración de servicios, lo que le permite diferenciarse de competidores con mayor complejidad operativa.</td>
+    <td>Amplia red global de usuarios y canchas; funciones sociales que fortalecen la comunidad deportiva.</td>
+    <td>Herramientas completas para clubes y gestión de actividades deportivas.</td>
+    <td>Fuerte enfoque en comunidad y facilidad para encontrar jugadores compatibles.</td>
   </tr>
   <tr>
     <td>Análisis SWOT</td>
     <td>Debilidades</td>
-    <td>Baja base inicial de usuarios y dependencia de la disponibilidad de canchas afiliadas, lo que puede limitar su crecimiento en la etapa inicial frente a competidores ya posicionados.</td>
-    <td>Experiencia de usuario menos simple y mayor complejidad en la interacción, lo que puede afectar la rapidez del proceso de reserva.</td>
-    <td>Procesos más rígidos, menor flexibilidad operativa y experiencia digital menos dinámica en comparación con plataformas privadas.</td>
-    <td>Oferta limitada a entrenadores y ausencia de servicios complementarios como reserva de canchas o gestión integral de actividades deportivas.</td>
+    <td>Baja base inicial de usuarios y dependencia de la disponibilidad de canchas afiliadas.</td>
+    <td>Interfaz con mayor complejidad y posibles fricciones en el proceso de reserva.</td>
+    <td>Menor enfoque en experiencia del usuario individual; más orientado a organizaciones.</td>
+    <td>No integra completamente reservas y pagos en todos los casos.</td>
   </tr>
   <tr>
     <td>Análisis SWOT</td>
     <td>Oportunidades</td>
-    <td>Crecimiento del uso de aplicaciones móviles, digitalización del deporte amateur y posibilidad de establecer alianzas con centros deportivos para ampliar cobertura y visibilidad.</td>
-    <td>Expansión en mercados locales, mejoras en experiencia de usuario y adaptación más fuerte a contextos específicos como el mercado peruano.</td>
-    <td>Modernización de sus servicios digitales, simplificación de procesos y uso de promociones para incrementar adopción
-    </td>
-    <td>Ampliación de disciplinas deportivas, expansión geográfica y diversificación de su propuesta de valor.</td>
+    <td>Crecimiento del uso de apps móviles y digitalización del deporte amateur.</td>
+    <td>Expansión en nuevos mercados y mejora de experiencia de usuario.</td>
+    <td>Creciente digitalización de clubes deportivos.</td>
+    <td>Expansión de la comunidad y nuevas funcionalidades sociales.</td>
   </tr>
   <tr>
     <td>Análisis SWOT</td>
     <td>Amenazas</td>
-    <td>Competencia de plataformas ya conocidas, facilidad de imitación del modelo y dificultad para retener usuarios en una etapa temprana del negocio.</td>
-    <td>Problemas técnicos, aparición de nuevos competidores y pérdida de usuarios si no mejora su experiencia digital.</td>
-    <td>Baja adopción digital, restricciones administrativas y menor velocidad de innovación frente a soluciones privadas
-    </td>
-    <td>Riesgo de estafas, desconfianza del usuario y entrada de plataformas más completas que integren entrenamiento con otros servicios.</td>
+    <td>Competidores con mayor posicionamiento y base de usuarios.</td>
+    <td>Nuevas apps con mejor experiencia de usuario.</td>
+    <td>Soluciones más simples centradas en el usuario final.</td>
+    <td>Plataformas integrales que combinen reservas, pagos y comunidad.</td>
   </tr>
 </table>
 
@@ -725,7 +722,7 @@ Se han seleccionado tres competidores relevantes que presentan modelos de negoci
 
 El análisis competitivo muestra que el mercado de soluciones deportivas digitales presenta una oferta fragmentada. Por un lado, existen plataformas enfocadas principalmente en la reserva de canchas, como ATC y Serpar; por otro, propuestas especializadas en la contratación de entrenadores, como BuscaEntrenador. Esta fragmentación evidencia que, aunque ya existen alternativas digitales, varias de ellas resuelven solo una parte de la necesidad del usuario.
 
-En ese escenario, **Courtly** se diferencia al proponer una experiencia centrada en el entorno móvil, con un flujo de búsqueda, reserva y gestión más ágil. Su principal valor competitivo no radica únicamente en ofrecer un servicio digital, sino en integrar funciones relevantes dentro de una experiencia más simple, rápida e intuitiva que la de soluciones con mayor fricción operativa o menor enfoque mobile-first.
+En ese escenario, Courtly se diferencia al proponer una experiencia centrada en el entorno móvil, con un flujo de búsqueda, reserva y gestión más ágil. Su principal valor competitivo no radica únicamente en ofrecer un servicio digital, sino en integrar funciones relevantes dentro de una experiencia más simple, rápida e intuitiva que la de soluciones con mayor fricción operativa o menor enfoque mobile-first.
 
 Además, el análisis permite identificar una oportunidad clara en contextos donde los usuarios valoran la inmediatez, la facilidad de uso y la confianza al momento de realizar una reserva deportiva. Por ello, la propuesta de Courtly no solo compite por funcionalidad, sino también por calidad de experiencia, aspecto que puede convertirse en su principal ventaja competitiva frente a alternativas más rígidas, parciales o menos orientadas al usuario móvil.
 
@@ -733,67 +730,73 @@ Además, el análisis permite identificar una oportunidad clara en contextos don
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
-A partir del análisis competitivo, se han definido estrategias y tácticas orientadas a posicionar a Courtly frente a sus competidores, aprovechando sus debilidades y respondiendo a sus fortalezas.
+A partir del análisis competitivo realizado, se han definido estrategias y tácticas orientadas a posicionar a Courtly frente a aplicaciones móviles como Playtomic, MATCHi y RacketPal, respondiendo directamente a sus fortalezas, debilidades, oportunidades y amenazas.
 
 ---
 
 #### Estrategias
 
-**1. Diferenciación basada en experiencia mobile-first**
+**1. Diferenciación basada en experiencia mobile-first simplificada**
 
-Courtly se posicionará como una aplicación diseñada específicamente para dispositivos móviles, ofreciendo una experiencia más rápida, simple e intuitiva en comparación con plataformas tradicionales centradas en web.
-
----
-
-**2. Generación de confianza mediante sistema de reseñas**
-
-Se implementará un sistema de valoraciones para canchas y servicios, permitiendo a los usuarios tomar decisiones informadas y reduciendo la incertidumbre frente a la competencia.
+Frente a competidores como Playtomic, que ofrecen múltiples funcionalidades pero con mayor complejidad en la interacción, Courtly se enfocará en una experiencia más simple, rápida e intuitiva, reduciendo fricciones en el proceso de reserva.
 
 ---
 
-**3. Enfoque en simplicidad y rapidez**
+**2. Generación de confianza mediante sistema de reseñas y transparencia**
 
-A diferencia de competidores con procesos complejos, Courtly priorizará flujos de reserva simplificados, reduciendo el número de pasos necesarios para completar una acción.
+Dado que los usuarios valoran recomendaciones y reseñas (identificado en entrevistas), Courtly incorporará valoraciones verificadas, respondiendo a la falta de transparencia presente en algunos competidores y fortaleciendo la confianza en la plataforma.
 
 ---
 
-**4. Modelo freemium para captación de usuarios**
+**3. Integración de funciones en una sola plataforma**
 
-Se ofrecerá una versión gratuita accesible, complementada con funcionalidades premium, permitiendo atraer usuarios y generar ingresos de forma progresiva.
+A diferencia de apps como RacketPal (enfocadas en comunidad) o MATCHi (orientadas a clubes), Courtly buscará integrar búsqueda, reserva, pagos y evaluación en un solo flujo, reduciendo la fragmentación del mercado.
+
+---
+
+**4. Aprovechamiento del crecimiento del mercado mobile**
+
+Ante la oportunidad del aumento en el uso de aplicaciones móviles, Courtly se posicionará como una solución nativa digital, adaptada al comportamiento mobile-first del usuario moderno.
 
 ---
 
 #### Tácticas
 
-**1. Optimización del flujo de reserva**
+**1. Optimización del flujo de reserva en comparación con la competencia**
 
-Se diseñará un proceso de reserva rápido, claro y sin fricciones, reduciendo el tiempo necesario para completar una operación desde el dispositivo móvil.
-
----
-
-**2. Implementación de feedback continuo**
-
-Después de cada reserva, se incentivará a los usuarios a dejar reseñas, fortaleciendo la confianza en la plataforma y mejorando la calidad del servicio.
+Se diseñará un proceso de reserva más corto que el de competidores actuales, minimizando pasos y tiempos de carga, lo que permitirá mejorar la conversión de usuarios.
 
 ---
 
-**3. Expansión mediante alianzas estratégicas**
+**2. Implementación de sistema de reseñas post-servicio**
 
-Se buscarán alianzas con complejos deportivos y administradores de canchas para aumentar la oferta disponible en la plataforma.
+Se incentivará el feedback después de cada reserva, generando una base de confianza superior a la de plataformas donde la información es limitada o poco estructurada.
 
 ---
 
-**4. Estrategias de retención de usuarios**
+**3. Alianzas estratégicas para ampliar cobertura**
 
-Se implementarán promociones, descuentos y beneficios para incentivar el uso recurrente de la aplicación, especialmente en eventos deportivos o temporadas específicas.
+Se establecerán alianzas con complejos deportivos para competir con la amplia oferta de apps como Playtomic, incrementando la disponibilidad de canchas en la plataforma.
+
+---
+
+**4. Estrategias de retención basadas en experiencia de usuario**
+
+Se aplicarán promociones, descuentos y beneficios dentro de la app para contrarrestar la fidelización de usuarios en plataformas ya posicionadas.
+
+---
+
+**5. Mejora continua basada en feedback del usuario**
+
+Se utilizarán métricas y opiniones de usuarios para iterar el producto rápidamente, superando la lentitud de adaptación presente en algunos competidores.
 
 ---
 
 #### Conclusión estratégica
 
-Courtly presenta una oportunidad clara de posicionarse como una solución innovadora dentro del mercado deportivo digital, aprovechando la creciente adopción de aplicaciones móviles.
+Courtly tiene la oportunidad de posicionarse como una solución competitiva dentro del mercado de aplicaciones deportivas móviles al enfocarse en resolver las principales debilidades identificadas en la competencia: complejidad, fragmentación y falta de experiencia centrada en el usuario.
 
-Mediante una estrategia centrada en experiencia de usuario, simplicidad y confianza, la startup puede diferenciarse de competidores que actualmente ofrecen soluciones fragmentadas o con limitaciones en usabilidad.
+Al aprovechar el crecimiento del entorno mobile y priorizar simplicidad, confianza e integración de servicios, Courtly puede diferenciarse no solo por funcionalidad, sino por ofrecer una experiencia superior que responda directamente a las necesidades del usuario.
 
 ---
 
