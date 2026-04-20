@@ -958,9 +958,9 @@ Además, indicó que para que una app de este tipo realmente le resulte útil de
 - **Ocupación:** Estudiante universitario y trabajador de medio tiempo  
 - **Estado civil:** Soltero  
 - **Composición familiar:** Vive con sus padres y su hermana menor  
-- **Inicio de la entrevista:** 0:00
-- **Fin de la entrevista:** 0:00 
-- **URL del video:** **Por insertar**  
+- **Inicio de la entrevista:** 0:02
+- **Fin de la entrevista:** 5:36 
+- **URL del video:** [**https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAcAXVrClN-Qrcgko_hCCq1AS3ZsuslsEI5ZdSr1QfK33g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=GUMZlt**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAw-KNFmXJhTqKMLjiChGgPAc04veNmC5gcOmjD47FyITk?e=VWhzSm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 #### Registro visual de la entrevista
 ![Evidencia de la entrevista](images/segmento1-entrevista2.png)
