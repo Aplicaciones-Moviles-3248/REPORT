@@ -747,11 +747,39 @@ Creemos que aumentará la confianza en la plataforma si los usuarios pueden ver 
 
 <img src="images/LeanUXCanvas-Courtly.jpg" width="900">
 
-[[Enlace al Lean UX Canvas en Miro]](https://miro.com/welcomeonboard/d3htMStsWFVEUFhBY1NwdGlFR0RkekZjcHlJMUNKcU9TOVJ1U2E1S3ptSXE2QUMyU2RKYnFhRzZIdzFoZE1oNnFBT3pnbCtLaUZoc1NYRU5LY2FuNEJ2UXV1VEM4OWZ3bExlZWJiN0p4dlprbytlUkUvUytLT2h5Vjk0azB6RXJzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=265390215415)
+[Enlace al Lean UX Canvas en Miro](https://miro.com/welcomeonboard/d3htMStsWFVEUFhBY1NwdGlFR0RkekZjcHlJMUNKcU9TOVJ1U2E1S3ptSXE2QUMyU2RKYnFhRzZIdzFoZE1oNnFBT3pnbCtLaUZoc1NYRU5LY2FuNEJ2UXV1VEM4OWZ3bExlZWJiN0p4dlprbytlUkUvUytLT2h5Vjk0azB6RXJzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=265390215415)
 
 ## 1.3. Segmentos objetivo
 
+La propuesta de valor de Courtly se dirige a dos segmentos principales dentro del ecosistema deportivo amateur. Estos segmentos han sido definidos considerando tanto las necesidades identificadas en el problema como el contexto actual de digitalización, en el cual el acceso a dispositivos móviles y tecnologías de la información permite la adopción de soluciones digitales para la organización de actividades deportivas.
+
+En el Perú, el acceso a telefonía móvil alcanza a más del 95% de los hogares, lo que evidencia un alto nivel de conectividad y facilita el uso de aplicaciones móviles como principal canal de interacción para este tipo de servicios. Este contexto respalda la viabilidad de Courtly como una solución digital orientada al deporte amateur.
+
 ---
+
+### 1. Deportistas aficionados (usuarios en búsqueda de canchas y entrenadores)
+
+Este segmento está conformado principalmente por jóvenes y adultos entre 18 y 40 años que practican deporte de manera recreativa o amateur. En su mayoría, residen en zonas urbanas donde existe mayor disponibilidad de infraestructura deportiva y acceso a servicios digitales.
+
+Incluye a equipos de amigos, comunidades deportivas y personas que organizan partidos de forma regular en su tiempo libre. Asimismo, abarca usuarios interesados en mejorar su rendimiento físico y técnico mediante el apoyo de entrenadores.
+
+Estos usuarios suelen recurrir a herramientas digitales como redes sociales o aplicaciones de mensajería para coordinar sus actividades deportivas, lo que evidencia una necesidad de soluciones más estructuradas, confiables y eficientes. En este contexto, Courtly representa una alternativa que permite centralizar la búsqueda, reserva y organización de actividades deportivas en una sola plataforma.
+
+---
+
+### 2. Entrenadores independientes (proveedores de servicios deportivos)
+
+Este segmento está compuesto por entrenadores personales y profesionales deportivos que ofrecen servicios en disciplinas como fútbol, tenis, pádel, básquet, vóley, entre otros. Generalmente, se trata de trabajadores independientes que gestionan sus actividades de manera autónoma.
+
+En términos demográficos, este grupo está conformado por adultos jóvenes y adultos, usualmente entre 22 y 45 años, que operan principalmente en entornos urbanos donde existe mayor demanda por servicios deportivos personalizados.
+
+Muchos de estos entrenadores utilizan redes sociales o contactos directos para promocionar sus servicios, lo que limita su alcance y dificulta la gestión organizada de sus reservas. En este sentido, requieren herramientas digitales que les permitan aumentar su visibilidad, estructurar su oferta de servicios y facilitar la coordinación con sus clientes.
+
+Courtly responde a esta necesidad al ofrecer un espacio digital donde los entrenadores pueden presentar sus servicios, gestionar reservas y conectar con nuevos usuarios, contribuyendo a reducir la informalidad y mejorar la organización dentro del ecosistema deportivo amateur.
+
+---
+
+<div style="page-break-after:always;"></div>
 
 # Capítulo II: Requirements Development and Software Solution Design
 
