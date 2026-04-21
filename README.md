@@ -626,6 +626,29 @@ En esta sección se presentan los User Personas definidos a partir del análisis
 
 ### 2.3.2. User Task Matrix
 
+En esta sección se presenta el User Task Matrix construido a partir de los User Persona, quienes representan a cada segmento objetivo identificado. En este se listan las tareas realizadas por estos usuarios basado en el análisis de entrevistas, cada una fue evaluada según su frecuencia y nivel de importancia para los respectivos perfiles.
+
+| Actividades | Frecuencia (Diego Rojas) | Importancia (Diego Rojas) | Frecuencia (César Falcón) | Importancia (César Falcón) |
+| ----------- | ------------------------ | ------------------------- | ------------------------- | -------------------------- |
+| Buscar canchas disponibles según la ubicación | Alta | Alta | Media | Media |
+| Comparar precios y horarios | Alta | Alta | Baja | Media |
+| Reservar espacios deportivos | Alta | Alta | Media | Alta |
+| Coordinar partidos o entrenamientos | Alta | Alta | Alta | Alta |
+| Evaluar calidad y servicios del espacio deportivo | Media | Alta | Media | Media |
+| Coordinar horarios con el dueño | Alta | Alta | Alta | Alta |
+| Buscar entrenadores o clases | Media | Alta | Baja | Baja |
+| Realizar pago por alquiler | Alta | Alta | Alta | Alta |
+| Promocionar servicios deportivos | Baja | Baja | Alta | Alta |
+| Gestionar horarios y disponibilidad | Baja | Media | Alta | Alta |
+| Administrar clientes/alumnos | Baja | Baja | Alta | Alta |
+| Fidelizar o mantener clientes | Baja | Media | Alta | Alta |
+
+**Análisis:**
+
+A partir de la tabla anterior, podemos identificar las tareas más críticas según el rol de cada usuario. Los deportistas aficionados se enfocan en tareas que les permita organizar sus partidos de forma rápida y sin complicaciones con actividades como la búsqueda de canchas, comparar opciones, reservar y coordinar con sus amigos. Por otro lado, los entrenadores independientes están más centrados en coordinar entrenamientos, gestionar horarios, manejar pagos, administrar clientes y promocionar sus servicios. Su necesidad principal es ordenar y hacer crecer su actividad como un negocio.
+
+Ambos coinciden en tareas clave como coordinar actividades, comunicarse y gestionar pagos. Pero la diferencia principal está en el enfoque: mientras unos consumen el servicio, otros lo gestionan y monetizan. Por eso, la solución debe ser rápida y sencilla para unos, pero más completa y organizada para otros.
+
 ### 2.3.3. User Journey Mapping
 
 ### 2.3.4. Empathy Mapping
