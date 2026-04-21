@@ -2222,3 +2222,776 @@ El diagrama de base de datos del bounded context **Bookings** representa la estr
 ### Observaciones
 
 El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente las reservas. Sin embargo, actualmente no se implementan restricciones avanzadas como control de solapamiento de horarios o validación de disponibilidad, lo que representa una oportunidad de mejora para fortalecer la lógica de negocio a nivel de base de datos.
+
+---
+
+### 2.6.8. Bounded Context: Analytics
+
+El bounded context **Analytics** representa la capacidad del sistema encargada de gestionar, registrar y consultar métricas de desempeño asociadas a entrenadores. Su propósito es permitir el almacenamiento y administración de indicadores cuantitativos vinculados al rendimiento de un coach dentro de la plataforma. Dentro de este contexto, la entidad principal es `Metric`, ya que concentra la información esencial de una métrica y establece la relación entre el valor medido, su tipo, su período y el entrenador asociado.
+
+Este contexto se relaciona directamente con el bounded context **Coaches**, debido a que cada métrica depende de un `Coach`. De esta manera, Analytics cumple un rol de soporte especializado, orientado a la observación y registro del desempeño de entrenadores dentro de Courtly. :contentReference[oaicite:1]{index=1}
+
+---
+
+#### 2.6.8.1. Domain Layer
+
+La capa de dominio del bounded context **Analytics** contiene las clases que modelan el núcleo de la gestión de métricas y las reglas de negocio asociadas a este proceso. A partir del análisis del código, se identifica que el agregado principal del contexto es `Metric`, acompañado por comandos, consultas, un value object representado por un enum y servicios de dominio que estructuran la lógica del contexto. :contentReference[oaicite:2]{index=2}
+
+##### a) Entity / Aggregate Root: `Metric`
+
+**Nombre de la clase:** `Metric`  
+**Paquete:** `com.upc.matchpoint.analytics.domain.model.aggregates`
+
+**Propósito:**  
+Representa la entidad principal del bounded context Analytics. Modela una métrica de desempeño asociada a un entrenador y constituye el agregado raíz del contexto.
+
+**Atributos:**
+- `id: Long` → identificador único de la métrica.
+- `metricType: MetricType` → tipo de métrica registrada.
+- `value: BigDecimal` → valor numérico de la métrica.
+- `period: String` → período de la métrica.
+- `coach: Coach` → referencia al entrenador asociado.
+- `createdAt: LocalDateTime` → fecha de creación automática de la métrica. :contentReference[oaicite:3]{index=3}
+
+**Métodos:**
+- `Metric(MetricType metricType, BigDecimal value, String period, Coach coach)` → constructor que inicializa una nueva métrica.
+- `updateMetric(MetricType metricType, BigDecimal value, String period)` → actualiza el tipo, valor y período de la métrica.
+- `onCreate()` → método de ciclo de vida que asigna automáticamente la fecha de creación mediante `@PrePersist`. :contentReference[oaicite:4]{index=4}
+
+**Relaciones:**
+- Una métrica pertenece a un solo `Coach`.
+- Un coach puede tener múltiples métricas registradas a lo largo del tiempo. :contentReference[oaicite:5]{index=5}
+
+##### b) Referencias externas del dominio
+
+Dentro del bounded context Analytics existen referencias a entidades de otros contextos, necesarias para completar la lógica del registro de métricas.
+
+###### `Coach`
+**Bounded context de origen:** `Coaches`  
+**Propósito dentro de Analytics:**  
+Representa al entrenador cuyo desempeño está siendo medido por la métrica.
+
+**Atributos relevantes utilizados por Analytics:**
+- `id`
+- `name` :contentReference[oaicite:6]{index=6}
+
+##### c) Value Objects
+
+###### `MetricType`
+**Paquete:** `com.upc.matchpoint.analytics.domain.model.valueobjects`  
+
+**Propósito:**  
+Enum que encapsula los tipos posibles de métricas dentro del sistema.
+
+**Valores definidos:**
+- `SESSIONS_COMPLETED`
+- `BOOKINGS_RECEIVED`
+- `REVENUE_TOTAL`
+- `AVERAGE_RATING` :contentReference[oaicite:7]{index=7}
+
+**Rol dentro del dominio:**  
+Actúa como value object del tipo de métrica, permitiendo restringir el conjunto de valores válidos que puede tomar una instancia de `Metric`.
+
+##### d) Commands del dominio
+
+Los comandos del contexto Analytics encapsulan la intención de ejecutar operaciones de escritura sobre el agregado `Metric`.
+
+###### `CreateMetricCommand`
+**Paquete:** `com.upc.matchpoint.analytics.domain.model.commands`  
+**Propósito:**  
+Representa la intención de crear una nueva métrica.
+
+**Atributos:**
+- `metricType: MetricType`
+- `value: BigDecimal`
+- `period: String`
+- `coachId: Long` :contentReference[oaicite:8]{index=8}
+
+###### `UpdateMetricCommand`
+**Paquete:** `com.upc.matchpoint.analytics.domain.model.commands`  
+**Propósito:**  
+Representa la intención de actualizar una métrica existente.
+
+**Atributos:**
+- `metricId: Long`
+- `metricType: MetricType`
+- `value: BigDecimal`
+- `period: String` :contentReference[oaicite:9]{index=9}
+
+###### `DeleteMetricCommand`
+**Paquete:** `com.upc.matchpoint.analytics.domain.model.commands`  
+**Propósito:**  
+Representa la intención de eliminar una métrica.
+
+**Atributos:**
+- `metricId: Long` :contentReference[oaicite:10]{index=10}
+
+##### e) Queries del dominio
+
+El contexto también define objetos de consulta para la recuperación de información.
+
+###### `GetAllMetricsQuery`
+**Paquete:** `com.upc.matchpoint.analytics.domain.model.queries`  
+**Propósito:**  
+Representa la intención de obtener todas las métricas del sistema.  
+**Atributos:** no contiene atributos. :contentReference[oaicite:11]{index=11}
+
+###### `GetMetricByIdQuery`
+**Paquete:** `com.upc.matchpoint.analytics.domain.model.queries`  
+**Propósito:**  
+Representa la intención de obtener una métrica específica por identificador.
+
+**Atributos:**
+- `metricId: Long` :contentReference[oaicite:12]{index=12}
+
+##### f) Domain Services
+
+El dominio define interfaces de servicio que abstraen la ejecución de comandos y consultas.
+
+###### `MetricCommandService`
+**Paquete:** `com.upc.matchpoint.analytics.domain.services`  
+**Propósito:**  
+Define el contrato para ejecutar operaciones de creación, actualización y eliminación sobre métricas.
+
+**Métodos:**
+- `Optional<Metric> handle(CreateMetricCommand command)`
+- `Optional<Metric> handle(UpdateMetricCommand command)`
+- `void handle(DeleteMetricCommand command)` :contentReference[oaicite:13]{index=13}
+
+###### `MetricQueryService`
+**Paquete:** `com.upc.matchpoint.analytics.domain.services`  
+**Propósito:**  
+Define el contrato para ejecutar operaciones de consulta sobre métricas.
+
+**Métodos:**
+- `List<Metric> handle(GetAllMetricsQuery query)`
+- `Optional<Metric> handle(GetMetricByIdQuery query)` :contentReference[oaicite:14]{index=14}
+
+##### g) Repository
+
+###### `MetricRepository`
+**Paquete:** `com.upc.matchpoint.analytics.infrastructure.persistence.jpa.repositories`  
+**Propósito dentro del dominio:**  
+Abstraer la persistencia de métricas, permitiendo operaciones de guardado, consulta y eliminación.
+
+**Operaciones disponibles:**
+- `save(Metric)`
+- `findById(Long)`
+- `findAll()`
+- `deleteById(Long)`
+- `existsById(Long)` :contentReference[oaicite:15]{index=15}
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- Una métrica debe estar asociada obligatoriamente a un coach válido.
+- Una métrica debe tener obligatoriamente un tipo (`MetricType`).
+- Una métrica debe tener obligatoriamente un valor numérico.
+- Una métrica debe tener obligatoriamente un período.
+- La fecha de creación se genera automáticamente.
+- Una métrica puede actualizar tipo, valor y período, pero no el coach asociado. :contentReference[oaicite:16]{index=16}
+
+**Reglas de negocio no implementadas aún:**
+- Validación de que el valor sea positivo.
+- Validación del formato o validez del período.
+- Validación de unicidad para evitar duplicados del mismo tipo para el mismo coach y período.
+- Cálculo automático de métricas desde otros bounded contexts.
+- Auditoría de cambios o historial.
+- Alertas por umbrales o comparaciones temporales. :contentReference[oaicite:17]{index=17}
+
+En conjunto, la Domain Layer de Analytics está bien estructurada desde el punto de vista de modelado básico, aunque todavía presenta oportunidades de mejora en la incorporación de reglas más ricas y automatización de cálculo.
+
+---
+
+#### 2.6.8.2. Interface Layer
+
+La Interface Layer del bounded context **Analytics** contiene las clases responsables de exponer las funcionalidades del contexto mediante endpoints REST y de transformar la información entre las estructuras internas del sistema y los recursos consumidos por el frontend. :contentReference[oaicite:18]{index=18}
+
+##### a) `AnalyticsController`
+
+**Paquete:** `com.upc.matchpoint.analytics.interfaces.rest`
+
+**Propósito:**  
+Exponer los endpoints HTTP para la gestión de métricas. Actúa como punto de entrada del bounded context desde el cliente o cualquier consumidor externo.
+
+**Dependencias:**
+- `MetricCommandService`
+- `MetricQueryService` :contentReference[oaicite:19]{index=19}
+
+**Endpoints expuestos:**
+- `POST /api/v1/analytics` → crear métrica
+- `GET /api/v1/analytics` → obtener todas las métricas
+- `GET /api/v1/analytics/{id}` → obtener métrica por id
+- `PUT /api/v1/analytics/{id}` → actualizar métrica
+- `DELETE /api/v1/analytics/{id}` → eliminar métrica :contentReference[oaicite:20]{index=20}
+
+##### b) Resources / DTOs
+
+###### `MetricResource`
+**Paquete:** `com.upc.matchpoint.analytics.interfaces.rest.resources`
+
+**Propósito:**  
+Representar la respuesta de una métrica hacia el frontend.
+
+**Atributos:**
+- `id`
+- `metricType`
+- `value`
+- `period`
+- `createdAt`
+- `coach: CoachSummaryResource`
+
+**Estructuras internas resumidas:**
+- `CoachSummaryResource(Long id, String name)` :contentReference[oaicite:21]{index=21}
+
+###### `CreateMetricResource`
+**Propósito:**  
+Representar los datos de entrada requeridos para crear una nueva métrica.
+
+**Atributos:**
+- `metricType`
+- `value`
+- `period`
+- `coachId` :contentReference[oaicite:22]{index=22}
+
+###### `UpdateMetricResource`
+**Propósito:**  
+Representar los datos de entrada necesarios para actualizar una métrica existente.
+
+**Atributos:**
+- `metricType`
+- `value`
+- `period` :contentReference[oaicite:23]{index=23}
+
+##### c) Assemblers
+
+###### `MetricResourceFromEntityAssembler`
+**Paquete:** `com.upc.matchpoint.analytics.interfaces.rest.transform`  
+**Propósito:**  
+Transformar una entidad `Metric` del dominio en un `MetricResource` apto para ser enviado al frontend. Además, resume la relación con `Coach` mostrando únicamente `id` y `name`. :contentReference[oaicite:24]{index=24}
+
+###### `CreateMetricCommandFromResourceAssembler`
+**Propósito:**  
+Transformar un `CreateMetricResource` en un `CreateMetricCommand`, convirtiendo además el `metricType` desde string hacia el enum `MetricType`. :contentReference[oaicite:25]{index=25}
+
+###### `UpdateMetricCommandFromResourceAssembler`
+**Propósito:**  
+Transformar un `UpdateMetricResource`, junto con el identificador de la métrica, en un `UpdateMetricCommand`. :contentReference[oaicite:26]{index=26}
+
+##### d) Responsabilidad de la capa de interfaz
+
+La responsabilidad principal de esta capa es:
+- recibir solicitudes del cliente,
+- convertir recursos de entrada en comandos o consultas,
+- delegar la ejecución a la capa de aplicación,
+- y transformar los resultados en recursos de salida adecuados para el frontend. :contentReference[oaicite:27]{index=27}
+
+---
+
+#### 2.6.8.3. Application Layer
+
+La Application Layer del bounded context **Analytics** coordina los flujos de proceso del negocio. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y con la infraestructura de persistencia. :contentReference[oaicite:28]{index=28}
+
+Las capacidades principales del contexto son:
+- crear una métrica,
+- actualizar una métrica,
+- eliminar una métrica,
+- obtener una métrica por id,
+- obtener todas las métricas. :contentReference[oaicite:29]{index=29}
+
+##### a) Command Handlers / Command Services
+
+###### `MetricCommandServiceImpl`
+**Paquete:** `com.upc.matchpoint.analytics.application.internal.commandservices`  
+**Propósito:**  
+Implementar el contrato `MetricCommandService` y ejecutar los casos de uso de escritura del contexto Analytics.
+
+**Dependencias:**
+- `MetricRepository`
+- `CoachRepository` :contentReference[oaicite:30]{index=30}
+
+**Operaciones que maneja:**
+
+**`handle(CreateMetricCommand command)`**
+- valida que el coach exista,
+- crea una nueva entidad `Metric`,
+- persiste la métrica en base de datos,
+- retorna la métrica creada. :contentReference[oaicite:31]{index=31}
+
+**`handle(UpdateMetricCommand command)`**
+- busca la métrica por id,
+- actualiza `metricType`, `value` y `period`,
+- guarda el cambio,
+- retorna la métrica actualizada si existe. :contentReference[oaicite:32]{index=32}
+
+**`handle(DeleteMetricCommand command)`**
+- verifica si la métrica existe,
+- la elimina por identificador,
+- lanza excepción si no existe. :contentReference[oaicite:33]{index=33}
+
+##### b) Query Handlers / Query Services
+
+###### `MetricQueryServiceImpl`
+**Paquete:** `com.upc.matchpoint.analytics.application.internal.queryservices`  
+**Propósito:**  
+Implementar el contrato `MetricQueryService` y ejecutar los casos de uso de lectura del contexto Analytics.
+
+**Dependencia:**
+- `MetricRepository` :contentReference[oaicite:34]{index=34}
+
+**Operaciones que maneja:**
+
+**`handle(GetAllMetricsQuery query)`**
+- recupera todas las métricas del sistema mediante `findAll()`,
+- devuelve una lista de entidades `Metric`. :contentReference[oaicite:35]{index=35}
+
+**`handle(GetMetricByIdQuery query)`**
+- busca una métrica específica por su id,
+- devuelve un `Optional<Metric>`. :contentReference[oaicite:36]{index=36}
+
+##### c) Flujos principales del negocio
+
+###### Flujo de creación de métrica
+1. El frontend envía un `CreateMetricResource`.
+2. La capa de interfaz lo transforma a `CreateMetricCommand`.
+3. `MetricCommandServiceImpl` valida la existencia del coach.
+4. Se construye una instancia de `Metric`.
+5. La métrica se persiste mediante `MetricRepository`.
+6. El resultado se transforma en `MetricResource` y se retorna al cliente. :contentReference[oaicite:37]{index=37}
+
+###### Flujo de actualización
+1. El frontend envía un `UpdateMetricResource`.
+2. Se transforma en `UpdateMetricCommand`.
+3. `MetricCommandServiceImpl` recupera la métrica existente.
+4. Se actualizan los datos con `updateMetric(...)`.
+5. Se guarda la modificación.
+6. Se retorna la métrica actualizada. :contentReference[oaicite:38]{index=38}
+
+###### Flujo de consulta
+1. El frontend solicita una o varias métricas.
+2. El controlador construye el objeto de consulta correspondiente.
+3. `MetricQueryServiceImpl` recupera la información desde `MetricRepository`.
+4. Los resultados se transforman a `MetricResource`.
+5. Se retorna la respuesta al cliente. :contentReference[oaicite:39]{index=39}
+
+###### Flujo de eliminación
+1. El frontend solicita eliminar una métrica.
+2. Se construye un `DeleteMetricCommand`.
+3. `MetricCommandServiceImpl` verifica la existencia de la métrica.
+4. Se elimina la métrica del repositorio.
+5. Se devuelve la confirmación de eliminación. :contentReference[oaicite:40]{index=40}
+
+##### d) Observaciones de la capa de aplicación
+
+Aunque esta capa ya implementa correctamente los casos de uso CRUD del bounded context, aún presenta limitaciones funcionales relevantes:
+- no calcula métricas automáticamente desde otros bounded contexts,
+- no incorpora paginación ni filtros en consultas,
+- no publica eventos de dominio,
+- y no implementa validaciones avanzadas sobre valor, período o unicidad. :contentReference[oaicite:41]{index=41}
+
+Además, no se identifican **Event Handlers** implementados en el contexto Analytics. Todas las métricas se crean y actualizan únicamente mediante comandos HTTP. :contentReference[oaicite:42]{index=42}
+
+---
+
+#### 2.6.8.4. Infrastructure Layer
+
+La Infrastructure Layer del bounded context **Analytics** contiene los componentes encargados del acceso a base de datos y de la persistencia de las métricas. En esta capa se materializa el almacenamiento del agregado `Metric` y se soportan las operaciones que ejecuta la aplicación. :contentReference[oaicite:43]{index=43}
+
+##### a) Repositorio de persistencia
+
+###### `MetricRepository`
+**Paquete:** `com.upc.matchpoint.analytics.infrastructure.persistence.jpa.repositories`  
+**Propósito:**  
+Gestionar la persistencia y recuperación de métricas utilizando Spring Data JPA. La implementación concreta es generada automáticamente por el framework al extender `JpaRepository<Metric, Long>`.
+
+**Operaciones disponibles:**
+- `save`
+- `findById`
+- `findAll`
+- `deleteById`
+- `existsById` :contentReference[oaicite:44]{index=44}
+
+**Observación:**  
+No se identifican métodos personalizados de consulta para búsquedas por coach, tipo de métrica o período. :contentReference[oaicite:45]{index=45}
+
+##### b) Persistencia de la entidad `Metric`
+
+La entidad `Metric` está mapeada como una entidad JPA con las siguientes características:
+- `@Entity`
+- `@Table(name = "metrics")`
+- `@Id`
+- `@GeneratedValue(strategy = GenerationType.IDENTITY)`
+- `@Enumerated(EnumType.STRING)` para `metricType`
+- relaciones `@ManyToOne(fetch = FetchType.LAZY)` con `Coach`
+- método `@PrePersist` para inicializar `createdAt` automáticamente. :contentReference[oaicite:46]{index=46}
+
+##### c) Diseño de persistencia
+
+**Tabla principal:** `metrics`
+
+**Columnas identificadas:**
+- `id`
+- `metric_type`
+- `value`
+- `period`
+- `coach_id`
+- `created_at` :contentReference[oaicite:47]{index=47}
+
+**Restricciones y relaciones:**
+- `id` → Primary Key
+- `coach_id` → Foreign Key hacia `coaches.id`
+- `metric_type`, `value`, `period`, `coach_id`, `created_at` → `NOT NULL` :contentReference[oaicite:48]{index=48}
+
+##### d) Integración con otros bounded contexts
+
+La infraestructura del contexto Analytics depende de:
+- `CoachRepository` del contexto **Coaches**, para validar que el entrenador exista antes de registrar una métrica. :contentReference[oaicite:49]{index=49}
+
+##### e) Configuración técnica relevante
+
+El proyecto utiliza configuración JPA con:
+- `spring.jpa.show-sql=true`
+- `spring.jpa.hibernate.ddl-auto=update`
+- `spring.jpa.open-in-view=true`
+- una estrategia de naming físico para convertir nombres camelCase a snake_case pluralizado. :contentReference[oaicite:50]{index=50}
+
+##### f) Limitaciones de la capa de infraestructura
+
+La infraestructura actual cumple con la persistencia básica del contexto, pero aún no incorpora:
+- consultas personalizadas por coach, tipo o período,
+- búsquedas optimizadas,
+- índices adicionales más allá de los implícitos,
+- adaptadores explícitos,
+- integraciones externas,
+- ni mecanismos de cálculo automático de métricas. :contentReference[oaicite:51]{index=51}
+
+En consecuencia, la Infrastructure Layer del bounded context Analytics es funcional para el escenario actual, pero todavía puede evolucionar para soportar un manejo más robusto y especializado de métricas.
+
+---
+
+#### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Descripción:**
+
+El Component Diagram del bounded context **Analytics** representa la descomposición del contenedor backend encargado de gestionar métricas de desempeño de entrenadores. A nivel arquitectónico, este container está conformado por componentes con responsabilidades bien definidas dentro del sistema: recepción de solicitudes REST, transformación de datos entre capas, ejecución de comandos y consultas, acceso a persistencia y validación de referencias provenientes del bounded context **Coaches**. :contentReference[oaicite:52]{index=52}
+
+**Componentes principales:**
+
+- **Analytics REST API Component**  
+  Expone los endpoints HTTP del bounded context mediante `AnalyticsController`. Su responsabilidad es recibir solicitudes del frontend, delegar comandos y consultas, y devolver respuestas estructuradas.
+
+- **Metric Transformation Component**  
+  Agrupa los assemblers y resources que permiten transformar datos entre la capa de interfaz y la capa de aplicación. Incluye `MetricResourceFromEntityAssembler`, `CreateMetricCommandFromResourceAssembler` y `UpdateMetricCommandFromResourceAssembler`.
+
+- **Metric Command Processing Component**  
+  Implementado por `MetricCommandServiceImpl`, se encarga de coordinar las operaciones de escritura del contexto: creación, actualización y eliminación de métricas. Además, valida la existencia del coach antes de crear una métrica.
+
+- **Metric Query Processing Component**  
+  Implementado por `MetricQueryServiceImpl`, gestiona las operaciones de consulta del contexto, como obtener todas las métricas o buscar una métrica por identificador.
+
+- **Metric Domain Component**  
+  Representa el núcleo del dominio mediante el agregado `Metric`, junto con los comandos (`CreateMetricCommand`, `UpdateMetricCommand`, `DeleteMetricCommand`), las queries (`GetAllMetricsQuery`, `GetMetricByIdQuery`) y el value object `MetricType`.
+
+- **Metric Persistence Component**  
+  Encapsula el acceso a persistencia a través de `MetricRepository`, utilizando Spring Data JPA para almacenar y recuperar métricas desde la base de datos relacional.
+
+- **External Context Access Component**  
+  Representa la dependencia del bounded context Analytics hacia `CoachRepository` del contexto **Coaches**, utilizado para validar las referencias externas requeridas por cada métrica. :contentReference[oaicite:53]{index=53}
+
+**Diagrama de componentes propuesto:**
+
+```text
+┌──────────────────────────────────────────────────────────────┐
+│                   Analytics Container                        │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Analytics REST API Component                          │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • AnalyticsController                                 │  │
+│  │ • Expone endpoints CRUD de métricas                   │  │
+│  │ • Recibe requests del frontend                        │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Metric Transformation Component                       │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • MetricResourceFromEntityAssembler                   │  │
+│  │ • CreateMetricCommandFromResourceAssembler            │  │
+│  │ • UpdateMetricCommandFromResourceAssembler            │  │
+│  │ • MetricResource / CreateMetricResource / Update...   │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Metric Command Processing Component                   │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • MetricCommandServiceImpl                            │  │
+│  │ • CreateMetricCommand                                 │  │
+│  │ • UpdateMetricCommand                                 │  │
+│  │ • DeleteMetricCommand                                 │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Metric Query Processing Component                     │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • MetricQueryServiceImpl                              │  │
+│  │ • GetAllMetricsQuery                                  │  │
+│  │ • GetMetricByIdQuery                                  │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Metric Domain Component                               │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • Metric (Aggregate Root)                             │  │
+│  │ • MetricType                                          │  │
+│  │ • updateMetric(...)                                   │  │
+│  │ • onCreate()                                          │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Metric Persistence Component                          │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • MetricRepository                                    │  │
+│  │ • Spring Data JPA / Hibernate                         │  │
+│  │ • Persistencia en tabla metrics                       │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ External Context Access Component                     │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • CoachRepository (Coaches)                           │  │
+│  │ • Validación de referencias externas                  │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+          ↓                                 ↓
+   ┌──────────────┐                ┌─────────────────┐
+   │   coaches    │                │     metrics      │
+   │ (Coaches BC) │                │    (DB Table)    │
+   └──────────────┘                └─────────────────┘
+```
+### Relaciones entre componentes
+
+- **Analytics REST API Component** → **Metric Transformation Component**  
+  Transforma los datos de entrada y salida entre resources, commands y entidades.
+
+- **Analytics REST API Component** → **Metric Command Processing Component**  
+  Delega operaciones de creación, actualización y eliminación.
+
+- **Analytics REST API Component** → **Metric Query Processing Component**  
+  Delega operaciones de lectura.
+
+- **Metric Command Processing Component** → **External Context Access Component**  
+  Valida la existencia del coach antes de crear una métrica.
+
+- **Metric Command Processing Component** → **Metric Domain Component**  
+  Construye o actualiza la entidad **Metric**.
+
+- **Metric Command Processing Component** → **Metric Persistence Component**  
+  Persiste los cambios del agregado.
+
+- **Metric Query Processing Component** → **Metric Persistence Component**  
+  Recupera métricas desde la base de datos.
+
+- **Metric Persistence Component** → `metrics`  
+  Almacena y consulta la información persistida.
+
+- **External Context Access Component** → `coaches`  
+  Accede al bounded context externo para validar relaciones de negocio.
+
+---
+
+## 2.6.8.6. Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se presentan los diagramas a nivel de código del bounded context **Analytics**, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
+
+Se incluyen dos representaciones principales:
+
+- El **Class Diagram del Domain Layer**, que describe la estructura del modelo de dominio.
+- El **Database Design Diagram**, que representa la persistencia de datos en la base de datos relacional.
+
+---
+
+## 2.6.8.6.1. Bounded Context Domain Layer Class Diagrams
+
+### Descripción
+
+El diagrama de clases del Domain Layer del bounded context **Analytics** presenta el agregado principal **Metric**, junto con su relación hacia la entidad externa **Coach**, así como las interfaces de servicios y los objetos que representan comandos y consultas.
+
+El diseño evidencia que **Metric** es el núcleo del dominio y que las operaciones del sistema se organizan alrededor de comandos de escritura y queries de lectura.
+
+### Diagrama UML de clases (Domain Layer)
+
+```text
+┌────────────────────────────────────────────┐
+│           <<Aggregate Root>>               │
+│                 Metric                     │
+├────────────────────────────────────────────┤
+│ - id: Long                                 │
+│ - metricType: MetricType                   │
+│ - value: BigDecimal                        │
+│ - period: String                           │
+│ - coach: Coach                             │
+│ - createdAt: LocalDateTime                 │
+├────────────────────────────────────────────┤
+│ + Metric(metricType, value, period, coach) │
+│ + updateMetric(metricType, value, period)  │
+│ + onCreate(): void                         │
+└────────────────────────────────────────────┘
+                  │
+                  │ many-to-one
+                  ▼
+        ┌───────────────────────┐
+        │        Coach          │
+        ├───────────────────────┤
+        │ + id: Long            │
+        │ + name: String        │
+        │ + expertise: String   │
+        │ + phone: String       │
+        └───────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│         <<Value Object>>                   │
+│            MetricType                      │
+├────────────────────────────────────────────┤
+│ + SESSIONS_COMPLETED                       │
+│ + BOOKINGS_RECEIVED                        │
+│ + REVENUE_TOTAL                            │
+│ + AVERAGE_RATING                           │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│         MetricCommandService               │
+├────────────────────────────────────────────┤
+│ + handle(CreateMetricCommand): Optional    │
+│ + handle(UpdateMetricCommand): Optional    │
+│ + handle(DeleteMetricCommand): void        │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│         MetricQueryService                 │
+├────────────────────────────────────────────┤
+│ + handle(GetAllMetricsQuery): List         │
+│ + handle(GetMetricByIdQuery): Optional     │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│           CreateMetricCommand              │
+├────────────────────────────────────────────┤
+│ + metricType: MetricType                   │
+│ + value: BigDecimal                        │
+│ + period: String                           │
+│ + coachId: Long                            │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│           UpdateMetricCommand              │
+├────────────────────────────────────────────┤
+│ + metricId: Long                           │
+│ + metricType: MetricType                   │
+│ + value: BigDecimal                        │
+│ + period: String                           │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│           DeleteMetricCommand              │
+├────────────────────────────────────────────┤
+│ + metricId: Long                           │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│            GetAllMetricsQuery              │
+├────────────────────────────────────────────┤
+│ (sin atributos)                            │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│           GetMetricByIdQuery               │
+├────────────────────────────────────────────┤
+│ + metricId: Long                           │
+└────────────────────────────────────────────┘
+```
+### Relaciones principales del modelo
+
+- **Metric** es el Aggregate Root del bounded context.
+- **Metric** mantiene una relación Many-to-One con **Coach**.
+- **MetricType** representa un Value Object del dominio mediante un enum.
+- **MetricCommandService** define las operaciones de escritura.
+- **MetricQueryService** define las operaciones de lectura.
+- Los comandos encapsulan acciones de negocio.
+- Las queries encapsulan solicitudes de consulta.
+
+### Observaciones
+
+El modelo de dominio presenta una estructura clara y centrada en el agregado **Metric**. Sin embargo, no se identifican value objects adicionales para encapsular el período o el valor numérico, ni reglas más complejas relacionadas con validación de unicidad, cálculos automáticos o comparación entre períodos.
+
+---
+
+## 2.6.8.6.2. Bounded Context Database Design Diagram
+
+### Descripción
+
+El diagrama de base de datos del bounded context **Analytics** representa la estructura relacional utilizada para persistir la información de métricas. La tabla principal es **metrics**, la cual mantiene una relación con la tabla **coaches**.
+
+### Diagrama de base de datos (ERD):
+
+```text
+┌──────────────────────────────┐
+│           coaches            │
+├──────────────────────────────┤
+│ PK id (BIGINT)               │
+│ name (VARCHAR)               │
+│ expertise (VARCHAR)          │
+│ phone (VARCHAR)              │
+└──────────────────────────────┘
+             ▲
+             │ FK (coach_id)
+             │
+┌────────────┴──────────────────────────────┐
+│                 metrics                   │
+├───────────────────────────────────────────┤
+│ PK id (BIGINT, AUTO_INCREMENT)            │
+│ metric_type (VARCHAR(255), NOT NULL)      │
+│ value (DECIMAL(10,2), NOT NULL)           │
+│ period (VARCHAR(255), NOT NULL)           │
+│ coach_id (BIGINT, NOT NULL)               │
+│ created_at (DATETIME, NOT NULL)           │
+└───────────────────────────────────────────┘
+```
+### Tablas y atributos
+
+#### Tabla `metrics`
+
+- `id`: identificador único de la métrica (PK)
+- `metric_type`: tipo de métrica almacenado como string
+- `value`: valor numérico de la métrica
+- `period`: período de la métrica
+- `coach_id`: referencia al coach (FK)
+- `created_at`: fecha de creación
+
+#### Tabla `coaches`
+
+- `id`
+- `name`
+- `expertise`
+- `phone`
+
+### Constraints
+
+- PRIMARY KEY (`id`) en `metrics`
+- FOREIGN KEY (`coach_id`) → `coaches(id)`
+- Restricciones NOT NULL en `metric_type`, `value`, `period`, `coach_id`, `created_at`
+
+### Relaciones entre tablas
+
+- `coaches (1)` ──── `(*) metrics`
+
+### Observaciones
+
+El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente las métricas. Sin embargo, actualmente no se implementan restricciones avanzadas como control de duplicidad por tipo, período y coach, ni índices personalizados o mecanismos automáticos de cálculo. Esto representa una oportunidad de mejora para fortalecer la lógica del negocio y la eficiencia del acceso a datos.
