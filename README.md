@@ -774,9 +774,44 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
 
 ## 2.6. Tactical-Level Domain-Driven Design
 
-### 2.6.x. Bounded Context: <Bounded Context Name>
+### 2.6.2. Bounded Context: Payments (Pagos)
 
-#### 2.6.x.1. Domain Layer
+#### 2.6.2.1. Domain Layer
+
+**Entities / Aggregates**
+
+```
+Payment (Pago - Aggregate Root)
+├── paymentId: int → Identificador único de pago
+├── amount: int → Cantidad transferida en el pago
+├── user: User → Usuario a realizar la transferencia
+├── paymentStatus: String → Descripción de la cancha
+├── createdAt: DateTime → Fecha de creación
+
+Métodos:
+├── createPayment(userId, amount) → Crea un nuevo pago
+├── getPaymentById(paymentId) → Obtiene un pago realizado por su identificador
+```
+
+**Value Objects**
+
+```
+PaymentStatus
+├── pending: PENDING -> Pago Pendiente (valor automático al crear el pago)
+├── completed: COMPLETED -> Pago completado
+├── failed: FAILED → Pago fallido
+├── cancelled: CANCELLED → Pago canceladon
+```
+
+**Domain Events**
+
+```
+PaymentCreated(paymentId, userId, amount, createdAt)
+PaymentCompleted(paymentId, status)
+PaymentFailed(paymentId, status)
+PaymentCancelled(paymentId, status)
+```
+---
 
 #### 2.6.x.2. Interface Layer
 
