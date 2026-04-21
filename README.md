@@ -945,7 +945,41 @@ OnPaymentCancelledHandler
 
 ---
 
-#### 2.6.x.4. Infrastructure Layer
+#### 2.6.2.4. Infrastructure Layer
+
+**Repositories**
+
+```
+PaymentRepository
+├── save(payment: Payment) → void
+├── findById(paymentId: Long) → Payment
+├── findByUserId(userId: Long) → List<Payment>
+├── update(payment: Payment) → void
+└── delete(paymentId: Long) → void
+```
+
+**Adapters**
+
+```
+PaymentNotificationAdapter
+├── sendPaymentConfirmation(user, payment) → void
+├── sendPaymentFailureNotification(user, payment) → void
+└── sendPaymentCancellationNotification(user, payment) → void
+```
+
+**Persistencia**
+
+```
+Tabla: payments
+├── payment_id (PK, BIGINT, AUTO_INCREMENT)
+├── user_id (FK → users.user_id)
+├── amount (DECIMAL(10,2), NOT NULL)
+├── status (ENUM: PENDING, COMPLETED, FAILED, CANCELLED)
+├── created_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP)
+└── INDEX (user_id, status)
+```
+
+---
 
 #### 2.6.x.5. Bounded Context Software Architecture Component Level Diagrams
 
