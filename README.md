@@ -785,11 +785,14 @@ Payment (Pago - Aggregate Root)
 ├── paymentId: int → Identificador único de pago
 ├── amount: int → Cantidad transferida en el pago
 ├── user: User → Usuario a realizar la transferencia
-├── paymentStatus: String → Descripción de la cancha
+├── paymentStatus: PaymentStatus → Descripción de la cancha
 ├── createdAt: DateTime → Fecha de creación
 
 Métodos:
 ├── createPayment(userId, amount) → Crea un nuevo pago
+├── complete() → Marca el pago como COMPLETED
+├── fail() → Marca el pago como FAILED
+├── cancel() → Marca el pago como CANCELLED
 ├── getPaymentById(paymentId) → Obtiene un pago realizado por su identificador
 ```
 
@@ -797,10 +800,10 @@ Métodos:
 
 ```
 PaymentStatus
-├── pending: PENDING -> Pago Pendiente (valor automático al crear el pago)
+├── pending: PENDING -> Pago Pendiente (estado inicial)
 ├── completed: COMPLETED -> Pago completado
 ├── failed: FAILED → Pago fallido
-├── cancelled: CANCELLED → Pago canceladon
+├── cancelled: CANCELLED → Pago cancelado
 ```
 
 **Domain Events**
@@ -848,7 +851,99 @@ UserSummaryDTO
 
 ---
 
-#### 2.6.x.3. Application Layer
+#### 2.6.2.3. Application Layer
+
+**Command Handlers**
+
+```
+CreatePaymentCommandHandler
+├── Input: CreatePaymentCommand (userId, amount)
+├── Validaciones:
+│   ├── Verificar que el usuario existe
+│   ├── Validar que el monto es mayor a 0
+│   └── Validar que el monto no sea nulo
+├── Proceso:
+│   ├── Obtener UserProfile
+│   ├── Crear Payment (estado inicial PENDING)
+│   └── Persistir Payment
+└── Output: PaymentCreatedEvent
+
+
+CompletePaymentCommandHandler
+├── Input: CompletePaymentCommand (paymentId)
+├── Validaciones:
+│   ├── Verificar que el pago existe
+│   ├── Verificar que el estado es PENDING
+│   └── Validar que no esté CANCELLED o FAILED
+├── Proceso:
+│   ├── Obtener Payment
+│   ├── Ejecutar payment.complete()
+│   └── Persistir cambios
+└── Output: PaymentCompletedEvent
+
+
+FailPaymentCommandHandler
+├── Input: FailPaymentCommand (paymentId)
+├── Validaciones:
+│   ├── Verificar que el pago existe
+│   ├── Verificar que el estado es PENDING
+│   └── Validar que no esté COMPLETED
+├── Proceso:
+│   ├── Obtener Payment
+│   ├── Ejecutar payment.fail()
+│   └── Persistir cambios
+└── Output: PaymentFailedEvent
+
+
+CancelPaymentCommandHandler
+├── Input: CancelPaymentCommand (paymentId)
+├── Validaciones:
+│   ├── Verificar que el pago existe
+│   ├── Verificar que no esté COMPLETED
+│   └── Validar reglas de cancelación
+├── Proceso:
+│   ├── Obtener Payment
+│   ├── Ejecutar payment.cancel()
+│   └── Persistir cambios
+└── Output: PaymentCancelledEvent
+```
+
+**Event Handlers**
+
+```
+OnPaymentCreatedHandler
+├── Escucha: PaymentCreatedEvent
+└── Acciones:
+    ├── Registrar el pago en el sistema
+    ├── Preparar información para frontend
+    └── Inicializar estado del pago
+
+
+OnPaymentCompletedHandler
+├── Escucha: PaymentCompletedEvent
+└── Acciones:
+    ├── Notificar confirmación de pago al usuario
+    ├── Actualizar estado visible en frontend
+    └── Registrar operación como completada
+
+
+OnPaymentFailedHandler
+├── Escucha: PaymentFailedEvent
+└── Acciones:
+    ├── Notificar fallo al usuario
+    ├── Registrar intento fallido
+    └── Permitir reintento de pago
+
+
+OnPaymentCancelledHandler
+├── Escucha: PaymentCancelledEvent
+└── Acciones:
+    ├── Notificar cancelación al usuario
+    ├── Liberar recursos asociados (si aplica)
+    └── Registrar cancelación
+```
+
+---
 
 #### 2.6.x.4. Infrastructure Layer
 
