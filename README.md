@@ -981,7 +981,90 @@ Tabla: payments
 
 ---
 
-#### 2.6.x.5. Bounded Context Software Architecture Component Level Diagrams
+#### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Descripción:**
+
+El diagrama de componentes para el Payments Context presenta la descomposición del contenedor en componentes responsables de la gestión del ciclo de vida de los pagos. Estos componentes coordinan la creación, validación, procesamiento y notificación de eventos relacionados con los pagos:
+
+**Componentes Principales:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Payments Container                       │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Payment Management Component                        │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Crear pagos (estado inicial PENDING)               │   │
+│  │ • Gestionar estados de pago                          │   │
+│  │ • Validar reglas de negocio                          │   │
+│  │ • Generar eventos de dominio                         │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Payment Application Service Component               │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Orquestar casos de uso                             │   │
+│  │ • Ejecutar Command Handlers                          │   │
+│  │ • Coordinar flujo entre capas                        │   │
+│  │ • Manejar validaciones a nivel aplicación            │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Payment Event Handling Component                    │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Escuchar eventos de dominio                        │   │
+│  │ • Ejecutar acciones post-evento                      │   │
+│  │ • Gestionar notificaciones                           │   │
+│  │ • Preparar integración futura                        │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Payment API Component                               │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Exponer endpoints REST                             │   │
+│  │ • Recibir requests del frontend                      │   │
+│  │ • Transformar DTOs                                   │   │
+│  │ • Delegar a Application Layer                        │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Repository & Data Access Component                  │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • PaymentRepository                                  │   │
+│  │ • Persistencia de pagos                              │   │
+│  │ • Consultas por ID y usuario                         │   │
+│  │ • Manejo de acceso a base de datos                   │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Notification Adapter Component                      │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Enviar confirmaciones de pago                      │   │
+│  │ • Notificar fallos o cancelaciones                   │   │
+│  │ • Integración con servicios externos (email/app)     │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+         ↓                         ↓
+   ┌──────────────┐      ┌────────────────────┐
+   │    SQLite    │      │ Notification System│
+   │  (Payments)  │      │   (Email / Push)   │
+   └──────────────┘      └────────────────────┘
+```
+
+**Relaciones entre Componentes:**
+
+- **Court Management ↔ Availability & Scheduling:** Court Management actualiza Availability cuando se publica una cancha.
+- **Pricing & Commerce → Repository:** Persiste cambios de precios en la base de datos.
+- **Availability & Scheduling → Search & Discovery:** Notifica cambios de disponibilidad para actualizar índices.
+- **Notification ← Todos:** Se suscribe a eventos de todos los componentes para enviar notificaciones.
+- **Repository → Data Store:** Accede y persiste toda la información en SQLite.
+- **Search & Discovery ↔ Elasticsearch:** Mantiene sincronizado el índice de búsqueda.
+
+---
 
 #### 2.6.x.6. Bounded Context Software Architecture Code Level Diagrams
 
