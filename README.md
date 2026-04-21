@@ -785,19 +785,793 @@ Courtly responde a esta necesidad al ofrecer un espacio digital donde los entren
 
 ## 2.1. Competidores
 
+En esta sección se identifican y analizan los principales competidores de la startup Mova, a través de su aplicación Courtly, con el objetivo de comprender el entorno competitivo y detectar oportunidades de diferenciación en el mercado de soluciones digitales para la gestión de actividades deportivas.
+
+Se han seleccionado tres competidores relevantes que presentan modelos de negocio similares o parcialmente relacionados con la propuesta de valor de Courtly.
+
+---
+
 ### 2.1.1. Análisis competitivo
 
+<table>
+  <tr>
+    <th colspan="6" align="center">Competitive Analysis Landscape</th>
+  </tr>
+  <tr>
+    <th>¿Por qué llevar a cabo este análisis?</th>
+    <th colspan="5" align="center">¿Cómo se posicionan los competidores en el mercado de aplicaciones móviles deportivas y qué oportunidades existen para que Courtly se diferencie mediante una experiencia más rápida, intuitiva y centrada en el usuario?</th>
+  </tr>
+  <tr>
+    <th>Categoría</th>
+    <th>Subcategoría</th>
+    <th>Courtly (Startup)</th>
+    <th>Playtomic</th>
+    <th>MATCHi</th>
+    <th>RacketPal</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td align="center"><img src="URL_COURTLY" width="80"/></td>
+    <td align="center"><img src="URL_PLAYTOMIC" width="80"/></td>
+    <td align="center"><img src="URL_MATCHI" width="80"/></td>
+    <td align="center"><img src="URL_RACKETPAL" width="80"/></td>
+  </tr>
+  <tr>
+    <td>Perfil</td>
+    <td>Overview</td>
+    <td>Aplicación móvil orientada a facilitar la búsqueda, reserva y gestión de canchas deportivas en tiempo real, priorizando una experiencia rápida, intuitiva y centrada en el usuario.</td>
+    <td>Aplicación móvil global que permite reservar canchas, encontrar jugadores y organizar partidos dentro de una comunidad activa.</td>
+    <td>Aplicación móvil enfocada en la reserva de instalaciones deportivas y gestión de actividades para clubes y usuarios.</td>
+    <td>Aplicación móvil orientada a conectar jugadores, organizar partidos y descubrir espacios deportivos cercanos.</td>
+  </tr>
+  <tr>
+    <td>Perfil</td>
+    <td>Ventaja competitiva / valor</td>
+    <td>Experiencia mobile-first optimizada; flujo de reserva rápido; integración de servicios; sistema de reseñas.</td>
+    <td>Gran base de usuarios, red internacional de canchas y funcionalidades sociales avanzadas.</td>
+    <td>Versatilidad multi-deporte y herramientas de gestión para clubes deportivos.</td>
+    <td>Enfoque en comunidad y emparejamiento de jugadores según nivel y ubicación.</td>
+  </tr>
+  <tr>
+    <td>Perfil de Marketing</td>
+    <td>Mercado objetivo</td>
+    <td>Deportistas urbanos que buscan soluciones rápidas desde el móvil.</td>
+    <td>Jugadores de deportes de raqueta a nivel global.</td>
+    <td>Clubes deportivos y usuarios que practican distintas disciplinas.</td>
+    <td>Deportistas amateurs que buscan compañeros de juego.</td>
+  </tr>
+  <tr>
+    <td>Perfil de Marketing</td>
+    <td>Estrategias de marketing</td>
+    <td>Posicionamiento en simplicidad; confianza mediante reseñas; enfoque mobile.</td>
+    <td>Construcción de comunidad global; alianzas con clubes y centros deportivos.</td>
+    <td>Alianzas con clubes; enfoque en gestión integral de actividades.</td>
+    <td>Marketing basado en comunidad y engagement entre usuarios.</td>
+  </tr>
+  <tr>
+    <td>Perfil de Producto</td>
+    <td>Productos &amp; Servicios</td>
+    <td>Reserva de canchas; gestión de reservas; evaluación de servicios.</td>
+    <td>Reserva de canchas; organización de partidos; ranking y comunidad.</td>
+    <td>Reserva de instalaciones; gestión de membresías; organización de actividades.</td>
+    <td>Búsqueda de jugadores; organización de partidos; descubrimiento de canchas.</td>
+  </tr>
+  <tr>
+    <td>Perfil de Producto</td>
+    <td>Precios &amp; Costos</td>
+    <td>Modelo freemium (gratis + premium).</td>
+    <td>Variable según ubicación y club.</td>
+    <td>Variable según servicio y club.</td>
+    <td>Modelo freemium.</td>
+  </tr>
+  <tr>
+    <td>Perfil de Producto</td>
+    <td>Canales de distribución</td>
+    <td>Móvil (principal) y web.</td>
+    <td>Móvil (iOS y Android).</td>
+    <td>Móvil y web.</td>
+    <td>Móvil (principal).</td>
+  </tr>
+  <tr>
+    <td>Análisis SWOT</td>
+    <td>Fortalezas</td>
+    <td>Experiencia mobile-first, flujo de reserva más ágil e integración de servicios, lo que le permite diferenciarse de competidores con mayor complejidad operativa.</td>
+    <td>Amplia red global de usuarios y canchas; funciones sociales que fortalecen la comunidad deportiva.</td>
+    <td>Herramientas completas para clubes y gestión de actividades deportivas.</td>
+    <td>Fuerte enfoque en comunidad y facilidad para encontrar jugadores compatibles.</td>
+  </tr>
+  <tr>
+    <td>Análisis SWOT</td>
+    <td>Debilidades</td>
+    <td>Baja base inicial de usuarios y dependencia de la disponibilidad de canchas afiliadas.</td>
+    <td>Interfaz con mayor complejidad y posibles fricciones en el proceso de reserva.</td>
+    <td>Menor enfoque en experiencia del usuario individual; más orientado a organizaciones.</td>
+    <td>No integra completamente reservas y pagos en todos los casos.</td>
+  </tr>
+  <tr>
+    <td>Análisis SWOT</td>
+    <td>Oportunidades</td>
+    <td>Crecimiento del uso de apps móviles y digitalización del deporte amateur.</td>
+    <td>Expansión en nuevos mercados y mejora de experiencia de usuario.</td>
+    <td>Creciente digitalización de clubes deportivos.</td>
+    <td>Expansión de la comunidad y nuevas funcionalidades sociales.</td>
+  </tr>
+  <tr>
+    <td>Análisis SWOT</td>
+    <td>Amenazas</td>
+    <td>Competidores con mayor posicionamiento y base de usuarios.</td>
+    <td>Nuevas apps con mejor experiencia de usuario.</td>
+    <td>Soluciones más simples centradas en el usuario final.</td>
+    <td>Plataformas integrales que combinen reservas, pagos y comunidad.</td>
+  </tr>
+</table>
+
+---
+
+#### Análisis e interpretación
+
+El análisis competitivo muestra que el mercado de soluciones deportivas digitales presenta una oferta fragmentada. Por un lado, existen plataformas enfocadas principalmente en la reserva de canchas, como ATC y Serpar; por otro, propuestas especializadas en la contratación de entrenadores, como BuscaEntrenador. Esta fragmentación evidencia que, aunque ya existen alternativas digitales, varias de ellas resuelven solo una parte de la necesidad del usuario.
+
+En ese escenario, Courtly se diferencia al proponer una experiencia centrada en el entorno móvil, con un flujo de búsqueda, reserva y gestión más ágil. Su principal valor competitivo no radica únicamente en ofrecer un servicio digital, sino en integrar funciones relevantes dentro de una experiencia más simple, rápida e intuitiva que la de soluciones con mayor fricción operativa o menor enfoque mobile-first.
+
+Además, el análisis permite identificar una oportunidad clara en contextos donde los usuarios valoran la inmediatez, la facilidad de uso y la confianza al momento de realizar una reserva deportiva. Por ello, la propuesta de Courtly no solo compite por funcionalidad, sino también por calidad de experiencia, aspecto que puede convertirse en su principal ventaja competitiva frente a alternativas más rígidas, parciales o menos orientadas al usuario móvil.
+
+---
+
 ### 2.1.2. Estrategias y tácticas frente a competidores
+
+A partir del análisis competitivo realizado, se han definido estrategias y tácticas orientadas a posicionar a Courtly frente a aplicaciones móviles como Playtomic, MATCHi y RacketPal, respondiendo directamente a sus fortalezas, debilidades, oportunidades y amenazas.
+
+---
+
+#### Estrategias
+
+**1. Diferenciación basada en experiencia mobile-first simplificada**
+
+Frente a competidores como Playtomic, que ofrecen múltiples funcionalidades pero con mayor complejidad en la interacción, Courtly se enfocará en una experiencia más simple, rápida e intuitiva, reduciendo fricciones en el proceso de reserva.
+
+---
+
+**2. Generación de confianza mediante sistema de reseñas y transparencia**
+
+Dado que los usuarios valoran recomendaciones y reseñas (identificado en entrevistas), Courtly incorporará valoraciones verificadas, respondiendo a la falta de transparencia presente en algunos competidores y fortaleciendo la confianza en la plataforma.
+
+---
+
+**3. Integración de funciones en una sola plataforma**
+
+A diferencia de apps como RacketPal (enfocadas en comunidad) o MATCHi (orientadas a clubes), Courtly buscará integrar búsqueda, reserva, pagos y evaluación en un solo flujo, reduciendo la fragmentación del mercado.
+
+---
+
+**4. Aprovechamiento del crecimiento del mercado mobile**
+
+Ante la oportunidad del aumento en el uso de aplicaciones móviles, Courtly se posicionará como una solución nativa digital, adaptada al comportamiento mobile-first del usuario moderno.
+
+---
+
+#### Tácticas
+
+**1. Optimización del flujo de reserva en comparación con la competencia**
+
+Se diseñará un proceso de reserva más corto que el de competidores actuales, minimizando pasos y tiempos de carga, lo que permitirá mejorar la conversión de usuarios.
+
+---
+
+**2. Implementación de sistema de reseñas post-servicio**
+
+Se incentivará el feedback después de cada reserva, generando una base de confianza superior a la de plataformas donde la información es limitada o poco estructurada.
+
+---
+
+**3. Alianzas estratégicas para ampliar cobertura**
+
+Se establecerán alianzas con complejos deportivos para competir con la amplia oferta de apps como Playtomic, incrementando la disponibilidad de canchas en la plataforma.
+
+---
+
+**4. Estrategias de retención basadas en experiencia de usuario**
+
+Se aplicarán promociones, descuentos y beneficios dentro de la app para contrarrestar la fidelización de usuarios en plataformas ya posicionadas.
+
+---
+
+**5. Mejora continua basada en feedback del usuario**
+
+Se utilizarán métricas y opiniones de usuarios para iterar el producto rápidamente, superando la lentitud de adaptación presente en algunos competidores.
+
+---
+
+#### Conclusión estratégica
+
+Courtly tiene la oportunidad de posicionarse como una solución competitiva dentro del mercado de aplicaciones deportivas móviles al enfocarse en resolver las principales debilidades identificadas en la competencia: complejidad, fragmentación y falta de experiencia centrada en el usuario.
+
+Al aprovechar el crecimiento del entorno mobile y priorizar simplicidad, confianza e integración de servicios, Courtly puede diferenciarse no solo por funcionalidad, sino por ofrecer una experiencia superior que responda directamente a las necesidades del usuario.
 
 ---
 
 ## 2.2. Entrevistas
 
+En esta sección se presenta la investigación realizada mediante entrevistas a representantes de los segmentos objetivo de Courtly, con el fin de comprender sus hábitos deportivos, los problemas que enfrentan al organizar actividades y sus expectativas frente a una solución digital. Para ello, se consideraron dos segmentos principales: deportistas aficionados y entrenadores independientes, utilizando entrevistas semiestructuradas que permitieron recopilar tanto información objetiva como subjetiva, como datos demográficos, contexto personal, uso de tecnología, motivaciones, frustraciones y percepción de la propuesta. La información obtenida servirá como base para la construcción de arquetipos de usuario y para las siguientes etapas de análisis y definición de requisitos del proyecto.
+
+---
+
 ### 2.2.1. Diseño de entrevistas
+
+### Diseño de entrevistas para el segmento deportistas aficionados
+
+En el caso de los deportistas aficionados, la entrevista fue diseñada para conocer cómo integran el deporte en su vida cotidiana, con qué frecuencia lo practican, cómo organizan actualmente sus partidos o reservas y qué tan cómodos se sienten utilizando herramientas digitales para esas tareas. Asimismo, se buscó identificar factores de confianza, métodos de pago preferidos, dispositivos utilizados y aspectos que podrían incentivar o desalentar el uso de una app como Courtly.
+
+#### Preguntas principales y complementarias para deportistas aficionados
+
+**Bloque 1: Datos demográficos y contexto personal**
+- ¿Cómo te llamas?
+- ¿Cuántos años tienes y en qué distrito vives actualmente?
+- ¿A qué te dedicas hoy en día?
+- ¿Vives solo o con tu familia?
+- ¿Actualmente tienes pareja o estás soltero?
+
+**Bloque 2: Relación con el deporte**
+- ¿Cómo entra el deporte en tu vida?
+- ¿Con qué frecuencia sueles practicar deporte actualmente?
+- ¿Sueles hacerlo solo o con otras personas?
+- ¿Qué es lo que más valoras al practicar deporte?
+
+**Bloque 3: Organización de partidos y reservas**
+- Cuando organizan un partido, ¿cómo hacen para conseguir cancha?
+- ¿Qué tal te ha funcionado ese proceso?
+- ¿Te ha pasado alguna experiencia incómoda al respecto?
+- Cuando organizan partidos, ¿prefieres planificar con tiempo o hacerlo de manera más espontánea?
+- Cuando eliges una cancha o servicio, ¿qué te genera confianza?
+
+**Bloque 4: Tecnología y canales digitales**
+- ¿Desde qué dispositivos sueles hacer estas coordinaciones?
+- ¿Qué aplicaciones utilizas normalmente para organizarte?
+- ¿Te consideras bueno organizando partidos o usando apps para coordinar?
+
+**Bloque 5: Pagos y percepción de la solución**
+- Si existiera una app donde puedas ver disponibilidad en tiempo real, reservar y pagar desde ahí, ¿la usarías?
+- ¿Qué tendría que tener esa app para que realmente te sea útil?
+- ¿Hay algo que te haría dejar de usar una app así?
+- ¿Cómo sueles pagar actualmente cuando alquilas una cancha?
+- ¿Te sentirías cómodo pagando dentro de una app?
+- ¿Sigues alguna marca o contenido relacionado con el deporte?
+
+#### Justificación del diseño para deportistas aficionados
+
+Estas preguntas fueron seleccionadas porque permiten identificar elementos clave del comportamiento del segmento. Por un lado, recogen información objetiva como edad, distrito, ocupación y composición familiar; por otro, exploran aspectos subjetivos como la motivación para practicar deporte, el nivel de confianza al reservar, la tolerancia a fallos en una plataforma digital y la disposición a realizar pagos desde una aplicación.
+
+Además, este diseño permite reconocer hábitos tecnológicos concretos, como el uso del celular, WhatsApp, Facebook, transferencia o Yape, así como preferencias relacionadas con claridad de precios, confirmación inmediata y seguridad. Todos estos factores son relevantes para definir las características del producto y para construir posteriormente el perfil del usuario aficionado que utilizaría Courtly.
+
+---
+
+### Diseño de entrevistas para el segmento entrenadores independientes
+
+En el caso de los entrenadores independientes, la entrevista fue diseñada para comprender cómo desarrollan actualmente su actividad profesional, qué dificultades enfrentan para conseguir clientela, cómo gestionan sus reservas y qué herramientas utilizan para comunicarse, promocionarse y organizar su trabajo. También se buscó conocer su nivel de confianza en soluciones digitales, sus principales preocupaciones frente a una nueva plataforma y las funcionalidades que considerarían más valiosas dentro de Courtly.
+
+#### Preguntas principales y complementarias para entrenadores independientes
+
+**Bloque 1: Datos demográficos y contexto personal**
+- ¿Cuál es tu nombre y apellidos?
+- ¿Cuántos años tienes?
+- ¿Cuál es tu lugar de nacimiento?
+
+**Bloque 2: Relación con el deporte y contexto laboral**
+- ¿Haces deporte a menudo?
+- Si la respuesta anterior es sí, ¿dónde?
+- ¿Tuviste que alquilar alguna vez una cancha? ¿Fue fácil?
+- ¿Qué te motiva a seguir entrenando personas?
+
+**Bloque 3: Captación de clientes y experiencia profesional**
+- ¿Cuáles son los principales problemas que se te presentan al momento de conseguir clientela?
+- ¿Ya posees una buena cantidad de clientes fieles?
+- ¿Intentaste ya promocionarte desde el mundo digital?
+- ¿Cómo describirías tu forma de trabajo?
+
+**Bloque 4: Tecnología y comunicación**
+- ¿Qué dispositivos utilizas con mayor frecuencia?
+- ¿Qué aplicaciones utilizas para comunicarte con clientes?
+
+**Bloque 5: Percepción de Courtly y expectativas**
+- ¿Te gustaría ser capaz de promocionarte desde una aplicación fácil de utilizar?
+- ¿Cuáles serían tus mayores preocupaciones al momento de ingresar en esta aplicación?
+- ¿Qué funciones te gustaría que tenga la aplicación?
+- ¿Sigues alguna marca o referente deportivo?
+
+#### Justificación del diseño para entrenadores independientes
+
+El diseño de preguntas para este segmento responde a la necesidad de entender al entrenador no solo como usuario de espacios deportivos, sino también como un actor que busca visibilidad, reputación y herramientas de gestión. Por ello, además de indagar en la dificultad para alquilar canchas, se incorporaron preguntas orientadas a conocer cómo consigue clientes, qué tan dependiente es de recomendaciones, qué tan útil le resulta el entorno digital actual y qué barreras percibe para adoptar una nueva aplicación.
+
+Asimismo, este bloque permite obtener información importante para el diseño del producto, como la necesidad de perfiles profesionales, horarios visibles, pagos integrados, reseñas de alumnos y mayor orden en la coordinación de reservas. En conjunto, estas preguntas ayudan a construir un perfil más completo del entrenador independiente como usuario potencial de Courtly.
+
+---
+
+### Estructura aplicada en el diseño de entrevistas
+
+En ambos segmentos, la estructura de preguntas siguió una lógica progresiva. Primero se abordaron temas personales y contextuales para generar confianza y conocer al entrevistado. Luego se profundizó en su relación con el deporte y en la manera en que actualmente resuelve sus necesidades. Finalmente, se exploró su experiencia con herramientas digitales y su percepción frente a una aplicación como Courtly.
+
+Esta estructura permitió obtener entrevistas más naturales y mejor conectadas con los objetivos del proyecto, evitando preguntas aisladas y facilitando la recolección de información útil tanto para la validación de la problemática como para el diseño posterior de la solución.
+
+---
 
 ### 2.2.2. Registro de entrevistas
 
+En esta sección se presentan las entrevistas realizadas a representantes de los segmentos objetivo de **Courtly**. Para cada entrevista se incluye la información general del entrevistado, la evidencia audiovisual correspondiente y un resumen descriptivo de sus respuestas. El propósito de este registro es documentar de manera ordenada los hallazgos obtenidos, de modo que las características identificadas en los futuros arquetipos puedan trazarse directamente a la información recolectada.
+
+---
+
+### Segmento 1: Deportistas aficionados
+
+#### Entrevista N.° 1
+
+- **Nombres y apellidos:** Xin Yu Shi Lin  
+- **Edad:** 31 años  
+- **Distrito de residencia:** Santiago de Surco  
+- **Ocupación:** Analista administrativo en una empresa privada  
+- **Estado civil:** Casado  
+- **Composición familiar:** Vive con su esposa  
+- **Inicio de la entrevista:** 0:03
+- **Fin de la entrevista:** 3:50
+- **URL del video:** [**https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAcAXVrClN-Qrcgko_hCCq1AS3ZsuslsEI5ZdSr1QfK33g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=GUMZlt**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAcAXVrClN-Qrcgko_hCCq1AS3ZsuslsEI5ZdSr1QfK33g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=GUMZlt)  
+
+#### Registro visual de la entrevista
+![Evidencia de la entrevista](images/segmento1-entrevista1.png)
+
+#### Resumen descriptivo de la entrevista
+
+El entrevistado, Xin Yu Shi Lin, es un deportista aficionado de 31 años que reside en Santiago de Surco y trabaja como analista administrativo en una empresa privada. Comentó que el deporte forma parte de su rutina principalmente como una forma de liberar estrés después del trabajo, por lo que lo asocia más con bienestar personal y recreación que con competencia. Debido a sus responsabilidades laborales, no dispone de mucho tiempo libre y por ello suele practicar deporte solo una o dos veces por semana, sobre todo durante los fines de semana.
+
+En cuanto a la forma en que participa en actividades deportivas, señaló que normalmente juega con amigos del trabajo o del barrio, lo que muestra que su experiencia deportiva está ligada al aspecto social. Cuando deben organizar un partido, indicó que el proceso para conseguir cancha suele depender de que alguien del grupo tenga un contacto previo o de búsquedas en Facebook, tras lo cual se comunican para consultar disponibilidad. Sin embargo, percibe este método como poco confiable, ya que suelen ocurrir demoras en la respuesta, cambios de último momento e incluso cancelaciones inesperadas. Como ejemplo, relató que una vez les cancelaron la reserva el mismo día, lo que obligó a reorganizar todo.
+
+Respecto al uso de tecnología, comentó que realiza estas coordinaciones principalmente desde el celular, lo que confirma que su dispositivo principal de interacción es el smartphone. Las aplicaciones que más utiliza para organizarse son WhatsApp y, en algunas ocasiones, Facebook. También reconoció que no se considera especialmente hábil organizando partidos o usando aplicaciones para coordinar este tipo de actividades, por lo que prefiere que otra persona del grupo se encargue. Aun así, señaló que prefiere planificar con anticipación, especialmente por las exigencias de su trabajo.
+
+Desde el punto de vista de sus motivaciones y expectativas, explicó que lo que más valora al practicar deporte es desestresarse y compartir tiempo con amigos. Al elegir una cancha o servicio, lo que más confianza le genera es que tenga buenas referencias o que alguien conocido ya la haya usado antes. Frente a la idea de Courtly, mostró una disposición positiva, afirmando que sí usaría una aplicación donde pueda ver disponibilidad en tiempo real, reservar y pagar desde un mismo lugar, ya que la consideraría más ordenada y práctica.
+
+Además, indicó que para que una app de este tipo realmente le resulte útil debería ofrecer confirmación inmediata, precios claros y facilidad para reservar. También señaló que dejaría de usar una aplicación si esta no cumple lo que promete o presenta errores frecuentes, lo que revela una baja tolerancia a fallas en la experiencia digital. En relación con pagos, comentó que actualmente suele pagar por transferencia bancaria o Yape, y que sí se sentiría cómodo pagando dentro de una aplicación, siempre que esta sea segura. Finalmente, mencionó que sigue la marca Adidas y algunas páginas de fútbol, lo que muestra afinidad con marcas deportivas reconocidas y contenido relacionado con este ámbito.
+
+#### Características identificadas a partir de la entrevista
+
+- Practica deporte con una frecuencia moderada, principalmente los fines de semana.
+- Se relaciona con el deporte como actividad de recreación, desestrés y socialización.
+- Usa el celular como dispositivo principal.
+- Utiliza WhatsApp y Facebook como principales canales digitales de coordinación.
+- Tiene un nivel funcional de uso digital, pero no le gusta asumir el rol de organizador.
+- Prefiere procesos planificados con anticipación.
+- Valora la confianza, la confirmación inmediata, la claridad de precios y la seguridad en los pagos.
+- Muestra disposición a usar una app de reservas si esta realmente simplifica el proceso.
+- Tiene afinidad con Adidas y contenido relacionado con fútbol.
+
+---
+
+#### Entrevista N.° 2
+
+- **Nombres y apellidos:** Diego Andrés Rojas Pérez  
+- **Edad:** 24 años  
+- **Distrito de residencia:** San Miguel  
+- **Ocupación:** Estudiante universitario y trabajador de medio tiempo  
+- **Estado civil:** Soltero  
+- **Composición familiar:** Vive con sus padres y su hermana menor  
+- **Inicio de la entrevista:** 0:02
+- **Fin de la entrevista:** 5:36 
+- **URL del video:** [**https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAcAXVrClN-Qrcgko_hCCq1AS3ZsuslsEI5ZdSr1QfK33g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=GUMZlt**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAw-KNFmXJhTqKMLjiChGgPAc04veNmC5gcOmjD47FyITk?e=VWhzSm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+#### Registro visual de la entrevista
+![Evidencia de la entrevista](images/segmento1-entrevista2.png)
+
+#### Resumen descriptivo de la entrevista
+
+El entrevistado, Diego Andrés Rojas Pérez, es un deportista aficionado de 24 años que vive en San Miguel. Actualmente es estudiante universitario y también trabaja medio tiempo, por lo que combina sus actividades académicas y laborales con la práctica deportiva. Comentó que el deporte, especialmente el fútbol, forma parte de su vida desde la etapa escolar y que hoy sigue presente en su rutina como una forma de despejarse, relajarse y mantenerse activo. Suele practicar deporte entre dos y tres veces por semana, dependiendo del tiempo que tenga disponible.
+
+Señaló que casi siempre juega con amigos, lo que muestra que su experiencia deportiva está estrechamente vinculada a la socialización. En cuanto a la organización de partidos, explicó que normalmente buscan opciones de cancha en internet o a partir de recomendaciones de conocidos, y luego se comunican por WhatsApp o llamada para consultar disponibilidad. Sin embargo, percibe este proceso como poco confiable y desordenado, ya que en ocasiones no reciben respuesta, reciben confirmaciones erróneas o descubren al llegar que la cancha ya está ocupada. De hecho, relató una experiencia incómoda en la que él y su grupo perdieron tiempo porque la reserva no fue respetada.
+
+En el ámbito tecnológico, indicó que realiza todas estas coordinaciones desde el celular, lo que confirma que este es su dispositivo principal. Las aplicaciones que utiliza con mayor frecuencia para organizar partidos son WhatsApp y, en algunos casos, Instagram, sobre todo para explorar opciones de canchas. A diferencia de otros usuarios menos participativos en la coordinación, Diego señaló que normalmente él asume el rol de organizar con sus amigos, por lo que se considera bastante acostumbrado a usar aplicaciones y medios digitales para estos fines. También mencionó que suele planificar los partidos de forma más espontánea, ya que muchas veces coordinan el mismo día o un día antes.
+
+Respecto a lo que valora al practicar deporte, comentó que para él lo más importante es pasarla bien con sus amigos, relajarse y mantenerse activo. Cuando debe elegir una cancha o un servicio, afirmó que lo que más confianza le genera son las buenas recomendaciones, que alguien conocido ya la haya usado antes o poder revisar comentarios y fotos. Frente a la propuesta de Courtly, mostró una actitud claramente positiva y señaló que sí utilizaría una aplicación que le permita ver disponibilidad en tiempo real, reservar y pagar desde un mismo lugar, porque lo consideraría mucho más práctico.
+
+Además, precisó que una app de este tipo le resultaría realmente útil si fuera fácil de usar, si mostrara información real, si permitiera consultar la disponibilidad al instante, realizar pagos seguros y ver reseñas de otros usuarios. También mencionó que dejaría de usarla si presentara fallas, si no respetara las reservas o si fuera complicada de utilizar. En cuanto a pagos, señaló que actualmente suele pagar por Yape o en efectivo, y que sí se sentiría cómodo pagando dentro de una app siempre que la perciba como segura y confiable. Finalmente, indicó que sigue marcas deportivas como Nike y Adidas, además de páginas de fútbol en redes sociales, lo que muestra afinidad con contenido deportivo digital y marcas reconocidas del sector.
+
+#### Características identificadas a partir de la entrevista
+
+- Practica deporte con frecuencia moderada, entre dos y tres veces por semana.
+- Vincula el deporte con recreación, relajación y socialización.
+- Usa el celular como dispositivo principal de coordinación.
+- Utiliza WhatsApp e Instagram como canales digitales relacionados con la organización de partidos y búsqueda de opciones.
+- Tiene mayor iniciativa organizativa que otros usuarios, ya que suele encargarse de coordinar con su grupo.
+- Prefiere coordinar de forma más espontánea, incluso el mismo día o un día antes.
+- Valora especialmente la disponibilidad real, la facilidad de uso, las reseñas, la seguridad en el pago y el respeto de las reservas.
+- Está dispuesto a usar una app como Courtly si esta reduce el desorden actual del proceso.
+- Tiene afinidad con marcas como Nike y Adidas, así como con páginas de fútbol en redes sociales.
+---
+
+#### Entrevista N.° 3
+
+- **Nombres y apellidos:** Pedro Luis Medina Vera  
+- **Edad:** 20 años  
+- **Distrito de residencia:** Los Olivos  
+- **Ocupación:** Estudiante universitario  
+- **Estado civil:** Soltero  
+- **Composición familiar:** Vive con sus padres  
+- **Inicio de la entrevista:** 0:00
+- **Fin de la entrevista:** 3:20   
+- **URL del video:** [**https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQC8PnGtF0QoRaFQVL26lnA_AdQqgtTECZND01dhyWwSGg4?e=M3UkQa&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQC8PnGtF0QoRaFQVL26lnA_AdQqgtTECZND01dhyWwSGg4?e=M3UkQa&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)  
+
+#### Registro visual de la entrevista
+![Evidencia de la entrevista](images/segmento1-entrevista3.png)
+
+#### Resumen descriptivo de la entrevista
+
+El entrevistado, Pedro Luis Medina Vera, es un deportista aficionado de 20 años que reside en Los Olivos y actualmente es estudiante universitario. Mencionó que el deporte forma parte de su vida principalmente como una actividad recreativa, orientada a la diversión y al tiempo libre con amigos. A diferencia de otros perfiles más constantes, su frecuencia de práctica es menor, ya que suele jugar una vez por semana o incluso con menor regularidad, dependiendo de su disponibilidad.
+
+Indicó que siempre practica deporte en grupo, lo que refuerza el carácter social de su participación. En cuanto a la organización de partidos, explicó que muchas veces se coordina de manera espontánea, ya sea buscando canchas en el momento o preguntando directamente en espacios deportivos cercanos. Sin embargo, este método le ha resultado poco eficiente, ya que en varias ocasiones no han encontrado disponibilidad, lo que les ha impedido jugar. Comentó que ha tenido experiencias incómodas en las que, pese a tener intención de jugar, no lograron conseguir una cancha libre.
+
+Desde el punto de vista tecnológico, señaló que utiliza el celular como principal dispositivo para coordinar, y que la aplicación que más emplea es WhatsApp. A diferencia de otros perfiles más activos en la organización, Pedro indicó que no suele encargarse de coordinar partidos, sino que normalmente se suma a lo que organizan otros, lo que evidencia un rol más pasivo dentro del grupo. Asimismo, manifestó que prefiere una organización espontánea, más que una planificación anticipada.
+
+En relación con sus motivaciones, indicó que lo que más valora al practicar deporte es divertirse y pasar el rato, lo que refuerza su perfil recreativo. Al momento de elegir una cancha o servicio, lo que más confianza le genera es que esta sea recomendada por alguien conocido. Frente a la propuesta de Courtly, mostró interés en una aplicación que permita ver disponibilidad en tiempo real, reservar y pagar desde un mismo lugar, ya que considera que esto facilitaría el proceso actual.
+
+Además, señaló que una app de este tipo debería ser rápida y fácil de usar para resultarle realmente útil. También indicó que dejaría de usarla si fuera complicada o si no funcionara correctamente, lo que muestra una baja tolerancia a problemas de usabilidad o fallas técnicas. En cuanto a pagos, mencionó que actualmente utiliza efectivo o Yape, y que se sentiría cómodo realizando pagos dentro de una aplicación. Finalmente, señaló que sigue marcas deportivas como Nike y páginas de fútbol, lo que refleja afinidad con contenido digital deportivo y marcas reconocidas.
+
+#### Características identificadas a partir de la entrevista
+
+- Practica deporte de forma ocasional, generalmente una vez por semana o menos.
+- Tiene una motivación principalmente recreativa, enfocada en la diversión y socialización.
+- Usa el celular como dispositivo principal.
+- Utiliza WhatsApp como principal canal de coordinación.
+- Tiene un rol pasivo en la organización de actividades deportivas.
+- Prefiere procesos espontáneos en lugar de planificación anticipada.
+- Enfrenta problemas frecuentes de disponibilidad de canchas.
+- Valora la rapidez, la facilidad de uso y la disponibilidad en tiempo real.
+- Está dispuesto a usar una app como Courtly si simplifica el proceso.
+- Usa métodos de pago como efectivo y Yape, y acepta pagos digitales.
+- Tiene afinidad con marcas como Nike y contenido de fútbol.
+
+---
+
+### Segmento 2: Entrenadores independientes
+
+#### Entrevista N.° 1
+
+- **Nombres y apellidos:** Julio César Falcón Bustamante  
+- **Edad:** 28 años  
+- **Distrito de residencia:** Carabayllo, Lima  
+- **Ocupación:** Entrenador independiente (entrenamientos personalizados)  
+- **Estado civil:** **Por completar**  
+- **Composición familiar:** Vive con su esposa  
+- **Inicio de la entrevista:** 0:00
+- **Fin de la entrevista:** 0:00  
+- **URL del video:** **Por insertar**  
+
+#### Registro visual de la entrevista
+![Evidencia de la entrevista](images/segmento2-entrevista1.png)
+
+#### Resumen descriptivo de la entrevista
+
+El entrevistado, Julio César Falcón Bustamante, es un entrenador independiente de 28 años, nacido en Carabayllo (Lima), que se dedica a brindar entrenamientos personalizados. Su actividad profesional está directamente vinculada al deporte, ya que lo practica de manera constante no solo como rutina personal, sino también como parte de su trabajo. Comentó que suele realizar entrenamientos tanto en un espacio acondicionado en su hogar como en servicios a domicilio, lo que muestra flexibilidad en su forma de trabajo.
+
+En relación con el uso de espacios deportivos, indicó que ha tenido que alquilar canchas en múltiples ocasiones. Sin embargo, este proceso no siempre resulta sencillo, ya que necesita encontrar lugares que cumplan con ciertos requisitos para poder instalar su equipo de entrenamiento. Esto evidencia una limitación en la disponibilidad y adecuación de espacios para entrenadores independientes.
+
+Respecto a la captación de clientes, señaló que uno de sus principales problemas es la coordinación de horarios y detalles de entrenamiento, lo cual le demanda mucho tiempo. A pesar de ello, mencionó que cuenta con una buena cantidad de clientes fieles, principalmente gracias a recomendaciones de amigos, familiares y vecinos, lo que indica que su crecimiento depende en gran medida del boca a boca.
+
+En el ámbito digital, indicó que ya utiliza plataformas como Instagram y TikTok para promocionarse, trabajando en conjunto con su esposa, lo que le permite mantener visibilidad en redes sociales. No obstante, mostró interés en contar con una aplicación adicional que le permita potenciar su presencia y organización, señalando que una app como Courtly sería un “plus” a las herramientas que ya utiliza.
+
+En cuanto a sus preocupaciones, destacó la importancia de que la aplicación realmente simplifique los procesos de búsqueda, coordinación y gestión, además de considerar la seguridad, tanto a nivel personal como familiar. Sobre las funcionalidades deseadas, mencionó que le gustaría contar con un dashboard con analíticas mensuales, lo que indica interés en herramientas que le permitan evaluar su desempeño y crecimiento dentro de la plataforma.
+
+#### Características identificadas a partir de la entrevista
+
+- Practica deporte de forma constante como parte de su trabajo.
+- Ofrece entrenamientos personalizados en casa y a domicilio.
+- Ha experimentado dificultades para encontrar espacios adecuados para entrenar.
+- Depende principalmente de recomendaciones para conseguir clientes.
+- Tiene presencia activa en redes sociales como Instagram y TikTok.
+- Busca optimizar la coordinación de horarios y servicios.
+- Valora herramientas que le permitan medir su desempeño (dashboard y analíticas).
+- Tiene apertura a nuevas plataformas digitales que complementen su trabajo.
+- Considera importante la seguridad y la simplicidad de uso en una aplicación.
+---
+
+#### Entrevista N.° 2
+
+- **Nombres y apellidos:** Jose Luis Quispe Huaman  
+- **Edad:** 29 años  
+- **Distrito de residencia:** Lima (Los Olivos / Comas)  
+- **Ocupación:** Entrenador independiente  
+- **Estado civil:** **Por completar**  
+- **Composición familiar:** **Por completar**  
+- **Inicio de la entrevista:** 0:00
+- **Fin de la entrevista:** 0:00  
+- **URL del video:** **Por insertar**  
+
+#### Registro visual de la entrevista
+![Evidencia de la entrevista](images/segmento2-entrevista2.png)
+
+#### Resumen descriptivo de la entrevista
+
+El entrevistado, Jose Luis Quispe Huaman, es un entrenador independiente de 29 años que reside en Lima y desarrolla su actividad principalmente en distritos como Los Olivos y Comas. Señaló que el deporte forma parte fundamental de su vida diaria, ya que entrena todos los días no solo como parte de su trabajo, sino también como un hábito personal que le permite mantenerse activo y dar un buen ejemplo a sus alumnos.
+
+En relación con el uso de espacios deportivos, indicó que ha tenido que alquilar canchas en diversas ocasiones, pero que este proceso suele ser complicado. Comentó que muchas veces enfrenta problemas como falta de respuesta, cambios inesperados en la disponibilidad o desorganización en la coordinación, ya que todo se gestiona a través de llamadas o WhatsApp, lo que vuelve el proceso poco confiable y desordenado. Esto evidencia una fuerte dependencia de canales informales y una falta de sistemas estructurados para la gestión de reservas.
+
+Respecto a la captación de clientes, mencionó que uno de sus principales problemas es la falta de visibilidad, ya que depende en gran medida de recomendaciones. Explicó que, si un cliente potencial no lo conoce o no recibe una referencia, es difícil generar confianza. Además, indicó que no cuenta con un espacio adecuado donde pueda mostrar de forma organizada su experiencia, especialidad, horarios, precios o reseñas de otros alumnos. Aunque tiene algunos clientes recurrentes, señaló que no son completamente constantes, por lo que necesita seguir buscando nuevos clientes de manera continua.
+
+En el ámbito digital, comentó que ha intentado promocionarse mediante redes sociales y estados de WhatsApp, pero con resultados limitados. Indicó que, aunque puede tener cierta visibilidad, no siempre logra convertir ese alcance en reservas reales. En este sentido, mostró interés en una aplicación como Courtly, ya que le permitiría mostrar sus servicios de manera más estructurada, llegar a más personas y proyectar una imagen más profesional.
+
+En cuanto a sus preocupaciones, destacó que una de las principales sería que la aplicación no tenga suficientes usuarios, lo que limitaría las oportunidades de conseguir clientes. También mencionó la importancia de que la app sea segura y fácil de usar. Sobre las funcionalidades deseadas, señaló que le gustaría contar con un perfil completo donde pueda mostrar su experiencia, horarios y reseñas, así como opciones de reservas y pagos integrados.
+
+Desde el punto de vista tecnológico, indicó que utiliza exclusivamente el celular como herramienta principal para su trabajo, ya que le permite coordinar rápidamente con clientes y gestionar su día a día. La aplicación que más utiliza es WhatsApp, debido a su rapidez y facilidad de uso. Además, describió su forma de trabajo como práctica y adaptable, aunque reconoce que carece de herramientas que le permitan organizar mejor sus horarios, reservas y pagos.
+
+Finalmente, señaló que su principal motivación para seguir entrenando es ayudar a otros a mejorar, ver su progreso y generar un impacto positivo en sus alumnos. También mencionó que sigue marcas como Nike y contenido relacionado con entrenamiento y fútbol, lo que demuestra afinidad con el ecosistema deportivo y consumo de contenido digital especializado.
+
+#### Características identificadas a partir de la entrevista
+
+- Practica deporte de manera constante como parte de su trabajo y estilo de vida.
+- Trabaja en múltiples ubicaciones (Los Olivos y Comas).
+- Depende de canales informales como WhatsApp para coordinar.
+- Presenta dificultades en la gestión de reservas y disponibilidad de canchas.
+- Tiene baja visibilidad y depende de recomendaciones para captar clientes.
+- Usa redes sociales, pero con bajo nivel de conversión a clientes reales.
+- Utiliza el celular como único dispositivo de trabajo.
+- Tiene una forma de trabajo práctica y adaptable, pero poco estructurada.
+- Valora herramientas que le permitan organizar mejor su trabajo (reservas, pagos, horarios).
+- Busca proyectar una imagen más profesional.
+- Tiene afinidad con marcas como Nike y contenido deportivo digital.
+
+---
+
+#### Entrevista N.° 3
+
+- **Nombres y apellidos:** Cesjhoan Feliu   
+- **Edad:** 25 años
+- **Distrito de residencia:** Bogotá, Colombia  
+- **Ocupación:** Entrenador de pádel  
+- **Estado civil:** Casado  
+- **Composición familiar:** Vive con su pareja 
+- **Inicio de la entrevista:** **Por completar**  
+- **URL del video:** **Por insertar**  
+
+#### Registro visual de la entrevista
+![Evidencia de la entrevista](images/segmento2-entrevista3.png)
+
+#### Resumen descriptivo de la entrevista
+
+El entrevistado es un entrenador personal con aproximadamente 4 años de experiencia, especializado en entrenamiento funcional, preparación física para fútbol y rutinas de gimnasio. Su jornada laboral inicia desde las 6:00 a.m. y se extiende hasta la noche, con horarios fragmentados que combinan clases, tiempos de espera y coordinación con alumnos, lo que evidencia una carga operativa intensa y poco optimizada.
+
+Actualmente maneja entre 12 y 15 alumnos activos por semana, combinando clases grupales y personalizadas. Uno de los principales problemas que enfrenta en su día a día es la gestión de espacios deportivos, ya que cuando no cuenta con un lugar fijo debe coordinar manualmente la disponibilidad de canchas. Este proceso implica contactar a múltiples administradores vía WhatsApp, esperar respuestas y luego validar horarios con el cliente, lo que resulta lento, desordenado y poco eficiente.
+
+Además, ha experimentado problemas críticos en reservas, como errores en la asignación de horarios por parte de los administradores, lo que afecta directamente su reputación profesional. En una ocasión, una reserva no fue respetada y tuvo que improvisar la clase en un parque, generando una experiencia negativa para el cliente.
+
+En cuanto a los criterios de selección de espacios, prioriza la **ubicación, la seguridad del lugar y el estado de la infraestructura, además de considerar el precio para no afectar su margen de ganancia. Respecto a la organización de su trabajo, utiliza el calendario del celular y notas físicas, aunque reconoce que este sistema es propenso a errores, especialmente cuando hay cambios o cancelaciones de último momento.
+
+La gestión de cancelaciones también representa un problema importante, ya que si un alumno cancela tarde, el entrenador puede perder el dinero de la cancha o asumir penalidades. En términos de pagos, utiliza métodos digitales como Yape, Plin y transferencias, manejando paquetes de sesiones, aunque considera tedioso el seguimiento manual de pagos y deudas.
+
+Para generar confianza con nuevos clientes, indicó que estos suelen pedir información sobre tarifas, ubicación, fotos o videos de entrenamientos, lo que demuestra la importancia de contar con un perfil profesional bien estructurado. En este sentido, expresó que una de las tareas que más le gustaría eliminar es la búsqueda manual de disponibilidad de canchas, proponiendo como solución ideal un sistema donde pueda ver un calendario y reservar directamente.
+
+Respecto a Courtly, señaló que sus principales preocupaciones serían la retención de pagos dentro de la app y la falta de confiabilidad en las reservas. También indicó que dejaría de usar la aplicación si presenta fallas constantes. En cuanto a funcionalidades deseadas, destacó la importancia de contar con estadísticas como ingresos mensuales, número de clases realizadas y análisis de horarios más demandados, lo que le permitiría mejorar su organización.
+
+Finalmente, mencionó que otro problema relevante es la falta de información previa sobre lo que incluye el alquiler de una cancha, como materiales disponibles, lo que afecta la planificación de sus sesiones.
+
+#### Características identificadas a partir de la entrevista
+
+- Cuenta con experiencia profesional (4 años) como entrenador.
+- Maneja múltiples alumnos y horarios fragmentados.
+- Depende de WhatsApp para coordinar reservas (proceso ineficiente).
+- Presenta problemas frecuentes con disponibilidad y confiabilidad de canchas.
+- Ha tenido experiencias negativas que afectan su imagen profesional.
+- Usa herramientas básicas (calendario + notas), con riesgo de errores.
+- Enfrenta pérdidas económicas por cancelaciones y mala gestión.
+- Utiliza pagos digitales (Yape, Plin, transferencias).
+- Necesita mejorar el control de ingresos y clientes.
+- Valora la automatización de reservas (calendario en tiempo real).
+- Busca herramientas de analítica y gestión de negocio.
+- Tiene baja tolerancia a fallas técnicas o problemas de confianza.
+
 ### 2.2.3. Análisis de entrevistas
+
+
+En esta sección se presenta el análisis de la información recopilada a partir de las entrevistas realizadas a los segmentos objetivo de Courtly. Nuestro objetivo es identificar patrones comunes tanto en características objetivas como subjetivas, sustentados mediante cuadros y porcentajes, que permitan construir los arquetipos de usuario de manera fundamentada.
+
+---
+
+#### Análisis del Segmento 1: Deportistas aficionados
+
+A partir de las 3 entrevistas realizadas, se identificaron patrones claros en comportamiento, uso de tecnología, motivaciones y problemas actuales al organizar actividades deportivas.
+
+#### 1. Frecuencia de práctica deportiva
+
+| Frecuencia | Cantidad | Porcentaje |
+|----------|--------|------------|
+| 1 vez por semana o menos | 1 | 33% |
+| 1-2 veces por semana | 1 | 33% |
+| 2-3 veces por semana | 1 | 33% |
+
+**Análisis:**  
+El segmento presenta una práctica deportiva moderada, principalmente concentrada en fines de semana o tiempos libres. Esto evidencia que el deporte no es una actividad principal, sino complementaria a estudios o trabajo.
+
+---
+
+#### 2. Forma de organización de partidos
+
+| Tipo de organización | Cantidad | Porcentaje |
+|----------------------|--------|------------|
+| Espontánea | 2 | 67% |
+| Planificada | 1 | 33% |
+
+**Análisis:**  
+La mayoría de usuarios prefiere una organización espontánea, lo que implica la necesidad de soluciones rápidas y en tiempo real.
+
+---
+
+#### 3. Problemas en la reserva de canchas
+
+| Problema identificado | Cantidad | Porcentaje |
+|----------------------|--------|------------|
+| Falta de disponibilidad | 2 | 67% |
+| Desorganización / mala coordinación | 2 | 67% |
+| Cancelaciones o errores en reservas | 2 | 67% |
+
+**Análisis:**  
+Existe una clara insatisfacción con los métodos actuales, evidenciando un problema estructural en la gestión de reservas.
+
+---
+
+#### 4. Uso de tecnología
+
+| Elemento | Cantidad | Porcentaje |
+|----------|--------|------------|
+| Uso de celular | 3 | 100% |
+| Uso de WhatsApp | 3 | 100% |
+| Uso de redes sociales (Facebook/Instagram) | 2 | 67% |
+
+**Análisis:**  
+El segmento es completamente mobile-first, con alta dependencia de herramientas informales.
+
+---
+
+#### 5. Rol en la organización
+
+| Rol | Cantidad | Porcentaje |
+|-----|--------|------------|
+| Organizador activo | 1 | 33% |
+| Participante pasivo | 2 | 67% |
+
+**Análisis:**  
+La mayoría no quiere encargarse de coordinar, lo que refuerza la necesidad de automatización.
+
+---
+
+#### 6. Factores de confianza
+
+| Factor | Cantidad | Porcentaje |
+|--------|--------|------------|
+| Recomendaciones | 3 | 100% |
+| Reseñas | 2 | 67% |
+| Información clara | 2 | 67% |
+
+---
+
+#### 7. Disposición a usar Courtly
+
+| Respuesta | Cantidad | Porcentaje |
+|----------|--------|------------|
+| Sí usaría la app | 3 | 100% |
+
+---
+
+#### 8. Características más valoradas en la app
+
+- Confirmación inmediata → 67%  
+- Facilidad de uso → 100%  
+- Disponibilidad en tiempo real → 100%  
+- Seguridad en pagos → 100%  
+
+---
+
+### Conclusión del Segmento 1
+
+Los deportistas aficionados presentan un perfil social, recreativo y mobile-first, con una fuerte dependencia de herramientas informales como WhatsApp. El principal problema identificado es la ineficiencia en la reserva de canchas, caracterizada por desorganización, falta de disponibilidad y poca confiabilidad.
+
+Existe una alta disposición a adoptar una solución como Courtly, siempre que esta sea **rápida, simple, confiable y segura**.
+
+---
+
+### Análisis del Segmento 2: Entrenadores independientes
+
+A partir de las entrevistas realizadas, se identificaron patrones relacionados con gestión operativa, captación de clientes y uso de tecnología.
+
+---
+
+#### 1. Experiencia profesional
+
+| Nivel de experiencia | Cantidad | Porcentaje |
+|---------------------|--------|------------|
+| Más de 3 años | 2 | 67% |
+| Variable / no especificado | 1 | 33% |
+
+---
+
+#### 2. Principales problemas identificados
+
+| Problema | Cantidad | Porcentaje |
+|----------|--------|------------|
+| Coordinación de horarios | 3 | 100% |
+| Búsqueda de canchas | 3 | 100% |
+| Dependencia de WhatsApp | 3 | 100% |
+| Falta de visibilidad | 2 | 67% |
+| Problemas en reservas | 2 | 67% |
+
+---
+
+#### 3. Uso de tecnología
+
+| Elemento | Cantidad | Porcentaje |
+|----------|--------|------------|
+| Uso de celular como principal herramienta | 3 | 100% |
+| Uso de WhatsApp | 3 | 100% |
+| Uso de redes sociales | 2 | 67% |
+
+---
+
+#### 4. Captación de clientes
+
+| Método | Cantidad | Porcentaje |
+|--------|--------|------------|
+| Recomendaciones | 3 | 100% |
+| Redes sociales | 2 | 67% |
+
+---
+
+#### 5. Gestión del trabajo
+
+| Característica | Cantidad | Porcentaje |
+|--------------|--------|------------|
+| Uso de herramientas básicas (notas/calendario) | 2 | 67% |
+| Falta de sistema organizado | 3 | 100% |
+
+---
+
+#### 6. Problemas económicos
+
+| Problema | Cantidad | Porcentaje |
+|----------|--------|------------|
+| Pérdidas por cancelaciones | 2 | 67% |
+| Dificultad para gestionar pagos | 2 | 67% |
+
+---
+
+#### 7. Disposición a usar Courtly
+
+| Respuesta | Cantidad | Porcentaje |
+|----------|--------|------------|
+| Sí usaría la app | 3 | 100% |
+
+---
+
+#### 8. Funcionalidades más valoradas
+
+- Reservas automatizadas → 100%  
+- Perfil profesional → 100%  
+- Pagos integrados → 100%  
+- Dashboard / analíticas → 67%  
+
+---
+
+### Conclusión del Segmento 2
+
+Los entrenadores independientes presentan un perfil operativo, multitarea y altamente dependiente del celular, con procesos poco estructurados y basados en herramientas informales como WhatsApp.
+
+El principal problema identificado es la ineficiencia en la gestión de reservas y clientes, lo que impacta directamente en su tiempo, ingresos y reputación profesional.
+
+Existe una clara oportunidad para Courtly de posicionarse como una solución integral que permita:
+- centralizar reservas,
+- mejorar visibilidad,
+- automatizar pagos,
+- y optimizar la gestión del negocio.
+
+---
+
+### Conclusión general del análisis
+
+Ambos segmentos coinciden en un punto crítico: la falta de digitalización estructurada en la organización de actividades deportivas.
+
+Mientras los deportistas enfrentan desorden y poca confiabilidad, los entrenadores enfrentan problemas de gestión, tiempo y monetización. Esta coincidencia valida la propuesta de Courtly como una solución que conecta ambos lados del mercado, generando valor mediante eficiencia, confianza y centralización de procesos.
 
 ---
 
