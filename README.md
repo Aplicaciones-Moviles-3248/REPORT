@@ -449,35 +449,35 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 <br>**Específico:** Obtener certificaciones en Azure y MongoDB, y participar en proyectos reales de monitoreo de infraestructura para empresas medianas y grandes, aplicando conocimientos en C++ y JavaScript para automatización de procesos.  </br>
 <br>**Medible:** Conseguir al menos 2 certificaciones técnicas (Azure Fundamentals y MongoDB Developer) y completar 6 meses de experiencia práctica en proyectos de infraestructura antes de graduarme.  </br>
 <br>**Alcanzable:** Aprovechar mi experiencia actual en Azure, MongoDB y SQL Server para postular a posiciones de practicante en empresas tecnológicas, dedicando 10 horas semanales al estudio de nuevas tecnologías cloud.  </br>
-<br>**Relevante:** La especialización en infraestructura y DevOps es crucial para mi desarrollo profesional en ingeniería de software, permitiéndome contribuir en proyectos que requieren alta disponibilidad y escalabilidad, como el proyecto StayClean que estamos desarrollando.  </br>
+<br>**Relevante:** La especialización en infraestructura y DevOps es crucial para mi desarrollo profesional en ingeniería de software, permitiéndome contribuir en proyectos que requieren alta disponibilidad y escalabilidad, como el proyecto Courtly que estamos desarrollando.  </br>
 <br>**Tiempo:** Lograr las certificaciones en los próximos 8 meses y obtener experiencia práctica antes de finalizar mi carrera universitaria.  </br>
 <br></br>
 **Objetivo 2:** Liderar la implementación de un sistema de monitoreo y observabilidad empresarial utilizando tecnologías cloud modernas, aplicando mis conocimientos en infraestructura para crear soluciones escalables y eficientes.  
 <br>**Específico:** Desarrollar un proyecto personal o profesional que implemente monitoreo en tiempo real usando Azure Monitor, Application Insights y herramientas como Prometheus/Grafana, integrando alertas automáticas y dashboards personalizados para métricas de rendimiento y disponibilidad.  </br>
 <br>**Medible:** Completar la implementación de al menos 3 dashboards de monitoreo con métricas clave (CPU, memoria, latencia, errores), configurar 5 tipos de alertas diferentes y lograr una cobertura de monitoreo del 90% en los servicios críticos del sistema.  </br>
 <br>**Alcanzable:** Aprovechar mi experiencia actual en Azure y herramientas de monitoreo, dedicando 8 horas semanales al desarrollo del proyecto y utilizando recursos gratuitos de Azure para estudiantes, junto con herramientas open source disponibles.  </br>
-<br>**Relevante:** El monitoreo y observabilidad son fundamentales para el éxito de cualquier sistema empresarial moderno, y esta especialización me permitirá aportar valor significativo en proyectos como StayClean, asegurando la confiabilidad y rendimiento óptimo de las aplicaciones.  </br>
+<br>**Relevante:** El monitoreo y observabilidad son fundamentales para el éxito de cualquier sistema empresarial moderno, y esta especialización me permitirá aportar valor significativo en proyectos como Courtly, asegurando la confiabilidad y rendimiento óptimo de las aplicaciones.  </br>
 <br>**Tiempo:** Desarrollar el proyecto completo en un plazo de 10 meses, con prototipos funcionales cada 3 meses para validar el progreso y recibir feedback continuo.  </br>
 
 ---
 ## Miembro 2: []
 
 ### Objetivo 1
-**Específico:** Entregar el **MVP funcional de STAYCLEAN** (app móvil + backend básico) con registro/login, registro de residuos (online/offline), mapa de centros de acopio y notificaciones.
+**Específico:** Entregar el **MVP funcional de COURTLY** (app móvil + backend básico) con registro/login, búsqueda de canchas, búsqueda de entrenadores, sistema de reservas y notificaciones.
 
 **Medible:**  
 - Completar **al menos 18 user stories** del backlog priorizado para el MVP.  
 - Publicar **beta interna** (TestFlight/Play Console) con **≥ 95% crash-free** y **≤ 1s** de tiempo de respuesta promedio en las APIs principales.  
-- Conseguir **mín. 20 feedbacks** de usuarios de prueba y cerrar **≥ 80%** de los hallazgos críticos.
+- Conseguir **mín. 20 feedbacks** de usuarios de prueba (deportistas y entrenadores) y cerrar **≥ 80%** de los hallazgos críticos.
 
 **Alcanzable:** Dedicación de **8–10 h/semana**; uso de stack ya definido (React Native + módulos Kotlin, Node.js, SQLite) y plantillas/DSL de arquitectura ya preparadas.
 
-**Relevante:** Alineado al objetivo del curso y a la visión de **STAYCLEAN**; permite validar el problema y preparar el piloto con empresas.
+**Relevante:** Alineado al objetivo del curso y a la visión de **COURTLY**; permite validar el problema y preparar el piloto con entrenadores y propietarios de canchas.
 
 **Tiempo:** **12 semanas** para MVP (3 sprints de 4 semanas):  
-- Sprint 1: Auth + Citizen Waste (online/offline).  
-- Sprint 2: Mapa/filtros + Recycling Network + notificaciones.  
-- Sprint 3: Endurecimiento, métricas, beta y cierre de hallazgos.
+- Sprint 1: Auth + Búsqueda de Canchas y Entrenadores.  
+- Sprint 2: Sistema de Reservas + Pagos + Notificaciones.  
+- Sprint 3: Sistema de Valoraciones, Endurecimiento, métricas, beta y cierre de hallazgos.
 
 ---
 
@@ -489,7 +489,7 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 - Elaborar y subir a repo **la documentación técnica**: 3 diagramas C4 (Context, Containers, Deployment) + sección **DDD táctico** por contextos.  
 - Configurar **pipeline CI** (lint, tests, build, distribución interna) con **≥ 70%** de pruebas unitarias en módulos críticos.
 
-**Alcanzable:** Plan de estudio de **6 h/semana** con recursos online y aplicación directa en STAYCLEAN.
+**Alcanzable:** Plan de estudio de **6 h/semana** con recursos online y aplicación directa en COURTLY.
 
 **Relevante:** Mejora mi capacidad para liderar técnicamente el proyecto y asegurar calidad y mantenibilidad.
 
@@ -640,11 +640,395 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 
 ### 2.5.1. EventStorming
 
+#### Introducción
+
+EventStorming es una técnica colaborativa de modelado del dominio que permite al equipo visualizar y comprender los procesos de negocio a través de eventos que ocurren en el sistema. Para el proyecto Courtly, se realizó una sesión de EventStorming con el objetivo de identificar los eventos clave, los actores principales y los bounded contexts del dominio de reserva de canchas deportivas y conexión con entrenadores. Esta sesión facilitó la comunicación entre los miembros del equipo, permitiendo alinear una visión común del sistema y establecer una base sólida para el diseño de la arquitectura.
+
+La sesión de EventStorming se llevó a cabo considerando los principales flujos de negocio: búsqueda y reserva de canchas, registro de entrenadores, gestión de pagos y sistema de valoraciones. El resultado fue un modelo visual que refleja las interacciones entre los actores principales (Deportistas, Entrenadores, Propietarios de Canchas) en el contexto del ecosistema deportivo amateur.
+
+---
+
 #### 2.5.1.1. Candidate Context Discovery
+
+**Objetivo:**
+Identificar y delimitar los contextos acotados (bounded contexts) que estructurarán el sistema Courtly, asegurando que cada contexto posea un propósito claro, un vocabulario ubicuo específico y reglas de negocio bien delimitadas.
+
+**Proceso Realizado:**
+
+La sesión de Candidate Context Discovery se llevó a cabo aplicando las técnicas recomendadas en Domain-Driven Design (DDD), que permitieron descomponer el dominio deportivo amateur en áreas funcionales coherentes y manejables.
+
+1. **Start-with-Value (Comenzar por el Valor):**
+   - Se identificaron las áreas de mayor valor de negocio en Courtly:
+     - Búsqueda y reserva de canchas disponibles para deportistas
+     - Registro y visibilidad de entrenadores independientes
+     - Gestión de pagos y transacciones
+     - Sistema de valoraciones y confianza entre usuarios
+
+2. **Start-with-Simple (Comenzar con lo Simple):**
+   - Se organizó el timeline del proceso en pasos secuenciales y lógicos:
+     - **Registro:** Usuario (deportista/entrenador) se registra en la plataforma
+     - **Búsqueda:** Usuario busca canchas o entrenadores según sus criterios
+     - **Reserva:** Usuario realiza la reserva y pago
+     - **Operación:** Realización de la actividad deportiva
+     - **Evaluación:** Usuario deja valoración y comentarios
+   - Este enfoque permitió agrupar eventos en bloques naturales de negocio.
+
+3. **Look-for-Pivotal-Events (Buscar Eventos Clave):**
+   - Se detectaron eventos pivotales que marcan cambios de estado críticos:
+     - "Usuario Registrado" → inicio de participación en plataforma
+     - "Reserva Confirmada" → cambio en disponibilidad de cancha/entrenador
+     - "Pago Procesado" → activación de servicios
+     - "Actividad Completada" → habilitación para valoración
+     - "Reseña Publicada" → impacto en reputación
+   - Estos eventos sirvieron como puntos de corte naturales para separar contextos.
+
+**Bounded Contexts Identificados:**
+
+1. **User Account & Authentication Context (Autenticación e Identidad)**
+   - **Propósito:** Gestionar la seguridad, autenticación y perfiles de usuarios
+   - **Responsabilidades:** Registro de usuarios, inicio de sesión, gestión de roles (Deportista, Entrenador, Administrador)
+   - **Vocabulario:** Usuario, Credencial, Rol, Perfil, Token, Sesión
+   - **Justificación:** Base fundamental del sistema que valida y controla el acceso de todos los actores
+
+2. **Court & Venue Management Context (Gestión de Canchas)**
+   - **Propósito:** Permitir que propietarios publiquen canchas y gestionen disponibilidad
+   - **Responsabilidades:** Registro de canchas, gestión de horarios disponibles, información de servicios e instalaciones
+   - **Vocabulario:** Cancha, Deporte, Horario, Disponibilidad, Ubicación, Tarifa
+   - **Justificación:** Proporciona la oferta central de servicios deportivos en la plataforma
+
+3. **Booking & Reservation Context (Gestión de Reservas)**
+   - **Propósito:** Facilitar el proceso de búsqueda y reserva de canchas y entrenadores
+   - **Responsabilidades:** Búsqueda con filtros, creación de reservas, confirmación y cancelación
+   - **Vocabulario:** Reserva, Búsqueda, Filtro, Confirmación, Cancelación, Slot de Tiempo
+   - **Justificación:** Core del negocio que conecta demanda y oferta de servicios deportivos
+
+4. **Coach & Trainer Context (Gestión de Entrenadores)**
+   - **Propósito:** Habilitar que entrenadores independientes ofrezcan sus servicios
+   - **Responsabilidades:** Perfil de entrenador, especialidades, horarios disponibles, tarifas
+   - **Vocabulario:** Entrenador, Especialidad, Experiencia, Disponibilidad, Tarifa, Certificación
+   - **Justificación:** Soporta un segmento clave de usuarios que desean monetizar sus conocimientos
+
+5. **Payment & Billing Context (Gestión de Pagos)**
+   - **Propósito:** Procesar pagos y gestionar transacciones de manera segura
+   - **Responsabilidades:** Procesamiento de pagos, generación de facturas, conciliación de transacciones
+   - **Vocabulario:** Pago, Transacción, Factura, Método de Pago, Monto, Comisión
+   - **Justificación:** Crítico para monetizar la plataforma y generar confianza en transacciones
+
+6. **Review & Rating Context (Sistema de Valoraciones)**
+   - **Propósito:** Construir confianza mediante valoraciones y reseñas de usuarios
+   - **Responsabilidades:** Publicación de reseñas, cálculo de ratings, visualización de historial
+   - **Vocabulario:** Reseña, Rating, Calificación, Comentario, Confianza, Historial
+   - **Justificación:** Fundamental para establecer confianza entre usuarios en un marketplace
+
+7. **Search & Discovery Context (Búsqueda y Descubrimiento)**
+   - **Propósito:** Facilitar el descubrimiento de canchas y entrenadores mediante búsqueda inteligente
+   - **Responsabilidades:** Indexación de contenido, búsqueda con filtros, recomendaciones
+   - **Vocabulario:** Búsqueda, Filtro, Índice, Resultado, Recomendación, Ubicación
+   - **Justificación:** Mejora significativamente la experiencia de usuario al encontrar servicios relevantes
+
+8. **Notification & Communication Context (Notificaciones y Comunicación)**
+   - **Propósito:** Facilitar la comunicación entre usuarios y con el sistema
+   - **Responsabilidades:** Notificaciones de reservas, recordatorios, comunicación entre usuarios
+   - **Vocabulario:** Notificación, Mensaje, Recordatorio, Canal, Preferencia
+   - **Justificación:** Asegura que los usuarios se mantengan informados sobre sus reservas y oportunidades
+
+---
 
 #### 2.5.1.2. Domain Message Flows Modeling
 
+**Objetivo:**
+Visualizar cómo colaboran los bounded contexts para resolver los casos de negocio de Courtly, asegurando trazabilidad en el flujo de información y claridad en las responsabilidades.
+
+**Técnica Aplicada:**
+Se utilizó Domain Storytelling para modelar las interacciones entre actores, contextos y eventos principales. Esta técnica permite describir narrativamente cómo fluye la información entre contextos y qué eventos desencadenan acciones en otros dominios.
+
+**Flujos de Mensajes Modelados:**
+
+**1. Flujo: Deportista Busca y Reserva una Cancha**
+
+```
+Deportista (Actor)
+     ↓
+[Search & Discovery Context] - Recibe comando "BuscarCanchas"
+     ├─ Aplica filtros (ubicación, deporte, horario, tarifa)
+     ├─ Retorna resultados ordenados por relevancia
+     └─ Genera evento "BúsquedaRealizada"
+          ↓
+[Booking & Reservation Context]
+     ├─ Recibe comando "ConfirmarReserva"
+     ├─ Valida disponibilidad de slot horario
+     ├─ Genera evento "ReservaCreada"
+     └─ Notifica a otros contextos
+          ├─ Payment & Billing Context
+          │   ├─ Procesa pago
+          │   └─ Genera evento "PagoProcesado"
+          │
+          └─ Notification & Communication Context
+              ├─ Envía confirmación al deportista
+              └─ Notifica al propietario de la cancha
+```
+
+**Responsabilidades:**
+- **Search & Discovery Context:** Búsqueda y filtrado eficiente
+- **Booking & Reservation Context:** Validación y creación de reserva
+- **Payment & Billing Context:** Procesamiento seguro de pago
+- **Notification & Communication Context:** Confirmaciones a ambas partes
+
+---
+
+**2. Flujo: Entrenador se Registra y Ofrece Servicios**
+
+```
+Entrenador Independiente (Actor)
+     ↓
+[User Account & Authentication Context]
+     ├─ Registra credenciales como Entrenador
+     └─ Genera evento "UsuarioRegistrado"
+          ↓
+[Coach & Trainer Context]
+     ├─ Crea perfil de entrenador
+     ├─ Define especialidades y tarifas
+     ├─ Establece horarios disponibles
+     ├─ Genera evento "EntrenadorRegistrado"
+     └─ Notifica a Search & Discovery Context
+          ↓
+[Search & Discovery Context]
+     ├─ Indexa perfil de entrenador
+     ├─ Hace disponible para búsqueda
+     └─ Genera evento "EntrenadorIndizado"
+```
+
+**Responsabilidades:**
+- **User Account & Authentication Context:** Validación de identidad
+- **Coach & Trainer Context:** Gestión del perfil y disponibilidad
+- **Search & Discovery Context:** Indexación para búsqueda
+
+---
+
+**3. Flujo: Deportista Reserva Sesión con Entrenador**
+
+```
+Deportista (Actor)
+     ↓
+[Search & Discovery Context]
+     ├─ Busca por especialidad del entrenador
+     └─ Retorna resultados con ratings
+          ↓
+[Booking & Reservation Context]
+     ├─ Recibe comando "ReservarSesion"
+     ├─ Valida disponibilidad del entrenador
+     ├─ Genera evento "ReservaConEntrenador"
+     └─ Coordina con
+          ├─ Coach & Trainer Context
+          │   ├─ Actualiza disponibilidad
+          │   └─ Genera evento "DisponibilidadActualizada"
+          │
+          ├─ Payment & Billing Context
+          │   ├─ Procesa pago a entrenador
+          │   └─ Calcula comisión de plataforma
+          │
+          └─ Notification & Communication Context
+              ├─ Notifica al entrenador
+              └─ Confirma con deportista
+```
+
+**Responsabilidades:**
+- **Booking & Reservation Context:** Coordinación de la reserva
+- **Coach & Trainer Context:** Actualización de disponibilidad
+- **Payment & Billing Context:** Distribución de pagos
+- **Notification & Communication Context:** Notificaciones a ambas partes
+
+---
+
+**4. Flujo: Completar Actividad y Publicar Reseña**
+
+```
+Deportista y/o Entrenador (Actores)
+     ↓
+[Booking & Reservation Context]
+     ├─ Marca actividad como completada
+     └─ Genera evento "ActividadCompletada"
+          ↓
+[Review & Rating Context]
+     ├─ Habilita creación de reseña
+     ├─ Recibe comando "PublicarReseña"
+     ├─ Valida que la actividad fue completada
+     ├─ Genera evento "ReseñaPublicada"
+     └─ Notifica a
+          ├─ User Account & Authentication Context
+          │   └─ Actualiza historial del usuario evaluado
+          │
+          └─ Notification & Communication Context
+              ├─ Notifica al usuario evaluado
+              └─ Genera notificación pública de reseña
+```
+
+**Responsabilidades:**
+- **Booking & Reservation Context:** Marca actividad como completada
+- **Review & Rating Context:** Gestión de reseñas y ratings
+- **User Account & Authentication Context:** Actualiza reputación
+- **Notification & Communication Context:** Notificaciones
+
+---
+
 #### 2.5.1.3. Bounded Context Canvases
+
+**Objetivo:**
+Documentar de forma detallada cada bounded context mediante el Bounded Context Canvas, especificando el propósito, las capacidades, las reglas de negocio y las dependencias de cada dominio.
+
+**Proceso de Diseño:**
+Se siguió un proceso iterativo para cada canvas que incluyó:
+1. **Context Overview Definition:** Definición clara del nombre, propósito y alcance
+2. **Business Rules Distillation & Ubiquitous Language Capture:** Extracción de reglas y vocabulario del dominio
+3. **Capability Analysis:** Identificación de capacidades técnicas y de negocio
+4. **Capability Layering:** Organización jerárquica de capacidades
+5. **Dependencies Capture:** Mapeo de dependencias internas y externas
+6. **Design Critique:** Validación con stakeholders
+
+---
+
+**Canvas 1: User Account & Authentication Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | User Account & Authentication Context |
+| **Propósito** | Proveer autenticación, autorización y gestión de perfiles de usuario para toda la plataforma Courtly |
+| **Descripción** | Contexto encargado de validar credenciales, gestionar sesiones seguras y mantener perfiles de usuario con roles diferenciados (Deportista, Entrenador, Administrador) |
+| **Actores Principales** | Deportista, Entrenador, Administrador del Sistema |
+| **Eventos Principales** | UsuarioRegistrado, SesionIniciada, SesionCerrada, PerfilActualizado, RolAsignado |
+| **Comandos** | RegistrarUsuario, IniciarSesion, CerrarSesion, ActualizarPerfil, AsignarRol |
+| **Reglas de Negocio** | • Las contraseñas deben cumplir estándares de seguridad (mínimo 8 caracteres)<br>• Las sesiones expiran después de 2 horas de inactividad<br>• Un usuario puede tener un único rol primario<br>• El email debe ser único en el sistema<br>• La validación de email es obligatoria antes de usar la cuenta |
+| **Capacidades** | • Registro de usuarios con validación de datos<br>• Autenticación con email/contraseña<br>• Gestión de sesiones y tokens JWT<br>• Control de acceso basado en roles (RBAC)<br>• Recuperación de contraseña<br>• Actualización de perfil |
+| **Dependencias** | → Notification & Communication Context (para enviar emails de verificación)<br>→ Review & Rating Context (para gestionar reputación de usuarios) |
+| **Vocabulario Ubicuo** | Usuario, Credencial, Rol, Perfil, Token, Sesión, Autenticación, Autorización, Email |
+
+---
+
+**Canvas 2: Court & Venue Management Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | Court & Venue Management Context |
+| **Propósito** | Habilitar que propietarios de canchas publiquen, gestionen y actualicen su oferta de servicios |
+| **Descripción** | Contexto que permite a propietarios crear perfiles de canchas, gestionar horarios disponibles, precios y características de instalaciones |
+| **Actores Principales** | Propietario de Cancha, Administrador de Sede |
+| **Eventos Principales** | CanchaPublicada, HorarioActualizado, TarifaModificada, DisponibilidadCambiada, CanchaDesactivada |
+| **Comandos** | PublicarCancha, ActualizarHorarios, ModificarTarifa, CambiarDisponibilidad, DesactivarCancha |
+| **Reglas de Negocio** | • Una cancha debe tener al menos un deporte asociado<br>• Los horarios disponibles deben estar entre 06:00 y 23:00<br>• La tarifa debe ser mayor a cero<br>• Las modificaciones de disponibilidad se aplican de inmediato<br>• No puede reservarse un horario ya ocupado |
+| **Capacidades** | • Registro de canchas con información completa<br>• Gestión de horarios y disponibilidad<br>• Gestión de tarifas y promociones<br>• Visualización de reservas próximas<br>• Estadísticas de ocupación<br>• Gestión de instalaciones y servicios adicionales |
+| **Dependencias** | ← User Account & Authentication Context (para autenticación de propietarios)<br>↔ Booking & Reservation Context (para gestionar reservas)<br>→ Search & Discovery Context (para indexación)<br>→ Notification & Communication Context (para cambios de disponibilidad) |
+| **Vocabulario Ubicuo** | Cancha, Deporte, Horario, Disponibilidad, Tarifa, Ubicación, Instalación, Reserva |
+
+---
+
+**Canvas 3: Booking & Reservation Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | Booking & Reservation Context |
+| **Propósito** | Gestionar el ciclo completo de reservas desde búsqueda hasta confirmación y cancelación |
+| **Descripción** | Contexto central que orquesta la creación, validación y gestión de reservas de canchas y entrenadores |
+| **Actores Principales** | Deportista, Propietario de Cancha, Entrenador, Sistema de Pagos |
+| **Eventos Principales** | ReservaCreada, ReservaConfirmada, PagoAutorizado, ReservaCancelada, ActividadCompletada |
+| **Comandos** | CrearReserva, ConfirmarReserva, CancelarReserva, CompletarActividad, ModificarFecha |
+| **Reglas de Negocio** | • No pueden crearse reservas retroactivas<br>• Una cancha no puede tener reservas solapadas<br>• El deportista debe estar autenticado para reservar<br>• La cancelación dentro de 24 horas antes de la actividad tiene penalidad<br>• Las reservas se confirman después del pago exitoso<br>• Máximo 5 reservas activas simultáneas por usuario |
+| **Capacidades** | • Creación y validación de reservas<br>• Confirmación de disponibilidad en tiempo real<br>• Gestión del ciclo de vida de reservas<br>• Cancelación con políticas de reembolso<br>• Historial de reservas<br>• Notificaciones de cambios |
+| **Dependencias** | ← User Account & Authentication Context (para validar usuarios)<br>← Court & Venue Management Context (para validar disponibilidad)<br>← Coach & Trainer Context (para validar disponibilidad de entrenadores)<br>↔ Payment & Billing Context (para procesar pagos)<br>→ Notification & Communication Context (para confirmar)<br>↔ Review & Rating Context (para permitir reseñas) |
+| **Vocabulario Ubicuo** | Reserva, Slot Horario, Confirmación, Cancelación, Pago, Depósito, Penalidad, Reembolso |
+
+---
+
+**Canvas 4: Coach & Trainer Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | Coach & Trainer Context |
+| **Propósito** | Habilitar que entrenadores independientes ofrezcan y gestionen sus servicios |
+| **Descripción** | Contexto que permite a entrenadores crear perfiles profesionales, definir especialidades, horarios y tarifas |
+| **Actores Principales** | Entrenador Independiente, Deportista Interesado |
+| **Eventos Principales** | EntrenadorRegistrado, EspecialidadDefinida, HorarioPublicado, TarifaEstablecida, EntrenadorDesactivado |
+| **Comandos** | CrearPerfilEntrenador, DefinirEspecialidades, PublicarHorarios, EstablecerTarifa, ActualizarExperiencia |
+| **Reglas de Negocio** | • Un entrenador debe tener al menos una especialidad<br>• La experiencia debe ser un número positivo (años)<br>• Los horarios deben estar disponibles al menos 7 días a la semana<br>• La tarifa debe ser competitiva (rango: $5-$200 USD por sesión)<br>• Las certificaciones pueden ser opcionales pero aumentan confianza |
+| **Capacidades** | • Creación de perfil profesional<br>• Gestión de especialidades y experiencia<br>• Publicación de horarios disponibles<br>• Gestión de tarifas por especialidad<br>• Visualización de sesiones próximas<br>• Estadísticas de ganancias<br>• Gestión de certificaciones |
+| **Dependencias** | ← User Account & Authentication Context (para crear cuenta como entrenador)<br>↔ Booking & Reservation Context (para gestionar sesiones)<br>→ Search & Discovery Context (para ser descubible)<br>↔ Payment & Billing Context (para recibir pagos)<br>↔ Review & Rating Context (para construir reputación)<br>→ Notification & Communication Context (para confirmar sesiones) |
+| **Vocabulario Ubicuo** | Entrenador, Especialidad, Experiencia, Certificación, Tarifa, Sesión, Horario, Disponibilidad |
+
+---
+
+**Canvas 5: Payment & Billing Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | Payment & Billing Context |
+| **Propósito** | Procesar pagos de manera segura y gestionar la distribución de ingresos |
+| **Descripción** | Contexto responsable de procesamiento de transacciones, generación de facturas y conciliación de pagos |
+| **Actores Principales** | Deportista (pagador), Propietario/Entrenador (receptor), Gateway de Pagos |
+| **Eventos Principales** | PagoProcesado, PagoAutorizado, PagoRechazado, FacturaGenerada, ReembolsoProcessado, ComisionCalculada |
+| **Comandos** | ProcesarPago, AutorizarTransaccion, GenerarFactura, ProcessarReembolso, CalcularComision |
+| **Reglas de Negocio** | • Todas las transacciones deben ser encriptadas con estándar PCI-DSS<br>• La comisión de plataforma es 15% por defecto<br>• Los reembolsos se procesan dentro de 5-7 días hábiles<br>• Los montos mínimos de transacción son $2 USD<br>• Se mantiene historial de transacciones por 7 años<br>• Las facturas son generadas automáticamente para cada pago |
+| **Capacidades** | • Procesamiento seguro de pagos<br>• Soporte para múltiples métodos de pago (tarjeta, wallet, transferencia)<br>• Generación automática de facturas<br>• Gestión de reembolsos y devoluciones<br>• Cálculo de comisiones<br>• Conciliación bancaria<br>• Reportes de ingresos<br>• Detección de fraude |
+| **Dependencias** | ← Booking & Reservation Context (para obtener monto a cobrar)<br>← User Account & Authentication Context (para validar beneficiarios)<br>→ Notification & Communication Context (para confirmar pagos)<br>→ Servicios Externos: Stripe, PayPal, transferencias bancarias |
+| **Vocabulario Ubicuo** | Pago, Transacción, Factura, Comisión, Reembolso, Método de Pago, Gateway, PCI-DSS |
+
+---
+
+**Canvas 6: Review & Rating Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | Review & Rating Context |
+| **Propósito** | Construir confianza mediante un sistema de valoraciones y reseñas verificadas |
+| **Descripción** | Contexto que gestiona reseñas, ratings y reputación de usuarios basado en actividades completadas |
+| **Actores Principales** | Deportista que Revisa, Entrenador Evaluado, Propietario Evaluado |
+| **Eventos Principales** | ReseñaPublicada, RatingCalculado, RatingMaliciosoDetectado, ReputacionActualizada, ReseñaEliminada |
+| **Comandos** | PublicarReseña, QuitarReseña, ReportarReseñaMaliciosa, CalcularRatingPromedio |
+| **Reglas de Negocio** | • Solo pueden reseñar usuarios que completaron la actividad<br>• Las reseñas deben ser publicadas dentro de 30 días de completada la actividad<br>• El rating es un valor 1-5 (no decimales)<br>• Una reseña debe tener mínimo 10 caracteres y máximo 500<br>• Un usuario solo puede reseñar una vez por transacción<br>• Las reseñas no pueden modificarse, solo eliminarse |
+| **Capacidades** | • Publicación de reseñas y ratings<br>• Cálculo de rating promedio ponderado<br>• Detección de reseñas anómalas o maliciosas<br>• Visualización de historial de reseñas<br>• Gestión de reportes de contenido inapropiado<br>• Cálculo de confianza de usuario<br>• Filtrado por calidad de reseña |
+| **Dependencias** | ← User Account & Authentication Context (para validar usuarios)<br>← Booking & Reservation Context (para verificar actividades completadas)<br>→ Notification & Communication Context (para notificar sobre nuevas reseñas)<br>→ User Account & Authentication Context (para actualizar reputación) |
+| **Vocabulario Ubicuo** | Reseña, Rating, Calificación, Comentario, Confianza, Reputación, Historial, Anomalía |
+
+---
+
+**Canvas 7: Search & Discovery Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | Search & Discovery Context |
+| **Propósito** | Facilitar el descubrimiento rápido y relevante de canchas y entrenadores |
+| **Descripción** | Contexto que mantiene índices optimizados de canchas y entrenadores, permitiendo búsquedas eficientes con múltiples criterios |
+| **Actores Principales** | Deportista Buscador, Sistema de Indexación |
+| **Eventos Principales** | BúsquedaRealizada, CanchaIndexada, EntrenadorIndexado, ResultadosRetornados, ÍndiceActualizado |
+| **Comandos** | BuscarCanchas, BuscarEntrenadores, AplicarFiltros, Recomendar, IndexarContenido |
+| **Reglas de Negocio** | • Los resultados se ordenan por relevancia (ubicación, rating, disponibilidad)<br>• Máximo 5km de distancia por defecto sin filtro de ubicación<br>• Solo se muestran canchas y entrenadores con rating >= 3.0<br>• Los índices se actualizan en tiempo real<br>• Se cachean búsquedas frecuentes por 1 hora<br>• Máximo 100 resultados por búsqueda |
+| **Capacidades** | • Búsqueda de texto completo<br>• Filtrado por múltiples criterios (ubicación, deporte, precio, horario)<br>• Búsqueda geoespacial<br>• Ordenamiento por relevancia<br>• Recomendaciones personalizadas<br>• Autocomplete de búsquedas<br>• Análisis de tendencias de búsqueda |
+| **Dependencias** | ← Court & Venue Management Context (para indexar canchas)<br>← Coach & Trainer Context (para indexar entrenadores)<br>← Review & Rating Context (para incluir ratings)<br>→ Notification & Communication Context (para tracking de búsquedas) |
+| **Vocabulario Ubicuo** | Búsqueda, Índice, Filtro, Resultado, Relevancia, Ubicación, Deporte, Recomendación |
+
+---
+
+**Canvas 8: Notification & Communication Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | Notification & Communication Context |
+| **Propósito** | Facilitar la comunicación efectiva entre usuarios y del sistema hacia usuarios |
+| **Descripción** | Contexto transversal responsable de orquestar notificaciones multi-canal, recordatorios y mensajería entre usuarios |
+| **Actores Principales** | Deportista, Entrenador, Sistema de Eventos, Servicios de Email |
+| **Eventos Principales** | NotificacionEnviada, ReminderCreado, MensajeEnviado, NotificacionEntregada, NotificacionLeida |
+| **Comandos** | EnviarNotificacion, CrearReminder, EnviarMensaje, ActualizarPreferencias, ConfirmarEntrega |
+| **Reglas de Negocio** | • Las notificaciones respetan preferencias de usuario (push, email o SMS)<br>• No se envían notificaciones después de las 22:00 ni antes de las 08:00<br>• Los recordatorios de actividades se envían 1 hora antes<br>• El historial de notificaciones se mantiene por 90 días<br>• El usuario puede silenciar notificaciones por contexto<br>• Máximo 3 notificaciones por hora por usuario |
+| **Capacidades** | • Sistema de notificaciones multi-canal (push, email, SMS)<br>• Recordatorios automáticos de actividades<br>• Mensajería directa entre usuarios<br>• Preferencias de notificación personalizables<br>• Historial de notificaciones<br>• Análisis de entrega<br>• Integración con Firebase Cloud Messaging |
+| **Dependencias** | ↔ Todos los contextos (escucha y envía eventos)<br>→ Servicios Externos: Firebase FCM, SendGrid, Twilio |
+| **Vocabulario Ubicuo** | Notificación, Mensaje, Reminder, Canal, Preferencia, Entrega, Leitura |
+
+---
+
+**Notas Sobre los Canvases:**
+
+- Cada canvas ha sido diseñado iterativamente considerando la experiencia del usuario deportista y las necesidades operacionales de entrenadores.
+- Las dependencias muestran explícitamente cómo los contextos colaboran para completar flujos de negocio complejos.
+- El vocabulario ubicuo de cada contexto ha sido validado con stakeholders (deportistas, entrenadores, propietarios de canchas).
+- Los canvases servirán de base para el diseño táctico de la arquitectura en las secciones posteriores (2.6.x).
 
 ### 2.5.2. Context Mapping
 
@@ -660,20 +1044,735 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 
 ## 2.6. Tactical-Level Domain-Driven Design
 
-### 2.6.x. Bounded Context: <Bounded Context Name>
+### 2.6.5. Bounded Context: Court & Venue Management (Gestión de Canchas)
 
-#### 2.6.x.1. Domain Layer
+#### 2.6.5.1. Domain Layer
 
-#### 2.6.x.2. Interface Layer
+**Entities / Aggregates**
 
-#### 2.6.x.3. Application Layer
+```
+Court (Cancha - Aggregate Root)
+├── courtId: int → Identificador único de la cancha
+├── ownerId: int → Propietario de la cancha
+├── name: String → Nombre de la cancha
+├── description: String → Descripción de la cancha
+├── location: Location (Value Object)
+├── sportType: SportType (Enum) → Tipo de deporte (Fútbol, Tenis, Básquet, etc.)
+├── surface: String → Tipo de superficie (Sintética, Grass, Cemento)
+├── pricePerHour: double → Precio por hora de uso
+├── capacity: int → Capacidad máxima de usuarios
+├── amenities: List<Amenity> → Servicios adicionales (estacionamiento, vestuarios, etc.)
+├── rating: double → Calificación promedio
+├── availability: AvailabilitySchedule (Value Object)
+├── images: List<ImageUrl> → Fotos de la cancha
+├── state: CourtState (Enum) → Estado (Activa, Inactiva, Bloqueada)
+├── createdAt: DateTime → Fecha de creación
+├── updatedAt: DateTime → Fecha de última actualización
 
-#### 2.6.x.4. Infrastructure Layer
+Métodos:
+├── createAvailability(horario) → Crea disponibilidad para horarios específicos
+├── updatePricing(newPrice) → Actualiza el precio por hora
+├── updateAvailability(slot, available) → Marca un slot como disponible o no
+├── blockTime(startTime, endTime, reason) → Bloquea tiempo por mantenimiento
+├── publishCourt() → Publica la cancha en la plataforma
+├── deactivateCourt() → Desactiva la cancha
+└── calculateOccupancy(period) → Calcula porcentaje de ocupación
+```
 
-#### 2.6.x.5. Bounded Context Software Architecture Component Level Diagrams
+**Value Objects**
 
-#### 2.6.x.6. Bounded Context Software Architecture Code Level Diagrams
+```
+Location
+├── address: String → Dirección completa
+├── city: String → Ciudad
+├── latitude: double → Latitud
+├── longitude: double → Longitud
+└── districtCode: String → Código del distrito
 
-##### 2.6.x.6.1. Bounded Context Domain Layer Class Diagrams
+AvailabilitySchedule
+├── slots: List<TimeSlot>
+├── workingHours: WorkingHours (lunes-domingo, hora inicio-fin)
+└── exceptions: List<BlockedPeriod> (fechas cerradas, mantenimiento)
 
-##### 2.6.x.6.2. Bounded Context Database Design Diagram
+TimeSlot
+├── date: Date → Fecha específica
+├── startTime: Time → Hora de inicio
+├── endTime: Time → Hora de finalización
+└── isAvailable: boolean → Disponibilidad actual
+
+Amenity
+├── amenityId: int
+├── name: String (Estacionamiento, Vestuarios, Ducha, Cafetería, etc.)
+└── included: boolean
+```
+
+**Domain Services**
+
+```
+CourtAvailabilityService
+├── checkAvailability(courtId, dateTime, duration) → boolean
+└── suggestAlternativeSlots(courtId, preferences) → List<TimeSlot>
+
+PricingService
+├── calculatePrice(courtId, duration, dayOfWeek) → double
+├── applyDiscount(courtId, reservationCount) → double
+└── validatePriceRange(price) → boolean
+
+CourtScheduleService
+├── generateAvailabilityCalendar(courtId, month) → Calendar
+├── publishSchedule(courtId, schedule) → void
+└── syncWithReservationSystem(courtId) → void
+```
+
+**Domain Events**
+
+```
+CourtPublished(courtId, ownerId, timestamp)
+CourtDeactivated(courtId, reason, timestamp)
+PricingUpdated(courtId, oldPrice, newPrice, timestamp)
+AvailabilityUpdated(courtId, slot, isAvailable, timestamp)
+TimeBlocked(courtId, startTime, endTime, reason, timestamp)
+CourtReviewed(courtId, rating, timestamp)
+```
+
+**Enums**
+
+```
+SportType: FUTBOL, TENIS, BASQUET, VOLEIBOL, PADEL, BADMINTON, OTRO
+CourtState: ACTIVA, INACTIVA, BLOQUEADA, EN_MANTENIMIENTO
+```
+
+---
+
+#### 2.6.5.2. Interface Layer
+
+**REST Controllers**
+
+```
+CourtController
+├── POST /courts → Crear nueva cancha
+│   Request: CreateCourtDTO
+│   Response: CourtResponseDTO
+│
+├── GET /courts/{courtId} → Obtener detalles de cancha
+│   Response: CourtDetailDTO
+│
+├── PUT /courts/{courtId} → Actualizar información de cancha
+│   Request: UpdateCourtDTO
+│   Response: CourtResponseDTO
+│
+├── GET /courts → Listar canchas (con filtros)
+│   Query: ?sport=FUTBOL&city=Lima&page=1
+│   Response: PagedCourtDTO
+│
+├── PATCH /courts/{courtId}/pricing → Actualizar precio
+│   Request: UpdatePricingDTO
+│   Response: PricingResponseDTO
+│
+├── PATCH /courts/{courtId}/availability → Actualizar disponibilidad
+│   Request: UpdateAvailabilityDTO
+│   Response: AvailabilityResponseDTO
+│
+├── POST /courts/{courtId}/block-time → Bloquear tiempo
+│   Request: BlockTimeDTO
+│   Response: BlockResponseDTO
+│
+├── DELETE /courts/{courtId} → Desactivar cancha
+│   Response: 204 No Content
+│
+├── GET /courts/{courtId}/calendar → Obtener calendario
+│   Query: ?month=2024-04
+│   Response: CalendarDTO
+│
+└── GET /courts/{courtId}/occupancy → Estadísticas de ocupación
+    Query: ?period=MONTH
+    Response: OccupancyStatisticsDTO
+```
+
+**DTOs (Data Transfer Objects)**
+
+```
+CreateCourtDTO
+├── name: String
+├── description: String
+├── location: LocationDTO
+├── sportType: String
+├── surface: String
+├── pricePerHour: double
+├── capacity: int
+├── amenities: List<String>
+└── images: List<MultipartFile>
+
+UpdateCourtDTO
+├── name: String
+├── description: String
+├── amenities: List<String>
+└── images: List<MultipartFile>
+
+UpdatePricingDTO
+├── pricePerHour: double
+└── effectiveDate: Date
+
+UpdateAvailabilityDTO
+├── workingHours: WorkingHoursDTO
+└── exceptions: List<BlockedPeriodDTO>
+
+BlockTimeDTO
+├── startTime: DateTime
+├── endTime: DateTime
+└── reason: String
+
+CourtResponseDTO
+├── courtId: int
+├── name: String
+├── location: LocationDTO
+├── sportType: String
+├── pricePerHour: double
+├── rating: double
+├── availability: AvailabilityDTO
+└── state: String
+
+CourtDetailDTO
+├── (todos los campos de CourtResponseDTO)
+├── description: String
+├── surface: String
+├── capacity: int
+├── amenities: List<AmenityDTO>
+├── images: List<ImageDTO>
+├── owner: CourtOwnerDTO
+└── reviews: List<ReviewDTO>
+
+CalendarDTO
+├── courtId: int
+├── month: String
+└── slots: List<SlotDTO>
+
+OccupancyStatisticsDTO
+├── courtId: int
+├── period: String
+├── totalSlots: int
+├── bookedSlots: int
+├── occupancyPercentage: double
+└── revenueEstimate: double
+```
+
+---
+
+#### 2.6.5.3. Application Layer
+
+**Command Handlers**
+
+```
+CreateCourtCommandHandler
+├── Input: CreateCourtCommand (name, location, sportType, pricePerHour, etc.)
+├── Validaciones:
+│   ├── Verificar que el propietario existe y está activo
+│   ├── Validar que la ubicación es válida
+│   ├── Validar que el precio está en rango permitido
+│   └── Verificar que el usuario no tiene más de N canchas activas
+└── Output: CourtCreatedEvent
+
+UpdateCourtCommandHandler
+├── Input: UpdateCourtCommand (courtId, updates)
+├── Validaciones:
+│   ├── Verificar que la cancha existe
+│   ├── Verificar que el usuario es propietario
+│   └── Validar datos actualizados
+└── Output: CourtUpdatedEvent
+
+UpdatePricingCommandHandler
+├── Input: UpdatePricingCommand (courtId, newPrice)
+├── Validaciones:
+│   ├── Precio debe ser > 0
+│   ├── No puede cambiar si hay reservas próximas (< 24 horas)
+│   └── Verificar permisos del propietario
+└── Output: PricingUpdatedEvent
+
+UpdateAvailabilityCommandHandler
+├── Input: UpdateAvailabilityCommand (courtId, schedule)
+├── Validaciones:
+│   ├── Horarios deben ser realistas (06:00 - 23:00)
+│   ├── No puede cerrar con reservas activas
+│   └── Validar formato de horarios
+└── Output: AvailabilityUpdatedEvent
+
+BlockTimeCommandHandler
+├── Input: BlockTimeCommand (courtId, startTime, endTime, reason)
+├── Validaciones:
+│   ├── Verificar que no hay reservas en ese período
+│   ├── Bloque no puede ser > 30 días
+│   └── Verificar permisos del propietario
+└── Output: TimeBlockedEvent
+
+DeactivateCourtCommandHandler
+├── Input: DeactivateCourtCommand (courtId, reason)
+├── Validaciones:
+│   ├── Verificar que no hay reservas activas
+│   ├── Cancelar todas las reservas futuras
+│   └── Verificar permisos del propietario
+└── Output: CourtDeactivatedEvent
+```
+
+**Event Handlers**
+
+```
+OnCourtPublishedHandler
+├── Escucha: CourtPublishedEvent
+├── Acciones:
+│   ├── Indexar cancha en Search & Discovery Context
+│   ├── Enviar confirmación por email al propietario
+│   └── Inicializar estadísticas
+└── Publica: CourtIndexedEvent
+
+OnPricingUpdatedHandler
+├── Escucha: PricingUpdatedEvent
+├── Acciones:
+│   ├── Notificar a propietario sobre cambio
+│   ├── Enviar notificación a deportistas que la siguen
+│   └── Actualizar índices de búsqueda
+└── Publica: SearchIndexUpdatedEvent
+
+OnAvailabilityUpdatedHandler
+├── Escucha: AvailabilityUpdatedEvent
+├── Acciones:
+│   ├── Sincronizar con Booking & Reservation Context
+│   ├── Actualizar calendario de reservas disponibles
+│   └── Notificar cambios a usuarios interesados
+└── Publica: ReservationAvailabilityChangedEvent
+
+OnTimeBlockedHandler
+├── Escucha: TimeBlockedEvent
+├── Acciones:
+│   ├── Marcar slots como no disponibles
+│   ├── Notificar sobre cierre temporal
+│   └── Generar recordatorio de reapertura
+└── Publica: TimeSlotBlockedEvent
+```
+
+---
+
+#### 2.6.5.4. Infrastructure Layer
+
+**Repositories**
+
+```
+CourtRepository
+├── save(court: Court) → void
+├── findById(courtId: int) → Court
+├── findByOwnerId(ownerId: int) → List<Court>
+├── findBySportType(sportType: SportType) → List<Court>
+├── findByLocation(latitude, longitude, radiusKm) → List<Court>
+├── update(court: Court) → void
+├── delete(courtId: int) → void
+└── findAvailableCourts(sportType, date, time, duration) → List<Court>
+
+AvailabilityRepository
+├── save(availability: AvailabilitySchedule) → void
+├── findByCourtId(courtId: int) → AvailabilitySchedule
+├── updateSlot(courtId, slot, available) → void
+├── blockTime(courtId, startTime, endTime) → void
+└── getCalendar(courtId, month) → Calendar
+
+CourtRatingRepository
+├── save(rating: Rating) → void
+├── findByCourtId(courtId: int) → List<Rating>
+├── calculateAverageRating(courtId: int) → double
+└── updateCourtRating(courtId, newAverage) → void
+```
+
+**Adapters**
+
+```
+ImageStorageAdapter (Cloud Storage: AWS S3 / Google Cloud Storage)
+├── uploadImage(file: MultipartFile, courtId: int) → String (URL)
+├── deleteImage(imageUrl: String) → void
+└── generateThumbnail(imageUrl: String) → String
+
+LocationGeocoder (Google Maps API)
+├── geocode(address: String) → Location (lat, lng)
+├── reverseGeocode(lat, lng) → Address
+└── calculateDistance(lat1, lng1, lat2, lng2) → double
+
+CourtNotificationAdapter
+├── sendCourtPublishedEmail(owner, court) → void
+├── sendPricingChangeNotification(followers, court, oldPrice, newPrice) → void
+└── sendAvailabilityAlert(users, court, newSchedule) → void
+
+SearchIndexAdapter (Elasticsearch / Algolia)
+├── indexCourt(court: Court) → void
+├── updateIndex(courtId, updates) → void
+├── removeCourt(courtId: int) → void
+└── searchCourts(filters) → List<CourtSearchResult>
+```
+
+**Persistencia**
+
+```
+Tabla: courts
+├── court_id (PK, INT, AUTO_INCREMENT)
+├── owner_id (FK → users.user_id)
+├── name (VARCHAR(255), NOT NULL)
+├── description (TEXT)
+├── address (VARCHAR(500), NOT NULL)
+├── city (VARCHAR(100), NOT NULL)
+├── latitude (DECIMAL(10,8), NOT NULL)
+├── longitude (DECIMAL(11,8), NOT NULL)
+├── sport_type (ENUM, NOT NULL)
+├── surface (VARCHAR(50))
+├── price_per_hour (DECIMAL(10,2), NOT NULL)
+├── capacity (INT, NOT NULL)
+├── rating (DECIMAL(3,2), DEFAULT 0)
+├── state (ENUM, DEFAULT 'ACTIVA')
+├── created_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP)
+├── updated_at (TIMESTAMP, ON UPDATE CURRENT_TIMESTAMP)
+└── INDEX (owner_id, state), INDEX (sport_type, city), SPATIAL INDEX (latitude, longitude)
+
+Tabla: court_amenities
+├── amenity_id (PK, INT, AUTO_INCREMENT)
+├── court_id (FK → courts.court_id)
+├── amenity_name (VARCHAR(100))
+├── included (BOOLEAN)
+└── INDEX (court_id)
+
+Tabla: court_availability
+├── availability_id (PK, INT, AUTO_INCREMENT)
+├── court_id (FK → courts.court_id, UNIQUE)
+├── monday_start (TIME)
+├── monday_end (TIME)
+├── tuesday_start (TIME)
+├── ... (miércoles a domingo)
+└── updated_at (TIMESTAMP)
+
+Tabla: court_blocked_periods
+├── block_id (PK, INT, AUTO_INCREMENT)
+├── court_id (FK → courts.court_id)
+├── start_time (DATETIME)
+├── end_time (DATETIME)
+├── reason (VARCHAR(255))
+├── created_at (TIMESTAMP)
+└── INDEX (court_id, start_time)
+
+Tabla: court_images
+├── image_id (PK, INT, AUTO_INCREMENT)
+├── court_id (FK → courts.court_id)
+├── image_url (VARCHAR(500))
+├── is_primary (BOOLEAN)
+└── created_at (TIMESTAMP)
+
+Tabla: court_ratings
+├── rating_id (PK, INT, AUTO_INCREMENT)
+├── court_id (FK → courts.court_id)
+├── user_id (FK → users.user_id)
+├── score (INT, CONSTRAINT CHECK (score >= 1 AND score <= 5))
+├── comment (TEXT)
+├── created_at (TIMESTAMP)
+└── INDEX (court_id, created_at)
+```
+
+---
+
+#### 2.6.5.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Descripción:**
+
+El diagrama de componentes para el Court & Venue Management Context presenta la descomposición del contenedor en componentes funcionales cohesivos que manejan aspectos específicos del negocio de gestión de canchas:
+
+**Componentes Principales:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│         Court & Venue Management Container                  │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Court Management Component                          │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Crear/Actualizar canchas                           │   │
+│  │ • Gestionar información de canchas                   │   │
+│  │ • Validar datos de entrada                           │   │
+│  │ • Publicar/Desactivar canchas                        │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Availability & Scheduling Component                │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Gestionar disponibilidad por horarios              │   │
+│  │ • Bloquear tiempo para mantenimiento                 │   │
+│  │ • Generar calendario de disponibilidad               │   │
+│  │ • Sincronizar con sistema de reservas                │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Pricing & Commerce Component                        │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Gestionar precios por hora                         │   │
+│  │ • Aplicar descuentos dinámicos                       │   │
+│  │ • Calcular ingresos y estadísticas                   │   │
+│  │ • Validar rangos de precios                          │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Search & Discovery Component                        │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Indexar canchas en motor de búsqueda               │   │
+│  │ • Mantener metadatos para búsqueda                   │   │
+│  │ • Optimizar para consultas geoespaciales             │   │
+│  │ • Actualizar índices en tiempo real                  │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Notification Component                              │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Enviar notificaciones a propietarios                │   │
+│  │ • Alertas de cambios de disponibilidad                │   │
+│  │ • Recordatorios de eventos importantes                │   │
+│  │ • Coordinar con Notification & Communication Context  │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Repository & Data Access Component                  │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • CourtRepository                                     │   │
+│  │ • AvailabilityRepository                              │   │
+│  │ • CourtRatingRepository                               │   │
+│  │ • Implementación de patrones de persistencia          │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                               │
+└─────────────────────────────────────────────────────────────┘
+         ↓                           ↓                   ↓
+    ┌────────────┐      ┌────────────────┐      ┌──────────────┐
+    │   SQLite   │      │  AWS S3 / GCS  │      │   Elasticsearch│
+    │  (Courts)  │      │  (Images)      │      │  (Índices)     │
+    └────────────┘      └────────────────┘      └──────────────┘
+```
+
+**Relaciones entre Componentes:**
+
+- **Court Management ↔ Availability & Scheduling:** Court Management actualiza Availability cuando se publica una cancha
+- **Pricing & Commerce → Repository:** Persiste cambios de precios en la base de datos
+- **Availability & Scheduling → Search & Discovery:** Notifica cambios de disponibilidad para actualizar índices
+- **Notification ← Todos:** Se suscribe a eventos de todos los componentes para enviar notificaciones
+- **Repository → Data Store:** Accede y persiste toda la información en SQLite
+- **Search & Discovery ↔ Elasticsearch:** Mantiene sincronizado el índice de búsqueda
+
+---
+
+#### 2.6.5.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 2.6.5.6.1. Bounded Context Domain Layer Class Diagrams
+
+**Diagrama UML de Clases - Court & Venue Management Domain Layer**
+
+```
+┌─────────────────────────────┐
+│      <<Aggregate>>          │
+│         Court               │
+├─────────────────────────────┤
+│ - courtId: int              │
+│ - ownerId: int              │
+│ - name: String              │
+│ - description: String       │
+│ - location: Location        │
+│ - sportType: SportType      │
+│ - surface: String           │
+│ - pricePerHour: double      │
+│ - capacity: int             │
+│ - amenities: List<Amenity>  │
+│ - rating: double            │
+│ - availability: AvailSched  │
+│ - images: List<ImageUrl>    │
+│ - state: CourtState         │
+│ - createdAt: DateTime       │
+│ - updatedAt: DateTime       │
+├─────────────────────────────┤
+│ + publishCourt(): void      │
+│ + updatePricing(p): void    │
+│ + updateAvailability(): void│
+│ + blockTime(s,e,r): void    │
+│ + deactivateCourt(): void   │
+│ + calculateOccupancy(): dbl │
+│ + addAmenity(a): void       │
+│ + removeAmenity(a): void    │
+└────────────────┬────────────┘
+                 │
+     ┌───────────┴────────────┐
+     │                        │
+┌────▼──────────────────┐ ┌──▼──────────────────────────┐
+│   <<ValueObject>>     │ │  <<ValueObject>>            │
+│     Location          │ │  AvailabilitySchedule       │
+├───────────────────────┤ ├─────────────────────────────┤
+│ - address: String     │ │ - slots: List<TimeSlot>     │
+│ - city: String        │ │ - workingHours: WorkHours   │
+│ - latitude: double    │ │ - exceptions: List<Block>   │
+│ - longitude: double   │ ├─────────────────────────────┤
+│ - districtCode: String│ │ + isAvailable(slot): bool   │
+├───────────────────────┤ │ + getAvailableSlots(): List │
+│ + distance(loc): dbl  │ │ + blockPeriod(s,e): void    │
+│ + isValid(): boolean  │ │ + unblockPeriod(s,e): void  │
+└───────────────────────┘ └─────────────────────────────┘
+          ▲                          ▲
+          │                          │
+          │ uses                     │ contains
+          │                          │
+     ┌────┴───────────────┐    ┌────┴─────────────────────┐
+     │                    │    │                          │
+┌────▼─────────────────┐  │ ┌──▼────────────────────────┐│
+│  <<ValueObject>>     │  │ │  <<ValueObject>>          ││
+│   TimeSlot           │  │ │   Amenity                 ││
+├──────────────────────┤  │ ├──────────────────────────┤│
+│ - date: Date         │  │ │ - amenityId: int         ││
+│ - startTime: Time    │  │ │ - name: String           ││
+│ - endTime: Time      │  │ │ - included: boolean      ││
+│ - isAvailable: bool  │  │ ├──────────────────────────┤│
+├──────────────────────┤  │ │ + getName(): String      ││
+│ + duration(): int    │  │ │ + isIncluded(): bool     ││
+│ + overlaps(ts): bool │  │ └──────────────────────────┘│
+└──────────────────────┘  └───────────────────────────┘
+
+┌─────────────────────────────┐      ┌────────────────────┐
+│   <<Interface>>             │      │   <<Enum>>         │
+│   CourtRepository           │      │   SportType        │
+├─────────────────────────────┤      ├────────────────────┤
+│ + save(c: Court): void      │      │ FUTBOL             │
+│ + findById(id): Court       │      │ TENIS              │
+│ + findByOwnerId(id): List   │      │ BASQUET            │
+│ + update(c: Court): void    │      │ VOLEIBOL           │
+│ + delete(id): void          │      │ PADEL              │
+│ + findAvailable(): List     │      │ BADMINTON          │
+└─────────────────────────────┘      │ OTRO               │
+           △                         └────────────────────┘
+           │ implements
+           │                        ┌────────────────────┐
+    ┌──────┴───────┐                │   <<Enum>>         │
+    │              │                │   CourtState       │
+┌───▼──────────────────────────┐    ├────────────────────┤
+│ CourtRepositoryImpl           │    │ ACTIVA             │
+├──────────────────────────────┤    │ INACTIVA           │
+│ - db: Database               │    │ BLOQUEADA          │
+├──────────────────────────────┤    │ EN_MANTENIMIENTO   │
+│ + save(c): void              │    └────────────────────┘
+│ + findById(id): Court        │
+│ + update(c): void            │
+│ + delete(id): void           │
+└──────────────────────────────┘
+
+┌────────────────────────────────────┐
+│   <<Service>>                      │
+│   CourtAvailabilityService         │
+├────────────────────────────────────┤
+│ - courtRepository: CourtRepository │
+├────────────────────────────────────┤
+│ + checkAvailability(): boolean     │
+│ + suggestAlternativeSlots(): List  │
+│ + reserveSlot(slot): void          │
+│ + releaseSlot(slot): void          │
+└────────────────────────────────────┘
+
+Relaciones:
+- Court *──────── 1 Location (contains)
+- Court *──────── 1 AvailabilitySchedule (contains)
+- Court *──────── * Amenity (contains)
+- AvailabilitySchedule *──────── * TimeSlot (contains)
+- CourtRepository ◄────────────── Court (manages)
+- CourtAvailabilityService ───────► CourtRepository (uses)
+```
+
+---
+
+##### 2.6.5.6.2. Bounded Context Database Design Diagram
+
+**Entity Relationship Diagram (ERD) - Court & Venue Management**
+
+```
+┌──────────────────────────────┐
+│         users                │
+├──────────────────────────────┤
+│ PK user_id (INT)             │
+│ name (VARCHAR)               │
+│ email (VARCHAR, UNIQUE)      │
+│ role (ENUM)                  │
+└──────────────────────────────┘
+         ▲
+         │ FK (owner_id)
+         │
+┌─────────┴──────────────────────────────┐
+│          courts                        │
+├────────────────────────────────────────┤
+│ PK court_id (INT, AUTO_INCREMENT)      │
+│ FK owner_id (INT)                      │
+│ name (VARCHAR(255), NOT NULL)          │
+│ description (TEXT)                     │
+│ address (VARCHAR(500), NOT NULL)       │
+│ city (VARCHAR(100), NOT NULL)          │
+│ district_code (VARCHAR(20))            │
+│ latitude (DECIMAL(10,8), NOT NULL)     │
+│ longitude (DECIMAL(11,8), NOT NULL)    │
+│ sport_type (ENUM, NOT NULL)            │
+│ surface (VARCHAR(50))                  │
+│ price_per_hour (DECIMAL(10,2))         │
+│ capacity (INT)                         │
+│ rating (DECIMAL(3,2), DEFAULT 0)       │
+│ state (ENUM, DEFAULT 'ACTIVA')         │
+│ created_at (TIMESTAMP)                 │
+│ updated_at (TIMESTAMP)                 │
+│ UNIQUE KEY (owner_id, name)            │
+│ INDEX idx_sport_city (sport_type, city)│
+│ SPATIAL INDEX idx_location (lat, lng)  │
+└─────────────────────┬────────────────────┘
+     ┌────────────────┼────────────────┐
+     │                │                │
+     │                │                │
+┌────▼──────────┐ ┌──▼────────────┐ ┌▼─────────────────┐
+│court_amenities│ │court_images    │ │court_availability│
+├───────────────┤ ├────────────────┤ ├──────────────────┤
+│PK amenity_id  │ │PK image_id     │ │PK availability_id│
+│FK court_id    │ │FK court_id     │ │FK court_id (UNIQ)│
+│amenity_name   │ │image_url       │ │monday_start (TIM)│
+│included (BOOL)│ │is_primary (BOO)│ │monday_end (TIME) │
+│               │ │created_at      │ │tuesday_start     │
+│               │ │                │ │tuesday_end       │
+│               │ │                │ │...wednesday-sun..│
+│               │ │                │ │updated_at        │
+└───────────────┘ └────────────────┘ └──────────────────┘
+     │                │
+     │                │
+     └────────┬───────┘
+              │ FK (court_id)
+              │
+┌─────────────▼──────────────────┐
+│ court_blocked_periods          │
+├────────────────────────────────┤
+│ PK block_id (INT)              │
+│ FK court_id (INT)              │
+│ start_time (DATETIME)          │
+│ end_time (DATETIME)            │
+│ reason (VARCHAR(255))          │
+│ created_at (TIMESTAMP)         │
+│ CONSTRAINT no_overlapping_blocks│
+│ INDEX idx_court_dates          │
+└────────────────────────────────┘
+
+┌────────────────────────────────┐
+│ court_ratings                  │
+├────────────────────────────────┤
+│ PK rating_id (INT)             │
+│ FK court_id (INT)              │
+│ FK user_id (INT)               │
+│ score (INT, CHECK 1-5)         │
+│ comment (TEXT)                 │
+│ created_at (TIMESTAMP)         │
+│ UNIQUE (court_id, user_id)     │
+│ INDEX idx_court_score          │
+└────────────────────────────────┘
+
+Relaciones:
+- users (1) ──── (*) courts
+- courts (1) ──── (*) court_amenities
+- courts (1) ──── (*) court_images
+- courts (1) ──── (1) court_availability
+- courts (1) ──── (*) court_blocked_periods
+- courts (1) ──── (*) court_ratings
+- users (1) ──── (*) court_ratings
+```
+
+---
