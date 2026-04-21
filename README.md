@@ -4199,3 +4199,693 @@ Relaciones:
 ```
 
 ---
+
+### 2.6.6. Bounded Context: Availabilities (Disponibilidad de Coaches)
+
+#### 2.6.6.1. Domain Layer
+
+**Entities / Aggregates**
+
+```
+Availability (Aggregate Root)
+├── id: int → Identificador único de la disponibilidad
+├── date: Date → Fecha del bloque horario
+├── startTime: Time → Hora de inicio del bloque
+├── endTime: Time → Hora de finalización del bloque
+├── status: AvailabilityStatus (Enum) → Estado actual
+├── coach: Coach (Reference) → Entrenador propietario
+├── createdAt: DateTime → Fecha de creación
+└── updatedAt: DateTime → Fecha de última actualización
+
+Métodos:
+├── isConflictWith(otherAvailability) → boolean
+├── getSlotDuration() → int (en minutos)
+├── markAsReserved() → void
+├── markAsAvailable() → void
+├── markAsUnavailable() → void
+├── isValidTimeRange() → boolean
+├── canBeModified() → boolean
+└── overlapsWithDate(date) → boolean
+```
+
+**Value Objects**
+
+```
+AvailabilityStatus
+├── AVAILABLE → Slot disponible para reserva
+├── RESERVED → Slot ya reservado por un cliente
+└── UNAVAILABLE → Slot bloqueado por el entrenador
+```
+
+**Domain Services**
+
+```
+AvailabilityScheduleService
+├── generateWeeklySchedule(coachId, schedule) → void
+├── checkConflicts(coachId, date, startTime, endTime) → List<Availability>
+├── suggestAlternativeSlots(coachId, date, duration) → List<Availability>
+└── validateAvailabilityRange(startTime, endTime) → boolean
+
+AvailabilityStatusService
+├── updateStatusFromBooking(availability, booking) → void
+├── releaseSlot(availability) → void
+├── markPermanentlyUnavailable(availability, reason) → void
+└── syncStatusWithBookings(coachId) → void
+```
+
+**Domain Events**
+
+```
+AvailabilityCreated(availabilityId, coachId, date, startTime, endTime)
+AvailabilityReserved(availabilityId, coachId, bookingId, timestamp)
+AvailabilityReleased(availabilityId, coachId, timestamp)
+AvailabilityMarkedUnavailable(availabilityId, coachId, reason, timestamp)
+SlotDurationCalculated(availabilityId, durationMinutes, timestamp)
+ConflictDetected(availabilityId, conflictingSlots[], timestamp)
+```
+
+**Enums**
+
+```
+AvailabilityStatus: AVAILABLE, RESERVED, UNAVAILABLE
+TimeRange: [06:00 - 23:00] (válido solo dentro de este rango)
+```
+
+---
+
+#### 2.6.6.2. Interface Layer
+
+**REST Controllers**
+
+```
+AvailabilityController
+├── POST /api/v1/availabilities → Crear nueva disponibilidad
+│   Request: CreateAvailabilityDTO
+│   Response: AvailabilityResponseDTO
+│
+├── GET /api/v1/availabilities → Listar disponibilidades (con filtros)
+│   Query: ?coachId=1&date=2024-04-25&status=AVAILABLE
+│   Response: PagedAvailabilityDTO
+│
+├── GET /api/v1/availabilities/{id} → Obtener disponibilidad específica
+│   Response: AvailabilityDetailDTO
+│
+├── PUT /api/v1/availabilities/{id} → Actualizar disponibilidad
+│   Request: UpdateAvailabilityDTO
+│   Response: AvailabilityResponseDTO
+│
+├── DELETE /api/v1/availabilities/{id} → Eliminar disponibilidad
+│   Response: 204 No Content
+│
+├── GET /api/v1/availabilities/coach/{coachId} → Listar por entrenador
+│   Query: ?startDate=2024-04-25&endDate=2024-05-25
+│   Response: List<AvailabilityDTO>
+│
+├── GET /api/v1/availabilities/coach/{coachId}/weekly → Agenda semanal
+│   Query: ?week=2024-W17
+│   Response: WeeklyScheduleDTO
+│
+├── PATCH /api/v1/availabilities/{id}/mark-reserved → Marcar como reservado
+│   Request: MarkReservedDTO { bookingId }
+│   Response: AvailabilityResponseDTO
+│
+├── PATCH /api/v1/availabilities/{id}/mark-available → Marcar como disponible
+│   Request: EmptyRequest
+│   Response: AvailabilityResponseDTO
+│
+└── GET /api/v1/availabilities/coach/{coachId}/conflicts → Detectar conflictos
+    Query: ?startDate=2024-04-25
+    Response: List<ConflictDTO>
+```
+
+**DTOs (Data Transfer Objects)**
+
+```
+CreateAvailabilityDTO
+├── coachId: int (obligatorio)
+├── date: Date (obligatorio)
+├── startTime: Time (obligatorio, formato HH:mm)
+├── endTime: Time (obligatorio, formato HH:mm)
+└── status: String (opcional, default: AVAILABLE)
+
+UpdateAvailabilityDTO
+├── date: Date
+├── startTime: Time
+├── endTime: Time
+└── status: String
+
+AvailabilityResponseDTO
+├── id: int
+├── date: Date
+├── startTime: Time
+├── endTime: Time
+├── status: String
+├── durationMinutes: int
+├── coach: CoachSummaryDTO { id, name }
+└── createdAt: DateTime
+
+AvailabilityDetailDTO
+├── (todos los campos de AvailabilityResponseDTO)
+├── updatedAt: DateTime
+├── canBeModified: boolean
+└── relatedBooking: BookingSummaryDTO (si status=RESERVED)
+
+WeeklyScheduleDTO
+├── coachId: int
+├── weekStart: Date
+├── weekEnd: Date
+└── slots: List<DayScheduleDTO>
+
+DayScheduleDTO
+├── date: Date
+├── dayName: String
+├── availabilities: List<SlotDTO>
+
+SlotDTO
+├── id: int
+├── startTime: Time
+├── endTime: Time
+├── status: String
+└── isConflicted: boolean
+
+CoachSummaryDTO
+├── id: int
+└── name: String
+
+ConflictDTO
+├── slot1Id: int
+├── slot2Id: int
+├── startTime: Time
+├── endTime: Time
+└── reason: String
+
+MarkReservedDTO
+├── bookingId: int → ID de la reserva asociada
+└── reservedAt: DateTime
+
+PagedAvailabilityDTO
+├── content: List<AvailabilityDTO>
+├── totalElements: long
+├── totalPages: int
+├── currentPage: int
+└── pageSize: int
+```
+
+---
+
+#### 2.6.6.3. Application Layer
+
+**Command Handlers**
+
+```
+CreateAvailabilityCommandHandler
+├── Input: CreateAvailabilityCommand (coachId, date, startTime, endTime, status)
+├── Validaciones:
+│   ├── Coach debe existir y estar activo
+│   ├── startTime debe ser >= 06:00
+│   ├── endTime debe ser <= 23:00
+│   ├── startTime < endTime (validación débil, no implementada)
+│   └── No validar solapes con otros slots (limitación actual)
+├── Acciones:
+│   ├── Crear entidad Availability
+│   ├── Persistir en repositorio
+│   └── Emitir evento AvailabilityCreated
+└── Output: AvailabilityCreatedEvent
+
+UpdateAvailabilityCommandHandler
+├── Input: UpdateAvailabilityCommand (availabilityId, updates)
+├── Validaciones:
+│   ├── Availability debe existir
+│   ├── Status actual != RESERVED (si está reservado no se puede cambiar)
+│   ├── Validar rango horario si se envía
+│   └── Verificar que el coach propietario autoriza el cambio
+├── Acciones:
+│   ├── Actualizar campos (date, startTime, endTime)
+│   ├── Mantener integridad de reservas
+│   └── Emitir evento AvailabilityUpdated
+└── Output: AvailabilityUpdatedEvent
+
+MarkAsReservedCommandHandler
+├── Input: MarkAsReservedCommand (availabilityId, bookingId)
+├── Validaciones:
+│   ├── Availability debe estar en estado AVAILABLE
+│   ├── Booking debe existir
+│   └── Fechas deben coincidir
+├── Acciones:
+│   ├── Cambiar status a RESERVED
+│   ├── Guardar referencia a booking
+│   └── Emitir evento AvailabilityReserved
+└── Output: AvailabilityReservedEvent
+
+MarkAsAvailableCommandHandler
+├── Input: MarkAsAvailableCommand (availabilityId)
+├── Validaciones:
+│   ├── Availability debe existir
+│   └── Puede ser RESERVED o UNAVAILABLE
+├── Acciones:
+│   ├── Cambiar status a AVAILABLE
+│   ├── Limpiar referencia a booking si existe
+│   └── Emitir evento AvailabilityReleased
+└── Output: AvailabilityReleasedEvent
+
+MarkAsUnavailableCommandHandler
+├── Input: MarkAsUnavailableCommand (availabilityId, reason)
+├── Validaciones:
+│   ├── Availability debe existir
+│   └── No puede estar RESERVED
+├── Acciones:
+│   ├── Cambiar status a UNAVAILABLE
+│   ├── Guardar reason/motivo
+│   └── Emitir evento AvailabilityMarkedUnavailable
+└── Output: AvailabilityMarkedUnavailableEvent
+
+DeleteAvailabilityCommandHandler
+├── Input: DeleteAvailabilityCommand (availabilityId)
+├── Validaciones:
+│   ├── Availability debe existir
+│   └── No puede estar RESERVED
+├── Acciones:
+│   ├── Eliminar registro
+│   └── Emitir evento AvailabilityDeleted
+└── Output: AvailabilityDeletedEvent
+```
+
+**Event Handlers**
+
+```
+OnAvailabilityCreatedHandler
+├── Escucha: AvailabilityCreatedEvent
+├── Acciones:
+│   ├── Notificar al coach que su disponibilidad fue creada
+│   ├── Indexar en Search & Discovery para búsquedas futuras
+│   └── Actualizar calendario visible en frontend
+└── Publica: AvailabilityIndexedEvent
+
+OnAvailabilityReservedHandler
+├── Escucha: AvailabilityReservedEvent
+├── Acciones:
+│   ├── Notificar al coach que su slot fue reservado
+│   ├── Actualizar estado en índices de búsqueda
+│   ├── Enviar confirmación al usuario que hizo la reserva
+│   └── Iniciar proceso de facturación si aplica
+└── Publica: SlotReservedConfirmedEvent
+
+OnAvailabilityReleasedHandler
+├── Escucha: AvailabilityReleasedEvent
+├── Acciones:
+│   ├── Revertir a AVAILABLE si fue RESERVED
+│   ├── Notificar cambio de estado
+│   ├── Actualizar índices de búsqueda
+│   └── Generar notificación a usuarios interesados
+└── Publica: SlotBecameAvailableEvent
+
+OnBookingCancelledHandler (desde Booking Context)
+├── Escucha: BookingCancelledEvent
+├── Acciones:
+│   ├── Encontrar Availability asociada
+│   ├── Cambiar status de RESERVED a AVAILABLE
+│   └── Notificar al coach que el slot quedó libre
+└── Publica: AvailabilityReleasedEvent
+```
+
+---
+
+#### 2.6.6.4. Infrastructure Layer
+
+**Repositories**
+
+```
+AvailabilityRepository
+├── save(availability: Availability) → void
+├── findById(availabilityId: int) → Availability
+├── findByCoachId(coachId: int) → List<Availability>
+├── findByCoachAndDate(coachId, date) → List<Availability>
+├── findByCoachAndDateRange(coachId, startDate, endDate) → List<Availability>
+├── findByStatus(status: AvailabilityStatus) → List<Availability>
+├── findConflicts(coachId, date, startTime, endTime) → List<Availability>
+├── findAvailableSlots(coachId, date) → List<Availability>
+├── update(availability: Availability) → void
+├── delete(availabilityId: int) → void
+└── findByCoachIdAndWeek(coachId, weekNumber) → List<Availability>
+```
+
+**Adapters**
+
+```
+AvailabilityNotificationAdapter
+├── notifyCoachSlotCreated(coach, availability) → void
+├── notifyCoachSlotReserved(coach, availability, booking) → void
+├── notifyCoachSlotReleased(coach, availability) → void
+├── notifyUserSlotAvailable(user, availability, coach) → void
+└── sendWeeklyScheduleReminder(coach) → void
+
+AvailabilitySearchIndexAdapter (Elasticsearch)
+├── indexAvailability(availability) → void
+├── updateIndex(availabilityId, updates) → void
+├── removeFromIndex(availabilityId) → void
+├── searchAvailableSlots(coachId, date, duration) → List<SearchResult>
+└── bulkIndexCoachSchedule(coachId) → void
+
+AvailabilityCalendarAdapter (Google Calendar Integration)
+├── syncToCalendar(coach, availability) → void
+├── removeFromCalendar(availability) → void
+├── getCoachCalendarEvents(coachId, dateRange) → List<CalendarEvent>
+└── markBlockedTime(coach, startDate, endDate, reason) → void
+
+ConflictDetectionAdapter
+├── detectTimeConflicts(coachId, startTime, endTime, date) → List<Conflict>
+├── validateTimeRange(startTime, endTime) → boolean
+└── calculateSlotsOverlap(slot1, slot2) → int (duración en minutos)
+```
+
+**Persistencia**
+
+```
+Tabla: availabilities
+├── availability_id (PK, INT, AUTO_INCREMENT)
+├── coach_id (FK → coaches.coach_id, NOT NULL)
+├── date (DATE, NOT NULL)
+├── start_time (TIME, NOT NULL)
+├── end_time (TIME, NOT NULL)
+├── status (ENUM, DEFAULT 'AVAILABLE')
+├── booking_id (FK → bookings.booking_id, NULLABLE)
+├── created_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP)
+├── updated_at (TIMESTAMP, ON UPDATE CURRENT_TIMESTAMP)
+├── UNIQUE KEY (coach_id, date, start_time, end_time)
+├── INDEX idx_coach_date (coach_id, date)
+├── INDEX idx_coach_status (coach_id, status)
+├── INDEX idx_date_status (date, status)
+└── CONSTRAINT check_time_range (start_time < end_time AND HOUR(start_time) >= 6 AND HOUR(end_time) <= 23)
+
+Tabla: availability_conflicts_log (para auditoría)
+├── conflict_id (PK, INT, AUTO_INCREMENT)
+├── availability_id1 (FK → availabilities.availability_id)
+├── availability_id2 (FK → availabilities.availability_id)
+├── conflict_type (VARCHAR, e.g., 'TIME_OVERLAP')
+├── detected_at (TIMESTAMP)
+└── resolved (BOOLEAN, DEFAULT FALSE)
+```
+
+---
+
+#### 2.6.6.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Descripción:**
+
+El diagrama de componentes para el Availabilities Context muestra cómo se organiza la gestión de disponibilidad de coaches:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│      Availabilities Container                               │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Availability Management Component                   │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Crear/Actualizar disponibilidades                  │   │
+│  │ • Gestionar duración de slots                        │   │
+│  │ • Cambiar estados (AVAILABLE/RESERVED/UNAVAILABLE)   │   │
+│  │ • Validar rangos horarios                            │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Conflict Detection Component                        │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Detectar solapes de horarios                       │   │
+│  │ • Validar integridad de slots                        │   │
+│  │ • Sugerir slots alternativos                         │   │
+│  │ • Generar reportes de conflictos                     │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Schedule Generation Component                       │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Generar agenda semanal/mensual                     │   │
+│  │ • Crear bloques horarios recurrentes                 │   │
+│  │ • Gestionar excepciones y bloques                    │   │
+│  │ • Sincronizar con calendario externo                 │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Status Management Component                         │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Actualizar estado de slots                         │   │
+│  │ • Sincronizar con reservas (Booking Context)         │   │
+│  │ • Liberar slots cuando se cancela reserva            │   │
+│  │ • Bloquear slots permanentemente                     │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Notification Component                              │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Notificar al coach sobre cambios                   │   │
+│  │ • Alertar a usuarios de nuevos slots                 │   │
+│  │ • Enviar recordatorios de sesiones próximas          │   │
+│  │ • Coordinar con Notification & Communication Context │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                               │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Repository & Data Access Component                  │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • AvailabilityRepository                             │   │
+│  │ • Persistencia en base de datos                      │   │
+│  │ • Caché de disponibilidades frecuentes               │   │
+│  │ • Optimización de queries                            │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                               │
+└─────────────────────────────────────────────────────────────┘
+         ↓                           ↓                   ↓
+    ┌────────────┐      ┌────────────────┐      ┌──────────────┐
+    │   SQLite   │      │  Elasticsearch  │      │Google Calendar│
+    │(Availabil) │      │  (Índices)      │      │  (Sync)      │
+    └────────────┘      └────────────────┘      └──────────────┘
+         ↑                                              
+         │ Interacción con Booking Context
+    ┌────────────┐
+    │  Bookings  │
+    └────────────┘
+```
+
+**Relaciones entre Componentes:**
+
+- **Availability Management ↔ Conflict Detection:** Valida y detecta conflictos antes de persistir
+- **Schedule Generation → Availability Management:** Genera slots que luego Availability Management persiste
+- **Status Management ← Booking Context:** Escucha cambios en reservas para actualizar estados
+- **Notification ← Todos:** Se suscribe a eventos de todos los componentes
+- **Repository ← Todos:** Accede a los datos persistidos en SQLite
+- **Elasticsearch:** Mantiene índices para búsquedas rápidas de slots disponibles
+- **Google Calendar:** Sincroniza la agenda del coach para coordinación externa
+
+---
+
+#### 2.6.6.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 2.6.6.6.1. Bounded Context Domain Layer Class Diagrams
+
+**Diagrama UML de Clases - Availabilities Domain Layer**
+
+```
+┌─────────────────────────────────────┐
+│      <<Aggregate>>                  │
+│      Availability                   │
+├─────────────────────────────────────┤
+│ - id: int                           │
+│ - date: Date                        │
+│ - startTime: Time                   │
+│ - endTime: Time                     │
+│ - status: AvailabilityStatus        │
+│ - coach: Coach (Reference)          │
+│ - bookingId: int (nullable)         │
+│ - createdAt: DateTime               │
+│ - updatedAt: DateTime               │
+├─────────────────────────────────────┤
+│ + isConflictWith(other): boolean    │
+│ + getSlotDuration(): int            │
+│ + markAsReserved(): void            │
+│ + markAsAvailable(): void           │
+│ + markAsUnavailable(): void         │
+│ + isValidTimeRange(): boolean       │
+│ + canBeModified(): boolean          │
+│ + overlapsWithDate(date): boolean   │
+└────────────────┬────────────────────┘
+                 │
+     ┌───────────┴────────────┐
+     │                        │
+┌────▼──────────────────┐ ┌──▼────────────────────────┐
+│   <<ValueObject>>     │ │  <<ValueObject>>          │
+│  AvailabilityStatus   │ │  TimeRange                │
+├───────────────────────┤ ├───────────────────────────┤
+│ - name: String        │ │ - startTime: Time         │
+│ - value: String       │ │ - endTime: Time           │
+├───────────────────────┤ ├───────────────────────────┤
+│ + isAvailable(): bool │ │ + isValid(): boolean      │
+│ + isReserved(): bool  │ │ + duration(): int         │
+│ + isUnavailable(): bo │ │ + overlaps(range): bool   │
+└───────────────────────┘ │ + contains(time): bool    │
+          ▲                └───────────────────────────┘
+          │                         ▲
+          │                         │
+          │                    uses │
+          │                         │
+          ├─────────────────────────┤
+
+┌─────────────────────────────────────┐
+│   <<Reference>>                     │
+│   Coach                             │
+├─────────────────────────────────────┤
+│ - id: int                           │
+│ - name: String                      │
+│ - expertise: String                 │
+│ - phone: String                     │
+└─────────────────────────────────────┘
+          ▲
+          │ references
+          │
+    ┌─────┴──────────┐
+
+┌──────────────────────────────────────┐
+│   <<Interface>>                      │
+│   AvailabilityRepository             │
+├──────────────────────────────────────┤
+│ + save(a: Availability): void        │
+│ + findById(id: int): Availability    │
+│ + findByCoachId(coachId): List       │
+│ + findByCoachAndDate(c, d): List     │
+│ + findByStatus(status): List         │
+│ + findConflicts(c, d, s, e): List    │
+│ + update(a: Availability): void      │
+│ + delete(id: int): void              │
+└──────────────────────────────────────┘
+           △
+           │ implements
+           │
+    ┌──────┴───────┐
+    │              │
+┌───▼───────────────────────────────┐
+│ AvailabilityRepositoryImpl         │
+├───────────────────────────────────┤
+│ - db: Database                    │
+├───────────────────────────────────┤
+│ + save(a): void                   │
+│ + findById(id): Availability      │
+│ + findByCoachId(cId): List        │
+│ + findByCoachAndDate(c,d): List   │
+│ + update(a): void                 │
+│ + delete(id): void                │
+└───────────────────────────────────┘
+
+┌────────────────────────────────────────┐
+│   <<Service>>                          │
+│   AvailabilityScheduleService          │
+├────────────────────────────────────────┤
+│ - availabilityRepository               │
+├────────────────────────────────────────┤
+│ + generateWeeklySchedule(): void       │
+│ + checkConflicts(): List               │
+│ + suggestAlternativeSlots(): List      │
+│ + validateAvailabilityRange(): boolean │
+└────────────────────────────────────────┘
+
+┌─────────────────────────────────────┐
+│   <<Service>>                       │
+│   AvailabilityStatusService         │
+├─────────────────────────────────────┤
+│ - availabilityRepository            │
+├─────────────────────────────────────┤
+│ + updateStatusFromBooking(): void   │
+│ + releaseSlot(): void               │
+│ + markPermanentlyUnavailable(): v   │
+│ + syncStatusWithBookings(): void    │
+└─────────────────────────────────────┘
+
+┌────────────────────────────────────────┐
+│   <<Enum>>                             │
+│   AvailabilityStatus                   │
+├────────────────────────────────────────┤
+│ AVAILABLE                              │
+│ RESERVED                               │
+│ UNAVAILABLE                            │
+└────────────────────────────────────────┘
+
+Relaciones:
+- Availability *───────── 1 Coach (references)
+- Availability 1───────── * AvailabilityRepository (persisted by)
+- AvailabilityScheduleService ──────► AvailabilityRepository
+- AvailabilityStatusService ──────► AvailabilityRepository
+- Availability ───────► AvailabilityStatus (has-a)
+- Availability ───────► TimeRange (contains)
+```
+
+---
+
+##### 2.6.6.6.2. Bounded Context Database Design Diagram
+
+**Entity Relationship Diagram (ERD) - Availabilities**
+
+```
+┌──────────────────────────────────┐
+│        coaches                    │
+├──────────────────────────────────┤
+│ PK coach_id (INT)                │
+│ name (VARCHAR)                   │
+│ expertise (VARCHAR)              │
+│ phone (VARCHAR)                  │
+└──────────────────────────────────┘
+         ▲
+         │ FK (coach_id)
+         │
+┌────────┴───────────────────────────────────────┐
+│       availabilities                           │
+├────────────────────────────────────────────────┤
+│ PK availability_id (INT, AUTO_INCREMENT)       │
+│ FK coach_id (INT, NOT NULL)                    │
+│ date (DATE, NOT NULL)                          │
+│ start_time (TIME, NOT NULL)                    │
+│ end_time (TIME, NOT NULL)                      │
+│ status (ENUM: AVAILABLE/RESERVED/UNAVAILABLE)  │
+│ FK booking_id (INT, NULLABLE)                  │
+│ created_at (TIMESTAMP)                         │
+│ updated_at (TIMESTAMP)                         │
+│ UNIQUE (coach_id, date, start_time, end_time)  │
+│ INDEX idx_coach_date (coach_id, date)          │
+│ INDEX idx_coach_status (coach_id, status)      │
+│ INDEX idx_date_status (date, status)           │
+│ CONSTRAINT check_time (start_time < end_time)  │
+│ CONSTRAINT check_hours (HOUR >= 6 AND <= 23)   │
+└───────────┬────────────────────────────────────┘
+            │
+            │ FK (booking_id)
+            │
+┌───────────▼────────────────────────┐
+│        bookings                    │
+├────────────────────────────────────┤
+│ PK booking_id (INT)                │
+│ FK user_id (INT)                   │
+│ FK court_id (INT)                  │
+│ start_time (DATETIME)              │
+│ end_time (DATETIME)                │
+│ created_at (TIMESTAMP)             │
+└────────────────────────────────────┘
+
+┌────────────────────────────────────────┐
+│ availability_conflicts_log (auditoría) │
+├────────────────────────────────────────┤
+│ PK conflict_id (INT)                   │
+│ FK availability_id1 (INT)              │
+│ FK availability_id2 (INT)              │
+│ conflict_type (VARCHAR)                │
+│ detected_at (TIMESTAMP)                │
+│ resolved (BOOLEAN)                     │
+│ FOREIGN KEY (availability_id1) refs    │
+│   availabilities.availability_id       │
+│ FOREIGN KEY (availability_id2) refs    │
+│   availabilities.availability_id       │
+└────────────────────────────────────────┘
+
+Relaciones:
+- coaches (1) ──── (*) availabilities
+- availabilities (*) ──── (1) bookings (reference cuando está RESERVED)
+- availabilities (1) ──── (*) availability_conflicts_log
+```
+
+---
