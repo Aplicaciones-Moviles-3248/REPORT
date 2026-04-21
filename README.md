@@ -1179,4 +1179,41 @@ Relaciones:
 
 ---
 
-##### 2.6.x.6.2. Bounded Context Database Design Diagram
+##### 2.6.2.6.2. Bounded Context Database Design Diagram
+
+**Entity Relationship Diagram (ERD) - Payments**
+
+```
+┌───────────────────────────────┐
+│            users              │
+├───────────────────────────────┤
+│ PK user_id (BIGINT)           │
+│ name (VARCHAR(255), NOT NULL) │
+│ email (VARCHAR(255), UNIQUE)  │
+│ created_at (TIMESTAMP)        │
+└───────────────┬───────────────┘
+                │ FK (user_id)
+                │
+┌───────────────▼──────────────────────────┐
+│               payments                   │
+├──────────────────────────────────────────┤
+│ PK payment_id (BIGINT, AUTO_INCREMENT)   │
+│ FK user_id (BIGINT, NOT NULL)            │
+│ amount (DECIMAL(10,2), NOT NULL)         │
+│ status (ENUM: PENDING, COMPLETED,        │
+│         FAILED, CANCELLED)               │
+│ created_at (TIMESTAMP, DEFAULT CURRENT)  │
+│                                          │
+│ CONSTRAINT fk_user_payment               │
+│   FOREIGN KEY (user_id)                  │
+│   REFERENCES users(user_id)              │
+│                                          │
+│ INDEX idx_user (user_id)                 │
+│ INDEX idx_status (status)                │
+└──────────────────────────────────────────┘
+
+Relaciones:
+- users (1) ──── (*) payments
+```
+
+---
