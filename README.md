@@ -745,7 +745,7 @@ Creemos que aumentará la confianza en la plataforma si los usuarios pueden ver 
 
 #### 1.2.2.4. Lean UX Canvas
 
-<img src="images/LeanUXCanvas-Courtly.jpg" width="900">
+<img src="assets/chapter2/LeanUXCanvas-Courtly.jpg" width="900">
 
 [Enlace al Lean UX Canvas en Miro](https://miro.com/welcomeonboard/d3htMStsWFVEUFhBY1NwdGlFR0RkekZjcHlJMUNKcU9TOVJ1U2E1S3ptSXE2QUMyU2RKYnFhRzZIdzFoZE1oNnFBT3pnbCtLaUZoc1NYRU5LY2FuNEJ2UXV1VEM4OWZ3bExlZWJiN0p4dlprbytlUkUvUytLT2h5Vjk0azB6RXJzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=265390215415)
 
@@ -3000,7 +3000,7 @@ Estas preguntas permitieron generar distintos diseños candidatos, evaluados en 
 
 ### Alternativa 1: Unificar IAM y Users
 
-![alt1](./images/context-map-alt1.png)
+![alt1](assets/chapter2/context-map-alt1.png)
 
 Esta alternativa proponía fusionar autenticación e identidad funcional en un solo contexto. Su principal ventaja era simplificar el flujo del frontend, ya que el usuario obtendría directamente una identidad válida para operar en reservas, partidos, pagos, reseñas y notificaciones después del login. Además, reducía la necesidad de resolver manualmente la relación entre `UserId` y `UserProfileId`.
 
@@ -3010,7 +3010,7 @@ Sin embargo, esta unificación mezclaba responsabilidades distintas dentro de un
 
 ### Alternativa 2: IAM y Users separados con ACL
 
-![alt2](./images/context-map-alt2.png)
+![alt2](assets/chapter2/context-map-alt2.png)
 
 Esta alternativa mantiene separados los contextos de autenticación e identidad funcional, incorporando una capa **ACL** para traducir la identidad autenticada hacia la identidad de negocio. De esta forma, el sistema preserva la responsabilidad específica de cada contexto y evita contaminar el dominio operativo con conceptos propios de seguridad.
 
@@ -3020,7 +3020,7 @@ La principal ventaja de esta propuesta es que mantiene un modelo más limpio y a
 
 ### Alternativa 3: Integrar Availabilities en Coaches
 
-![alt3](./images/context-map-alt3.png)
+![alt3](assets/chapter2/context-map-alt3.png)
 
 Esta alternativa buscaba reducir la cantidad de bounded contexts integrando la disponibilidad de entrenadores dentro del contexto **Coaches**. A simple vista, la decisión parecía razonable, ya que la disponibilidad depende directamente del entrenador y forma parte de su oferta de servicio.
 
@@ -3030,7 +3030,7 @@ No obstante, el análisis mostró que **Availabilities** posee reglas propias, e
 
 ### Alternativa 4: Fusionar Bookings y Matches
 
-![alt4](./images/context-map-alt4.png)
+![alt4](assets/chapter2/context-map-alt4.png)
 
 Esta alternativa agrupaba reservas y organización de partidos en un solo contexto operativo. La motivación principal era que ambos procesos utilizan canchas y usuarios, y están estrechamente relacionados dentro de la experiencia deportiva de la plataforma.
 
@@ -3040,7 +3040,7 @@ Sin embargo, al revisar las reglas del dominio se observó que representan proce
 
 ### Alternativa 5: Agrupar contextos de soporte
 
-![alt5](./images/context-map-alt5.png)
+![alt5](assets/chapter2/context-map-alt5.png)
 
 Esta alternativa proponía unificar **Payments, Reviews, Notifications y Analytics** dentro de un único contexto de soporte. Su ventaja principal era reducir la fragmentación estructural del sistema y simplificar visualmente el mapa general.
 
@@ -3050,7 +3050,7 @@ A pesar de ello, el equipo identificó que estos contextos responden a subdomini
 
 ### Alternativa 6: Shared Kernel para Users
 
-![alt6](./images/context-map-alt6.png)
+![alt6](assets/chapter2/context-map-alt6.png)
 
 En esta alternativa se evaluó compartir la identidad de usuario mediante un **Shared Kernel**, con el objetivo de establecer un contrato común reutilizable entre múltiples contextos que dependen de `UserProfile`. Esta propuesta parecía útil porque varios módulos del sistema consumen la identidad funcional del usuario como referencia central.
 
@@ -3071,7 +3071,7 @@ Se definieron tres capas:
 
 ## Context Map Final
 
-![contextM](./images/context-map-courtly.png)
+![contextM](assets/chapter2/context-map-courtly.png)
 
 ## Context Map — Leyenda rápida
 
@@ -3246,7 +3246,7 @@ Esta estructura logra un equilibrio entre cohesión y bajo acoplamiento, alinead
 
 ### Capability Layering Map
 
-![capabilityM](./images/capability-map-courtly.png)
+![capabilityM](assets/chapter2/capability-map-courtly.png)
 **Objetivo:**
 Documentar de forma detallada cada bounded context mediante el Bounded Context Canvas, especificando el propósito, las capacidades, las reglas de negocio y las dependencias de cada dominio.
 
