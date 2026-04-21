@@ -717,6 +717,27 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
 
 ### 2.3.6. Ubiquitous Language
 
+1. **Player (Deportista):** Usuario que participa en partidos o actividades deportivas de forma recreativa o amateur.
+2. **Coach (Entrenador):** Profesional independiente que ofrece servicios de entrenamiento o clases deportivas a usuarios.
+3. **Court (Cancha):** Espacio deportivo destinado a la práctica de un deporte específico, como fútbol, básquet, voley, etc.
+4. **Court Availability (Disponibilidad de cancha):** Estado que indica si una cancha deportiva se encuentra disponible en el horario seleccionado.
+5. **Booking (Reserva):** Acción de asegurar el uso de un espacio deportivo en una fecha y horario determinado.
+6. **Match (Partido):** Actividad deportiva que ocurre después de coordinar participantes y confirmar una reserva.
+7. **Training Session (Sesión de entrenamiento):** Actividad organizada entre un coach y uno o más usuarios, que se lleva a cabo luego de coordinar horario, cancha y participantes.
+8. **Schedule (Horario):** Estructura de tiempos organizados que define la disponibilidad o programación de actividades deportivas.
+9. **Time Slot (Bloque de tiempo):** Intervalo específico de tiempo en el que se puede realizar una reserva o actividad.
+10. **Payment (Pago):** Transacción económica realizada para el uso de una cancha o la contratación de un servicio deportivo.
+11. **Confirmation (Confirmación):** Validación de que una reserva, pago o sesión ha sido aceptada y registrada correctamente.
+12. **Cancellation (Cancelación):** Evento que ocurre cuando una reserva o sesión previamente coordinada es anulada antes de su ejecución.
+13. **Participant (Participante):** Persona que forma parte de un partido, entrenamiento u otra actividad deportiva.
+14. **Owner (Administrador / Propietario):** Persona responsable de la gestión de una o más canchas, incluyendo su disponibilidad y reservas.
+15. **Profile (Perfil):** Información relevante que representa a un usuario dentro de la plataforma.
+16. **Location (Ubicación):** Lugar donde se encuentra la cancha seleccionada para la realización de la actividad deportiva.
+17. **Review (Reseña):** Evaluación u opinión que un usuario deja sobre una cancha, entrenador o experiencia.
+18. **Visibility (Visibilidad):** Nivel de exposición que tiene un entrenador o una cancha frente a otros usuarios.
+19. **Sports Activity (Actividad deportiva):** Representa la práctica del deporte, como partidos o entrenamientos.
+20. **Notification (Notificación):** Mensajes enviados automáticamente para informar sobre eventos confirmados, cancelados o modificados.
+
 ---
 
 ## 2.4. Requirements specification
