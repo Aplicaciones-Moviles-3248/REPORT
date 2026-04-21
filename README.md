@@ -1847,3 +1847,135 @@ Gestiona la persistencia en la tabla.
 Consulta otros bounded contexts para validar relaciones.
 
 ---
+
+#### 2.6.9.6. Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se presentan los diagramas a nivel de código del bounded context Matches, permitiendo entender cómo está construido internamente el dominio y cómo se estructura la persistencia.
+
+##### 2.6.9.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases del Domain Layer del bounded context `Matches` muestra al agregado principal `Match`, que representa un partido organizado dentro del sistema.
+Este agregado se relaciona con entidades externas como `Court` y `UserProfile`, y encapsula la información clave del partido como cupos, estado y programación.
+
+Además, se incluyen:
+
+- `MatchStatus` como Value Object (enum).
+- Comandos y queries para operaciones del sistema.
+- Servicios del dominio para manejar la lógica.
+
+**Diagrama UML de Clases (Domain Layer):**
+
+```
+┌──────────────────────────────────────────────────────┐
+│                   <<Aggregate Root>>                 │
+│                         Match                        │
+├──────────────────────────────────────────────────────┤
+│ - matchId: int                                       │
+│ - title: String                                      │
+│ - description: String                                │
+│ - dateTime: DateTime                                 │
+│ - status: MatchStatus                                │
+│ - maxPlayers: int                                    │
+│ - currentPlayers: int                                │
+│ - court: Court                                       │
+│ - createdBy: UserProfile                             │
+│ - createdAt: DateTime                                │
+├──────────────────────────────────────────────────────┤
+│ + createMatch(title, desc, dt, max, courtId, userId) │
+│ + updateMatch(title, desc, dt, maxPlayers)           │
+│ + deleteMatch()                                      │
+│ + isFull(): boolean                                  │
+│ + onCreate(): void                                   │
+└──────────────────────────────────────────────────────┘
+                  │
+                  │ many-to-one
+        ┌─────────┴─────────┐
+        ▼                   ▼
+┌──────────────────┐   ┌────────────────────┐
+│      Court       │   │    UserProfile     │
+├──────────────────┤   ├────────────────────┤
+│ + id: int        │   │ + id: int          │
+│ + name: String   │   │ + name: String     │
+└──────────────────┘   └────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│         <<Value Object>>                   │
+│           MatchStatus                      │
+├────────────────────────────────────────────┤
+│ + OPEN                                     │
+│ + FULL                                     │
+│ + CANCELLED                                │
+│ + COMPLETED                                │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│         MatchCommandService                │
+├────────────────────────────────────────────┤
+│ + handle(CreateMatchCommand): Optional     │
+│ + handle(UpdateMatchCommand): Optional     │
+│ + handle(DeleteMatchCommand): void         │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│         MatchQueryService                  │
+├────────────────────────────────────────────┤
+│ + handle(GetAllMatchesQuery): List         │
+│ + handle(GetMatchByIdQuery): Optional      │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│           CreateMatchCommand               │
+├────────────────────────────────────────────┤
+│ + title: String                            │
+│ + description: String                      │
+│ + dateTime: DateTime                       │
+│ + maxPlayers: int                          │
+│ + courtId: int                             │
+│ + createdById: int                         │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│           UpdateMatchCommand               │
+├────────────────────────────────────────────┤
+│ + matchId: int                             │
+│ + title: String                            │
+│ + description: String                      │
+│ + dateTime: DateTime                       │
+│ + maxPlayers: int                          │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│           DeleteMatchCommand               │
+├────────────────────────────────────────────┤
+│ + matchId: int                             │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│            GetAllMatchesQuery              │
+├────────────────────────────────────────────┤
+│ (sin atributos)                            │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│           GetMatchByIdQuery                │
+├────────────────────────────────────────────┤
+│ + matchId: int                             │
+└────────────────────────────────────────────┘
+```
+
+**Relaciones:**
+
+- `Match` es el Aggregate Root del bounded context.
+- `Match` *──────── 1 Court ─► cada partido se organiza en una cancha específica.
+- `Match` *──────── 1 UserProfile ─► representa al usuario creador del partido.
+- `MatchStatus` representa un Value Object del dominio mediante un enum, encargado de definir el estado del partido (OPEN, FULL, CANCELLED, COMPLETED).
+- `MatchCommandService` ───────► `MatchRepository` (uses)
+- `MatchQueryService` ───────► `MatchRepository` (uses)
+
+---
