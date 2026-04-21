@@ -813,7 +813,40 @@ PaymentCancelled(paymentId, status)
 ```
 ---
 
-#### 2.6.x.2. Interface Layer
+#### 2.6.2.2. Interface Layer
+
+**REST Controllers**
+
+```
+PaymentController
+├── POST /api/v1/payments → Crear nuevo pago
+│   Request: CreatePaymentDTO
+│   Response: PaymentResponseDTO
+│
+└── GET /api/v1/payments/{paymentId} → Obtener pago por identificador
+    Response: PaymentResponseDTO
+```
+
+**DTOs (Data Transfer Objects)**
+
+```
+CreatePaymentDTO
+├── userId: Long
+└── amount: BigDecimal
+
+PaymentResponseDTO
+├── paymentId: Long
+├── amount: BigDecimal
+├── paymentDate: DateTime
+├── status: PaymentStatus
+└── user: UserSummaryDTO
+
+UserSummaryDTO
+├── userId: Long
+└── name: String
+```
+
+---
 
 #### 2.6.x.3. Application Layer
 
