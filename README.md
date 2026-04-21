@@ -1595,6 +1595,138 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 
 ### 2.4.3. Product Backlog
 
+<div>
+  <h2>Product Backlog - Courtly</h2>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <th># Orden</th>
+      <th>User Story Id</th>
+      <th>Título</th>
+      <th>Story Points<br>(1 / 2 / 3 / 5 / 8)</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>USM03</td>
+      <td>Buscar canchas por ubicación</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>USM04</td>
+      <td>Filtrar canchas por deporte, precio y horario</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>USM05</td>
+      <td>Ver detalle de cancha</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>USM06</td>
+      <td>Reservar cancha desde Courtly</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>USM07</td>
+      <td>Pagar reserva desde la aplicación</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>USM13</td>
+      <td>Publicar disponibilidad de horarios</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>USM14</td>
+      <td>Aceptar o rechazar solicitudes de entrenamiento</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>USM11</td>
+      <td>Registrar cuenta de entrenador</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>USM01</td>
+      <td>Registrar cuenta de jugador en Courtly</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>USM02</td>
+      <td>Iniciar sesión como jugador</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>USM12</td>
+      <td>Actualizar perfil profesional</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>USM18</td>
+      <td>Recibir notificaciones relevantes en la app</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>USM20</td>
+      <td>Cancelar una reserva registrada</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>USM19</td>
+      <td>Editar perfil personal</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>USM15</td>
+      <td>Visualizar pagos recibidos</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>USM08</td>
+      <td>Valorar una cancha utilizada</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>USM16</td>
+      <td>Recibir reseñas de jugadores</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>USM09</td>
+      <td>Crear partido con amigos</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>USM10</td>
+      <td>Unirse a un partido disponible</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>USM17</td>
+      <td>Ver estadísticas de rendimiento</td>
+      <td>3</td>
+    </tr>
+  </table>
+</div>
+
 ---
 
 ## 2.5. Strategic-Level Domain-Driven Design
