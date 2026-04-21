@@ -1589,3 +1589,87 @@ La Application Layer del bounded context `Matches` coordina los flujos de proces
 - `MatchCommandServiceImpl` verifica la existencia.
 - Se elimina el partido del repositorio.
 - Se devuelve la confirmación.
+
+---
+
+#### 2.6.9.4. Infrastructure Layer
+
+La Infrastructure Layer del bounded context `Matches` contiene los componentes encargados del acceso a base de datos y de la persistencia de los partidos organizados. En esta capa se materializa el almacenamiento del agregado `Match` y se soportan las operaciones que ejecuta la aplicación.
+
+**a. Repositorio de persistencia:**
+
+`MatchRepository`
+
+**Paquete:** `com.upc.courtly.matches.infrastructure.persistence.jpa.repositories`
+
+**Propósito:** Gestionar la persistencia y recuperación de partidos utilizando Spring Data JPA. La implementación concreta es generada automáticamente por el framework al extender JpaRepository<Match, Long>.
+
+**Operaciones disponibles:**
+- `save`
+- `findById`
+- `findAll`
+- `deleteById`
+- `existsById`
+
+**Observación:**
+
+Actualmente no se identifican métodos personalizados como:
+
+- Búsqueda por estado (`findByStatus`)
+- Filtros por fecha (`findByDateTime`)
+- Búsqueda por cancha (`findByCourtId`)
+
+Esto limita la eficiencia del feed de partidos y las consultas específicas del frontend.
+
+
+**b. Persistencia de la entidad Match:**
+
+La entidad `Match` está mapeada como una entidad JPA con las siguientes características:
+
+- `@Entity`
+- `@Table(name = "matches")`
+- `@Id`
+- `@GeneratedValue(strategy = GenerationType.IDENTITY)`
+- Relaciones `@ManyToOne(fetch = FetchType.LAZY)` con `Court` y `UserProfile`
+- Atributo `createdAt` inicializado automáticamente
+
+
+**c. Diseño de persistencia:**
+
+**Tabla principal:** `matches`
+
+**Columnas:**
+- `match_id`
+- `title`
+- `description`
+- `date_time`
+- `status`
+- `max_players`
+- `current_players`
+- `court_id`
+- `created_by`
+- `created_at`
+
+**Restricciones y relaciones:**
+- `match_id` → Primary Key
+- `court_id` → Foreign Key hacia `courts.id`
+- `created_by` → Foreign Key hacia `user_profiles.id`
+
+**Campos obligatorios (NOT NULL):**
+
+- `title`
+- `date_time`
+- `status`
+- `max_players`
+- `court_id`
+- `created_by`
+- `created_at`
+
+
+**d. Integración con otros bounded contexts**
+
+La infraestructura del bounded context `Matches` depende de:
+- `CourtRepository` del bounded context `Courts`, para validar la existencia de la cancha.
+- `UserProfileRepository` del bounded context `Users`, para validar el creador del partido.
+
+---
