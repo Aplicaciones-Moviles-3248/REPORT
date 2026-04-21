@@ -1217,3 +1217,180 @@ Relaciones:
 ```
 
 ---
+
+### 2.6.9. Bounded Context: Matches (Partidos)
+
+El bounded context **Matches** representa la gestión de partidos dentro del sistema. Su propósito es permitir que un usuario funcional del negocio registre, gestione, y participe en partidos.
+
+#### 2.6.9.1. Domain Layer
+
+La capa de dominio del bounded context **Matches** contiene las clases que modelan el núcleo de los partidos organizados dentro de la plataforma, así como las reglas de negocio asociadas a su creación, gestión y participación.
+
+**a. Entity / Aggregate Root:**
+
+**Nombre de la clase:** `Match`
+
+**Paquete:** `com.upc.matchpoint.matches.domain.model.aggregates`
+
+**Propósito:**
+Representa la entidad principal del bounded context Bookings. Modela una reserva de cancha realizada por un usuario en un intervalo de tiempo específico y constituye el agregado raíz del contexto.
+
+**Atributos:**
+
+- `matchId: Long` → Identificador único del partido
+- `title: String` → Nombre o título del partido
+- `description: String` → Descripción del encuentro
+- `dateTime: DateTime` → Fecha y hora del partido
+- `status: MatchStatus` → Estado del partido
+- `maxPlayers:` int → Número máximo de jugadores
+- `currentPlayers:` int → Número actual de jugadores
+- `court: Court` → Cancha donde se realizará el partido
+- `createdBy: UserProfile` → Usuario que creó el partido
+- `createdAt: DateTime` → Fecha de creación
+
+**Métodos:**
+
+- `createMatch(title, description, dateTime, maxPlayers, court, createdBy)` → Crea un nuevo partido en estado OPEN.
+- `updateMatch(title, description, dateTime, maxPlayers)` → Permite actualizar la información del partido.
+- `cancelMatch()` → Cambia el estado del partido a CANCELLED.
+- `completeMatch()` → Marca el partido como COMPLETED.
+
+**Relaciones:**
+
+- Un Match pertenece a una sola Court.
+- Un Match pertenece a un solo UserProfile (creador).
+- Un Court puede tener múltiples partidos asociados.
+- Un usuario puede crear múltiples partidos.
+
+**b. Referencias externas del dominio:**
+
+Dentro del contexto Matches se utilizan entidades provenientes de otros bounded contexts:
+
+**Court**
+- Origen: `Court & Venue Management`
+- Propósito: Representa la cancha donde se jugará el partido.
+- Atributos relevantes:
+  - `id`
+  - `name`
+
+**UserProfile**
+- Origen: `Users`
+- Propósito: Representa al usuario que crea el partido.
+- Atributos relevantes:
+  - `id`
+  - `name`
+
+**c. Value Objects:**
+
+`MatchStatus`
+
+Representa el estado del partido dentro del sistema.
+
+- `OPEN` → Partido abierto para unirse
+- `FULL` → Partido completo (sin cupos disponibles)
+- `CANCELLED` → Partido cancelado
+- `COMPLETED` → Partido finalizado
+
+**d. Commands del dominio:**
+
+`CreateMatchCommand`
+
+**Paquete:** `com.upc.matchpoint.matches.domain.model.commands`
+
+**Propósito:** Representa la intención de crear un nuevo partido.
+
+**Atributos:**
+
+- `title: String`
+- `description: String`
+- `dateTime: DateTime`
+- `maxPlayers: int`
+- `courtId: Long`
+- `createdById: Long`
+
+`UpdateMatchCommand`
+
+**Paquete:** `com.upc.matchpoint.matches.domain.model.commands`
+
+**Propósito:** Actualizar un partido existente.
+
+**Atributos:**
+
+- `matchId: Long`
+- `title: String`
+- `description: String`
+- `dateTime: DateTime`
+- `maxPlayers: int`
+
+`DeleteMatchCommand`
+
+**Paquete:** `com.upc.matchpoint.matches.domain.model.commands`
+
+**Propósito:** Eliminar un partido.
+
+**Atributos:**
+
+- `matchId: Long`
+
+
+**e. Queries del dominio:**
+
+`GetAllMatchesQuery`
+
+**Paquete:** `com.upc.matchpoint.matches.domain.model.queries`
+
+**Propósito:** Obtener todos los partidos.
+
+**Atributos:**
+
+- `matchId: Long`
+
+**f. Domain Services:**
+
+`MatchCommandService`
+
+**Paquete:** `com.upc.matchpoint.matches.domain.services`
+
+**Propósito:** Define las operaciones de escritura sobre el agregado Match.
+
+- `handle(CreateMatchCommand)`
+- `handle(UpdateMatchCommand)`
+- `handle(DeleteMatchCommand)`
+
+`MatchQueryService`
+
+**Propósito:** Define las operaciones de lectura.
+
+- `handle(GetAllMatchesQuery)`
+- `handle(GetMatchByIdQuery)`
+
+
+**g. Repository:**
+
+`MatchRepository`
+
+**Paquete:** com.upc.matchpoint.matches.infrastructure.persistence.jpa.repositories
+
+**Propósito:** Permite acceder a la persistencia de partidos.
+
+- `save(Match)`
+- `findById(Long)`
+- `findAll()`
+- `deleteById(Long)`
+
+
+**h. Reglas de negocio identificadas:**
+
+**Reglas implementadas actualmente:**
+- Un partido debe estar asociado a una cancha válida
+- Un partido debe tener un creador (UserProfile)
+- Un partido tiene un estado inicial OPEN
+- Se permite CRUD completo sobre partidos
+
+**Reglas de negocio no implementadas (oportunidades de mejora):**
+- Validar que currentPlayers <= maxPlayers.
+- Cambiar automáticamente el estado a FULL cuando se alcanza el límite.
+- Evitar crear partidos en fechas pasadas.
+- Validar conflictos de horario en la misma cancha.
+- Implementar una tabla de participantes.
+- Gestionar la inscripción de jugadores al partido.
