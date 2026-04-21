@@ -562,33 +562,224 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 
 # Capítulo I: Presentación
 
-## 1.1. Startup Profile
+## 1.1. Startup Profile  
 
-### 1.1.1. Descripción de la Startup
+En un contexto donde el acceso al deporte continúa ganando relevancia como parte del bienestar y la vida cotidiana, surge **Mova**, una startup orientada a desarrollar soluciones digitales que faciliten la práctica deportiva de manera más organizada, accesible y eficiente. La propuesta nace a partir de la necesidad de simplificar procesos que, en la actualidad, suelen ser desordenados o poco confiables, como la búsqueda de canchas disponibles, la coordinación entre jugadores o el acceso a entrenadores confiables.  
+
+Mova busca responder a estas limitaciones mediante el uso de tecnología, permitiendo que los usuarios puedan gestionar sus actividades deportivas de forma más práctica y sin complicaciones. En este sentido, la propuesta incorpora un enfoque centrado en dispositivos móviles, aprovechando la inmediatez y accesibilidad que estos ofrecen en la vida diaria de los usuarios.  
+
+Más allá de digitalizar procesos, **Mova** propone una forma más simple de interactuar con el deporte, adaptándose a las dinámicas actuales y promoviendo una comunidad más conectada y activa.  
+
+### 1.1.1. Descripción de la Startup  
+
+Mova es una startup tecnológica enfocada en el desarrollo de soluciones digitales para el sector deportivo amateur. Su principal producto, **Courtly**, es una aplicación que permite conectar a deportistas con canchas deportivas y entrenadores independientes, facilitando la búsqueda, comparación y reserva de servicios en función de sus necesidades.  
+
+A través de Courtly, los usuarios pueden consultar disponibilidad en tiempo real, acceder a información relevante sobre precios, horarios y características de los servicios, y realizar reservas de manera rápida desde su dispositivo móvil. Asimismo, incorpora funcionalidades que apoyan la organización de partidos, la contratación de entrenadores y la interacción entre usuarios, contribuyendo a una experiencia más completa.  
+
+Por otro lado, la plataforma también brinda valor a los entrenadores independientes, quienes pueden ofrecer sus servicios, aumentar su visibilidad y gestionar reservas y pagos de manera digital y organizada.  
+
+De esta forma, Courtly integra la oferta y la demanda en un solo entorno digital, mientras que Mova se posiciona como una propuesta que impulsa la transformación del deporte amateur a través de soluciones tecnológicas accesibles y eficientes.
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
----
+| Integrantes | Descripción | Conocimientos |
+| :---------- | :---------- | :------------ |
+| <div style="display: flex; align-items: center;"><img src="images/juan.jpg" alt="Juan Carlos" width="100" height="120">&nbsp;&nbsp;<br>**Juan Carlos Angulo Abud**<br>u202317692</div> | Estudiante de Ingeniería de Software con experiencia en desarrollo frontend y consumo de APIs. Posee conocimientos en SEO y optimización de interfaces orientadas al usuario. | JavaScript, TypeScript, SEO, desarrollo frontend y consumo de APIs. |
+| <div style="display: flex; align-items: center;"><img src="images/eduardo.jpg" alt="Eduardo" width="100" height="120">&nbsp;&nbsp;<br>**Eduardo Fabián Chacaliaza Minaya**<br>u202324129</div> | Estudiante de Ingeniería de Software, interesado en el desarrollo de aplicaciones y soluciones tecnológicas orientadas al usuario. Se caracteriza por su enfoque analítico y capacidad de adaptación a nuevos entornos de desarrollo. | Conocimientos en desarrollo web, lógica de programación y manejo de herramientas de desarrollo. |
+| <div style="display: flex; align-items: center;"><img src="images/camilla.jpg" alt="Camilla" width="100" height="120">&nbsp;&nbsp;<br>**Camilla Leonor Espinoza Vivas**<br>u202214572</div> | Estudiante de Ingeniería de Software interesada en el diseño y desarrollo de soluciones digitales centradas en el usuario. Destaca por su creatividad y organización en el trabajo colaborativo. | Conocimientos en desarrollo de software, diseño de interfaces y herramientas digitales. |
+| <div style="display: flex; align-items: center;"><img src="images/pedro.jpg" alt="Pedro" width="100" height="120">&nbsp;&nbsp;<br>**Pedro Jesús Nanfuñay Liza**<br>u202215462</div> | Estudiante de Ingeniería de Software con interés en el desarrollo de sistemas y la resolución de problemas mediante tecnología. Se caracteriza por su responsabilidad y enfoque práctico. | Conocimientos en programación, bases de datos y desarrollo de aplicaciones. |
+| <div style="display: flex; align-items: center;"><img src="images/fabricio.jpg" alt="Fabricio" width="100" height="120">&nbsp;&nbsp;<br>**Fabricio Fabián Quispe Barzola**<br>u202320442</div> | Estudiante de Ingeniería de Software con interés en la creación de soluciones tecnológicas eficientes. Destaca por su disposición al aprendizaje continuo y trabajo en equipo. | Conocimientos en programación, estructuras de datos y desarrollo de aplicaciones. |
 
-## 1.2. Solution Profile
+## 1.2. Solution Profile 
 
 ### 1.2.1. Antecedentes y problemática
+
+#### Antecedentes y problemática
+
+En los últimos años, el interés por el deporte y la actividad física ha crecido de forma constante, consolidándose como una práctica clave para el bienestar físico y mental. Sin embargo, este crecimiento también ha evidenciado diversas limitaciones en la manera en que los deportistas aficionados acceden a espacios deportivos y a servicios de entrenamiento.  
+
+Uno de los principales problemas radica en la dificultad para encontrar canchas disponibles en horarios adecuados, así como entrenadores confiables que se ajusten a las necesidades de los usuarios. En muchos casos, los deportistas dependen de llamadas, mensajes o redes sociales para coordinar, lo que genera desorganización, pérdida de tiempo y experiencias poco confiables.  
+
+Por otro lado, los entrenadores independientes enfrentan dificultades para ofrecer sus servicios de manera estructurada, ya que carecen de herramientas digitales que les permitan gestionar reservas, pagos y su visibilidad frente a potenciales clientes. Esto limita sus oportunidades de crecimiento y profesionalización dentro del entorno deportivo.  
+
+En este contexto, surge la necesidad de una solución que permita centralizar la información, optimizar la gestión de reservas y facilitar la conexión entre deportistas y entrenadores en un solo entorno digital.  
+
+#### What?
+
+Courtly es una aplicación desarrollada por Mova, diseñada para facilitar la búsqueda y reserva de canchas deportivas, así como la conexión con entrenadores independientes de manera rápida y organizada. La solución permite a los usuarios acceder a información actualizada sobre disponibilidad, precios, ubicación y servicios, integrando en una sola plataforma todo el proceso deportivo.  
+
+#### Why?
+
+Porque actualmente existe una gran dificultad para acceder a canchas disponibles y entrenadores confiables de forma rápida, organizada y segura.  
+Los usuarios suelen invertir tiempo en coordinar manualmente con diferentes proveedores, enfrentando problemas como falta de respuesta, información desactualizada o reservas no confirmadas.  
+
+#### Where?
+
+Esta problemática se presenta principalmente en zonas urbanas, donde la demanda por espacios deportivos y servicios de entrenamiento es alta y la organización de estos servicios no siempre está digitalizada. Afecta especialmente a usuarios en ciudades de Perú y otras regiones de Latinoamérica con características similares.  
+
+#### When?
+
+La necesidad se evidencia en el día a día de los usuarios, especialmente al momento de organizar partidos o entrenamientos. Asimismo, se intensifica en un contexto donde la inmediatez y el uso de herramientas digitales forman parte del comportamiento habitual de las personas.  
+
+#### Who?
+
+Los principales afectados son los deportistas aficionados, grupos de amigos y equipos amateurs que buscan organizar sus actividades deportivas de manera rápida y confiable.  
+Asimismo, se incluyen los entrenadores independientes que requieren herramientas digitales para ofrecer sus servicios, gestionar reservas y aumentar su visibilidad.  
+
+#### How?
+
+Courtly aborda esta problemática mediante una aplicación que permite a los usuarios buscar canchas y entrenadores según su ubicación, disponibilidad y necesidades, consultar información en tiempo real y realizar reservas de manera rápida.  
+Al mismo tiempo, ofrece a los entrenadores herramientas para gestionar sus servicios, organizar su agenda y conectar con nuevos clientes, generando una experiencia más eficiente para ambas partes.  
+
+#### How Much?
+
+El impacto de esta problemática se refleja en la pérdida de tiempo al momento de buscar y coordinar reservas, así como en la dificultad de acceder a servicios confiables. Muchos usuarios no logran concretar sus actividades deportivas debido a la falta de disponibilidad confirmada, mientras que los entrenadores pierden oportunidades al no contar con un canal centralizado para ofrecer sus servicios. Esto evidencia una brecha significativa entre la oferta y la demanda que podría optimizarse mediante una solución digital adecuada.
 
 ### 1.2.2. Lean UX Process
 
 #### 1.2.2.1. Lean UX Problem Statements
 
+#### Courtly - Solución a la Reserva Deportiva y Conexión con Entrenadores
+
+El acceso a canchas deportivas y entrenadores independientes dentro del entorno amateur se caracteriza actualmente por una oferta fragmentada, procesos poco digitalizados y una gestión poco eficiente. Aunque existen alternativas como redes sociales, contactos directos o grupos informales, estas no logran cubrir completamente las necesidades de los deportistas que buscan disponibilidad inmediata, confianza y organización.
+
+Por un lado, los usuarios enfrentan dificultades para encontrar canchas disponibles en horarios adecuados y entrenadores confiables. Por otro lado, los entrenadores independientes carecen de herramientas digitales que les permitan gestionar sus reservas, pagos y visibilidad de manera organizada, lo que limita su crecimiento.
+
+Las soluciones actuales no ofrecen una plataforma centralizada que integre todo el proceso deportivo: búsqueda, reserva, pago y coordinación. Esto genera desorganización, pérdida de tiempo y oportunidades desaprovechadas para ambos segmentos.
+
+Nuestro producto, Courtly, abordará esta problemática mediante una solución que conecte a deportistas con canchas y entrenadores en un solo entorno digital. Permitirá buscar, reservar y pagar de manera rápida y confiable, mientras que los entrenadores podrán ofrecer sus servicios y gestionar sus reservas de forma sencilla.
+
+Sabremos que hemos tenido éxito cuando los usuarios utilicen la aplicación de forma recurrente para organizar sus actividades deportivas, cuando los entrenadores incrementen su participación en la plataforma, y cuando exista una comunidad activa con altos niveles de retención y satisfacción.
+
+---
+
 #### 1.2.2.2. Lean UX Assumptions
+
+##### Courtly - Información del Producto
+
+##### ¿Quién es el usuario?
+
+Los usuarios de Courtly son principalmente dos grupos:
+
+1. Deportistas aficionados y equipos amateurs que buscan canchas disponibles y entrenadores confiables para organizar sus actividades deportivas.  
+2. Entrenadores independientes que desean ofrecer sus servicios, aumentar su visibilidad y gestionar reservas de manera digital.  
+
+##### ¿Dónde encaja nuestro producto, en su trabajo o en su vida?
+
+- Para los deportistas, Courtly se convierte en una herramienta central en su vida deportiva y social, al permitirles organizar partidos y entrenamientos de forma rápida y sin complicaciones.  
+- Para los entrenadores, forma parte de su actividad profesional, ayudándoles a conseguir más alumnos, administrar sus horarios y gestionar sus reservas de manera organizada.
+
+##### ¿Qué problema resuelve nuestro producto?
+
+Courtly resuelve la dificultad de encontrar canchas disponibles y entrenadores confiables en un solo lugar.  
+Además, soluciona la falta de herramientas digitales que permitan a los entrenadores gestionar sus servicios de forma organizada.  
+
+##### ¿Cuándo y cómo se utiliza nuestro producto?
+
+El producto se utiliza cuando un usuario desea organizar un partido, reservar una cancha o contratar un entrenador.  
+Los usuarios acceden a la aplicación, buscan según ubicación, disponibilidad o disciplina, reservan en tiempo real y realizan el pago.  
+Los entrenadores utilizan la plataforma para ofrecer sus servicios y gestionar sus reservas.  
+
+##### ¿Qué características son importantes?
+
+- Buscador de canchas y entrenadores con filtros por ubicación, deporte y disponibilidad.  
+- Sistema de reservas con confirmación en tiempo real.  
+- Perfiles de entrenadores con información y valoraciones.  
+- Sistema de pagos integrado.  
+- Herramientas básicas para gestionar reservas y disponibilidad.  
+- Organización de partidos y entrenamientos.  
+
+##### ¿Cómo debe verse y comportarse nuestro producto?
+
+Courtly debe tener una interfaz clara, intuitiva y dinámica.  
+La experiencia debe ser rápida, con navegación sencilla y procesos sin fricción.  
+El diseño debe transmitir confianza y permitir que los usuarios completen sus objetivos en pocos pasos.  
+
+---
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
-#### 1.2.2.4. Lean UX Canvas
+##### Hipótesis 1:
+
+Creemos que el incremento en las reservas se logrará si los deportistas pueden buscar y reservar canchas fácilmente mediante un sistema con filtros.
+
+**Business Outcome**: Incremento en la cantidad de reservas realizadas.  
+**Users**: Deportistas aficionados y equipos amateurs.  
+**User Outcome**: Mayor facilidad para encontrar canchas y entrenadores disponibles.  
+**Feature**: Buscador integrado con filtros y sistema de reservas.  
 
 ---
+
+##### Hipótesis 2:
+
+Creemos que crecerá la cantidad de entrenadores en la plataforma si pueden ofrecer sus servicios mediante perfiles visibles.
+
+**Business Outcome**: Aumento en el número de entrenadores registrados y activos.  
+**Users**: Entrenadores independientes.  
+**User Outcome**: Mayor visibilidad y captación de clientes.  
+**Feature**: Perfiles de entrenadores con información y valoraciones.  
+
+---
+
+##### Hipótesis 3:
+
+Creemos que aumentará el uso de la aplicación si los usuarios pueden organizar partidos de forma rápida.
+
+**Business Outcome**: Mayor frecuencia de uso de la aplicación.  
+**Users**: Deportistas aficionados.  
+**User Outcome**: Facilidad para organizar actividades deportivas.  
+**Feature**: Funcionalidad para organizar partidos y entrenamientos.  
+
+---
+
+##### Hipótesis 4:
+
+Creemos que aumentará la confianza en la plataforma si los usuarios pueden ver valoraciones de entrenadores.
+
+**Business Outcome**: Incremento en la retención de usuarios.  
+**Users**: Deportistas y entrenadores.  
+**User Outcome**: Mayor confianza al seleccionar servicios.  
+**Feature**: Sistema de valoraciones y reseñas.  
+
+---
+
+#### 1.2.2.4. Lean UX Canvas
+
+<img src="images/LeanUXCanvas-Courtly.jpg" width="900">
+
+[Enlace al Lean UX Canvas en Miro](https://miro.com/welcomeonboard/d3htMStsWFVEUFhBY1NwdGlFR0RkekZjcHlJMUNKcU9TOVJ1U2E1S3ptSXE2QUMyU2RKYnFhRzZIdzFoZE1oNnFBT3pnbCtLaUZoc1NYRU5LY2FuNEJ2UXV1VEM4OWZ3bExlZWJiN0p4dlprbytlUkUvUytLT2h5Vjk0azB6RXJzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=265390215415)
 
 ## 1.3. Segmentos objetivo
 
+La propuesta de valor de Courtly se dirige a dos segmentos principales dentro del ecosistema deportivo amateur. Estos segmentos han sido definidos considerando tanto las necesidades identificadas en el problema como el contexto actual de digitalización, en el cual el acceso a dispositivos móviles y tecnologías de la información permite la adopción de soluciones digitales para la organización de actividades deportivas.
+
+En el Perú, el acceso a telefonía móvil alcanza a más del 95% de los hogares, lo que evidencia un alto nivel de conectividad y facilita el uso de aplicaciones móviles como principal canal de interacción para este tipo de servicios. Este contexto respalda la viabilidad de Courtly como una solución digital orientada al deporte amateur.
+
 ---
+
+### 1. Deportistas aficionados (usuarios en búsqueda de canchas y entrenadores)
+
+Este segmento está conformado principalmente por jóvenes y adultos entre 18 y 40 años que practican deporte de manera recreativa o amateur. En su mayoría, residen en zonas urbanas donde existe mayor disponibilidad de infraestructura deportiva y acceso a servicios digitales.
+
+Incluye a equipos de amigos, comunidades deportivas y personas que organizan partidos de forma regular en su tiempo libre. Asimismo, abarca usuarios interesados en mejorar su rendimiento físico y técnico mediante el apoyo de entrenadores.
+
+Estos usuarios suelen recurrir a herramientas digitales como redes sociales o aplicaciones de mensajería para coordinar sus actividades deportivas, lo que evidencia una necesidad de soluciones más estructuradas, confiables y eficientes. En este contexto, Courtly representa una alternativa que permite centralizar la búsqueda, reserva y organización de actividades deportivas en una sola plataforma.
+
+---
+
+### 2. Entrenadores independientes (proveedores de servicios deportivos)
+
+Este segmento está compuesto por entrenadores personales y profesionales deportivos que ofrecen servicios en disciplinas como fútbol, tenis, pádel, básquet, vóley, entre otros. Generalmente, se trata de trabajadores independientes que gestionan sus actividades de manera autónoma.
+
+En términos demográficos, este grupo está conformado por adultos jóvenes y adultos, usualmente entre 22 y 45 años, que operan principalmente en entornos urbanos donde existe mayor demanda por servicios deportivos personalizados.
+
+Muchos de estos entrenadores utilizan redes sociales o contactos directos para promocionar sus servicios, lo que limita su alcance y dificulta la gestión organizada de sus reservas. En este sentido, requieren herramientas digitales que les permitan aumentar su visibilidad, estructurar su oferta de servicios y facilitar la coordinación con sus clientes.
+
+Courtly responde a esta necesidad al ofrecer un espacio digital donde los entrenadores pueden presentar sus servicios, gestionar reservas y conectar con nuevos usuarios, contribuyendo a reducir la informalidad y mejorar la organización dentro del ecosistema deportivo amateur.
+
+---
+
+<div style="page-break-after:always;"></div>
 
 # Capítulo II: Requirements Development and Software Solution Design
 
