@@ -1979,3 +1979,83 @@ Además, se incluyen:
 - `MatchQueryService` ───────► `MatchRepository` (uses)
 
 ---
+
+##### 2.6.9.6.2. Bounded Context Database Design Diagram
+
+El diagrama de base de datos del bounded context `Matches` representa la estructura relacional utilizada para persistir la información de los partidos organizados.
+La tabla principal es `matches`, la cual mantiene relaciones con las tablas `courts` y `user_profiles`, que representan la cancha donde se juega el partido y el usuario creador respectivamente.
+
+**Diagrama de base de datos (ERD):**
+
+```
+┌──────────────────────────────┐
+│        user_profiles         │
+├──────────────────────────────┤
+│ PK id (BIGINT)               │
+│ name (VARCHAR)               │
+│ email (VARCHAR)              │
+└──────────────────────────────┘
+             ▲
+             │ FK (created_by)
+             │
+┌────────────┴──────────────────────────────────────────┐
+│                        matches                        │
+├───────────────────────────────────────────────────────┤
+│ PK match_id (BIGINT, AUTO_INCREMENT)                  │
+│ title (VARCHAR(255), NOT NULL)                        │
+│ description (TEXT)                                    │
+│ date_time (DATETIME, NOT NULL)                        │
+│ status (ENUM('OPEN','FULL','CANCELLED','COMPLETED'))  │
+│ max_players (INT, NOT NULL)                           │
+│ current_players (INT, DEFAULT 0)                      │
+│ court_id (BIGINT, NOT NULL)                           │
+│ created_by (BIGINT, NOT NULL)                         │
+│ created_at (DATETIME, NOT NULL)                       |
+| FOREIGN KEY (court_id) REFERENCES courts(id)          │
+│ FOREIGN KEY (created_by) REFERENCES user_profiles(id) |
+└───────────────────────────────────────────────────────┘
+             ▲
+             │ FK (court_id)
+             │
+┌────────────┴──────────────────────────────┐
+│                 courts                    │
+├───────────────────────────────────────────┤
+│ PK id (BIGINT)                            │
+│ name (VARCHAR)                            │
+│ location (VARCHAR)                        │
+└───────────────────────────────────────────┘
+```
+
+**Tablas y atributos:**
+
+**Tabla matches:**
+- `match_id`: Identificador único del partido (PK).
+- `title`: Título del partido.
+- `description`: Descripción del partido.
+- `date_time`: Fecha y hora del partido.
+- `status`: Estado del partido (OPEN, FULL, CANCELLED, COMPLETED).
+- `max_players`: Número máximo de jugadores permitidos.
+- `current_players`: Número actual de jugadores inscritos.
+- `court_id`: Referencia a la cancha (FK).
+- `created_by`: Referencia al usuario creador (FK).
+- `created_at`: Fecha de creación.
+
+**Tabla user_profiles:**
+- `id`: Identificador del usuario (PK).
+- `name`: Nombre del usuario.
+- `email`: Correo electrónico.
+
+**Tabla courts:**
+- `id:` Identificador de la cancha (PK).
+- `name:` Nombre de la cancha.
+- `location:` Ubicación de la cancha.
+
+**Constraints:**
+- PRIMARY KEY (`match_id`) en `matches`
+- FOREIGN KEY (`court_id`) → `courts`(`id`)
+- FOREIGN KEY (`created_by`) → `user_profiles`(`id`)
+- NOT NULL en `title`, `date_time`, `status`, `max_players`, `court_id`, `created_by`, `created_at`
+
+**Relaciones entre tablas:**
+- `user_profiles` (1) ──── (*) `matches`
+- `courts` (1) ──── (*) `matches`
