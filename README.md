@@ -2607,6 +2607,8 @@ En esta sección se presentan los Empathy Mappings. Estos nos ayudarán a compre
 
 ### 2.4.2. Impact Mapping
 
+<img src="assets/chapter2/Impact-Mapping.jpg" alt="Impact Mapping" width="700">
+
 ### 2.4.3. Product Backlog
 
 <div>
@@ -3143,9 +3145,58 @@ Se siguió un proceso iterativo para cada canvas que incluyó:
 
 #### 2.5.3.1. Software Architecture Context Level Diagrams
 
+<img src="assets/chapter2/diagrama-contexto.png" alt="Descripción de la imagen" width="700">
+
 #### 2.5.3.2. Software Architecture Container Level Diagrams
 
+<img src="assets/chapter2/diagrama-contenedores.png" alt="Descripción de la imagen" width="700">
+
 #### 2.5.3.3. Software Architecture Deployment Diagrams
+
+Diagrama de componentes IAM
+
+<img src="assets/chapter2/diagrama-componentes-iam.png" alt="Descripción de la imagen" width="700">
+
+Diagrama de componentes Users
+
+<img src="assets/chapter2/diagrama-componentes-users.png" alt="Descripción de la imagen" width="700">
+
+Diagrama de componentes Courts
+
+<img src="assets/chapter2/diagrama-componentes-courts.png" alt="Descripción de la imagen" width="700">
+
+Diagrama de componentes Booking
+
+<img src="assets/chapter2/diagrama-componentes-bookings.png" alt="Descripción de la imagen" width="700">
+
+Diagrama de componentes Payments
+
+<img src="assets/chapter2/diagrama-componentes-payments.png" alt="Descripción de la imagen" width="700">
+
+Diagrama de componentes Coaches
+
+<img src="assets/chapter2/diagrama-componentes-coaches.png" alt="Descripción de la imagen" width="700">
+
+Diagrama de componentes Reviews
+
+<img src="assets/chapter2/diagrama-componentes-reviews.png" alt="Descripción de la imagen" width="700">
+
+Diagrama de componentes Notificacions
+
+<img src="assets/chapter2/diagrama-componentes-notificacions.png" alt="Descripción de la imagen" width="700">
+
+Diagrama de componentes Matches
+
+<img src="assets/chapter2/diagrama-componentes-matches.png" alt="Descripción de la imagen" width="700">
+
+Diagrama de componentes Availabilities
+
+<img src="assets/chapter2/diagrama-componentes-availabilities.png" alt="Descripción de la imagen" width="700">
+
+Diagrama de componentes Analytics
+
+<img src="assets/chapter2/diagrama-componentes-analytics.png" alt="Descripción de la imagen" width="700">
+
 
 ---
 
