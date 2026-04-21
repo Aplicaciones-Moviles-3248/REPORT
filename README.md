@@ -1434,20 +1434,791 @@ Mientras los deportistas enfrentan desorden y poca confiabilidad, los entrenador
 
 ## 2.6. Tactical-Level Domain-Driven Design
 
-### 2.6.x. Bounded Context: <Bounded Context Name>
+### 2.6.1. Bounded Context: Bookings
 
-#### 2.6.x.1. Domain Layer
+El bounded context **Bookings** representa la capacidad del sistema encargada de gestionar las reservas de canchas deportivas. Su propósito es permitir que un usuario funcional del negocio registre, consulte, actualice y elimine reservas asociadas a una cancha en un intervalo de tiempo determinado. Dentro de este contexto, la entidad principal es `Booking`, ya que concentra la información esencial de la operación de reserva y establece la relación entre el usuario que reserva y la cancha reservada. :contentReference[oaicite:1]{index=1}
 
-#### 2.6.x.2. Interface Layer
+Este contexto se relaciona directamente con los bounded contexts **Users** y **Courts**, debido a que cada reserva depende de un `UserProfile` y de una `Court`. De esta forma, Bookings constituye uno de los contextos operativos centrales del sistema, ya que articula una de las capacidades más importantes del producto Courtly: la gestión de reservas deportivas. :contentReference[oaicite:2]{index=2}
 
-#### 2.6.x.3. Application Layer
+---
 
-#### 2.6.x.4. Infrastructure Layer
+#### 2.6.1.1. Domain Layer
 
-#### 2.6.x.5. Bounded Context Software Architecture Component Level Diagrams
+La capa de dominio del bounded context **Bookings** contiene las clases que modelan el núcleo de la reserva de canchas y las reglas de negocio asociadas a este proceso. A partir del análisis del código, se identifica que el agregado principal del contexto es `Booking`, acompañado por comandos, consultas e interfaces de servicio que estructuran la lógica del dominio. :contentReference[oaicite:3]{index=3}
 
-#### 2.6.x.6. Bounded Context Software Architecture Code Level Diagrams
+##### a) Entity / Aggregate Root: `Booking`
 
-##### 2.6.x.6.1. Bounded Context Domain Layer Class Diagrams
+**Nombre de la clase:** `Booking`  
+**Paquete:** `com.upc.matchpoint.bookings.domain.model.aggregates`  
 
-##### 2.6.x.6.2. Bounded Context Database Design Diagram
+**Propósito:**  
+Representa la entidad principal del bounded context Bookings. Modela una reserva de cancha realizada por un usuario en un intervalo de tiempo específico y constituye el agregado raíz del contexto. :contentReference[oaicite:4]{index=4}
+
+**Atributos:**
+- `id: Long` → identificador único de la reserva.
+- `startTime: LocalDateTime` → fecha y hora de inicio de la reserva.
+- `endTime: LocalDateTime` → fecha y hora de fin de la reserva.
+- `user: UserProfile` → referencia al usuario que realiza la reserva.
+- `court: Court` → referencia a la cancha reservada.
+- `createdAt: LocalDateTime` → fecha y hora de creación automática de la reserva. :contentReference[oaicite:5]{index=5}
+
+**Métodos:**
+- `Booking(LocalDateTime startTime, LocalDateTime endTime, UserProfile user, Court court)` → constructor que inicializa una nueva reserva.
+- `updateBooking(LocalDateTime startTime, LocalDateTime endTime)` → actualiza los horarios de la reserva.
+- `onCreate()` → método de ciclo de vida que asigna automáticamente la fecha de creación mediante `@PrePersist`. :contentReference[oaicite:6]{index=6}
+
+**Relaciones:**
+- Una reserva pertenece a un solo `UserProfile`.
+- Una reserva pertenece a una sola `Court`.
+- Un usuario puede tener múltiples reservas.
+- Una cancha puede estar asociada a múltiples reservas a lo largo del tiempo. :contentReference[oaicite:7]{index=7}
+
+##### b) Referencias externas del dominio
+
+Dentro del bounded context Bookings existen referencias a entidades de otros contextos, necesarias para completar la lógica de negocio de la reserva.
+
+###### `UserProfile`
+**Bounded context de origen:** `Users`  
+**Propósito dentro de Bookings:**  
+Representa al usuario funcional que realiza la reserva.
+
+**Atributos relevantes utilizados por Bookings:**
+- `id`
+- `name` :contentReference[oaicite:8]{index=8}
+
+###### `Court`
+**Bounded context de origen:** `Courts`  
+**Propósito dentro de Bookings:**  
+Representa la cancha que será reservada.
+
+**Atributos relevantes utilizados por Bookings:**
+- `id`
+- `name` :contentReference[oaicite:9]{index=9}
+
+##### c) Value Objects
+
+En el bounded context **Bookings** no se identifican **Value Objects explícitos** implementados en el código actual. El sistema utiliza tipos primitivos y tipos estándar de Java, como `LocalDateTime`, directamente dentro del agregado `Booking`. Sin embargo, desde una perspectiva de mejora arquitectónica, sería posible introducir objetos de valor para encapsular conceptos como el rango horario de la reserva. :contentReference[oaicite:10]{index=10}
+
+##### d) Commands del dominio
+
+Los comandos del contexto Bookings encapsulan la intención de ejecutar operaciones sobre el agregado `Booking`.
+
+###### `CreateBookingCommand`
+**Paquete:** `com.upc.matchpoint.bookings.domain.model.commands`  
+**Propósito:**  
+Representa la intención de crear una nueva reserva.
+
+**Atributos:**
+- `startTime: LocalDateTime`
+- `endTime: LocalDateTime`
+- `userId: Long`
+- `courtId: Long` :contentReference[oaicite:11]{index=11}
+
+###### `UpdateBookingCommand`
+**Paquete:** `com.upc.matchpoint.bookings.domain.model.commands`  
+**Propósito:**  
+Representa la intención de actualizar una reserva existente.
+
+**Atributos:**
+- `bookingId: Long`
+- `startTime: LocalDateTime`
+- `endTime: LocalDateTime` :contentReference[oaicite:12]{index=12}
+
+###### `DeleteBookingCommand`
+**Paquete:** `com.upc.matchpoint.bookings.domain.model.commands`  
+**Propósito:**  
+Representa la intención de eliminar una reserva.
+
+**Atributos:**
+- `bookingId: Long` :contentReference[oaicite:13]{index=13}
+
+##### e) Queries del dominio
+
+El contexto también define objetos de consulta para la recuperación de información.
+
+###### `GetAllBookingsQuery`
+**Paquete:** `com.upc.matchpoint.bookings.domain.model.queries`  
+**Propósito:**  
+Representa la intención de obtener todas las reservas del sistema.  
+**Atributos:** no contiene atributos. :contentReference[oaicite:14]{index=14}
+
+###### `GetBookingByIdQuery`
+**Paquete:** `com.upc.matchpoint.bookings.domain.model.queries`  
+**Propósito:**  
+Representa la intención de obtener una reserva específica por identificador.
+
+**Atributos:**
+- `bookingId: Long` :contentReference[oaicite:15]{index=15}
+
+##### f) Domain Services
+
+El dominio define interfaces de servicio que abstraen la ejecución de comandos y consultas.
+
+###### `BookingCommandService`
+**Paquete:** `com.upc.matchpoint.bookings.domain.services`  
+**Propósito:**  
+Define el contrato para ejecutar operaciones de creación, actualización y eliminación sobre reservas.
+
+**Métodos:**
+- `Optional<Booking> handle(CreateBookingCommand command)`
+- `Optional<Booking> handle(UpdateBookingCommand command)`
+- `void handle(DeleteBookingCommand command)` :contentReference[oaicite:16]{index=16}
+
+###### `BookingQueryService`
+**Paquete:** `com.upc.matchpoint.bookings.domain.services`  
+**Propósito:**  
+Define el contrato para ejecutar operaciones de consulta sobre reservas.
+
+**Métodos:**
+- `List<Booking> handle(GetAllBookingsQuery query)`
+- `Optional<Booking> handle(GetBookingByIdQuery query)` :contentReference[oaicite:17]{index=17}
+
+##### g) Repository
+
+###### `BookingRepository`
+**Paquete:** `com.upc.matchpoint.bookings.infrastructure.persistence.jpa.repositories`  
+**Propósito dentro del dominio:**  
+Abstraer la persistencia de reservas, permitiendo operaciones de guardado, consulta y eliminación.
+
+**Operaciones disponibles:**
+- `save(Booking)`
+- `findById(Long)`
+- `findAll()`
+- `deleteById(Long)`
+- `existsById(Long)` :contentReference[oaicite:18]{index=18}
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- Una reserva debe estar asociada a un usuario válido.
+- Una reserva debe estar asociada a una cancha válida.
+- Una reserva debe tener hora de inicio.
+- Una reserva debe tener hora de fin.
+- La fecha de creación se genera automáticamente.
+- La actualización de una reserva solo modifica los horarios. :contentReference[oaicite:19]{index=19}
+
+**Reglas de negocio no implementadas aún:**
+- Validación de que `startTime < endTime`.
+- Validación de conflictos de horario sobre la misma cancha.
+- Validación de reservas en fechas pasadas.
+- Validación del horario operativo de la cancha.
+- Cancelación lógica con estado.
+- Integración con notificaciones o comprobantes. :contentReference[oaicite:20]{index=20}
+
+En conjunto, la Domain Layer de Bookings está correctamente definida en términos estructurales, aunque todavía presenta oportunidades de mejora en la formalización de reglas de negocio más ricas.
+
+---
+
+#### 2.6.1.2. Interface Layer
+
+La Interface Layer del bounded context **Bookings** contiene las clases responsables de exponer las funcionalidades del contexto mediante endpoints REST y de transformar la información entre las estructuras internas del sistema y los recursos consumidos por el frontend móvil. :contentReference[oaicite:21]{index=21}
+
+##### a) `BookingsController`
+
+**Paquete:** `com.upc.matchpoint.bookings.interfaces.rest`  
+
+**Propósito:**  
+Exponer los endpoints HTTP para la gestión de reservas. Actúa como punto de entrada del bounded context desde el cliente móvil o cualquier consumidor externo. :contentReference[oaicite:22]{index=22}
+
+**Dependencias:**
+- `BookingCommandService`
+- `BookingQueryService` :contentReference[oaicite:23]{index=23}
+
+**Endpoints expuestos:**
+- `POST /api/v1/bookings` → crear reserva
+- `GET /api/v1/bookings` → obtener todas las reservas
+- `GET /api/v1/bookings/{id}` → obtener reserva por id
+- `PUT /api/v1/bookings/{id}` → actualizar reserva
+- `DELETE /api/v1/bookings/{id}` → eliminar reserva :contentReference[oaicite:24]{index=24}
+
+##### b) Resources / DTOs
+
+###### `BookingResource`
+**Paquete:** `com.upc.matchpoint.bookings.interfaces.rest.resources`  
+
+**Propósito:**  
+Representar la respuesta de una reserva hacia el frontend.
+
+**Atributos:**
+- `id`
+- `startTime`
+- `endTime`
+- `user: UserSummaryResource`
+- `court: CourtSummaryResource`
+
+**Estructuras internas resumidas:**
+- `UserSummaryResource(Long id, String name)`
+- `CourtSummaryResource(Long id, String name)` :contentReference[oaicite:25]{index=25}
+
+###### `CreateBookingResource`
+**Propósito:**  
+Representar los datos de entrada requeridos para crear una nueva reserva.
+
+**Atributos:**
+- `startTime`
+- `endTime`
+- `userId`
+- `courtId` :contentReference[oaicite:26]{index=26}
+
+###### `UpdateBookingResource`
+**Propósito:**  
+Representar los datos de entrada necesarios para actualizar una reserva existente.
+
+**Atributos:**
+- `startTime`
+- `endTime` :contentReference[oaicite:27]{index=27}
+
+##### c) Assemblers
+
+###### `BookingResourceFromEntityAssembler`
+**Paquete:** `com.upc.matchpoint.bookings.interfaces.rest.transform`  
+**Propósito:**  
+Transformar una entidad `Booking` del dominio en un `BookingResource` apto para ser enviado al frontend. Además, resume la relación con `UserProfile` y `Court` mostrando únicamente `id` y `name`. :contentReference[oaicite:28]{index=28}
+
+###### `CreateBookingCommandFromResourceAssembler`
+**Propósito:**  
+Transformar un `CreateBookingResource` en un `CreateBookingCommand`. :contentReference[oaicite:29]{index=29}
+
+###### `UpdateBookingCommandFromResourceAssembler`
+**Propósito:**  
+Transformar un `UpdateBookingResource`, junto con el identificador de la reserva, en un `UpdateBookingCommand`. :contentReference[oaicite:30]{index=30}
+
+##### d) Responsabilidad de la capa de interfaz
+
+La responsabilidad principal de esta capa es:
+- recibir solicitudes del cliente,
+- convertir recursos de entrada en comandos o consultas,
+- delegar la ejecución a la capa de aplicación,
+- y transformar los resultados en recursos de salida adecuados para la aplicación móvil. :contentReference[oaicite:31]{index=31}
+
+---
+
+#### 2.6.1.3. Application Layer
+
+La Application Layer del bounded context **Bookings** coordina los flujos de proceso del negocio. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y con la infraestructura de persistencia. :contentReference[oaicite:32]{index=32}
+
+Las capacidades principales del contexto son:
+- crear una reserva,
+- actualizar una reserva,
+- eliminar una reserva,
+- obtener una reserva por id,
+- obtener todas las reservas. :contentReference[oaicite:33]{index=33}
+
+##### a) Command Handlers / Command Services
+
+###### `BookingCommandServiceImpl`
+**Paquete:** `com.upc.matchpoint.bookings.application.internal.commandservices`  
+**Propósito:**  
+Implementar el contrato `BookingCommandService` y ejecutar los casos de uso de escritura del contexto Bookings. :contentReference[oaicite:34]{index=34}
+
+**Dependencias:**
+- `BookingRepository`
+- `UserProfileRepository`
+- `CourtRepository` :contentReference[oaicite:35]{index=35}
+
+**Operaciones que maneja:**
+
+**`handle(CreateBookingCommand command)`**
+- valida que el usuario exista,
+- valida que la cancha exista,
+- crea una nueva entidad `Booking`,
+- persiste la reserva en base de datos,
+- retorna la reserva creada. :contentReference[oaicite:36]{index=36}
+
+**`handle(UpdateBookingCommand command)`**
+- busca la reserva por id,
+- actualiza `startTime` y `endTime`,
+- guarda el cambio,
+- retorna la reserva actualizada si existe. :contentReference[oaicite:37]{index=37}
+
+**`handle(DeleteBookingCommand command)`**
+- verifica si la reserva existe,
+- la elimina por identificador,
+- lanza excepción si no existe. :contentReference[oaicite:38]{index=38}
+
+##### b) Query Handlers / Query Services
+
+###### `BookingQueryServiceImpl`
+**Paquete:** `com.upc.matchpoint.bookings.application.internal.queryservices`  
+**Propósito:**  
+Implementar el contrato `BookingQueryService` y ejecutar los casos de uso de lectura del contexto Bookings. :contentReference[oaicite:39]{index=39}
+
+**Dependencia:**
+- `BookingRepository` :contentReference[oaicite:40]{index=40}
+
+**Operaciones que maneja:**
+
+**`handle(GetAllBookingsQuery query)`**
+- recupera todas las reservas del sistema mediante `findAll()`,
+- devuelve una lista de entidades `Booking`. :contentReference[oaicite:41]{index=41}
+
+**`handle(GetBookingByIdQuery query)`**
+- busca una reserva específica por su id,
+- devuelve un `Optional<Booking>`. :contentReference[oaicite:42]{index=42}
+
+##### c) Flujos principales del negocio
+
+###### Flujo de creación de reserva
+1. El frontend envía un `CreateBookingResource`.
+2. La capa de interfaz lo transforma a `CreateBookingCommand`.
+3. `BookingCommandServiceImpl` valida la existencia de usuario y cancha.
+4. Se construye una instancia de `Booking`.
+5. La reserva se persiste mediante `BookingRepository`.
+6. El resultado se transforma en `BookingResource` y se retorna al cliente. :contentReference[oaicite:43]{index=43}
+
+###### Flujo de actualización
+1. El frontend envía un `UpdateBookingResource`.
+2. Se transforma en `UpdateBookingCommand`.
+3. `BookingCommandServiceImpl` recupera la reserva existente.
+4. Se actualizan los horarios con `updateBooking(...)`.
+5. Se guarda la modificación.
+6. Se retorna la reserva actualizada. :contentReference[oaicite:44]{index=44}
+
+###### Flujo de consulta
+1. El frontend solicita una o varias reservas.
+2. El controlador construye el objeto de consulta correspondiente.
+3. `BookingQueryServiceImpl` recupera la información desde `BookingRepository`.
+4. Los resultados se transforman a `BookingResource`.
+5. Se retorna la respuesta al cliente. :contentReference[oaicite:45]{index=45}
+
+###### Flujo de eliminación
+1. El frontend solicita eliminar una reserva.
+2. Se construye un `DeleteBookingCommand`.
+3. `BookingCommandServiceImpl` verifica la existencia del booking.
+4. Se elimina la reserva del repositorio.
+5. Se devuelve la confirmación de eliminación. :contentReference[oaicite:46]{index=46}
+
+##### d) Observaciones de la capa de aplicación
+
+Aunque esta capa ya implementa correctamente los casos de uso CRUD del bounded context, aún presenta limitaciones funcionales relevantes:
+- no valida conflictos de horario,
+- no valida reservas en el pasado,
+- no valida disponibilidad real de la cancha,
+- no incorpora paginación ni filtros en consultas,
+- y no publica eventos de dominio. :contentReference[oaicite:47]{index=47}
+
+---
+
+#### 2.6.1.4. Infrastructure Layer
+
+La Infrastructure Layer del bounded context **Bookings** contiene los componentes encargados del acceso a base de datos y de la persistencia de las reservas. En esta capa se materializa el almacenamiento del agregado `Booking` y se soportan las operaciones que ejecuta la aplicación. :contentReference[oaicite:48]{index=48}
+
+##### a) Repositorio de persistencia
+
+###### `BookingRepository`
+**Paquete:** `com.upc.matchpoint.bookings.infrastructure.persistence.jpa.repositories`  
+**Propósito:**  
+Gestionar la persistencia y recuperación de reservas utilizando Spring Data JPA. La implementación concreta es generada automáticamente por el framework al extender `JpaRepository<Booking, Long>`. :contentReference[oaicite:49]{index=49}
+
+**Operaciones disponibles:**
+- `save`
+- `findById`
+- `findAll`
+- `deleteById`
+- `existsById` :contentReference[oaicite:50]{index=50}
+
+**Observación:**  
+No se identifican métodos personalizados de consulta para validaciones avanzadas o búsquedas por rango horario. :contentReference[oaicite:51]{index=51}
+
+##### b) Persistencia de la entidad `Booking`
+
+La entidad `Booking` está mapeada como una entidad JPA con las siguientes características:
+- `@Entity`
+- `@Table(name = "bookings")`
+- `@Id`
+- `@GeneratedValue(strategy = GenerationType.IDENTITY)`
+- relaciones `@ManyToOne(fetch = FetchType.LAZY)` con `UserProfile` y `Court`
+- método `@PrePersist` para inicializar `createdAt` automáticamente. :contentReference[oaicite:52]{index=52}
+
+##### c) Diseño de persistencia
+
+**Tabla principal:** `bookings`
+
+**Columnas identificadas:**
+- `id`
+- `start_time`
+- `end_time`
+- `user_id`
+- `court_id`
+- `created_at` :contentReference[oaicite:53]{index=53}
+
+**Restricciones y relaciones:**
+- `id` → Primary Key
+- `user_id` → Foreign Key hacia `user_profiles.id`
+- `court_id` → Foreign Key hacia `courts.id`
+- `start_time`, `end_time`, `user_id`, `court_id`, `created_at` → `NOT NULL` :contentReference[oaicite:54]{index=54}
+
+##### d) Integración con otros bounded contexts
+
+La infraestructura del contexto Bookings depende de:
+- `UserProfileRepository` del contexto **Users**, para validar usuarios existentes.
+- `CourtRepository` del contexto **Courts**, para validar canchas existentes. :contentReference[oaicite:55]{index=55}
+
+##### e) Configuración técnica relevante
+
+El proyecto utiliza configuración JPA con:
+- `spring.jpa.hibernate.ddl-auto=update`
+- `spring.jpa.open-in-view=true` :contentReference[oaicite:56]{index=56}
+
+Esto permite que los recursos puedan resolver relaciones LAZY durante la construcción de respuestas, aunque también introduce una dependencia técnica que puede afectar el comportamiento si dicha configuración cambia.
+
+##### f) Limitaciones de la capa de infraestructura
+
+La infraestructura actual cumple con la persistencia básica del contexto, pero aún no incorpora:
+- consultas personalizadas para disponibilidad,
+- validación de solapamiento de reservas,
+- paginación optimizada,
+- índices o estrategias de rendimiento adicionales,
+- integraciones con servicios externos como pagos o notificaciones. :contentReference[oaicite:57]{index=57}
+
+En consecuencia, la Infrastructure Layer del bounded context Bookings es funcional para el escenario actual, pero todavía puede evolucionar para soportar una operación más robusta y escalable.
+
+#### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Descripción:**
+
+El Component Diagram del bounded context **Bookings** representa la descomposición del contenedor backend encargado de gestionar las reservas de canchas deportivas. A nivel arquitectónico, este container está conformado por componentes con responsabilidades bien delimitadas dentro del sistema: recepción de solicitudes REST, transformación de datos entre capas, ejecución de comandos y consultas, acceso a persistencia y validación de referencias provenientes de otros bounded contexts como **Users** y **Courts**.
+
+A partir del análisis del código real, se identifican los siguientes componentes principales:
+
+**Componentes principales:**
+
+- **Bookings REST API Component**  
+  Expone los endpoints HTTP del bounded context mediante `BookingsController`. Su responsabilidad es recibir solicitudes del frontend, delegar comandos y consultas, y devolver respuestas estructuradas.
+
+- **Booking Transformation Component**  
+  Agrupa los assemblers y resources que permiten transformar datos entre la capa de interfaz y la capa de aplicación. Incluye `BookingResourceFromEntityAssembler`, `CreateBookingCommandFromResourceAssembler` y `UpdateBookingCommandFromResourceAssembler`.
+
+- **Booking Command Processing Component**  
+  Implementado por `BookingCommandServiceImpl`, se encarga de coordinar las operaciones de escritura del contexto: creación, actualización y eliminación de reservas. Además, valida la existencia del usuario y de la cancha antes de crear una reserva.
+
+- **Booking Query Processing Component**  
+  Implementado por `BookingQueryServiceImpl`, gestiona las operaciones de consulta del contexto, como obtener todas las reservas o buscar una reserva por identificador.
+
+- **Booking Domain Component**  
+  Representa el núcleo del dominio mediante el agregado `Booking`, junto con los comandos (`CreateBookingCommand`, `UpdateBookingCommand`, `DeleteBookingCommand`) y las queries (`GetAllBookingsQuery`, `GetBookingByIdQuery`).
+
+- **Booking Persistence Component**  
+  Encapsula el acceso a persistencia a través de `BookingRepository`, utilizando Spring Data JPA para almacenar y recuperar reservas desde la base de datos relacional.
+
+- **External Context Access Component**  
+  Representa la dependencia del bounded context Bookings hacia `UserProfileRepository` del contexto **Users** y `CourtRepository` del contexto **Courts**, utilizados para validar las referencias externas requeridas por la reserva.
+
+---
+
+**Diagrama de componentes propuesto:**
+
+```text
+┌──────────────────────────────────────────────────────────────┐
+│                    Bookings Container                        │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Bookings REST API Component                           │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • BookingsController                                  │  │
+│  │ • Expone endpoints CRUD de reservas                   │  │
+│  │ • Recibe requests del frontend móvil                  │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Booking Transformation Component                      │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • BookingResourceFromEntityAssembler                  │  │
+│  │ • CreateBookingCommandFromResourceAssembler           │  │
+│  │ • UpdateBookingCommandFromResourceAssembler           │  │
+│  │ • BookingResource / CreateBookingResource / Update... │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Booking Command Processing Component                  │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • BookingCommandServiceImpl                           │  │
+│  │ • CreateBookingCommand                                │  │
+│  │ • UpdateBookingCommand                                │  │
+│  │ • DeleteBookingCommand                                │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Booking Query Processing Component                    │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • BookingQueryServiceImpl                             │  │
+│  │ • GetAllBookingsQuery                                 │  │
+│  │ • GetBookingByIdQuery                                 │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Booking Domain Component                              │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • Booking (Aggregate Root)                            │  │
+│  │ • updateBooking(...)                                  │  │
+│  │ • onCreate()                                          │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Booking Persistence Component                         │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • BookingRepository                                   │  │
+│  │ • Spring Data JPA / Hibernate                         │  │
+│  │ • Persistencia en tabla bookings                      │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ External Context Access Component                     │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • UserProfileRepository (Users)                       │  │
+│  │ • CourtRepository (Courts)                            │  │
+│  │ • Validación de referencias externas                  │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+          ↓                         ↓                        ↓
+   ┌──────────────┐         ┌──────────────┐         ┌─────────────────┐
+   │ user_profiles│         │    courts    │         │    bookings     │
+   │ (Users BC)   │         │ (Courts BC)  │         │   (DB Table)    │
+   └──────────────┘         └──────────────┘         └─────────────────┘
+```
+**Relaciones entre componentes:**
+
+- **Bookings REST API Component → Booking Transformation Component**  
+  Transforma los datos de entrada y salida entre resources, commands y entidades.
+
+- **Bookings REST API Component → Booking Command Processing Component**  
+  Delega operaciones de creación, actualización y eliminación.
+
+- **Bookings REST API Component → Booking Query Processing Component**  
+  Delega operaciones de lectura.
+
+- **Booking Command Processing Component → External Context Access Component**  
+  Valida la existencia del usuario y de la cancha antes de crear un booking.
+
+- **Booking Command Processing Component → Booking Domain Component**  
+  Construye o actualiza la entidad `Booking`.
+
+- **Booking Command Processing Component → Booking Persistence Component**  
+  Persiste los cambios del agregado.
+
+- **Booking Query Processing Component → Booking Persistence Component**  
+  Recupera reservas desde la base de datos.
+
+- **Booking Persistence Component → bookings**  
+  Almacena y consulta la información persistida.
+
+- **External Context Access Component → user_profiles / courts**  
+  Accede a los bounded contexts externos para validar relaciones de negocio.
+
+#### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se presentan los diagramas a nivel de código del bounded context **Bookings**, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto. :contentReference[oaicite:0]{index=0}
+
+Se incluyen dos representaciones principales:
+- El **Class Diagram del Domain Layer**, que describe la estructura del modelo de dominio.
+- El **Database Design Diagram**, que representa la persistencia de datos en la base de datos relacional.
+
+---
+
+##### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+**Descripción:**
+
+El diagrama de clases del Domain Layer del bounded context **Bookings** presenta el agregado principal `Booking`, junto con sus relaciones hacia entidades externas (`UserProfile` y `Court`), así como las interfaces de servicios y los objetos que representan comandos y consultas.
+
+El diseño evidencia que `Booking` es el núcleo del dominio y que las operaciones del sistema se organizan alrededor de comandos (acciones de escritura) y queries (acciones de lectura).
+
+---
+
+**Diagrama UML de clases (Domain Layer):**
+
+```text
+┌────────────────────────────────────────────┐
+│           <<Aggregate Root>>               │
+│                 Booking                    │
+├────────────────────────────────────────────┤
+│ - id: Long                                 │
+│ - startTime: LocalDateTime                 │
+│ - endTime: LocalDateTime                   │
+│ - user: UserProfile                        │
+│ - court: Court                             │
+│ - createdAt: LocalDateTime                 │
+├────────────────────────────────────────────┤
+│ + Booking(startTime, endTime, user, court) │
+│ + updateBooking(startTime, endTime): void  │
+│ + onCreate(): void                         │
+└────────────────────────────────────────────┘
+                  │
+                  │ many-to-one
+                  ▼
+        ┌───────────────────────┐
+        │      UserProfile      │
+        ├───────────────────────┤
+        │ + id: Long            │
+        │ + name: String        │
+        │ + email: String       │
+        │ + phone: String       │
+        └───────────────────────┘
+
+                  │
+                  │ many-to-one
+                  ▼
+        ┌───────────────────────┐
+        │        Court          │
+        ├───────────────────────┤
+        │ + id: Long            │
+        │ + name: String        │
+        │ + location: String    │
+        │ + type: String        │
+        └───────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│         BookingCommandService              │
+├────────────────────────────────────────────┤
+│ + handle(CreateBookingCommand): Optional   │
+│ + handle(UpdateBookingCommand): Optional   │
+│ + handle(DeleteBookingCommand): void       │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│         BookingQueryService                │
+├────────────────────────────────────────────┤
+│ + handle(GetAllBookingsQuery): List        │
+│ + handle(GetBookingByIdQuery): Optional    │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│           CreateBookingCommand             │
+├────────────────────────────────────────────┤
+│ + startTime: LocalDateTime                 │
+│ + endTime: LocalDateTime                   │
+│ + userId: Long                             │
+│ + courtId: Long                            │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│           UpdateBookingCommand             │
+├────────────────────────────────────────────┤
+│ + bookingId: Long                          │
+│ + startTime: LocalDateTime                 │
+│ + endTime: LocalDateTime                   │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│           DeleteBookingCommand             │
+├────────────────────────────────────────────┤
+│ + bookingId: Long                          │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│            GetAllBookingsQuery             │
+├────────────────────────────────────────────┤
+│ (sin atributos)                            │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│           GetBookingByIdQuery              │
+├────────────────────────────────────────────┤
+│ + bookingId: Long                          │
+└────────────────────────────────────────────┘
+```
+### Relaciones principales del modelo
+
+- **Booking** es el Aggregate Root del bounded context.
+- **Booking** mantiene una relación Many-to-One con **UserProfile**.
+- **Booking** mantiene una relación Many-to-One con **Court**.
+- **BookingCommandService** define las operaciones de escritura.
+- **BookingQueryService** define las operaciones de lectura.
+- Los comandos encapsulan acciones de negocio.
+- Las queries encapsulan solicitudes de consulta.
+
+### Observaciones
+
+El modelo de dominio presenta una estructura clara y centrada en el agregado **Booking**. Sin embargo, no se identifican aún value objects ni reglas complejas encapsuladas dentro del dominio, lo que sugiere oportunidades de mejora como la incorporación de validaciones de disponibilidad o control de solapamiento de horarios.
+
+---
+
+##### 2.6.1.6.2. Bounded Context Database Design Diagram
+
+### Descripción
+
+El diagrama de base de datos del bounded context **Bookings** representa la estructura relacional utilizada para persistir la información de reservas. La tabla principal es **bookings**, la cual mantiene relaciones con las tablas **user_profiles** y **courts**.
+
+### Diagrama de base de datos (ERD)
+
+```
+┌──────────────────────────────┐
+│        user_profiles         │
+├──────────────────────────────┤
+│ PK id (BIGINT)               │
+│ name (VARCHAR)               │
+│ email (VARCHAR)              │
+│ phone (VARCHAR)              │
+└──────────────────────────────┘
+             ▲
+             │ FK (user_id)
+             │
+┌────────────┴──────────────────────────────┐
+│                 bookings                  │
+├───────────────────────────────────────────┤
+│ PK id (BIGINT, AUTO_INCREMENT)            │
+│ start_time (DATETIME(6), NOT NULL)        │
+│ end_time (DATETIME(6), NOT NULL)          │
+│ user_id (BIGINT, NOT NULL)                │
+│ court_id (BIGINT, NOT NULL)               │
+│ created_at (DATETIME(6), NOT NULL)        │
+└────────────┬──────────────────────────────┘
+             │
+             │ FK (court_id)
+             ▼
+┌──────────────────────────────┐
+│            courts            │
+├──────────────────────────────┤
+│ PK id (BIGINT)               │
+│ name (VARCHAR)               │
+│ location (VARCHAR)           │
+│ type (VARCHAR)               │
+└──────────────────────────────┘
+```
+### Tablas y atributos
+
+#### Tabla `bookings`
+
+- `id`: identificador único de la reserva (PK)
+- `start_time`: fecha y hora de inicio
+- `end_time`: fecha y hora de fin
+- `user_id`: referencia al usuario (FK)
+- `court_id`: referencia a la cancha (FK)
+- `created_at`: fecha de creación
+
+#### Tabla `user_profiles`
+
+- `id`
+- `name`
+- `email`
+- `phone`
+
+#### Tabla `courts`
+
+- `id`
+- `name`
+- `location`
+- `type`
+
+### Constraints
+
+- PRIMARY KEY (`id`) en `bookings`
+- FOREIGN KEY (`user_id`) → `user_profiles(id)`
+- FOREIGN KEY (`court_id`) → `courts(id)`
+- Restricciones NOT NULL en campos críticos
+
+### Relaciones entre tablas
+
+- `user_profiles (1)` ──── `(*) bookings`
+- `courts (1)` ──── `(*) bookings`
+
+### Observaciones
+
+El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente las reservas. Sin embargo, actualmente no se implementan restricciones avanzadas como control de solapamiento de horarios o validación de disponibilidad, lo que representa una oportunidad de mejora para fortalecer la lógica de negocio a nivel de base de datos.
