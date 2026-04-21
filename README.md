@@ -621,10 +621,10 @@ Se han seleccionado tres competidores relevantes que presentan modelos de negoci
   <tr>
     <td></td>
     <td></td>
-    <td align="center"><img src="URL_COURTLY" width="80"/></td>
-    <td align="center"><img src="URL_PLAYTOMIC" width="80"/></td>
-    <td align="center"><img src="URL_MATCHI" width="80"/></td>
-    <td align="center"><img src="URL_RACKETPAL" width="80"/></td>
+    <td align="center"><img src="assets/chapter2/logo_courtly.png" width="80"/></td>
+    <td align="center"><img src="assets/chapter2/logo_playtomic.png" width="80"/></td>
+    <td align="center"><img src="assets/chapter2/logo_matchi.png" width="80"/></td>
+    <td align="center"><img src="assets/chapter2/logo_racketpal.png" width="80"/></td>
   </tr>
   <tr>
     <td>Perfil</td>
@@ -925,7 +925,7 @@ En esta sección se presentan las entrevistas realizadas a representantes de los
 - **URL del video:** [**https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAcAXVrClN-Qrcgko_hCCq1AS3ZsuslsEI5ZdSr1QfK33g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=GUMZlt**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAcAXVrClN-Qrcgko_hCCq1AS3ZsuslsEI5ZdSr1QfK33g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=GUMZlt)  
 
 #### Registro visual de la entrevista
-![Evidencia de la entrevista](images/segmento1-entrevista1.png)
+![Evidencia de la entrevista](assets/chapter2/segmento1-entrevista1.png)
 
 #### Resumen descriptivo de la entrevista
 
@@ -966,7 +966,7 @@ Además, indicó que para que una app de este tipo realmente le resulte útil de
 - **URL del video:** [**https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAcAXVrClN-Qrcgko_hCCq1AS3ZsuslsEI5ZdSr1QfK33g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=GUMZlt**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAw-KNFmXJhTqKMLjiChGgPAc04veNmC5gcOmjD47FyITk?e=VWhzSm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 #### Registro visual de la entrevista
-![Evidencia de la entrevista](images/segmento1-entrevista2.png)
+![Evidencia de la entrevista](assets/chapter2/segmento1-entrevista2.png)
 
 #### Resumen descriptivo de la entrevista
 
@@ -1006,7 +1006,7 @@ Además, precisó que una app de este tipo le resultaría realmente útil si fue
 - **URL del video:** [**https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQC8PnGtF0QoRaFQVL26lnA_AdQqgtTECZND01dhyWwSGg4?e=M3UkQa&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQC8PnGtF0QoRaFQVL26lnA_AdQqgtTECZND01dhyWwSGg4?e=M3UkQa&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)  
 
 #### Registro visual de la entrevista
-![Evidencia de la entrevista](images/segmento1-entrevista3.png)
+![Evidencia de la entrevista](assets/chapter2/segmento1-entrevista3.png)
 
 #### Resumen descriptivo de la entrevista
 
@@ -1046,12 +1046,12 @@ Además, señaló que una app de este tipo debería ser rápida y fácil de usar
 - **Ocupación:** Entrenador independiente (entrenamientos personalizados)  
 - **Estado civil:** **Por completar**  
 - **Composición familiar:** Vive con su esposa  
-- **Inicio de la entrevista:** 0:00
-- **Fin de la entrevista:** 0:00  
-- **URL del video:** **Por insertar**  
+- **Inicio de la entrevista:** 0:03
+- **Fin de la entrevista:** 4:23 
+- **URL del video:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDdQttx8G05R7ie63he68lFAdjrBkgE6pylDUguaOUQH68?e=oMvVCE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDdQttx8G05R7ie63he68lFAdjrBkgE6pylDUguaOUQH68?e=oMvVCE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) 
 
 #### Registro visual de la entrevista
-![Evidencia de la entrevista](images/segmento2-entrevista1.png)
+![Evidencia de la entrevista](assets/chapter2/segmento2-entrevista1.png)
 
 #### Resumen descriptivo de la entrevista
 
@@ -1086,12 +1086,12 @@ En cuanto a sus preocupaciones, destacó la importancia de que la aplicación re
 - **Ocupación:** Entrenador independiente  
 - **Estado civil:** **Por completar**  
 - **Composición familiar:** **Por completar**  
-- **Inicio de la entrevista:** 0:00
-- **Fin de la entrevista:** 0:00  
-- **URL del video:** **Por insertar**  
+- **Inicio de la entrevista:** 0:03
+- **Fin de la entrevista:** 7:03 
+- **URL del video:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDO8nYm2E-HTaXKTk2FIdV3ARZAXaqatlWZyStOoM98yEU?e=SlGsV8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDO8nYm2E-HTaXKTk2FIdV3ARZAXaqatlWZyStOoM98yEU?e=SlGsV8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)  
 
 #### Registro visual de la entrevista
-![Evidencia de la entrevista](images/segmento2-entrevista2.png)
+![Evidencia de la entrevista](assets/chapter2/segmento2-entrevista2.png)
 
 #### Resumen descriptivo de la entrevista
 
@@ -1133,11 +1133,12 @@ Finalmente, señaló que su principal motivación para seguir entrenando es ayud
 - **Ocupación:** Entrenador de pádel  
 - **Estado civil:** Casado  
 - **Composición familiar:** Vive con su pareja 
-- **Inicio de la entrevista:** **Por completar**  
-- **URL del video:** **Por insertar**  
+- **Inicio de la entrevista:** 0:01
+- **Fin de la entrevista:** 7:19 
+- **URL del video:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCQWUrAvrhrRrYO4NhvkrQdAf7-klqLXd9-sw1fOMpqAGs?e=3a089e&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCQWUrAvrhrRrYO4NhvkrQdAf7-klqLXd9-sw1fOMpqAGs?e=3a089e&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) 
 
 #### Registro visual de la entrevista
-![Evidencia de la entrevista](images/segmento2-entrevista3.png)
+![Evidencia de la entrevista](assets/chapter2/segmento2-entrevista3.png)
 
 #### Resumen descriptivo de la entrevista
 
