@@ -783,7 +783,7 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
 ```
 Payment (Pago - Aggregate Root)
 ├── paymentId: int → Identificador único de pago
-├── amount: int → Cantidad transferida en el pago
+├── amount: Decimal → Cantidad transferida en el pago
 ├── user: User → Usuario a realizar la transferencia
 ├── paymentStatus: PaymentStatus → Descripción de la cancha
 ├── createdAt: DateTime → Fecha de creación
@@ -1066,8 +1066,117 @@ El diagrama de componentes para el Payments Context presenta la descomposición 
 
 ---
 
-#### 2.6.x.6. Bounded Context Software Architecture Code Level Diagrams
+#### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
 
-##### 2.6.x.6.1. Bounded Context Domain Layer Class Diagrams
+##### 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+**Diagrama UML de Clases - Payments Domain Layer**
+
+```
+┌────────────────────────────────────────┐
+│              <<Aggregate>>             │
+│                 Payment                │
+├────────────────────────────────────────┤
+│ - paymentId: Long                      │
+│ - amount: Decimal                      │
+│ - user: User                           │
+│ - paymentStatus: PaymentStatus         │
+│ - createdAt: DateTime                  │
+├────────────────────────────────────────┤
+│ + createPayment(user, amount): Payment │
+│ + complete(): void                     │
+│ + fail(): void                         │
+│ + cancel(): void                       │
+└──────────────┬─────────────────────────┘
+               │
+               │ uses
+               ▼
+     ┌─────────────────────────────┐
+     │     <<ValueObject>>         │
+     │     PaymentStatus           │
+     ├─────────────────────────────┤
+     │ PENDING                     │
+     │ COMPLETED                   │
+     │ FAILED                      │
+     │ CANCELLED                   │
+     └─────────────────────────────┘
+
+
+┌─────────────────────────────┐
+│   <<Interface>>             │
+│   PaymentRepository         │
+├─────────────────────────────┤
+│ + save(p: Payment): void    │
+│ + findById(id): Payment     │
+│ + findByUserId(id): List    │
+│ + update(p: Payment): void  │
+│ + delete(id): void          │
+└──────────────▲──────────────┘
+               │ implements
+               │
+     ┌─────────┴──────────────────┐
+     │                            
+┌────▼───────────────────────────┐
+│ PaymentRepositoryImpl          │
+├────────────────────────────────┤
+│ - db: Database                 │
+├────────────────────────────────┤
+│ + save(p): void                │
+│ + findById(id): Payment        │
+│ + update(p): void              │
+│ + delete(id): void             │
+└────────────────────────────────┘
+
+
+┌─────────────────────────────┐
+│   <<DomainEvent>>           │
+│   PaymentCreated            │
+├─────────────────────────────┤
+│ - paymentId: Long           │
+│ - userId: Long              │
+│ - amount: Decimal           │
+│ - createdAt: DateTime       │
+│ - occurredOn: DateTime      │
+└─────────────────────────────┘
+
+┌─────────────────────────────┐
+│   <<DomainEvent>>           │
+│   PaymentCompleted          │
+├─────────────────────────────┤
+│ - paymentId: Long           │
+│ - status: PaymentStatus     │
+│ - occurredOn: DateTime      │
+└─────────────────────────────┘
+
+┌─────────────────────────────┐
+│   <<DomainEvent>>           │
+│   PaymentFailed             │
+├─────────────────────────────┤
+│ - paymentId: Long           │
+│ - status: PaymentStatus     │
+│ - occurredOn: DateTime      │
+└─────────────────────────────┘
+
+┌─────────────────────────────┐
+│   <<DomainEvent>>           │
+│   PaymentCancelled          │
+├─────────────────────────────┤
+│ - paymentId: Long           │
+│ - status: PaymentStatus     │
+│ - occurredOn: DateTime      │
+└─────────────────────────────┘
+
+Relaciones:
+- Payment *──────── 1 PaymentStatus (uses)
+- PaymentRepository ◄────────────── Payment (manages)
+- PaymentRepositoryImpl ───────────► PaymentRepository (implements)
+- Payment ───────────► PaymentCreated (generates)
+- Payment ───────────► PaymentCompleted (generates)
+- Payment ───────────► PaymentFailed (generates)
+- Payment ───────────► PaymentCancelled (generates)
+- Payment *──────── 1 User (associated with)
+```
+
+---
 
 ##### 2.6.x.6.2. Bounded Context Database Design Diagram
