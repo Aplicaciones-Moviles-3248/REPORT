@@ -1673,3 +1673,177 @@ La infraestructura del bounded context `Matches` depende de:
 - `UserProfileRepository` del bounded context `Users`, para validar el creador del partido.
 
 ---
+
+#### 2.6.9.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Descripción:**
+
+El Component Diagram del bounded context `Matches` representa la descomposición del contenedor backend encargado de gestionar los partidos organizados. Este container está compuesto por componentes para cubrir todo el flujo.
+
+**Componentes principales:**
+
+- **Matches REST API Component:** Expone los endpoints HTTP del bounded context mediante `MatchesController`.
+
+**Responsabilidades:**
+
+- Recibir solicitudes del frontend.
+- Delegar comandos y consultas.
+- Devolver respuestas estructuradas.
+
+- **Match Transformation Component:** Encargado de transformar los datos entre capas.
+
+**Incluye:**
+
+- `MatchResourceFromEntityAssembler`
+- `CreateMatchCommandFromResourceAssembler`
+- `UpdateMatchCommandFromResourceAssembler`
+- `MatchResource`, `CreateMatchResource`, `UpdateMatchResource`
+
+- **Match Command Processing Component:** Implementado por `MatchCommandServiceImpl`.
+
+**Responsabilidades:**
+
+- Crear partidos.
+- Actualizar partidos.
+- Eliminar partidos.
+- Validar existencia de `Court` y `UserProfile`.
+
+- **Match Query Processing Component:** Implementado por `MatchQueryServiceImpl`.
+
+**Responsabilidades:**
+
+- Obtener todos los partidos.
+- Obtener partido por `matchId`.
+- Soportar consultas del frontend (feed de partidos).
+
+- **Match Domain Component:** Representa el núcleo del dominio.
+
+**Incluye:**
+
+- `Match` (Aggregate Root)
+- `MatchStatus`
+- Métodos del dominio (creación y actualización del partido)
+
+- **Match Persistence Component:** Encapsula el acceso a base de datos mediante `MatchRepository`.
+
+**Responsabilidades:**
+
+- Persistir partidos
+- Recuperar información
+- Interactuar con Spring Data JPA / Hibernate
+
+- **External Context Access Component:** Representa la interacción con otros bounded contexts.
+
+**Incluye:**
+
+- `UserProfileRepository` (`Users`)
+- `CourtRepository` (`Courts`)
+
+**Responsabilidades:**
+
+- Validar referencias externas necesarias para crear un partido
+
+
+**Diagrama de Componentes:**
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                     Matches Container                        │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Matches REST API Component                             │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • MatchesController                                    │  │
+│  │ • Expone endpoints CRUD de partidos                    │  │
+│  │ • Recibe requests del frontend                         │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Match Transformation Component                         │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • MatchResourceFromEntityAssembler                     │  │
+│  │ • CreateMatchCommandFromResourceAssembler              │  │
+│  │ • UpdateMatchCommandFromResourceAssembler              │  │
+│  │ • MatchResource / CreateMatchResource / Update...      │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Match Command Processing Component                     │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • MatchCommandServiceImpl                              │  │
+│  │ • CreateMatchCommand                                   │  │
+│  │ • UpdateMatchCommand                                   │  │
+│  │ • DeleteMatchCommand                                   │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Match Query Processing Component                       │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • MatchQueryServiceImpl                                │  │
+│  │ • GetAllMatchesQuery                                   │  │
+│  │ • GetMatchByIdQuery                                    │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Match Domain Component                                 │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • Match (Aggregate Root)                               │  │
+│  │ • MatchStatus                                          │  │
+│  │ • updateMatch(...)                                     │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Match Persistence Component                            │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • MatchRepository                                      │  │
+│  │ • Spring Data JPA / Hibernate                          │  │
+│  │ • Persistencia en tabla matches                        │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ External Context Access Component                      │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • UserProfileRepository (Users)                        │  │
+│  │ • CourtRepository (Courts)                             │  │
+│  │ • Validación de referencias externas                   │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+          ↓                         ↓                        ↓
+   ┌──────────────┐         ┌──────────────┐         ┌─────────────────┐
+   │ user_profiles│         │    courts    │         │     matches     │
+   │ (Users BC)   │         │ (Courts BC)  │         │   (DB Table)    │
+   └──────────────┘         └──────────────┘         └─────────────────┘
+```
+
+**Relaciones entre componentes:**
+
+- **Matches REST API Component → Match Transformation Component:**
+Transforma datos entre resources, commands y entidades.
+
+- **Matches REST API Component → Match Command Processing Component:**
+Ejecuta operaciones de creación, actualización y eliminación.
+
+- **Matches REST API Component → Match Query Processing Component:**
+Ejecuta operaciones de consulta.
+
+- **Match Command Processing Component → External Context Access Component:**
+Valida la existencia de la cancha y del usuario.
+
+- **Match Command Processing Component → Match Domain Component:**
+Construye o modifica el agregado `Match`.
+
+- **Match Command Processing Component → Match Persistence Component:**
+Persiste los cambios.
+
+- **Match Query Processing Component → Match Persistence Component:**
+Recupera datos desde la base de datos.
+
+- **Match Persistence Component → matches:**
+Gestiona la persistencia en la tabla.
+
+- **External Context Access Component → user_profiles / courts:**
+Consulta otros bounded contexts para validar relaciones.
+
+---
