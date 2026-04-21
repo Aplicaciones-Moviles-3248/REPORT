@@ -1486,3 +1486,106 @@ Esta capa actúa como punto de entrada al sistema, permitiendo que los usuarios 
 Propósito: Transformar un `UpdateMatchResource`, junto con el `matchId`, en un `UpdateMatchCommand`.
 
 ---
+
+#### 2.6.9.3. Application Layer
+
+La Application Layer del bounded context `Matches` coordina los flujos de proceso relacionados a la gestión de partidos organizados. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y la infraestructura de persistencia.
+
+**Capacidades principales del contexto:**
+- Crear un partido
+- Actualizar un partido
+- Eliminar un partido
+- Obtener un partido por id
+- Listar partidos disponibles
+
+**a. Command Handlers / Command Services:**
+
+`MatchCommandServiceImpl`
+
+**Paquete:** `com.upc.courtly.matches.application.internal.commandservices`
+
+**Propósito:** Implementar el contrato MatchCommandService y ejecutar los casos de uso de escritura del contexto Matches.
+
+**Dependencias:**
+- `MatchRepository`
+- `CourtRepository`
+- `UserProfileRepository`
+
+**Operaciones que maneja:**
+
+`handle(CreateMatchCommand command)`
+- Valida que la cancha (`courtId`) exista.
+- Valida que el usuario creador (`createdById`) exista.
+- Crea una nueva entidad `Match`.
+- Inicializa `currentPlayers` en 1 (creador).
+- Establece el estado inicial como `OPEN`.
+- Persiste el partido en base de datos.
+- Retorna el partido creado.
+
+`handle(UpdateMatchCommand command)`
+- Busca el partido por matchId.
+- Actualiza `title`, `description`, `dateTime` y `maxPlayers`.
+- Guarda los cambios en el repositorio.
+- Retorna el partido actualizado.
+
+`handle(DeleteMatchCommand command)`
+- Verifica si el partido existe.
+- Elimina el partido por `matchId`.
+- Lanza excepción si no existe.
+
+
+**b. Query Handlers / Query Services:**
+
+`MatchQueryServiceImpl`
+
+**Paquete:** `com.upc.courtly.matches.application.internal.queryservices`
+
+**Propósito:** Implementar el contrato `MatchQueryService` y ejecutar los casos de uso de lectura del contexto `Matches`.
+
+**Dependencia:**
+- `MatchRepository`
+
+**Operaciones que maneja:**
+
+`handle(GetAllMatchesQuery query)`
+- Recupera todos los partidos mediante `findAll()`
+- Puede filtrar por estado (`OPEN`, `FULL`, etc.)
+- Devuelve una lista de `Match`
+
+`handle(GetMatchByIdQuery query)`
+- Busca un partido específico por `matchId`
+- Devuelve un `Optional<Match>`
+
+**c. Flujos principales del negocio:**
+
+**Flujo de creación de partido:**
+- El frontend envía un `CreateMatchResource`.
+- La capa de interfaz lo transforma en `CreateMatchCommand`.
+- `MatchCommandServiceImpl` valida la cancha y el usuario.
+- Se crea una instancia de `Match`.
+- Se inicializa el estado en `OPEN`.
+- El partido se persiste mediante `MatchRepository`.
+- El resultado se transforma en `MatchResource`.
+- Se retorna al cliente.
+
+**Flujo de actualización:**
+- El frontend envía un `UpdateMatchResource`.
+- Se transforma en `UpdateMatchCommand`.
+- `MatchCommandServiceImpl` recupera el partido.
+- Se actualizan los datos del partido.
+- Se guarda la modificación.
+- Se retorna el partido actualizado.
+
+**Flujo de consulta:**
+- El frontend solicita uno o varios partidos.
+- El controlador construye `GetAllMatchesQuery` o `GetMatchByIdQuery`.
+- `MatchQueryServiceImpl` consulta el repositorio.
+- Los resultados se transforman en `MatchResource`.
+- Se retorna la respuesta al cliente.
+
+**Flujo de eliminación:**
+- El frontend solicita eliminar un partido.
+- Se construye `DeleteMatchCommand`.
+- `MatchCommandServiceImpl` verifica la existencia.
+- Se elimina el partido del repositorio.
+- Se devuelve la confirmación.
