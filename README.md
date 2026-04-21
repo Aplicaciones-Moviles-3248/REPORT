@@ -663,6 +663,16 @@ En esta sección se presentan los User Journey Maps donde se describe el proceso
 
 ### 2.3.4. Empathy Mapping
 
+En esta sección se presentan los Empathy Mappings. Estos nos ayudarán a comprender las experiencias, emociones y pensamientos que expresan los usuarios de cada segmento objetivo.
+
+**Deportistas Aficionados:**
+
+![EmpathyMapping-DiegoRojas](./assets/chapter2/EmpathyMapping-DiegoRojas.png)
+
+**Entrenadores Independientes:**
+
+![EmpathyMapping-CésarFalcón](./assets/chapter2/EmpathyMapping-CésarFalcón.png)
+
 ### 2.3.5. Big Picture EventStorming
 
 ### 2.3.6. Ubiquitous Language
