@@ -1474,12 +1474,10 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
         Given que ocurre un evento relacionado con una reserva del usuario,<br>
         When el sistema registra dicho cambio,<br>
         Then la aplicación envía una notificación correspondiente.<br><br>
-
         <b>Escenario 2: Notificación por cambio de estado</b><br>
         Given que una solicitud fue aceptada, rechazada o modificada,<br>
         When el sistema actualiza su estado,<br>
         Then la aplicación notifica al usuario afectado.<br><br>
-
         <b>Escenario 3: Consulta del historial</b><br>
         Given que el usuario accede a la sección de notificaciones,<br>
         When revisa su historial,<br>
@@ -1523,12 +1521,10 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
         Given que el usuario accede a su perfil,<br>
         When modifica sus datos y guarda los cambios,<br>
         Then la aplicación actualiza su información correctamente.<br><br>
-
         <b>Escenario 2: Validación de datos erróneos</b><br>
         Given que el usuario ingresa información inválida,<br>
         When intenta guardar los cambios,<br>
         Then la aplicación muestra errores de validación y no registra datos incorrectos.<br><br>
-
         <b>Escenario 3: Persistencia de datos</b><br>
         Given que el usuario actualizó su perfil exitosamente,<br>
         When vuelve a ingresar posteriormente a la aplicación,<br>
