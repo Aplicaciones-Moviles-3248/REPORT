@@ -745,7 +745,7 @@ Creemos que aumentará la confianza en la plataforma si los usuarios pueden ver 
 
 #### 1.2.2.4. Lean UX Canvas
 
-<img src="assets/chapter2/LeanUXCanvas-Courtly.jpg" width="900">
+<img src="assets/chapter2/LeanUXCanvas-Courtly.png" width="900">
 
 [Enlace al Lean UX Canvas en Miro](https://miro.com/welcomeonboard/d3htMStsWFVEUFhBY1NwdGlFR0RkekZjcHlJMUNKcU9TOVJ1U2E1S3ptSXE2QUMyU2RKYnFhRzZIdzFoZE1oNnFBT3pnbCtLaUZoc1NYRU5LY2FuNEJ2UXV1VEM4OWZ3bExlZWJiN0p4dlprbytlUkUvUytLT2h5Vjk0azB6RXJzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=265390215415)
 
@@ -2981,6 +2981,162 @@ Deportista y/o Entrenador (Actores)
 ---
 
 #### 2.5.1.3. Bounded Context Canvases
+**Objetivo:**
+Documentar de forma detallada cada bounded context mediante el Bounded Context Canvas, especificando el propósito, las capacidades, las reglas de negocio y las dependencias de cada dominio.
+
+**Proceso de Diseño:**
+Se siguió un proceso iterativo para cada canvas que incluyó:
+1. **Context Overview Definition:** Definición clara del nombre, propósito y alcance
+2. **Business Rules Distillation & Ubiquitous Language Capture:** Extracción de reglas y vocabulario del dominio
+3. **Capability Analysis:** Identificación de capacidades técnicas y de negocio
+4. **Capability Layering:** Organización jerárquica de capacidades
+5. **Dependencies Capture:** Mapeo de dependencias internas y externas
+6. **Design Critique:** Validación con stakeholders
+
+---
+
+**Canvas 1: User Account & Authentication Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | User Account & Authentication Context |
+| **Propósito** | Proveer autenticación, autorización y gestión de perfiles de usuario para toda la plataforma Courtly |
+| **Descripción** | Contexto encargado de validar credenciales, gestionar sesiones seguras y mantener perfiles de usuario con roles diferenciados (Deportista, Entrenador, Administrador) |
+| **Actores Principales** | Deportista, Entrenador, Administrador del Sistema |
+| **Eventos Principales** | UsuarioRegistrado, SesionIniciada, SesionCerrada, PerfilActualizado, RolAsignado |
+| **Comandos** | RegistrarUsuario, IniciarSesion, CerrarSesion, ActualizarPerfil, AsignarRol |
+| **Reglas de Negocio** | • Las contraseñas deben cumplir estándares de seguridad (mínimo 8 caracteres)<br>• Las sesiones expiran después de 2 horas de inactividad<br>• Un usuario puede tener un único rol primario<br>• El email debe ser único en el sistema<br>• La validación de email es obligatoria antes de usar la cuenta |
+| **Capacidades** | • Registro de usuarios con validación de datos<br>• Autenticación con email/contraseña<br>• Gestión de sesiones y tokens JWT<br>• Control de acceso basado en roles (RBAC)<br>• Recuperación de contraseña<br>• Actualización de perfil |
+| **Dependencias** | → Notification & Communication Context (para enviar emails de verificación)<br>→ Review & Rating Context (para gestionar reputación de usuarios) |
+| **Vocabulario Ubicuo** | Usuario, Credencial, Rol, Perfil, Token, Sesión, Autenticación, Autorización, Email |
+
+---
+
+**Canvas 2: Court & Venue Management Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | Court & Venue Management Context |
+| **Propósito** | Habilitar que propietarios de canchas publiquen, gestionen y actualicen su oferta de servicios |
+| **Descripción** | Contexto que permite a propietarios crear perfiles de canchas, gestionar horarios disponibles, precios y características de instalaciones |
+| **Actores Principales** | Propietario de Cancha, Administrador de Sede |
+| **Eventos Principales** | CanchaPublicada, HorarioActualizado, TarifaModificada, DisponibilidadCambiada, CanchaDesactivada |
+| **Comandos** | PublicarCancha, ActualizarHorarios, ModificarTarifa, CambiarDisponibilidad, DesactivarCancha |
+| **Reglas de Negocio** | • Una cancha debe tener al menos un deporte asociado<br>• Los horarios disponibles deben estar entre 06:00 y 23:00<br>• La tarifa debe ser mayor a cero<br>• Las modificaciones de disponibilidad se aplican de inmediato<br>• No puede reservarse un horario ya ocupado |
+| **Capacidades** | • Registro de canchas con información completa<br>• Gestión de horarios y disponibilidad<br>• Gestión de tarifas y promociones<br>• Visualización de reservas próximas<br>• Estadísticas de ocupación<br>• Gestión de instalaciones y servicios adicionales |
+| **Dependencias** | ← User Account & Authentication Context (para autenticación de propietarios)<br>↔ Booking & Reservation Context (para gestionar reservas)<br>→ Search & Discovery Context (para indexación)<br>→ Notification & Communication Context (para cambios de disponibilidad) |
+| **Vocabulario Ubicuo** | Cancha, Deporte, Horario, Disponibilidad, Tarifa, Ubicación, Instalación, Reserva |
+
+---
+
+**Canvas 3: Booking & Reservation Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | Booking & Reservation Context |
+| **Propósito** | Gestionar el ciclo completo de reservas desde búsqueda hasta confirmación y cancelación |
+| **Descripción** | Contexto central que orquesta la creación, validación y gestión de reservas de canchas y entrenadores |
+| **Actores Principales** | Deportista, Propietario de Cancha, Entrenador, Sistema de Pagos |
+| **Eventos Principales** | ReservaCreada, ReservaConfirmada, PagoAutorizado, ReservaCancelada, ActividadCompletada |
+| **Comandos** | CrearReserva, ConfirmarReserva, CancelarReserva, CompletarActividad, ModificarFecha |
+| **Reglas de Negocio** | • No pueden crearse reservas retroactivas<br>• Una cancha no puede tener reservas solapadas<br>• El deportista debe estar autenticado para reservar<br>• La cancelación dentro de 24 horas antes de la actividad tiene penalidad<br>• Las reservas se confirman después del pago exitoso<br>• Máximo 5 reservas activas simultáneas por usuario |
+| **Capacidades** | • Creación y validación de reservas<br>• Confirmación de disponibilidad en tiempo real<br>• Gestión del ciclo de vida de reservas<br>• Cancelación con políticas de reembolso<br>• Historial de reservas<br>• Notificaciones de cambios |
+| **Dependencias** | ← User Account & Authentication Context (para validar usuarios)<br>← Court & Venue Management Context (para validar disponibilidad)<br>← Coach & Trainer Context (para validar disponibilidad de entrenadores)<br>↔ Payment & Billing Context (para procesar pagos)<br>→ Notification & Communication Context (para confirmar)<br>↔ Review & Rating Context (para permitir reseñas) |
+| **Vocabulario Ubicuo** | Reserva, Slot Horario, Confirmación, Cancelación, Pago, Depósito, Penalidad, Reembolso |
+
+---
+
+**Canvas 4: Coach & Trainer Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | Coach & Trainer Context |
+| **Propósito** | Habilitar que entrenadores independientes ofrezcan y gestionen sus servicios |
+| **Descripción** | Contexto que permite a entrenadores crear perfiles profesionales, definir especialidades, horarios y tarifas |
+| **Actores Principales** | Entrenador Independiente, Deportista Interesado |
+| **Eventos Principales** | EntrenadorRegistrado, EspecialidadDefinida, HorarioPublicado, TarifaEstablecida, EntrenadorDesactivado |
+| **Comandos** | CrearPerfilEntrenador, DefinirEspecialidades, PublicarHorarios, EstablecerTarifa, ActualizarExperiencia |
+| **Reglas de Negocio** | • Un entrenador debe tener al menos una especialidad<br>• La experiencia debe ser un número positivo (años)<br>• Los horarios deben estar disponibles al menos 7 días a la semana<br>• La tarifa debe ser competitiva (rango: $5-$200 USD por sesión)<br>• Las certificaciones pueden ser opcionales pero aumentan confianza |
+| **Capacidades** | • Creación de perfil profesional<br>• Gestión de especialidades y experiencia<br>• Publicación de horarios disponibles<br>• Gestión de tarifas por especialidad<br>• Visualización de sesiones próximas<br>• Estadísticas de ganancias<br>• Gestión de certificaciones |
+| **Dependencias** | ← User Account & Authentication Context (para crear cuenta como entrenador)<br>↔ Booking & Reservation Context (para gestionar sesiones)<br>→ Search & Discovery Context (para ser descubible)<br>↔ Payment & Billing Context (para recibir pagos)<br>↔ Review & Rating Context (para construir reputación)<br>→ Notification & Communication Context (para confirmar sesiones) |
+| **Vocabulario Ubicuo** | Entrenador, Especialidad, Experiencia, Certificación, Tarifa, Sesión, Horario, Disponibilidad |
+
+---
+
+**Canvas 5: Payment & Billing Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | Payment & Billing Context |
+| **Propósito** | Procesar pagos de manera segura y gestionar la distribución de ingresos |
+| **Descripción** | Contexto responsable de procesamiento de transacciones, generación de facturas y conciliación de pagos |
+| **Actores Principales** | Deportista (pagador), Propietario/Entrenador (receptor), Gateway de Pagos |
+| **Eventos Principales** | PagoProcesado, PagoAutorizado, PagoRechazado, FacturaGenerada, ReembolsoProcessado, ComisionCalculada |
+| **Comandos** | ProcesarPago, AutorizarTransaccion, GenerarFactura, ProcessarReembolso, CalcularComision |
+| **Reglas de Negocio** | • Todas las transacciones deben ser encriptadas con estándar PCI-DSS<br>• La comisión de plataforma es 15% por defecto<br>• Los reembolsos se procesan dentro de 5-7 días hábiles<br>• Los montos mínimos de transacción son $2 USD<br>• Se mantiene historial de transacciones por 7 años<br>• Las facturas son generadas automáticamente para cada pago |
+| **Capacidades** | • Procesamiento seguro de pagos<br>• Soporte para múltiples métodos de pago (tarjeta, wallet, transferencia)<br>• Generación automática de facturas<br>• Gestión de reembolsos y devoluciones<br>• Cálculo de comisiones<br>• Conciliación bancaria<br>• Reportes de ingresos<br>• Detección de fraude |
+| **Dependencias** | ← Booking & Reservation Context (para obtener monto a cobrar)<br>← User Account & Authentication Context (para validar beneficiarios)<br>→ Notification & Communication Context (para confirmar pagos)<br>→ Servicios Externos: Stripe, PayPal, transferencias bancarias |
+| **Vocabulario Ubicuo** | Pago, Transacción, Factura, Comisión, Reembolso, Método de Pago, Gateway, PCI-DSS |
+
+---
+
+**Canvas 6: Review & Rating Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | Review & Rating Context |
+| **Propósito** | Construir confianza mediante un sistema de valoraciones y reseñas verificadas |
+| **Descripción** | Contexto que gestiona reseñas, ratings y reputación de usuarios basado en actividades completadas |
+| **Actores Principales** | Deportista que Revisa, Entrenador Evaluado, Propietario Evaluado |
+| **Eventos Principales** | ReseñaPublicada, RatingCalculado, RatingMaliciosoDetectado, ReputacionActualizada, ReseñaEliminada |
+| **Comandos** | PublicarReseña, QuitarReseña, ReportarReseñaMaliciosa, CalcularRatingPromedio |
+| **Reglas de Negocio** | • Solo pueden reseñar usuarios que completaron la actividad<br>• Las reseñas deben ser publicadas dentro de 30 días de completada la actividad<br>• El rating es un valor 1-5 (no decimales)<br>• Una reseña debe tener mínimo 10 caracteres y máximo 500<br>• Un usuario solo puede reseñar una vez por transacción<br>• Las reseñas no pueden modificarse, solo eliminarse |
+| **Capacidades** | • Publicación de reseñas y ratings<br>• Cálculo de rating promedio ponderado<br>• Detección de reseñas anómalas o maliciosas<br>• Visualización de historial de reseñas<br>• Gestión de reportes de contenido inapropiado<br>• Cálculo de confianza de usuario<br>• Filtrado por calidad de reseña |
+| **Dependencias** | ← User Account & Authentication Context (para validar usuarios)<br>← Booking & Reservation Context (para verificar actividades completadas)<br>→ Notification & Communication Context (para notificar sobre nuevas reseñas)<br>→ User Account & Authentication Context (para actualizar reputación) |
+| **Vocabulario Ubicuo** | Reseña, Rating, Calificación, Comentario, Confianza, Reputación, Historial, Anomalía |
+
+---
+
+**Canvas 7: Search & Discovery Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | Search & Discovery Context |
+| **Propósito** | Facilitar el descubrimiento rápido y relevante de canchas y entrenadores |
+| **Descripción** | Contexto que mantiene índices optimizados de canchas y entrenadores, permitiendo búsquedas eficientes con múltiples criterios |
+| **Actores Principales** | Deportista Buscador, Sistema de Indexación |
+| **Eventos Principales** | BúsquedaRealizada, CanchaIndexada, EntrenadorIndexado, ResultadosRetornados, ÍndiceActualizado |
+| **Comandos** | BuscarCanchas, BuscarEntrenadores, AplicarFiltros, Recomendar, IndexarContenido |
+| **Reglas de Negocio** | • Los resultados se ordenan por relevancia (ubicación, rating, disponibilidad)<br>• Máximo 5km de distancia por defecto sin filtro de ubicación<br>• Solo se muestran canchas y entrenadores con rating >= 3.0<br>• Los índices se actualizan en tiempo real<br>• Se cachean búsquedas frecuentes por 1 hora<br>• Máximo 100 resultados por búsqueda |
+| **Capacidades** | • Búsqueda de texto completo<br>• Filtrado por múltiples criterios (ubicación, deporte, precio, horario)<br>• Búsqueda geoespacial<br>• Ordenamiento por relevancia<br>• Recomendaciones personalizadas<br>• Autocomplete de búsquedas<br>• Análisis de tendencias de búsqueda |
+| **Dependencias** | ← Court & Venue Management Context (para indexar canchas)<br>← Coach & Trainer Context (para indexar entrenadores)<br>← Review & Rating Context (para incluir ratings)<br>→ Notification & Communication Context (para tracking de búsquedas) |
+| **Vocabulario Ubicuo** | Búsqueda, Índice, Filtro, Resultado, Relevancia, Ubicación, Deporte, Recomendación |
+
+---
+
+**Canvas 8: Notification & Communication Context**
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Nombre** | Notification & Communication Context |
+| **Propósito** | Facilitar la comunicación efectiva entre usuarios y del sistema hacia usuarios |
+| **Descripción** | Contexto transversal responsable de orquestar notificaciones multi-canal, recordatorios y mensajería entre usuarios |
+| **Actores Principales** | Deportista, Entrenador, Sistema de Eventos, Servicios de Email |
+| **Eventos Principales** | NotificacionEnviada, ReminderCreado, MensajeEnviado, NotificacionEntregada, NotificacionLeida |
+| **Comandos** | EnviarNotificacion, CrearReminder, EnviarMensaje, ActualizarPreferencias, ConfirmarEntrega |
+| **Reglas de Negocio** | • Las notificaciones respetan preferencias de usuario (push, email o SMS)<br>• No se envían notificaciones después de las 22:00 ni antes de las 08:00<br>• Los recordatorios de actividades se envían 1 hora antes<br>• El historial de notificaciones se mantiene por 90 días<br>• El usuario puede silenciar notificaciones por contexto<br>• Máximo 3 notificaciones por hora por usuario |
+| **Capacidades** | • Sistema de notificaciones multi-canal (push, email, SMS)<br>• Recordatorios automáticos de actividades<br>• Mensajería directa entre usuarios<br>• Preferencias de notificación personalizables<br>• Historial de notificaciones<br>• Análisis de entrega<br>• Integración con Firebase Cloud Messaging |
+| **Dependencias** | ↔ Todos los contextos (escucha y envía eventos)<br>→ Servicios Externos: Firebase FCM, SendGrid, Twilio |
+| **Vocabulario Ubicuo** | Notificación, Mensaje, Reminder, Canal, Preferencia, Entrega, Leitura |
+
+---
+
+**Notas Sobre los Canvases:**
+
+- Cada canvas ha sido diseñado iterativamente considerando la experiencia del usuario deportista y las necesidades operacionales de entrenadores.
+- Las dependencias muestran explícitamente cómo los contextos colaboran para completar flujos de negocio complejos.
+- El vocabulario ubicuo de cada contexto ha sido validado con stakeholders (deportistas, entrenadores, propietarios de canchas).
+- Los canvases servirán de base para el diseño táctico de la arquitectura en las secciones posteriores (2.6.x).
 
 # 2.5.2 Context Mapping
 
@@ -3054,7 +3210,8 @@ A pesar de ello, el equipo identificó que estos contextos responden a subdomini
 
 En esta alternativa se evaluó compartir la identidad de usuario mediante un **Shared Kernel**, con el objetivo de establecer un contrato común reutilizable entre múltiples contextos que dependen de `UserProfile`. Esta propuesta parecía útil porque varios módulos del sistema consumen la identidad funcional del usuario como referencia central.
 
-Sin embargo, un Shared Kernel implica coordinación constante entre los contextos que lo comparten, lo que incrementa el costo de mantenimiento y vuelve más rígida la evolución del modelo. En un sistema como Courtly, donde varios bounded contexts necesitan consumir identidad, esta decisión podía generar dependencia excesiva. Por ello, no fue adoptada en el diseño final y se prefirió una relación más clara de tipo **Customer/Supplier**.
+Sin embargo, un Shared Kernel implica coordinación constante entre los contextos que lo comparten, lo que incrementa el costo de mantenimiento y vuelve más rígida la evolución del modelo. En un sistema como Courtly, donde varios bounded contexts necesitan consumir identidad, esta decisión podía generar dependencia excesiva. Por ello, no fue adoptada en el diseño final y se prefirió una relación más clara de tipo Customer/Supplier entre Users y los contextos que consumen la identidad funcional.
+
 ---
 
 ## Discusión y selección de la mejor aproximación
@@ -3247,164 +3404,6 @@ Esta estructura logra un equilibrio entre cohesión y bajo acoplamiento, alinead
 ### Capability Layering Map
 
 ![capabilityM](assets/chapter2/capability-map-courtly.png)
-**Objetivo:**
-Documentar de forma detallada cada bounded context mediante el Bounded Context Canvas, especificando el propósito, las capacidades, las reglas de negocio y las dependencias de cada dominio.
-
-**Proceso de Diseño:**
-Se siguió un proceso iterativo para cada canvas que incluyó:
-1. **Context Overview Definition:** Definición clara del nombre, propósito y alcance
-2. **Business Rules Distillation & Ubiquitous Language Capture:** Extracción de reglas y vocabulario del dominio
-3. **Capability Analysis:** Identificación de capacidades técnicas y de negocio
-4. **Capability Layering:** Organización jerárquica de capacidades
-5. **Dependencies Capture:** Mapeo de dependencias internas y externas
-6. **Design Critique:** Validación con stakeholders
-
----
-
-**Canvas 1: User Account & Authentication Context**
-
-| Elemento | Descripción |
-|----------|-------------|
-| **Nombre** | User Account & Authentication Context |
-| **Propósito** | Proveer autenticación, autorización y gestión de perfiles de usuario para toda la plataforma Courtly |
-| **Descripción** | Contexto encargado de validar credenciales, gestionar sesiones seguras y mantener perfiles de usuario con roles diferenciados (Deportista, Entrenador, Administrador) |
-| **Actores Principales** | Deportista, Entrenador, Administrador del Sistema |
-| **Eventos Principales** | UsuarioRegistrado, SesionIniciada, SesionCerrada, PerfilActualizado, RolAsignado |
-| **Comandos** | RegistrarUsuario, IniciarSesion, CerrarSesion, ActualizarPerfil, AsignarRol |
-| **Reglas de Negocio** | • Las contraseñas deben cumplir estándares de seguridad (mínimo 8 caracteres)<br>• Las sesiones expiran después de 2 horas de inactividad<br>• Un usuario puede tener un único rol primario<br>• El email debe ser único en el sistema<br>• La validación de email es obligatoria antes de usar la cuenta |
-| **Capacidades** | • Registro de usuarios con validación de datos<br>• Autenticación con email/contraseña<br>• Gestión de sesiones y tokens JWT<br>• Control de acceso basado en roles (RBAC)<br>• Recuperación de contraseña<br>• Actualización de perfil |
-| **Dependencias** | → Notification & Communication Context (para enviar emails de verificación)<br>→ Review & Rating Context (para gestionar reputación de usuarios) |
-| **Vocabulario Ubicuo** | Usuario, Credencial, Rol, Perfil, Token, Sesión, Autenticación, Autorización, Email |
-
----
-
-**Canvas 2: Court & Venue Management Context**
-
-| Elemento | Descripción |
-|----------|-------------|
-| **Nombre** | Court & Venue Management Context |
-| **Propósito** | Habilitar que propietarios de canchas publiquen, gestionen y actualicen su oferta de servicios |
-| **Descripción** | Contexto que permite a propietarios crear perfiles de canchas, gestionar horarios disponibles, precios y características de instalaciones |
-| **Actores Principales** | Propietario de Cancha, Administrador de Sede |
-| **Eventos Principales** | CanchaPublicada, HorarioActualizado, TarifaModificada, DisponibilidadCambiada, CanchaDesactivada |
-| **Comandos** | PublicarCancha, ActualizarHorarios, ModificarTarifa, CambiarDisponibilidad, DesactivarCancha |
-| **Reglas de Negocio** | • Una cancha debe tener al menos un deporte asociado<br>• Los horarios disponibles deben estar entre 06:00 y 23:00<br>• La tarifa debe ser mayor a cero<br>• Las modificaciones de disponibilidad se aplican de inmediato<br>• No puede reservarse un horario ya ocupado |
-| **Capacidades** | • Registro de canchas con información completa<br>• Gestión de horarios y disponibilidad<br>• Gestión de tarifas y promociones<br>• Visualización de reservas próximas<br>• Estadísticas de ocupación<br>• Gestión de instalaciones y servicios adicionales |
-| **Dependencias** | ← User Account & Authentication Context (para autenticación de propietarios)<br>↔ Booking & Reservation Context (para gestionar reservas)<br>→ Search & Discovery Context (para indexación)<br>→ Notification & Communication Context (para cambios de disponibilidad) |
-| **Vocabulario Ubicuo** | Cancha, Deporte, Horario, Disponibilidad, Tarifa, Ubicación, Instalación, Reserva |
-
----
-
-**Canvas 3: Booking & Reservation Context**
-
-| Elemento | Descripción |
-|----------|-------------|
-| **Nombre** | Booking & Reservation Context |
-| **Propósito** | Gestionar el ciclo completo de reservas desde búsqueda hasta confirmación y cancelación |
-| **Descripción** | Contexto central que orquesta la creación, validación y gestión de reservas de canchas y entrenadores |
-| **Actores Principales** | Deportista, Propietario de Cancha, Entrenador, Sistema de Pagos |
-| **Eventos Principales** | ReservaCreada, ReservaConfirmada, PagoAutorizado, ReservaCancelada, ActividadCompletada |
-| **Comandos** | CrearReserva, ConfirmarReserva, CancelarReserva, CompletarActividad, ModificarFecha |
-| **Reglas de Negocio** | • No pueden crearse reservas retroactivas<br>• Una cancha no puede tener reservas solapadas<br>• El deportista debe estar autenticado para reservar<br>• La cancelación dentro de 24 horas antes de la actividad tiene penalidad<br>• Las reservas se confirman después del pago exitoso<br>• Máximo 5 reservas activas simultáneas por usuario |
-| **Capacidades** | • Creación y validación de reservas<br>• Confirmación de disponibilidad en tiempo real<br>• Gestión del ciclo de vida de reservas<br>• Cancelación con políticas de reembolso<br>• Historial de reservas<br>• Notificaciones de cambios |
-| **Dependencias** | ← User Account & Authentication Context (para validar usuarios)<br>← Court & Venue Management Context (para validar disponibilidad)<br>← Coach & Trainer Context (para validar disponibilidad de entrenadores)<br>↔ Payment & Billing Context (para procesar pagos)<br>→ Notification & Communication Context (para confirmar)<br>↔ Review & Rating Context (para permitir reseñas) |
-| **Vocabulario Ubicuo** | Reserva, Slot Horario, Confirmación, Cancelación, Pago, Depósito, Penalidad, Reembolso |
-
----
-
-**Canvas 4: Coach & Trainer Context**
-
-| Elemento | Descripción |
-|----------|-------------|
-| **Nombre** | Coach & Trainer Context |
-| **Propósito** | Habilitar que entrenadores independientes ofrezcan y gestionen sus servicios |
-| **Descripción** | Contexto que permite a entrenadores crear perfiles profesionales, definir especialidades, horarios y tarifas |
-| **Actores Principales** | Entrenador Independiente, Deportista Interesado |
-| **Eventos Principales** | EntrenadorRegistrado, EspecialidadDefinida, HorarioPublicado, TarifaEstablecida, EntrenadorDesactivado |
-| **Comandos** | CrearPerfilEntrenador, DefinirEspecialidades, PublicarHorarios, EstablecerTarifa, ActualizarExperiencia |
-| **Reglas de Negocio** | • Un entrenador debe tener al menos una especialidad<br>• La experiencia debe ser un número positivo (años)<br>• Los horarios deben estar disponibles al menos 7 días a la semana<br>• La tarifa debe ser competitiva (rango: $5-$200 USD por sesión)<br>• Las certificaciones pueden ser opcionales pero aumentan confianza |
-| **Capacidades** | • Creación de perfil profesional<br>• Gestión de especialidades y experiencia<br>• Publicación de horarios disponibles<br>• Gestión de tarifas por especialidad<br>• Visualización de sesiones próximas<br>• Estadísticas de ganancias<br>• Gestión de certificaciones |
-| **Dependencias** | ← User Account & Authentication Context (para crear cuenta como entrenador)<br>↔ Booking & Reservation Context (para gestionar sesiones)<br>→ Search & Discovery Context (para ser descubible)<br>↔ Payment & Billing Context (para recibir pagos)<br>↔ Review & Rating Context (para construir reputación)<br>→ Notification & Communication Context (para confirmar sesiones) |
-| **Vocabulario Ubicuo** | Entrenador, Especialidad, Experiencia, Certificación, Tarifa, Sesión, Horario, Disponibilidad |
-
----
-
-**Canvas 5: Payment & Billing Context**
-
-| Elemento | Descripción |
-|----------|-------------|
-| **Nombre** | Payment & Billing Context |
-| **Propósito** | Procesar pagos de manera segura y gestionar la distribución de ingresos |
-| **Descripción** | Contexto responsable de procesamiento de transacciones, generación de facturas y conciliación de pagos |
-| **Actores Principales** | Deportista (pagador), Propietario/Entrenador (receptor), Gateway de Pagos |
-| **Eventos Principales** | PagoProcesado, PagoAutorizado, PagoRechazado, FacturaGenerada, ReembolsoProcessado, ComisionCalculada |
-| **Comandos** | ProcesarPago, AutorizarTransaccion, GenerarFactura, ProcessarReembolso, CalcularComision |
-| **Reglas de Negocio** | • Todas las transacciones deben ser encriptadas con estándar PCI-DSS<br>• La comisión de plataforma es 15% por defecto<br>• Los reembolsos se procesan dentro de 5-7 días hábiles<br>• Los montos mínimos de transacción son $2 USD<br>• Se mantiene historial de transacciones por 7 años<br>• Las facturas son generadas automáticamente para cada pago |
-| **Capacidades** | • Procesamiento seguro de pagos<br>• Soporte para múltiples métodos de pago (tarjeta, wallet, transferencia)<br>• Generación automática de facturas<br>• Gestión de reembolsos y devoluciones<br>• Cálculo de comisiones<br>• Conciliación bancaria<br>• Reportes de ingresos<br>• Detección de fraude |
-| **Dependencias** | ← Booking & Reservation Context (para obtener monto a cobrar)<br>← User Account & Authentication Context (para validar beneficiarios)<br>→ Notification & Communication Context (para confirmar pagos)<br>→ Servicios Externos: Stripe, PayPal, transferencias bancarias |
-| **Vocabulario Ubicuo** | Pago, Transacción, Factura, Comisión, Reembolso, Método de Pago, Gateway, PCI-DSS |
-
----
-
-**Canvas 6: Review & Rating Context**
-
-| Elemento | Descripción |
-|----------|-------------|
-| **Nombre** | Review & Rating Context |
-| **Propósito** | Construir confianza mediante un sistema de valoraciones y reseñas verificadas |
-| **Descripción** | Contexto que gestiona reseñas, ratings y reputación de usuarios basado en actividades completadas |
-| **Actores Principales** | Deportista que Revisa, Entrenador Evaluado, Propietario Evaluado |
-| **Eventos Principales** | ReseñaPublicada, RatingCalculado, RatingMaliciosoDetectado, ReputacionActualizada, ReseñaEliminada |
-| **Comandos** | PublicarReseña, QuitarReseña, ReportarReseñaMaliciosa, CalcularRatingPromedio |
-| **Reglas de Negocio** | • Solo pueden reseñar usuarios que completaron la actividad<br>• Las reseñas deben ser publicadas dentro de 30 días de completada la actividad<br>• El rating es un valor 1-5 (no decimales)<br>• Una reseña debe tener mínimo 10 caracteres y máximo 500<br>• Un usuario solo puede reseñar una vez por transacción<br>• Las reseñas no pueden modificarse, solo eliminarse |
-| **Capacidades** | • Publicación de reseñas y ratings<br>• Cálculo de rating promedio ponderado<br>• Detección de reseñas anómalas o maliciosas<br>• Visualización de historial de reseñas<br>• Gestión de reportes de contenido inapropiado<br>• Cálculo de confianza de usuario<br>• Filtrado por calidad de reseña |
-| **Dependencias** | ← User Account & Authentication Context (para validar usuarios)<br>← Booking & Reservation Context (para verificar actividades completadas)<br>→ Notification & Communication Context (para notificar sobre nuevas reseñas)<br>→ User Account & Authentication Context (para actualizar reputación) |
-| **Vocabulario Ubicuo** | Reseña, Rating, Calificación, Comentario, Confianza, Reputación, Historial, Anomalía |
-
----
-
-**Canvas 7: Search & Discovery Context**
-
-| Elemento | Descripción |
-|----------|-------------|
-| **Nombre** | Search & Discovery Context |
-| **Propósito** | Facilitar el descubrimiento rápido y relevante de canchas y entrenadores |
-| **Descripción** | Contexto que mantiene índices optimizados de canchas y entrenadores, permitiendo búsquedas eficientes con múltiples criterios |
-| **Actores Principales** | Deportista Buscador, Sistema de Indexación |
-| **Eventos Principales** | BúsquedaRealizada, CanchaIndexada, EntrenadorIndexado, ResultadosRetornados, ÍndiceActualizado |
-| **Comandos** | BuscarCanchas, BuscarEntrenadores, AplicarFiltros, Recomendar, IndexarContenido |
-| **Reglas de Negocio** | • Los resultados se ordenan por relevancia (ubicación, rating, disponibilidad)<br>• Máximo 5km de distancia por defecto sin filtro de ubicación<br>• Solo se muestran canchas y entrenadores con rating >= 3.0<br>• Los índices se actualizan en tiempo real<br>• Se cachean búsquedas frecuentes por 1 hora<br>• Máximo 100 resultados por búsqueda |
-| **Capacidades** | • Búsqueda de texto completo<br>• Filtrado por múltiples criterios (ubicación, deporte, precio, horario)<br>• Búsqueda geoespacial<br>• Ordenamiento por relevancia<br>• Recomendaciones personalizadas<br>• Autocomplete de búsquedas<br>• Análisis de tendencias de búsqueda |
-| **Dependencias** | ← Court & Venue Management Context (para indexar canchas)<br>← Coach & Trainer Context (para indexar entrenadores)<br>← Review & Rating Context (para incluir ratings)<br>→ Notification & Communication Context (para tracking de búsquedas) |
-| **Vocabulario Ubicuo** | Búsqueda, Índice, Filtro, Resultado, Relevancia, Ubicación, Deporte, Recomendación |
-
----
-
-**Canvas 8: Notification & Communication Context**
-
-| Elemento | Descripción |
-|----------|-------------|
-| **Nombre** | Notification & Communication Context |
-| **Propósito** | Facilitar la comunicación efectiva entre usuarios y del sistema hacia usuarios |
-| **Descripción** | Contexto transversal responsable de orquestar notificaciones multi-canal, recordatorios y mensajería entre usuarios |
-| **Actores Principales** | Deportista, Entrenador, Sistema de Eventos, Servicios de Email |
-| **Eventos Principales** | NotificacionEnviada, ReminderCreado, MensajeEnviado, NotificacionEntregada, NotificacionLeida |
-| **Comandos** | EnviarNotificacion, CrearReminder, EnviarMensaje, ActualizarPreferencias, ConfirmarEntrega |
-| **Reglas de Negocio** | • Las notificaciones respetan preferencias de usuario (push, email o SMS)<br>• No se envían notificaciones después de las 22:00 ni antes de las 08:00<br>• Los recordatorios de actividades se envían 1 hora antes<br>• El historial de notificaciones se mantiene por 90 días<br>• El usuario puede silenciar notificaciones por contexto<br>• Máximo 3 notificaciones por hora por usuario |
-| **Capacidades** | • Sistema de notificaciones multi-canal (push, email, SMS)<br>• Recordatorios automáticos de actividades<br>• Mensajería directa entre usuarios<br>• Preferencias de notificación personalizables<br>• Historial de notificaciones<br>• Análisis de entrega<br>• Integración con Firebase Cloud Messaging |
-| **Dependencias** | ↔ Todos los contextos (escucha y envía eventos)<br>→ Servicios Externos: Firebase FCM, SendGrid, Twilio |
-| **Vocabulario Ubicuo** | Notificación, Mensaje, Reminder, Canal, Preferencia, Entrega, Leitura |
-
----
-
-**Notas Sobre los Canvases:**
-
-- Cada canvas ha sido diseñado iterativamente considerando la experiencia del usuario deportista y las necesidades operacionales de entrenadores.
-- Las dependencias muestran explícitamente cómo los contextos colaboran para completar flujos de negocio complejos.
-- El vocabulario ubicuo de cada contexto ha sido validado con stakeholders (deportistas, entrenadores, propietarios de canchas).
-- Los canvases servirán de base para el diseño táctico de la arquitectura en las secciones posteriores (2.6.x).
-
-### 2.5.2. Context Mapping
 
 ### 2.5.3. Software Architecture
 
