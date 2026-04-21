@@ -651,6 +651,16 @@ Ambos coinciden en tareas clave como coordinar actividades, comunicarse y gestio
 
 ### 2.3.3. User Journey Mapping
 
+En esta sección se presentan los User Journey Maps donde se describe el proceso actual que siguen nuestros User Personas para lograr su objetivo sin contar aún con una solución tecnológica integrada, mostrando los puntos críticos, emociones, tareas clave y oportunidades de mejora. Estos recorridos nos permiten entender los desafíos que enfrentan los usuarios día a día.
+
+**Deportistas Aficionados:**
+
+![JourneyMapping-DiegoRojas](./assets/chapter2/JourneyMapping-DiegoRojas.png)
+
+**Entrenadores Independientes:**
+
+![JourneyMapping-CésarFalcón](./assets/chapter2/JourneyMapping-CésarFalcón.png)
+
 ### 2.3.4. Empathy Mapping
 
 ### 2.3.5. Big Picture EventStorming
