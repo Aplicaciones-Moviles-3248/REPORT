@@ -1230,7 +1230,7 @@ La capa de dominio del bounded context **Matches** contiene las clases que model
 
 **Nombre de la clase:** `Match`
 
-**Paquete:** `com.upc.matchpoint.matches.domain.model.aggregates`
+**Paquete:** `com.upc.courtly.matches.domain.model.aggregates`
 
 **Propósito:**
 Representa la entidad principal del bounded context Bookings. Modela una reserva de cancha realizada por un usuario en un intervalo de tiempo específico y constituye el agregado raíz del contexto.
@@ -1295,7 +1295,7 @@ Representa el estado del partido dentro del sistema.
 
 `CreateMatchCommand`
 
-**Paquete:** `com.upc.matchpoint.matches.domain.model.commands`
+**Paquete:** `com.upc.courtly.matches.domain.model.commands`
 
 **Propósito:** Representa la intención de crear un nuevo partido.
 
@@ -1310,7 +1310,7 @@ Representa el estado del partido dentro del sistema.
 
 `UpdateMatchCommand`
 
-**Paquete:** `com.upc.matchpoint.matches.domain.model.commands`
+**Paquete:** `com.upc.courtly.matches.domain.model.commands`
 
 **Propósito:** Actualizar un partido existente.
 
@@ -1324,7 +1324,7 @@ Representa el estado del partido dentro del sistema.
 
 `DeleteMatchCommand`
 
-**Paquete:** `com.upc.matchpoint.matches.domain.model.commands`
+**Paquete:** `com.upc.courtly.matches.domain.model.commands`
 
 **Propósito:** Eliminar un partido.
 
@@ -1337,7 +1337,7 @@ Representa el estado del partido dentro del sistema.
 
 `GetAllMatchesQuery`
 
-**Paquete:** `com.upc.matchpoint.matches.domain.model.queries`
+**Paquete:** `com.upc.courtly.matches.domain.model.queries`
 
 **Propósito:** Obtener todos los partidos.
 
@@ -1349,7 +1349,7 @@ Representa el estado del partido dentro del sistema.
 
 `MatchCommandService`
 
-**Paquete:** `com.upc.matchpoint.matches.domain.services`
+**Paquete:** `com.upc.courtly.matches.domain.services`
 
 **Propósito:** Define las operaciones de escritura sobre el agregado Match.
 
@@ -1369,7 +1369,7 @@ Representa el estado del partido dentro del sistema.
 
 `MatchRepository`
 
-**Paquete:** com.upc.matchpoint.matches.infrastructure.persistence.jpa.repositories
+**Paquete:** com.upc.courtly.matches.infrastructure.persistence.jpa.repositories
 
 **Propósito:** Permite acceder a la persistencia de partidos.
 
@@ -1394,3 +1394,95 @@ Representa el estado del partido dentro del sistema.
 - Validar conflictos de horario en la misma cancha.
 - Implementar una tabla de participantes.
 - Gestionar la inscripción de jugadores al partido.
+
+---
+
+#### 2.6.9.2. Interface Layer
+
+La Interface Layer del bounded context `Matches` contiene las clases responsables de exponer las funcionalidades relacionadas a los partidos organizados mediante endpoints REST, así como de transformar la información entre el dominio y los recursos consumidos por el frontend móvil.
+
+Esta capa actúa como punto de entrada al sistema, permitiendo que los usuarios creen, consulten, actualicen y eliminen partidos, además de visualizar información relevante como la cancha y los cupos disponibles.
+
+**a. MatchesController:**
+
+**Paquete:** `com.upc.courtly.matches.interfaces.rest`
+
+**Propósito:** Exponer los endpoints HTTP para la gestión de partidos. Funciona como punto de entrada para el frontend (por ejemplo, el feed de partidos abiertos o el formulario de creación).
+
+**Dependencias:**
+- `MatchCommandService`
+- `MatchQueryService`
+
+**Endpoints expuestos:**
+- `POST /api/v1/matches` → crear partido
+- `GET /api/v1/matches` → listar partidos
+- `GET /api/v1/matches/{id}` → obtener partido por id
+- `PUT /api/v1/matches/{id}` → actualizar partido
+- `DELETE /api/v1/matches/{id}` → eliminar partido
+
+**b. Resources / DTOs:**
+
+`MatchResource`
+
+**Paquete:** `com.upc.courtly.matches.interfaces.rest.resources`
+
+**Propósito:** Representar la información de un partido que será enviada al frontend.
+
+**Atributos:**
+
+- `matchId`  
+- `title` 
+- `description`
+- `dateTime`  
+- `status`  
+- `maxPlayers`  
+- `currentPlayers`  
+- `court: CourtSummaryResource`  
+- `createdBy: UserSummaryResource`  
+
+**Estructuras internas resumidas:**
+
+- `CourtSummaryResource(Long id, String name)`
+- `UserSummaryResource(Long id, String name)`
+
+`CreateMatchResource`
+
+**Propósito:** Representar los datos necesarios para crear un nuevo partido.
+
+**Atributos:**
+
+- `title`
+- `description`
+- `dateTime`
+- `maxPlayers`
+- `courtId`
+- `createdById`
+
+`UpdateMatchResource`
+
+**Propósito:** Representar los datos necesarios para actualizar un partido existente.
+
+**Atributos:**
+
+- `title`
+- `description`
+- `dateTime`
+- `maxPlayers`
+
+**c. Assemblers:**
+
+`MatchResourceFromEntityAssembler`
+
+**Paquete:** `com.upc.courtly.matches.interfaces.rest.transform`
+
+**Propósito:** Transformar una entidad `Match` del dominio en un `MatchResource` listo para el frontend. Además, resume las relaciones con `Court` y `UserProfile`, mostrando únicamente id y name.
+
+`CreateMatchCommandFromResourceAssembler`
+
+**Propósito:** Convertir un `CreateMatchResource` en un `CreateMatchCommand`.
+
+`UpdateMatchCommandFromResourceAssembler`
+
+Propósito: Transformar un `UpdateMatchResource`, junto con el `matchId`, en un `UpdateMatchCommand`.
+
+---
