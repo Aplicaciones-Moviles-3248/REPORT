@@ -1579,11 +1579,64 @@ Mientras los deportistas enfrentan desorden y poca confiabilidad, los entrenador
 
 ### 2.3.1. User Personas
 
+En esta sección se presentan los User Personas definidos a partir del análisis de entrevistas realizada. Estos representan a cada segmento objetivo identificado para nuestra solución: Deportistas Aficionados y Entrenadores Independientes. Con esto, se nos permite comprender mejor las necesidades, comportamientos y motivaciones de los usuarios, facilitando el diseño de una solución alineada a sus expectativas.
+
+**Deportistas Aficionados:**
+
+![UserPersona-DiegoRojas](./assets/chapter2/UserPersona-DiegoRojas.png)
+
+**Entrenadores Independientes:**
+
+![UserPersona-CésarFalcón](./assets/chapter2/UserPersona-CésarFalcón.png)
+
 ### 2.3.2. User Task Matrix
+
+En esta sección se presenta el User Task Matrix construido a partir de los User Persona, quienes representan a cada segmento objetivo identificado. En este se listan las tareas realizadas por estos usuarios basado en el análisis de entrevistas, cada una fue evaluada según su frecuencia y nivel de importancia para los respectivos perfiles.
+
+| Actividades | Frecuencia (Diego Rojas) | Importancia (Diego Rojas) | Frecuencia (César Falcón) | Importancia (César Falcón) |
+| ----------- | ------------------------ | ------------------------- | ------------------------- | -------------------------- |
+| Buscar canchas disponibles según la ubicación | Alta | Alta | Media | Media |
+| Comparar precios y horarios | Alta | Alta | Baja | Media |
+| Reservar espacios deportivos | Alta | Alta | Media | Alta |
+| Coordinar partidos o entrenamientos | Alta | Alta | Alta | Alta |
+| Evaluar calidad y servicios del espacio deportivo | Media | Alta | Media | Media |
+| Coordinar horarios con el dueño | Alta | Alta | Alta | Alta |
+| Buscar entrenadores o clases | Media | Alta | Baja | Baja |
+| Realizar pago por alquiler | Alta | Alta | Alta | Alta |
+| Promocionar servicios deportivos | Baja | Baja | Alta | Alta |
+| Gestionar horarios y disponibilidad | Baja | Media | Alta | Alta |
+| Administrar clientes/alumnos | Baja | Baja | Alta | Alta |
+| Fidelizar o mantener clientes | Baja | Media | Alta | Alta |
+
+**Análisis:**
+
+A partir de la tabla anterior, podemos identificar las tareas más críticas según el rol de cada usuario. Los deportistas aficionados se enfocan en tareas que les permita organizar sus partidos de forma rápida y sin complicaciones con actividades como la búsqueda de canchas, comparar opciones, reservar y coordinar con sus amigos. Por otro lado, los entrenadores independientes están más centrados en coordinar entrenamientos, gestionar horarios, manejar pagos, administrar clientes y promocionar sus servicios. Su necesidad principal es ordenar y hacer crecer su actividad como un negocio.
+
+Ambos coinciden en tareas clave como coordinar actividades, comunicarse y gestionar pagos. Pero la diferencia principal está en el enfoque: mientras unos consumen el servicio, otros lo gestionan y monetizan. Por eso, la solución debe ser rápida y sencilla para unos, pero más completa y organizada para otros.
 
 ### 2.3.3. User Journey Mapping
 
+En esta sección se presentan los User Journey Maps donde se describe el proceso actual que siguen nuestros User Personas para lograr su objetivo sin contar aún con una solución tecnológica integrada, mostrando los puntos críticos, emociones, tareas clave y oportunidades de mejora. Estos recorridos nos permiten entender los desafíos que enfrentan los usuarios día a día.
+
+**Deportistas Aficionados:**
+
+![JourneyMapping-DiegoRojas](./assets/chapter2/JourneyMapping-DiegoRojas.png)
+
+**Entrenadores Independientes:**
+
+![JourneyMapping-CésarFalcón](./assets/chapter2/JourneyMapping-CésarFalcón.png)
+
 ### 2.3.4. Empathy Mapping
+
+En esta sección se presentan los Empathy Mappings. Estos nos ayudarán a comprender las experiencias, emociones y pensamientos que expresan los usuarios de cada segmento objetivo.
+
+**Deportistas Aficionados:**
+
+![EmpathyMapping-DiegoRojas](./assets/chapter2/EmpathyMapping-DiegoRojas.png)
+
+**Entrenadores Independientes:**
+
+![EmpathyMapping-CésarFalcón](./assets/chapter2/EmpathyMapping-CésarFalcón.png)
 
 ### 2.3.5. Big Picture EventStorming
 
