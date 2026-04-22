@@ -713,11 +713,27 @@ Uno de los principales problemas radica en la dificultad para encontrar canchas 
 
 Por otro lado, los entrenadores independientes enfrentan dificultades para ofrecer sus servicios de manera estructurada, ya que carecen de herramientas digitales que les permitan gestionar reservas, pagos y su visibilidad frente a potenciales clientes. Esto limita sus oportunidades de crecimiento y profesionalización dentro del entorno deportivo.  
 
-En este contexto, surge la necesidad de una solución que permita centralizar la información, optimizar la gestión de reservas y facilitar la conexión entre deportistas y entrenadores en un solo entorno digital.  
+En este contexto, surge la necesidad de una solución que permita centralizar la información, optimizar la gestión de reservas y facilitar la conexión entre deportistas y entrenadores en un solo entorno digital. 
+
+### Objetivos de la solución
+
+- Facilitar la búsqueda de canchas deportivas disponibles en tiempo real.
+- Conectar a deportistas con entrenadores confiables mediante una plataforma digital.
+- Reducir el tiempo y la complejidad en la organización de actividades deportivas.
+- Centralizar la información de servicios deportivos en un solo entorno digital.
+
+### Restricciones del proyecto
+
+- Dependencia de conexión a internet para el uso de la aplicación.
+- Limitada digitalización de algunos proveedores de servicios deportivos.
+- Adopción progresiva por parte de usuarios y entrenadores.
+- Limitaciones técnicas propias de dispositivos móviles.
+
+### Análisis 5W + 2H
 
 #### What?
 
-Courtly es una aplicación desarrollada por Mova, diseñada para facilitar la búsqueda y reserva de canchas deportivas, así como la conexión con entrenadores independientes de manera rápida y organizada. La solución permite a los usuarios acceder a información actualizada sobre disponibilidad, precios, ubicación y servicios, integrando en una sola plataforma todo el proceso deportivo.  
+Existe una dificultad para encontrar canchas deportivas disponibles y entrenadores confiables de manera rápida y organizada. Actualmente, la información sobre disponibilidad, precios y servicios se encuentra dispersa, lo que dificulta la planificación de actividades deportivas. 
 
 #### Why?
 
@@ -739,8 +755,7 @@ Asimismo, se incluyen los entrenadores independientes que requieren herramientas
 
 #### How?
 
-Courtly aborda esta problemática mediante una aplicación que permite a los usuarios buscar canchas y entrenadores según su ubicación, disponibilidad y necesidades, consultar información en tiempo real y realizar reservas de manera rápida.  
-Al mismo tiempo, ofrece a los entrenadores herramientas para gestionar sus servicios, organizar su agenda y conectar con nuevos clientes, generando una experiencia más eficiente para ambas partes.  
+La problemática se manifiesta a través de procesos manuales e informales, como llamadas, mensajes o uso de redes sociales, lo que genera desorganización, falta de confirmación en reservas y dificultades para acceder a información actualizada.
 
 #### How Much?
 
@@ -750,17 +765,28 @@ El impacto de esta problemática se refleja en la pérdida de tiempo al momento 
 
 #### 1.2.2.1. Lean UX Problem Statements
 
-#### Courtly - Solución a la Reserva Deportiva y Conexión con Entrenadores
+**Domain:**  
+El dominio corresponde al sector deportivo amateur, enfocado en la gestión de reservas de canchas y contratación de entrenadores.
 
-El acceso a canchas deportivas y entrenadores independientes dentro del entorno amateur se caracteriza actualmente por una oferta fragmentada, procesos poco digitalizados y una gestión poco eficiente. Aunque existen alternativas como redes sociales, contactos directos o grupos informales, estas no logran cubrir completamente las necesidades de los deportistas que buscan disponibilidad inmediata, confianza y organización.
+**Customer Segments:**  
+- Deportistas aficionados  
+- Equipos amateurs  
+- Entrenadores independientes  
 
-Por un lado, los usuarios enfrentan dificultades para encontrar canchas disponibles en horarios adecuados y entrenadores confiables. Por otro lado, los entrenadores independientes carecen de herramientas digitales que les permitan gestionar sus reservas, pagos y visibilidad de manera organizada, lo que limita su crecimiento.
+**Pain Points:**  
+- Dificultad para encontrar canchas disponibles  
+- Falta de información confiable  
+- Procesos manuales y desorganizados  
+- Baja visibilidad de entrenadores  
 
-Las soluciones actuales no ofrecen una plataforma centralizada que integre todo el proceso deportivo: búsqueda, reserva, pago y coordinación. Esto genera desorganización, pérdida de tiempo y oportunidades desaprovechadas para ambos segmentos.
+**Gap:**  
+Las soluciones actuales no ofrecen una plataforma centralizada que integre la búsqueda, reserva, pago y coordinación de actividades deportivas.
 
-Nuestro producto, Courtly, abordará esta problemática mediante una solución que conecte a deportistas con canchas y entrenadores en un solo entorno digital. Permitirá buscar, reservar y pagar de manera rápida y confiable, mientras que los entrenadores podrán ofrecer sus servicios y gestionar sus reservas de forma sencilla.
+**Vision / Strategy:**  
+Courtly propone una solución digital que conecte a deportistas con canchas y entrenadores en un solo entorno, permitiendo gestionar actividades deportivas de forma rápida, confiable y organizada.
 
-Sabremos que hemos tenido éxito cuando los usuarios utilicen la aplicación de forma recurrente para organizar sus actividades deportivas, cuando los entrenadores incrementen su participación en la plataforma, y cuando exista una comunidad activa con altos niveles de retención y satisfacción.
+**Success Criteria:**  
+Se considerará exitoso cuando los usuarios utilicen la aplicación de forma recurrente, los entrenadores incrementen su participación y se genere una comunidad activa con altos niveles de retención.
 
 ---
 
@@ -856,7 +882,7 @@ Creemos que aumentará la confianza en la plataforma si los usuarios pueden ver 
 
 #### 1.2.2.4. Lean UX Canvas
 
-<img src="images/LeanUXCanvas-Courtly.jpg" width="900">
+[Ver Lean UX Canvas de Courtly en Miro](https://miro.com/welcomeonboard/d3htMStsWFVEUFhBY1NwdGlFR0RkekZjcHlJMUNKcU9TOVJ1U2E1S3ptSXE2QUMyU2RKYnFhRzZIdzFoZE1oNnFBT3pnbCtLaUZoc1NYRU5LY2FuNEJ2UXV1VEM4OWZ3bExlZWJiN0p4dlprbytlUkUvUytLT2h5Vjk0azB6RXJzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=265390215415)
 
 [Enlace al Lean UX Canvas en Miro](https://miro.com/welcomeonboard/d3htMStsWFVEUFhBY1NwdGlFR0RkekZjcHlJMUNKcU9TOVJ1U2E1S3ptSXE2QUMyU2RKYnFhRzZIdzFoZE1oNnFBT3pnbCtLaUZoc1NYRU5LY2FuNEJ2UXV1VEM4OWZ3bExlZWJiN0p4dlprbytlUkUvUytLT2h5Vjk0azB6RXJzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=265390215415)
 
@@ -864,7 +890,7 @@ Creemos que aumentará la confianza en la plataforma si los usuarios pueden ver 
 
 La propuesta de valor de Courtly se dirige a dos segmentos principales dentro del ecosistema deportivo amateur. Estos segmentos han sido definidos considerando tanto las necesidades identificadas en el problema como el contexto actual de digitalización, en el cual el acceso a dispositivos móviles y tecnologías de la información permite la adopción de soluciones digitales para la organización de actividades deportivas.
 
-En el Perú, el acceso a telefonía móvil alcanza a más del 95% de los hogares, lo que evidencia un alto nivel de conectividad y facilita el uso de aplicaciones móviles como principal canal de interacción para este tipo de servicios. Este contexto respalda la viabilidad de Courtly como una solución digital orientada al deporte amateur.
+En el Perú, el acceso a telefonía móvil supera el 95% de los hogares, según reportes recientes de conectividad digital en el país, lo que evidencia un alto nivel de acceso a tecnología. Este contexto favorece la adopción de aplicaciones móviles como principal canal de interacción para este tipo de servicios, respaldando la viabilidad de Courtly como una solución digital orientada al deporte amateur.
 
 ---
 
@@ -3516,6 +3542,270 @@ Se siguió un proceso iterativo para cada canvas que incluyó:
 - Los canvases servirán de base para el diseño táctico de la arquitectura en las secciones posteriores (2.6.x).
 
 ### 2.5.2. Context Mapping
+
+## Proceso de elaboración del Context Mapping
+
+Para elaborar el Context Mapping de Courtly, el equipo partió de los bounded contexts identificados en el análisis del backend actual: **IAM, Users, Coaches, Courts, Availabilities, Bookings, Matches, Payments, Reviews, Notifications y Analytics**. A partir de estos contextos, se revisó la información recolectada previamente sobre entidades, agregados, relaciones funcionales, endpoints expuestos y flujos esperados del frontend, con el objetivo de entender cómo se distribuyen las responsabilidades del dominio.
+
+El proceso no consistió únicamente en listar módulos existentes, sino en cuestionar si la separación actual representaba de manera adecuada la lógica del negocio. Para ello, se analizaron dependencias reales entre contextos, especialmente aquellas relacionadas con la identidad del usuario, la reserva de canchas y la organización de partidos.
+
+Durante esta etapa, el equipo utilizó preguntas guía propias de Domain-Driven Design, tales como: ¿qué pasaría si se mueve una capacidad a otro bounded context?, ¿qué ocurriría si se divide un contexto?, ¿qué pasaría si se agrupan capacidades?, o ¿qué sucede si se aíslan las capacidades core?
+
+Estas preguntas permitieron generar distintos diseños candidatos, evaluados en función de cohesión, bajo acoplamiento y alineación con la propuesta de valor.
+
+---
+
+## Diseños candidatos evaluados
+
+### Alternativa 1: Unificar IAM y Users
+
+![alt1](./images/context-map-alt1.png)
+
+Esta alternativa proponía fusionar autenticación e identidad funcional en un solo contexto. Su principal ventaja era simplificar el flujo del frontend, ya que el usuario obtendría directamente una identidad válida para operar en reservas, partidos, pagos, reseñas y notificaciones después del login. Además, reducía la necesidad de resolver manualmente la relación entre `UserId` y `UserProfileId`.
+
+Sin embargo, esta unificación mezclaba responsabilidades distintas dentro de un mismo bounded context. IAM pertenece al ámbito de seguridad, credenciales y autorización, mientras que Users representa la identidad funcional del negocio. Mantener ambas capacidades juntas aumentaba el acoplamiento y dificultaba la evolución independiente de cada una, por lo que esta alternativa fue descartada.
+
+---
+
+### Alternativa 2: IAM y Users separados con ACL
+
+> **Nota:** El diagrama `context-map-alt2.png` no está incluido actualmente en el repositorio, por lo que se eliminó la referencia rota `./images/context-map-alt2.png`.
+
+Esta alternativa mantiene separados los contextos de autenticación e identidad funcional, incorporando una capa **ACL** para traducir la identidad autenticada hacia la identidad de negocio. De esta forma, el sistema preserva la responsabilidad específica de cada contexto y evita contaminar el dominio operativo con conceptos propios de seguridad.
+
+La principal ventaja de esta propuesta es que mantiene un modelo más limpio y alineado con Domain-Driven Design. IAM sigue resolviendo autenticación, roles y acceso, mientras Users continúa actuando como proveedor de la identidad funcional consumida por los contextos operativos. Debido a este equilibrio entre desacoplamiento y claridad de responsabilidades, esta alternativa fue seleccionada como base del diseño final.
+
+---
+
+### Alternativa 3: Integrar Availabilities en Coaches
+
+*Diagrama de la alternativa 3 no disponible en el repositorio.*
+
+Esta alternativa buscaba reducir la cantidad de bounded contexts integrando la disponibilidad de entrenadores dentro del contexto **Coaches**. A simple vista, la decisión parecía razonable, ya que la disponibilidad depende directamente del entrenador y forma parte de su oferta de servicio.
+
+No obstante, el análisis mostró que **Availabilities** posee reglas propias, estados específicos y una posible evolución independiente, por ejemplo en validación de solapamientos, reglas de agenda o automatización de disponibilidad. Integrarlo dentro de Coaches habría reducido contextos, pero también habría debilitado la cohesión del modelo del entrenador. Por ello, se descartó y se mantuvo como contexto separado.
+
+---
+
+### Alternativa 4: Fusionar Bookings y Matches
+
+![alt4](./images/context-map-alt4.png)
+
+Esta alternativa agrupaba reservas y organización de partidos en un solo contexto operativo. La motivación principal era que ambos procesos utilizan canchas y usuarios, y están estrechamente relacionados dentro de la experiencia deportiva de la plataforma.
+
+Sin embargo, al revisar las reglas del dominio se observó que representan procesos distintos. **Bookings** es principalmente transaccional, ya que modela la reserva de un recurso físico en un horario determinado. **Matches**, en cambio, incorpora una lógica más organizacional y social, con conceptos como cupos, estado del partido y usuario creador. Fusionarlos habría generado un contexto más grande pero menos claro, por lo que se descartó para evitar complejidad innecesaria.
+
+---
+
+### Alternativa 5: Agrupar contextos de soporte
+
+**Diagrama no disponible en el repositorio:** `./images/context-map-alt5.png`
+
+Esta alternativa proponía unificar **Payments, Reviews, Notifications y Analytics** dentro de un único contexto de soporte. Su ventaja principal era reducir la fragmentación estructural del sistema y simplificar visualmente el mapa general.
+
+A pesar de ello, el equipo identificó que estos contextos responden a subdominios muy diferentes: pagos, reputación, mensajería y métricas. Agruparlos en una sola unidad habría disminuido la cohesión interna y dificultado su evolución futura, ya que cada uno tiene reglas, objetivos y ciclos de cambio distintos. Por esa razón, esta alternativa fue descartada.
+
+---
+
+### Alternativa 6: Shared Kernel para Users
+
+> **Nota:** El diagrama de esta alternativa no se encuentra incluido en el repositorio actual, por lo que se omite la referencia a la imagen para evitar un enlace roto en el README.
+
+En esta alternativa se evaluó compartir la identidad de usuario mediante un **Shared Kernel**, con el objetivo de establecer un contrato común reutilizable entre múltiples contextos que dependen de `UserProfile`. Esta propuesta parecía útil porque varios módulos del sistema consumen la identidad funcional del usuario como referencia central.
+
+Sin embargo, un Shared Kernel implica coordinación constante entre los contextos que lo comparten, lo que incrementa el costo de mantenimiento y vuelve más rígida la evolución del modelo. En un sistema como Courtly, donde varios bounded contexts necesitan consumir identidad, esta decisión podía generar dependencia excesiva. Por ello, no fue adoptada en el diseño final y se prefirió una relación más clara de tipo **Customer/Supplier**.
+---
+
+## Discusión y selección de la mejor aproximación
+
+La mejor solución fue mantener bounded contexts cohesionados y conectados mediante relaciones explícitas, evitando fusiones innecesarias.
+
+Se definieron tres capas:
+
+- **Generic**: IAM, Users  
+- **Core**: Courts, Coaches, Bookings, Matches  
+- **Supporting**: Availabilities, Payments, Reviews, Notifications, Analytics  
+
+---
+
+## Context Map Final
+
+> **Nota:** El diagrama `context-map-courtly.png` debe agregarse al repositorio en una ruta válida antes de volver a enlazarlo desde este README.
+
+## Context Map — Leyenda rápida
+
+- **Core**: valor principal del negocio  
+- **Supporting**: capacidades de apoyo  
+- **Generic**: servicios transversales  
+
+**Tipos de relación:**
+- **Customer/Supplier**: el contexto consumidor depende del contrato del proveedor.  
+- **ACL (Anti-Corruption Layer)**: capa que traduce o protege al dominio frente a otro contexto.  
+- **Conformist**: el downstream adopta el modelo del upstream sin traducción.
+- **Shared Kernel**: artefactos compartidos entre contextos.
+---
+
+## Descripción de cada Bounded Context
+
+### Core
+- **Bookings** – reservas de canchas  
+- **Matches** – organización de partidos  
+- **Courts** – catálogo de canchas  
+- **Coaches** – catálogo de entrenadores  
+
+### Supporting
+- **Availabilities** – disponibilidad de entrenadores  
+- **Payments** – pagos  
+- **Reviews** – reseñas  
+- **Notifications** – notificaciones  
+- **Analytics** – métricas  
+
+### Generic
+- **IAM** – autenticación  
+- **Users** – perfil de usuario  
+
+---
+
+## Relaciones entre Contextos (con patrón DDD)
+
+| # | Upstream (provee) | Downstream (consume) | Patrón | ¿Qué fluye? |
+|---|---|---|---|---|
+| R1 | IAM | Users | ACL | Traducción de UserId a UserProfileId |
+| R2 | Users | Bookings | Customer/Supplier | UserProfileId |
+| R3 | Users | Matches | Customer/Supplier | Usuario creador |
+| R4 | Users | Payments | Customer/Supplier | Usuario |
+| R5 | Users | Reviews | Customer/Supplier | Autor |
+| R6 | Users | Notifications | Customer/Supplier | Destinatario |
+| R7 | Courts | Bookings | Customer/Supplier | CourtId |
+| R8 | Courts | Matches | Customer/Supplier | CourtId |
+| R9 | Coaches | Availabilities | Customer/Supplier | CoachId |
+| R10 | Coaches | Analytics | Customer/Supplier | Métricas |
+| R11 | Coaches | Reviews | Referencia semántica | targetId |
+| R12 | Courts | Reviews | Referencia semántica | targetId |
+
+---
+
+## Contratos de Mensajes (mini-catálogo)
+
+El siguiente catálogo resume de forma conceptual los principales comandos, queries y eventos asociados a cada contexto, con fines de modelado del Context Map. Estos contratos reflejan tanto las capacidades actuales del sistema como su comportamiento esperado a nivel de dominio.
+
+> **Comandos** (→), **Eventos** (¡), **Queries** (¿)
+
+---
+
+### IAM
+- → SignUp(username, password, roles?)
+- → SignIn(username, password)
+- ¿ GetUserById(id)
+- ¿ GetRoles()
+- ¡ UserAuthenticated
+
+---
+
+### Users
+- → CreateUserProfile(name, email, phone)
+- → UpdateUserProfile(id, data)
+- → DeleteUserProfile(id)
+- ¿ GetUserProfiles()
+- ¿ GetUserProfileById(id)
+- ¡ UserProfileCreated
+
+---
+
+### Coaches
+- → CreateCoach(name, expertise, phone)
+- → UpdateCoach(id, data)
+- → DeleteCoach(id)
+- ¿ GetCoaches()
+- ¿ GetCoachById(id)
+
+---
+
+### Courts
+- → CreateCourt(name, location, type)
+- → UpdateCourt(id, data)
+- → DeleteCourt(id)
+- ¿ GetCourts()
+- ¿ GetCourtById(id)
+
+---
+
+### Availabilities
+- → CreateAvailability(date, startTime, endTime, status, coachId)
+- → UpdateAvailability(id, data)
+- → DeleteAvailability(id)
+- ¿ GetAvailabilities()
+- ¿ GetAvailabilityById(id)
+
+---
+
+### Bookings
+- → CreateBooking(startTime, endTime, userProfileId, courtId)
+- → UpdateBooking(id, data)
+- → DeleteBooking(id)
+- ¿ GetBookings()
+- ¿ GetBookingById(id)
+- ¡ BookingCreated
+
+---
+
+### Matches
+- → CreateMatch(title, description, dateTime, courtId, createdById)
+- → UpdateMatch(id, data)
+- → DeleteMatch(id)
+- ¿ GetMatches()
+- ¿ GetMatchById(id)
+- ¡ MatchCreated
+
+---
+
+### Payments
+- → CreatePayment(amount, userProfileId)
+- ¿ GetPaymentById(id)
+- ¡ PaymentCreated
+
+---
+
+### Reviews
+- → CreateReview(score, comment, targetId, targetType, userProfileId)
+- → UpdateReview(id, data)
+- → DeleteReview(id)
+- ¿ GetReviews()
+- ¿ GetReviewById(id)
+
+---
+
+### Notifications
+- → CreateNotification(title, message, userProfileId)
+- → UpdateNotification(id, data)
+- → DeleteNotification(id)
+- ¿ GetNotifications()
+- ¿ GetNotificationById(id)
+
+---
+
+### Analytics
+- → CreateMetric(metricType, value, period, coachId)
+- → UpdateMetric(id, data)
+- → DeleteMetric(id)
+- ¿ GetMetrics()
+- ¿ GetMetricById(id)
+
+---
+
+## Justificación del Context Map final
+
+El diseño final mantiene separadas las responsabilidades de seguridad, identidad funcional, operación principal y soporte.
+
+Los contextos core representan la propuesta de valor del sistema, mientras que los supporting complementan la experiencia. Los contextos generic permiten el funcionamiento transversal del sistema.
+
+Esta estructura logra un equilibrio entre cohesión y bajo acoplamiento, alineado con los principios de Domain-Driven Design.
+
+---
+
+### Capability Layering Map
+
+> Diagrama pendiente de incorporación. Actualizar esta sección cuando el archivo `capability-map-courtly.png` esté disponible en una ruta válida del repositorio.
 
 ### 2.5.3. Software Architecture
 
