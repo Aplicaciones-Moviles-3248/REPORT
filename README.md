@@ -1766,3 +1766,1051 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 ##### 2.6.x.6.1. Bounded Context Domain Layer Class Diagrams
 
 ##### 2.6.x.6.2. Bounded Context Database Design Diagram
+
+### 2.6.4. Bounded Context: Coaches
+
+El bounded context **Coaches** representa la capacidad del sistema encargada de gestionar, registrar y consultar la información de entrenadores dentro de la plataforma Courtly. Su propósito es permitir la administración del catálogo de coaches que participan en el ecosistema deportivo digital, almacenando sus datos relevantes y habilitando su uso por otros bounded contexts del sistema. Dentro de este contexto, la entidad principal es `Coach`, ya que concentra la información esencial del entrenador y constituye el agregado raíz del contexto.
+
+Este contexto se relaciona directamente con los bounded contexts **Availabilities**, **Analytics** y **Reviews**, debido a que la información de un coach es utilizada para registrar disponibilidades, asociar métricas de desempeño y recibir reseñas desde otros módulos del sistema. De esta manera, Coaches cumple un rol de catálogo base y de soporte para otros procesos funcionales de Courtly.
+
+#### 2.6.4.1. Domain Layer
+
+La capa de dominio del bounded context **Coaches** contiene las clases que modelan el núcleo del catálogo de entrenadores y las reglas de negocio asociadas a su administración. A partir del análisis de la arquitectura general del backend, se identifica que el agregado principal del contexto es `Coach`, acompañado por comandos, consultas y servicios de dominio que estructuran la lógica interna del módulo.
+
+##### a) Entity / Aggregate Root: `Coach`
+
+**Nombre de la clase:** `Coach`  
+**Paquete:** `com.upc.matchpoint.coaches.domain.model.aggregates`
+
+**Propósito:**  
+Representa la entidad principal del bounded context Coaches. Modela a un entrenador registrado dentro de Courtly y constituye el agregado raíz del contexto.
+
+**Atributos:**
+- `id: Long` → identificador único del coach.
+- `name: String` → nombre del entrenador.
+- `expertise: String` → especialidad o experiencia del entrenador.
+- `phone: String` → número de contacto del entrenador.
+
+**Métodos:**
+- `Coach(String name, String expertise, String phone)` → constructor que inicializa un nuevo coach.
+- `updateInformation(String name, String expertise, String phone)` → actualiza los datos del entrenador.
+
+**Relaciones:**
+- Un coach puede tener múltiples disponibilidades en el bounded context **Availabilities**.
+- Un coach puede tener múltiples métricas en el bounded context **Analytics**.
+- Un coach puede recibir múltiples reseñas en el bounded context **Reviews** mediante `targetType = COACH` y `targetId`.
+
+##### b) Referencias externas del dominio
+
+Dentro del bounded context Coaches no se identifican referencias obligatorias a otras entidades de dominio para el funcionamiento base del agregado `Coach`. El contexto es relativamente autónomo y actúa como proveedor de datos para otros módulos del sistema.
+
+##### c) Value Objects
+
+No se identifican value objects explícitos implementados en el bounded context **Coaches**. Actualmente, los atributos del agregado `Coach` son tipos simples (`String`, `Long`), sin encapsulación adicional mediante enums o clases de valor.
+
+##### d) Commands del dominio
+
+Los comandos del contexto Coaches encapsulan la intención de ejecutar operaciones de escritura sobre el agregado `Coach`.
+
+###### `CreateCoachCommand`
+
+**Paquete:** `com.upc.matchpoint.coaches.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de crear un nuevo entrenador.
+
+**Atributos:**
+- `name: String`
+- `expertise: String`
+- `phone: String`
+
+###### `UpdateCoachCommand`
+
+**Paquete:** `com.upc.matchpoint.coaches.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de actualizar un entrenador existente.
+
+**Atributos:**
+- `coachId: Long`
+- `name: String`
+- `expertise: String`
+- `phone: String`
+
+###### `DeleteCoachCommand`
+
+**Paquete:** `com.upc.matchpoint.coaches.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de eliminar un entrenador.
+
+**Atributos:**
+- `coachId: Long`
+
+##### e) Queries del dominio
+
+El contexto también define objetos de consulta para la recuperación de información.
+
+###### `GetAllCoachesQuery`
+
+**Paquete:** `com.upc.matchpoint.coaches.domain.model.queries`
+
+**Propósito:**  
+Representa la intención de obtener todos los entrenadores del sistema.
+
+**Atributos:** no contiene atributos.
+
+###### `GetCoachByIdQuery`
+
+**Paquete:** `com.upc.matchpoint.coaches.domain.model.queries`
+
+**Propósito:**  
+Representa la intención de obtener un entrenador específico por identificador.
+
+**Atributos:**
+- `coachId: Long`
+
+##### f) Domain Services
+
+El dominio define interfaces de servicio que abstraen la ejecución de comandos y consultas.
+
+###### `CoachCommandService`
+
+**Paquete:** `com.upc.matchpoint.coaches.domain.services`
+
+**Propósito:**  
+Define el contrato para ejecutar operaciones de creación, actualización y eliminación sobre entrenadores.
+
+**Métodos:**
+- `Optional<Coach> handle(CreateCoachCommand command)`
+- `Optional<Coach> handle(UpdateCoachCommand command)`
+- `void handle(DeleteCoachCommand command)`
+
+###### `CoachQueryService`
+
+**Paquete:** `com.upc.matchpoint.coaches.domain.services`
+
+**Propósito:**  
+Define el contrato para ejecutar operaciones de consulta sobre entrenadores.
+
+**Métodos:**
+- `List<Coach> handle(GetAllCoachesQuery query)`
+- `Optional<Coach> handle(GetCoachByIdQuery query)`
+
+##### g) Repository
+
+###### `CoachRepository`
+
+**Paquete:** `com.upc.matchpoint.coaches.infrastructure.persistence.jpa.repositories`
+
+**Propósito dentro del dominio:**  
+Abstraer la persistencia de entrenadores, permitiendo operaciones de guardado, consulta y eliminación.
+
+**Operaciones disponibles:**
+- `save(Coach)`
+- `findById(Long)`
+- `findAll()`
+- `deleteById(Long)`
+- `existsById(Long)`
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- Un coach debe tener obligatoriamente nombre.
+- Un coach debe tener obligatoriamente una especialidad o expertise.
+- Un coach debe tener obligatoriamente un teléfono.
+- El nombre del coach se valida como único al momento de creación.
+
+**Reglas de negocio no implementadas aún:**
+- Validación formal del formato del teléfono.
+- Separación estructurada de especialidades mediante value objects o enums.
+- Asociación directa entre coach y cuenta autenticada del contexto IAM.
+- Reglas para disponibilidad automática o asignación de sesiones.
+- Reglas de consistencia frente a eliminación cuando existen métricas, reseñas o disponibilidades asociadas.
+
+En conjunto, la Domain Layer de Coaches presenta una estructura simple y clara, apropiada para un contexto de catálogo, aunque todavía puede enriquecerse con validaciones de mayor profundidad y una mejor integración con otros bounded contexts funcionales.
+
+#### 2.6.4.2. Interface Layer
+
+La Interface Layer del bounded context **Coaches** contiene las clases responsables de exponer las funcionalidades del contexto mediante endpoints REST y de transformar la información entre las estructuras internas del sistema y los recursos consumidos por el frontend.
+
+##### a) `CoachesController`
+
+**Paquete:** `com.upc.matchpoint.coaches.interfaces.rest`
+
+**Propósito:**  
+Exponer los endpoints HTTP para la gestión de entrenadores. Actúa como punto de entrada del bounded context desde el cliente o cualquier consumidor externo.
+
+**Dependencias:**
+- `CoachCommandService`
+- `CoachQueryService`
+
+**Endpoints expuestos:**
+- `POST /api/v1/coaches` → crear coach
+- `GET /api/v1/coaches` → obtener todos los coaches
+- `GET /api/v1/coaches/{id}` → obtener coach por id
+- `PUT /api/v1/coaches/{id}` → actualizar coach
+- `DELETE /api/v1/coaches/{id}` → eliminar coach
+
+##### b) Resources / DTOs
+
+###### `CoachResource`
+
+**Paquete:** `com.upc.matchpoint.coaches.interfaces.rest.resources`
+
+**Propósito:**  
+Representar la respuesta de un entrenador hacia el frontend.
+
+**Atributos:**
+- `id`
+- `name`
+- `expertise`
+- `phone`
+
+###### `CreateCoachResource`
+
+**Propósito:**  
+Representar los datos de entrada requeridos para crear un nuevo entrenador.
+
+**Atributos:**
+- `name`
+- `expertise`
+- `phone`
+
+###### `UpdateCoachResource`
+
+**Propósito:**  
+Representar los datos de entrada necesarios para actualizar un entrenador existente.
+
+**Atributos:**
+- `name`
+- `expertise`
+- `phone`
+
+##### c) Assemblers
+
+###### `CoachResourceFromEntityAssembler`
+
+**Paquete:** `com.upc.matchpoint.coaches.interfaces.rest.transform`
+
+**Propósito:**  
+Transformar una entidad `Coach` del dominio en un `CoachResource` apto para ser enviado al frontend.
+
+###### `CreateCoachCommandFromResourceAssembler`
+
+**Propósito:**  
+Transformar un `CreateCoachResource` en un `CreateCoachCommand`.
+
+###### `UpdateCoachCommandFromResourceAssembler`
+
+**Propósito:**  
+Transformar un `UpdateCoachResource`, junto con el identificador del coach, en un `UpdateCoachCommand`.
+
+##### d) Responsabilidad de la capa de interfaz
+
+La responsabilidad principal de esta capa es:
+- recibir solicitudes del cliente,
+- convertir recursos de entrada en comandos o consultas,
+- delegar la ejecución a la capa de aplicación,
+- y transformar los resultados en recursos de salida adecuados para el frontend.
+
+#### 2.6.4.3. Application Layer
+
+La Application Layer del bounded context **Coaches** coordina los flujos de proceso del negocio. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y con la infraestructura de persistencia.
+
+Las capacidades principales del contexto son:
+- crear un coach,
+- actualizar un coach,
+- eliminar un coach,
+- obtener un coach por id,
+- obtener todos los coaches.
+
+##### a) Command Handlers / Command Services
+
+###### `CoachCommandServiceImpl`
+
+**Paquete:** `com.upc.matchpoint.coaches.application.internal.commandservices`
+
+**Propósito:**  
+Implementar el contrato `CoachCommandService` y ejecutar los casos de uso de escritura del contexto Coaches.
+
+**Dependencia:**
+- `CoachRepository`
+
+**Operaciones que maneja:**
+
+**`handle(CreateCoachCommand command)`**
+- valida reglas de creación,
+- crea una nueva entidad `Coach`,
+- persiste el entrenador en base de datos,
+- retorna el coach creado.
+
+**`handle(UpdateCoachCommand command)`**
+- busca el entrenador por id,
+- actualiza `name`, `expertise` y `phone`,
+- guarda el cambio,
+- retorna el coach actualizado si existe.
+
+**`handle(DeleteCoachCommand command)`**
+- verifica si el entrenador existe,
+- lo elimina por identificador,
+- lanza excepción si no existe.
+
+##### b) Query Handlers / Query Services
+
+###### `CoachQueryServiceImpl`
+
+**Paquete:** `com.upc.matchpoint.coaches.application.internal.queryservices`
+
+**Propósito:**  
+Implementar el contrato `CoachQueryService` y ejecutar los casos de uso de lectura del contexto Coaches.
+
+**Dependencia:**
+- `CoachRepository`
+
+**Operaciones que maneja:**
+
+**`handle(GetAllCoachesQuery query)`**
+- recupera todos los entrenadores del sistema mediante `findAll()`,
+- devuelve una lista de entidades `Coach`.
+
+**`handle(GetCoachByIdQuery query)`**
+- busca un entrenador específico por su id,
+- devuelve un `Optional<Coach>`.
+
+##### c) Flujos principales del negocio
+
+###### Flujo de creación de coach
+1. El frontend envía un `CreateCoachResource`.
+2. La capa de interfaz lo transforma a `CreateCoachCommand`.
+3. `CoachCommandServiceImpl` valida la información del entrenador.
+4. Se construye una instancia de `Coach`.
+5. El coach se persiste mediante `CoachRepository`.
+6. El resultado se transforma en `CoachResource` y se retorna al cliente.
+
+###### Flujo de actualización
+1. El frontend envía un `UpdateCoachResource`.
+2. Se transforma en `UpdateCoachCommand`.
+3. `CoachCommandServiceImpl` recupera el coach existente.
+4. Se actualizan los datos del entrenador.
+5. Se guarda la modificación.
+6. Se retorna el coach actualizado.
+
+###### Flujo de consulta
+1. El frontend solicita uno o varios entrenadores.
+2. El controlador construye el objeto de consulta correspondiente.
+3. `CoachQueryServiceImpl` recupera la información desde `CoachRepository`.
+4. Los resultados se transforman a `CoachResource`.
+5. Se retorna la respuesta al cliente.
+
+###### Flujo de eliminación
+1. El frontend solicita eliminar un entrenador.
+2. Se construye un `DeleteCoachCommand`.
+3. `CoachCommandServiceImpl` verifica la existencia del entrenador.
+4. Se elimina el entrenador del repositorio.
+5. Se devuelve la confirmación de eliminación.
+
+##### d) Observaciones de la capa de aplicación
+
+Aunque esta capa implementa correctamente los casos de uso CRUD del bounded context, aún presenta limitaciones funcionales relevantes:
+- no vincula coaches con cuentas de autenticación del contexto IAM,
+- no integra automáticamente métricas, disponibilidades o reseñas,
+- no incorpora paginación ni filtros especializados,
+- y no implementa validaciones avanzadas sobre formato o consistencia de datos.
+
+Además, no se identifican **Event Handlers** implementados en el contexto Coaches. Todas las operaciones se ejecutan únicamente mediante comandos HTTP.
+
+#### 2.6.4.4. Infrastructure Layer
+
+La Infrastructure Layer del bounded context **Coaches** contiene los componentes encargados del acceso a base de datos y de la persistencia de los entrenadores. En esta capa se materializa el almacenamiento del agregado `Coach` y se soportan las operaciones que ejecuta la aplicación.
+
+##### a) Repositorio de persistencia
+
+###### `CoachRepository`
+
+**Paquete:** `com.upc.matchpoint.coaches.infrastructure.persistence.jpa.repositories`
+
+**Propósito:**  
+Gestionar la persistencia y recuperación de entrenadores utilizando Spring Data JPA. La implementación concreta es generada automáticamente por el framework al extender `JpaRepository<Coach, Long>`.
+
+**Operaciones disponibles:**
+- `save`
+- `findById`
+- `findAll`
+- `deleteById`
+- `existsById`
+
+**Observación:**  
+No se identifican métodos personalizados de consulta por especialidad, disponibilidad o reputación.
+
+##### b) Persistencia de la entidad `Coach`
+
+La entidad `Coach` está mapeada como una entidad JPA con las siguientes características:
+- `@Entity`
+- `@Table(name = "coaches")`
+- `@Id`
+- `@GeneratedValue(strategy = GenerationType.IDENTITY)`
+
+##### c) Diseño de persistencia
+
+**Tabla principal:** `coaches`
+
+**Columnas identificadas:**
+- `id`
+- `name`
+- `expertise`
+- `phone`
+
+**Restricciones y relaciones:**
+- `id` → Primary Key
+- `name`, `expertise`, `phone` → `NOT NULL`
+
+##### d) Integración con otros bounded contexts
+
+La infraestructura del contexto Coaches es utilizada por:
+- `Availability` del contexto **Availabilities**
+- `Metric` del contexto **Analytics**
+- `Review` del contexto **Reviews** de forma semántica mediante `targetType = COACH`
+
+##### e) Configuración técnica relevante
+
+El proyecto utiliza configuración JPA centralizada y persistencia relacional compartida, con soporte de Spring Data JPA y mapeo de entidades compatible con MySQL.
+
+##### f) Limitaciones de la capa de infraestructura
+
+La infraestructura actual cumple con la persistencia básica del contexto, pero aún no incorpora:
+- búsquedas avanzadas por expertise,
+- índices especializados,
+- integraciones explícitas con perfiles funcionales o autenticación,
+- ni reglas de integridad más sofisticadas frente a dependencias externas.
+
+En consecuencia, la Infrastructure Layer del bounded context Coaches es funcional para el escenario actual, aunque todavía puede evolucionar para soportar un catálogo de entrenadores más rico y conectado con la lógica del dominio.
+
+#### 2.6.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Descripción:**
+
+El Component Diagram del bounded context **Coaches** representa la descomposición del contenedor backend encargado de gestionar entrenadores. A nivel arquitectónico, este container está conformado por componentes con responsabilidades bien definidas dentro del sistema: recepción de solicitudes REST, transformación de datos entre capas, ejecución de comandos y consultas, y acceso a persistencia.
+
+**Componentes principales:**
+
+- **Coaches REST API Component**  
+  Expone los endpoints HTTP del bounded context mediante `CoachesController`.
+
+- **Coach Transformation Component**  
+  Agrupa los assemblers y resources que permiten transformar datos entre la capa de interfaz y la capa de aplicación.
+
+- **Coach Command Processing Component**  
+  Implementado por `CoachCommandServiceImpl`, coordina las operaciones de creación, actualización y eliminación.
+
+- **Coach Query Processing Component**  
+  Implementado por `CoachQueryServiceImpl`, gestiona las operaciones de consulta.
+
+- **Coach Domain Component**  
+  Representa el núcleo del dominio mediante el agregado `Coach`, junto con sus comandos y queries.
+
+- **Coach Persistence Component**  
+  Encapsula el acceso a persistencia a través de `CoachRepository`.
+
+**Diagrama de componentes propuesto:**
+
+#### 2.6.4.6. Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se presentan los diagramas a nivel de código del bounded context Coaches, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
+
+Se incluyen dos representaciones principales:
+
+- El Class Diagram del Domain Layer, que describe la estructura del modelo de dominio.
+- El Database Design Diagram, que representa la persistencia de datos en la base de datos relacional.
+
+##### 2.6.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+**Descripción**
+
+El diagrama de clases del Domain Layer del bounded context Coaches presenta el agregado principal Coach, así como las interfaces de servicios y los objetos que representan comandos y consultas.
+
+**Diagrama UML de clases (Domain Layer)**
+
+##### 2.6.4.6.2. Bounded Context Database Design Diagram
+
+**Descripción**
+
+El diagrama de base de datos del bounded context Coaches representa la estructura relacional utilizada para persistir la información de entrenadores. La tabla principal es coaches.
+
+**Diagrama de base de datos (ERD)**
+
+
+**Tablas y atributos**
+
+Tabla `coaches`
+- `id`: identificador único del entrenador (PK)
+- `name`: nombre del coach
+- `expertise`: especialidad del coach
+- `phone`: teléfono de contacto
+
+Constraints
+- PRIMARY KEY (`id`) en `coaches`
+- Restricciones NOT NULL en `name`, `expertise`, `phone`
+
+**Observaciones**
+
+El diseño de persistencia del bounded context Coaches es simple y consistente con su rol de catálogo base del sistema. Sin embargo, aún no incorpora restricciones más especializadas, búsquedas por expertise o relaciones explícitas con cuentas autenticadas del sistema.
+
+
+### 2.6.7. Bounded Context: Reviews
+
+El bounded context **Reviews** representa la capacidad del sistema encargada de gestionar, registrar, consultar y mantener reseñas dentro de la plataforma Courtly. Su propósito es permitir que los usuarios funcionales del sistema publiquen valoraciones y comentarios sobre entidades reseñables del ecosistema deportivo. Dentro de este contexto, la entidad principal es `Review`, ya que concentra la información esencial de una reseña y establece la relación entre el usuario que la emite, el contenido registrado y el objetivo reseñado. :contentReference[oaicite:0]{index=0}
+
+Este contexto se relaciona directamente con los bounded contexts **Users**, **Courts** y **Coaches**, debido a que cada reseña pertenece a un `UserProfile` y puede estar dirigida semánticamente a una cancha o a un entrenador a través de `targetType` y `targetId`. De esta manera, Reviews cumple un rol de soporte orientado a confianza, reputación y retroalimentación dentro de Courtly. :contentReference[oaicite:1]{index=1}
+
+#### 2.6.7.1. Domain Layer
+
+La capa de dominio del bounded context **Reviews** contiene las clases que modelan el núcleo de la gestión de reseñas y las reglas de negocio asociadas a este proceso. A partir del análisis de la arquitectura general del backend, se identifica que el agregado principal del contexto es `Review`, acompañado por comandos, consultas, un value object representado por un enum y servicios de dominio que estructuran la lógica del contexto. :contentReference[oaicite:2]{index=2}
+
+##### a) Entity / Aggregate Root: `Review`
+
+**Nombre de la clase:** `Review`  
+**Paquete:** `com.upc.matchpoint.reviews.domain.model.aggregates`
+
+**Propósito:**  
+Representa la entidad principal del bounded context Reviews. Modela una reseña emitida por un usuario funcional sobre un objetivo reseñable del sistema y constituye el agregado raíz del contexto. :contentReference[oaicite:3]{index=3}
+
+**Atributos:**
+- `id: Long` → identificador único de la reseña.
+- `score: Integer` → calificación otorgada.
+- `comment: String` → comentario textual de la reseña.
+- `type: String` → clasificación textual adicional de la reseña.
+- `targetId: Long` → identificador del recurso reseñado.
+- `targetType: ReviewTargetType` → tipo del objetivo reseñado.
+- `user: UserProfile` → referencia al perfil de usuario que emite la reseña.
+- `createdAt: LocalDateTime` → fecha de creación automática. :contentReference[oaicite:4]{index=4}
+
+**Métodos:**
+- `Review(Integer score, String comment, String type, Long targetId, ReviewTargetType targetType, UserProfile user)` → constructor que inicializa una nueva reseña.
+- `updateReview(Integer score, String comment, String type)` → actualiza la calificación, comentario y tipo.
+- `onCreate()` → método de ciclo de vida que asigna automáticamente la fecha de creación mediante `@PrePersist`.
+
+**Relaciones:**
+- Una reseña pertenece a un solo `UserProfile`.
+- Un usuario puede registrar múltiples reseñas.
+- Una reseña se dirige semánticamente a una `Court` o a un `Coach` usando `targetType` + `targetId`.
+- No existe relación JPA directa con `Court` ni con `Coach`. :contentReference[oaicite:5]{index=5}
+
+##### b) Referencias externas del dominio
+
+Dentro del bounded context Reviews existen referencias a entidades de otros contextos, necesarias para completar la lógica del registro de reseñas.
+
+###### `UserProfile`
+
+**Bounded context de origen:** `Users`
+
+**Propósito dentro de Reviews:**  
+Representa al usuario funcional que publica la reseña.
+
+**Atributos relevantes utilizados por Reviews:**
+- `id`
+- `name` :contentReference[oaicite:6]{index=6}
+
+##### c) Value Objects
+
+###### `ReviewTargetType`
+
+**Paquete:** `com.upc.matchpoint.reviews.domain.model.valueobjects`
+
+**Propósito:**  
+Enum que encapsula los tipos posibles de destino de una reseña dentro del sistema.
+
+**Valores definidos:**
+- `COURT`
+- `COACH`
+
+**Rol dentro del dominio:**  
+Actúa como value object del objetivo reseñado, restringiendo el conjunto de valores válidos que puede tomar una instancia de `Review`. :contentReference[oaicite:7]{index=7}
+
+##### d) Commands del dominio
+
+Los comandos del contexto Reviews encapsulan la intención de ejecutar operaciones de escritura sobre el agregado `Review`.
+
+###### `CreateReviewCommand`
+
+**Paquete:** `com.upc.matchpoint.reviews.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de crear una nueva reseña.
+
+**Atributos:**
+- `score: Integer`
+- `comment: String`
+- `type: String`
+- `targetId: Long`
+- `targetType: ReviewTargetType`
+- `userId: Long` :contentReference[oaicite:8]{index=8}
+
+###### `UpdateReviewCommand`
+
+**Paquete:** `com.upc.matchpoint.reviews.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de actualizar una reseña existente.
+
+**Atributos:**
+- `reviewId: Long`
+- `score: Integer`
+- `comment: String`
+- `type: String` :contentReference[oaicite:9]{index=9}
+
+###### `DeleteReviewCommand`
+
+**Paquete:** `com.upc.matchpoint.reviews.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de eliminar una reseña.
+
+**Atributos:**
+- `reviewId: Long` :contentReference[oaicite:10]{index=10}
+
+##### e) Queries del dominio
+
+El contexto también define objetos de consulta para la recuperación de información.
+
+###### `GetAllReviewsQuery`
+
+**Paquete:** `com.upc.matchpoint.reviews.domain.model.queries`
+
+**Propósito:**  
+Representa la intención de obtener todas las reseñas del sistema.
+
+**Atributos:** no contiene atributos. :contentReference[oaicite:11]{index=11}
+
+###### `GetReviewByIdQuery`
+
+**Paquete:** `com.upc.matchpoint.reviews.domain.model.queries`
+
+**Propósito:**  
+Representa la intención de obtener una reseña específica por identificador.
+
+**Atributos:**
+- `reviewId: Long` :contentReference[oaicite:12]{index=12}
+
+##### f) Domain Services
+
+El dominio define interfaces de servicio que abstraen la ejecución de comandos y consultas.
+
+###### `ReviewCommandService`
+
+**Paquete:** `com.upc.matchpoint.reviews.domain.services`
+
+**Propósito:**  
+Define el contrato para ejecutar operaciones de creación, actualización y eliminación sobre reseñas.
+
+**Métodos:**
+- `Optional<Review> handle(CreateReviewCommand command)`
+- `Optional<Review> handle(UpdateReviewCommand command)`
+- `void handle(DeleteReviewCommand command)` :contentReference[oaicite:13]{index=13}
+
+###### `ReviewQueryService`
+
+**Paquete:** `com.upc.matchpoint.reviews.domain.services`
+
+**Propósito:**  
+Define el contrato para ejecutar operaciones de consulta sobre reseñas.
+
+**Métodos:**
+- `List<Review> handle(GetAllReviewsQuery query)`
+- `Optional<Review> handle(GetReviewByIdQuery query)` :contentReference[oaicite:14]{index=14}
+
+##### g) Repository
+
+###### `ReviewRepository`
+
+**Paquete:** `com.upc.matchpoint.reviews.infrastructure.persistence.jpa.repositories`
+
+**Propósito dentro del dominio:**  
+Abstraer la persistencia de reseñas, permitiendo operaciones de guardado, consulta y eliminación.
+
+**Operaciones disponibles:**
+- `save(Review)`
+- `findById(Long)`
+- `findAll()`
+- `deleteById(Long)`
+- `existsById(Long)` :contentReference[oaicite:15]{index=15}
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- Una reseña debe estar asociada obligatoriamente a un `UserProfile` válido.
+- Una reseña debe indicar obligatoriamente un `targetId`.
+- Una reseña debe indicar obligatoriamente un `targetType`.
+- La fecha de creación se genera automáticamente.
+- Una reseña puede actualizar `score`, `comment` y `type`. :contentReference[oaicite:16]{index=16}
+
+**Reglas de negocio no implementadas aún:**
+- Validación del rango del `score`.
+- Validación de existencia real del `targetId` según `targetType`.
+- Prevención de reseñas duplicadas para un mismo usuario y objetivo.
+- Restricción para reseñar únicamente luego de una reserva o interacción válida.
+- Normalización o validación formal del campo `type`. :contentReference[oaicite:17]{index=17}
+
+En conjunto, la Domain Layer de Reviews se encuentra estructurada de manera clara, aunque todavía presenta oportunidades de mejora importantes en validación semántica y control de integridad del negocio.
+
+#### 2.6.7.2. Interface Layer
+
+La Interface Layer del bounded context **Reviews** contiene las clases responsables de exponer las funcionalidades del contexto mediante endpoints REST y de transformar la información entre las estructuras internas del sistema y los recursos consumidos por el frontend. :contentReference[oaicite:18]{index=18}
+
+##### a) `ReviewsController`
+
+**Paquete:** `com.upc.matchpoint.reviews.interfaces.rest`
+
+**Propósito:**  
+Exponer los endpoints HTTP para la gestión de reseñas. Actúa como punto de entrada del bounded context desde el cliente o cualquier consumidor externo.
+
+**Dependencias:**
+- `ReviewCommandService`
+- `ReviewQueryService`
+
+**Endpoints expuestos:**
+- `POST /api/v1/reviews` → crear reseña
+- `GET /api/v1/reviews` → obtener todas las reseñas
+- `GET /api/v1/reviews/{id}` → obtener reseña por id
+- `PUT /api/v1/reviews/{id}` → actualizar reseña
+- `DELETE /api/v1/reviews/{id}` → eliminar reseña :contentReference[oaicite:19]{index=19}
+
+##### b) Resources / DTOs
+
+###### `ReviewResource`
+
+**Paquete:** `com.upc.matchpoint.reviews.interfaces.rest.resources`
+
+**Propósito:**  
+Representar la respuesta de una reseña hacia el frontend.
+
+**Atributos:**
+- `id`
+- `score`
+- `comment`
+- `type`
+- `targetId`
+- `targetType`
+- `createdAt`
+- `user: UserSummaryResource`
+
+**Estructuras internas resumidas:**
+- `UserSummaryResource(Long id, String name)` :contentReference[oaicite:20]{index=20}
+
+###### `CreateReviewResource`
+
+**Propósito:**  
+Representar los datos de entrada requeridos para crear una nueva reseña.
+
+**Atributos:**
+- `score`
+- `comment`
+- `type`
+- `targetId`
+- `targetType`
+- `userId` :contentReference[oaicite:21]{index=21}
+
+###### `UpdateReviewResource`
+
+**Propósito:**  
+Representar los datos de entrada necesarios para actualizar una reseña existente.
+
+**Atributos:**
+- `score`
+- `comment`
+- `type` :contentReference[oaicite:22]{index=22}
+
+##### c) Assemblers
+
+###### `ReviewResourceFromEntityAssembler`
+
+**Paquete:** `com.upc.matchpoint.reviews.interfaces.rest.transform`
+
+**Propósito:**  
+Transformar una entidad `Review` del dominio en un `ReviewResource` apto para ser enviado al frontend. Además, resume la relación con `UserProfile` mostrando únicamente `id` y `name`. :contentReference[oaicite:23]{index=23}
+
+###### `CreateReviewCommandFromResourceAssembler`
+
+**Propósito:**  
+Transformar un `CreateReviewResource` en un `CreateReviewCommand`, convirtiendo además el `targetType` desde string hacia el enum `ReviewTargetType` si corresponde. :contentReference[oaicite:24]{index=24}
+
+###### `UpdateReviewCommandFromResourceAssembler`
+
+**Propósito:**  
+Transformar un `UpdateReviewResource`, junto con el identificador de la reseña, en un `UpdateReviewCommand`. :contentReference[oaicite:25]{index=25}
+
+##### d) Responsabilidad de la capa de interfaz
+
+La responsabilidad principal de esta capa es:
+- recibir solicitudes del cliente,
+- convertir recursos de entrada en comandos o consultas,
+- delegar la ejecución a la capa de aplicación,
+- y transformar los resultados en recursos de salida adecuados para el frontend.
+
+#### 2.6.7.3. Application Layer
+
+La Application Layer del bounded context **Reviews** coordina los flujos de proceso del negocio. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y con la infraestructura de persistencia. :contentReference[oaicite:26]{index=26}
+
+Las capacidades principales del contexto son:
+- crear una reseña,
+- actualizar una reseña,
+- eliminar una reseña,
+- obtener una reseña por id,
+- obtener todas las reseñas.
+
+##### a) Command Handlers / Command Services
+
+###### `ReviewCommandServiceImpl`
+
+**Paquete:** `com.upc.matchpoint.reviews.application.internal.commandservices`
+
+**Propósito:**  
+Implementar el contrato `ReviewCommandService` y ejecutar los casos de uso de escritura del contexto Reviews.
+
+**Dependencias:**
+- `ReviewRepository`
+- `UserProfileRepository`
+
+**Operaciones que maneja:**
+
+**`handle(CreateReviewCommand command)`**
+- valida que el usuario exista,
+- crea una nueva entidad `Review`,
+- persiste la reseña en base de datos,
+- retorna la reseña creada. :contentReference[oaicite:27]{index=27}
+
+**`handle(UpdateReviewCommand command)`**
+- busca la reseña por id,
+- actualiza `score`, `comment` y `type`,
+- guarda el cambio,
+- retorna la reseña actualizada si existe. :contentReference[oaicite:28]{index=28}
+
+**`handle(DeleteReviewCommand command)`**
+- verifica si la reseña existe,
+- la elimina por identificador,
+- lanza excepción si no existe. :contentReference[oaicite:29]{index=29}
+
+##### b) Query Handlers / Query Services
+
+###### `ReviewQueryServiceImpl`
+
+**Paquete:** `com.upc.matchpoint.reviews.application.internal.queryservices`
+
+**Propósito:**  
+Implementar el contrato `ReviewQueryService` y ejecutar los casos de uso de lectura del contexto Reviews.
+
+**Dependencia:**
+- `ReviewRepository`
+
+**Operaciones que maneja:**
+
+**`handle(GetAllReviewsQuery query)`**
+- recupera todas las reseñas del sistema mediante `findAll()`,
+- devuelve una lista de entidades `Review`. :contentReference[oaicite:30]{index=30}
+
+**`handle(GetReviewByIdQuery query)`**
+- busca una reseña específica por su id,
+- devuelve un `Optional<Review>`. :contentReference[oaicite:31]{index=31}
+
+##### c) Flujos principales del negocio
+
+###### Flujo de creación de reseña
+1. El frontend envía un `CreateReviewResource`.
+2. La capa de interfaz lo transforma a `CreateReviewCommand`.
+3. `ReviewCommandServiceImpl` valida la existencia del usuario funcional.
+4. Se construye una instancia de `Review`.
+5. La reseña se persiste mediante `ReviewRepository`.
+6. El resultado se transforma en `ReviewResource` y se retorna al cliente.
+
+###### Flujo de actualización
+1. El frontend envía un `UpdateReviewResource`.
+2. Se transforma en `UpdateReviewCommand`.
+3. `ReviewCommandServiceImpl` recupera la reseña existente.
+4. Se actualizan los datos editables.
+5. Se guarda la modificación.
+6. Se retorna la reseña actualizada.
+
+###### Flujo de consulta
+1. El frontend solicita una o varias reseñas.
+2. El controlador construye el objeto de consulta correspondiente.
+3. `ReviewQueryServiceImpl` recupera la información desde `ReviewRepository`.
+4. Los resultados se transforman a `ReviewResource`.
+5. Se retorna la respuesta al cliente.
+
+###### Flujo de eliminación
+1. El frontend solicita eliminar una reseña.
+2. Se construye un `DeleteReviewCommand`.
+3. `ReviewCommandServiceImpl` verifica la existencia de la reseña.
+4. Se elimina la reseña del repositorio.
+5. Se devuelve la confirmación de eliminación.
+
+##### d) Observaciones de la capa de aplicación
+
+Aunque esta capa implementa correctamente los casos de uso CRUD del bounded context, aún presenta limitaciones funcionales relevantes:
+- no valida la existencia real del objetivo reseñado (`Court` o `Coach`),
+- no restringe el rango del score,
+- no previene reseñas duplicadas,
+- no verifica si el usuario tuvo una interacción previa válida con el objetivo,
+- y no incorpora paginación ni filtros especializados.
+
+Además, no se identifican **Event Handlers** implementados en el contexto Reviews. Todas las operaciones se ejecutan únicamente mediante comandos HTTP. :contentReference[oaicite:32]{index=32}
+
+#### 2.6.7.4. Infrastructure Layer
+
+La Infrastructure Layer del bounded context **Reviews** contiene los componentes encargados del acceso a base de datos y de la persistencia de las reseñas. En esta capa se materializa el almacenamiento del agregado `Review` y se soportan las operaciones que ejecuta la aplicación. :contentReference[oaicite:33]{index=33}
+
+##### a) Repositorio de persistencia
+
+###### `ReviewRepository`
+
+**Paquete:** `com.upc.matchpoint.reviews.infrastructure.persistence.jpa.repositories`
+
+**Propósito:**  
+Gestionar la persistencia y recuperación de reseñas utilizando Spring Data JPA. La implementación concreta es generada automáticamente por el framework al extender `JpaRepository<Review, Long>`.
+
+**Operaciones disponibles:**
+- `save`
+- `findById`
+- `findAll`
+- `deleteById`
+- `existsById`
+
+**Observación:**  
+No se identifican métodos personalizados de consulta por usuario, `targetType`, `targetId` o score. :contentReference[oaicite:34]{index=34}
+
+##### b) Persistencia de la entidad `Review`
+
+La entidad `Review` está mapeada como una entidad JPA con las siguientes características:
+- `@Entity`
+- `@Table(name = "reviews")`
+- `@Id`
+- `@GeneratedValue(strategy = GenerationType.IDENTITY)`
+- `@Enumerated(EnumType.STRING)` para `targetType`
+- relación `@ManyToOne(fetch = FetchType.LAZY)` con `UserProfile`
+- método `@PrePersist` para inicializar `createdAt` automáticamente. :contentReference[oaicite:35]{index=35}
+
+##### c) Diseño de persistencia
+
+**Tabla principal:** `reviews`
+
+**Columnas identificadas:**
+- `id`
+- `score`
+- `comment`
+- `type`
+- `target_id`
+- `target_type`
+- `user_id`
+- `created_at`
+
+**Restricciones y relaciones:**
+- `id` → Primary Key
+- `user_id` → Foreign Key hacia `user_profiles.id`
+- `target_id`, `target_type`, `user_id`, `created_at` → obligatorios
+- `score`, `comment`, `type` → persistidos como atributos del registro de reseña. :contentReference[oaicite:36]{index=36}
+
+##### d) Integración con otros bounded contexts
+
+La infraestructura del contexto Reviews depende de:
+- `UserProfileRepository` del contexto **Users**, para validar que el usuario exista antes de registrar una reseña.
+- `Court` y `Coach` de forma semántica, a través de `targetType` y `targetId`, aunque sin foreign key directa. :contentReference[oaicite:37]{index=37}
+
+##### e) Configuración técnica relevante
+
+El proyecto utiliza configuración JPA centralizada y persistencia relacional compartida. Además, los resources REST resumen la relación con el usuario devolviendo solo `id` y `name`, lo que depende del uso actual de `spring.jpa.open-in-view=true`. :contentReference[oaicite:38]{index=38}
+
+##### f) Limitaciones de la capa de infraestructura
+
+La infraestructura actual cumple con la persistencia básica del contexto, pero aún no incorpora:
+- validación referencial estricta hacia canchas o coaches,
+- índices especializados por objetivo o usuario,
+- consultas optimizadas,
+- ni restricciones para prevenir duplicidad de reseñas.
+
+En consecuencia, la Infrastructure Layer del bounded context Reviews es funcional para el escenario actual, pero todavía puede evolucionar para soportar una gestión más robusta de reputación y retroalimentación.
+
+#### 2.6.7.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Descripción:**
+
+El Component Diagram del bounded context **Reviews** representa la descomposición del contenedor backend encargado de gestionar reseñas. A nivel arquitectónico, este container está conformado por componentes con responsabilidades bien definidas dentro del sistema: recepción de solicitudes REST, transformación de datos entre capas, ejecución de comandos y consultas, acceso a persistencia y validación de referencias provenientes del bounded context **Users**. :contentReference[oaicite:39]{index=39}
+
+**Componentes principales:**
+
+- **Reviews REST API Component**  
+  Expone los endpoints HTTP del bounded context mediante `ReviewsController`.
+
+- **Review Transformation Component**  
+  Agrupa los assemblers y resources que permiten transformar datos entre la capa de interfaz y la capa de aplicación.
+
+- **Review Command Processing Component**  
+  Implementado por `ReviewCommandServiceImpl`, coordina las operaciones de escritura del contexto.
+
+- **Review Query Processing Component**  
+  Implementado por `ReviewQueryServiceImpl`, gestiona las operaciones de lectura del contexto.
+
+- **Review Domain Component**  
+  Representa el núcleo del dominio mediante el agregado `Review`, junto con sus comandos, queries y el value object `ReviewTargetType`.
+
+- **Review Persistence Component**  
+  Encapsula el acceso a persistencia a través de `ReviewRepository`.
+
+- **External Context Access Component**  
+  Representa la dependencia del bounded context Reviews hacia `UserProfileRepository` del contexto **Users**. :contentReference[oaicite:40]{index=40}
+
+**Diagrama de componentes propuesto:**
+
+
+#### 2.6.7.6. Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se presentan los diagramas a nivel de código del bounded context Reviews, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
+
+Se incluyen dos representaciones principales:
+
+- El Class Diagram del Domain Layer, que describe la estructura del modelo de dominio.
+- El Database Design Diagram, que representa la persistencia de datos en la base de datos relacional.
+
+##### 2.6.7.6.1. Bounded Context Domain Layer Class Diagrams
+
+**Descripción**
+
+El diagrama de clases del Domain Layer del bounded context Reviews presenta el agregado principal Review, junto con su relación hacia la entidad externa UserProfile, así como las interfaces de servicios y los objetos que representan comandos y consultas.
+
+**Diagrama UML de clases (Domain Layer)**
+
+##### 2.6.7.6.2. Bounded Context Database Design Diagram
+
+**Descripción**
+
+El diagrama de base de datos del bounded context Reviews representa la estructura relacional utilizada para persistir la información de reseñas. La tabla principal es reviews, la cual mantiene una relación con la tabla user_profiles.
+
+**Diagrama de base de datos (ERD)**
+
+**Tablas y atributos**
+
+Tabla `reviews`
+- `id`: identificador único de la reseña (PK)
+- `score`: calificación numérica
+- `comment`: comentario textual
+- `type`: clasificación textual adicional
+- `target_id`: identificador del recurso reseñado
+- `target_type`: tipo de objetivo reseñado
+- `user_id`: referencia al usuario funcional (FK)
+- `created_at`: fecha de creación
+
+Tabla `user_profiles`
+- `id`
+- `name`
+- `email`
+- `phone`
+
+Constraints
+- PRIMARY KEY (`id`) en reviews
+- FOREIGN KEY (`user_id`) → user_profiles(`id`)
+- Restricciones obligatorias en `target_id`, `target_type`, `user_id`, `created_at`
+Relaciones entre tablas
+`user_profiles (1)` ──── `(*) reviews`
+
+**Observaciones**
+
+El diseño de persistencia de Reviews es consistente con el modelo de dominio y con la necesidad de asociar reseñas a usuarios funcionales. Sin embargo, actualmente no se implementan restricciones avanzadas como control de duplicidad, validación del objetivo reseñado o restricciones de rango para el score.
