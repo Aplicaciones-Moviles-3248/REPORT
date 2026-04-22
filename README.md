@@ -636,6 +636,9 @@ INGENIERÍA DE SOFTWARE
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 <strong>Juan Carlos Angulo</strong><br>
             AV1:<br>Durante el desarrollo del AV1, actualicé y apliqué conocimientos en Domain-Driven Design y arquitectura de software mediante la elaboración de EventStorming (2.5.1.1 Candidate Context Discovery y 2.5.1.2 Domain Message Flows Modeling). Además, desarrollé los bounded contexts de Courts y Availabilities, incluyendo sus capas Domain, Interface, Application e Infrastructure, junto con diagramas de arquitectura y de código.<br><br>
+              <strong>Camilla Espinoza</strong><br>
+                AV1:<br>
+                Durante el desarrollo del AV1, actualizó y aplicó conocimientos en arquitectura de software y Domain-Driven Design mediante la elaboración de User Stories, Impact Mapping y Product Backlog. Además, diseñó los bounded contexts de Coaches y Reviews, así como diagramas de arquitectura (contexto, contenedores y componentes) y diagramas UML del dominio.<br>
                 <strong>Integrante 2</strong><br>
                 AV1:<br>Durante el desarrollo del AV1<br>
                 TP: Durante el desarrollo<br>
