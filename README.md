@@ -31,8 +31,11 @@ INGENIERÍA DE SOFTWARE
 
 <div align="center" style="line-height: 1.8; text-align: center;">
   <p>U202317692 — Angulo Abud, Juan Carlos</p>
+  <p>U202324129 — Chacaliaza Minaya, Eduardo Fabian</p>
+  <p>u202214572 — Espinoza Vivas, Camilla Leonor</p>
+  <p>U202215462 — Nanfuñay Liza, Pedro Jesús</p>
   <p>U202320442 — Quispe Barzola, Fabricio Fabian</p>
-
+  
 </div>
 
 <br>
@@ -54,7 +57,7 @@ INGENIERÍA DE SOFTWARE
     <td align="center" style="border: 1px solid #ddd; padding: 8px;">Descripción</td>
   </tr>
   <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;">TB1</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">AV1</td>
     <td style="border: 1px solid #ddd; padding: 8px;">21/04/2025</td>
     <td style="border: 1px solid #ddd; padding: 8px;">
       <ul>
@@ -69,7 +72,25 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
   <tr>
-  <td style="border: 1px solid #ddd; padding: 8px;">TB1</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">AV1</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">21/04/2026</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">
+    <ul>
+      <li>Eduardo Fabian Chacaliaza Minaya</li>
+    </ul>
+  </td>
+  <td style="border: 1px solid #ddd; padding: 8px;">            
+    <ul>
+      <li>Capítulo I: Punto 1.1, 1.2 y 1.3</li>
+      <li>Capítulo II: Punto 2.5.2</li>
+      <li>Capítulo II: Punto 2.6.3 (Users)</li>
+      <li>Capítulo II: Punto 2.6.10 (Notifications)</li>
+      <li>Capítulo II: Punto 2.6.11 (IAM)</li>
+    </ul>
+  </td>
+</tr>
+  <tr>
+  <td style="border: 1px solid #ddd; padding: 8px;">AV1</td>
   <td style="border: 1px solid #ddd; padding: 8px;">21/04/2026</td>
   <td style="border: 1px solid #ddd; padding: 8px;">
     <ul>
@@ -86,7 +107,7 @@ INGENIERÍA DE SOFTWARE
   </td>
 </tr>
   <tr>
-  <td style="border: 1px solid #ddd; padding: 8px;">TB1</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">AV1</td>
   <td style="border: 1px solid #ddd; padding: 8px;">21/04/2026</td>
   <td style="border: 1px solid #ddd; padding: 8px;">
     <ul>
@@ -127,7 +148,7 @@ INGENIERÍA DE SOFTWARE
 
   <!-- BLOQUE 1 -->
   <tr>
-    <td>-</td>
+    <td>Eduardo Chacaliaza</td>
     <td>
       <ul>
         <li><strong>Capítulo I – Presentación</strong></li>
@@ -205,7 +226,7 @@ INGENIERÍA DE SOFTWARE
 
   <!-- BLOQUE 5 -->
   <tr>
-    <td>Completar integrante</td>
+    <td>Eduardo Chacaliaza</td>
     <td>
       <ul>
         <li>2.5.2 Context Mapping</li>
@@ -260,7 +281,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
   <tr>
-    <td>Completar integrante</td>
+    <td>Eduardo Chacaliaza</td>
     <td>
       <ul>
         <li><strong>2.6.3 Bounded Context: Users</strong></li>
@@ -374,7 +395,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
  <tr>
-    <td>Completar integrante</td>
+    <td>Eduardo Chacaliaza</td>
     <td>
       <ul>
         <li><strong>2.6.10 Bounded Context: Notifications</strong></li>
@@ -386,6 +407,22 @@ INGENIERÍA DE SOFTWARE
         <li>2.6.10.6 Code Level Diagrams</li>
         <li>2.6.10.6.1 Class Diagram</li>
         <li>2.6.10.6.2 Database Diagram</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Eduardo Chacaliaza</td>
+    <td>
+      <ul>
+        <li><strong>2.6.11 Bounded Context: IAM</strong></li>
+        <li>2.6.11.1 Domain Layer</li>
+        <li>2.6.11.2 Interface Layer</li>
+        <li>2.6.11.3 Application Layer</li>
+        <li>2.6.11.4 Infrastructure Layer</li>
+        <li>2.6.11.5 Component Level Diagrams</li>
+        <li>2.6.11.6 Code Level Diagrams</li>
+        <li>2.6.11.6.1 Class Diagram</li>
+        <li>2.6.11.6.2 Database Diagram</li>
         </ul>
     </td>
   </tr>
@@ -509,7 +546,7 @@ INGENIERÍA DE SOFTWARE
                 <strong>Camilla Espinoza</strong><br>
                 TB1:<br>
                 Durante el desarrollo del TB1, actualizó y aplicó conocimientos en arquitectura de software y Domain-Driven Design mediante la elaboración de User Stories, Impact Mapping y Product Backlog. Además, diseñó los bounded contexts de Coaches y Reviews, así como diagramas de arquitectura (contexto, contenedores y componentes) y diagramas UML del dominio.<br>
-              <strong>Fabricio Fabian Quispe Barzola</strong><br>
+                <strong>Fabricio Fabian Quispe Barzola</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó conocimientos en análisis de dominio y arquitectura de software mediante la elaboración del análisis competitivo, estrategias y tácticas frente a competidores, así como el diseño del Context Mapping utilizando Domain-Driven Design. Además, desarrolló los bounded contexts de Bookings y Analytics, incluyendo sus respectivas capas (Domain, Application, Interface e Infrastructure), junto con diagramas de arquitectura (Component Level) y diagramas de código (Class Diagram y Database Design).<br>
            </td>
@@ -527,7 +564,7 @@ INGENIERÍA DE SOFTWARE
                 <strong>Camilla Espinoza</strong><br>
                 TB1:<br>
                 Durante el TB1, investigó y aplicó nuevas herramientas y metodologías como Structurizr para diagramas C4, PlantUML para modelado de clases y Miro para Impact Mapping. Esto permitió mejorar la calidad del diseño arquitectónico y fortalecer sus habilidades en modelado de sistemas y documentación técnica.
-              <strong>Fabricio Fabian Quispe Barzola</strong><br>
+                <br><strong>Fabricio Fabian Quispe Barzola</strong><br>
                 AV1:<br>
                 Durante el AV1, investigó y aplicó conceptos de Domain-Driven Design y modelado arquitectónico, utilizando herramientas para la elaboración de diagramas UML, diagramas de componentes y diseño de bases de datos. Esto le permitió mejorar su capacidad de estructurar bounded contexts, comprender mejor la separación de responsabilidades y fortalecer sus habilidades en documentación técnica y diseño de soluciones de software.
             </td>
