@@ -4646,7 +4646,7 @@ PaymentRepository
 **Adapters**
 
 ```
-PaymentNotificationAdapter
+NotificationAdapter
 ├── sendPaymentConfirmation(user, payment) → void
 ├── sendPaymentFailureNotification(user, payment) → void
 └── sendPaymentCancellationNotification(user, payment) → void
@@ -4672,82 +4672,19 @@ Tabla: payments
 
 El diagrama de componentes para el Payments Context presenta la descomposición del contenedor en componentes responsables de la gestión del ciclo de vida de los pagos. Estos componentes coordinan la creación, validación, procesamiento y notificación de eventos relacionados con los pagos:
 
-**Componentes Principales:**
+**Diagrama de Componentes:**
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Payments Container                       │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Payment Management Component                        │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Crear pagos (estado inicial PENDING)               │   │
-│  │ • Gestionar estados de pago                          │   │
-│  │ • Validar reglas de negocio                          │   │
-│  │ • Generar eventos de dominio                         │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                             │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Payment Application Service Component               │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Orquestar casos de uso                             │   │
-│  │ • Ejecutar Command Handlers                          │   │
-│  │ • Coordinar flujo entre capas                        │   │
-│  │ • Manejar validaciones a nivel aplicación            │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                             │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Payment Event Handling Component                    │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Escuchar eventos de dominio                        │   │
-│  │ • Ejecutar acciones post-evento                      │   │
-│  │ • Gestionar notificaciones                           │   │
-│  │ • Preparar integración futura                        │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                             │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Payment API Component                               │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Exponer endpoints REST                             │   │
-│  │ • Recibir requests del frontend                      │   │
-│  │ • Transformar DTOs                                   │   │
-│  │ • Delegar a Application Layer                        │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                             │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Repository & Data Access Component                  │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • PaymentRepository                                  │   │
-│  │ • Persistencia de pagos                              │   │
-│  │ • Consultas por ID y usuario                         │   │
-│  │ • Manejo de acceso a base de datos                   │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                             │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Notification Adapter Component                      │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Enviar confirmaciones de pago                      │   │
-│  │ • Notificar fallos o cancelaciones                   │   │
-│  │ • Integración con servicios externos (email/app)     │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-         ↓                         ↓
-   ┌──────────────┐      ┌────────────────────┐
-   │    SQLite    │      │ Notification System│
-   │  (Payments)  │      │   (Email / Push)   │
-   └──────────────┘      └────────────────────┘
-```
+![Components-Payments](/assets/chapter2/Components-Payments.png)
 
 **Relaciones entre Componentes:**
 
-- **Court Management ↔ Availability & Scheduling:** Court Management actualiza Availability cuando se publica una cancha.
-- **Pricing & Commerce → Repository:** Persiste cambios de precios en la base de datos.
-- **Availability & Scheduling → Search & Discovery:** Notifica cambios de disponibilidad para actualizar índices.
-- **Notification ← Todos:** Se suscribe a eventos de todos los componentes para enviar notificaciones.
-- **Repository → Data Store:** Accede y persiste toda la información en SQLite.
-- **Search & Discovery ↔ Elasticsearch:** Mantiene sincronizado el índice de búsqueda.
+- **Payment API → Payment Application Service:** Delega las peticiones del frontend y los DTOs transformados para iniciar el flujo de procesamiento.
+- **Payment Application Service → Payment Management:** Usa la lógica de negocio central para orquestar los casos de uso y manejar validaciones de aplicación.
+- **Payment Application Service → Repository & Data Access:** Persiste la información del pago directamente después de coordinar el flujo entre capas.
+- **Payment Management → Payment Event Handling:** Dispara eventos de dominio cuando ocurre un cambio relevante en el estado del pago (como la creación de un pago PENDING).
+- **Payment Event Handling → Notification Adapter:** Notifica al adaptador cuando se requiere enviar confirmaciones, fallos o cancelaciones a servicios externos.
+- **Notification Adapter → Notification System:** Envía las alertas finales al usuario a través de canales externos como Email o notificaciones Push.
+- **Repository & Data Access → SQLite (Payments):** Accede y persiste toda la información transaccional de los pagos en el motor de base de datos.
 
 ---
 
@@ -4757,110 +4694,18 @@ El diagrama de componentes para el Payments Context presenta la descomposición 
 
 **Diagrama UML de Clases - Payments Domain Layer**
 
-```
-┌────────────────────────────────────────┐
-│              <<Aggregate>>             │
-│                 Payment                │
-├────────────────────────────────────────┤
-│ - paymentId: Long                      │
-│ - amount: Decimal                      │
-│ - user: User                           │
-│ - paymentStatus: PaymentStatus         │
-│ - createdAt: DateTime                  │
-├────────────────────────────────────────┤
-│ + createPayment(user, amount): Payment │
-│ + complete(): void                     │
-│ + fail(): void                         │
-│ + cancel(): void                       │
-└──────────────┬─────────────────────────┘
-               │
-               │ uses
-               ▼
-     ┌─────────────────────────────┐
-     │     <<ValueObject>>         │
-     │     PaymentStatus           │
-     ├─────────────────────────────┤
-     │ PENDING                     │
-     │ COMPLETED                   │
-     │ FAILED                      │
-     │ CANCELLED                   │
-     └─────────────────────────────┘
+![umlClass-Payments](/assets/chapter2/umlClass-Payments.png)
 
+**Relaciones:**
 
-┌─────────────────────────────┐
-│   <<Interface>>             │
-│   PaymentRepository         │
-├─────────────────────────────┤
-│ + save(p: Payment): void    │
-│ + findById(id): Payment     │
-│ + findByUserId(id): List    │
-│ + update(p: Payment): void  │
-│ + delete(id): void          │
-└──────────────▲──────────────┘
-               │ implements
-               │
-     ┌─────────┴──────────────────┐
-     │                            
-┌────▼───────────────────────────┐
-│ PaymentRepositoryImpl          │
-├────────────────────────────────┤
-│ - db: Database                 │
-├────────────────────────────────┤
-│ + save(p): void                │
-│ + findById(id): Payment        │
-│ + update(p): void              │
-│ + delete(id): void             │
-└────────────────────────────────┘
-
-
-┌─────────────────────────────┐
-│   <<DomainEvent>>           │
-│   PaymentCreated            │
-├─────────────────────────────┤
-│ - paymentId: Long           │
-│ - userId: Long              │
-│ - amount: Decimal           │
-│ - createdAt: DateTime       │
-│ - occurredOn: DateTime      │
-└─────────────────────────────┘
-
-┌─────────────────────────────┐
-│   <<DomainEvent>>           │
-│   PaymentCompleted          │
-├─────────────────────────────┤
-│ - paymentId: Long           │
-│ - status: PaymentStatus     │
-│ - occurredOn: DateTime      │
-└─────────────────────────────┘
-
-┌─────────────────────────────┐
-│   <<DomainEvent>>           │
-│   PaymentFailed             │
-├─────────────────────────────┤
-│ - paymentId: Long           │
-│ - status: PaymentStatus     │
-│ - occurredOn: DateTime      │
-└─────────────────────────────┘
-
-┌─────────────────────────────┐
-│   <<DomainEvent>>           │
-│   PaymentCancelled          │
-├─────────────────────────────┤
-│ - paymentId: Long           │
-│ - status: PaymentStatus     │
-│ - occurredOn: DateTime      │
-└─────────────────────────────┘
-
-Relaciones:
-- Payment *──────── 1 PaymentStatus (uses)
-- PaymentRepository ◄────────────── Payment (manages)
-- PaymentRepositoryImpl ───────────► PaymentRepository (implements)
-- Payment ───────────► PaymentCreated (generates)
-- Payment ───────────► PaymentCompleted (generates)
-- Payment ───────────► PaymentFailed (generates)
-- Payment ───────────► PaymentCancelled (generates)
-- Payment *──────── 1 User (associated with)
-```
+- Payment * ──────── 1 PaymentStatus (uses): Indica que un pago utiliza un estado específico para definir su situación actual.
+- PaymentRepository ◄────────────── Payment (manages): Relación de gestión donde el repositorio se encarga de mediar la persistencia del Agregado.
+- PaymentRepositoryImpl ───────────► PaymentRepository (implements): La clase concreta implementa el contrato definido por la interfaz del repositorio.
+- Payment ───────────► PaymentCreated (generates): El Agregado genera este evento de dominio al momento de ser instanciado o registrado.
+- Payment ───────────► PaymentCompleted (generates): Evento disparado tras una transición de estado exitosa a completado.
+- Payment ───────────► PaymentFailed (generates): Evento generado cuando el proceso de pago encuentra un error crítico.
+- Payment ───────────► PaymentCancelled (generates): Notifica la anulación del pago por parte del usuario o del sistema.
+- Payment * ──────── 1 User (associated with): Vincula cada transacción de pago con un perfil de usuario específico como propietario
 
 ---
 
@@ -4868,38 +4713,10 @@ Relaciones:
 
 **Entity Relationship Diagram (ERD) - Payments**
 
-```
-┌───────────────────────────────┐
-│            users              │
-├───────────────────────────────┤
-│ PK user_id (BIGINT)           │
-│ name (VARCHAR(255), NOT NULL) │
-│ email (VARCHAR(255), UNIQUE)  │
-│ created_at (TIMESTAMP)        │
-└───────────────┬───────────────┘
-                │ FK (user_id)
-                │
-┌───────────────▼──────────────────────────┐
-│               payments                   │
-├──────────────────────────────────────────┤
-│ PK payment_id (BIGINT, AUTO_INCREMENT)   │
-│ FK user_id (BIGINT, NOT NULL)            │
-│ amount (DECIMAL(10,2), NOT NULL)         │
-│ status (ENUM: PENDING, COMPLETED,        │
-│         FAILED, CANCELLED)               │
-│ created_at (TIMESTAMP, DEFAULT CURRENT)  │
-│                                          │
-│ CONSTRAINT fk_user_payment               │
-│   FOREIGN KEY (user_id)                  │
-│   REFERENCES users(user_id)              │
-│                                          │
-│ INDEX idx_user (user_id)                 │
-│ INDEX idx_status (status)                │
-└──────────────────────────────────────────┘
+![ERD-Payments](/assets/chapter2/ERD-Payments.png)
 
-Relaciones:
-- users (1) ──── (*) payments
-```
+**Relaciones:**
+- users (1) ──── (*) payments: Indica que un usuario puede realizar múltiples pagos, pero cada pago pertenece obligatoriamente a un único usuario.
 
 ---
 
