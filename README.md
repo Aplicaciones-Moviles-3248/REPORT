@@ -127,6 +127,28 @@ INGENIERÍA DE SOFTWARE
     </ul>
   </td>
 </tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;">AV1</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">21/04/2026</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">
+    <ul>
+      <li>Pedro Jesús Nanfuñay Liza</li>
+    </ul>
+  </td>
+  <td style="border: 1px solid #ddd; padding: 8px;">            
+    <ul>
+      <li>Capítulo II: Punto 2.3</li>
+      <li>Capítulo II: Punto 2.3.1</li>
+      <li>Capítulo II: Punto 2.3.2</li>
+      <li>Capítulo II: Punto 2.3.3</li>
+      <li>Capítulo II: Punto 2.3.4</li>
+      <li>Capítulo II: Punto 2.3.5</li>
+      <li>Capítulo II: Punto 2.3.6</li>
+      <li>Capítulo II: Punto 2.6.2 (Payments)</li>
+      <li>Capítulo II: Punto 2.6.9 (Matches)</li>
+    </ul>
+  </td>
+</tr>
 </table><br>
 
 
@@ -265,7 +287,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
 <tr>
-    <td>Completar integrante</td>
+    <td>Pedro Jesús Nanfuñay Liza</td>
     <td>
       <ul>
         <li><strong>2.6.2 Bounded Context: Payments</strong></li>
@@ -379,7 +401,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
   <tr>
-    <td>Completar integrante</td>
+    <td>Pedro Jesús Nanfuñay Liza</td>
     <td>
       <ul>
         <li><strong>2.6.9 Bounded Context: Matches</strong></li>
@@ -546,9 +568,12 @@ INGENIERÍA DE SOFTWARE
                 <strong>Camilla Espinoza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó conocimientos en arquitectura de software y Domain-Driven Design mediante la elaboración de User Stories, Impact Mapping y Product Backlog. Además, diseñó los bounded contexts de Coaches y Reviews, así como diagramas de arquitectura (contexto, contenedores y componentes) y diagramas UML del dominio.<br>
-                <strong>Fabricio Fabian Quispe Barzola</strong><br>
+                <br><strong>Fabricio Fabian Quispe Barzola</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó conocimientos en análisis de dominio y arquitectura de software mediante la elaboración del análisis competitivo, estrategias y tácticas frente a competidores, así como el diseño del Context Mapping utilizando Domain-Driven Design. Además, desarrolló los bounded contexts de Bookings y Analytics, incluyendo sus respectivas capas (Domain, Application, Interface e Infrastructure), junto con diagramas de arquitectura (Component Level) y diagramas de código (Class Diagram y Database Design).<br>
+                <br><strong>Pedro Jesús Nanfuñay Liza</strong><br>
+                AV1:<br>
+                Durante el desarrollo del AV1, apliqué y actualicé mis conocimientos en el proceso de creación de elementos needfinding, tales como los User Persona, User Journey Mapping, Empathy Mapping, entre otros. Así como en el proceso de Big Picture EventStorming, e identificación y desarrollo de bounded context relacionados al negocio como payments y matches, a partir de sus respectivas capas, junto con sus diagramas de arquitectura y diagramas de código.<br>
            </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 El equipo demostró un efectivo liderazgo conjunto durante el AV1, donde cada miembro asumió responsabilidades compartidas de coordinación y toma de decisiones. Se evidenció una colaboración fluida que abarcó desde aspectos estratégicos y técnicos del proyecto hasta la planificación operativa y distribución de tareas. La comunicación continua, las reuniones regulares y el trabajo colaborativo en el desarrollo de componentes clave como wireframes, mockups, database diagrams y landing page fueron fundamentales. El compromiso colectivo por mantener una sana relación de equipo y la capacidad para resolver conflictos de manera conjunta permitieron lograr consensos efectivos y entregar un trabajo cohesivo y de calidad, demostrando que el liderazgo fue verdaderamente compartido y distribuido entre todos los integrantes.
@@ -563,10 +588,13 @@ INGENIERÍA DE SOFTWARE
                 AV1: Durante el AV1,<br><br>
                 <strong>Camilla Espinoza</strong><br>
                 AV1:<br>
-                Durante el AV1, investigó y aplicó nuevas herramientas y metodologías como Structurizr para diagramas C4, PlantUML para modelado de clases y Miro para Impact Mapping. Esto permitió mejorar la calidad del diseño arquitectónico y fortalecer sus habilidades en modelado de sistemas y documentación técnica.
+                Durante el AV1, investigó y aplicó nuevas herramientas y metodologías como Structurizr para diagramas C4, PlantUML para modelado de clases y Miro para Impact Mapping. Esto permitió mejorar la calidad del diseño arquitectónico y fortalecer sus habilidades en modelado de sistemas y documentación técnica.<br>
                 <br><strong>Fabricio Fabian Quispe Barzola</strong><br>
                 AV1:<br>
-                Durante el AV1, investigó y aplicó conceptos de Domain-Driven Design y modelado arquitectónico, utilizando herramientas para la elaboración de diagramas UML, diagramas de componentes y diseño de bases de datos. Esto le permitió mejorar su capacidad de estructurar bounded contexts, comprender mejor la separación de responsabilidades y fortalecer sus habilidades en documentación técnica y diseño de soluciones de software.
+                Durante el AV1, investigó y aplicó conceptos de Domain-Driven Design y modelado arquitectónico, utilizando herramientas para la elaboración de diagramas UML, diagramas de componentes y diseño de bases de datos. Esto le permitió mejorar su capacidad de estructurar bounded contexts, comprender mejor la separación de responsabilidades y fortalecer sus habilidades en documentación técnica y diseño de soluciones de software.<br>
+                <br><strong>Pedro Jesús Nanfuñay Liza</strong><br>
+                AV1:<br>
+                Durante el desarrollo del AV1, comprendí la importancia del constante aprendizaje autodidacta para mi desarrollo profesional en el desarrollo de proyectos de software, tomando en cuenta temas esenciales como Domain Driven Design (DDD) y modelado arquitectónico de diagramas de componentes, clases y bases de datos. Ello me incentivó a seguir expandiendo mis conocimientos para mejorar mi capacidad de estructurar bounded context, su respectiva documentación técnica, entre otras áreas de este tipo de proyectos.<br>
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 El equipo logró mantener un entorno colaborativo e inclusivo mediante la distribución clara de responsabilidades, la coordinación constante y la planificación progresiva de actividades durante las entregas. Cada integrante aportó desde su área de trabajo, lo que permitió avanzar de manera ordenada y alineada con los objetivos del proyecto. La organización de tareas, el seguimiento de avances y la comunicación permanente favorecieron el cumplimiento de metas parciales y la construcción de un proceso de trabajo más estructurado y cooperativo.
