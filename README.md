@@ -172,7 +172,7 @@ INGENIERÍA DE SOFTWARE
 
   <!-- BLOQUE 1 -->
   <tr>
-    <td>Eduardo Chacaliaza</td>
+    <td>Eduardo Fabian Chacaliaza Minaya</td>
     <td>
       <ul>
         <li><strong>Capítulo I – Presentación</strong></li>
@@ -191,7 +191,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
   <tr>
-    <td>-</td>
+    <td>Fabricio Fabian Quispe Barzola</td>
     <td>
       <ul>
         <li><strong>Capítulo II</strong></li>
@@ -250,7 +250,7 @@ INGENIERÍA DE SOFTWARE
 
   <!-- BLOQUE 5 -->
   <tr>
-    <td>Eduardo Chacaliaza</td>
+    <td>Eduardo Fabian Chacaliaza Minaya</td>
     <td>
       <ul>
         <li>2.5.2 Context Mapping</li>
@@ -273,7 +273,7 @@ INGENIERÍA DE SOFTWARE
 
   <!-- BLOQUE 7 -->
   <tr>
-    <td>Completar integrante</td>
+    <td>Fabricio Fabian Quispe Barzola</td>
     <td>
       <ul>
         <li><strong>2.6.1 Bounded Context: Bookings</strong></li>
@@ -305,7 +305,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
   <tr>
-    <td>Eduardo Chacaliaza</td>
+    <td>Eduardo Fabian Chacaliaza Minaya</td>
     <td>
       <ul>
         <li><strong>2.6.3 Bounded Context: Users</strong></li>
@@ -387,7 +387,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
 <tr>
-    <td>Completar integrante</td>
+    <td>Fabricio Fabian Quispe Barzola</td>
     <td>
       <ul>
         <li><strong>2.6.8 Bounded Context: Analytics</strong></li>
@@ -419,7 +419,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
  <tr>
-    <td>Eduardo Chacaliaza</td>
+    <td>Eduardo Fabian Chacaliaza Minaya</td>
     <td>
       <ul>
         <li><strong>2.6.10 Bounded Context: Notifications</strong></li>
@@ -435,7 +435,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
   <tr>
-    <td>Eduardo Chacaliaza</td>
+    <td>Eduardo Fabian Chacaliaza Minaya</td>
     <td>
       <ul>
         <li><strong>2.6.11 Bounded Context: IAM</strong></li>
@@ -576,6 +576,9 @@ INGENIERÍA DE SOFTWARE
                 <br><strong>Pedro Jesús Nanfuñay Liza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, apliqué y actualicé mis conocimientos en el proceso de creación de elementos needfinding, tales como los User Persona, User Journey Mapping, Empathy Mapping, entre otros. Así como en el proceso de Big Picture EventStorming, e identificación y desarrollo de bounded context relacionados al negocio como payments y matches, a partir de sus respectivas capas, junto con sus diagramas de arquitectura y diagramas de código.<br>
+                <br><strong>Eduardo Fabian Chacaliaza Minaya</strong><br>
+                AV1:<br>
+                Durante el desarrollo del AV1, actualizó y aplicó sus conocimientos en arquitectura de software y diseño centrado en el usuario mediante la aplicación de Lean UX, realizando entrevistas, definición de hipótesis y validación de necesidades. Asimismo, participó en la construcción del Context Mapping bajo el enfoque de Domain-Driven Design y en el modelado de los bounded contexts de IAM, Users y Notifications, desarrollando sus capas principales y los diagramas de soporte (componentes, clases y base de datos), lo que permitió una mejor comprensión de la organización y estructura del sistema.<br>
            </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 El equipo demostró un efectivo liderazgo conjunto durante el AV1, donde cada miembro asumió responsabilidades compartidas de coordinación y toma de decisiones. Se evidenció una colaboración fluida que abarcó desde aspectos estratégicos y técnicos del proyecto hasta la planificación operativa y distribución de tareas. La comunicación continua, las reuniones regulares y el trabajo colaborativo en el desarrollo de componentes clave como wireframes, mockups, database diagrams y landing page fueron fundamentales. El compromiso colectivo por mantener una sana relación de equipo y la capacidad para resolver conflictos de manera conjunta permitieron lograr consensos efectivos y entregar un trabajo cohesivo y de calidad, demostrando que el liderazgo fue verdaderamente compartido y distribuido entre todos los integrantes.
@@ -597,6 +600,9 @@ INGENIERÍA DE SOFTWARE
                 <br><strong>Pedro Jesús Nanfuñay Liza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, comprendí la importancia del constante aprendizaje autodidacta para mi desarrollo profesional en el desarrollo de proyectos de software, tomando en cuenta temas esenciales como Domain Driven Design (DDD) y modelado arquitectónico de diagramas de componentes, clases y bases de datos. Ello me incentivó a seguir expandiendo mis conocimientos para mejorar mi capacidad de estructurar bounded context, su respectiva documentación técnica, entre otras áreas de este tipo de proyectos.<br>
+                <br><strong>Eduardo Fabian Chacaliaza Minaya</strong><br>
+                AV1:<br>
+                Durante el desarrollo del AV1, exploró y utilizó herramientas orientadas al modelado y diseño de software como Structurizr, PlantUML y Miro, integrándolas en la elaboración de diagramas C4, modelos de clases y actividades de Impact Mapping. Este proceso le permitió no solo mejorar la representación visual de la arquitectura del sistema, sino también afianzar su capacidad de organizar ideas, estructurar soluciones y documentar de manera más clara los distintos componentes del proyecto.<br>
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 El equipo logró mantener un entorno colaborativo e inclusivo mediante la distribución clara de responsabilidades, la coordinación constante y la planificación progresiva de actividades durante las entregas. Cada integrante aportó desde su área de trabajo, lo que permitió avanzar de manera ordenada y alineada con los objetivos del proyecto. La organización de tareas, el seguimiento de avances y la comunicación permanente favorecieron el cumplimiento de metas parciales y la construcción de un proceso de trabajo más estructurado y cooperativo.
