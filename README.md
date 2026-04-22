@@ -679,7 +679,7 @@ De esta forma, Courtly integra la oferta y la demanda en un solo entorno digital
 | :---------- | :---------- | :------------ |
 | <div style="display: flex; align-items: center;"><img src="images/juan.jpg" alt="Juan Carlos" width="100" height="120">&nbsp;&nbsp;<br>**Juan Carlos Angulo Abud**<br>u202317692</div> | Estudiante de Ingeniería de Software con experiencia en desarrollo frontend y consumo de APIs. Posee conocimientos en SEO y optimización de interfaces orientadas al usuario. | JavaScript, TypeScript, SEO, desarrollo frontend y consumo de APIs. |
 | <div style="display: flex; align-items: center;"><img src="images/eduardo.jpg" alt="Eduardo" width="100" height="120">&nbsp;&nbsp;<br>**Eduardo Fabián Chacaliaza Minaya**<br>u202324129</div> | Estudiante de Ingeniería de Software, interesado en el desarrollo de aplicaciones y soluciones tecnológicas orientadas al usuario. Se caracteriza por su enfoque analítico y capacidad de adaptación a nuevos entornos de desarrollo. | Conocimientos en desarrollo web, lógica de programación y manejo de herramientas de desarrollo. |
-| <div style="display: flex; align-items: center;"><img src="images/camilla.jpg" alt="Camilla" width="100" height="120">&nbsp;&nbsp;<br>**Camilla Leonor Espinoza Vivas**<br>u202214572</div> | Estudiante de Ingeniería de Software interesada en el diseño y desarrollo de soluciones digitales centradas en el usuario. Destaca por su creatividad y organización en el trabajo colaborativo. | Conocimientos en desarrollo de software, diseño de interfaces y herramientas digitales. |
+| <div style="display: flex; align-items: center;"><img src="assets/chapter2/Camilla.jpg" alt="Camilla" width="100" height="120">&nbsp;&nbsp;<br>**Camilla Leonor Espinoza Vivas**<br>u202214572</div> | Estudiante de Ingeniería de Software interesada en el diseño y desarrollo de soluciones digitales centradas en el usuario. Destaca por su creatividad y organización en el trabajo colaborativo. | Conocimientos en desarrollo de software, diseño de interfaces y herramientas digitales. |
 | <div style="display: flex; align-items: center;"><img src="images/pedro.jpg" alt="Pedro" width="100" height="120">&nbsp;&nbsp;<br>**Pedro Jesús Nanfuñay Liza**<br>u202215462</div> | Estudiante de Ingeniería de Software con interés en el desarrollo de sistemas y la resolución de problemas mediante tecnología. Se caracteriza por su responsabilidad y enfoque práctico. | Conocimientos en programación, bases de datos y desarrollo de aplicaciones. |
 | <div style="display: flex; align-items: center;"><img src="images/fabricio.jpg" alt="Fabricio" width="100" height="120">&nbsp;&nbsp;<br>**Fabricio Fabián Quispe Barzola**<br>u202320442</div> | Estudiante de Ingeniería de Software con interés en la creación de soluciones tecnológicas eficientes. Destaca por su disposición al aprendizaje continuo y trabajo en equipo. | Conocimientos en programación, estructuras de datos y desarrollo de aplicaciones. |
 
@@ -1375,7 +1375,7 @@ En cuanto a sus preocupaciones, destacó la importancia de que la aplicación re
 - **URL del video:** **Por insertar**  
 
 #### Registro visual de la entrevista
-![Evidencia de la entrevista](images/segmento2-entrevista2.png)
+![Evidencia de la entrevista](assets/chapter2/2-Entrevista-Seg2.png)
 
 #### Resumen descriptivo de la entrevista
 
