@@ -2484,7 +2484,7 @@ Se utilizarán métricas y opiniones de usuarios para iterar el producto rápida
 
 ---
 
-#### Conclusión estratégica
+##### Conclusión estratégica
 
 Courtly tiene la oportunidad de posicionarse como una solución competitiva dentro del mercado de aplicaciones deportivas móviles al enfocarse en resolver las principales debilidades identificadas en la competencia: complejidad, fragmentación y falta de experiencia centrada en el usuario.
 
@@ -5657,7 +5657,7 @@ El diseño evidencia que `Booking` es el núcleo del dominio y que las operacion
 │ + bookingId: Long                          │
 └────────────────────────────────────────────┘
 ```
-### Relaciones principales del modelo
+**Relaciones principales del modelo**
 
 - **Booking** es el Aggregate Root del bounded context.
 - **Booking** mantiene una relación Many-to-One con **UserProfile**.
@@ -5667,7 +5667,7 @@ El diseño evidencia que `Booking` es el núcleo del dominio y que las operacion
 - Los comandos encapsulan acciones de negocio.
 - Las queries encapsulan solicitudes de consulta.
 
-### Observaciones
+**Observaciones**
 
 El modelo de dominio presenta una estructura clara y centrada en el agregado **Booking**. Sin embargo, no se identifican aún value objects ni reglas complejas encapsuladas dentro del dominio, lo que sugiere oportunidades de mejora como la incorporación de validaciones de disponibilidad o control de solapamiento de horarios.
 
@@ -5675,11 +5675,11 @@ El modelo de dominio presenta una estructura clara y centrada en el agregado **B
 
 ##### 2.6.1.6.2. Bounded Context Database Design Diagram
 
-### Descripción
+**Descripción**
 
 El diagrama de base de datos del bounded context **Bookings** representa la estructura relacional utilizada para persistir la información de reservas. La tabla principal es **bookings**, la cual mantiene relaciones con las tablas **user_profiles** y **courts**.
 
-### Diagrama de base de datos (ERD)
+**Diagrama de base de datos (ERD)**
 
 ```
 ┌──────────────────────────────┐
@@ -5715,9 +5715,9 @@ El diagrama de base de datos del bounded context **Bookings** representa la estr
 │ type (VARCHAR)               │
 └──────────────────────────────┘
 ```
-### Tablas y atributos
+**Tablas y atributos**
 
-#### Tabla `bookings`
+Tabla `bookings`
 
 - `id`: identificador único de la reserva (PK)
 - `start_time`: fecha y hora de inicio
@@ -5726,33 +5726,33 @@ El diagrama de base de datos del bounded context **Bookings** representa la estr
 - `court_id`: referencia a la cancha (FK)
 - `created_at`: fecha de creación
 
-#### Tabla `user_profiles`
+Tabla `user_profiles`
 
 - `id`
 - `name`
 - `email`
 - `phone`
 
-#### Tabla `courts`
+Tabla `courts`
 
 - `id`
 - `name`
 - `location`
 - `type`
 
-### Constraints
+Constraints
 
 - PRIMARY KEY (`id`) en `bookings`
 - FOREIGN KEY (`user_id`) → `user_profiles(id)`
 - FOREIGN KEY (`court_id`) → `courts(id)`
 - Restricciones NOT NULL en campos críticos
 
-### Relaciones entre tablas
+Relaciones entre tablas
 
 - `user_profiles (1)` ──── `(*) bookings`
 - `courts (1)` ──── `(*) bookings`
 
-### Observaciones
+**Observaciones**
 
 El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente las reservas. Sin embargo, actualmente no se implementan restricciones avanzadas como control de solapamiento de horarios o validación de disponibilidad, lo que representa una oportunidad de mejora para fortalecer la lógica de negocio a nivel de base de datos.
 
@@ -6202,7 +6202,7 @@ En consecuencia, la Infrastructure Layer del bounded context Analytics es funcio
 
 ---
 
-#### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
+#### 2.6.8.5. Bounded Context Software Architecture Component Level Diagrams
 
 **Descripción:**
 
@@ -6303,7 +6303,7 @@ El Component Diagram del bounded context **Analytics** representa la descomposic
    │ (Coaches BC) │                │    (DB Table)    │
    └──────────────┘                └─────────────────┘
 ```
-### Relaciones entre componentes
+**Relaciones entre componentes**
 
 - **Analytics REST API Component** → **Metric Transformation Component**  
   Transforma los datos de entrada y salida entre resources, commands y entidades.
@@ -6334,7 +6334,7 @@ El Component Diagram del bounded context **Analytics** representa la descomposic
 
 ---
 
-## 2.6.8.6. Bounded Context Software Architecture Code Level Diagrams
+#### 2.6.8.6. Bounded Context Software Architecture Code Level Diagrams
 
 En esta sección se presentan los diagramas a nivel de código del bounded context **Analytics**, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
 
@@ -6345,15 +6345,15 @@ Se incluyen dos representaciones principales:
 
 ---
 
-## 2.6.8.6.1. Bounded Context Domain Layer Class Diagrams
+##### 2.6.8.6.1. Bounded Context Domain Layer Class Diagrams
 
-### Descripción
+**Descripción**
 
 El diagrama de clases del Domain Layer del bounded context **Analytics** presenta el agregado principal **Metric**, junto con su relación hacia la entidad externa **Coach**, así como las interfaces de servicios y los objetos que representan comandos y consultas.
 
 El diseño evidencia que **Metric** es el núcleo del dominio y que las operaciones del sistema se organizan alrededor de comandos de escritura y queries de lectura.
 
-### Diagrama UML de clases (Domain Layer)
+**Diagrama UML de clases (Domain Layer)**
 
 ```text
 ┌────────────────────────────────────────────┐
@@ -6450,7 +6450,7 @@ El diseño evidencia que **Metric** es el núcleo del dominio y que las operacio
 │ + metricId: Long                           │
 └────────────────────────────────────────────┘
 ```
-### Relaciones principales del modelo
+**Relaciones principales del modelo**
 
 - **Metric** es el Aggregate Root del bounded context.
 - **Metric** mantiene una relación Many-to-One con **Coach**.
@@ -6460,19 +6460,19 @@ El diseño evidencia que **Metric** es el núcleo del dominio y que las operacio
 - Los comandos encapsulan acciones de negocio.
 - Las queries encapsulan solicitudes de consulta.
 
-### Observaciones
+**Observaciones**
 
 El modelo de dominio presenta una estructura clara y centrada en el agregado **Metric**. Sin embargo, no se identifican value objects adicionales para encapsular el período o el valor numérico, ni reglas más complejas relacionadas con validación de unicidad, cálculos automáticos o comparación entre períodos.
 
 ---
 
-## 2.6.8.6.2. Bounded Context Database Design Diagram
+###### 2.6.8.6.2. Bounded Context Database Design Diagram
 
-### Descripción
+**Descripción**
 
 El diagrama de base de datos del bounded context **Analytics** representa la estructura relacional utilizada para persistir la información de métricas. La tabla principal es **metrics**, la cual mantiene una relación con la tabla **coaches**.
 
-### Diagrama de base de datos (ERD):
+**Diagrama de base de datos (ERD):**
 
 ```text
 ┌──────────────────────────────┐
@@ -6497,9 +6497,9 @@ El diagrama de base de datos del bounded context **Analytics** representa la est
 │ created_at (DATETIME, NOT NULL)           │
 └───────────────────────────────────────────┘
 ```
-### Tablas y atributos
+Tablas y atributos
 
-#### Tabla `metrics`
+Tabla `metrics`
 
 - `id`: identificador único de la métrica (PK)
 - `metric_type`: tipo de métrica almacenado como string
@@ -6508,26 +6508,27 @@ El diagrama de base de datos del bounded context **Analytics** representa la est
 - `coach_id`: referencia al coach (FK)
 - `created_at`: fecha de creación
 
-#### Tabla `coaches`
+Tabla `coaches`
 
 - `id`
 - `name`
 - `expertise`
 - `phone`
 
-### Constraints
+Constraints
 
 - PRIMARY KEY (`id`) en `metrics`
 - FOREIGN KEY (`coach_id`) → `coaches(id)`
 - Restricciones NOT NULL en `metric_type`, `value`, `period`, `coach_id`, `created_at`
 
-### Relaciones entre tablas
+Relaciones entre tablas
 
 - `coaches (1)` ──── `(*) metrics`
 
-### Observaciones
+**Observaciones**
 
 El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente las métricas. Sin embargo, actualmente no se implementan restricciones avanzadas como control de duplicidad por tipo, período y coach, ni índices personalizados o mecanismos automáticos de cálculo. Esto representa una oportunidad de mejora para fortalecer la lógica del negocio y la eficiencia del acceso a datos.
+
 ### 2.6.5. Bounded Context: Court & Venue Management (Gestión de Canchas)
 
 #### 2.6.5.1. Domain Layer
@@ -7258,6 +7259,7 @@ Relaciones:
 - courts (1) ──── (*) court_ratings
 - users (1) ──── (*) court_ratings
 ```
+
 #### 2.6.3. Bounded Context: Users
 
 El bounded context **Users** representa la capacidad del sistema encargada de gestionar el perfil funcional de los usuarios del negocio. Su propósito es permitir la creación, consulta, actualización y eliminación de perfiles que contienen la información operativa utilizada por los demás bounded contexts.
