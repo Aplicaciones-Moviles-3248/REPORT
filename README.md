@@ -10386,3 +10386,5 @@ https://www.pearson.com/en-us/subject-catalog/p/software-architecture-in-practic
 https://www.iso.org/standard/35733.html
 
 # Anexos
+
+Anexo01. Link de entrevistas [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDh0efpi-2rSrJaL5-em4T8ATBMyBh-bdU49hsRmGYVLx8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=f3SvAK)
