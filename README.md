@@ -206,7 +206,7 @@ INGENIERÍA DE SOFTWARE
 
   <!-- BLOQUE 2 -->
   <tr>
-    <td>Completar integrante</td>
+    <td>Pedro Jesús Nanfuñay Liza</td>
     <td>
       <ul>
         <li>2.3 Needfinding</li>
@@ -684,21 +684,71 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 **Tiempo:** **12 semanas**, en paralelo con el desarrollo del proyecto.
 ---
 
-### Miembro 3: []
+### Miembro 3: Pedro Nanfuñay
 
-**Objetivo 1:**  
-<br>**Específico:** Mejorar mis habilidades en programación, especialmente en lenguajes y herramientas utilizados en inteligencia artificial y desarrollo de videojuegos.</br>
-<br>**Medible:** Completar al menos 3 cursos especializados en **Python** para IA y **C#** o **Unity** para videojuegos, aplicando estos conocimientos en al menos un proyecto personal.</br>
-<br>**Alcanzable:** Dedicar 4 horas a la semana para aprender de forma autodidacta y participar en proyectos colaborativos donde pueda practicar y mejorar estas habilidades.</br>
-<br>**Relevante:** Las habilidades de programación en IA y videojuegos son cruciales para mi desarrollo profesional y me permitirán contribuir en proyectos innovadores que tengan un impacto positivo.</br>
-<br>**Tiempo:** Finalizar estos cursos y aplicar lo aprendido en proyectos personales en los próximos 9 meses.</br>
-<br></br>
-**Objetivo 2:**  
-<br>**Específico:** Desarrollar un proyecto de **videojuego accesible** con elementos de inteligencia artificial que pueda ayudar a personas con dificultades cognitivas o de aprendizaje.</br>
-<br>**Medible:** Diseñar y lanzar un prototipo de videojuego en el que implemente IA para mejorar la experiencia del usuario, buscando que sea evaluado por al menos 5 personas con experiencias en el área de accesibilidad.</br>
-<br>**Alcanzable:** Aprovechar recursos como plataformas de código abierto, herramientas de desarrollo de videojuegos (como Unity) y tutoriales especializados en IA para crear el prototipo.</br>
-<br>**Relevante:** Crear videojuegos que ayuden a personas a través de la IA es una manera en la que puedo aportar positivamente a la sociedad, combinando mis intereses con mi deseo de hacer un impacto.</br>
-<br>**Tiempo:** Desarrollar el prototipo en los próximos 12 meses, con una versión funcional disponible para evaluación en 15 meses.</br>
+### Objetivo 1:  
+
+**Específico:** Fortalecer mis competencias en desarrollo backend orientado a aplicaciones móviles mediante el diseño e implementación de bounded contexts del sistema COURTLY, aplicando principios de Domain-Driven Design (DDD) y asegurando que los servicios sean consumibles de manera eficiente por una aplicación móvil.
+
+**Medible:**
+- Diseñar, documentar e implementar al menos 2 bounded contexts funcionales (Matches y Payments).
+- Desarrollar diagramas UML de clases para ambos contextos.
+- Elaborar diagramas de base de datos (ERD) alineados con la implementación real.
+- Implementar endpoints REST completos (CRUD) para ser consumidos por frontend móvil.
+
+**Alcanzable:** Se logrará mediante el uso de tecnologías como Java, Spring Boot y JPA, junto con herramientas de modelado como PlantUML y documentación en GitHub.
+
+**Relevante:** Fortalece mi perfil como Software Engineering al desarrollador backend enfocado en aplicaciones móviles, asegurando que los servicios construidos respondan a necesidades reales de consumo desde el cliente.
+
+**Tiempo:** 12 semanas
+
+- Semanas 1–4: Modelado de dominio y definición de bounded contexts.
+- Semanas 5–8: Diagramas UML, ERD y documentación técnica.
+- Semanas 9–12: Implementación de lógica backend y endpoints.
+
+---
+
+### Objetivo 2:
+
+**Específico:** Desarrollar habilidades para la integración entre frontend móvil y backend, asegurando que los servicios construidos respondan correctamente a las necesidades del cliente y mejoren la experiencia del usuario en la aplicación.
+
+**Medible:**
+- Implementar al menos 10 endpoints REST consumidos por el frontend móvil.
+- Validar respuestas estructuradas (DTOs) para mínimo 3 módulos (Matches, Bookings, Notifications).
+- Realizar pruebas funcionales de integración entre frontend móvil y backend utilizando herramientas como Postman.
+- Documentar las APIs siguiendo buenas prácticas (nombres, estructuras y consistencias).
+
+**Alcanzable:** Se apoyará en el trabajo conjunto con el frontend del equipo y en herramientas de prueba y validación de servicios.
+
+**Relevante:** Permite desarrollar una visión end-to-end del sistema, clave para el desarrollo de aplicaciones móviles funcionales y bien integradas.
+
+**Tiempo:** 10 semanas
+
+- Semanas 1–3: Definición de endpoints y contratos API.
+- Semanas 4–7: Integración con frontend móvil y pruebas.
+- Semanas 8–10: Ajustes, validación y documentación final.
+
+---
+
+### Objetivo 3:
+
+**Específico:** Mejorar mis habilidades en documentación técnica y comunicación de soluciones de software, asegurando que la arquitectura del sistema y su integración con aplicaciones móviles sean claras, entendibles y mantenibles.
+
+**Medible:**
+- Elaborar documentación técnica del sistema (Report, arquitectura y diagramas principales).
+- Crear al menos 3 diagramas de arquitectura (C4: contexto, contenedores y componentes).
+- Documentar endpoints y contratos API orientados al consumo móvil.
+- Mantener actualizado el repositorio con una estructura clara, organizada y alineada a buenas prácticas.
+
+**Alcanzable:** Se utilizarán herramientas como Markdown, GitHub y PlantUML, junto con la práctica continua durante el desarrollo del proyecto.
+
+**Relevante:** Refuerza habilidades de comunicación para el trabajo en equipo y el desarrollo profesional, especialmente en entornos donde backend y frontend móvil deben integrarse correctamente.
+
+**Tiempo:** 8 semanas
+
+- Semanas 1–2: Estructuración inicial de la documentación.
+- Semanas 3–6: Desarrollo de diagramas y contenido técnico.
+- Semanas 7–8: Revisión, mejora y cierre de la documentación.
 
 ---
 
