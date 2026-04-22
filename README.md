@@ -1127,7 +1127,7 @@ Esta estructura logra un equilibrio entre cohesión y bajo acoplamiento, alinead
 
 ### Capability Layering Map
 
-![capabilityM](./images/capability-map-courtly.png)
+> Diagrama pendiente de incorporación. Actualizar esta sección cuando el archivo `capability-map-courtly.png` esté disponible en una ruta válida del repositorio.
 
 ### 2.5.3. Software Architecture
 
