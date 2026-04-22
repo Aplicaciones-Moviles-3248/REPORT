@@ -721,44 +721,62 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 **Tiempo:** 8 semanas, en paralelo al desarrollo del proyecto.
 
 ---
-## Miembro 2: []
+## Miembro 2: Camilla Espinoza
 
 ### Objetivo 1
-**Específico:** Entregar el **MVP funcional de COURTLY** (app móvil + backend básico) con registro/login, búsqueda de canchas, búsqueda de entrenadores, sistema de reservas y notificaciones.
+**Específico:** Consolidar competencias en **arquitectura de software y Domain-Driven Design (DDD)** mediante el diseño e implementación de la arquitectura backend de COURTLY, incluyendo la definición de bounded contexts, relaciones entre dominios y diagramas C4 (Contexto, Contenedores y Componentes).
 
 **Medible:**  
-- Completar **al menos 18 user stories** del backlog priorizado para el MVP.  
-- Publicar **beta interna** (TestFlight/Play Console) con **≥ 95% crash-free** y **≤ 1s** de tiempo de respuesta promedio en las APIs principales.  
-- Conseguir **mín. 20 feedbacks** de usuarios de prueba (deportistas y entrenadores) y cerrar **≥ 80%** de los hallazgos críticos.
+- Diseñar y documentar **al menos 10 bounded contexts** del sistema (iam, users, courts, bookings, payments, coaches, reviews, notifications, matches, availabilities, analytics).  
+- Elaborar **3 diagramas C4 completos** (Context Level, Container Level y Component Level).  
+- Desarrollar **diagramas UML de dominio y ERD** para mínimo 2 bounded contexts (Coaches y Reviews).  
+- Integrar todos los artefactos en el repositorio con documentación estructurada.
 
-**Alcanzable:** Dedicación de **8–10 h/semana**; uso de stack ya definido (React Native + módulos Kotlin, Node.js, SQLite) y plantillas/DSL de arquitectura ya preparadas.
+**Alcanzable:** Uso de herramientas como **Structurizr, PlantUML y Miro**, junto con conocimientos adquiridos en el curso y práctica progresiva en el proyecto.
 
-**Relevante:** Alineado al objetivo del curso y a la visión de **COURTLY**; permite validar el problema y preparar el piloto con entrenadores y propietarios de canchas.
+**Relevante:** Fortalece habilidades clave para desempeñarse como **Software Engineer con enfoque en arquitectura backend**, alineado a estándares modernos de diseño de sistemas.
 
-**Tiempo:** **12 semanas** para MVP (3 sprints de 4 semanas):  
-- Sprint 1: Auth + Búsqueda de Canchas y Entrenadores.  
-- Sprint 2: Sistema de Reservas + Pagos + Notificaciones.  
-- Sprint 3: Sistema de Valoraciones, Endurecimiento, métricas, beta y cierre de hallazgos.
+**Tiempo:** **12 semanas**:  
+- Semanas 1–4: Definición de dominios y bounded contexts.  
+- Semanas 5–8: Desarrollo de diagramas C4 y arquitectura.  
+- Semanas 9–12: Diagramas UML, ERD y documentación final.
 
 ---
 
 ### Objetivo 2
-**Específico:** **Fortalecer competencias profesionales** para liderar el proyecto: arquitectura (C4/DDD), mobile con **Kotlin/React Native**, y prácticas de entrega continua.
+**Específico:** Desarrollar habilidades en **diseño de soluciones digitales centradas en el usuario**, aplicando técnicas como User Stories, Impact Mapping y Product Backlog en el proyecto COURTLY.
 
 **Medible:**  
-- Completar **3 cursos** (1 de React Native avanzado, 1 de Kotlin nativo, 1 de DDD/C4 o arquitectura).  
-- Elaborar y subir a repo **la documentación técnica**: 3 diagramas C4 (Context, Containers, Deployment) + sección **DDD táctico** por contextos.  
-- Configurar **pipeline CI** (lint, tests, build, distribución interna) con **≥ 70%** de pruebas unitarias en módulos críticos.
+- Elaborar **más de 20 User Stories** completas con criterios de aceptación.  
+- Construir **1 Impact Mapping completo** alineado a objetivos SMART del negocio.  
+- Definir y priorizar un **Product Backlog funcional** para el MVP.  
+- Validar consistencia entre historias de usuario y arquitectura definida.
 
-**Alcanzable:** Plan de estudio de **6 h/semana** con recursos online y aplicación directa en COURTLY.
+**Alcanzable:** Aplicación directa de metodologías ágiles vistas en clase y uso de herramientas como **Miro y documentación en GitHub**.
 
-**Relevante:** Mejora mi capacidad para liderar técnicamente el proyecto y asegurar calidad y mantenibilidad.
+**Relevante:** Permite fortalecer el enfoque en **product thinking**, alineando necesidades del usuario con la solución tecnológica.
 
-**Tiempo:** **16 semanas** totales:  
-- Semanas 1–6: cursos y prácticas guiadas.  
-- Semanas 7–12: documentación C4/DDD integrada al repo.  
-- Semanas 13–16: CI/CD y aumento de cobertura de tests.
+**Tiempo:** **10 semanas**:  
+- Semanas 1–3: User Personas y User Stories.  
+- Semanas 4–6: Impact Mapping y validación.  
+- Semanas 7–10: Product Backlog y ajustes finales.
 
+---
+
+### Objetivo 3
+**Específico:** Mejorar competencias técnicas en **modelado y documentación de software**, utilizando herramientas profesionales para representar arquitectura y diseño del sistema.
+
+**Medible:**  
+- Crear **diagramas de componentes** para mínimo 2 bounded contexts.  
+- Generar **diagramas UML de clases del dominio** alineados al código backend.  
+- Elaborar **diagramas de base de datos (ERD)** consistentes con la implementación.  
+- Mantener documentación clara y organizada en el repositorio del proyecto.
+
+**Alcanzable:** Uso de herramientas como **PlantUML, Structurizr y Markdown**, con práctica continua durante el desarrollo del proyecto.
+
+**Relevante:** Refuerza habilidades esenciales para roles como **Backend Developer o Software Architect**, mejorando la capacidad de comunicar soluciones técnicas.
+
+**Tiempo:** **12 semanas**, en paralelo con el desarrollo del proyecto.
 
 ---
 
