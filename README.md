@@ -602,11 +602,27 @@ Uno de los principales problemas radica en la dificultad para encontrar canchas 
 
 Por otro lado, los entrenadores independientes enfrentan dificultades para ofrecer sus servicios de manera estructurada, ya que carecen de herramientas digitales que les permitan gestionar reservas, pagos y su visibilidad frente a potenciales clientes. Esto limita sus oportunidades de crecimiento y profesionalización dentro del entorno deportivo.  
 
-En este contexto, surge la necesidad de una solución que permita centralizar la información, optimizar la gestión de reservas y facilitar la conexión entre deportistas y entrenadores en un solo entorno digital.  
+En este contexto, surge la necesidad de una solución que permita centralizar la información, optimizar la gestión de reservas y facilitar la conexión entre deportistas y entrenadores en un solo entorno digital. 
+
+### Objetivos de la solución
+
+- Facilitar la búsqueda de canchas deportivas disponibles en tiempo real.
+- Conectar a deportistas con entrenadores confiables mediante una plataforma digital.
+- Reducir el tiempo y la complejidad en la organización de actividades deportivas.
+- Centralizar la información de servicios deportivos en un solo entorno digital.
+
+### Restricciones del proyecto
+
+- Dependencia de conexión a internet para el uso de la aplicación.
+- Limitada digitalización de algunos proveedores de servicios deportivos.
+- Adopción progresiva por parte de usuarios y entrenadores.
+- Limitaciones técnicas propias de dispositivos móviles.
+
+### Análisis 5W + 2H
 
 #### What?
 
-Courtly es una aplicación desarrollada por Mova, diseñada para facilitar la búsqueda y reserva de canchas deportivas, así como la conexión con entrenadores independientes de manera rápida y organizada. La solución permite a los usuarios acceder a información actualizada sobre disponibilidad, precios, ubicación y servicios, integrando en una sola plataforma todo el proceso deportivo.  
+Existe una dificultad para encontrar canchas deportivas disponibles y entrenadores confiables de manera rápida y organizada. Actualmente, la información sobre disponibilidad, precios y servicios se encuentra dispersa, lo que dificulta la planificación de actividades deportivas. 
 
 #### Why?
 
@@ -628,8 +644,7 @@ Asimismo, se incluyen los entrenadores independientes que requieren herramientas
 
 #### How?
 
-Courtly aborda esta problemática mediante una aplicación que permite a los usuarios buscar canchas y entrenadores según su ubicación, disponibilidad y necesidades, consultar información en tiempo real y realizar reservas de manera rápida.  
-Al mismo tiempo, ofrece a los entrenadores herramientas para gestionar sus servicios, organizar su agenda y conectar con nuevos clientes, generando una experiencia más eficiente para ambas partes.  
+La problemática se manifiesta a través de procesos manuales e informales, como llamadas, mensajes o uso de redes sociales, lo que genera desorganización, falta de confirmación en reservas y dificultades para acceder a información actualizada.
 
 #### How Much?
 
@@ -639,17 +654,28 @@ El impacto de esta problemática se refleja en la pérdida de tiempo al momento 
 
 #### 1.2.2.1. Lean UX Problem Statements
 
-#### Courtly - Solución a la Reserva Deportiva y Conexión con Entrenadores
+**Domain:**  
+El dominio corresponde al sector deportivo amateur, enfocado en la gestión de reservas de canchas y contratación de entrenadores.
 
-El acceso a canchas deportivas y entrenadores independientes dentro del entorno amateur se caracteriza actualmente por una oferta fragmentada, procesos poco digitalizados y una gestión poco eficiente. Aunque existen alternativas como redes sociales, contactos directos o grupos informales, estas no logran cubrir completamente las necesidades de los deportistas que buscan disponibilidad inmediata, confianza y organización.
+**Customer Segments:**  
+- Deportistas aficionados  
+- Equipos amateurs  
+- Entrenadores independientes  
 
-Por un lado, los usuarios enfrentan dificultades para encontrar canchas disponibles en horarios adecuados y entrenadores confiables. Por otro lado, los entrenadores independientes carecen de herramientas digitales que les permitan gestionar sus reservas, pagos y visibilidad de manera organizada, lo que limita su crecimiento.
+**Pain Points:**  
+- Dificultad para encontrar canchas disponibles  
+- Falta de información confiable  
+- Procesos manuales y desorganizados  
+- Baja visibilidad de entrenadores  
 
-Las soluciones actuales no ofrecen una plataforma centralizada que integre todo el proceso deportivo: búsqueda, reserva, pago y coordinación. Esto genera desorganización, pérdida de tiempo y oportunidades desaprovechadas para ambos segmentos.
+**Gap:**  
+Las soluciones actuales no ofrecen una plataforma centralizada que integre la búsqueda, reserva, pago y coordinación de actividades deportivas.
 
-Nuestro producto, Courtly, abordará esta problemática mediante una solución que conecte a deportistas con canchas y entrenadores en un solo entorno digital. Permitirá buscar, reservar y pagar de manera rápida y confiable, mientras que los entrenadores podrán ofrecer sus servicios y gestionar sus reservas de forma sencilla.
+**Vision / Strategy:**  
+Courtly propone una solución digital que conecte a deportistas con canchas y entrenadores en un solo entorno, permitiendo gestionar actividades deportivas de forma rápida, confiable y organizada.
 
-Sabremos que hemos tenido éxito cuando los usuarios utilicen la aplicación de forma recurrente para organizar sus actividades deportivas, cuando los entrenadores incrementen su participación en la plataforma, y cuando exista una comunidad activa con altos niveles de retención y satisfacción.
+**Success Criteria:**  
+Se considerará exitoso cuando los usuarios utilicen la aplicación de forma recurrente, los entrenadores incrementen su participación y se genere una comunidad activa con altos niveles de retención.
 
 ---
 
@@ -745,7 +771,7 @@ Creemos que aumentará la confianza en la plataforma si los usuarios pueden ver 
 
 #### 1.2.2.4. Lean UX Canvas
 
-<img src="images/LeanUXCanvas-Courtly.jpg" width="900">
+<img src="assets/chapter2/LeanUXCanvas-Courtly.jpg" width="900">
 
 [Enlace al Lean UX Canvas en Miro](https://miro.com/welcomeonboard/d3htMStsWFVEUFhBY1NwdGlFR0RkekZjcHlJMUNKcU9TOVJ1U2E1S3ptSXE2QUMyU2RKYnFhRzZIdzFoZE1oNnFBT3pnbCtLaUZoc1NYRU5LY2FuNEJ2UXV1VEM4OWZ3bExlZWJiN0p4dlprbytlUkUvUytLT2h5Vjk0azB6RXJzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=265390215415)
 
@@ -753,7 +779,7 @@ Creemos que aumentará la confianza en la plataforma si los usuarios pueden ver 
 
 La propuesta de valor de Courtly se dirige a dos segmentos principales dentro del ecosistema deportivo amateur. Estos segmentos han sido definidos considerando tanto las necesidades identificadas en el problema como el contexto actual de digitalización, en el cual el acceso a dispositivos móviles y tecnologías de la información permite la adopción de soluciones digitales para la organización de actividades deportivas.
 
-En el Perú, el acceso a telefonía móvil alcanza a más del 95% de los hogares, lo que evidencia un alto nivel de conectividad y facilita el uso de aplicaciones móviles como principal canal de interacción para este tipo de servicios. Este contexto respalda la viabilidad de Courtly como una solución digital orientada al deporte amateur.
+En el Perú, el acceso a telefonía móvil supera el 95% de los hogares, según reportes recientes de conectividad digital en el país, lo que evidencia un alto nivel de acceso a tecnología. Este contexto favorece la adopción de aplicaciones móviles como principal canal de interacción para este tipo de servicios, respaldando la viabilidad de Courtly como una solución digital orientada al deporte amateur.
 
 ---
 
