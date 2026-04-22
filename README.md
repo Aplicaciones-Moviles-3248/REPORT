@@ -14,7 +14,7 @@ INGENIERÍA DE SOFTWARE
 
 <p align="center">
   1ACC0238 - Aplicaciones para Dispositivos Móviles<br>
-  <strong>NRC:</strong> 12612<br>
+  <strong>NRC:</strong> 3248<br>
   <strong>Docente:</strong> David Gerardo Quevedo Velazco
 </p>
 
@@ -40,7 +40,7 @@ INGENIERÍA DE SOFTWARE
 
 <br>
 
-<p align="center" style="font-weight: bold;">202610</p>
+<p align="center" style="font-weight: bold;">202604</p>
 
 
 <div style="page-break-after: always;"></div>
