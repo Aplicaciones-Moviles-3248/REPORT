@@ -1716,7 +1716,7 @@ En cuanto a sus preocupaciones, destacó la importancia de que la aplicación re
 - **Fin de la entrevista:** 7:03 
 
 #### Registro visual de la entrevista
-![Evidencia de la entrevista](assets/chapter2/segmento2-entrevista2.png)
+![Evidencia de la entrevista](assets/chapter2/2-Entrevista-Seg2.png)
 
 #### Resumen descriptivo de la entrevista
 
@@ -10351,6 +10351,8 @@ El diseño de persistencia es consistente con el modelo de dominio y permite alm
 ## Video About the product
 ## Video About the team
 
+[**link**]()
+
 # Glosario
 
 - **Bounded Context**
@@ -10388,3 +10390,7 @@ https://www.iso.org/standard/35733.html
 # Anexos
 
 Anexo01. Link de entrevistas [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDh0efpi-2rSrJaL5-em4T8ATBMyBh-bdU49hsRmGYVLx8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=f3SvAK)
+
+Anexo02. Video about the team [**link**]()
+
+Anexo03. Video de exposición AV1 [**link**]()
