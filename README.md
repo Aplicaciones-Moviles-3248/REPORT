@@ -901,7 +901,7 @@ La principal ventaja de esta propuesta es que mantiene un modelo más limpio y a
 
 ### Alternativa 3: Integrar Availabilities en Coaches
 
-![alt3](./images/context-map-alt3.png)
+*Diagrama de la alternativa 3 no disponible en el repositorio.*
 
 Esta alternativa buscaba reducir la cantidad de bounded contexts integrando la disponibilidad de entrenadores dentro del contexto **Coaches**. A simple vista, la decisión parecía razonable, ya que la disponibilidad depende directamente del entrenador y forma parte de su oferta de servicio.
 
