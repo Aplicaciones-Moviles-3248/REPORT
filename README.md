@@ -1156,68 +1156,7 @@ Además, el análisis permite identificar una oportunidad clara en contextos don
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
-En esta sección se presenta el trabajo realizado durante la sesión de Big Picture Event Storming, enfocada en comprender el dominio general del negocio. Para ello se utilizaron post-its en LucidChart para mapear los eventos significativos que ocurren en el flujo operativo. A través de este proceso, se nos permitió identificar procesos clave, actores involucrados, relaciones entre eventos y oportunidades de mejora para el desarrollo de nuestra solución.
-
-Para este proceso se siguieron los siguientes Steps (Pasos):
-
-1. **Preparing the room:** Se organizó una reunión con los miembros del equipo a través de Discord.
-
-![EventStorming-Step1](./assets/chapter2/EventStorming-Step1.png)
-
-2. **Energizing the audience:** Se realizó una breve dinámica inicial para incentivar la participación activa de todos los miembros del equipo.
-
-![EventStorming-Step2](./assets/chapter2/EventStorming-Step2.png)
-
-3. **Briefing and presenting the plan:** Se explicó la dinámica de Event Storming y se presentó la agenda de la sesión para identificar los eventos claves y comprender el flujo del negocio de nuestra solución.
-
-![EventStorming-Step3](./assets/chapter2/EventStorming-Step3.png)
-
-4. **Generating Domain Events:** Se identificó y registró los eventos más importantes del dominio en una lluvia de ideas. Estos eventos permitieron visualizar de manera general las acciones más relevantes que forman parte de la experiencia actual de los usuarios.
-
-![EventStorming-Step4](./assets/chapter2/EventStorming-Step4.png)
-
-5. **Sorting Domain Events:** Los eventos identificados en el paso anterior fueron ordenados cronológicamente, desde el inicio hasta el final del flujo. Esto permitió comprender mejor cómo se desarrolla el proceso, identificando la secuencia natural de acciones que siguen nuestros usuarios.
-
-![EventStorming-Step5](./assets/chapter2/EventStorming-Step5.png)
-
-6. **Adding Actors and External Systems:** Se incorporaron los actores principales y sistemas externos que intervienen en el proceso. Se identifican actores como los deportistas aficionados, entrenadores independientes y administradores de canchas deportivas. Así mismo, se reconocieron medios externos como WhatsApp, llamadas telefónicas, redes sociales y transferencias bancarias o en efectivo. De esta manera, entendimos mejor quién y que herramientas participan en cada parte del flujo.
-
-![EventStorming-Step6](./assets/chapter2/EventStorming-Step6.png)
-
-7. **Storytelling:** Con los eventos y actores organizados, el equipo construyó una historia del proceso para explicar de forma sencilla cómo se desarrolla la experiencia del flujo de la aplicación.
-
-![EventStorming-Step7](./assets/chapter2/EventStorming-Step7.png)
-
-8. **Reverse storytelling:** Del mismo modo que el paso anterior, se realizó una revisión en sentido inverso para validar la coherencia de los eventos y comprobar que el proceso tuviera lógica de principio a fin. Con esto, garantizamos que cada evento estaba correctamente conectado con el anterior y el siguiente, además de detectar posibles vacíos, repeticiones o pasos innecesarios; identificar problemas y oportunidades de mejora.
-
-![EventStorming-Step8](./assets/chapter2/EventStorming-Step8.png)
-
-9. **Closing:** Finalmente, el equipo cerró la sesión resumiendo los hallazgos más importantes, demostrando haber comprendido el flujo de trabajo de la solución. Con nuestro análisis, logramos evidenciar los problemas como la desorganización en la coordinación, dependencia de canales informales y falta de información centralizada. Por lo que nuestra solución, responde a estas necesidades, reduciendo la complejidad del proceso y mejorando la experiencia de los usuarios.
-
-![EventStorming-Step9](./assets/chapter2/EventStorming-Step9.png)
-
-### 2.3.6. Ubiquitous Language
-
-1. **Player (Deportista):** Usuario que participa en partidos o actividades deportivas de forma recreativa o amateur.
-2. **Coach (Entrenador):** Profesional independiente que ofrece servicios de entrenamiento o clases deportivas a usuarios.
-3. **Court (Cancha):** Espacio deportivo destinado a la práctica de un deporte específico, como fútbol, básquet, voley, etc.
-4. **Court Availability (Disponibilidad de cancha):** Estado que indica si una cancha deportiva se encuentra disponible en el horario seleccionado.
-5. **Booking (Reserva):** Acción de asegurar el uso de un espacio deportivo en una fecha y horario determinado.
-6. **Match (Partido):** Actividad deportiva que ocurre después de coordinar participantes y confirmar una reserva.
-7. **Training Session (Sesión de entrenamiento):** Actividad organizada entre un coach y uno o más usuarios, que se lleva a cabo luego de coordinar horario, cancha y participantes.
-8. **Schedule (Horario):** Estructura de tiempos organizados que define la disponibilidad o programación de actividades deportivas.
-9. **Time Slot (Bloque de tiempo):** Intervalo específico de tiempo en el que se puede realizar una reserva o actividad.
-10. **Payment (Pago):** Transacción económica realizada para el uso de una cancha o la contratación de un servicio deportivo.
-11. **Confirmation (Confirmación):** Validación de que una reserva, pago o sesión ha sido aceptada y registrada correctamente.
-12. **Cancellation (Cancelación):** Evento que ocurre cuando una reserva o sesión previamente coordinada es anulada antes de su ejecución.
-13. **Participant (Participante):** Persona que forma parte de un partido, entrenamiento u otra actividad deportiva.
-14. **Owner (Administrador / Propietario):** Persona responsable de la gestión de una o más canchas, incluyendo su disponibilidad y reservas.
-15. **Profile (Perfil):** Información relevante que representa a un usuario dentro de la plataforma.
-16. **Location (Ubicación):** Lugar donde se encuentra la cancha seleccionada para la realización de la actividad deportiva.
-17. **Review (Reseña):** Evaluación u opinión que un usuario deja sobre una cancha, entrenador o experiencia.
-18. **Visibility (Visibilidad):** Nivel de exposición que tiene un entrenador o una cancha frente a otros usuarios.
-19. **Sports Activity (Actividad deportiva):** Representa la práctica del deporte, como partidos o entrenamientos.
-20. **Notification (Notificación):** Mensajes enviados automáticamente para informar sobre eventos confirmados, cancelados o modificados.
+A partir del análisis competitivo realizado, se han definido estrategias y tácticas orientadas a posicionar a Courtly frente a aplicaciones móviles como Playtomic, MATCHi y RacketPal, respondiendo directamente a sus fortalezas, debilidades, oportunidades y amenazas.
 
 ---
 
@@ -3221,7 +3160,68 @@ En esta sección se presentan los Empathy Mappings. Estos nos ayudarán a compre
 
 ### 2.3.5. Big Picture EventStorming
 
+En esta sección se presenta el trabajo realizado durante la sesión de Big Picture Event Storming, enfocada en comprender el dominio general del negocio. Para ello se utilizaron post-its en LucidChart para mapear los eventos significativos que ocurren en el flujo operativo. A través de este proceso, se nos permitió identificar procesos clave, actores involucrados, relaciones entre eventos y oportunidades de mejora para el desarrollo de nuestra solución.
+
+Para este proceso se siguieron los siguientes Steps (Pasos):
+
+1. **Preparing the room:** Se organizó una reunión con los miembros del equipo a través de Discord.
+
+![EventStorming-Step1](./assets/chapter2/EventStorming-Step1.png)
+
+2. **Energizing the audience:** Se realizó una breve dinámica inicial para incentivar la participación activa de todos los miembros del equipo.
+
+![EventStorming-Step2](./assets/chapter2/EventStorming-Step2.png)
+
+3. **Briefing and presenting the plan:** Se explicó la dinámica de Event Storming y se presentó la agenda de la sesión para identificar los eventos claves y comprender el flujo del negocio de nuestra solución.
+
+![EventStorming-Step3](./assets/chapter2/EventStorming-Step3.png)
+
+4. **Generating Domain Events:** Se identificó y registró los eventos más importantes del dominio en una lluvia de ideas. Estos eventos permitieron visualizar de manera general las acciones más relevantes que forman parte de la experiencia actual de los usuarios.
+
+![EventStorming-Step4](./assets/chapter2/EventStorming-Step4.png)
+
+5. **Sorting Domain Events:** Los eventos identificados en el paso anterior fueron ordenados cronológicamente, desde el inicio hasta el final del flujo. Esto permitió comprender mejor cómo se desarrolla el proceso, identificando la secuencia natural de acciones que siguen nuestros usuarios.
+
+![EventStorming-Step5](./assets/chapter2/EventStorming-Step5.png)
+
+6. **Adding Actors and External Systems:** Se incorporaron los actores principales y sistemas externos que intervienen en el proceso. Se identifican actores como los deportistas aficionados, entrenadores independientes y administradores de canchas deportivas. Así mismo, se reconocieron medios externos como WhatsApp, llamadas telefónicas, redes sociales y transferencias bancarias o en efectivo. De esta manera, entendimos mejor quién y que herramientas participan en cada parte del flujo.
+
+![EventStorming-Step6](./assets/chapter2/EventStorming-Step6.png)
+
+7. **Storytelling:** Con los eventos y actores organizados, el equipo construyó una historia del proceso para explicar de forma sencilla cómo se desarrolla la experiencia del flujo de la aplicación.
+
+![EventStorming-Step7](./assets/chapter2/EventStorming-Step7.png)
+
+8. **Reverse storytelling:** Del mismo modo que el paso anterior, se realizó una revisión en sentido inverso para validar la coherencia de los eventos y comprobar que el proceso tuviera lógica de principio a fin. Con esto, garantizamos que cada evento estaba correctamente conectado con el anterior y el siguiente, además de detectar posibles vacíos, repeticiones o pasos innecesarios; identificar problemas y oportunidades de mejora.
+
+![EventStorming-Step8](./assets/chapter2/EventStorming-Step8.png)
+
+9. **Closing:** Finalmente, el equipo cerró la sesión resumiendo los hallazgos más importantes, demostrando haber comprendido el flujo de trabajo de la solución. Con nuestro análisis, logramos evidenciar los problemas como la desorganización en la coordinación, dependencia de canales informales y falta de información centralizada. Por lo que nuestra solución, responde a estas necesidades, reduciendo la complejidad del proceso y mejorando la experiencia de los usuarios.
+
+![EventStorming-Step9](./assets/chapter2/EventStorming-Step9.png)
+
 ### 2.3.6. Ubiquitous Language
+
+1. **Player (Deportista):** Usuario que participa en partidos o actividades deportivas de forma recreativa o amateur.
+2. **Coach (Entrenador):** Profesional independiente que ofrece servicios de entrenamiento o clases deportivas a usuarios.
+3. **Court (Cancha):** Espacio deportivo destinado a la práctica de un deporte específico, como fútbol, básquet, voley, etc.
+4. **Court Availability (Disponibilidad de cancha):** Estado que indica si una cancha deportiva se encuentra disponible en el horario seleccionado.
+5. **Booking (Reserva):** Acción de asegurar el uso de un espacio deportivo en una fecha y horario determinado.
+6. **Match (Partido):** Actividad deportiva que ocurre después de coordinar participantes y confirmar una reserva.
+7. **Training Session (Sesión de entrenamiento):** Actividad organizada entre un coach y uno o más usuarios, que se lleva a cabo luego de coordinar horario, cancha y participantes.
+8. **Schedule (Horario):** Estructura de tiempos organizados que define la disponibilidad o programación de actividades deportivas.
+9. **Time Slot (Bloque de tiempo):** Intervalo específico de tiempo en el que se puede realizar una reserva o actividad.
+10. **Payment (Pago):** Transacción económica realizada para el uso de una cancha o la contratación de un servicio deportivo.
+11. **Confirmation (Confirmación):** Validación de que una reserva, pago o sesión ha sido aceptada y registrada correctamente.
+12. **Cancellation (Cancelación):** Evento que ocurre cuando una reserva o sesión previamente coordinada es anulada antes de su ejecución.
+13. **Participant (Participante):** Persona que forma parte de un partido, entrenamiento u otra actividad deportiva.
+14. **Owner (Administrador / Propietario):** Persona responsable de la gestión de una o más canchas, incluyendo su disponibilidad y reservas.
+15. **Profile (Perfil):** Información relevante que representa a un usuario dentro de la plataforma.
+16. **Location (Ubicación):** Lugar donde se encuentra la cancha seleccionada para la realización de la actividad deportiva.
+17. **Review (Reseña):** Evaluación u opinión que un usuario deja sobre una cancha, entrenador o experiencia.
+18. **Visibility (Visibilidad):** Nivel de exposición que tiene un entrenador o una cancha frente a otros usuarios.
+19. **Sports Activity (Actividad deportiva):** Representa la práctica del deporte, como partidos o entrenamientos.
+20. **Notification (Notificación):** Mensajes enviados automáticamente para informar sobre eventos confirmados, cancelados o modificados.
 
 ---
 
