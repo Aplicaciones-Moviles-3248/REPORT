@@ -620,6 +620,7 @@ INGENIERÍA DE SOFTWARE
   - [4.3.3. Evaluaciones según heurísticas](#433-evaluaciones-según-heurísticas)
 
 
+
 <!--STUDENT OUTCOME-->
 # Student Outcome
 <div style="text-align:center;">
@@ -631,33 +632,11 @@ INGENIERÍA DE SOFTWARE
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; vertical-align: top;">
-            Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software.
+                Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software.
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 <strong>Juan Carlos Angulo</strong><br>
             AV1:<br>Durante el desarrollo del AV1, actualicé y apliqué conocimientos en Domain-Driven Design y arquitectura de software mediante la elaboración de EventStorming (2.5.1.1 Candidate Context Discovery y 2.5.1.2 Domain Message Flows Modeling). Además, desarrollé los bounded contexts de Courts y Availabilities, incluyendo sus capas Domain, Interface, Application e Infrastructure, junto con diagramas de arquitectura y de código.<br><br>
-              <strong>Camilla Espinoza</strong><br>
-                AV1:<br>
-                Durante el desarrollo del AV1, actualizó y aplicó conocimientos en arquitectura de software y Domain-Driven Design mediante la elaboración de User Stories, Impact Mapping y Product Backlog. Además, diseñó los bounded contexts de Coaches y Reviews, así como diagramas de arquitectura (contexto, contenedores y componentes) y diagramas UML del dominio.<br>
-                <strong>Integrante 2</strong><br>
-                AV1:<br>Durante el desarrollo del AV1<br>
-                TP: Durante el desarrollo<br>
-                <strong>TB2:</strong><br>Desarrollé las APIs<br><br>
-                <strong>Integrante 3</strong><br>
-                AV1:<br>Durante el desarrollo<br>
-                TP1:<br>Durante esta entrega,<br>
-                <strong>TB2:</strong><br>Lideré el<br><br>
-                <strong>Integrante 4</strong><br>
-                AV1:<br>Durante el AV1<br>
-                TP1:<br>En esta fase<br>
-                <strong>TB2:</strong><br>Me encargué de<br><br>
-                <strong>Integrante 5</strong><br>
-                AV1:<br>Durante el AV1,<br>
-                <strong>TB2:</strong><br>Me enfoqué
-            </td>
-            <td style="border: 1px solid #ddd; vertical-align: top;">
-                La actualización y aplicación continua de conceptos de DDD y arquitectura permitieron consolidar una base técnica sólida para el proyecto. Esta contribución fortaleció la calidad del análisis de dominio y la coherencia de los artefactos técnicos desarrollados en AV1.
-                AV1:<br>Durante el desarrollo del AV1,<br>
                 <strong>Camilla Espinoza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó conocimientos en arquitectura de software y Domain-Driven Design mediante la elaboración de User Stories, Impact Mapping y Product Backlog. Además, diseñó los bounded contexts de Coaches y Reviews, así como diagramas de arquitectura (contexto, contenedores y componentes) y diagramas UML del dominio.<br>
@@ -677,21 +656,6 @@ INGENIERÍA DE SOFTWARE
                 <strong>Juan Carlos Angulo</strong><br>
                 AV1:<br>Durante el AV1, reforcé el aprendizaje continuo investigando y aplicando buenas prácticas de modelado de dominio, separación de responsabilidades y documentación arquitectónica. Esto se evidenció en la definición de flujos de mensajes de negocio y en el desarrollo integral de los bounded contexts Courts y Availabilities con sus respectivos diagramas técnicos.<br><br>
                 <strong>Integrante 2</strong><br>
-                AV1:<br>Durante el AV1,<br>
-                <strong>TB2:</strong><br>En el TB2,<br><br>
-                <strong>Integrante 3</strong><br>
-                AV1:<br>En el transcurso del proyecto,<br>
-                TP1:<br>En este proceso,<br>
-                <strong>TB2:</strong><br>Durante el TB2,<br><br>
-                <strong>Integrante 4</strong><br>
-                AV1:<br>En el AV1 contribuí<br>
-                TP1:<br>A lo largo de esta etapa,<br>
-                <strong>TB2:</strong><br>En el TB2,<br><br>
-                <strong>Integrante 5</strong><br>
-                AV1:<br>Contribuí a crear un entorno<br><br>
-                <strong>TP1:</strong><br>En esta entrega, diseñé y<br><br>
-                <strong>TB2:</strong><br>Durante el TB2,
-                AV1: Durante el AV1,<br><br>
                 <strong>Camilla Espinoza</strong><br>
                 AV1:<br>
                 Durante el AV1, investigó y aplicó nuevas herramientas y metodologías como Structurizr para diagramas C4, PlantUML para modelado de clases y Miro para Impact Mapping. Esto permitió mejorar la calidad del diseño arquitectónico y fortalecer sus habilidades en modelado de sistemas y documentación técnica.
@@ -700,7 +664,7 @@ INGENIERÍA DE SOFTWARE
                 Durante el AV1, investigó y aplicó conceptos de Domain-Driven Design y modelado arquitectónico, utilizando herramientas para la elaboración de diagramas UML, diagramas de componentes y diseño de bases de datos. Esto le permitió mejorar su capacidad de estructurar bounded contexts, comprender mejor la separación de responsabilidades y fortalecer sus habilidades en documentación técnica y diseño de soluciones de software.
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
-                El desarrollo del AV1 evidenció que el aprendizaje permanente es clave para mejorar el desempeño profesional. La incorporación de nuevas prácticas y herramientas permitió elevar la calidad de la documentación técnica y fortalecer la capacidad de diseño de soluciones de software.
+                El equipo logró mantener un entorno colaborativo e inclusivo mediante la distribución clara de responsabilidades, la coordinación constante y la planificación progresiva de actividades durante las entregas. Cada integrante aportó desde su área de trabajo, lo que permitió avanzar de manera ordenada y alineada con los objetivos del proyecto. La organización de tareas, el seguimiento de avances y la comunicación permanente favorecieron el cumplimiento de metas parciales y la construcción de un proceso de trabajo más estructurado y cooperativo.
             </td>
         </tr>
     </table>
