@@ -931,7 +931,7 @@ A pesar de ello, el equipo identificó que estos contextos responden a subdomini
 
 ### Alternativa 6: Shared Kernel para Users
 
-![alt6](./images/context-map-alt6.png)
+> **Nota:** El diagrama de esta alternativa no se encuentra incluido en el repositorio actual, por lo que se omite la referencia a la imagen para evitar un enlace roto en el README.
 
 En esta alternativa se evaluó compartir la identidad de usuario mediante un **Shared Kernel**, con el objetivo de establecer un contrato común reutilizable entre múltiples contextos que dependen de `UserProfile`. Esta propuesta parecía útil porque varios módulos del sistema consumen la identidad funcional del usuario como referencia central.
 
