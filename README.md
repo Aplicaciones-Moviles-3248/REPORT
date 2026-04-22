@@ -23,7 +23,7 @@ INGENIERÍA DE SOFTWARE
 <h1 align="center">Informe de Trabajo Final</h1>
 
 <p align="center">
-  <strong>Startup:</strong> Movi<br>
+  <strong>Startup:</strong> Mova<br>
   <strong>Producto:</strong> Courtly
 </p>
 
@@ -36,7 +36,7 @@ INGENIERÍA DE SOFTWARE
 
 <br>
 
-<p align="center" style="font-weight: bold;">Abril 2026</p>
+<p align="center" style="font-weight: bold;">202610</p>
 
 
 <div style="page-break-after: always;"></div>
@@ -54,7 +54,7 @@ INGENIERÍA DE SOFTWARE
   </tr>
   <tr>
     <td style="border: 1px solid #ddd; padding: 8px;">TB1</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">11/09/2025</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">21/04/2025</td>
     <td style="border: 1px solid #ddd; padding: 8px;">
       <ul>
         <li>Juan Carlos Angulo</li>
@@ -87,26 +87,32 @@ INGENIERÍA DE SOFTWARE
 </table><br>
 
 
+<h1>Project Report Collaboration Insights</h1>
 
+<h2>TB1</h2>
 
-<h1>TB1</h1>
+<p>Para el desarrollo del informe perteneciente a la entrega TB1, se dividió la implementación de secciones del Capítulo I y II en bloques de trabajo, asignando cada conjunto de secciones a un integrante del equipo.</p>
 
-<p>Para el desarrollo del informe perteneciente a la entrega TB1, se dividió la implementación de secciones de la siguiente forma para cada integrante del equipo:</p>
+<p align="center">
+  <img src="assets/chapter2/tb1.png" alt="Logo UPC" width="500">
+</p>
 
 <table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
   <tr>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;"><strong>Integrante</strong></td>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;"><strong>Tareas Asignadas</strong></td>
+    <td align="center"><strong>Integrante</strong></td>
+    <td align="center"><strong>Tareas Asignadas</strong></td>
   </tr>
+
+  <!-- BLOQUE 1 -->
   <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;">Juan Carlos Angulo</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
+    <td>-</td>
+    <td>
       <ul>
         <li><strong>Capítulo I – Presentación</strong></li>
-        <li>1.1 <em>Startup Profile</em></li>
+        <li>1.1 Startup Profile</li>
         <li>1.1.1 Descripción de la Startup</li>
         <li>1.1.2 Perfiles de integrantes del equipo</li>
-        <li>1.2 <em>Solution Profile</em></li>
+        <li>1.2 Solution Profile</li>
         <li>1.2.1 Antecedentes y problemática</li>
         <li>1.2.2 Lean UX Process</li>
         <li>1.2.2.1 Lean UX Problem Statements</li>
@@ -118,171 +124,247 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
   <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;"></td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
+    <td>-</td>
+    <td>
       <ul>
-        <li><strong>2.1 Competidores</strong></li>
-        <li>Análisis competitivo, estrategias y tácticas frente a competidores</li>
-        <li><strong>2.2 Entrevistas</strong></li>
-        <li>Diseño, registro y análisis de entrevistas</li>
-        <li><strong>2.3 Needfinding</strong></li>
-        <li>User Personas, User Task Matrix, User Journey Mapping, Empathy Mapping</li>
-        <li><strong>2.3.5 Ubiquitous Language</strong></li>
+        <li><strong>Capítulo II</strong></li>
+        <li>2.1 Competidores</li>
+        <li>2.1.1 Análisis competitivo</li>
+        <li>2.1.2 Estrategias y tácticas frente a competidores</li>
+        <li>2.2 Entrevistas</li>
+        <li>2.2.1 Diseño de entrevistas</li>
+        <li>2.2.2 Registro de entrevistas</li>
+        <li>2.2.3 Análisis de entrevistas</li>
       </ul>
     </td>
   </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;"></td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
-      <ul>
-        <li><strong>2.4 Requirements Specification</strong></li>
-        <li>User Stories, Impact Mapping, Product Backlog</li>
-        <li><strong>2.5 Strategic-Level Domain-Driven Design</strong></li>
-        <li>EventStorming (Candidate Context Discovery, Domain Message Flows Modeling, Bounded Context Canvases)</li>
-        <li>Context Mapping</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;"></td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
-      <ul>
-        <li><strong>2.5.3 Software Architecture</strong></li>
-        <li>Software Architecture Context Level Diagrams</li>
-        <li>Software Architecture Container Level Diagrams</li>
-        <li>Software Architecture Deployment Diagrams</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;"></td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
-      <ul>
-        <li><strong>2.6 Tactical-Level Domain-Driven Design</strong></li>
-        <li>2.6.1–2.6.4 Domain Layer, Interface Layer, Application Layer</li>
-        <li>2.6.5–2.6.6 Component, Code y Database Design Diagrams</li>
-      </ul>
-    </td>
-  </tr>
-</table>
 
-<h1>TP</h1>
+  <!-- BLOQUE 2 -->
+  <tr>
+    <td>Completar integrante</td>
+    <td>
+      <ul>
+        <li>2.3 Needfinding</li>
+        <li>2.3.1 User Personas</li>
+        <li>2.3.2 User Task Matrix</li>
+        <li>2.3.3 User Journey Mapping</li>
+        <li>2.3.4 Empathy Mapping</li>
+        <li>2.3.5 Big Picture EventStorming</li>
+        <li>2.3.6 Ubiquitous Language</li>
+      </ul>
+    </td>
+  </tr>
 
-<p>Para el desarrollo del informe perteneciente a la entrega TP (Capítulo III: Product Design), se dividieron las actividades de la siguiente forma:</p>
+  <!-- BLOQUE 3 -->
+  <tr>
+    <td>Camilla Espinoza</td>
+    <td>
+      <ul>
+        <li>2.4 Requirements Specification</li>
+        <li>2.4.1 User Stories</li>
+        <li>2.4.2 Impact Mapping</li>
+        <li>2.4.3 Product Backlog</li>
+      </ul>
+    </td>
+  </tr>
 
-<table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <!-- BLOQUE 4 -->
   <tr>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;"><strong>Integrante</strong></td>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;"><strong>Tareas Asignadas</strong></td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;">Juan Carlos Angulo</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
+    <td>Completar integrante</td>
+    <td>
       <ul>
-        <li><strong>3.1 Product Design</strong> – coordinación de criterios visuales.</li>
-        <li><strong>3.1.1 Style Guidelines</strong> – paleta, tipografías, espaciados, botones y estados.</li>
-        <li><strong>3.1.2.1 Organization Systems</strong> – mapa del sitio y jerarquías (landing / app).</li>
-        <li><strong>3.1.2.2 Labelling Systems</strong> – nomenclaturas y microcopy coherente.</li>
+        <li>2.5.1 EventStorming</li>
+        <li>2.5.1.1 Candidate Context Discovery</li>
+        <li>2.5.1.2 Domain Message Flows Modeling</li>
+        <li>2.5.1.3 Bounded Context Canvases</li>
       </ul>
     </td>
   </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;"></td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
-      <ul>
-        <li><strong>3.1.2.3 SEO Tags and Meta Tags</strong> – definición de títulos, descripciones y OG tags.</li>
-        <li><strong>Accesibilidad</strong> (apoya a 3.1.1 y 3.1.2) – contraste, tamaños mínimos y roles ARIA.</li>
-        <li><strong>Design tokens → handoff</strong> a desarrollo (nombres y variables).</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;"></td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
-      <ul>
-        <li><strong>3.1.2 Information Architecture</strong> – consistencia global.</li>
-        <li><strong>3.1.2.4 Searching Systems</strong> – diseño del buscador y filtros.</li>
-        <li><strong>3.1.2.5 Navigation Systems</strong> – menú, tabs, breadcrumbs y flujo entre vistas.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;"></td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
-      <ul>
-        <li><strong>3.1.3 Landing Page UI Design</strong></li>
-        <li>3.1.3.1 <em>Landing Page Wireframe</em> – estructura y jerarquía.</li>
-        <li>3.1.3.2 <em>Landing Page Mock-up</em> – versión visual final.</li>
-        <li>Apoyo en <strong>User Flow Diagrams</strong> (3.1.4.4) para coherencia con la landing.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;"></td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
-      <ul>
-        <li><strong>3.1.4 Mobile Applications UX/UI Design</strong> – ownership general.</li>
-        <li>3.1.4.1 <em>Mobile Applications Wireframes</em> – pantallas clave.</li>
-        <li>3.1.4.2 <em>Mobile Applications Wireflow Diagrams</em> – navegación completa.</li>
-        <li>3.1.4.3 <em>Mobile Applications Mock-ups</em> – estilos y componentes finales.</li>
-        <li>3.1.4.4 <em>User Flow Diagrams</em> – recorridos por tareas principales.</li>
-        <li>3.1.4.5 <em>Prototyping</em> – interacciones y handoff (link Figma).</li>
-      </ul>
-    </td>
-  </tr>
-</table>
 
-<h1>TB2</h1>
+  <!-- BLOQUE 5 -->
+  <tr>
+    <td>Completar integrante</td>
+    <td>
+      <ul>
+        <li>2.5.2 Context Mapping</li>
+      </ul>
+    </td>
+  </tr>
 
-<p>Para el desarrollo del informe perteneciente a la entrega TB2 (Capítulo IV: SPRINT), se dividieron las actividades de la siguiente forma:</p>
+  <!-- BLOQUE 6 -->
+  <tr>
+    <td>Camilla Espinoza</td>
+    <td>
+      <ul>
+        <li>2.5.3 Software Architecture</li>
+        <li>2.5.3.1 Context Level Diagrams</li>
+        <li>2.5.3.2 Container Level Diagrams</li>
+        <li>2.5.3.3 Deployment Diagrams</li>
+      </ul>
+    </td>
+  </tr>
 
-<table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <!-- BLOQUE 7 -->
   <tr>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;"><strong>Integrante</strong></td>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;"><strong>Tareas Asignadas</strong></td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;">Juan Carlos Angulo</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
+    <td>Completar integrante</td>
+    <td>
       <ul>
-        <li><strong>Sprint 2</strong> – Desarrollo del login dentro del frontend de kotlin</li>
-        <li><strong>Correccion de errores del TP</strong> – Adaptar el US a la plantilla de los acceptace criteria</li>
-      </ul>
+        <li><strong>2.6.1 Bounded Context: Bookings</strong></li>
+        <li>2.6.1.1 Domain Layer</li>
+        <li>2.6.1.2 Interface Layer</li>
+        <li>2.6.1.3 Application Layer</li>
+        <li>2.6.1.4 Infrastructure Layer</li>
+        <li>2.6.1.5 Component Level Diagrams</li>
+        <li>2.6.1.6 Code Level Diagrams</li>
+        <li>2.6.1.6.1 Class Diagram</li>
+        <li>2.6.1.6.2 Database Diagram</li>
+</ul>
+    </td>
+  </tr>
+<tr>
+    <td>Completar integrante</td>
+    <td>
+      <ul>
+        <li><strong>2.6.2 Bounded Context: Payments</strong></li>
+        <li>2.6.2.1 Domain Layer</li>
+        <li>2.6.2.2 Interface Layer</li>
+        <li>2.6.2.3 Application Layer</li>
+        <li>2.6.2.4 Infrastructure Layer</li>
+        <li>2.6.2.5 Component Level Diagrams</li>
+        <li>2.6.2.6 Code Level Diagrams</li>
+        <li>2.6.2.6.1 Class Diagram</li>
+        <li>2.6.2.6.2 Database Diagram</li>
+</ul>
     </td>
   </tr>
   <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;"></td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
+    <td>Completar integrante</td>
+    <td>
       <ul>
-        <li><strong>BACKEND</strong> – definicion de crud responsivo</li>
-        <li><strong>Sprint 2</strong> Apoya a renzo en el desarorllo del front en kotlin</li>
+        <li><strong>2.6.3 Bounded Context: Users</strong></li>
+        <li>2.6.3.1 Domain Layer</li>
+        <li>2.6.3.2 Interface Layer</li>
+        <li>2.6.3.3 Application Layer</li>
+        <li>2.6.3.4 Infrastructure Layer</li>
+        <li>2.6.3.5 Component Level Diagrams</li>
+        <li>2.6.3.6 Code Level Diagrams</li>
+        <li>2.6.3.6.1 Class Diagram</li>
+        <li>2.6.3.6.2 Database Diagram</li>
       </ul>
     </td>
   </tr>
+
+  <!-- BLOQUE 8 -->
   <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;"></td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
+    <td>Camilla Espinoza</td>
+    <td>
       <ul>
-        <li><strong>FRONTEND</strong> – Desarrollo del frontend en flutter</li>
-        <li><strong>PPT</strong> – Desarrollo del PPT</li>
-      </ul>
+        <li><strong>2.6.4 Bounded Context: Coaches</strong></li>
+        <li>2.6.4.1 Domain Layer</li>
+        <li>2.6.4.2 Interface Layer</li>
+        <li>2.6.4.3 Application Layer</li>
+        <li>2.6.4.4 Infrastructure Layer</li>
+        <li>2.6.4.5 Component Level Diagrams</li>
+        <li>2.6.4.6 Code Level Diagrams</li>
+        <li>2.6.4.6.1 Class Diagram</li>
+        <li>2.6.4.6.2 Database Diagram</li>
+        </ul>
+    </td>
+  </tr>
+<tr>
+    <td>Completar integrante</td>
+    <td>
+      <ul>
+        <li><strong>2.6.5 Bounded Context: Courts</strong></li>
+        <li>2.6.5.1 Domain Layer</li>
+        <li>2.6.5.2 Interface Layer</li>
+        <li>2.6.5.3 Application Layer</li>
+        <li>2.6.5.4 Infrastructure Layer</li>
+        <li>2.6.5.5 Component Level Diagrams</li>
+        <li>2.6.5.6 Code Level Diagrams</li>
+        <li>2.6.5.6.1 Class Diagram</li>
+        <li>2.6.5.6.2 Database Diagram</li>
+        </ul>
+    </td>
+  </tr>
+<tr>
+    <td>Completar integrante</td>
+    <td>
+      <ul>
+        <li><strong>2.6.6 Bounded Context: Availabilities</strong></li>
+        <li>2.6.6.1 Domain Layer</li>
+        <li>2.6.6.2 Interface Layer</li>
+        <li>2.6.6.3 Application Layer</li>
+        <li>2.6.6.4 Infrastructure Layer</li>
+        <li>2.6.6.5 Component Level Diagrams</li>
+        <li>2.6.6.6 Code Level Diagrams</li>
+        <li>2.6.6.6.1 Class Diagram</li>
+        <li>2.6.6.6.2 Database Diagram</li>
+        </ul>
     </td>
   </tr>
   <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;"></td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
+    <td>Camilla Espinoza</td>
+    <td>
       <ul>
-        <li><strong>ABOUT THE PRODUCT</strong>Desarollo del video</li>
-        <li>ABOUT THE TEAM<em>Desarollo del video</em> – estructura y jerarquía.</li>
+        <li><strong>2.6.7 Bounded Context: Reviews</strong></li>
+        <li>2.6.7.1 Domain Layer</li>
+        <li>2.6.7.2 Interface Layer</li>
+        <li>2.6.7.3 Application Layer</li>
+        <li>2.6.7.4 Infrastructure Layer</li>
+        <li>2.6.7.5 Component Level Diagrams</li>
+        <li>2.6.7.6 Code Level Diagrams</li>
+        <li>2.6.7.6.1 Class Diagram</li>
+        <li>2.6.7.6.2 Database Diagram</li>
       </ul>
     </td>
   </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;"></td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
+<tr>
+    <td>Completar integrante</td>
+    <td>
       <ul>
-        <li><strong>Desarrollo de parte del frontend en kotlin</strong> Encargado de mejorar el frontend en kotlin para el segmento de empresas</li>
-      </ul>
+        <li><strong>2.6.8 Bounded Context: Analytics</strong></li>
+        <li>2.6.8.1 Domain Layer</li>
+        <li>2.6.8.2 Interface Layer</li>
+        <li>2.6.8.3 Application Layer</li>
+        <li>2.6.8.4 Infrastructure Layer</li>
+        <li>2.6.8.5 Component Level Diagrams</li>
+        <li>2.6.8.6 Code Level Diagrams</li>
+        <li>2.6.8.6.1 Class Diagram</li>
+        <li>2.6.8.6.2 Database Diagram</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Completar integrante</td>
+    <td>
+      <ul>
+        <li><strong>2.6.9 Bounded Context: Matches</strong></li>
+        <li>2.6.9.1 Domain Layer</li>
+        <li>2.6.9.2 Interface Layer</li>
+        <li>2.6.9.3 Application Layer</li>
+        <li>2.6.9.4 Infrastructure Layer</li>
+        <li>2.6.9.5 Component Level Diagrams</li>
+        <li>2.6.9.6 Code Level Diagrams</li>
+        <li>2.6.9.6.1 Class Diagram</li>
+        <li>2.6.9.6.2 Database Diagram</li>
+        </ul>
+    </td>
+  </tr>
+ <tr>
+    <td>Completar integrante</td>
+    <td>
+      <ul>
+        <li><strong>2.6.10 Bounded Context: Notifications</strong></li>
+        <li>2.6.10.1 Domain Layer</li>
+        <li>2.6.10.2 Interface Layer</li>
+        <li>2.6.10.3 Application Layer</li>
+        <li>2.6.10.4 Infrastructure Layer</li>
+        <li>2.6.10.5 Component Level Diagrams</li>
+        <li>2.6.10.6 Code Level Diagrams</li>
+        <li>2.6.10.6.1 Class Diagram</li>
+        <li>2.6.10.6.2 Database Diagram</li>
+        </ul>
     </td>
   </tr>
 </table>
@@ -397,55 +479,32 @@ INGENIERÍA DE SOFTWARE
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; vertical-align: top;">
-                5.c1. Trabaja en equipo para proporcionar liderazgo en forma conjunta
+                Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software.
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 <strong>Juan Carlos Angulo</strong><br>
                 TB1:<br>Durante el desarrollo del TB1,<br>
-                <strong>TB2:</strong><br>Lideré el<br><br>
-                <strong>Integrante 2</strong><br>
-                TB1:<br>Durante el desarrollo del TB1<br>
-                TP: Durante el desarrollo<br>
-                <strong>TB2:</strong><br>Desarrollé las APIs<br><br>
-                <strong>Integrante 3</strong><br>
-                TB1:<br>Durante el desarrollo<br>
-                TP1:<br>Durante esta entrega,<br>
-                <strong>TB2:</strong><br>Lideré el<br><br>
-                <strong>Integrante 4</strong><br>
-                TB1:<br>Durante el TB1<br>
-                TP1:<br>En esta fase<br>
-                <strong>TB2:</strong><br>Me encargué de<br><br>
-                <strong>Integrante 5</strong><br>
-                TB1:<br>Durante el TB1,<br>
-                <strong>TB2:</strong><br>Me enfoqué
-            </td>
+                <strong>Camilla Espinoza</strong><br>
+                TB1:<br>
+                Durante el desarrollo del TB1, actualizó y aplicó conocimientos en arquitectura de software y Domain-Driven Design mediante la elaboración de User Stories, Impact Mapping y Product Backlog. Además, diseñó los bounded contexts de Coaches y Reviews, así como diagramas de arquitectura (contexto, contenedores y componentes) y diagramas UML del dominio.<br>
+                <td style="border: 1px solid #ddd; vertical-align: top;">
+                <td style="border: 1px solid #ddd; vertical-align: top;">
+           </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 El equipo demostró un efectivo liderazgo conjunto durante el TB1, donde cada miembro asumió responsabilidades compartidas de coordinación y toma de decisiones. Se evidenció una colaboración fluida que abarcó desde aspectos estratégicos y técnicos del proyecto hasta la planificación operativa y distribución de tareas. La comunicación continua, las reuniones regulares y el trabajo colaborativo en el desarrollo de componentes clave como wireframes, mockups, database diagrams y landing page fueron fundamentales. El compromiso colectivo por mantener una sana relación de equipo y la capacidad para resolver conflictos de manera conjunta permitieron lograr consensos efectivos y entregar un trabajo cohesivo y de calidad, demostrando que el liderazgo fue verdaderamente compartido y distribuido entre todos los integrantes.
             </td>
         </tr>
         <tr>
             <td style="border: 1px solid #ddd; vertical-align: top;">
-                5.c2. Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos
+                Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de software.
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 <strong>Juan Carlos Angulo</strong><br>
                 TB1: Durante el TB1,<br><br>
-                <strong>TB2:</strong><br>Durante el TB2,<br><br>
-                <strong>Integrante 2</strong><br>
-                TB1:<br>Durante el TB1,<br>
-                <strong>TB2:</strong><br>En el TB2,<br><br>
-                <strong>Integrante 3</strong><br>
-                TB1:<br>En el transcurso del proyecto,<br>
-                TP1:<br>En este proceso,<br>
-                <strong>TB2:</strong><br>Durante el TB2,<br><br>
-                <strong>Integrante 4</strong><br>
-                TB1:<br>En el TB1 contribuí<br>
-                TP1:<br>A lo largo de esta etapa,<br>
-                <strong>TB2:</strong><br>En el TB2,<br><br>
-                <strong>Integrante 5</strong><br>
-                TB1:<br>Contribuí a crear un entorno<br><br>
-                <strong>TP1:</strong><br>En esta entrega, diseñé y<br><br>
-                <strong>TB2:</strong><br>Durante el TB2,
+                <td style="border: 1px solid #ddd; vertical-align: top;">
+                <strong>Camilla Espinoza</strong><br>
+                TB1:<br>
+                Durante el TB1, investigó y aplicó nuevas herramientas y metodologías como Structurizr para diagramas C4, PlantUML para modelado de clases y Miro para Impact Mapping. Esto permitió mejorar la calidad del diseño arquitectónico y fortalecer sus habilidades en modelado de sistemas y documentación técnica.
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 El equipo logró mantener un entorno colaborativo e inclusivo mediante la distribución clara de responsabilidades, la coordinación constante y la planificación progresiva de actividades durante las entregas. Cada integrante aportó desde su área de trabajo, lo que permitió avanzar de manera ordenada y alineada con los objetivos del proyecto. La organización de tareas, el seguimiento de avances y la comunicación permanente favorecieron el cumplimiento de metas parciales y la construcción de un proceso de trabajo más estructurado y cooperativo.
@@ -477,45 +536,62 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 <br>**Tiempo:** Desarrollar el proyecto completo en un plazo de 10 meses, con prototipos funcionales cada 3 meses para validar el progreso y recibir feedback continuo.  </br>
 
 ---
-## Miembro 2: []
+## Miembro 2: Camilla Espinoza
 
 ### Objetivo 1
-**Específico:** Entregar el **MVP funcional de COURTLY** (app móvil + backend básico) con registro/login, búsqueda de canchas, búsqueda de entrenadores, sistema de reservas y notificaciones.
+**Específico:** Consolidar competencias en **arquitectura de software y Domain-Driven Design (DDD)** mediante el diseño e implementación de la arquitectura backend de COURTLY, incluyendo la definición de bounded contexts, relaciones entre dominios y diagramas C4 (Contexto, Contenedores y Componentes).
 
 **Medible:**  
-- Completar **al menos 18 user stories** del backlog priorizado para el MVP.  
-- Publicar **beta interna** (TestFlight/Play Console) con **≥ 95% crash-free** y **≤ 1s** de tiempo de respuesta promedio en las APIs principales.  
-- Conseguir **mín. 20 feedbacks** de usuarios de prueba (deportistas y entrenadores) y cerrar **≥ 80%** de los hallazgos críticos.
+- Diseñar y documentar **al menos 10 bounded contexts** del sistema (iam, users, courts, bookings, payments, coaches, reviews, notifications, matches, availabilities, analytics).  
+- Elaborar **3 diagramas C4 completos** (Context Level, Container Level y Component Level).  
+- Desarrollar **diagramas UML de dominio y ERD** para mínimo 2 bounded contexts (Coaches y Reviews).  
+- Integrar todos los artefactos en el repositorio con documentación estructurada.
 
-**Alcanzable:** Dedicación de **8–10 h/semana**; uso de stack ya definido (React Native + módulos Kotlin, Node.js, SQLite) y plantillas/DSL de arquitectura ya preparadas.
+**Alcanzable:** Uso de herramientas como **Structurizr, PlantUML y Miro**, junto con conocimientos adquiridos en el curso y práctica progresiva en el proyecto.
 
-**Relevante:** Alineado al objetivo del curso y a la visión de **COURTLY**; permite validar el problema y preparar el piloto con entrenadores y propietarios de canchas.
+**Relevante:** Fortalece habilidades clave para desempeñarse como **Software Engineer con enfoque en arquitectura backend**, alineado a estándares modernos de diseño de sistemas.
 
-**Tiempo:** **12 semanas** para MVP (3 sprints de 4 semanas):  
-- Sprint 1: Auth + Búsqueda de Canchas y Entrenadores.  
-- Sprint 2: Sistema de Reservas + Pagos + Notificaciones.  
-- Sprint 3: Sistema de Valoraciones, Endurecimiento, métricas, beta y cierre de hallazgos.
+**Tiempo:** **12 semanas**:  
+- Semanas 1–4: Definición de dominios y bounded contexts.  
+- Semanas 5–8: Desarrollo de diagramas C4 y arquitectura.  
+- Semanas 9–12: Diagramas UML, ERD y documentación final.
 
 ---
 
 ### Objetivo 2
-**Específico:** **Fortalecer competencias profesionales** para liderar el proyecto: arquitectura (C4/DDD), mobile con **Kotlin/React Native**, y prácticas de entrega continua.
+**Específico:** Desarrollar habilidades en **diseño de soluciones digitales centradas en el usuario**, aplicando técnicas como User Stories, Impact Mapping y Product Backlog en el proyecto COURTLY.
 
 **Medible:**  
-- Completar **3 cursos** (1 de React Native avanzado, 1 de Kotlin nativo, 1 de DDD/C4 o arquitectura).  
-- Elaborar y subir a repo **la documentación técnica**: 3 diagramas C4 (Context, Containers, Deployment) + sección **DDD táctico** por contextos.  
-- Configurar **pipeline CI** (lint, tests, build, distribución interna) con **≥ 70%** de pruebas unitarias en módulos críticos.
+- Elaborar **más de 20 User Stories** completas con criterios de aceptación.  
+- Construir **1 Impact Mapping completo** alineado a objetivos SMART del negocio.  
+- Definir y priorizar un **Product Backlog funcional** para el MVP.  
+- Validar consistencia entre historias de usuario y arquitectura definida.
 
-**Alcanzable:** Plan de estudio de **6 h/semana** con recursos online y aplicación directa en COURTLY.
+**Alcanzable:** Aplicación directa de metodologías ágiles vistas en clase y uso de herramientas como **Miro y documentación en GitHub**.
 
-**Relevante:** Mejora mi capacidad para liderar técnicamente el proyecto y asegurar calidad y mantenibilidad.
+**Relevante:** Permite fortalecer el enfoque en **product thinking**, alineando necesidades del usuario con la solución tecnológica.
 
-**Tiempo:** **16 semanas** totales:  
-- Semanas 1–6: cursos y prácticas guiadas.  
-- Semanas 7–12: documentación C4/DDD integrada al repo.  
-- Semanas 13–16: CI/CD y aumento de cobertura de tests.
+**Tiempo:** **10 semanas**:  
+- Semanas 1–3: User Personas y User Stories.  
+- Semanas 4–6: Impact Mapping y validación.  
+- Semanas 7–10: Product Backlog y ajustes finales.
 
+---
 
+### Objetivo 3
+**Específico:** Mejorar competencias técnicas en **modelado y documentación de software**, utilizando herramientas profesionales para representar arquitectura y diseño del sistema.
+
+**Medible:**  
+- Crear **diagramas de componentes** para mínimo 2 bounded contexts.  
+- Generar **diagramas UML de clases del dominio** alineados al código backend.  
+- Elaborar **diagramas de base de datos (ERD)** consistentes con la implementación.  
+- Mantener documentación clara y organizada en el repositorio del proyecto.
+
+**Alcanzable:** Uso de herramientas como **PlantUML, Structurizr y Markdown**, con práctica continua durante el desarrollo del proyecto.
+
+**Relevante:** Refuerza habilidades esenciales para roles como **Backend Developer o Software Architect**, mejorando la capacidad de comunicar soluciones técnicas.
+
+**Tiempo:** **12 semanas**, en paralelo con el desarrollo del proyecto.
 ---
 
 ### Miembro 3: []
