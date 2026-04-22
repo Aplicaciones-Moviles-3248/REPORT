@@ -1032,7 +1032,68 @@ Además, el análisis permite identificar una oportunidad clara en contextos don
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
-A partir del análisis competitivo realizado, se han definido estrategias y tácticas orientadas a posicionar a Courtly frente a aplicaciones móviles como Playtomic, MATCHi y RacketPal, respondiendo directamente a sus fortalezas, debilidades, oportunidades y amenazas.
+En esta sección se presenta el trabajo realizado durante la sesión de Big Picture Event Storming, enfocada en comprender el dominio general del negocio. Para ello se utilizaron post-its en LucidChart para mapear los eventos significativos que ocurren en el flujo operativo. A través de este proceso, se nos permitió identificar procesos clave, actores involucrados, relaciones entre eventos y oportunidades de mejora para el desarrollo de nuestra solución.
+
+Para este proceso se siguieron los siguientes Steps (Pasos):
+
+1. **Preparing the room:** Se organizó una reunión con los miembros del equipo a través de Discord.
+
+![EventStorming-Step1](./assets/chapter2/EventStorming-Step1.png)
+
+2. **Energizing the audience:** Se realizó una breve dinámica inicial para incentivar la participación activa de todos los miembros del equipo.
+
+![EventStorming-Step2](./assets/chapter2/EventStorming-Step2.png)
+
+3. **Briefing and presenting the plan:** Se explicó la dinámica de Event Storming y se presentó la agenda de la sesión para identificar los eventos claves y comprender el flujo del negocio de nuestra solución.
+
+![EventStorming-Step3](./assets/chapter2/EventStorming-Step3.png)
+
+4. **Generating Domain Events:** Se identificó y registró los eventos más importantes del dominio en una lluvia de ideas. Estos eventos permitieron visualizar de manera general las acciones más relevantes que forman parte de la experiencia actual de los usuarios.
+
+![EventStorming-Step4](./assets/chapter2/EventStorming-Step4.png)
+
+5. **Sorting Domain Events:** Los eventos identificados en el paso anterior fueron ordenados cronológicamente, desde el inicio hasta el final del flujo. Esto permitió comprender mejor cómo se desarrolla el proceso, identificando la secuencia natural de acciones que siguen nuestros usuarios.
+
+![EventStorming-Step5](./assets/chapter2/EventStorming-Step5.png)
+
+6. **Adding Actors and External Systems:** Se incorporaron los actores principales y sistemas externos que intervienen en el proceso. Se identifican actores como los deportistas aficionados, entrenadores independientes y administradores de canchas deportivas. Así mismo, se reconocieron medios externos como WhatsApp, llamadas telefónicas, redes sociales y transferencias bancarias o en efectivo. De esta manera, entendimos mejor quién y que herramientas participan en cada parte del flujo.
+
+![EventStorming-Step6](./assets/chapter2/EventStorming-Step6.png)
+
+7. **Storytelling:** Con los eventos y actores organizados, el equipo construyó una historia del proceso para explicar de forma sencilla cómo se desarrolla la experiencia del flujo de la aplicación.
+
+![EventStorming-Step7](./assets/chapter2/EventStorming-Step7.png)
+
+8. **Reverse storytelling:** Del mismo modo que el paso anterior, se realizó una revisión en sentido inverso para validar la coherencia de los eventos y comprobar que el proceso tuviera lógica de principio a fin. Con esto, garantizamos que cada evento estaba correctamente conectado con el anterior y el siguiente, además de detectar posibles vacíos, repeticiones o pasos innecesarios; identificar problemas y oportunidades de mejora.
+
+![EventStorming-Step8](./assets/chapter2/EventStorming-Step8.png)
+
+9. **Closing:** Finalmente, el equipo cerró la sesión resumiendo los hallazgos más importantes, demostrando haber comprendido el flujo de trabajo de la solución. Con nuestro análisis, logramos evidenciar los problemas como la desorganización en la coordinación, dependencia de canales informales y falta de información centralizada. Por lo que nuestra solución, responde a estas necesidades, reduciendo la complejidad del proceso y mejorando la experiencia de los usuarios.
+
+![EventStorming-Step9](./assets/chapter2/EventStorming-Step9.png)
+
+### 2.3.6. Ubiquitous Language
+
+1. **Player (Deportista):** Usuario que participa en partidos o actividades deportivas de forma recreativa o amateur.
+2. **Coach (Entrenador):** Profesional independiente que ofrece servicios de entrenamiento o clases deportivas a usuarios.
+3. **Court (Cancha):** Espacio deportivo destinado a la práctica de un deporte específico, como fútbol, básquet, voley, etc.
+4. **Court Availability (Disponibilidad de cancha):** Estado que indica si una cancha deportiva se encuentra disponible en el horario seleccionado.
+5. **Booking (Reserva):** Acción de asegurar el uso de un espacio deportivo en una fecha y horario determinado.
+6. **Match (Partido):** Actividad deportiva que ocurre después de coordinar participantes y confirmar una reserva.
+7. **Training Session (Sesión de entrenamiento):** Actividad organizada entre un coach y uno o más usuarios, que se lleva a cabo luego de coordinar horario, cancha y participantes.
+8. **Schedule (Horario):** Estructura de tiempos organizados que define la disponibilidad o programación de actividades deportivas.
+9. **Time Slot (Bloque de tiempo):** Intervalo específico de tiempo en el que se puede realizar una reserva o actividad.
+10. **Payment (Pago):** Transacción económica realizada para el uso de una cancha o la contratación de un servicio deportivo.
+11. **Confirmation (Confirmación):** Validación de que una reserva, pago o sesión ha sido aceptada y registrada correctamente.
+12. **Cancellation (Cancelación):** Evento que ocurre cuando una reserva o sesión previamente coordinada es anulada antes de su ejecución.
+13. **Participant (Participante):** Persona que forma parte de un partido, entrenamiento u otra actividad deportiva.
+14. **Owner (Administrador / Propietario):** Persona responsable de la gestión de una o más canchas, incluyendo su disponibilidad y reservas.
+15. **Profile (Perfil):** Información relevante que representa a un usuario dentro de la plataforma.
+16. **Location (Ubicación):** Lugar donde se encuentra la cancha seleccionada para la realización de la actividad deportiva.
+17. **Review (Reseña):** Evaluación u opinión que un usuario deja sobre una cancha, entrenador o experiencia.
+18. **Visibility (Visibilidad):** Nivel de exposición que tiene un entrenador o una cancha frente a otros usuarios.
+19. **Sports Activity (Actividad deportiva):** Representa la práctica del deporte, como partidos o entrenamientos.
+20. **Notification (Notificación):** Mensajes enviados automáticamente para informar sobre eventos confirmados, cancelados o modificados.
 
 ---
 
@@ -1080,6 +1141,1291 @@ Se incentivará el feedback después de cada reserva, generando una base de conf
 
 Se establecerán alianzas con complejos deportivos para competir con la amplia oferta de apps como Playtomic, incrementando la disponibilidad de canchas en la plataforma.
 
+### 2.6.2. Bounded Context: Payments (Pagos)
+
+#### 2.6.2.1. Domain Layer
+
+**Entities / Aggregates**
+
+```
+Payment (Pago - Aggregate Root)
+├── paymentId: int → Identificador único de pago
+├── amount: Decimal → Cantidad transferida en el pago
+├── user: User → Usuario a realizar la transferencia
+├── paymentStatus: PaymentStatus → Descripción de la cancha
+├── createdAt: DateTime → Fecha de creación
+
+Métodos:
+├── createPayment(userId, amount) → Crea un nuevo pago
+├── complete() → Marca el pago como COMPLETED
+├── fail() → Marca el pago como FAILED
+├── cancel() → Marca el pago como CANCELLED
+├── getPaymentById(paymentId) → Obtiene un pago realizado por su identificador
+```
+
+**Value Objects**
+
+```
+PaymentStatus
+├── pending: PENDING -> Pago Pendiente (estado inicial)
+├── completed: COMPLETED -> Pago completado
+├── failed: FAILED → Pago fallido
+├── cancelled: CANCELLED → Pago cancelado
+```
+
+**Domain Events**
+
+```
+PaymentCreated(paymentId, userId, amount, createdAt)
+PaymentCompleted(paymentId, status)
+PaymentFailed(paymentId, status)
+PaymentCancelled(paymentId, status)
+```
+---
+
+#### 2.6.2.2. Interface Layer
+
+**REST Controllers**
+
+```
+PaymentController
+├── POST /api/v1/payments → Crear nuevo pago
+│   Request: CreatePaymentDTO
+│   Response: PaymentResponseDTO
+│
+└── GET /api/v1/payments/{paymentId} → Obtener pago por identificador
+    Response: PaymentResponseDTO
+```
+
+**DTOs (Data Transfer Objects)**
+
+```
+CreatePaymentDTO
+├── userId: Long
+└── amount: BigDecimal
+
+PaymentResponseDTO
+├── paymentId: Long
+├── amount: BigDecimal
+├── paymentDate: DateTime
+├── status: PaymentStatus
+└── user: UserSummaryDTO
+
+UserSummaryDTO
+├── userId: Long
+└── name: String
+```
+
+---
+
+#### 2.6.2.3. Application Layer
+
+**Command Handlers**
+
+```
+CreatePaymentCommandHandler
+├── Input: CreatePaymentCommand (userId, amount)
+├── Validaciones:
+│   ├── Verificar que el usuario existe
+│   ├── Validar que el monto es mayor a 0
+│   └── Validar que el monto no sea nulo
+├── Proceso:
+│   ├── Obtener UserProfile
+│   ├── Crear Payment (estado inicial PENDING)
+│   └── Persistir Payment
+└── Output: PaymentCreatedEvent
+
+
+CompletePaymentCommandHandler
+├── Input: CompletePaymentCommand (paymentId)
+├── Validaciones:
+│   ├── Verificar que el pago existe
+│   ├── Verificar que el estado es PENDING
+│   └── Validar que no esté CANCELLED o FAILED
+├── Proceso:
+│   ├── Obtener Payment
+│   ├── Ejecutar payment.complete()
+│   └── Persistir cambios
+└── Output: PaymentCompletedEvent
+
+
+FailPaymentCommandHandler
+├── Input: FailPaymentCommand (paymentId)
+├── Validaciones:
+│   ├── Verificar que el pago existe
+│   ├── Verificar que el estado es PENDING
+│   └── Validar que no esté COMPLETED
+├── Proceso:
+│   ├── Obtener Payment
+│   ├── Ejecutar payment.fail()
+│   └── Persistir cambios
+└── Output: PaymentFailedEvent
+
+
+CancelPaymentCommandHandler
+├── Input: CancelPaymentCommand (paymentId)
+├── Validaciones:
+│   ├── Verificar que el pago existe
+│   ├── Verificar que no esté COMPLETED
+│   └── Validar reglas de cancelación
+├── Proceso:
+│   ├── Obtener Payment
+│   ├── Ejecutar payment.cancel()
+│   └── Persistir cambios
+└── Output: PaymentCancelledEvent
+```
+
+**Event Handlers**
+
+```
+OnPaymentCreatedHandler
+├── Escucha: PaymentCreatedEvent
+└── Acciones:
+    ├── Registrar el pago en el sistema
+    ├── Preparar información para frontend
+    └── Inicializar estado del pago
+
+
+OnPaymentCompletedHandler
+├── Escucha: PaymentCompletedEvent
+└── Acciones:
+    ├── Notificar confirmación de pago al usuario
+    ├── Actualizar estado visible en frontend
+    └── Registrar operación como completada
+
+
+OnPaymentFailedHandler
+├── Escucha: PaymentFailedEvent
+└── Acciones:
+    ├── Notificar fallo al usuario
+    ├── Registrar intento fallido
+    └── Permitir reintento de pago
+
+
+OnPaymentCancelledHandler
+├── Escucha: PaymentCancelledEvent
+└── Acciones:
+    ├── Notificar cancelación al usuario
+    ├── Liberar recursos asociados (si aplica)
+    └── Registrar cancelación
+```
+
+---
+
+#### 2.6.2.4. Infrastructure Layer
+
+**Repositories**
+
+```
+PaymentRepository
+├── save(payment: Payment) → void
+├── findById(paymentId: Long) → Payment
+├── findByUserId(userId: Long) → List<Payment>
+├── update(payment: Payment) → void
+└── delete(paymentId: Long) → void
+```
+
+**Adapters**
+
+```
+PaymentNotificationAdapter
+├── sendPaymentConfirmation(user, payment) → void
+├── sendPaymentFailureNotification(user, payment) → void
+└── sendPaymentCancellationNotification(user, payment) → void
+```
+
+**Persistencia**
+
+```
+Tabla: payments
+├── payment_id (PK, BIGINT, AUTO_INCREMENT)
+├── user_id (FK → users.user_id)
+├── amount (DECIMAL(10,2), NOT NULL)
+├── status (ENUM: PENDING, COMPLETED, FAILED, CANCELLED)
+├── created_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP)
+└── INDEX (user_id, status)
+```
+
+---
+
+#### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Descripción:**
+
+El diagrama de componentes para el Payments Context presenta la descomposición del contenedor en componentes responsables de la gestión del ciclo de vida de los pagos. Estos componentes coordinan la creación, validación, procesamiento y notificación de eventos relacionados con los pagos:
+
+**Componentes Principales:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Payments Container                       │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Payment Management Component                        │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Crear pagos (estado inicial PENDING)               │   │
+│  │ • Gestionar estados de pago                          │   │
+│  │ • Validar reglas de negocio                          │   │
+│  │ • Generar eventos de dominio                         │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Payment Application Service Component               │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Orquestar casos de uso                             │   │
+│  │ • Ejecutar Command Handlers                          │   │
+│  │ • Coordinar flujo entre capas                        │   │
+│  │ • Manejar validaciones a nivel aplicación            │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Payment Event Handling Component                    │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Escuchar eventos de dominio                        │   │
+│  │ • Ejecutar acciones post-evento                      │   │
+│  │ • Gestionar notificaciones                           │   │
+│  │ • Preparar integración futura                        │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Payment API Component                               │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Exponer endpoints REST                             │   │
+│  │ • Recibir requests del frontend                      │   │
+│  │ • Transformar DTOs                                   │   │
+│  │ • Delegar a Application Layer                        │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Repository & Data Access Component                  │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • PaymentRepository                                  │   │
+│  │ • Persistencia de pagos                              │   │
+│  │ • Consultas por ID y usuario                         │   │
+│  │ • Manejo de acceso a base de datos                   │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │  Notification Adapter Component                      │   │
+│  ├──────────────────────────────────────────────────────┤   │
+│  │ • Enviar confirmaciones de pago                      │   │
+│  │ • Notificar fallos o cancelaciones                   │   │
+│  │ • Integración con servicios externos (email/app)     │   │
+│  └──────────────────────────────────────────────────────┘   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+         ↓                         ↓
+   ┌──────────────┐      ┌────────────────────┐
+   │    SQLite    │      │ Notification System│
+   │  (Payments)  │      │   (Email / Push)   │
+   └──────────────┘      └────────────────────┘
+```
+
+**Relaciones entre Componentes:**
+
+- **Court Management ↔ Availability & Scheduling:** Court Management actualiza Availability cuando se publica una cancha.
+- **Pricing & Commerce → Repository:** Persiste cambios de precios en la base de datos.
+- **Availability & Scheduling → Search & Discovery:** Notifica cambios de disponibilidad para actualizar índices.
+- **Notification ← Todos:** Se suscribe a eventos de todos los componentes para enviar notificaciones.
+- **Repository → Data Store:** Accede y persiste toda la información en SQLite.
+- **Search & Discovery ↔ Elasticsearch:** Mantiene sincronizado el índice de búsqueda.
+
+---
+
+#### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+**Diagrama UML de Clases - Payments Domain Layer**
+
+```
+┌────────────────────────────────────────┐
+│              <<Aggregate>>             │
+│                 Payment                │
+├────────────────────────────────────────┤
+│ - paymentId: Long                      │
+│ - amount: Decimal                      │
+│ - user: User                           │
+│ - paymentStatus: PaymentStatus         │
+│ - createdAt: DateTime                  │
+├────────────────────────────────────────┤
+│ + createPayment(user, amount): Payment │
+│ + complete(): void                     │
+│ + fail(): void                         │
+│ + cancel(): void                       │
+└──────────────┬─────────────────────────┘
+               │
+               │ uses
+               ▼
+     ┌─────────────────────────────┐
+     │     <<ValueObject>>         │
+     │     PaymentStatus           │
+     ├─────────────────────────────┤
+     │ PENDING                     │
+     │ COMPLETED                   │
+     │ FAILED                      │
+     │ CANCELLED                   │
+     └─────────────────────────────┘
+
+
+┌─────────────────────────────┐
+│   <<Interface>>             │
+│   PaymentRepository         │
+├─────────────────────────────┤
+│ + save(p: Payment): void    │
+│ + findById(id): Payment     │
+│ + findByUserId(id): List    │
+│ + update(p: Payment): void  │
+│ + delete(id): void          │
+└──────────────▲──────────────┘
+               │ implements
+               │
+     ┌─────────┴──────────────────┐
+     │                            
+┌────▼───────────────────────────┐
+│ PaymentRepositoryImpl          │
+├────────────────────────────────┤
+│ - db: Database                 │
+├────────────────────────────────┤
+│ + save(p): void                │
+│ + findById(id): Payment        │
+│ + update(p): void              │
+│ + delete(id): void             │
+└────────────────────────────────┘
+
+
+┌─────────────────────────────┐
+│   <<DomainEvent>>           │
+│   PaymentCreated            │
+├─────────────────────────────┤
+│ - paymentId: Long           │
+│ - userId: Long              │
+│ - amount: Decimal           │
+│ - createdAt: DateTime       │
+│ - occurredOn: DateTime      │
+└─────────────────────────────┘
+
+┌─────────────────────────────┐
+│   <<DomainEvent>>           │
+│   PaymentCompleted          │
+├─────────────────────────────┤
+│ - paymentId: Long           │
+│ - status: PaymentStatus     │
+│ - occurredOn: DateTime      │
+└─────────────────────────────┘
+
+┌─────────────────────────────┐
+│   <<DomainEvent>>           │
+│   PaymentFailed             │
+├─────────────────────────────┤
+│ - paymentId: Long           │
+│ - status: PaymentStatus     │
+│ - occurredOn: DateTime      │
+└─────────────────────────────┘
+
+┌─────────────────────────────┐
+│   <<DomainEvent>>           │
+│   PaymentCancelled          │
+├─────────────────────────────┤
+│ - paymentId: Long           │
+│ - status: PaymentStatus     │
+│ - occurredOn: DateTime      │
+└─────────────────────────────┘
+
+Relaciones:
+- Payment *──────── 1 PaymentStatus (uses)
+- PaymentRepository ◄────────────── Payment (manages)
+- PaymentRepositoryImpl ───────────► PaymentRepository (implements)
+- Payment ───────────► PaymentCreated (generates)
+- Payment ───────────► PaymentCompleted (generates)
+- Payment ───────────► PaymentFailed (generates)
+- Payment ───────────► PaymentCancelled (generates)
+- Payment *──────── 1 User (associated with)
+```
+
+---
+
+##### 2.6.2.6.2. Bounded Context Database Design Diagram
+
+**Entity Relationship Diagram (ERD) - Payments**
+
+```
+┌───────────────────────────────┐
+│            users              │
+├───────────────────────────────┤
+│ PK user_id (BIGINT)           │
+│ name (VARCHAR(255), NOT NULL) │
+│ email (VARCHAR(255), UNIQUE)  │
+│ created_at (TIMESTAMP)        │
+└───────────────┬───────────────┘
+                │ FK (user_id)
+                │
+┌───────────────▼──────────────────────────┐
+│               payments                   │
+├──────────────────────────────────────────┤
+│ PK payment_id (BIGINT, AUTO_INCREMENT)   │
+│ FK user_id (BIGINT, NOT NULL)            │
+│ amount (DECIMAL(10,2), NOT NULL)         │
+│ status (ENUM: PENDING, COMPLETED,        │
+│         FAILED, CANCELLED)               │
+│ created_at (TIMESTAMP, DEFAULT CURRENT)  │
+│                                          │
+│ CONSTRAINT fk_user_payment               │
+│   FOREIGN KEY (user_id)                  │
+│   REFERENCES users(user_id)              │
+│                                          │
+│ INDEX idx_user (user_id)                 │
+│ INDEX idx_status (status)                │
+└──────────────────────────────────────────┘
+
+Relaciones:
+- users (1) ──── (*) payments
+```
+
+---
+
+### 2.6.9. Bounded Context: Matches (Partidos)
+
+El bounded context **Matches** representa la gestión de partidos dentro del sistema. Su propósito es permitir que un usuario funcional del negocio registre, gestione, y participe en partidos.
+
+#### 2.6.9.1. Domain Layer
+
+La capa de dominio del bounded context **Matches** contiene las clases que modelan el núcleo de los partidos organizados dentro de la plataforma, así como las reglas de negocio asociadas a su creación, gestión y participación.
+
+**a. Entity / Aggregate Root:**
+
+**Nombre de la clase:** `Match`
+
+**Paquete:** `com.upc.courtly.matches.domain.model.aggregates`
+
+**Propósito:**
+Representa la entidad principal del bounded context Bookings. Modela una reserva de cancha realizada por un usuario en un intervalo de tiempo específico y constituye el agregado raíz del contexto.
+
+**Atributos:**
+
+- `matchId: Long` → Identificador único del partido
+- `title: String` → Nombre o título del partido
+- `description: String` → Descripción del encuentro
+- `dateTime: DateTime` → Fecha y hora del partido
+- `status: MatchStatus` → Estado del partido
+- `maxPlayers:` int → Número máximo de jugadores
+- `currentPlayers:` int → Número actual de jugadores
+- `court: Court` → Cancha donde se realizará el partido
+- `createdBy: UserProfile` → Usuario que creó el partido
+- `createdAt: DateTime` → Fecha de creación
+
+**Métodos:**
+
+- `createMatch(title, description, dateTime, maxPlayers, court, createdBy)` → Crea un nuevo partido en estado OPEN.
+- `updateMatch(title, description, dateTime, maxPlayers)` → Permite actualizar la información del partido.
+- `cancelMatch()` → Cambia el estado del partido a CANCELLED.
+- `completeMatch()` → Marca el partido como COMPLETED.
+
+**Relaciones:**
+
+- Un Match pertenece a una sola Court.
+- Un Match pertenece a un solo UserProfile (creador).
+- Un Court puede tener múltiples partidos asociados.
+- Un usuario puede crear múltiples partidos.
+
+**b. Referencias externas del dominio:**
+
+Dentro del contexto Matches se utilizan entidades provenientes de otros bounded contexts:
+
+**Court**
+- Origen: `Court & Venue Management`
+- Propósito: Representa la cancha donde se jugará el partido.
+- Atributos relevantes:
+  - `id`
+  - `name`
+
+**UserProfile**
+- Origen: `Users`
+- Propósito: Representa al usuario que crea el partido.
+- Atributos relevantes:
+  - `id`
+  - `name`
+
+**c. Value Objects:**
+
+`MatchStatus`
+
+Representa el estado del partido dentro del sistema.
+
+- `OPEN` → Partido abierto para unirse
+- `FULL` → Partido completo (sin cupos disponibles)
+- `CANCELLED` → Partido cancelado
+- `COMPLETED` → Partido finalizado
+
+**d. Commands del dominio:**
+
+`CreateMatchCommand`
+
+**Paquete:** `com.upc.courtly.matches.domain.model.commands`
+
+**Propósito:** Representa la intención de crear un nuevo partido.
+
+**Atributos:**
+
+- `title: String`
+- `description: String`
+- `dateTime: DateTime`
+- `maxPlayers: int`
+- `courtId: Long`
+- `createdById: Long`
+
+`UpdateMatchCommand`
+
+**Paquete:** `com.upc.courtly.matches.domain.model.commands`
+
+**Propósito:** Actualizar un partido existente.
+
+**Atributos:**
+
+- `matchId: Long`
+- `title: String`
+- `description: String`
+- `dateTime: DateTime`
+- `maxPlayers: int`
+
+`DeleteMatchCommand`
+
+**Paquete:** `com.upc.courtly.matches.domain.model.commands`
+
+**Propósito:** Eliminar un partido.
+
+**Atributos:**
+
+- `matchId: Long`
+
+
+**e. Queries del dominio:**
+
+`GetAllMatchesQuery`
+
+**Paquete:** `com.upc.courtly.matches.domain.model.queries`
+
+**Propósito:** Obtener todos los partidos.
+
+**Atributos:**
+
+- `matchId: Long`
+
+**f. Domain Services:**
+
+`MatchCommandService`
+
+**Paquete:** `com.upc.courtly.matches.domain.services`
+
+**Propósito:** Define las operaciones de escritura sobre el agregado Match.
+
+- `handle(CreateMatchCommand)`
+- `handle(UpdateMatchCommand)`
+- `handle(DeleteMatchCommand)`
+
+`MatchQueryService`
+
+**Propósito:** Define las operaciones de lectura.
+
+- `handle(GetAllMatchesQuery)`
+- `handle(GetMatchByIdQuery)`
+
+
+**g. Repository:**
+
+`MatchRepository`
+
+**Paquete:** com.upc.courtly.matches.infrastructure.persistence.jpa.repositories
+
+**Propósito:** Permite acceder a la persistencia de partidos.
+
+- `save(Match)`
+- `findById(Long)`
+- `findAll()`
+- `deleteById(Long)`
+
+
+**h. Reglas de negocio identificadas:**
+
+**Reglas implementadas actualmente:**
+- Un partido debe estar asociado a una cancha válida
+- Un partido debe tener un creador (UserProfile)
+- Un partido tiene un estado inicial OPEN
+- Se permite CRUD completo sobre partidos
+
+**Reglas de negocio no implementadas (oportunidades de mejora):**
+- Validar que currentPlayers <= maxPlayers.
+- Cambiar automáticamente el estado a FULL cuando se alcanza el límite.
+- Evitar crear partidos en fechas pasadas.
+- Validar conflictos de horario en la misma cancha.
+- Implementar una tabla de participantes.
+- Gestionar la inscripción de jugadores al partido.
+
+---
+
+#### 2.6.9.2. Interface Layer
+
+La Interface Layer del bounded context `Matches` contiene las clases responsables de exponer las funcionalidades relacionadas a los partidos organizados mediante endpoints REST, así como de transformar la información entre el dominio y los recursos consumidos por el frontend móvil.
+
+Esta capa actúa como punto de entrada al sistema, permitiendo que los usuarios creen, consulten, actualicen y eliminen partidos, además de visualizar información relevante como la cancha y los cupos disponibles.
+
+**a. MatchesController:**
+
+**Paquete:** `com.upc.courtly.matches.interfaces.rest`
+
+**Propósito:** Exponer los endpoints HTTP para la gestión de partidos. Funciona como punto de entrada para el frontend (por ejemplo, el feed de partidos abiertos o el formulario de creación).
+
+**Dependencias:**
+- `MatchCommandService`
+- `MatchQueryService`
+
+**Endpoints expuestos:**
+- `POST /api/v1/matches` → crear partido
+- `GET /api/v1/matches` → listar partidos
+- `GET /api/v1/matches/{id}` → obtener partido por id
+- `PUT /api/v1/matches/{id}` → actualizar partido
+- `DELETE /api/v1/matches/{id}` → eliminar partido
+
+**b. Resources / DTOs:**
+
+`MatchResource`
+
+**Paquete:** `com.upc.courtly.matches.interfaces.rest.resources`
+
+**Propósito:** Representar la información de un partido que será enviada al frontend.
+
+**Atributos:**
+
+- `matchId`  
+- `title` 
+- `description`
+- `dateTime`  
+- `status`  
+- `maxPlayers`  
+- `currentPlayers`  
+- `court: CourtSummaryResource`  
+- `createdBy: UserSummaryResource`  
+
+**Estructuras internas resumidas:**
+
+- `CourtSummaryResource(Long id, String name)`
+- `UserSummaryResource(Long id, String name)`
+
+`CreateMatchResource`
+
+**Propósito:** Representar los datos necesarios para crear un nuevo partido.
+
+**Atributos:**
+
+- `title`
+- `description`
+- `dateTime`
+- `maxPlayers`
+- `courtId`
+- `createdById`
+
+`UpdateMatchResource`
+
+**Propósito:** Representar los datos necesarios para actualizar un partido existente.
+
+**Atributos:**
+
+- `title`
+- `description`
+- `dateTime`
+- `maxPlayers`
+
+**c. Assemblers:**
+
+`MatchResourceFromEntityAssembler`
+
+**Paquete:** `com.upc.courtly.matches.interfaces.rest.transform`
+
+**Propósito:** Transformar una entidad `Match` del dominio en un `MatchResource` listo para el frontend. Además, resume las relaciones con `Court` y `UserProfile`, mostrando únicamente id y name.
+
+`CreateMatchCommandFromResourceAssembler`
+
+**Propósito:** Convertir un `CreateMatchResource` en un `CreateMatchCommand`.
+
+`UpdateMatchCommandFromResourceAssembler`
+
+Propósito: Transformar un `UpdateMatchResource`, junto con el `matchId`, en un `UpdateMatchCommand`.
+
+---
+
+#### 2.6.9.3. Application Layer
+
+La Application Layer del bounded context `Matches` coordina los flujos de proceso relacionados a la gestión de partidos organizados. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y la infraestructura de persistencia.
+
+**Capacidades principales del contexto:**
+- Crear un partido
+- Actualizar un partido
+- Eliminar un partido
+- Obtener un partido por id
+- Listar partidos disponibles
+
+**a. Command Handlers / Command Services:**
+
+`MatchCommandServiceImpl`
+
+**Paquete:** `com.upc.courtly.matches.application.internal.commandservices`
+
+**Propósito:** Implementar el contrato MatchCommandService y ejecutar los casos de uso de escritura del contexto Matches.
+
+**Dependencias:**
+- `MatchRepository`
+- `CourtRepository`
+- `UserProfileRepository`
+
+**Operaciones que maneja:**
+
+`handle(CreateMatchCommand command)`
+- Valida que la cancha (`courtId`) exista.
+- Valida que el usuario creador (`createdById`) exista.
+- Crea una nueva entidad `Match`.
+- Inicializa `currentPlayers` en 1 (creador).
+- Establece el estado inicial como `OPEN`.
+- Persiste el partido en base de datos.
+- Retorna el partido creado.
+
+`handle(UpdateMatchCommand command)`
+- Busca el partido por matchId.
+- Actualiza `title`, `description`, `dateTime` y `maxPlayers`.
+- Guarda los cambios en el repositorio.
+- Retorna el partido actualizado.
+
+`handle(DeleteMatchCommand command)`
+- Verifica si el partido existe.
+- Elimina el partido por `matchId`.
+- Lanza excepción si no existe.
+
+
+**b. Query Handlers / Query Services:**
+
+`MatchQueryServiceImpl`
+
+**Paquete:** `com.upc.courtly.matches.application.internal.queryservices`
+
+**Propósito:** Implementar el contrato `MatchQueryService` y ejecutar los casos de uso de lectura del contexto `Matches`.
+
+**Dependencia:**
+- `MatchRepository`
+
+**Operaciones que maneja:**
+
+`handle(GetAllMatchesQuery query)`
+- Recupera todos los partidos mediante `findAll()`
+- Puede filtrar por estado (`OPEN`, `FULL`, etc.)
+- Devuelve una lista de `Match`
+
+`handle(GetMatchByIdQuery query)`
+- Busca un partido específico por `matchId`
+- Devuelve un `Optional<Match>`
+
+**c. Flujos principales del negocio:**
+
+**Flujo de creación de partido:**
+- El frontend envía un `CreateMatchResource`.
+- La capa de interfaz lo transforma en `CreateMatchCommand`.
+- `MatchCommandServiceImpl` valida la cancha y el usuario.
+- Se crea una instancia de `Match`.
+- Se inicializa el estado en `OPEN`.
+- El partido se persiste mediante `MatchRepository`.
+- El resultado se transforma en `MatchResource`.
+- Se retorna al cliente.
+
+**Flujo de actualización:**
+- El frontend envía un `UpdateMatchResource`.
+- Se transforma en `UpdateMatchCommand`.
+- `MatchCommandServiceImpl` recupera el partido.
+- Se actualizan los datos del partido.
+- Se guarda la modificación.
+- Se retorna el partido actualizado.
+
+**Flujo de consulta:**
+- El frontend solicita uno o varios partidos.
+- El controlador construye `GetAllMatchesQuery` o `GetMatchByIdQuery`.
+- `MatchQueryServiceImpl` consulta el repositorio.
+- Los resultados se transforman en `MatchResource`.
+- Se retorna la respuesta al cliente.
+
+**Flujo de eliminación:**
+- El frontend solicita eliminar un partido.
+- Se construye `DeleteMatchCommand`.
+- `MatchCommandServiceImpl` verifica la existencia.
+- Se elimina el partido del repositorio.
+- Se devuelve la confirmación.
+
+---
+
+#### 2.6.9.4. Infrastructure Layer
+
+La Infrastructure Layer del bounded context `Matches` contiene los componentes encargados del acceso a base de datos y de la persistencia de los partidos organizados. En esta capa se materializa el almacenamiento del agregado `Match` y se soportan las operaciones que ejecuta la aplicación.
+
+**a. Repositorio de persistencia:**
+
+`MatchRepository`
+
+**Paquete:** `com.upc.courtly.matches.infrastructure.persistence.jpa.repositories`
+
+**Propósito:** Gestionar la persistencia y recuperación de partidos utilizando Spring Data JPA. La implementación concreta es generada automáticamente por el framework al extender JpaRepository<Match, Long>.
+
+**Operaciones disponibles:**
+- `save`
+- `findById`
+- `findAll`
+- `deleteById`
+- `existsById`
+
+**Observación:**
+
+Actualmente no se identifican métodos personalizados como:
+
+- Búsqueda por estado (`findByStatus`)
+- Filtros por fecha (`findByDateTime`)
+- Búsqueda por cancha (`findByCourtId`)
+
+Esto limita la eficiencia del feed de partidos y las consultas específicas del frontend.
+
+
+**b. Persistencia de la entidad Match:**
+
+La entidad `Match` está mapeada como una entidad JPA con las siguientes características:
+
+- `@Entity`
+- `@Table(name = "matches")`
+- `@Id`
+- `@GeneratedValue(strategy = GenerationType.IDENTITY)`
+- Relaciones `@ManyToOne(fetch = FetchType.LAZY)` con `Court` y `UserProfile`
+- Atributo `createdAt` inicializado automáticamente
+
+
+**c. Diseño de persistencia:**
+
+**Tabla principal:** `matches`
+
+**Columnas:**
+- `match_id`
+- `title`
+- `description`
+- `date_time`
+- `status`
+- `max_players`
+- `current_players`
+- `court_id`
+- `created_by`
+- `created_at`
+
+**Restricciones y relaciones:**
+- `match_id` → Primary Key
+- `court_id` → Foreign Key hacia `courts.id`
+- `created_by` → Foreign Key hacia `user_profiles.id`
+
+**Campos obligatorios (NOT NULL):**
+
+- `title`
+- `date_time`
+- `status`
+- `max_players`
+- `court_id`
+- `created_by`
+- `created_at`
+
+
+**d. Integración con otros bounded contexts**
+
+La infraestructura del bounded context `Matches` depende de:
+- `CourtRepository` del bounded context `Courts`, para validar la existencia de la cancha.
+- `UserProfileRepository` del bounded context `Users`, para validar el creador del partido.
+
+---
+
+#### 2.6.9.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Descripción:**
+
+El Component Diagram del bounded context `Matches` representa la descomposición del contenedor backend encargado de gestionar los partidos organizados. Este container está compuesto por componentes para cubrir todo el flujo.
+
+**Componentes principales:**
+
+- **Matches REST API Component:** Expone los endpoints HTTP del bounded context mediante `MatchesController`.
+
+**Responsabilidades:**
+
+- Recibir solicitudes del frontend.
+- Delegar comandos y consultas.
+- Devolver respuestas estructuradas.
+
+- **Match Transformation Component:** Encargado de transformar los datos entre capas.
+
+**Incluye:**
+
+- `MatchResourceFromEntityAssembler`
+- `CreateMatchCommandFromResourceAssembler`
+- `UpdateMatchCommandFromResourceAssembler`
+- `MatchResource`, `CreateMatchResource`, `UpdateMatchResource`
+
+- **Match Command Processing Component:** Implementado por `MatchCommandServiceImpl`.
+
+**Responsabilidades:**
+
+- Crear partidos.
+- Actualizar partidos.
+- Eliminar partidos.
+- Validar existencia de `Court` y `UserProfile`.
+
+- **Match Query Processing Component:** Implementado por `MatchQueryServiceImpl`.
+
+**Responsabilidades:**
+
+- Obtener todos los partidos.
+- Obtener partido por `matchId`.
+- Soportar consultas del frontend (feed de partidos).
+
+- **Match Domain Component:** Representa el núcleo del dominio.
+
+**Incluye:**
+
+- `Match` (Aggregate Root)
+- `MatchStatus`
+- Métodos del dominio (creación y actualización del partido)
+
+- **Match Persistence Component:** Encapsula el acceso a base de datos mediante `MatchRepository`.
+
+**Responsabilidades:**
+
+- Persistir partidos
+- Recuperar información
+- Interactuar con Spring Data JPA / Hibernate
+
+- **External Context Access Component:** Representa la interacción con otros bounded contexts.
+
+**Incluye:**
+
+- `UserProfileRepository` (`Users`)
+- `CourtRepository` (`Courts`)
+
+**Responsabilidades:**
+
+- Validar referencias externas necesarias para crear un partido
+
+
+**Diagrama de Componentes:**
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                     Matches Container                        │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Matches REST API Component                             │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • MatchesController                                    │  │
+│  │ • Expone endpoints CRUD de partidos                    │  │
+│  │ • Recibe requests del frontend                         │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Match Transformation Component                         │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • MatchResourceFromEntityAssembler                     │  │
+│  │ • CreateMatchCommandFromResourceAssembler              │  │
+│  │ • UpdateMatchCommandFromResourceAssembler              │  │
+│  │ • MatchResource / CreateMatchResource / Update...      │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Match Command Processing Component                     │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • MatchCommandServiceImpl                              │  │
+│  │ • CreateMatchCommand                                   │  │
+│  │ • UpdateMatchCommand                                   │  │
+│  │ • DeleteMatchCommand                                   │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Match Query Processing Component                       │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • MatchQueryServiceImpl                                │  │
+│  │ • GetAllMatchesQuery                                   │  │
+│  │ • GetMatchByIdQuery                                    │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Match Domain Component                                 │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • Match (Aggregate Root)                               │  │
+│  │ • MatchStatus                                          │  │
+│  │ • updateMatch(...)                                     │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Match Persistence Component                            │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • MatchRepository                                      │  │
+│  │ • Spring Data JPA / Hibernate                          │  │
+│  │ • Persistencia en tabla matches                        │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ External Context Access Component                      │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • UserProfileRepository (Users)                        │  │
+│  │ • CourtRepository (Courts)                             │  │
+│  │ • Validación de referencias externas                   │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+          ↓                         ↓                        ↓
+   ┌──────────────┐         ┌──────────────┐         ┌─────────────────┐
+   │ user_profiles│         │    courts    │         │     matches     │
+   │ (Users BC)   │         │ (Courts BC)  │         │   (DB Table)    │
+   └──────────────┘         └──────────────┘         └─────────────────┘
+```
+
+**Relaciones entre componentes:**
+
+- **Matches REST API Component → Match Transformation Component:**
+Transforma datos entre resources, commands y entidades.
+
+- **Matches REST API Component → Match Command Processing Component:**
+Ejecuta operaciones de creación, actualización y eliminación.
+
+- **Matches REST API Component → Match Query Processing Component:**
+Ejecuta operaciones de consulta.
+
+- **Match Command Processing Component → External Context Access Component:**
+Valida la existencia de la cancha y del usuario.
+
+- **Match Command Processing Component → Match Domain Component:**
+Construye o modifica el agregado `Match`.
+
+- **Match Command Processing Component → Match Persistence Component:**
+Persiste los cambios.
+
+- **Match Query Processing Component → Match Persistence Component:**
+Recupera datos desde la base de datos.
+
+- **Match Persistence Component → matches:**
+Gestiona la persistencia en la tabla.
+
+- **External Context Access Component → user_profiles / courts:**
+Consulta otros bounded contexts para validar relaciones.
+
+---
+
+#### 2.6.9.6. Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se presentan los diagramas a nivel de código del bounded context Matches, permitiendo entender cómo está construido internamente el dominio y cómo se estructura la persistencia.
+
+##### 2.6.9.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases del Domain Layer del bounded context `Matches` muestra al agregado principal `Match`, que representa un partido organizado dentro del sistema.
+Este agregado se relaciona con entidades externas como `Court` y `UserProfile`, y encapsula la información clave del partido como cupos, estado y programación.
+
+Además, se incluyen:
+
+- `MatchStatus` como Value Object (enum).
+- Comandos y queries para operaciones del sistema.
+- Servicios del dominio para manejar la lógica.
+
+**Diagrama UML de Clases (Domain Layer):**
+
+```
+┌──────────────────────────────────────────────────────┐
+│                   <<Aggregate Root>>                 │
+│                         Match                        │
+├──────────────────────────────────────────────────────┤
+│ - matchId: int                                       │
+│ - title: String                                      │
+│ - description: String                                │
+│ - dateTime: DateTime                                 │
+│ - status: MatchStatus                                │
+│ - maxPlayers: int                                    │
+│ - currentPlayers: int                                │
+│ - court: Court                                       │
+│ - createdBy: UserProfile                             │
+│ - createdAt: DateTime                                │
+├──────────────────────────────────────────────────────┤
+│ + createMatch(title, desc, dt, max, courtId, userId) │
+│ + updateMatch(title, desc, dt, maxPlayers)           │
+│ + deleteMatch()                                      │
+│ + isFull(): boolean                                  │
+│ + onCreate(): void                                   │
+└──────────────────────────────────────────────────────┘
+                  │
+                  │ many-to-one
+        ┌─────────┴─────────┐
+        ▼                   ▼
+┌──────────────────┐   ┌────────────────────┐
+│      Court       │   │    UserProfile     │
+├──────────────────┤   ├────────────────────┤
+│ + id: int        │   │ + id: int          │
+│ + name: String   │   │ + name: String     │
+└──────────────────┘   └────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│         <<Value Object>>                   │
+│           MatchStatus                      │
+├────────────────────────────────────────────┤
+│ + OPEN                                     │
+│ + FULL                                     │
+│ + CANCELLED                                │
+│ + COMPLETED                                │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│         MatchCommandService                │
+├────────────────────────────────────────────┤
+│ + handle(CreateMatchCommand): Optional     │
+│ + handle(UpdateMatchCommand): Optional     │
+│ + handle(DeleteMatchCommand): void         │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│         MatchQueryService                  │
+├────────────────────────────────────────────┤
+│ + handle(GetAllMatchesQuery): List         │
+│ + handle(GetMatchByIdQuery): Optional      │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│           CreateMatchCommand               │
+├────────────────────────────────────────────┤
+│ + title: String                            │
+│ + description: String                      │
+│ + dateTime: DateTime                       │
+│ + maxPlayers: int                          │
+│ + courtId: int                             │
+│ + createdById: int                         │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│           UpdateMatchCommand               │
+├────────────────────────────────────────────┤
+│ + matchId: int                             │
+│ + title: String                            │
+│ + description: String                      │
+│ + dateTime: DateTime                       │
+│ + maxPlayers: int                          │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│           DeleteMatchCommand               │
+├────────────────────────────────────────────┤
+│ + matchId: int                             │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│            GetAllMatchesQuery              │
+├────────────────────────────────────────────┤
+│ (sin atributos)                            │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│           GetMatchByIdQuery                │
+├────────────────────────────────────────────┤
+│ + matchId: int                             │
+└────────────────────────────────────────────┘
+```
+
+**Relaciones:**
+
+- `Match` es el Aggregate Root del bounded context.
+- `Match` *──────── 1 Court ─► cada partido se organiza en una cancha específica.
+- `Match` *──────── 1 UserProfile ─► representa al usuario creador del partido.
+- `MatchStatus` representa un Value Object del dominio mediante un enum, encargado de definir el estado del partido (OPEN, FULL, CANCELLED, COMPLETED).
+- `MatchCommandService` ───────► `MatchRepository` (uses)
+- `MatchQueryService` ───────► `MatchRepository` (uses)
+
+---
+
+##### 2.6.9.6.2. Bounded Context Database Design Diagram
+
+El diagrama de base de datos del bounded context `Matches` representa la estructura relacional utilizada para persistir la información de los partidos organizados.
+La tabla principal es `matches`, la cual mantiene relaciones con las tablas `courts` y `user_profiles`, que representan la cancha donde se juega el partido y el usuario creador respectivamente.
+
+**Diagrama de base de datos (ERD):**
+
+```
+┌──────────────────────────────┐
+│        user_profiles         │
+├──────────────────────────────┤
+│ PK id (BIGINT)               │
+│ name (VARCHAR)               │
+│ email (VARCHAR)              │
+└──────────────────────────────┘
+             ▲
+             │ FK (created_by)
+             │
+┌────────────┴──────────────────────────────────────────┐
+│                        matches                        │
+├───────────────────────────────────────────────────────┤
+│ PK match_id (BIGINT, AUTO_INCREMENT)                  │
+│ title (VARCHAR(255), NOT NULL)                        │
+│ description (TEXT)                                    │
+│ date_time (DATETIME, NOT NULL)                        │
+│ status (ENUM('OPEN','FULL','CANCELLED','COMPLETED'))  │
+│ max_players (INT, NOT NULL)                           │
+│ current_players (INT, DEFAULT 0)                      │
+│ court_id (BIGINT, NOT NULL)                           │
+│ created_by (BIGINT, NOT NULL)                         │
+│ created_at (DATETIME, NOT NULL)                       |
+| FOREIGN KEY (court_id) REFERENCES courts(id)          │
+│ FOREIGN KEY (created_by) REFERENCES user_profiles(id) |
+└───────────────────────────────────────────────────────┘
+             ▲
+             │ FK (court_id)
+             │
+┌────────────┴──────────────────────────────┐
+│                 courts                    │
+├───────────────────────────────────────────┤
+│ PK id (BIGINT)                            │
+│ name (VARCHAR)                            │
+│ location (VARCHAR)                        │
+└───────────────────────────────────────────┘
+```
+
+**Tablas y atributos:**
+
+**Tabla matches:**
+- `match_id`: Identificador único del partido (PK).
+- `title`: Título del partido.
+- `description`: Descripción del partido.
+- `date_time`: Fecha y hora del partido.
+- `status`: Estado del partido (OPEN, FULL, CANCELLED, COMPLETED).
+- `max_players`: Número máximo de jugadores permitidos.
+- `current_players`: Número actual de jugadores inscritos.
+- `court_id`: Referencia a la cancha (FK).
+- `created_by`: Referencia al usuario creador (FK).
+- `created_at`: Fecha de creación.
+
+**Tabla user_profiles:**
+- `id`: Identificador del usuario (PK).
+- `name`: Nombre del usuario.
+- `email`: Correo electrónico.
+
+**Tabla courts:**
+- `id:` Identificador de la cancha (PK).
+- `name:` Nombre de la cancha.
+- `location:` Ubicación de la cancha.
+
+**Constraints:**
+- PRIMARY KEY (`match_id`) en `matches`
+- FOREIGN KEY (`court_id`) → `courts`(`id`)
+- FOREIGN KEY (`created_by`) → `user_profiles`(`id`)
+- NOT NULL en `title`, `date_time`, `status`, `max_players`, `court_id`, `created_by`, `created_at`
+
+**Relaciones entre tablas:**
+- `user_profiles` (1) ──── (*) `matches`
+- `courts` (1) ──── (*) `matches`
 ---
 
 **4. Estrategias de retención basadas en experiencia de usuario**
