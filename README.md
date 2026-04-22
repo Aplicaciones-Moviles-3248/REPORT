@@ -132,9 +132,9 @@ INGENIERÍA DE SOFTWARE
 
 <h1>Project Report Collaboration Insights</h1>
 
-<h2>TB1</h2>
+<h2>AV1</h2>
 
-<p>Para el desarrollo del informe perteneciente a la entrega TB1, se dividió la implementación de secciones del Capítulo I y II en bloques de trabajo, asignando cada conjunto de secciones a un integrante del equipo.</p>
+<p>Para el desarrollo del informe perteneciente a la entrega AV1, se dividió la implementación de secciones del Capítulo I y II en bloques de trabajo, asignando cada conjunto de secciones a un integrante del equipo.</p>
 
 <p align="center">
   <img src="assets/chapter2/tb1.png" alt="Logo UPC" width="500">
@@ -542,16 +542,16 @@ INGENIERÍA DE SOFTWARE
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 <strong>Juan Carlos Angulo</strong><br>
-                TB1:<br>Durante el desarrollo del TB1,<br>
+                AV1:<br>Durante el desarrollo del AV1,<br>
                 <strong>Camilla Espinoza</strong><br>
-                TB1:<br>
-                Durante el desarrollo del TB1, actualizó y aplicó conocimientos en arquitectura de software y Domain-Driven Design mediante la elaboración de User Stories, Impact Mapping y Product Backlog. Además, diseñó los bounded contexts de Coaches y Reviews, así como diagramas de arquitectura (contexto, contenedores y componentes) y diagramas UML del dominio.<br>
+                AV1:<br>
+                Durante el desarrollo del AV1, actualizó y aplicó conocimientos en arquitectura de software y Domain-Driven Design mediante la elaboración de User Stories, Impact Mapping y Product Backlog. Además, diseñó los bounded contexts de Coaches y Reviews, así como diagramas de arquitectura (contexto, contenedores y componentes) y diagramas UML del dominio.<br>
                 <strong>Fabricio Fabian Quispe Barzola</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó conocimientos en análisis de dominio y arquitectura de software mediante la elaboración del análisis competitivo, estrategias y tácticas frente a competidores, así como el diseño del Context Mapping utilizando Domain-Driven Design. Además, desarrolló los bounded contexts de Bookings y Analytics, incluyendo sus respectivas capas (Domain, Application, Interface e Infrastructure), junto con diagramas de arquitectura (Component Level) y diagramas de código (Class Diagram y Database Design).<br>
            </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
-                El equipo demostró un efectivo liderazgo conjunto durante el TB1, donde cada miembro asumió responsabilidades compartidas de coordinación y toma de decisiones. Se evidenció una colaboración fluida que abarcó desde aspectos estratégicos y técnicos del proyecto hasta la planificación operativa y distribución de tareas. La comunicación continua, las reuniones regulares y el trabajo colaborativo en el desarrollo de componentes clave como wireframes, mockups, database diagrams y landing page fueron fundamentales. El compromiso colectivo por mantener una sana relación de equipo y la capacidad para resolver conflictos de manera conjunta permitieron lograr consensos efectivos y entregar un trabajo cohesivo y de calidad, demostrando que el liderazgo fue verdaderamente compartido y distribuido entre todos los integrantes.
+                El equipo demostró un efectivo liderazgo conjunto durante el AV1, donde cada miembro asumió responsabilidades compartidas de coordinación y toma de decisiones. Se evidenció una colaboración fluida que abarcó desde aspectos estratégicos y técnicos del proyecto hasta la planificación operativa y distribución de tareas. La comunicación continua, las reuniones regulares y el trabajo colaborativo en el desarrollo de componentes clave como wireframes, mockups, database diagrams y landing page fueron fundamentales. El compromiso colectivo por mantener una sana relación de equipo y la capacidad para resolver conflictos de manera conjunta permitieron lograr consensos efectivos y entregar un trabajo cohesivo y de calidad, demostrando que el liderazgo fue verdaderamente compartido y distribuido entre todos los integrantes.
             </td>
         </tr>
         <tr>
@@ -560,10 +560,10 @@ INGENIERÍA DE SOFTWARE
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 <strong>Juan Carlos Angulo</strong><br>
-                TB1: Durante el TB1,<br><br>
+                AV1: Durante el AV1,<br><br>
                 <strong>Camilla Espinoza</strong><br>
-                TB1:<br>
-                Durante el TB1, investigó y aplicó nuevas herramientas y metodologías como Structurizr para diagramas C4, PlantUML para modelado de clases y Miro para Impact Mapping. Esto permitió mejorar la calidad del diseño arquitectónico y fortalecer sus habilidades en modelado de sistemas y documentación técnica.
+                AV1:<br>
+                Durante el AV1, investigó y aplicó nuevas herramientas y metodologías como Structurizr para diagramas C4, PlantUML para modelado de clases y Miro para Impact Mapping. Esto permitió mejorar la calidad del diseño arquitectónico y fortalecer sus habilidades en modelado de sistemas y documentación técnica.
                 <br><strong>Fabricio Fabian Quispe Barzola</strong><br>
                 AV1:<br>
                 Durante el AV1, investigó y aplicó conceptos de Domain-Driven Design y modelado arquitectónico, utilizando herramientas para la elaboración de diagramas UML, diagramas de componentes y diseño de bases de datos. Esto le permitió mejorar su capacidad de estructurar bounded contexts, comprender mejor la separación de responsabilidades y fortalecer sus habilidades en documentación técnica y diseño de soluciones de software.
@@ -10748,6 +10748,8 @@ El Component Diagram del bounded context **Coaches** representa la descomposici�
 
 **Diagrama de componentes propuesto:**
 
+<img src="assets/chapter2/coaches_Diagrama de componentes.jpeg" alt="Descripción de la imagen" width="700">
+
 #### 2.6.4.6. Bounded Context Software Architecture Code Level Diagrams
 
 En esta sección se presentan los diagramas a nivel de código del bounded context Coaches, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
@@ -10765,6 +10767,8 @@ El diagrama de clases del Domain Layer del bounded context Coaches presenta el a
 
 **Diagrama UML de clases (Domain Layer)**
 
+<img src="assets/chapter2/coaches_Diagrama UML de clases (Domain Layer).jpeg" alt="Descripción de la imagen" width="700">
+
 ##### 2.6.4.6.2. Bounded Context Database Design Diagram
 
 **Descripción**
@@ -10773,6 +10777,7 @@ El diagrama de base de datos del bounded context Coaches representa la estructur
 
 **Diagrama de base de datos (ERD)**
 
+<img src="assets/chapter2/coaches_Diagrama de base de datos (ERD).jpeg" alt="Descripción de la imagen" width="700">
 
 **Tablas y atributos**
 
@@ -11294,6 +11299,7 @@ El Component Diagram del bounded context **Reviews** representa la descomposici�
 
 **Diagrama de componentes propuesto:**
 
+<img src="assets/chapter2/reviews_Diagrama de componentes.jpeg" alt="Descripción de la imagen" width="700">
 
 #### 2.6.7.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -11312,6 +11318,9 @@ El diagrama de clases del Domain Layer del bounded context Reviews presenta el a
 
 **Diagrama UML de clases (Domain Layer)**
 
+<img src="assets/chapter2/reviews_Diagrama UML de clases (Domain Layer).jpeg" alt="Descripción de la imagen" width="700">
+
+
 ##### 2.6.7.6.2. Bounded Context Database Design Diagram
 
 **Descripción**
@@ -11319,6 +11328,8 @@ El diagrama de clases del Domain Layer del bounded context Reviews presenta el a
 El diagrama de base de datos del bounded context Reviews representa la estructura relacional utilizada para persistir la información de reseñas. La tabla principal es reviews, la cual mantiene una relación con la tabla user_profiles.
 
 **Diagrama de base de datos (ERD)**
+
+<img src="assets/chapter2/reviews_Diagrama de base de datos (ERD).jpeg" alt="Descripción de la imagen" width="700">
 
 **Tablas y atributos**
 
