@@ -58,16 +58,18 @@ INGENIERÍA DE SOFTWARE
   </tr>
   <tr>
     <td style="border: 1px solid #ddd; padding: 8px;">AV1</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">21/04/2025</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">21/04/2026</td>
     <td style="border: 1px solid #ddd; padding: 8px;">
       <ul>
-        <li>Juan Carlos Angulo</li>
+        <li>Juan Carlos Angulo Abud</li>
       </ul>
     </td>
     <td style="border: 1px solid #ddd; padding: 8px;">            
       <ul>
-        <li>Capítulo I: Presentación </li>
-        <li>Capítulo II:  Requirements Development and Software Solution Design </li>
+        <li>Capítulo II: Punto 2.5.1.1 (Candidate Context Discovery)</li>
+        <li>Capítulo II: Punto 2.5.1.2 (Domain Message Flows Modeling)</li>
+        <li>Capítulo II: Punto 2.6.5 (Bounded Context: Courts)</li>
+        <li>Capítulo II: Punto 2.6.6 (Bounded Context: Availabilities)</li>
         </ul>
     </td>
   </tr>
@@ -235,7 +237,7 @@ INGENIERÍA DE SOFTWARE
 
   <!-- BLOQUE 4 -->
   <tr>
-    <td>Completar integrante</td>
+    <td>Juan Carlos Angulo</td>
     <td>
       <ul>
         <li>2.5.1 EventStorming</li>
@@ -337,7 +339,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
 <tr>
-    <td>Completar integrante</td>
+    <td>Juan Carlos Angulo</td>
     <td>
       <ul>
         <li><strong>2.6.5 Bounded Context: Courts</strong></li>
@@ -353,7 +355,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
 <tr>
-    <td>Completar integrante</td>
+    <td>Juan Carlos Angulo</td>
     <td>
       <ul>
         <li><strong>2.6.6 Bounded Context: Availabilities</strong></li>
@@ -564,7 +566,7 @@ INGENIERÍA DE SOFTWARE
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 <strong>Juan Carlos Angulo</strong><br>
-                AV1:<br>Durante el desarrollo del AV1,<br>
+                AV1:<br>Durante el desarrollo del AV1, actualizó y aplicó conocimientos avanzados en Domain-Driven Design mediante la elaboración completa del EventStorming, incluyendo Candidate Context Discovery y Domain Message Flows Modeling. Además, diseñó e implementó dos bounded contexts completos (Courts y Availabilities) con todas sus capas (Domain, Interface, Application e Infrastructure), así como diagramas de arquitectura a nivel de componentes y código (Class Diagrams y Database Design Diagrams).<br>
                 <strong>Camilla Espinoza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó conocimientos en arquitectura de software y Domain-Driven Design mediante la elaboración de User Stories, Impact Mapping y Product Backlog. Además, diseñó los bounded contexts de Coaches y Reviews, así como diagramas de arquitectura (contexto, contenedores y componentes) y diagramas UML del dominio.<br>
@@ -585,7 +587,7 @@ INGENIERÍA DE SOFTWARE
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 <strong>Juan Carlos Angulo</strong><br>
-                AV1: Durante el AV1,<br><br>
+                AV1: Durante el AV1, investigó y aplicó metodologías avanzadas de Domain-Driven Design, incluyendo técnicas de EventStorming para descubrimiento de contextos acotados y modelado de flujos de dominio. Investigó patrones de arquitectura de software (C4 Model, patrones tácticos de DDD) y utilizó herramientas para la elaboración de diagramas UML complejos, diagramas de componentes y diseño de bases de datos relacionales. Esto fortaleció significativamente sus habilidades en modelado de sistemas complejos, separación de responsabilidades y arquitectura orientada al dominio.<br><br>
                 <strong>Camilla Espinoza</strong><br>
                 AV1:<br>
                 Durante el AV1, investigó y aplicó nuevas herramientas y metodologías como Structurizr para diagramas C4, PlantUML para modelado de clases y Miro para Impact Mapping. Esto permitió mejorar la calidad del diseño arquitectónico y fortalecer sus habilidades en modelado de sistemas y documentación técnica.<br>
@@ -609,21 +611,21 @@ INGENIERÍA DE SOFTWARE
 
 En esta sección, cada miembro del equipo de trabajo formulará al menos dos objetivos SMART que se centren en el desarrollo profesional una vez finalizada su carrera. Estos objetivos deben ser claros, medibles y alcanzables, reflejando cómo cada integrante planea continuar con su crecimiento profesional después de la graduación.
 
-### Miembro 1: [Juan Carlos Angulo]
+### Miembro 1: Juan Carlos Angulo Abud
 
 **Objetivo 1:**   
-<br>**Específico:** Obtener certificaciones en Azure y MongoDB, y participar en proyectos reales de monitoreo de infraestructura para empresas medianas y grandes, aplicando conocimientos en C++ y JavaScript para automatización de procesos.  </br>
-<br>**Medible:** Conseguir al menos 2 certificaciones técnicas (Azure Fundamentals y MongoDB Developer) y completar 6 meses de experiencia práctica en proyectos de infraestructura antes de graduarme.  </br>
-<br>**Alcanzable:** Aprovechar mi experiencia actual en Azure, MongoDB y SQL Server para postular a posiciones de practicante en empresas tecnológicas, dedicando 10 horas semanales al estudio de nuevas tecnologías cloud.  </br>
-<br>**Relevante:** La especialización en infraestructura y DevOps es crucial para mi desarrollo profesional en ingeniería de software, permitiéndome contribuir en proyectos que requieren alta disponibilidad y escalabilidad, como el proyecto Courtly que estamos desarrollando.  </br>
-<br>**Tiempo:** Lograr las certificaciones en los próximos 8 meses y obtener experiencia práctica antes de finalizar mi carrera universitaria.  </br>
+<br>**Específico:** Consolidar competencias en **Domain-Driven Design (DDD) y arquitectura de software orientada al dominio**, mediante el diseño e implementación de bounded contexts complejos con todas sus capas arquitectónicas (Domain, Interface, Application, Infrastructure) en el proyecto Courtly.  </br>
+<br>**Medible:** Diseñar y documentar completamente **al menos 2 bounded contexts** (Courts y Availabilities) incluyendo: Domain Layer con entidades, value objects y domain services; Interface Layer con REST controllers y DTOs; Application Layer con command/event handlers; Infrastructure Layer con repositories y adapters; más diagramas de componentes C4 y diagramas UML completos.  </br>
+<br>**Alcanzable:** Aplicar conocimientos adquiridos en patrones DDD, arquitectura hexagonal y modelado de sistemas, utilizando herramientas como PlantUML y Structurizr, dedicando 10-12 horas semanales al diseño y documentación arquitectónica.  </br>
+<br>**Relevante:** Las habilidades en DDD y arquitectura de bounded contexts son fundamentales para desempeñarme como **Software Architect o Backend Engineer**, permitiéndome diseñar sistemas escalables y mantenibles con clara separación de responsabilidades.  </br>
+<br>**Tiempo:** Completar el diseño y documentación de ambos bounded contexts en **12 semanas**, con validación iterativa de arquitectura cada 3 semanas.  </br>
 <br></br>
-**Objetivo 2:** Liderar la implementación de un sistema de monitoreo y observabilidad empresarial utilizando tecnologías cloud modernas, aplicando mis conocimientos en infraestructura para crear soluciones escalables y eficientes.  
-<br>**Específico:** Desarrollar un proyecto personal o profesional que implemente monitoreo en tiempo real usando Azure Monitor, Application Insights y herramientas como Prometheus/Grafana, integrando alertas automáticas y dashboards personalizados para métricas de rendimiento y disponibilidad.  </br>
-<br>**Medible:** Completar la implementación de al menos 3 dashboards de monitoreo con métricas clave (CPU, memoria, latencia, errores), configurar 5 tipos de alertas diferentes y lograr una cobertura de monitoreo del 90% en los servicios críticos del sistema.  </br>
-<br>**Alcanzable:** Aprovechar mi experiencia actual en Azure y herramientas de monitoreo, dedicando 8 horas semanales al desarrollo del proyecto y utilizando recursos gratuitos de Azure para estudiantes, junto con herramientas open source disponibles.  </br>
-<br>**Relevante:** El monitoreo y observabilidad son fundamentales para el éxito de cualquier sistema empresarial moderno, y esta especialización me permitirá aportar valor significativo en proyectos como Courtly, asegurando la confiabilidad y rendimiento óptimo de las aplicaciones.  </br>
-<br>**Tiempo:** Desarrollar el proyecto completo en un plazo de 10 meses, con prototipos funcionales cada 3 meses para validar el progreso y recibir feedback continuo.  </br>
+**Objetivo 2:** Dominar la técnica de **EventStorming para modelado del dominio**, aplicándola en proyectos reales para identificar eventos clave, descubrir bounded contexts y modelar flujos de mensajes entre dominios.  
+<br>**Específico:** Desarrollar expertise en EventStorming mediante la aplicación completa de la técnica en Courtly: realizar Candidate Context Discovery para identificar y validar contextos acotados, modelar Domain Message Flows para visualizar colaboración entre contextos, y crear Bounded Context Canvases con especificación completa de propósito, capacidades, reglas de negocio y dependencias.  </br>
+<br>**Medible:** Elaborar **sesión completa de EventStorming** con al menos **8 bounded contexts identificados**; crear **4+ diagramas de Domain Message Flows** con responsabilidades claramente definidas; producir **8 Bounded Context Canvases completos** con documentación de vocabulario ubicuo, reglas de negocio y capacidades.  </br>
+<br>**Alcanzable:** Aplicar metodologías de discovery vistas en clase (Start-with-Value, Start-with-Simple, Look-for-Pivotal-Events), usar herramientas colaborativas como Miro, y dedicar 8-10 horas semanales a facilitar sesiones y documentar hallazgos.  </br>
+<br>**Relevante:** EventStorming es una competencia clave para roles como **Solution Architect o Technical Lead**, mejorando la capacidad de comunicación con stakeholders técnicos y no técnicos, y asegurando alineación entre visión de negocio y diseño técnico.  </br>
+<br>**Tiempo:** Completar EventStorming en **8 semanas**, en fases: sesión de discovery (2 sem), análisis de contextos (2 sem), modelado de flujos (2 sem), generación de canvases (2 sem).  </br>
 
 ---
 ## Miembro 2: Camilla Espinoza
