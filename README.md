@@ -164,6 +164,10 @@ INGENIERÍA DE SOFTWARE
   <img src="assets/chapter2/tb1.png" alt="Logo UPC" width="500">
 </p>
 
+<p align="center">
+  <img src="assets/chapter2/AV1.png" alt="Logo UPC" width="500">
+</p>
+
 <table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
   <tr>
     <td align="center"><strong>Integrante</strong></td>
@@ -10351,7 +10355,8 @@ El diseño de persistencia es consistente con el modelo de dominio y permite alm
 ## Video About the product
 ## Video About the team
 
-[**link**]()
+**AV1**
+[**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQBp0Rku3Jm_QLhcTDAqpiiGAQ84dUBWLXi-aELkb3xl5Po?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=EX2vg6)
 
 # Glosario
 
@@ -10389,8 +10394,8 @@ https://www.iso.org/standard/35733.html
 
 # Anexos
 
-Anexo01. Link de entrevistas [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDh0efpi-2rSrJaL5-em4T8ATBMyBh-bdU49hsRmGYVLx8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=f3SvAK)
+Anexo01. Entrevistas [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDh0efpi-2rSrJaL5-em4T8ATBMyBh-bdU49hsRmGYVLx8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=f3SvAK)
 
-Anexo02. Video about the team [**link**]()
+Anexo02. Video about the team [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQBp0Rku3Jm_QLhcTDAqpiiGAQ84dUBWLXi-aELkb3xl5Po?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=EX2vg6)
 
-Anexo03. Video de exposición AV1 [**link**]()
+Anexo03. Video de exposición AV1 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDWk1TsgCdAS7Sp8B1OVRQ6AUAORls8nvqEJsfLBhx8nHI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nCsAjZ)
