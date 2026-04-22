@@ -921,7 +921,7 @@ Sin embargo, al revisar las reglas del dominio se observó que representan proce
 
 ### Alternativa 5: Agrupar contextos de soporte
 
-![alt5](./images/context-map-alt5.png)
+**Diagrama no disponible en el repositorio:** `./images/context-map-alt5.png`
 
 Esta alternativa proponía unificar **Payments, Reviews, Notifications y Analytics** dentro de un único contexto de soporte. Su ventaja principal era reducir la fragmentación estructural del sistema y simplificar visualmente el mapa general.
 
