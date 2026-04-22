@@ -619,19 +619,35 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 
 ### Miembro 1: Juan Carlos Angulo Abud
 
-**Objetivo 1:**   
-<br>**Específico:** Consolidar competencias en **Domain-Driven Design (DDD) y arquitectura de software orientada al dominio**, mediante el diseño e implementación de bounded contexts complejos con todas sus capas arquitectónicas (Domain, Interface, Application, Infrastructure) en el proyecto Courtly.  </br>
-<br>**Medible:** Diseñar y documentar completamente **al menos 2 bounded contexts** (Courts y Availabilities) incluyendo: Domain Layer con entidades, value objects y domain services; Interface Layer con REST controllers y DTOs; Application Layer con command/event handlers; Infrastructure Layer con repositories y adapters; más diagramas de componentes C4 y diagramas UML completos.  </br>
-<br>**Alcanzable:** Aplicar conocimientos adquiridos en patrones DDD, arquitectura hexagonal y modelado de sistemas, utilizando herramientas como PlantUML y Structurizr, dedicando 10-12 horas semanales al diseño y documentación arquitectónica.  </br>
-<br>**Relevante:** Las habilidades en DDD y arquitectura de bounded contexts son fundamentales para desempeñarme como **Software Architect o Backend Engineer**, permitiéndome diseñar sistemas escalables y mantenibles con clara separación de responsabilidades.  </br>
-<br>**Tiempo:** Completar el diseño y documentación de ambos bounded contexts en **12 semanas**, con validación iterativa de arquitectura cada 3 semanas.  </br>
-<br></br>
-**Objetivo 2:** Dominar la técnica de **EventStorming para modelado del dominio**, aplicándola en proyectos reales para identificar eventos clave, descubrir bounded contexts y modelar flujos de mensajes entre dominios.  
-<br>**Específico:** Desarrollar expertise en EventStorming mediante la aplicación completa de la técnica en Courtly: realizar Candidate Context Discovery para identificar y validar contextos acotados, modelar Domain Message Flows para visualizar colaboración entre contextos, y crear Bounded Context Canvases con especificación completa de propósito, capacidades, reglas de negocio y dependencias.  </br>
-<br>**Medible:** Elaborar **sesión completa de EventStorming** con al menos **8 bounded contexts identificados**; crear **4+ diagramas de Domain Message Flows** con responsabilidades claramente definidas; producir **8 Bounded Context Canvases completos** con documentación de vocabulario ubicuo, reglas de negocio y capacidades.  </br>
-<br>**Alcanzable:** Aplicar metodologías de discovery vistas en clase (Start-with-Value, Start-with-Simple, Look-for-Pivotal-Events), usar herramientas colaborativas como Miro, y dedicar 8-10 horas semanales a facilitar sesiones y documentar hallazgos.  </br>
-<br>**Relevante:** EventStorming es una competencia clave para roles como **Solution Architect o Technical Lead**, mejorando la capacidad de comunicación con stakeholders técnicos y no técnicos, y asegurando alineación entre visión de negocio y diseño técnico.  </br>
-<br>**Tiempo:** Completar EventStorming en **8 semanas**, en fases: sesión de discovery (2 sem), análisis de contextos (2 sem), modelado de flujos (2 sem), generación de canvases (2 sem).  </br>
+### Objetivo 1
+**Específico:** Consolidar competencias en **Domain-Driven Design (DDD) y arquitectura de software orientada al dominio**, mediante el diseño e implementación de bounded contexts complejos con todas sus capas arquitectónicas (Domain, Interface, Application, Infrastructure) en el proyecto Courtly.
+
+**Medible:**
+- Diseñar y documentar completamente **al menos 2 bounded contexts** (Courts y Availabilities) incluyendo: Domain Layer con entidades, value objects y domain services; Interface Layer con REST controllers y DTOs; Application Layer con command/event handlers; Infrastructure Layer con repositories y adapters; más diagramas de componentes C4 y diagramas UML completos.
+
+**Alcanzable:** Aplicar conocimientos adquiridos en patrones DDD, arquitectura hexagonal y modelado de sistemas, utilizando herramientas como PlantUML y Structurizr, dedicando 10-12 horas semanales al diseño y documentación arquitectónica.
+
+**Relevante:** Las habilidades en DDD y arquitectura de bounded contexts son fundamentales para desempeñarme como **Software Architect o Backend Engineer**, permitiéndome diseñar sistemas escalables y mantenibles con clara separación de responsabilidades.
+
+**Tiempo:**
+- Completar el diseño y documentación de ambos bounded contexts en **12 semanas**, con validación iterativa de arquitectura cada 3 semanas.
+
+---
+
+### Objetivo 2
+**Específico:** Dominar la técnica de **EventStorming para modelado del dominio**, aplicándola en proyectos reales para identificar eventos clave, descubrir bounded contexts y modelar flujos de mensajes entre dominios.
+
+**Específico:** Desarrollar expertise en EventStorming mediante la aplicación completa de la técnica en Courtly: realizar Candidate Context Discovery para identificar y validar contextos acotados, modelar Domain Message Flows para visualizar colaboración entre contextos, y crear Bounded Context Canvases con especificación completa de propósito, capacidades, reglas de negocio y dependencias.
+
+**Medible:**
+- Elaborar **sesión completa de EventStorming** con al menos **8 bounded contexts identificados**; crear **4+ diagramas de Domain Message Flows** con responsabilidades claramente definidas; producir **8 Bounded Context Canvases completos** con documentación de vocabulario ubicuo, reglas de negocio y capacidades.
+
+**Alcanzable:** Aplicar metodologías de discovery vistas en clase (Start-with-Value, Start-with-Simple, Look-for-Pivotal-Events), usar herramientas colaborativas como Miro, y dedicar 8-10 horas semanales a facilitar sesiones y documentar hallazgos.
+
+**Relevante:** EventStorming es una competencia clave para roles como **Solution Architect o Technical Lead**, mejorando la capacidad de comunicación con stakeholders técnicos y no técnicos, y asegurando alineación entre visión de negocio y diseño técnico.
+
+**Tiempo:**
+- Completar EventStorming en **8 semanas**, en fases: sesión de discovery (2 sem), análisis de contextos (2 sem), modelado de flujos (2 sem), generación de canvases (2 sem).
 
 ---
 ## Miembro 2: Camilla Espinoza
@@ -690,6 +706,7 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 **Relevante:** Refuerza habilidades esenciales para roles como **Backend Developer o Software Architect**, mejorando la capacidad de comunicar soluciones técnicas.
 
 **Tiempo:** **12 semanas**, en paralelo con el desarrollo del proyecto.
+
 ---
 
 ### Miembro 3: Pedro Nanfuñay
@@ -760,46 +777,122 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 
 ---
 
-### Miembro 4: []
+### Miembro 4: Eduardo Fabian Chacaliaza Minaya
 
-**Objetivo 1:**  
-<br>**Específico:** Desarrollar experiencia profesional como desarrollador de software en una empresa tecnológica reconocida, participando en proyectos reales de frontend y backend.  
-<br>**Medible:** Conseguir un puesto de practicante preprofesional antes de finalizar la carrera y completar al menos 6 meses de experiencia comprobable.  
-<br>**Alcanzable:** Cuento con bases sólidas en programación, frameworks modernos (Angular, Vue) y buenas prácticas, lo que me permite aplicar a convocatorias de empresas en el sector.  
-<br>**Relevante:** Ganar experiencia laboral me permitirá consolidar mi perfil profesional y aumentar mis oportunidades de empleabilidad al terminar la universidad.  
-<br>**Tiempo:** Lograr este objetivo dentro de los próximos 12 meses.  
+### Objetivo 1
+**Específico:** Desarrollar experiencia profesional como desarrollador de software en una empresa tecnológica reconocida, participando en proyectos reales de frontend y backend.
 
-**Objetivo 2:**  
-<br>**Específico:** Obtener una certificación internacional en desarrollo web (por ejemplo, AWS Cloud Practitioner o una certificación en Angular).  
-<br>**Medible:** Aprobar al menos un examen de certificación reconocido y obtener el diploma correspondiente.  
-<br>**Alcanzable:** Dedicaré entre 6 a 8 horas semanales al estudio, combinando recursos online, cursos especializados y práctica en proyectos personales.  
-<br>**Relevante:** La certificación fortalecerá mi CV y me diferenciará frente a otros candidatos al momento de postular a empleos.  
-<br>**Tiempo:** Completar la certificación en un plazo de 18 meses tras mi graduación.  
+**Medible:**
+- Conseguir un puesto de practicante preprofesional antes de finalizar la carrera.
+- Completar al menos 6 meses de experiencia comprobable en un equipo de desarrollo.
+- Participar en al menos 2 proyectos internos con entregables documentados.
+
+**Alcanzable:** Cuento con bases sólidas en programación, frameworks modernos (Angular y Vue) y buenas prácticas, lo que me permite aplicar a convocatorias del sector y adaptarme a entornos reales de trabajo.
+
+**Relevante:** Este objetivo fortalece mi empleabilidad y consolida mi perfil para iniciar mi carrera como Software Engineer al concluir la universidad.
+
+**Tiempo:** 12 meses.
+- Meses 1-3: preparación de CV, portafolio y simulaciones técnicas.
+- Meses 4-6: postulación activa y entrevistas.
+- Meses 7-12: ejecución de prácticas y consolidación de experiencia.
+
+---
+
+### Objetivo 2
+**Específico:** Obtener una certificación internacional en desarrollo web (por ejemplo, AWS Cloud Practitioner o una certificación en Angular).
+
+**Medible:**
+- Completar un curso de preparación con al menos 40 horas de estudio.
+- Resolver 3 simulacros de examen con puntaje mayor o igual al 75%.
+- Aprobar 1 certificación reconocida y obtener el diploma correspondiente.
+
+**Alcanzable:** Dedicaré entre 6 a 8 horas semanales al estudio, combinando recursos online, cursos especializados y práctica en proyectos personales.
+
+**Relevante:** La certificación fortalecerá mi CV y me diferenciará frente a otros candidatos al momento de postular a empleos.
+
+**Tiempo:** 18 meses tras mi graduación.
+- Meses 1-6: estudio base y prácticas guiadas.
+- Meses 7-12: simulacros y refuerzo en temas débiles.
+- Meses 13-18: inscripción, examen oficial y cierre.
+
+---
+
+### Objetivo 3
+**Específico:** Fortalecer mi perfil profesional en arquitectura de software y backend moderno mediante la implementación de soluciones con Spring Boot y buenas prácticas de diseño.
+
+**Medible:**
+- Desarrollar 2 proyectos personales backend desplegables con documentación técnica.
+- Implementar en cada proyecto autenticación, pruebas unitarias y persistencia con base de datos relacional.
+- Publicar al menos 8 aportes técnicos en GitHub (issues, PRs o mejoras documentadas).
+
+**Alcanzable:** Aprovecharé la experiencia obtenida en el proyecto académico y recursos formativos en línea para construir soluciones incrementales y medibles.
+
+**Relevante:** Este objetivo me permitirá consolidar competencias clave para roles de Backend Developer y mejorar mi capacidad de diseñar sistemas mantenibles.
+
+**Tiempo:** 12 meses.
+- Meses 1-4: diseño e implementación del primer proyecto.
+- Meses 5-8: desarrollo del segundo proyecto y mejora de calidad.
+- Meses 9-12: hardening técnico, documentación final y publicación en portafolio.
 
 ---
 
 
-### Miembro 5: []
+### Miembro 5: Fabricio Fabian Quispe Barzola
 
+### Objetivo 1
+**Específico:** Fortalecer mis competencias en diseño arquitectónico de software mediante la elaboración de diagramas de arquitectura a nivel de componentes y código para bounded contexts del proyecto.
 
-**Objetivo 1:**  
-<br>**Específico:** Elaborar los diagramas de arquitectura de software a nivel de **componentes** y **código** para los Bounded Contexts del proyecto, asegurando que reflejen fielmente la estructura del sistema.</br>
-<br>**Medible:** Completar al menos 2 diagramas (component level y code level) validados por el equipo y listos para integrarse a la documentación oficial del proyecto.</br>
-<br>**Alcanzable:** Utilizar mis conocimientos en UML y C4-Model, junto con herramientas de diagramación disponibles, dedicando tiempo específico cada semana hasta completar los diagramas.</br>
-<br>**Relevante:** Estos diagramas son esenciales para que el equipo comprenda la arquitectura del sistema, favoreciendo la correcta implementación y comunicación entre módulos.</br>
-<br>**Tiempo:** Finalizar y entregar los diagramas dentro de la fase 2.6.x del proyecto, cumpliendo los plazos establecidos en el cronograma.</br>
+**Medible:**
+- Completar al menos 2 diagramas de componentes (Component Level).
+- Completar al menos 2 diagramas de código (Class Diagram) alineados con la implementación.
+- Validar los diagramas con el equipo y documentarlos en el repositorio del proyecto.
 
-<br></br>
+**Alcanzable:** Aplicaré mis conocimientos en UML y C4-Model, usando herramientas de diagramación como PlantUML y Structurizr con dedicación semanal constante.
 
-**Objetivo 2:**  
-<br>**Específico:** Diseñar los diagramas de la **capa de dominio** (clases) y de **base de datos** para los Bounded Contexts, mostrando relaciones, dependencias y estructuras de almacenamiento.</br>
-<br>**Medible:** Elaborar al menos 2 diagramas (Domain Layer Class y Database Design) que sean revisados y aprobados por el equipo para su uso en la implementación del sistema.</br>
-<br>**Alcanzable:** Basarme en los requerimientos y modelos previos, usando herramientas UML y ERD disponibles, aplicando buenas prácticas de diseño de software.</br>
-<br>**Relevante:** Documentar y visualizar la estructura interna del sistema es clave para asegurar la mantenibilidad, escalabilidad y correcta implementación del software.</br>
-<br>**Tiempo:** Completar los diagramas durante la fase 2.6.x.6 del proyecto, respetando los tiempos del cronograma general.</br>
+**Relevante:** Este objetivo mejora mi capacidad para diseñar y comunicar arquitecturas de software, una habilidad clave para roles backend y de arquitectura.
 
+**Tiempo:** 10 semanas.
+- Semanas 1-3: levantamiento de requerimientos técnicos y estructura de diagramas.
+- Semanas 4-7: desarrollo y refinamiento de diagramas de componentes y código.
+- Semanas 8-10: revisión con el equipo, ajustes y documentación final.
 
 ---
+
+### Objetivo 2
+**Específico:** Consolidar habilidades en modelado de dominio y diseño de base de datos para bounded contexts del proyecto, asegurando consistencia entre dominio, persistencia e implementación.
+
+**Medible:**
+- Elaborar al menos 2 diagramas de dominio (Domain Layer Class Diagram).
+- Elaborar al menos 2 diagramas de base de datos (Database Design/ERD).
+- Verificar que los modelos cubran entidades, relaciones, claves y restricciones principales.
+
+**Alcanzable:** Me basaré en los requerimientos funcionales y artefactos del proyecto, aplicando buenas prácticas de modelado y revisión técnica con el equipo.
+
+**Relevante:** El modelado correcto de dominio y datos asegura mantenibilidad, escalabilidad y reduce retrabajo durante la implementación backend.
+
+**Tiempo:** 10 semanas.
+- Semanas 1-3: análisis de reglas de negocio y definición de entidades.
+- Semanas 4-7: construcción de diagramas de dominio y base de datos.
+- Semanas 8-10: validación cruzada con código y ajustes finales.
+
+---
+
+### Objetivo 3
+**Específico:** Mejorar mi perfil profesional en ingeniería de software mediante la documentación técnica integral de bounded contexts y decisiones de diseño arquitectónico del proyecto.
+
+**Medible:**
+- Documentar al menos 2 bounded contexts con su Domain, Application, Interface e Infrastructure Layer.
+- Registrar al menos 6 decisiones técnicas relevantes (patrones, trade-offs, convenciones).
+- Publicar la documentación consolidada en Markdown con estructura clara y trazabilidad.
+
+**Alcanzable:** Utilizaré plantillas de documentación, revisión por pares y seguimiento semanal para mantener consistencia y calidad en los entregables.
+
+**Relevante:** La documentación técnica sólida fortalece la colaboración del equipo y me prepara para entornos profesionales donde la mantenibilidad y transferencia de conocimiento son esenciales.
+
+**Tiempo:** 12 semanas.
+- Semanas 1-4: estructura documental y levantamiento de información.
+- Semanas 5-8: redacción técnica y vinculación con diagramas.
+- Semanas 9-12: revisión, estandarización y entrega final.
 
 # Capítulo I: Presentación
 
