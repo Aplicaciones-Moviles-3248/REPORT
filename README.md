@@ -863,7 +863,7 @@ Courtly responde a esta necesidad al ofrecer un espacio digital donde los entren
 
 #### 2.5.1.3. Bounded Context Canvases
 
-# 2.5.2 Context Mapping
+### 2.5.2. Context Mapping
 
 ## Proceso de elaboración del Context Mapping
 
