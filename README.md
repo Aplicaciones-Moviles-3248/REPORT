@@ -891,7 +891,7 @@ Sin embargo, esta unificación mezclaba responsabilidades distintas dentro de un
 
 ### Alternativa 2: IAM y Users separados con ACL
 
-![alt2](./images/context-map-alt2.png)
+> **Nota:** El diagrama `context-map-alt2.png` no está incluido actualmente en el repositorio, por lo que se eliminó la referencia rota `./images/context-map-alt2.png`.
 
 Esta alternativa mantiene separados los contextos de autenticación e identidad funcional, incorporando una capa **ACL** para traducir la identidad autenticada hacia la identidad de negocio. De esta forma, el sistema preserva la responsabilidad específica de cada contexto y evita contaminar el dominio operativo con conceptos propios de seguridad.
 
