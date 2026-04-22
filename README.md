@@ -8808,105 +8808,19 @@ El Component Diagram del bounded context `Matches` representa la descomposición
 
 **Diagrama de Componentes:**
 
-```
-┌──────────────────────────────────────────────────────────────┐
-│                     Matches Container                        │
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Matches REST API Component                             │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • MatchesController                                    │  │
-│  │ • Expone endpoints CRUD de partidos                    │  │
-│  │ • Recibe requests del frontend                         │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Match Transformation Component                         │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • MatchResourceFromEntityAssembler                     │  │
-│  │ • CreateMatchCommandFromResourceAssembler              │  │
-│  │ • UpdateMatchCommandFromResourceAssembler              │  │
-│  │ • MatchResource / CreateMatchResource / Update...      │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Match Command Processing Component                     │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • MatchCommandServiceImpl                              │  │
-│  │ • CreateMatchCommand                                   │  │
-│  │ • UpdateMatchCommand                                   │  │
-│  │ • DeleteMatchCommand                                   │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Match Query Processing Component                       │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • MatchQueryServiceImpl                                │  │
-│  │ • GetAllMatchesQuery                                   │  │
-│  │ • GetMatchByIdQuery                                    │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Match Domain Component                                 │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • Match (Aggregate Root)                               │  │
-│  │ • MatchStatus                                          │  │
-│  │ • updateMatch(...)                                     │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Match Persistence Component                            │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • MatchRepository                                      │  │
-│  │ • Spring Data JPA / Hibernate                          │  │
-│  │ • Persistencia en tabla matches                        │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ External Context Access Component                      │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • UserProfileRepository (Users)                        │  │
-│  │ • CourtRepository (Courts)                             │  │
-│  │ • Validación de referencias externas                   │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-└──────────────────────────────────────────────────────────────┘
-          ↓                         ↓                        ↓
-   ┌──────────────┐         ┌──────────────┐         ┌─────────────────┐
-   │ user_profiles│         │    courts    │         │     matches     │
-   │ (Users BC)   │         │ (Courts BC)  │         │   (DB Table)    │
-   └──────────────┘         └──────────────┘         └─────────────────┘
-```
+![Components-Matches](/assets/chapter2/Components-Matches.png)
 
 **Relaciones entre componentes:**
 
-- **Matches REST API Component → Match Transformation Component:**
-Transforma datos entre resources, commands y entidades.
-
-- **Matches REST API Component → Match Command Processing Component:**
-Ejecuta operaciones de creación, actualización y eliminación.
-
-- **Matches REST API Component → Match Query Processing Component:**
-Ejecuta operaciones de consulta.
-
-- **Match Command Processing Component → External Context Access Component:**
-Valida la existencia de la cancha y del usuario.
-
-- **Match Command Processing Component → Match Domain Component:**
-Construye o modifica el agregado `Match`.
-
-- **Match Command Processing Component → Match Persistence Component:**
-Persiste los cambios.
-
-- **Match Query Processing Component → Match Persistence Component:**
-Recupera datos desde la base de datos.
-
-- **Match Persistence Component → matches:**
-Gestiona la persistencia en la tabla.
-
-- **External Context Access Component → user_profiles / courts:**
-Consulta otros bounded contexts para validar relaciones.
+- **Matches REST API Component → Match Transformation Component:** Transforma datos entre resources, commands y entidades.
+- **Matches REST API Component → Match Command Processing Component:** Ejecuta operaciones de creación, actualización y eliminación.
+- **Matches REST API Component → Match Query Processing Component:** Ejecuta operaciones de CRUD.
+- **Match Command Processing Component → External Context Access Component:** Valida la existencia de la cancha y del usuario.
+- **Match Command Processing Component → Match Domain Component:** Construye o modifica el agregado `Match`.
+- **Match Command Processing Component → Match Persistence Component:** Persiste los cambios.
+- **Match Query Processing Component → Match Persistence Component:** Recupera datos desde la base de datos.
+- **Match Persistence Component → matches:** Gestiona la persistencia en la tabla.
+- **External Context Access Component → user_profiles / courts:** Consulta otros bounded contexts para validar relaciones.
 
 ---
 
@@ -8927,109 +8841,7 @@ Además, se incluyen:
 
 **Diagrama UML de Clases (Domain Layer):**
 
-```
-┌──────────────────────────────────────────────────────┐
-│                   <<Aggregate Root>>                 │
-│                         Match                        │
-├──────────────────────────────────────────────────────┤
-│ - matchId: int                                       │
-│ - title: String                                      │
-│ - description: String                                │
-│ - dateTime: DateTime                                 │
-│ - status: MatchStatus                                │
-│ - maxPlayers: int                                    │
-│ - currentPlayers: int                                │
-│ - court: Court                                       │
-│ - createdBy: UserProfile                             │
-│ - createdAt: DateTime                                │
-├──────────────────────────────────────────────────────┤
-│ + createMatch(title, desc, dt, max, courtId, userId) │
-│ + updateMatch(title, desc, dt, maxPlayers)           │
-│ + deleteMatch()                                      │
-│ + isFull(): boolean                                  │
-│ + onCreate(): void                                   │
-└──────────────────────────────────────────────────────┘
-                  │
-                  │ many-to-one
-        ┌─────────┴─────────┐
-        ▼                   ▼
-┌──────────────────┐   ┌────────────────────┐
-│      Court       │   │    UserProfile     │
-├──────────────────┤   ├────────────────────┤
-│ + id: int        │   │ + id: int          │
-│ + name: String   │   │ + name: String     │
-└──────────────────┘   └────────────────────┘
-
-
-┌────────────────────────────────────────────┐
-│         <<Value Object>>                   │
-│           MatchStatus                      │
-├────────────────────────────────────────────┤
-│ + OPEN                                     │
-│ + FULL                                     │
-│ + CANCELLED                                │
-│ + COMPLETED                                │
-└────────────────────────────────────────────┘
-
-
-┌────────────────────────────────────────────┐
-│         <<Interface>>                      │
-│         MatchCommandService                │
-├────────────────────────────────────────────┤
-│ + handle(CreateMatchCommand): Optional     │
-│ + handle(UpdateMatchCommand): Optional     │
-│ + handle(DeleteMatchCommand): void         │
-└────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────┐
-│         <<Interface>>                      │
-│         MatchQueryService                  │
-├────────────────────────────────────────────┤
-│ + handle(GetAllMatchesQuery): List         │
-│ + handle(GetMatchByIdQuery): Optional      │
-└────────────────────────────────────────────┘
-
-
-┌────────────────────────────────────────────┐
-│           CreateMatchCommand               │
-├────────────────────────────────────────────┤
-│ + title: String                            │
-│ + description: String                      │
-│ + dateTime: DateTime                       │
-│ + maxPlayers: int                          │
-│ + courtId: int                             │
-│ + createdById: int                         │
-└────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────┐
-│           UpdateMatchCommand               │
-├────────────────────────────────────────────┤
-│ + matchId: int                             │
-│ + title: String                            │
-│ + description: String                      │
-│ + dateTime: DateTime                       │
-│ + maxPlayers: int                          │
-└────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────┐
-│           DeleteMatchCommand               │
-├────────────────────────────────────────────┤
-│ + matchId: int                             │
-└────────────────────────────────────────────┘
-
-
-┌────────────────────────────────────────────┐
-│            GetAllMatchesQuery              │
-├────────────────────────────────────────────┤
-│ (sin atributos)                            │
-└────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────┐
-│           GetMatchByIdQuery                │
-├────────────────────────────────────────────┤
-│ + matchId: int                             │
-└────────────────────────────────────────────┘
-```
+![umlClass-Matches](/assets/chapter2/umlClass-Matches.png)
 
 **Relaciones:**
 
@@ -9049,44 +8861,7 @@ La tabla principal es `matches`, la cual mantiene relaciones con las tablas `cou
 
 **Diagrama de base de datos (ERD):**
 
-```
-┌──────────────────────────────┐
-│        user_profiles         │
-├──────────────────────────────┤
-│ PK id (BIGINT)               │
-│ name (VARCHAR)               │
-│ email (VARCHAR)              │
-└──────────────────────────────┘
-             ▲
-             │ FK (created_by)
-             │
-┌────────────┴──────────────────────────────────────────┐
-│                        matches                        │
-├───────────────────────────────────────────────────────┤
-│ PK match_id (BIGINT, AUTO_INCREMENT)                  │
-│ title (VARCHAR(255), NOT NULL)                        │
-│ description (TEXT)                                    │
-│ date_time (DATETIME, NOT NULL)                        │
-│ status (ENUM('OPEN','FULL','CANCELLED','COMPLETED'))  │
-│ max_players (INT, NOT NULL)                           │
-│ current_players (INT, DEFAULT 0)                      │
-│ court_id (BIGINT, NOT NULL)                           │
-│ created_by (BIGINT, NOT NULL)                         │
-│ created_at (DATETIME, NOT NULL)                       |
-| FOREIGN KEY (court_id) REFERENCES courts(id)          │
-│ FOREIGN KEY (created_by) REFERENCES user_profiles(id) |
-└───────────────────────────────────────────────────────┘
-             ▲
-             │ FK (court_id)
-             │
-┌────────────┴──────────────────────────────┐
-│                 courts                    │
-├───────────────────────────────────────────┤
-│ PK id (BIGINT)                            │
-│ name (VARCHAR)                            │
-│ location (VARCHAR)                        │
-└───────────────────────────────────────────┘
-```
+![ERD-Matches](/assets/chapter2/ERD-Matches.png)
 
 **Tablas y atributos:**
 
