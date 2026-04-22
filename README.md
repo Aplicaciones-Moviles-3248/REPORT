@@ -2600,6 +2600,8 @@ Esta estructura permitió obtener entrevistas más naturales y mejor conectadas 
 
 En esta sección se presentan las entrevistas realizadas a representantes de los segmentos objetivo de **Courtly**. Para cada entrevista se incluye la información general del entrevistado, la evidencia audiovisual correspondiente y un resumen descriptivo de sus respuestas. El propósito de este registro es documentar de manera ordenada los hallazgos obtenidos, de modo que las características identificadas en los futuros arquetipos puedan trazarse directamente a la información recolectada.
 
+- **URL del video:** [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDh0efpi-2rSrJaL5-em4T8ATBMyBh-bdU49hsRmGYVLx8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=f3SvAK)
+
 ---
 
 ### Segmento 1: Deportistas aficionados
@@ -2613,8 +2615,7 @@ En esta sección se presentan las entrevistas realizadas a representantes de los
 - **Estado civil:** Casado  
 - **Composición familiar:** Vive con su esposa  
 - **Inicio de la entrevista:** 0:03
-- **Fin de la entrevista:** 3:50
-- **URL del video:** [**https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAcAXVrClN-Qrcgko_hCCq1AS3ZsuslsEI5ZdSr1QfK33g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=GUMZlt**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAcAXVrClN-Qrcgko_hCCq1AS3ZsuslsEI5ZdSr1QfK33g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=GUMZlt)  
+- **Fin de la entrevista:** 3:50  
 
 #### Registro visual de la entrevista
 ![Evidencia de la entrevista](assets/chapter2/segmento1-entrevista1.png)
@@ -2655,7 +2656,7 @@ Además, indicó que para que una app de este tipo realmente le resulte útil de
 - **Composición familiar:** Vive con sus padres y su hermana menor  
 - **Inicio de la entrevista:** 0:02
 - **Fin de la entrevista:** 5:36 
-- **URL del video:** [**https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAcAXVrClN-Qrcgko_hCCq1AS3ZsuslsEI5ZdSr1QfK33g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=GUMZlt**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAw-KNFmXJhTqKMLjiChGgPAc04veNmC5gcOmjD47FyITk?e=VWhzSm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
 
 #### Registro visual de la entrevista
 ![Evidencia de la entrevista](assets/chapter2/segmento1-entrevista2.png)
@@ -2694,8 +2695,7 @@ Además, precisó que una app de este tipo le resultaría realmente útil si fue
 - **Estado civil:** Soltero  
 - **Composición familiar:** Vive con sus padres  
 - **Inicio de la entrevista:** 0:00
-- **Fin de la entrevista:** 3:20   
-- **URL del video:** [**https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQC8PnGtF0QoRaFQVL26lnA_AdQqgtTECZND01dhyWwSGg4?e=M3UkQa&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQC8PnGtF0QoRaFQVL26lnA_AdQqgtTECZND01dhyWwSGg4?e=M3UkQa&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)  
+- **Fin de la entrevista:** 3:20     
 
 #### Registro visual de la entrevista
 ![Evidencia de la entrevista](assets/chapter2/segmento1-entrevista3.png)
@@ -2740,7 +2740,7 @@ Además, señaló que una app de este tipo debería ser rápida y fácil de usar
 - **Composición familiar:** Vive con su esposa  
 - **Inicio de la entrevista:** 0:03
 - **Fin de la entrevista:** 4:23 
-- **URL del video:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDdQttx8G05R7ie63he68lFAdjrBkgE6pylDUguaOUQH68?e=oMvVCE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDdQttx8G05R7ie63he68lFAdjrBkgE6pylDUguaOUQH68?e=oMvVCE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) 
+
 
 #### Registro visual de la entrevista
 ![Evidencia de la entrevista](assets/chapter2/segmento2-entrevista1.png)
@@ -2780,7 +2780,6 @@ En cuanto a sus preocupaciones, destacó la importancia de que la aplicación re
 - **Composición familiar:** **Por completar**  
 - **Inicio de la entrevista:** 0:03
 - **Fin de la entrevista:** 7:03 
-- **URL del video:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDO8nYm2E-HTaXKTk2FIdV3ARZAXaqatlWZyStOoM98yEU?e=SlGsV8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDO8nYm2E-HTaXKTk2FIdV3ARZAXaqatlWZyStOoM98yEU?e=SlGsV8&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)  
 
 #### Registro visual de la entrevista
 ![Evidencia de la entrevista](assets/chapter2/segmento2-entrevista2.png)
@@ -2827,7 +2826,7 @@ Finalmente, señaló que su principal motivación para seguir entrenando es ayud
 - **Composición familiar:** Vive con su pareja 
 - **Inicio de la entrevista:** 0:01
 - **Fin de la entrevista:** 7:19 
-- **URL del video:** [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCQWUrAvrhrRrYO4NhvkrQdAf7-klqLXd9-sw1fOMpqAGs?e=3a089e&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCQWUrAvrhrRrYO4NhvkrQdAf7-klqLXd9-sw1fOMpqAGs?e=3a089e&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) 
+
 
 #### Registro visual de la entrevista
 ![Evidencia de la entrevista](assets/chapter2/segmento2-entrevista3.png)
