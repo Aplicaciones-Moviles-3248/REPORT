@@ -4335,76 +4335,8 @@ A partir del análisis del código real, se identifican los siguientes component
 
 **Diagrama de componentes propuesto:**
 
-```text
-┌──────────────────────────────────────────────────────────────┐
-│                    Bookings Container                        │
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Bookings REST API Component                           │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • BookingsController                                  │  │
-│  │ • Expone endpoints CRUD de reservas                   │  │
-│  │ • Recibe requests del frontend móvil                  │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Booking Transformation Component                      │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • BookingResourceFromEntityAssembler                  │  │
-│  │ • CreateBookingCommandFromResourceAssembler           │  │
-│  │ • UpdateBookingCommandFromResourceAssembler           │  │
-│  │ • BookingResource / CreateBookingResource / Update... │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Booking Command Processing Component                  │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • BookingCommandServiceImpl                           │  │
-│  │ • CreateBookingCommand                                │  │
-│  │ • UpdateBookingCommand                                │  │
-│  │ • DeleteBookingCommand                                │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Booking Query Processing Component                    │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • BookingQueryServiceImpl                             │  │
-│  │ • GetAllBookingsQuery                                 │  │
-│  │ • GetBookingByIdQuery                                 │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Booking Domain Component                              │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • Booking (Aggregate Root)                            │  │
-│  │ • updateBooking(...)                                  │  │
-│  │ • onCreate()                                          │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Booking Persistence Component                         │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • BookingRepository                                   │  │
-│  │ • Spring Data JPA / Hibernate                         │  │
-│  │ • Persistencia en tabla bookings                      │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ External Context Access Component                     │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • UserProfileRepository (Users)                       │  │
-│  │ • CourtRepository (Courts)                            │  │
-│  │ • Validación de referencias externas                  │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-└──────────────────────────────────────────────────────────────┘
-          ↓                         ↓                        ↓
-   ┌──────────────┐         ┌──────────────┐         ┌─────────────────┐
-   │ user_profiles│         │    courts    │         │    bookings     │
-   │ (Users BC)   │         │ (Courts BC)  │         │   (DB Table)    │
-   └──────────────┘         └──────────────┘         └─────────────────┘
-```
+![Component Diagram Analytics](assets/chapter2/componentes_bookings.png)
+
 **Relaciones entre componentes:**
 
 - **Bookings REST API Component → Booking Transformation Component**  
@@ -4456,101 +4388,8 @@ El diseño evidencia que `Booking` es el núcleo del dominio y que las operacion
 
 **Diagrama UML de clases (Domain Layer):**
 
-```text
-┌────────────────────────────────────────────┐
-│           <<Aggregate Root>>               │
-│                 Booking                    │
-├────────────────────────────────────────────┤
-│ - id: Long                                 │
-│ - startTime: LocalDateTime                 │
-│ - endTime: LocalDateTime                   │
-│ - user: UserProfile                        │
-│ - court: Court                             │
-│ - createdAt: LocalDateTime                 │
-├────────────────────────────────────────────┤
-│ + Booking(startTime, endTime, user, court) │
-│ + updateBooking(startTime, endTime): void  │
-│ + onCreate(): void                         │
-└────────────────────────────────────────────┘
-                  │
-                  │ many-to-one
-                  ▼
-        ┌───────────────────────┐
-        │      UserProfile      │
-        ├───────────────────────┤
-        │ + id: Long            │
-        │ + name: String        │
-        │ + email: String       │
-        │ + phone: String       │
-        └───────────────────────┘
+![Domain Layer Analytics](assets/chapter2/domainlayer_bookings.png)
 
-                  │
-                  │ many-to-one
-                  ▼
-        ┌───────────────────────┐
-        │        Court          │
-        ├───────────────────────┤
-        │ + id: Long            │
-        │ + name: String        │
-        │ + location: String    │
-        │ + type: String        │
-        └───────────────────────┘
-
-
-┌────────────────────────────────────────────┐
-│         <<Interface>>                      │
-│         BookingCommandService              │
-├────────────────────────────────────────────┤
-│ + handle(CreateBookingCommand): Optional   │
-│ + handle(UpdateBookingCommand): Optional   │
-│ + handle(DeleteBookingCommand): void       │
-└────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────┐
-│         <<Interface>>                      │
-│         BookingQueryService                │
-├────────────────────────────────────────────┤
-│ + handle(GetAllBookingsQuery): List        │
-│ + handle(GetBookingByIdQuery): Optional    │
-└────────────────────────────────────────────┘
-
-
-┌────────────────────────────────────────────┐
-│           CreateBookingCommand             │
-├────────────────────────────────────────────┤
-│ + startTime: LocalDateTime                 │
-│ + endTime: LocalDateTime                   │
-│ + userId: Long                             │
-│ + courtId: Long                            │
-└────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────┐
-│           UpdateBookingCommand             │
-├────────────────────────────────────────────┤
-│ + bookingId: Long                          │
-│ + startTime: LocalDateTime                 │
-│ + endTime: LocalDateTime                   │
-└────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────┐
-│           DeleteBookingCommand             │
-├────────────────────────────────────────────┤
-│ + bookingId: Long                          │
-└────────────────────────────────────────────┘
-
-
-┌────────────────────────────────────────────┐
-│            GetAllBookingsQuery             │
-├────────────────────────────────────────────┤
-│ (sin atributos)                            │
-└────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────┐
-│           GetBookingByIdQuery              │
-├────────────────────────────────────────────┤
-│ + bookingId: Long                          │
-└────────────────────────────────────────────┘
-```
 **Relaciones principales del modelo**
 
 - **Booking** es el Aggregate Root del bounded context.
@@ -4575,40 +4414,8 @@ El diagrama de base de datos del bounded context **Bookings** representa la estr
 
 **Diagrama de base de datos (ERD)**
 
-```
-┌──────────────────────────────┐
-│        user_profiles         │
-├──────────────────────────────┤
-│ PK id (BIGINT)               │
-│ name (VARCHAR)               │
-│ email (VARCHAR)              │
-│ phone (VARCHAR)              │
-└──────────────────────────────┘
-             ▲
-             │ FK (user_id)
-             │
-┌────────────┴──────────────────────────────┐
-│                 bookings                  │
-├───────────────────────────────────────────┤
-│ PK id (BIGINT, AUTO_INCREMENT)            │
-│ start_time (DATETIME(6), NOT NULL)        │
-│ end_time (DATETIME(6), NOT NULL)          │
-│ user_id (BIGINT, NOT NULL)                │
-│ court_id (BIGINT, NOT NULL)               │
-│ created_at (DATETIME(6), NOT NULL)        │
-└────────────┬──────────────────────────────┘
-             │
-             │ FK (court_id)
-             ▼
-┌──────────────────────────────┐
-│            courts            │
-├──────────────────────────────┤
-│ PK id (BIGINT)               │
-│ name (VARCHAR)               │
-│ location (VARCHAR)           │
-│ type (VARCHAR)               │
-└──────────────────────────────┘
-```
+![Database Analytics](assets/chapter2/basededatos_bookings.png)
+
 **Tablas y atributos**
 
 Tabla `bookings`
@@ -5571,76 +5378,8 @@ El Component Diagram del bounded context **Analytics** representa la descomposic
 
 **Diagrama de componentes propuesto:**
 
-```text
-┌──────────────────────────────────────────────────────────────┐
-│                   Analytics Container                        │
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Analytics REST API Component                          │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • AnalyticsController                                 │  │
-│  │ • Expone endpoints CRUD de métricas                   │  │
-│  │ • Recibe requests del frontend                        │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Metric Transformation Component                       │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • MetricResourceFromEntityAssembler                   │  │
-│  │ • CreateMetricCommandFromResourceAssembler            │  │
-│  │ • UpdateMetricCommandFromResourceAssembler            │  │
-│  │ • MetricResource / CreateMetricResource / Update...   │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Metric Command Processing Component                   │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • MetricCommandServiceImpl                            │  │
-│  │ • CreateMetricCommand                                 │  │
-│  │ • UpdateMetricCommand                                 │  │
-│  │ • DeleteMetricCommand                                 │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Metric Query Processing Component                     │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • MetricQueryServiceImpl                              │  │
-│  │ • GetAllMetricsQuery                                  │  │
-│  │ • GetMetricByIdQuery                                  │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Metric Domain Component                               │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • Metric (Aggregate Root)                             │  │
-│  │ • MetricType                                          │  │
-│  │ • updateMetric(...)                                   │  │
-│  │ • onCreate()                                          │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ Metric Persistence Component                          │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • MetricRepository                                    │  │
-│  │ • Spring Data JPA / Hibernate                         │  │
-│  │ • Persistencia en tabla metrics                       │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐  │
-│  │ External Context Access Component                     │  │
-│  ├────────────────────────────────────────────────────────┤  │
-│  │ • CoachRepository (Coaches)                           │  │
-│  │ • Validación de referencias externas                  │  │
-│  └────────────────────────────────────────────────────────┘  │
-│                                                              │
-└──────────────────────────────────────────────────────────────┘
-          ↓                                 ↓
-   ┌──────────────┐                ┌─────────────────┐
-   │   coaches    │                │     metrics      │
-   │ (Coaches BC) │                │    (DB Table)    │
-   └──────────────┘                └─────────────────┘
-```
+![Component Diagram Analytics](assets/chapter2/componentes_analytics.png)
+
 **Relaciones entre componentes**
 
 - **Analytics REST API Component** → **Metric Transformation Component**  
@@ -5693,101 +5432,8 @@ El diseño evidencia que **Metric** es el núcleo del dominio y que las operacio
 
 **Diagrama UML de clases (Domain Layer)**
 
-```text
-┌────────────────────────────────────────────┐
-│           <<Aggregate Root>>               │
-│                 Metric                     │
-├────────────────────────────────────────────┤
-│ - id: Long                                 │
-│ - metricType: MetricType                   │
-│ - value: BigDecimal                        │
-│ - period: String                           │
-│ - coach: Coach                             │
-│ - createdAt: LocalDateTime                 │
-├────────────────────────────────────────────┤
-│ + Metric(metricType, value, period, coach) │
-│ + updateMetric(metricType, value, period)  │
-│ + onCreate(): void                         │
-└────────────────────────────────────────────┘
-                  │
-                  │ many-to-one
-                  ▼
-        ┌───────────────────────┐
-        │        Coach          │
-        ├───────────────────────┤
-        │ + id: Long            │
-        │ + name: String        │
-        │ + expertise: String   │
-        │ + phone: String       │
-        └───────────────────────┘
+![Domain Layer Analytics](assets/chapter2/domainlayer_analytics.png)
 
-
-┌────────────────────────────────────────────┐
-│         <<Value Object>>                   │
-│            MetricType                      │
-├────────────────────────────────────────────┤
-│ + SESSIONS_COMPLETED                       │
-│ + BOOKINGS_RECEIVED                        │
-│ + REVENUE_TOTAL                            │
-│ + AVERAGE_RATING                           │
-└────────────────────────────────────────────┘
-
-
-┌────────────────────────────────────────────┐
-│         <<Interface>>                      │
-│         MetricCommandService               │
-├────────────────────────────────────────────┤
-│ + handle(CreateMetricCommand): Optional    │
-│ + handle(UpdateMetricCommand): Optional    │
-│ + handle(DeleteMetricCommand): void        │
-└────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────┐
-│         <<Interface>>                      │
-│         MetricQueryService                 │
-├────────────────────────────────────────────┤
-│ + handle(GetAllMetricsQuery): List         │
-│ + handle(GetMetricByIdQuery): Optional     │
-└────────────────────────────────────────────┘
-
-
-┌────────────────────────────────────────────┐
-│           CreateMetricCommand              │
-├────────────────────────────────────────────┤
-│ + metricType: MetricType                   │
-│ + value: BigDecimal                        │
-│ + period: String                           │
-│ + coachId: Long                            │
-└────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────┐
-│           UpdateMetricCommand              │
-├────────────────────────────────────────────┤
-│ + metricId: Long                           │
-│ + metricType: MetricType                   │
-│ + value: BigDecimal                        │
-│ + period: String                           │
-└────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────┐
-│           DeleteMetricCommand              │
-├────────────────────────────────────────────┤
-│ + metricId: Long                           │
-└────────────────────────────────────────────┘
-
-
-┌────────────────────────────────────────────┐
-│            GetAllMetricsQuery              │
-├────────────────────────────────────────────┤
-│ (sin atributos)                            │
-└────────────────────────────────────────────┘
-
-┌────────────────────────────────────────────┐
-│           GetMetricByIdQuery               │
-├────────────────────────────────────────────┤
-│ + metricId: Long                           │
-└────────────────────────────────────────────┘
-```
 **Relaciones principales del modelo**
 
 - **Metric** es el Aggregate Root del bounded context.
@@ -5812,29 +5458,8 @@ El diagrama de base de datos del bounded context **Analytics** representa la est
 
 **Diagrama de base de datos (ERD):**
 
-```text
-┌──────────────────────────────┐
-│           coaches            │
-├──────────────────────────────┤
-│ PK id (BIGINT)               │
-│ name (VARCHAR)               │
-│ expertise (VARCHAR)          │
-│ phone (VARCHAR)              │
-└──────────────────────────────┘
-             ▲
-             │ FK (coach_id)
-             │
-┌────────────┴──────────────────────────────┐
-│                 metrics                   │
-├───────────────────────────────────────────┤
-│ PK id (BIGINT, AUTO_INCREMENT)            │
-│ metric_type (VARCHAR(255), NOT NULL)      │
-│ value (DECIMAL(10,2), NOT NULL)           │
-│ period (VARCHAR(255), NOT NULL)           │
-│ coach_id (BIGINT, NOT NULL)               │
-│ created_at (DATETIME, NOT NULL)           │
-└───────────────────────────────────────────┘
-```
+![Database Analytics](assets/chapter2/basededatos_analytics.png)
+
 Tablas y atributos
 
 Tabla `metrics`
