@@ -952,7 +952,7 @@ Se definieron tres capas:
 
 ## Context Map Final
 
-![contextM](./images/context-map-courtly.png)
+> **Nota:** El diagrama `context-map-courtly.png` debe agregarse al repositorio en una ruta válida antes de volver a enlazarlo desde este README.
 
 ## Context Map — Leyenda rápida
 
