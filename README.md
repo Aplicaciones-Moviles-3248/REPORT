@@ -4196,5 +4196,2354 @@ Relaciones:
 - courts (1) ──── (*) court_ratings
 - users (1) ──── (*) court_ratings
 ```
+#### 2.6.3. Bounded Context: Users
+
+El bounded context **Users** representa la capacidad del sistema encargada de gestionar el perfil funcional de los usuarios del negocio. Su propósito es permitir la creación, consulta, actualización y eliminación de perfiles que contienen la información operativa utilizada por los demás bounded contexts.
+
+Dentro de este contexto, la entidad principal es `UserProfile`, ya que concentra los datos funcionales del usuario, incluyendo nombre, correo electrónico y teléfono. En consecuencia, este bounded context modela la identidad de negocio y no la identidad autenticada, por lo que se complementa con IAM en lugar de duplicarlo.
+
+Este contexto se relaciona de forma directa con los bounded contexts **IAM** y **Notifications**. Con IAM se vincula conceptualmente porque ambos representan a la misma persona desde perspectivas distintas: autenticación versus perfil funcional. Con Notifications se relaciona de forma persistente, ya que cada notificación pertenece a un `UserProfile`. A diferencia de IAM, aquí sí existe una entidad de negocio explícita y utilizada como referencia por otros contextos.
+
+---
+
+##### 2.6.3.1. Domain Layer
+
+La Domain Layer del bounded context **Users** contiene las clases que modelan el núcleo funcional de la gestión de perfiles de usuario, así como los comandos, consultas y contratos de servicios de dominio que soportan sus casos de uso principales. A partir del análisis del código, se identifica que el agregado principal del contexto es `UserProfile`, acompañado por sus comandos, queries y servicios de dominio.
+
+###### a) Entity / Aggregate Root: `UserProfile`
+
+**Nombre de la clase:** `UserProfile`  
+**Paquete:** `com.upc.matchpoint.users.domain.model.aggregates`
+
+**Propósito:**  
+Representa el perfil funcional de un usuario del sistema. Modela la información operativa que consumen otros bounded contexts.
+
+**Atributos:**
+- `id: Long` → identificador único del perfil.
+- `name: String` → nombre completo o nombre funcional del usuario.
+- `email: String` → correo electrónico único del perfil.
+- `phone: String` → número telefónico del usuario.
+
+**Métodos identificados:**
+- `UserProfile()` → constructor vacío.
+- `UserProfile(String name, String email, String phone)` → constructor con datos principales.
+- `updateProfile(String name, String email, String phone)` → actualiza los datos del perfil.
+
+**Relaciones:**
+- Un `UserProfile` puede ser referenciado por múltiples notificaciones.
+- La relación entre `UserProfile` y `Notification` es de tipo **One-to-Many** desde la perspectiva de Users.
+
+###### b) Value Objects / Enumerations
+
+En el código revisado no se identifican enums ni value objects propios del bounded context `Users`. El modelo se apoya en atributos simples para representar la información del perfil.
+
+###### c) Commands del dominio
+
+Los comandos del contexto Users encapsulan la intención de crear, actualizar y eliminar perfiles de usuario.
+
+###### `CreateUserProfileCommand`
+**Paquete:** `com.upc.matchpoint.users.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de crear un nuevo perfil de usuario.
+
+**Atributos:**
+- `name: String`
+- `email: String`
+- `phone: String`
+
+###### `UpdateUserProfileCommand`
+**Paquete:** `com.upc.matchpoint.users.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de modificar un perfil de usuario existente.
+
+**Atributos:**
+- `userId: Long`
+- `name: String`
+- `email: String`
+- `phone: String`
+
+###### `DeleteUserProfileCommand`
+**Paquete:** `com.upc.matchpoint.users.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de eliminar un perfil de usuario existente.
+
+**Atributos:**
+- `userId: Long`
+
+###### d) Queries del dominio
+
+El contexto Users define consultas para recuperar perfiles de usuario persistidos.
+
+###### `GetAllUserProfilesQuery`
+**Propósito:**  
+Representa la intención de obtener todos los perfiles de usuario del sistema.
+
+###### `GetUserProfileByIdQuery`
+**Propósito:**  
+Representa la intención de obtener un perfil de usuario específico por identificador.
+
+**Atributos:**
+- `userId: Long`
+
+###### e) Domain Services
+
+El dominio define servicios que abstraen los casos de uso principales del contexto Users.
+
+###### `UserProfileCommandService`
+**Propósito:**  
+Define el contrato para ejecutar operaciones de creación, actualización y eliminación.
+
+**Métodos identificados:**
+- `handle(CreateUserProfileCommand command)`
+- `handle(UpdateUserProfileCommand command)`
+- `handle(DeleteUserProfileCommand command)`
+
+###### `UserProfileQueryService`
+**Propósito:**  
+Define el contrato para recuperar información de perfiles de usuario.
+
+**Métodos identificados:**
+- `handle(GetAllUserProfilesQuery query)`
+- `handle(GetUserProfileByIdQuery query)`
+
+###### f) Repository
+
+###### `UserProfileRepository`
+**Paquete:** `com.upc.matchpoint.users.infrastructure.persistence.jpa.repositories`
+
+**Propósito dentro del dominio:**  
+Abstraer la persistencia y recuperación de perfiles de usuario.
+
+**Operaciones identificadas:**
+- `save(UserProfile)`
+- `findById(Long)`
+- `findAll()`
+- `findByEmail(String)`
+- `existsByEmail(String)`
+
+###### g) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- El correo electrónico debe ser único al momento de crear un perfil.
+- El perfil puede ser actualizado con nuevos datos funcionales.
+- El sistema puede listar perfiles existentes.
+- El sistema puede obtener un perfil por id.
+- El sistema puede eliminar perfiles cuando existen.
+
+**Reglas no implementadas o incompletas:**
+- No existe validación de formato de correo más allá de la unicidad.
+- No existe validación semántica del teléfono.
+- No existe asociación directa con la cuenta autenticada de IAM.
+- No existe historial de cambios del perfil.
+
+En conjunto, la Domain Layer de Users es simple y funcional, y actúa como la fuente de verdad del perfil operativo de cada usuario.
+
+---
+
+##### 2.6.3.2. Interface Layer
+
+La Interface Layer del bounded context **Users** contiene las clases responsables de exponer las funcionalidades del contexto mediante endpoints REST y de transformar la información entre las estructuras internas del sistema y los recursos consumidos por el frontend.
+
+###### a) `UserProfilesController`
+
+**Paquete:** `com.upc.matchpoint.users.interfaces.rest`
+
+**Propósito:**  
+Exponer los endpoints HTTP relacionados con la administración de perfiles de usuario.
+
+**Endpoints expuestos:**
+- `POST /api/v1/user-profiles` → crear perfil.
+- `GET /api/v1/user-profiles` → obtener todos los perfiles.
+- `GET /api/v1/user-profiles/{id}` → obtener perfil por id.
+- `PUT /api/v1/user-profiles/{id}` → actualizar perfil.
+- `DELETE /api/v1/user-profiles/{id}` → eliminar perfil.
+
+###### b) Resources / DTOs
+
+###### `CreateUserProfileResource`
+**Propósito:**  
+Representar los datos de entrada requeridos para crear un perfil de usuario.
+
+**Atributos:**
+- `name`
+- `email`
+- `phone`
+
+###### `UpdateUserProfileResource`
+**Propósito:**  
+Representar los datos de entrada requeridos para actualizar un perfil de usuario.
+
+**Atributos:**
+- `name`
+- `email`
+- `phone`
+
+###### `UserProfileResource`
+**Propósito:**  
+Representar la información de un perfil de usuario hacia el frontend.
+
+**Atributos:**
+- `id`
+- `name`
+- `email`
+- `phone`
+
+###### c) Assemblers
+
+La capa de interfaz del contexto Users incluye assemblers encargados de transformar datos entre resources, commands y entidades.
+
+**Assemblers identificados:**
+- `CreateUserProfileCommandFromResourceAssembler`
+- `UpdateUserProfileCommandFromResourceAssembler`
+- `UserProfileResourceFromEntityAssembler`
+
+###### d) Responsabilidad de la capa de interfaz
+
+La responsabilidad principal de esta capa es:
+- recibir solicitudes del cliente,
+- convertir resources de entrada en commands,
+- delegar la ejecución a la capa de aplicación,
+- y transformar los resultados en resources de salida adecuados para el frontend.
+
+En el caso de Users, esta capa expone la identidad funcional del negocio que luego consumen otros bounded contexts como Notifications.
+
+---
+
+##### 2.6.3.3. Application Layer
+
+La Application Layer del bounded context **Users** coordina los flujos de proceso relacionados con la creación, consulta, actualización y eliminación de perfiles de usuario. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y con la infraestructura de persistencia.
+
+Las capacidades principales del contexto son:
+- crear perfil,
+- listar perfiles,
+- obtener perfil por id,
+- actualizar perfil,
+- eliminar perfil.
+
+###### a) Command Handlers / Command Services
+
+###### `UserProfileCommandServiceImpl`
+
+**Paquete:** `com.upc.matchpoint.users.application.internal.commandservices`
+
+**Propósito:**  
+Implementar los casos de uso de creación, actualización y eliminación de perfiles de usuario.
+
+**Dependencias:**
+- `UserProfileRepository`
+
+**Operaciones que maneja:**
+
+**`handle(CreateUserProfileCommand command)`**
+- valida que el correo electrónico no exista,
+- crea una nueva entidad `UserProfile`,
+- persiste el perfil,
+- retorna el perfil creado.
+
+**`handle(UpdateUserProfileCommand command)`**
+- busca el perfil por `userId`,
+- actualiza los datos funcionales,
+- guarda la entidad actualizada,
+- retorna el perfil modificado.
+
+**`handle(DeleteUserProfileCommand command)`**
+- verifica que el perfil exista,
+- elimina el perfil persistido.
+
+###### b) Query Handlers / Query Services
+
+###### `UserProfileQueryServiceImpl`
+
+**Paquete:** `com.upc.matchpoint.users.application.internal.queryservices`
+
+**Propósito:**  
+Implementar los casos de uso de lectura sobre perfiles de usuario.
+
+**Dependencias:**
+- `UserProfileRepository`
+
+**Operaciones que maneja:**
+- `handle(GetAllUserProfilesQuery query)`
+- `handle(GetUserProfileByIdQuery query)`
+
+###### c) Event Handlers
+
+En el bounded context **Users** no se identifican event handlers en el código revisado. Esto sugiere que el contexto opera de forma síncrona y centrada en REST, sin automatización basada en eventos de dominio o aplicación.
+
+###### d) Flujos principales del negocio
+
+###### Flujo de creación de perfil
+1. El frontend envía un `CreateUserProfileResource`.
+2. La capa de interfaz lo transforma a `CreateUserProfileCommand`.
+3. `UserProfileCommandServiceImpl` valida que el correo no exista.
+4. Se crea una instancia de `UserProfile`.
+5. El perfil se persiste mediante `UserProfileRepository`.
+6. Se transforma el resultado en `UserProfileResource`.
+7. Se retorna la respuesta al cliente.
+
+###### Flujo de consulta de perfiles
+1. El cliente solicita la lista o detalle de perfiles.
+2. El controlador construye la query correspondiente.
+3. `UserProfileQueryServiceImpl` recupera la información desde `UserProfileRepository`.
+4. Los resultados se transforman a resources.
+5. Se retorna la respuesta.
+
+###### Flujo de actualización de perfil
+1. El frontend envía un `UpdateUserProfileResource`.
+2. La capa de interfaz lo transforma a `UpdateUserProfileCommand`.
+3. `UserProfileCommandServiceImpl` busca el perfil por id.
+4. Actualiza los datos funcionales.
+5. Persiste el cambio.
+6. Retorna el perfil actualizado.
+
+###### Flujo de eliminación de perfil
+1. El cliente solicita la eliminación de un perfil.
+2. El controlador construye el comando de eliminación.
+3. `UserProfileCommandServiceImpl` valida la existencia.
+4. El perfil se elimina de la base de datos.
+5. Se retorna una respuesta de confirmación.
+
+###### e) Observaciones de la capa de aplicación
+
+La capa de aplicación implementa de forma consistente los casos de uso principales de Users: creación, consulta, actualización y eliminación de perfiles. Su estructura es simple y clara, y mantiene al contexto enfocado en administrar la identidad funcional del usuario con validación de unicidad por correo.
+
+---
+
+##### 2.6.3.4. Infrastructure Layer
+
+La Infrastructure Layer del bounded context **Users** contiene los componentes encargados del acceso a base de datos y de la persistencia de perfiles de usuario. En esta capa se materializa el soporte técnico para almacenar y consultar perfiles funcionales.
+
+###### a) Repositorios de persistencia
+
+###### `UserProfileRepository`
+
+**Paquete:** `com.upc.matchpoint.users.infrastructure.persistence.jpa.repositories`
+
+**Propósito:**  
+Gestionar la persistencia y recuperación de perfiles de usuario utilizando Spring Data JPA.
+
+**Operaciones disponibles:**
+- `save`
+- `findById`
+- `findAll`
+- `findByEmail`
+- `existsByEmail`
+
+###### b) Persistencia de la entidad `UserProfile`
+
+La entidad `UserProfile` está mapeada como una entidad JPA con las siguientes características:
+- `@Entity`
+- `@Table(name = "user_profiles")`
+- restricción de unicidad para `email`
+
+###### c) Integración con otros bounded contexts
+
+Users expone la identidad funcional que consumen otros bounded contexts, especialmente Notifications. La integración se materializa mediante la referencia persistente a `UserProfile`, que permite a otros contextos asociar sus registros con un usuario del negocio.
+
+**Observación importante:**  
+No se identificó una fachada ACL específica para Users. El contexto funciona como proveedor del perfil funcional, pero no como integrador activo de otros bounded contexts mediante una interfaz dedicada.
+
+###### d) Limitaciones de la capa de infraestructura
+
+La infraestructura actual cumple con la persistencia básica de perfiles de usuario, pero todavía presenta limitaciones relevantes:
+- no existe integración con autenticación de IAM;
+- no existe sincronización automática con el registro de cuenta autenticada;
+- no existe historial o auditoría avanzada del perfil;
+- no existe infraestructura adicional de mensajería o eventos.
+
+En consecuencia, la Infrastructure Layer del bounded context Users es funcional para persistencia de perfiles, pero aún no resuelve la unificación automática entre identidad autenticada e identidad funcional.
+
+---
+
+##### 2.6.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Descripción:**
+
+El Component Diagram del bounded context **Users** representa la descomposición del contenedor backend encargado de gestionar perfiles funcionales de usuario. A nivel arquitectónico, este container está conformado por componentes con responsabilidades bien delimitadas: recepción de solicitudes REST, transformación de datos entre capas, ejecución de comandos y consultas, y acceso a persistencia.
+
+A partir del análisis del contexto, se identifican los siguientes componentes principales:
+
+**Componentes principales:**
+
+- **User Profile REST API Component**  
+  Expone los endpoints HTTP relacionados con crear, listar, consultar, actualizar y eliminar perfiles.
+
+- **User Profile Transformation Component**  
+  Agrupa los assemblers y resources que permiten transformar datos entre la capa de interfaz y la capa de aplicación.
+
+- **User Profile Command Processing Component**  
+  Implementado por el servicio de comandos, coordina los casos de uso de creación, actualización y eliminación.
+
+- **User Profile Query Processing Component**  
+  Implementado por el servicio de consultas, coordina la lectura de perfiles.
+
+- **User Profile Domain Component**  
+  Representa el núcleo del dominio mediante la entidad `UserProfile`, comandos, queries y contratos de servicio.
+
+- **User Profile Persistence Component**  
+  Encapsula el acceso a persistencia mediante `UserProfileRepository` usando Spring Data JPA.
+
+**Diagrama de componentes propuesto:**
+
+```text
+┌──────────────────────────────────────────────────────────────┐
+│                      Users Container                         │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ User Profile REST API Component                       │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • UserProfilesController                              │  │
+│  │ • Expone create, list, detail, update y delete        │  │
+│  │ • Recibe requests del frontend                        │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ User Profile Transformation Component                 │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • CreateUserProfileCommandFromResourceAssembler       │  │
+│  │ • UpdateUserProfileCommandFromResourceAssembler       │  │
+│  │ • UserProfileResourceFromEntityAssembler              │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ User Profile Command Processing Component             │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • UserProfileCommandServiceImpl                       │  │
+│  │ • CreateUserProfileCommand                            │  │
+│  │ • UpdateUserProfileCommand                            │  │
+│  │ • DeleteUserProfileCommand                            │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ User Profile Query Processing Component               │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • UserProfileQueryServiceImpl                         │  │
+│  │ • GetAllUserProfilesQuery                              │  │
+│  │ • GetUserProfileByIdQuery                             │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ User Profile Domain Component                         │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • UserProfile (Aggregate Root)                        │  │
+│  │ • Reglas de creación, actualización y lectura         │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ User Profile Persistence Component                    │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • UserProfileRepository                               │  │
+│  │ • Persistencia en user_profiles                       │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+          ↓
+     ┌─────────────────┐
+     │ user_profiles   │
+     │    (table)      │
+     └─────────────────┘
+
+```
+
+###### Relaciones entre componentes
+
+- **User Profile REST API Component → User Profile Transformation Component**  
+  Transforma datos de entrada y salida entre resources, commands y entidades.
+
+- **User Profile REST API Component → User Profile Command Processing Component**  
+  Delega operaciones de creación, actualización y eliminación.
+
+- **User Profile REST API Component → User Profile Query Processing Component**  
+  Delega operaciones de lectura sobre perfiles.
+
+- **User Profile Command Processing Component → User Profile Domain Component**  
+  Construye y actualiza la entidad `UserProfile`.
+
+- **User Profile Command Processing Component → User Profile Persistence Component**  
+  Persiste perfiles y consulta su existencia.
+
+- **User Profile Query Processing Component → User Profile Persistence Component**  
+  Recupera perfiles desde base de datos.
+
+- **User Profile Transformation Component → User Profile Domain Component**  
+  Convierte entidades en resources de salida.
+
+---
+
+##### 2.6.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se presentan los diagramas a nivel de código del bounded context **Users**, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
+
+Se incluyen dos representaciones principales:
+
+- el **Class Diagram del Domain Layer**, que describe la estructura del modelo de dominio;
+- y el **Database Design Diagram**, que representa la persistencia de datos en la base de datos relacional.
+
+---
+
+###### 2.6.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+**Descripción:**
+
+El diagrama de clases del Domain Layer del bounded context **Users** presenta el agregado principal `UserProfile`, junto con los comandos, queries y servicios de dominio que soportan las operaciones del contexto. El diseño evidencia que `UserProfile` es el núcleo del contexto y que las operaciones del sistema se organizan alrededor de la administración de perfiles funcionales.
+
+**Diagrama UML de clases (Domain Layer):**
+
+```text
+┌────────────────────────────────────────────┐
+│           <<Aggregate Root>>               │
+│              UserProfile                   │
+├────────────────────────────────────────────┤
+│ - id: Long                                 │
+│ - name: String                             │
+│ - email: String                            │
+│ - phone: String                            │
+├────────────────────────────────────────────┤
+│ + UserProfile()                            │
+│ + UserProfile(name, email, phone)          │
+│ + updateProfile(name, email, phone): void  │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│        CreateUserProfileCommand            │
+├────────────────────────────────────────────┤
+│ + name: String                             │
+│ + email: String                            │
+│ + phone: String                            │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│        UpdateUserProfileCommand            │
+├────────────────────────────────────────────┤
+│ + userId: Long                             │
+│ + name: String                             │
+│ + email: String                            │
+│ + phone: String                            │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│        DeleteUserProfileCommand            │
+├────────────────────────────────────────────┤
+│ + userId: Long                             │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│        GetAllUserProfilesQuery             │
+├────────────────────────────────────────────┤
+│ (sin atributos)                            │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│        GetUserProfileByIdQuery             │
+├────────────────────────────────────────────┤
+│ + userId: Long                             │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│       UserProfileCommandService            │
+├────────────────────────────────────────────┤
+│ + handle(CreateUserProfileCommand): Optional<UserProfile> │
+│ + handle(UpdateUserProfileCommand): Optional<UserProfile> │
+│ + handle(DeleteUserProfileCommand): void   │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│       UserProfileQueryService              │
+├────────────────────────────────────────────┤
+│ + handle(GetAllUserProfilesQuery): List<UserProfile> │
+│ + handle(GetUserProfileByIdQuery): Optional<UserProfile> │
+└────────────────────────────────────────────┘
+
+```
+
+###### Relaciones principales del modelo
+
+- `UserProfile` es el **Aggregate Root** del bounded context.
+- `UserProfile` puede ser referenciado por múltiples notificaciones.
+- `UserProfileCommandService` define las operaciones de creación, actualización y eliminación.
+- `UserProfileQueryService` define las operaciones de lectura de perfiles.
+- Los comandos encapsulan acciones de administración de perfiles.
+- Las queries encapsulan solicitudes de consulta.
+
+###### Observaciones
+
+El modelo de dominio presenta una estructura simple, clara y centrada en la identidad funcional del usuario. El agregado `UserProfile` encapsula la información operativa mínima que el contexto necesita para representar perfiles consistentes y reutilizables.
+
+---
+
+###### 2.6.3.6.2. Bounded Context Database Design Diagram
+
+**Descripción:**
+
+El diagrama de base de datos del bounded context **Users** representa la estructura relacional utilizada para persistir la información de perfiles de usuario. La tabla principal es `user_profiles`.
+
+**Diagrama de base de datos (ERD):**
+
+```text
+┌──────────────────────────────┐
+│        user_profiles         │
+├──────────────────────────────┤
+│ PK id (BIGINT, AUTO_INCREMENT) │
+│ name (VARCHAR, NOT NULL)     │
+│ email (VARCHAR, NOT NULL, UNIQUE) │
+│ phone (VARCHAR, NOT NULL)    │
+└──────────────────────────────┘
+
+```
+
+###### Tablas y atributos
+
+###### Tabla `user_profiles`
+
+- `id`: identificador único del perfil (PK)
+- `name`: nombre del usuario
+- `email`: correo electrónico único
+- `phone`: teléfono del usuario
+
+###### Constraints
+
+- `PRIMARY KEY (id)` en `user_profiles`
+- `UNIQUE (email)` en `user_profiles`
+- restricción de `NOT NULL` en `name`
+- restricción de `NOT NULL` en `email`
+- restricción de `NOT NULL` en `phone`
+
+###### Relaciones entre tablas
+
+- `user_profiles (1) ──── (*) notifications` mediante la clave foránea definida en Notifications.
+
+###### Observaciones
+
+El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente perfiles funcionales de usuario con una restricción clara de unicidad sobre el correo. La tabla `user_profiles` refleja de manera directa el alcance del contexto y mantiene la persistencia alineada con su responsabilidad de negocio.
+
+---
+
+#### 2.6.10. Bounded Context: Notifications
+
+El bounded context **Notifications** representa la capacidad del sistema encargada de gestionar notificaciones persistidas asociadas a un perfil de usuario del bounded context **Users**. Su propósito es permitir la creación, consulta, actualización y eliminación de notificaciones que contienen información como título, mensaje, tipo, estado de lectura y fecha de creación.
+
+Dentro de este contexto, la entidad principal es `Notification`, ya que concentra la información central del mensaje notificado y mantiene la referencia al destinatario funcional mediante `UserProfile`. En consecuencia, este bounded context actúa como un contexto operativo transversal, porque depende del contexto **Users** para identificar a quién pertenece cada notificación.
+
+Este contexto se relaciona conceptualmente con **Users** de forma directa, ya que la entidad `Notification` posee una asociación JPA hacia `users.UserProfile`. A diferencia de IAM, aquí sí existe una relación persistente entre el contexto y la identidad funcional del negocio. Sin embargo, Notifications no administra autenticación ni seguridad; su responsabilidad se limita a la persistencia y exposición de notificaciones por REST.
+
+---
+
+##### 2.6.10.1. Domain Layer
+
+La Domain Layer del bounded context **Notifications** contiene las clases que modelan el núcleo funcional de la administración de notificaciones, así como los comandos, consultas y servicios de dominio que estructuran sus casos de uso principales. A partir del análisis del código, se identifica que el agregado principal del contexto es `Notification`, acompañado por sus comandos, queries y contratos de servicios.
+
+###### a) Entity / Aggregate Root: `Notification`
+
+**Nombre de la clase:** `Notification`  
+**Paquete:** `com.upc.matchpoint.notifications.domain.model.aggregates`
+
+**Propósito:**  
+Representa la notificación persistida del sistema. Modela el mensaje enviado o almacenado para un `UserProfile` y constituye el agregado principal del contexto.
+
+**Atributos:**
+- `id: Long` → identificador único de la notificación.
+- `title: String` → título o asunto de la notificación.
+- `message: String` → contenido principal del mensaje.
+- `type: String` → tipo o categoría de la notificación.
+- `isRead: boolean` → indica si la notificación fue leída.
+- `user: UserProfile` → perfil de usuario al que pertenece la notificación.
+- `createdAt: LocalDateTime` → fecha y hora de creación.
+
+**Métodos identificados:**
+- `Notification()` → constructor vacío.
+- `Notification(String title, String message, String type, boolean isRead, UserProfile user)` → constructor con datos principales.
+- `updateNotification(String title, String message, String type, boolean isRead)` → actualiza los campos editables.
+- `onCreate()` → inicializa `createdAt` antes de persistir.
+
+**Relaciones:**
+- Una `Notification` pertenece a un único `UserProfile`.
+- Un `UserProfile` puede tener muchas `Notification`.
+- La relación entre `Notification` y `UserProfile` es de tipo **Many-to-One**.
+
+###### b) Value Objects / Enumerations
+
+En el código revisado no se identifican enums ni value objects propios del bounded context `Notifications`. El atributo `type` se modela como `String`, por lo que la categorización de la notificación queda abierta a la validación externa o a reglas futuras.
+
+###### c) Commands del dominio
+
+Los comandos del contexto Notifications encapsulan la intención de crear, actualizar y eliminar notificaciones.
+
+###### `CreateNotificationCommand`
+**Paquete:** `com.upc.matchpoint.notifications.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de crear una nueva notificación.
+
+**Atributos:**
+- `title: String`
+- `message: String`
+- `type: String`
+- `isRead: boolean`
+- `userId: Long`
+
+###### `UpdateNotificationCommand`
+**Paquete:** `com.upc.matchpoint.notifications.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de modificar una notificación existente.
+
+**Atributos:**
+- `notificationId: Long`
+- `title: String`
+- `message: String`
+- `type: String`
+- `isRead: boolean`
+
+###### `DeleteNotificationCommand`
+**Paquete:** `com.upc.matchpoint.notifications.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de eliminar una notificación existente.
+
+**Atributos:**
+- `notificationId: Long`
+
+###### d) Queries del dominio
+
+El contexto Notifications define consultas para recuperar notificaciones persistidas.
+
+###### `GetAllNotificationsQuery`
+**Propósito:**  
+Representa la intención de obtener todas las notificaciones del sistema.
+
+###### `GetNotificationByIdQuery`
+**Propósito:**  
+Representa la intención de obtener una notificación específica por identificador.
+
+**Atributos:**
+- `notificationId: Long`
+
+###### e) Domain Services
+
+El dominio define servicios que abstraen los casos de uso principales del contexto Notifications.
+
+###### `NotificationCommandService`
+**Propósito:**  
+Define el contrato para ejecutar operaciones de creación, actualización y eliminación.
+
+**Métodos identificados:**
+- `handle(CreateNotificationCommand command)`
+- `handle(UpdateNotificationCommand command)`
+- `handle(DeleteNotificationCommand command)`
+
+###### `NotificationQueryService`
+**Propósito:**  
+Define el contrato para recuperar información de notificaciones.
+
+**Métodos identificados:**
+- `handle(GetAllNotificationsQuery query)`
+- `handle(GetNotificationByIdQuery query)`
+
+###### f) Repository
+
+###### `NotificationRepository`
+**Paquete:** `com.upc.matchpoint.notifications.infrastructure.persistence.jpa.repositories`
+
+**Propósito dentro del dominio:**  
+Abstraer la persistencia y recuperación de notificaciones.
+
+**Operaciones identificadas:**
+- `save(Notification)`
+- `findById(Long)`
+- `findAll()`
+- `deleteById(Long)`
+- `existsById(Long)`
+
+###### g) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- Cada notificación queda asociada a un `UserProfile` existente.
+- La creación registra automáticamente la fecha `createdAt`.
+- La consulta permite listar notificaciones y obtenerlas por id.
+- La actualización permite modificar título, mensaje, tipo y estado de lectura.
+- La eliminación borra una notificación si existe.
+
+**Reglas no implementadas o incompletas:**
+- No existe validación del contenido semántico del atributo `type`.
+- No existe filtrado por usuario en la consulta de lectura.
+- No existe envío asíncrono o integración con canales externos de notificación.
+- No existe expiración, prioridad ni plantilla de notificación.
+
+En conjunto, la Domain Layer de Notifications es simple y funcional, pero está orientada a persistir y administrar notificaciones más que a orquestar un sistema de mensajería completo.
+
+---
+
+##### 2.6.10.2. Interface Layer
+
+La Interface Layer del bounded context **Notifications** contiene las clases responsables de exponer las funcionalidades del contexto mediante endpoints REST y de transformar la información entre las estructuras internas del sistema y los recursos consumidos por el frontend.
+
+###### a) `NotificationsController`
+
+**Paquete:** `com.upc.matchpoint.notifications.interfaces.rest`
+
+**Propósito:**  
+Exponer los endpoints HTTP relacionados con la administración de notificaciones.
+
+**Endpoints expuestos:**
+- `POST /api/v1/notifications` → crear notificación.
+- `GET /api/v1/notifications` → obtener todas las notificaciones.
+- `GET /api/v1/notifications/{id}` → obtener notificación por id.
+- `PUT /api/v1/notifications/{id}` → actualizar notificación.
+- `DELETE /api/v1/notifications/{id}` → eliminar notificación.
+
+###### b) Resources / DTOs
+
+###### `CreateNotificationResource`
+**Propósito:**  
+Representar los datos de entrada requeridos para crear una notificación.
+
+**Atributos:**
+- `title`
+- `message`
+- `type`
+- `isRead`
+- `userId`
+
+###### `UpdateNotificationResource`
+**Propósito:**  
+Representar los datos de entrada requeridos para actualizar una notificación.
+
+**Atributos:**
+- `title`
+- `message`
+- `type`
+- `isRead`
+
+###### `NotificationResource`
+**Propósito:**  
+Representar la información de una notificación hacia el frontend.
+
+**Atributos:**
+- `id`
+- `title`
+- `message`
+- `type`
+- `isRead`
+- `createdAt`
+- `user` → resumen con `id` y `name`.
+
+###### c) Assemblers
+
+La capa de interfaz del contexto Notifications incluye assemblers encargados de transformar datos entre resources, commands y entidades.
+
+**Assemblers identificados:**
+- `CreateNotificationCommandFromResourceAssembler`
+- `UpdateNotificationCommandFromResourceAssembler`
+- `NotificationResourceFromEntityAssembler`
+
+###### d) Responsabilidad de la capa de interfaz
+
+La responsabilidad principal de esta capa es:
+- recibir solicitudes del cliente,
+- convertir resources de entrada en commands,
+- delegar la ejecución a la capa de aplicación,
+- y transformar los resultados en resources de salida adecuados para el frontend.
+
+En el caso de Notifications, esta capa también refleja explícitamente la dependencia con `UserProfile`, ya que la respuesta expone un resumen del usuario asociado a la notificación.
+
+---
+
+##### 2.6.10.3. Application Layer
+
+La Application Layer del bounded context **Notifications** coordina los flujos de proceso relacionados con la creación, consulta, actualización y eliminación de notificaciones. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y con la infraestructura de persistencia.
+
+Las capacidades principales del contexto son:
+- crear notificación,
+- listar notificaciones,
+- obtener notificación por id,
+- actualizar notificación,
+- eliminar notificación.
+
+###### a) Command Handlers / Command Services
+
+###### `NotificationCommandServiceImpl`
+
+**Paquete:** `com.upc.matchpoint.notifications.application.internal.commandservices`
+
+**Propósito:**  
+Implementar los casos de uso de creación, actualización y eliminación de notificaciones.
+
+**Dependencias:**
+- `NotificationRepository`
+- `UserProfileRepository`
+
+**Operaciones que maneja:**
+
+**`handle(CreateNotificationCommand command)`**
+- busca el `UserProfile` por `userId`,
+- crea una nueva entidad `Notification`,
+- persiste la notificación,
+- retorna la notificación creada.
+
+**`handle(UpdateNotificationCommand command)`**
+- busca la notificación por `notificationId`,
+- actualiza los campos editables,
+- guarda la entidad actualizada,
+- retorna la notificación modificada.
+
+**`handle(DeleteNotificationCommand command)`**
+- verifica que la notificación exista,
+- elimina la notificación persistida.
+
+###### b) Query Handlers / Query Services
+
+###### `NotificationQueryServiceImpl`
+
+**Paquete:** `com.upc.matchpoint.notifications.application.internal.queryservices`
+
+**Propósito:**  
+Implementar los casos de uso de lectura sobre notificaciones.
+
+**Dependencias:**
+- `NotificationRepository`
+
+**Operaciones que maneja:**
+- `handle(GetAllNotificationsQuery query)`
+- `handle(GetNotificationByIdQuery query)`
+
+###### c) Event Handlers
+
+En el bounded context **Notifications** no se identifican event handlers en el código revisado. Esto sugiere que el contexto opera de forma síncrona y centrada en REST, sin automatización basada en eventos de dominio o eventos de aplicación.
+
+###### d) Flujos principales del negocio
+
+###### Flujo de creación de notificación
+1. El frontend envía un `CreateNotificationResource`.
+2. La capa de interfaz lo transforma a `CreateNotificationCommand`.
+3. `NotificationCommandServiceImpl` busca el `UserProfile` asociado.
+4. Se crea una instancia de `Notification`.
+5. La notificación se persiste mediante `NotificationRepository`.
+6. Se transforma el resultado en `NotificationResource`.
+7. Se retorna la respuesta al cliente.
+
+###### Flujo de consulta de notificaciones
+1. El cliente solicita la lista o detalle de notificaciones.
+2. El controlador construye la query correspondiente.
+3. `NotificationQueryServiceImpl` recupera la información desde `NotificationRepository`.
+4. Los resultados se transforman a resources.
+5. Se retorna la respuesta.
+
+###### Flujo de actualización de notificación
+1. El frontend envía un `UpdateNotificationResource`.
+2. La capa de interfaz lo transforma a `UpdateNotificationCommand`.
+3. `NotificationCommandServiceImpl` busca la notificación por id.
+4. Actualiza los campos editables.
+5. Persiste el cambio.
+6. Retorna la notificación actualizada.
+
+###### Flujo de eliminación de notificación
+1. El cliente solicita la eliminación de una notificación.
+2. El controlador construye el comando de eliminación.
+3. `NotificationCommandServiceImpl` valida la existencia.
+4. La notificación se elimina de la base de datos.
+5. Se retorna una respuesta de confirmación.
+
+###### e) Observaciones de la capa de aplicación
+
+La capa de aplicación implementa de forma coherente los flujos principales de Notifications: creación, consulta, actualización y eliminación. Además, coordina la validación del destinatario y la persistencia de cada notificación, lo que mantiene el comportamiento del contexto simple y enfocado en la administración del mensaje y su estado.
+
+---
+
+##### 2.6.10.4. Infrastructure Layer
+
+La Infrastructure Layer del bounded context **Notifications** contiene los componentes encargados del acceso a base de datos y de la integración técnica con el bounded context **Users** para recuperar perfiles de usuario. En esta capa se materializa el soporte técnico para persistir y leer notificaciones.
+
+###### a) Repositorios de persistencia
+
+###### `NotificationRepository`
+
+**Paquete:** `com.upc.matchpoint.notifications.infrastructure.persistence.jpa.repositories`
+
+**Propósito:**  
+Gestionar la persistencia y recuperación de notificaciones utilizando Spring Data JPA.
+
+**Operaciones disponibles:**
+- `save`
+- `findById`
+- `findAll`
+- `deleteById`
+- `existsById`
+
+###### b) Persistencia de la entidad `Notification`
+
+La entidad `Notification` está mapeada como una entidad JPA con las siguientes características:
+- `@Entity`
+- `@Table(name = "notifications")`
+- `@ManyToOne(fetch = FetchType.LAZY)` con `UserProfile`
+- `@JoinColumn(name = "user_id", nullable = false)`
+- `@PrePersist` para inicializar la fecha de creación
+
+###### c) Integración con otros bounded contexts
+
+Notifications depende estructuralmente del bounded context **Users** para resolver el perfil funcional asociado a cada notificación. La dependencia se materializa mediante `UserProfileRepository`, lo que permite validar la existencia del usuario receptor antes de persistir la notificación.
+
+**Observación importante:**  
+Aunque existe integración directa con `UserProfile`, no se identificó una fachada ACL específica para Notifications. La relación con Users se implementa mediante acceso directo al repositorio del otro bounded context.
+
+###### d) Limitaciones de la capa de infraestructura
+
+La infraestructura actual cumple con la persistencia básica de notificaciones, pero todavía presenta limitaciones relevantes:
+- no existe integración con servicios externos de correo, SMS o push;
+- no existe una cola de mensajes ni un broker de eventos;
+- no existe separación entre notificación persistida y notificación entregada;
+- no se modela prioridad, expiración ni plantillas.
+
+En consecuencia, la Infrastructure Layer del bounded context Notifications es funcional para persistencia y consulta, pero todavía no implementa una verdadera infraestructura de mensajería distribuida.
+
+---
+
+##### 2.6.10.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Descripción:**
+
+El Component Diagram del bounded context **Notifications** representa la descomposición del contenedor backend encargado de gestionar notificaciones persistidas para perfiles de usuario. A nivel arquitectónico, este container está conformado por componentes con responsabilidades bien delimitadas: recepción de solicitudes REST, transformación de datos entre capas, ejecución de comandos y consultas, acceso a persistencia y resolución del perfil de usuario destinatario.
+
+A partir del análisis del contexto, se identifican los siguientes componentes principales:
+
+**Componentes principales:**
+
+- **Notification REST API Component**  
+  Expone los endpoints HTTP relacionados con crear, listar, consultar, actualizar y eliminar notificaciones.
+
+- **Notification Transformation Component**  
+  Agrupa los assemblers y resources que permiten transformar datos entre la capa de interfaz y la capa de aplicación.
+
+- **Notification Command Processing Component**  
+  Implementado por el servicio de comandos, coordina los casos de uso de creación, actualización y eliminación.
+
+- **Notification Query Processing Component**  
+  Implementado por el servicio de consultas, coordina la lectura de notificaciones.
+
+- **Notification Domain Component**  
+  Representa el núcleo del dominio mediante la entidad `Notification`, comandos, queries y contratos de servicio.
+
+- **Notification Persistence Component**  
+  Encapsula el acceso a persistencia mediante `NotificationRepository` usando Spring Data JPA.
+
+- **Users Integration Component**  
+  Representa la dependencia técnica hacia `UserProfileRepository` del bounded context Users para resolver el perfil destinatario.
+
+**Diagrama de componentes propuesto:**
+
+```text
+┌──────────────────────────────────────────────────────────────┐
+│                    Notifications Container                   │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Notification REST API Component                       │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • NotificationsController                             │  │
+│  │ • Expone create, list, detail, update y delete        │  │
+│  │ • Recibe requests del frontend                        │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Notification Transformation Component                 │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • CreateNotificationCommandFromResourceAssembler      │  │
+│  │ • UpdateNotificationCommandFromResourceAssembler      │  │
+│  │ • NotificationResourceFromEntityAssembler             │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Notification Command Processing Component             │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • NotificationCommandServiceImpl                      │  │
+│  │ • CreateNotificationCommand                           │  │
+│  │ • UpdateNotificationCommand                           │  │
+│  │ • DeleteNotificationCommand                           │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Notification Query Processing Component               │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • NotificationQueryServiceImpl                        │  │
+│  │ • GetAllNotificationsQuery                             │  │
+│  │ • GetNotificationByIdQuery                            │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Notification Domain Component                         │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • Notification (Aggregate Root)                       │  │
+│  │ • Reglas de creación, actualización y lectura         │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Notification Persistence Component                    │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • NotificationRepository                              │  │
+│  │ • Persistencia en notifications                       │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Users Integration Component                           │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • UserProfileRepository                                │  │
+│  │ • Validación del destinatario                          │  │
+│  │ • Integración con Users BC                             │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+          ↓                               ↓
+     ┌───────────────┐              ┌─────────────────┐
+     │ notifications │              │ user_profiles   │
+     │    (table)    │              │    (table)      │
+     └───────────────┘              └─────────────────┘
+
+```
+
+###### Relaciones entre componentes
+
+- **Notification REST API Component → Notification Transformation Component**  
+  Transforma datos de entrada y salida entre resources, commands y entidades.
+
+- **Notification REST API Component → Notification Command Processing Component**  
+  Delega operaciones de creación, actualización y eliminación.
+
+- **Notification REST API Component → Notification Query Processing Component**  
+  Delega operaciones de lectura sobre notificaciones.
+
+- **Notification Command Processing Component → Notification Domain Component**  
+  Construye y actualiza la entidad `Notification`.
+
+- **Notification Command Processing Component → Notification Persistence Component**  
+  Persiste notificaciones y consulta su existencia.
+
+- **Notification Command Processing Component → Users Integration Component**  
+  Valida y resuelve el `UserProfile` asociado a la notificación.
+
+- **Notification Query Processing Component → Notification Persistence Component**  
+  Recupera notificaciones desde base de datos.
+
+- **Notification Transformation Component → Notification Domain Component**  
+  Convierte entidades en resources de salida.
+
+---
+
+##### 2.6.10.6. Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se presentan los diagramas a nivel de código del bounded context **Notifications**, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
+
+Se incluyen dos representaciones principales:
+
+- el **Class Diagram del Domain Layer**, que describe la estructura del modelo de dominio;
+- y el **Database Design Diagram**, que representa la persistencia de datos en la base de datos relacional.
+
+---
+
+###### 2.6.10.6.1. Bounded Context Domain Layer Class Diagrams
+
+**Descripción:**
+
+El diagrama de clases del Domain Layer del bounded context **Notifications** presenta el agregado principal `Notification`, junto con los comandos, queries y servicios de dominio que soportan las operaciones del contexto. El diseño evidencia que `Notification` es el núcleo del contexto y que las operaciones del sistema se organizan alrededor de la administración de notificaciones persistidas.
+
+**Diagrama UML de clases (Domain Layer):**
+
+```text
+┌────────────────────────────────────────────┐
+│           <<Aggregate Root>>               │
+│              Notification                  │
+├────────────────────────────────────────────┤
+│ - id: Long                                 │
+│ - title: String                            │
+│ - message: String                          │
+│ - type: String                             │
+│ - isRead: boolean                          │
+│ - user: UserProfile                        │
+│ - createdAt: LocalDateTime                 │
+├────────────────────────────────────────────┤
+│ + Notification()                           │
+│ + Notification(title, message, type, isRead, user) │
+│ + updateNotification(title, message, type, isRead) │
+└────────────────────────────────────────────┘
+                  │
+                  │ many-to-one
+                  ▼
+┌────────────────────────────────────────────┐
+│               UserProfile                  │
+├────────────────────────────────────────────┤
+│ - id: Long                                 │
+│ - name: String                             │
+│ - email: String                            │
+│ - phone: String                            │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│               CreateNotificationCommand     │
+├────────────────────────────────────────────┤
+│ + title: String                            │
+│ + message: String                          │
+│ + type: String                             │
+│ + isRead: boolean                          │
+│ + userId: Long                             │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│               UpdateNotificationCommand     │
+├────────────────────────────────────────────┤
+│ + notificationId: Long                     │
+│ + title: String                            │
+│ + message: String                          │
+│ + type: String                             │
+│ + isRead: boolean                          │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│               DeleteNotificationCommand     │
+├────────────────────────────────────────────┤
+│ + notificationId: Long                     │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│              GetAllNotificationsQuery       │
+├────────────────────────────────────────────┤
+│ (sin atributos)                            │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│             GetNotificationByIdQuery        │
+├────────────────────────────────────────────┤
+│ + notificationId: Long                     │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│        NotificationCommandService          │
+├────────────────────────────────────────────┤
+│ + handle(CreateNotificationCommand): Optional<Notification> │
+│ + handle(UpdateNotificationCommand): Optional<Notification> │
+│ + handle(DeleteNotificationCommand): void  │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│        NotificationQueryService            │
+├────────────────────────────────────────────┤
+│ + handle(GetAllNotificationsQuery): List<Notification> │
+│ + handle(GetNotificationByIdQuery): Optional<Notification> │
+└────────────────────────────────────────────┘
+
+```
+
+###### Relaciones principales del modelo
+
+- `Notification` es el **Aggregate Root** del bounded context.
+- `Notification` mantiene una relación **Many-to-One** con `UserProfile`.
+- `NotificationCommandService` define las operaciones de creación, actualización y eliminación.
+- `NotificationQueryService` define las operaciones de lectura de notificaciones.
+- Los comandos encapsulan acciones de escritura sobre notificaciones.
+- Las queries encapsulan solicitudes de consulta.
+
+###### Observaciones
+
+El modelo de dominio presenta una estructura clara y centrada en el agregado `Notification`. La presencia de los campos de estado, tipo, contenido y destinatario permite representar con precisión el ciclo de vida de una notificación dentro del contexto.
+
+---
+
+###### 2.6.10.6.2. Bounded Context Database Design Diagram
+
+**Descripción:**
+
+El diagrama de base de datos del bounded context **Notifications** representa la estructura relacional utilizada para persistir la información de notificaciones. La tabla principal es `notifications`, vinculada mediante una clave foránea con `user_profiles`.
+
+**Diagrama de base de datos (ERD):**
+
+```text
+┌──────────────────────────────┐
+│         user_profiles        │
+├──────────────────────────────┤
+│ PK id (BIGINT)               │
+│ name (VARCHAR)               │
+│ email (VARCHAR)              │
+│ phone (VARCHAR)              │
+└──────────────────────────────┘
+             ▲
+             │ FK (user_id)
+             │
+┌────────────┴────────────────────────────────────┐
+│                  notifications                  │
+├─────────────────────────────────────────────────┤
+│ PK id (BIGINT, AUTO_INCREMENT)                  │
+│ title (VARCHAR, NOT NULL)                       │
+│ message (VARCHAR, NOT NULL)                     │
+│ type (VARCHAR, NOT NULL)                        │
+│ is_read (BOOLEAN, NOT NULL)                     │
+│ user_id (BIGINT, NOT NULL)                      │
+│ created_at (DATETIME, NOT NULL)                 │
+└─────────────────────────────────────────────────┘
+
+```
+
+###### Tablas y atributos
+
+###### Tabla `notifications`
+
+- `id`: identificador único de la notificación (PK)
+- `title`: título de la notificación
+- `message`: contenido de la notificación
+- `type`: tipo o categoría de la notificación
+- `is_read`: estado de lectura
+- `user_id`: referencia al perfil de usuario destinatario
+- `created_at`: fecha de creación
+
+###### Tabla `user_profiles`
+
+- `id`: identificador único del perfil de usuario
+- `name`: nombre del usuario
+- `email`: correo electrónico
+- `phone`: teléfono
+
+###### Constraints
+
+- `PRIMARY KEY (id)` en `notifications`
+- `FOREIGN KEY (user_id)` → `user_profiles(id)`
+- restricción de `NOT NULL` en `title`
+- restricción de `NOT NULL` en `message`
+- restricción de `NOT NULL` en `type`
+- restricción de `NOT NULL` en `is_read`
+- restricción de `NOT NULL` en `user_id`
+- restricción de `NOT NULL` en `created_at`
+
+###### Relaciones entre tablas
+
+- `user_profiles (1) ──── (*) notifications`
+
+###### Observaciones
+
+El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente notificaciones con su respectivo estado, tipo, fecha de creación y destinatario. La tabla `notifications` resume bien el alcance del contexto y deja preparada la base para futuras extensiones como prioridad, expiración o canales de entrega.
+
+---
+
+### 2.6.11. Bounded Context: IAM
+
+El bounded context **IAM** representa la capacidad del sistema encargada de gestionar la identidad autenticada y el control de acceso dentro de Courtly. Su propósito es permitir el registro de usuarios, la autenticación mediante credenciales y la asignación de roles para autorizar el acceso a las funcionalidades del sistema.
+
+Dentro de este contexto, la entidad principal es `User`, ya que concentra la información esencial de la cuenta autenticable, incluyendo nombre de usuario, contraseña cifrada y roles asignados. En consecuencia, IAM constituye un contexto transversal del sistema, pues provee los mecanismos de seguridad necesarios para el acceso a los demás bounded contexts.
+
+Este contexto se relaciona conceptualmente con **Users**, debido a que ambos representan identidades distintas del mismo actor. Sin embargo, mientras IAM administra la identidad autenticada del sistema, **Users** administra la identidad funcional utilizada por el negocio. En el diseño actual no existe una relación JPA directa entre `iam.User` y `users.UserProfile`, lo que genera una separación entre el proceso de autenticación y la operación de negocio. Como resultado, el login devuelve el identificador de `User`, pero los procesos operativos como reservas, partidos, pagos, reseñas y notificaciones esperan el identificador de `UserProfile`.
+
+---
+
+#### 2.6.11.1. Domain Layer
+
+La Domain Layer del bounded context **IAM** contiene las clases que modelan el núcleo de la autenticación y autorización del sistema, así como las reglas de negocio asociadas a la gestión de usuarios autenticados y roles. A partir del análisis del código, se identifica que el agregado principal del contexto es `User`, acompañado por la entidad `Role`, comandos, consultas, un enum de roles y servicios de dominio que estructuran la lógica del acceso al sistema.
+
+##### a) Entity / Aggregate Root: `User`
+
+**Nombre de la clase:** `User`  
+**Paquete:** `com.upc.matchpoint.iam.domain.model.aggregates`
+
+**Propósito:**  
+Representa la entidad principal del bounded context IAM. Modela la cuenta autenticable del sistema y constituye el agregado raíz del contexto.
+
+**Atributos:**
+- `id: Long` → identificador único del usuario autenticado.
+- `username: String` → nombre único de usuario.
+- `password: String` → contraseña almacenada en forma cifrada o hasheada.
+- `roles: Set<Role>` → conjunto de roles asignados al usuario.
+
+**Métodos identificados:**
+- `User()` → constructor vacío.
+- `User(String username, String password)` → constructor básico.
+- `User(String username, String password, List<Role> roles)` → constructor con roles.
+- `addRole(Role role)` → agrega un rol a la cuenta.
+- `addRoles(List<Role> roles)` → agrega múltiples roles con validación.
+
+**Relaciones:**
+- Un `User` puede tener uno o varios `Role`.
+- Un `Role` puede pertenecer a uno o varios `User`.
+- La relación entre `User` y `Role` es de tipo **Many-to-Many**.
+
+##### b) Entity: `Role`
+
+**Nombre de la clase:** `Role`  
+**Paquete:** `com.upc.matchpoint.iam.domain.model.entities`
+
+**Propósito:**  
+Representa los roles del sistema que determinan el nivel general de acceso de un usuario autenticado.
+
+**Atributos:**
+- `id: Long` → identificador único del rol.
+- `name: Roles` → nombre lógico del rol.
+
+**Métodos relevantes:**
+- `getStringName()` → retorna el nombre del rol como texto.
+- `getDefaultRole()` → retorna el rol por defecto del sistema.
+- `toRoleFromName(String name)` → construye un rol a partir de un nombre.
+- `validateRoleSet(List<Role> roles)` → valida el conjunto de roles y asigna un rol por defecto si corresponde.
+
+##### c) Value Objects
+
+###### `Roles`
+**Paquete:** `com.upc.matchpoint.iam.domain.model.valueobjects`
+
+**Propósito:**  
+Representa el conjunto acotado de roles válidos del sistema mediante una enumeración.
+
+**Valores definidos:**
+- `ROLE_USER`
+- `ROLE_ADMIN`
+- `ROLE_INSTRUCTOR`
+
+**Rol dentro del dominio:**  
+Actúa como un value object del dominio, ya que encapsula un conjunto limitado y válido de roles permitidos para la autenticación y autorización.
+
+##### d) Referencias externas del dominio
+
+Dentro del bounded context IAM no se identifican referencias JPA directas hacia otros bounded contexts del negocio. Sin embargo, existe una relación conceptual importante con el bounded context **Users**, dado que ambos representan identidades del mismo actor.
+
+###### `UserProfile`
+**Bounded context de origen:** `Users`
+
+**Relación conceptual con IAM:**  
+Representa la identidad funcional utilizada por el negocio, distinta de la identidad autenticada de IAM.
+
+**Observación importante:**  
+Actualmente no existe una relación JPA ni una vinculación automática entre `User` y `UserProfile`. Esta separación provoca una fricción arquitectónica, ya que luego del proceso de autenticación el frontend obtiene un `userId`, mientras que los procesos operativos requieren un `userProfileId`.
+
+##### e) Commands del dominio
+
+Los comandos del contexto IAM encapsulan la intención de ejecutar operaciones relacionadas con autenticación y administración de cuentas.
+
+###### `SignUpCommand`
+**Paquete:** `com.upc.matchpoint.iam.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de registrar una nueva cuenta autenticable en el sistema.
+
+**Atributos:**
+- `username: String`
+- `password: String`
+- `roles: List<Role>`
+
+###### `SignInCommand`
+**Paquete:** `com.upc.matchpoint.iam.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de autenticar un usuario existente mediante credenciales.
+
+**Atributos:**
+- `username: String`
+- `password: String`
+
+###### `SeedRolesCommand`
+**Paquete:** `com.upc.matchpoint.iam.domain.model.commands`
+
+**Propósito:**  
+Representa la intención de inicializar los roles base del sistema en la base de datos.
+
+##### f) Queries del dominio
+
+El contexto IAM también define consultas para recuperar información relacionada con usuarios y roles.
+
+###### `GetAllUsersQuery`
+**Propósito:**  
+Representa la intención de obtener todos los usuarios autenticados del sistema.
+
+###### `GetUserByIdQuery`
+**Propósito:**  
+Representa la intención de obtener un usuario autenticado por identificador.
+
+**Atributos:**
+- `userId: Long`
+
+###### `GetUserByUsernameQuery`
+**Propósito:**  
+Representa la intención de obtener un usuario autenticado por nombre de usuario.
+
+**Atributos:**
+- `username: String`
+
+###### `GetAllRolesQuery`
+**Propósito:**  
+Representa la intención de obtener todos los roles disponibles del sistema.
+
+###### `GetRoleByNameQuery`
+**Propósito:**  
+Representa la intención de obtener un rol específico por su nombre lógico.
+
+**Atributos:**
+- `name: Roles`
+
+##### g) Domain Services
+
+El dominio define servicios que abstraen los casos de uso principales del contexto IAM.
+
+###### `UserCommandService`
+**Propósito:**  
+Define el contrato para ejecutar operaciones de registro e inicio de sesión.
+
+**Métodos identificados:**
+- `handle(SignUpCommand command)`
+- `handle(SignInCommand command)`
+
+###### `UserQueryService`
+**Propósito:**  
+Define el contrato para recuperar información de usuarios autenticados.
+
+**Métodos identificados:**
+- `handle(GetAllUsersQuery query)`
+- `handle(GetUserByIdQuery query)`
+- `handle(GetUserByUsernameQuery query)`
+
+###### `RoleCommandService`
+**Propósito:**  
+Define el contrato para ejecutar operaciones de inicialización de roles.
+
+**Métodos identificados:**
+- `handle(SeedRolesCommand command)`
+
+###### `RoleQueryService`
+**Propósito:**  
+Define el contrato para recuperar información de roles del sistema.
+
+**Métodos identificados:**
+- `handle(GetAllRolesQuery query)`
+- `handle(GetRoleByNameQuery query)`
+
+##### h) Repository
+
+###### `UserRepository`
+**Paquete:** `com.upc.matchpoint.iam.infrastructure.persistence.jpa.repositories`
+
+**Propósito dentro del dominio:**  
+Abstraer la persistencia y recuperación de usuarios autenticados.
+
+**Operaciones identificadas:**
+- `save(User)`
+- `findById(Long)`
+- `findAll()`
+- `findByUsername(String)`
+- `existsByUsername(String)`
+
+###### `RoleRepository`
+**Paquete:** `com.upc.matchpoint.iam.infrastructure.persistence.jpa.repositories`
+
+**Propósito dentro del dominio:**  
+Abstraer la persistencia y recuperación de roles del sistema.
+
+**Operaciones identificadas:**
+- `save(Role)`
+- `findByName(Roles)`
+- `findAll()`
+- `existsByName(Roles)`
+
+##### i) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- El `username` debe ser único al momento del registro.
+- La contraseña se almacena hasheada.
+- Si no se especifican roles, se asigna `ROLE_USER` por defecto.
+- El inicio de sesión genera un token JWT cuando las credenciales son válidas.
+- El sistema puede listar usuarios existentes.
+- El sistema puede listar los roles disponibles.
+- La inicialización de roles crea los roles base solo si estos no existen previamente.
+
+**Reglas no implementadas o incompletas:**
+- No existe un enlace automático entre `User` y `UserProfile`.
+- No existe sincronización nativa entre el registro de autenticación y la creación del perfil funcional.
+- No se resuelve automáticamente el `userProfileId` a partir del login.
+- No existe recuperación de contraseña.
+- No existe cambio de contraseña.
+- No existe bloqueo por intentos fallidos.
+- No existe 2FA ni verificación de correo.
+
+En conjunto, la Domain Layer de IAM está bien definida para autenticación y autorización, aunque presenta una limitación importante en su integración con la identidad funcional del negocio.
+
+---
+
+#### 2.6.11.2. Interface Layer
+
+La Interface Layer del bounded context **IAM** contiene las clases responsables de exponer las funcionalidades del contexto mediante endpoints REST y de transformar la información entre las estructuras internas del sistema y los recursos consumidos por el frontend.
+
+##### a) `AuthenticationController`
+
+**Paquete:** `com.upc.matchpoint.iam.interfaces.rest`
+
+**Propósito:**  
+Exponer los endpoints HTTP relacionados con autenticación y registro de usuarios.
+
+**Endpoints expuestos:**
+- `POST /api/v1/authentication/sign-up` → registrar usuario.
+- `POST /api/v1/authentication/sign-in` → iniciar sesión.
+
+##### b) `UsersController`
+
+**Paquete:** `com.upc.matchpoint.iam.interfaces.rest`
+
+**Propósito:**  
+Exponer endpoints HTTP para consultas administrativas sobre usuarios autenticados.
+
+**Endpoints expuestos:**
+- `GET /api/v1/users` → obtener todos los usuarios.
+- `GET /api/v1/users/{id}` → obtener usuario por id.
+
+##### c) `RolesController`
+
+**Paquete:** `com.upc.matchpoint.iam.interfaces.rest`
+
+**Propósito:**  
+Exponer endpoints HTTP para consulta de roles del sistema.
+
+**Endpoints expuestos:**
+- `GET /api/v1/roles` → obtener todos los roles.
+
+##### d) Resources / DTOs
+
+###### `SignUpResource`
+**Propósito:**  
+Representar los datos de entrada requeridos para registrar una nueva cuenta.
+
+**Atributos:**
+- `username`
+- `password`
+- `roles`
+
+###### `SignInResource`
+**Propósito:**  
+Representar las credenciales de entrada para autenticación.
+
+**Atributos:**
+- `username`
+- `password`
+
+###### `UserResource`
+**Propósito:**  
+Representar la información de usuarios autenticados para consultas administrativas.
+
+**Atributos:**
+- `id`
+- `username`
+- `roles`
+
+###### `AuthenticatedUserResource`
+**Propósito:**  
+Representar la respuesta de autenticación enviada al frontend.
+
+**Atributos:**
+- `id`
+- `username`
+- `token`
+
+###### `RoleResource`
+**Propósito:**  
+Representar los roles del sistema hacia el frontend.
+
+**Atributos:**
+- `id`
+- `name`
+
+##### e) Assemblers
+
+La capa de interfaz del contexto IAM incluye assemblers encargados de transformar datos entre resources, commands y entidades.
+
+**Assemblers identificados:**
+- `SignUpCommandFromResourceAssembler`
+- `SignInCommandFromResourceAssembler`
+- `UserResourceFromEntityAssembler`
+- `AuthenticatedUserResourceFromEntityAssembler`
+- `RoleResourceFromEntityAssembler`
+
+##### f) Responsabilidad de la capa de interfaz
+
+La responsabilidad principal de esta capa es:
+- recibir solicitudes del cliente,
+- convertir resources de entrada en commands o queries,
+- delegar la ejecución a la capa de aplicación,
+- y transformar los resultados en resources de salida adecuados para el frontend.
+
+En el caso de IAM, esta capa es especialmente importante porque constituye la puerta de entrada del sistema. Sin embargo, aunque resuelve correctamente la autenticación, no proporciona todavía un mecanismo nativo para traducir la identidad autenticada (`User`) hacia la identidad funcional (`UserProfile`) requerida por el resto del negocio.
+
+---
+
+#### 2.6.11.3. Application Layer
+
+La Application Layer del bounded context **IAM** coordina los flujos de proceso relacionados con registro, autenticación y consulta de información de acceso. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y con la infraestructura de persistencia y seguridad.
+
+Las capacidades principales del contexto son:
+- registrar usuario,
+- iniciar sesión,
+- listar usuarios,
+- obtener usuario por id,
+- listar roles,
+- inicializar roles del sistema al arranque.
+
+##### a) Command Handlers / Command Services
+
+###### `UserCommandServiceImpl`
+
+**Paquete:** `com.upc.matchpoint.iam.application.internal.commandservices`
+
+**Propósito:**  
+Implementar los casos de uso de registro e inicio de sesión.
+
+**Dependencias:**
+- `UserRepository`
+- `RoleRepository`
+- `HashingService`
+- `TokenService`
+
+**Operaciones que maneja:**
+
+**`handle(SignUpCommand command)`**
+- valida que el `username` no exista,
+- resuelve los roles o asigna `ROLE_USER` por defecto,
+- hashea la contraseña,
+- crea una nueva entidad `User`,
+- persiste el usuario,
+- retorna el usuario creado.
+
+**`handle(SignInCommand command)`**
+- busca el usuario por `username`,
+- valida la contraseña contra el hash,
+- genera un token JWT,
+- retorna el usuario autenticado junto con el token.
+
+###### `RoleCommandServiceImpl`
+
+**Paquete:** `com.upc.matchpoint.iam.application.internal.commandservices`
+
+**Propósito:**  
+Implementar el caso de uso de inicialización de roles.
+
+**Dependencias:**
+- `RoleRepository`
+
+**Operaciones que maneja:**
+
+**`handle(SeedRolesCommand command)`**
+- recorre los valores del enum `Roles`,
+- verifica si cada rol existe,
+- crea y persiste los roles faltantes.
+
+##### b) Query Handlers / Query Services
+
+###### `UserQueryServiceImpl`
+
+**Paquete:** `com.upc.matchpoint.iam.application.internal.queryservices`
+
+**Propósito:**  
+Implementar los casos de uso de consulta sobre usuarios autenticados.
+
+**Dependencias:**
+- `UserRepository`
+
+**Operaciones que maneja:**
+- `handle(GetAllUsersQuery query)`
+- `handle(GetUserByIdQuery query)`
+- `handle(GetUserByUsernameQuery query)`
+
+###### `RoleQueryServiceImpl`
+
+**Paquete:** `com.upc.matchpoint.iam.application.internal.queryservices`
+
+**Propósito:**  
+Implementar los casos de uso de consulta sobre roles.
+
+**Dependencias:**
+- `RoleRepository`
+
+**Operaciones que maneja:**
+- `handle(GetAllRolesQuery query)`
+- `handle(GetRoleByNameQuery query)`
+
+##### c) Event Handlers
+
+###### `ApplicationReadyEventHandler`
+
+**Paquete:** `com.upc.matchpoint.iam.application.internal.eventhandlers`
+
+**Propósito:**  
+Escuchar el evento de arranque de la aplicación e inicializar los roles del sistema.
+
+**Evento escuchado:**
+- `ApplicationReadyEvent`
+
+**Comportamiento:**
+- crea un `SeedRolesCommand`,
+- invoca a `RoleCommandService`,
+- asegura la existencia de `ROLE_USER`, `ROLE_ADMIN` y `ROLE_INSTRUCTOR`.
+
+##### d) Flujos principales del negocio
+
+###### Flujo de registro
+1. El frontend envía un `SignUpResource`.
+2. La capa de interfaz lo transforma a `SignUpCommand`.
+3. `UserCommandServiceImpl` valida que el `username` sea único.
+4. Se resuelven roles o se asigna `ROLE_USER` por defecto.
+5. Se hashea la contraseña.
+6. Se construye una instancia de `User`.
+7. El usuario se persiste mediante `UserRepository`.
+8. Se transforma el resultado en `UserResource`.
+9. Se retorna la respuesta al cliente.
+
+###### Flujo de autenticación
+1. El frontend envía un `SignInResource`.
+2. La capa de interfaz lo transforma a `SignInCommand`.
+3. `UserCommandServiceImpl` busca el usuario por `username`.
+4. Valida la contraseña hasheada.
+5. Genera un token JWT.
+6. Se transforma el resultado en `AuthenticatedUserResource`.
+7. Se retorna la respuesta al cliente.
+
+###### Flujo de consulta de usuarios
+1. El cliente solicita la lista o detalle de usuarios.
+2. El controlador construye la query correspondiente.
+3. `UserQueryServiceImpl` recupera la información desde `UserRepository`.
+4. Los resultados se transforman a resources.
+5. Se retorna la respuesta.
+
+###### Flujo de consulta de roles
+1. El cliente solicita la lista de roles.
+2. El controlador construye la query correspondiente.
+3. `RoleQueryServiceImpl` recupera la información desde `RoleRepository`.
+4. Los resultados se transforman a `RoleResource`.
+5. Se retorna la respuesta.
+
+###### Flujo de inicialización de roles
+1. La aplicación inicia.
+2. `ApplicationReadyEventHandler` escucha `ApplicationReadyEvent`.
+3. Se crea un `SeedRolesCommand`.
+4. `RoleCommandServiceImpl` inicializa los roles faltantes.
+
+##### e) Observaciones de la capa de aplicación
+
+La capa de aplicación implementa de forma coherente los flujos principales del contexto IAM: registro, inicio de sesión, consulta de usuarios, consulta de roles e inicialización de catálogos base. Su diseño concentra las decisiones de acceso y validación en un conjunto reducido de servicios, lo que facilita mantener reglas de autenticación y autorización bien delimitadas dentro del propio contexto.
+
+---
+
+#### 2.6.11.4. Infrastructure Layer
+
+La Infrastructure Layer del bounded context **IAM** contiene los componentes encargados del acceso a base de datos, persistencia de usuarios y roles, cifrado de contraseñas y generación de tokens de autenticación. En esta capa se materializa el soporte técnico para la identidad autenticada del sistema.
+
+##### a) Repositorios de persistencia
+
+###### `UserRepository`
+
+**Paquete:** `com.upc.matchpoint.iam.infrastructure.persistence.jpa.repositories`
+
+**Propósito:**  
+Gestionar la persistencia y recuperación de usuarios autenticados utilizando Spring Data JPA.
+
+**Operaciones disponibles:**
+- `save`
+- `findById`
+- `findAll`
+- `findByUsername`
+- `existsByUsername`
+
+###### `RoleRepository`
+
+**Paquete:** `com.upc.matchpoint.iam.infrastructure.persistence.jpa.repositories`
+
+**Propósito:**  
+Gestionar la persistencia y recuperación de roles del sistema utilizando Spring Data JPA.
+
+**Operaciones disponibles:**
+- `save`
+- `findAll`
+- `findByName`
+- `existsByName`
+
+##### b) Persistencia de la entidad `User`
+
+La entidad `User` está mapeada como una entidad JPA con las siguientes características:
+- `@Entity`
+- `@ManyToMany(fetch = FetchType.EAGER)` con `Role`
+- `@JoinTable` para la tabla intermedia de roles
+- restricción de unicidad para `username`
+
+##### c) Persistencia de la entidad `Role`
+
+La entidad `Role` está mapeada como una entidad JPA con:
+- `@Entity`
+- atributo `name` basado en el enum `Roles`
+
+##### d) Servicios técnicos de infraestructura
+
+###### `HashingService`
+**Propósito:**  
+Abstraer el hashing y validación de contraseñas.
+
+###### `BCryptHashingService`
+**Propósito:**  
+Implementar el hashing de contraseñas utilizando BCrypt y Spring Security.
+
+###### `TokenService`
+**Propósito:**  
+Abstraer la generación y validación de tokens.
+
+###### `BearerTokenService`
+**Propósito:**  
+Extender el servicio de tokens para soporte específico de tokens Bearer.
+
+###### `TokenServiceImpl`
+**Propósito:**  
+Implementar la generación y validación de JWT.
+
+###### `DataSeeder`
+**Propósito:**  
+Inicializar datos base del sistema, incluyendo roles y el usuario administrador.
+
+##### e) Diseño de persistencia
+
+**Tablas principales:**
+- `users`
+- `roles`
+- `user_roles`
+
+**Columnas identificadas en `users`:**
+- `id`
+- `username`
+- `password`
+- `created_at`
+- `updated_at`
+
+**Columnas identificadas en `roles`:**
+- `id`
+- `name`
+
+**Tabla intermedia `user_roles`:**
+- `user_id`
+- `role_id`
+
+##### f) Integración con otros bounded contexts
+
+La infraestructura del contexto IAM no depende estructuralmente de los bounded contexts operativos del negocio. Sin embargo, existe una ACL representada por `IamContextFacade`, cuya finalidad es exponer operaciones seguras hacia otros contexts.
+
+**Observación importante:**  
+Aunque esta fachada existe, actualmente no está siendo utilizada como parte efectiva del flujo principal del sistema para resolver la integración con `UserProfile`.
+
+##### g) Limitaciones de la capa de infraestructura
+
+La infraestructura actual cumple con la autenticación y autorización básicas del sistema, pero todavía presenta limitaciones relevantes:
+- no persiste una relación directa con `UserProfile`;
+- no automatiza la creación o vinculación del perfil de negocio al registrarse;
+- no expone una infraestructura integrada para resolver identidad autenticada e identidad funcional en una sola operación.
+
+En consecuencia, la Infrastructure Layer del bounded context IAM es funcional para seguridad, pero aún no resuelve de manera completa la integración con la identidad utilizada por los bounded contexts operativos.
+
+---
+
+#### 2.6.11.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Descripción:**
+
+El Component Diagram del bounded context **IAM** representa la descomposición del contenedor backend encargado de gestionar autenticación, autorización y administración básica de usuarios autenticados. A nivel arquitectónico, este container está conformado por componentes con responsabilidades bien delimitadas: recepción de solicitudes REST, transformación de datos entre capas, ejecución de comandos y consultas, acceso a persistencia, generación de tokens y manejo de credenciales.
+
+A partir del análisis del contexto, se identifican los siguientes componentes principales:
+
+**Componentes principales:**
+
+- **Authentication REST API Component**  
+  Expone los endpoints HTTP relacionados con sign-up y sign-in.
+
+- **IAM Query REST API Component**  
+  Expone endpoints para listar usuarios, obtener usuario por id y listar roles.
+
+- **IAM Transformation Component**  
+  Agrupa los assemblers y resources que permiten transformar datos entre la capa de interfaz y la capa de aplicación.
+
+- **Authentication Command Processing Component**  
+  Implementado por los servicios de comandos, coordina los casos de uso de registro e inicio de sesión.
+
+- **IAM Query Processing Component**  
+  Implementado por los servicios de consulta de usuarios y roles.
+
+- **IAM Domain Component**  
+  Representa el núcleo del dominio mediante las entidades `User` y `Role`, junto con comandos, queries y enum de roles.
+
+- **IAM Persistence Component**  
+  Encapsula el acceso a persistencia mediante `UserRepository` y `RoleRepository`, usando Spring Data JPA.
+
+- **Security Infrastructure Component**  
+  Agrupa servicios técnicos como hashing, autenticación y generación de JWT.
+
+- **IAM ACL / Integration Component**  
+  Representa la fachada `IamContextFacade` pensada para exponer funciones del contexto a otros bounded contexts.
+
+---
+
+**Diagrama de componentes propuesto:**
+
+```text
+┌──────────────────────────────────────────────────────────────┐
+│                        IAM Container                         │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Authentication REST API Component                     │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • AuthenticationController                            │  │
+│  │ • Expone sign-up y sign-in                            │  │
+│  │ • Recibe requests del frontend                        │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ IAM Query REST API Component                          │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • UsersController                                     │  │
+│  │ • RolesController                                     │  │
+│  │ • Expone consultas de usuarios y roles                │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ IAM Transformation Component                          │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • SignUpCommandFromResourceAssembler                  │  │
+│  │ • SignInCommandFromResourceAssembler                  │  │
+│  │ • UserResourceFromEntityAssembler                     │  │
+│  │ • RoleResourceFromEntityAssembler                     │  │
+│  │ • AuthenticatedUserResourceFromEntityAssembler        │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Authentication Command Processing Component           │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • UserCommandServiceImpl                              │  │
+│  │ • RoleCommandServiceImpl                              │  │
+│  │ • SignUpCommand                                       │  │
+│  │ • SignInCommand                                       │  │
+│  │ • SeedRolesCommand                                    │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ IAM Query Processing Component                        │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • UserQueryServiceImpl                                │  │
+│  │ • RoleQueryServiceImpl                                │  │
+│  │ • GetAllUsersQuery                                    │  │
+│  │ • GetUserByIdQuery                                    │  │
+│  │ • GetUserByUsernameQuery                              │  │
+│  │ • GetAllRolesQuery                                    │  │
+│  │ • GetRoleByNameQuery                                  │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ IAM Domain Component                                  │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • User (Aggregate Root)                               │  │
+│  │ • Role                                                │  │
+│  │ • Roles (Enum)                                        │  │
+│  │ • Reglas de autenticación y autorización              │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ IAM Persistence Component                             │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • UserRepository                                      │  │
+│  │ • RoleRepository                                      │  │
+│  │ • Persistencia en users / roles / user_roles          │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ Security Infrastructure Component                     │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • HashingService / BCryptHashingService               │  │
+│  │ • TokenService / TokenServiceImpl                     │  │
+│  │ • AuthenticationManager                               │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+│  ┌────────────────────────────────────────────────────────┐  │
+│  │ IAM ACL / Integration Component                       │  │
+│  ├────────────────────────────────────────────────────────┤  │
+│  │ • IamContextFacade                                    │  │
+│  │ • Exposición de funciones a otros contexts            │  │
+│  │ • Integración conceptual con Users                    │  │
+│  └────────────────────────────────────────────────────────┘  │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+          ↓                         ↓                        ↓
+     ┌──────────┐             ┌──────────┐            ┌────────────┐
+     │  users   │             │  roles   │            │ user_roles │
+     │  (table) │             │  (table) │            │ (join tbl) │
+     └──────────┘             └──────────┘            └────────────┘
+
+```
+##### Relaciones entre componentes
+
+- **Authentication REST API Component → IAM Transformation Component**  
+  Transforma datos de entrada y salida entre resources, commands y entidades.
+
+- **Authentication REST API Component → Authentication Command Processing Component**  
+  Delega operaciones de registro e inicio de sesión.
+
+- **IAM Query REST API Component → IAM Query Processing Component**  
+  Delega operaciones de lectura sobre usuarios y roles.
+
+- **Authentication Command Processing Component → IAM Domain Component**  
+  Construye la entidad `User` y resuelve roles dentro del dominio.
+
+- **Authentication Command Processing Component → IAM Persistence Component**  
+  Persiste usuarios y consulta roles.
+
+- **Authentication Command Processing Component → Security Infrastructure Component**  
+  Utiliza servicios de hashing, autenticación y generación de token.
+
+- **IAM Query Processing Component → IAM Persistence Component**  
+  Recupera usuarios y roles desde base de datos.
+
+- **IAM ACL / Integration Component → Users BC**  
+  Representa la integración conceptual con el contexto `Users` para resolver identidad funcional, aunque actualmente no participa activamente del flujo principal.
+
+---
+
+#### 2.6.11.6. Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se presentan los diagramas a nivel de código del bounded context **IAM**, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
+
+Se incluyen dos representaciones principales:
+
+- el **Class Diagram del Domain Layer**, que describe la estructura del modelo de dominio;
+- y el **Database Design Diagram**, que representa la persistencia de datos en la base de datos relacional.
+
+---
+
+##### 2.6.11.6.1. Bounded Context Domain Layer Class Diagrams
+
+**Descripción:**
+
+El diagrama de clases del Domain Layer del bounded context **IAM** presenta el agregado principal `User`, junto con la entidad `Role`, el enum `Roles`, las interfaces de servicios del dominio y los objetos que representan comandos y consultas. El diseño evidencia que `User` es el núcleo del contexto y que las operaciones del sistema se organizan alrededor de comandos de autenticación y consultas de usuarios y roles.
+
+**Diagrama UML de clases (Domain Layer):**
+
+```text
+┌────────────────────────────────────────────┐
+│           <<Aggregate Root>>               │
+│                  User                      │
+├────────────────────────────────────────────┤
+│ - id: Long                                 │
+│ - username: String                         │
+│ - password: String                         │
+│ - roles: Set<Role>                         │
+├────────────────────────────────────────────┤
+│ + User()                                   │
+│ + User(username, password)                 │
+│ + User(username, password, roles)          │
+│ + addRole(role: Role): User                │
+│ + addRoles(roles: List<Role>): User        │
+└────────────────────────────────────────────┘
+                  │
+                  │ many-to-many
+                  ▼
+┌────────────────────────────────────────────┐
+│                  Role                      │
+├────────────────────────────────────────────┤
+│ - id: Long                                 │
+│ - name: Roles                              │
+├────────────────────────────────────────────┤
+│ + getStringName(): String                  │
+│ + getDefaultRole(): Role                   │
+│ + toRoleFromName(name: String): Role       │
+│ + validateRoleSet(roles: List<Role>): List │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│              <<Enum>> Roles                │
+├────────────────────────────────────────────┤
+│ ROLE_USER                                  │
+│ ROLE_ADMIN                                 │
+│ ROLE_INSTRUCTOR                            │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│            UserCommandService              │
+├────────────────────────────────────────────┤
+│ + handle(SignUpCommand): Optional<User>    │
+│ + handle(SignInCommand): Optional<Pair>    │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│            UserQueryService                │
+├────────────────────────────────────────────┤
+│ + handle(GetAllUsersQuery): List<User>     │
+│ + handle(GetUserByIdQuery): Optional<User> │
+│ + handle(GetUserByUsernameQuery): Optional<User> │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│            RoleCommandService              │
+├────────────────────────────────────────────┤
+│ + handle(SeedRolesCommand): void           │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│         <<Interface>>                      │
+│            RoleQueryService                │
+├────────────────────────────────────────────┤
+│ + handle(GetAllRolesQuery): List<Role>     │
+│ + handle(GetRoleByNameQuery): Optional<Role> │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│               SignUpCommand                │
+├────────────────────────────────────────────┤
+│ + username: String                         │
+│ + password: String                         │
+│ + roles: List<Role>                        │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│               SignInCommand                │
+├────────────────────────────────────────────┤
+│ + username: String                         │
+│ + password: String                         │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│             SeedRolesCommand               │
+├────────────────────────────────────────────┤
+│ (sin atributos)                            │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│              GetAllUsersQuery              │
+├────────────────────────────────────────────┤
+│ (sin atributos)                            │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│              GetUserByIdQuery              │
+├────────────────────────────────────────────┤
+│ + userId: Long                             │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│           GetUserByUsernameQuery           │
+├────────────────────────────────────────────┤
+│ + username: String                         │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│              GetAllRolesQuery              │
+├────────────────────────────────────────────┤
+│ (sin atributos)                            │
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│              GetRoleByNameQuery            │
+├────────────────────────────────────────────┤
+│ + name: Roles                              │
+└────────────────────────────────────────────┘
+
+```
+
+##### Relaciones principales del modelo
+
+- `User` es el **Aggregate Root** del bounded context.
+- `User` mantiene una relación **Many-to-Many** con `Role`.
+- `Role` utiliza el enum `Roles` como value object.
+- `UserCommandService` define las operaciones de registro e inicio de sesión.
+- `UserQueryService` define las operaciones de lectura de usuarios.
+- `RoleCommandService` define la inicialización de roles.
+- `RoleQueryService` define las operaciones de lectura de roles.
+- Los comandos encapsulan acciones de autenticación y administración inicial.
+- Las queries encapsulan solicitudes de consulta.
+
+##### Observaciones
+
+El modelo de dominio presenta una estructura clara y centrada en el agregado `User`. La separación entre `User`, `Role` y el enum `Roles` mantiene acotado el espacio de autorización del contexto y permite representar de forma consistente las capacidades de autenticación y asignación de permisos.
+
+---
+
+##### 2.6.11.6.2. Bounded Context Database Design Diagram
+
+**Descripción:**
+
+El diagrama de base de datos del bounded context **IAM** representa la estructura relacional utilizada para persistir la información de usuarios autenticados y roles. Las tablas principales son `users` y `roles`, vinculadas mediante una tabla intermedia `user_roles`.
+
+**Diagrama de base de datos (ERD):**
+
+```text
+┌──────────────────────────────┐
+│            roles             │
+├──────────────────────────────┤
+│ PK id (BIGINT)               │
+│ name (VARCHAR)               │
+└──────────────────────────────┘
+             ▲
+             │ FK (role_id)
+             │
+┌────────────┴──────────────────────────────┐
+│               user_roles                  │
+├───────────────────────────────────────────┤
+│ FK user_id (BIGINT)                       │
+│ FK role_id (BIGINT)                       │
+└────────────┬──────────────────────────────┘
+             │
+             │ FK (user_id)
+             ▼
+┌──────────────────────────────┐
+│            users             │
+├──────────────────────────────┤
+│ PK id (BIGINT, AUTO_INCREMENT) │
+│ username (VARCHAR(50), NOT NULL) │
+│ password (VARCHAR(120), NOT NULL) │
+│ created_at (DATETIME, NOT NULL) │
+│ updated_at (DATETIME)        │
+└──────────────────────────────┘
+
+```
+
+##### Tablas y atributos
+
+###### Tabla `users`
+
+- `id`: identificador único del usuario autenticado (PK)
+- `username`: nombre único de usuario
+- `password`: contraseña cifrada
+- `created_at`: fecha de creación
+- `updated_at`: fecha de actualización
+
+###### Tabla `roles`
+
+- `id`: identificador único del rol
+- `name`: nombre lógico del rol
+
+###### Tabla `user_roles`
+
+- `user_id`: referencia al usuario autenticado
+- `role_id`: referencia al rol asignado
+
+---
+
+##### Constraints
+
+- `PRIMARY KEY (id)` en `users`
+- `PRIMARY KEY (id)` en `roles`
+- `FOREIGN KEY (user_id)` → `users(id)`
+- `FOREIGN KEY (role_id)` → `roles(id)`
+- restricción de unicidad en `username`
+- restricción de unicidad esperada en `roles.name`
+
+---
+
+##### Relaciones entre tablas
+
+- `users (*) ──── (*) roles` mediante `user_roles`
+
+---
+
+##### Observaciones
+
+El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente cuentas, roles y la tabla intermedia `user_roles`. La estructura de datos refleja un bounded context de seguridad bien normalizado, con una relación clara entre usuarios y privilegios.
 
 ---
