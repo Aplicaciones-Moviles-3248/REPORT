@@ -67,6 +67,23 @@ INGENIERÍA DE SOFTWARE
         </ul>
     </td>
   </tr>
+  <tr>
+  <td style="border: 1px solid #ddd; padding: 8px;">TB1</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">21/04/2026</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">
+    <ul>
+      <li>Camilla Espinoza</li>
+    </ul>
+  </td>
+  <td style="border: 1px solid #ddd; padding: 8px;">            
+    <ul>
+      <li>Capítulo II: Punto 2.4</li>
+      <li>Capítulo II: Punto 2.5.3</li>
+      <li>Capítulo II: Punto 2.6.4 (Coaches)</li>
+      <li>Capítulo II: Punto 2.6.7 (Reviews)</li>
+    </ul>
+  </td>
+</tr>
 </table><br>
 
 
