@@ -640,6 +640,17 @@ INGENIERÍA DE SOFTWARE
   - [4.3.2. Registro de Entrevistas](#432-registro-de-entrevistas)
   - [4.3.3. Evaluaciones según heurísticas](#433-evaluaciones-según-heurísticas)
 
+[Conclusiones](#Conclusiones)
+- [Conclusiones y recomendaciones.]()
+- [Video App Validation]()
+- [Video About the product]()
+- [Video About the team]()
+
+[Glosario](#Glosario)
+
+[Bibliografía](#Bibliografía)
+
+[Anexos](#Anexos)
 
 <!--STUDENT OUTCOME-->
 # Student Outcome
@@ -10294,3 +10305,84 @@ El diagrama de base de datos del bounded context **IAM** representa la estructur
 El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente cuentas, roles y la tabla intermedia `user_roles`. La estructura de datos refleja un bounded context de seguridad bien normalizado, con una relación clara entre usuarios y privilegios.
 
 ---
+
+# Conclusiones
+
+## Conclusiones y recomendaciones.
+
+### Conclusiones
+
+1. El desarrollo del proyecto COURTLY permitió integrar conceptos clave de ingeniería de software, combinando enfoques ágiles y prácticas de diseño orientado a dominios (DDD), lo que facilitó la organización del sistema en bounded contexts bien definidos y coherentes con el negocio.
+2. La aplicación del Impact Mapping evidenció una correcta alineación entre los objetivos del negocio, las necesidades de los usuarios y las funcionalidades del sistema, asegurando que cada feature implementada tenga un propósito claro dentro del valor del producto.
+3. La definición estructurada de User Stories permitió capturar de manera efectiva los requerimientos funcionales, facilitando la priorización del Product Backlog y asegurando un desarrollo incremental orientado al usuario.
+4. La arquitectura basada en capas (domain, application, infrastructure e interface) contribuyó a mantener una separación clara de responsabilidades, mejorando la mantenibilidad, escalabilidad y comprensión del sistema.
+5. La implementación de múltiples bounded contexts permitió desacoplar las responsabilidades del sistema, reduciendo la complejidad y favoreciendo la evolución independiente de cada módulo.
+6. El uso de diagramas C4 (contexto, contenedores y componentes) facilitó la visualización de la arquitectura del sistema, permitiendo entender tanto la interacción externa como la estructura interna del backend.
+7. La incorporación de prácticas de modelado como UML y ERD fortaleció la definición técnica del sistema, asegurando consistencia entre el diseño lógico y la implementación de la base de datos.
+8. El enfoque en la experiencia del usuario, mediante entrevistas, empatía y journey mapping, permitió diseñar una solución centrada en necesidades reales de deportistas y entrenadores.
+9. La separación entre autenticación (IAM) y perfil de usuario (Users) demostró una buena práctica de diseño, permitiendo mayor flexibilidad y seguridad en la gestión de identidades.
+10. La estructuración del backend como un conjunto de módulos homogéneos facilita la extensibilidad del sistema, permitiendo agregar nuevas funcionalidades sin afectar significativamente las existentes.
+11. El uso de herramientas colaborativas como Jira y Teams permitió una adecuada gestión de tareas, seguimiento del progreso y coordinación del equipo.
+12. La definición de un MVP claro permitió enfocar los esfuerzos del equipo en funcionalidades clave, evitando la sobrecarga de requisitos innecesarios.
+13. La documentación generada durante el proyecto contribuye a la trazabilidad del desarrollo, facilitando futuras mejoras y mantenimiento del sistema.
+14. El trabajo en equipo evidenció la importancia de la comunicación constante y la distribución adecuada de responsabilidades para lograr resultados eficientes.
+15. En conjunto, el proyecto demuestra la aplicación práctica de conocimientos académicos en un contexto real, fortaleciendo competencias técnicas y profesionales en el desarrollo de soluciones de software.
+
+### Recomendaciones
+
+1. Se recomienda continuar con la evolución del sistema hacia una arquitectura más desacoplada, considerando el uso de microservicios en futuras iteraciones para mejorar la escalabilidad y resiliencia.
+2. Es importante implementar mecanismos de seguridad más robustos, como control de acceso basado en roles (RBAC) más detallado y validaciones adicionales en los endpoints críticos.
+3. Se sugiere mejorar la integración entre bounded contexts mediante el uso de eventos de dominio o APIs bien definidas, evitando dependencias directas entre módulos.
+4. Se recomienda incorporar pruebas automatizadas (unitarias e integradas) para garantizar la calidad del software y reducir errores en producción.
+5. Es conveniente optimizar el modelo de datos, especialmente en contextos como payments y bookings, para asegurar una mejor trazabilidad de las transacciones.
+6. Se sugiere implementar monitoreo y logging centralizado para identificar problemas de rendimiento y errores en tiempo real.
+7. Se recomienda mejorar la experiencia del usuario mediante pruebas de usabilidad y feedback continuo de usuarios reales.
+8. Es importante documentar de manera más detallada las APIs mediante herramientas como Swagger/OpenAPI para facilitar la integración con el frontend.
+9. Se sugiere evaluar el uso de servicios en la nube para el despliegue del sistema, permitiendo mayor disponibilidad y escalabilidad.
+10. Se recomienda fortalecer la gestión del backlog, priorizando funcionalidades en base al valor de negocio y retroalimentación de usuarios.
+11. Es conveniente mejorar la gestión de estados en procesos clave como reservas y pagos, asegurando consistencia en el flujo de negocio.
+12. Se sugiere implementar mecanismos de cache para mejorar el rendimiento en consultas frecuentes, especialmente en búsquedas de canchas y entrenadores.
+13. Se recomienda mantener una estandarización en la estructura de los bounded contexts para facilitar el desarrollo futuro por parte de nuevos integrantes.
+14. Es importante continuar fortaleciendo las habilidades técnicas del equipo en áreas como arquitectura de software, cloud computing y desarrollo móvil.
+15. Finalmente, se recomienda realizar iteraciones continuas del producto, incorporando nuevas funcionalidades basadas en métricas de uso y necesidades del mercado.
+
+
+## Video App Validation
+## Video About the product
+## Video About the team
+
+# Glosario
+
+- **Bounded Context**
+Concepto de Domain-Driven Design (DDD) que define un límite dentro del cual un modelo de dominio es válido y consistente. Permite dividir un sistema complejo en módulos independientes con responsabilidades claras.
+- **User Story**
+Descripción breve de una funcionalidad desde la perspectiva del usuario final, que sigue la estructura “Como [rol], quiero [funcionalidad], para [beneficio]”. Se utiliza para capturar requerimientos en metodologías ágiles.
+- **Impact Mapping**
+Técnica de planificación estratégica que conecta los objetivos del negocio con los actores, impactos deseados y entregables, asegurando que el desarrollo esté alineado con el valor que se desea generar.
+- **Product Backlog**
+Lista priorizada de funcionalidades, mejoras y requerimientos del sistema, gestionada durante el desarrollo ágil. Sirve como base para planificar iteraciones o sprints.
+
+# Bibliografía
+
+- Beck, K., Beedle, M., van Bennekum, A., Cockburn, A., Cunningham, W., Fowler, M., & Grenning, J. (2001). Manifesto for Agile Software Development. Agile Alliance.
+https://agilemanifesto.org/
+- Sommerville, I. (2016). Software engineering (10th ed.). Pearson.
+https://www.pearson.com/en-us/subject-catalog/p/software-engineering/P200000003023
+- Pressman, R. S., & Maxim, B. R. (2014). Software engineering: A practitioner’s approach (8th ed.). McGraw-Hill Education.
+https://www.mheducation.com/highered/product/software-engineering-practitioner-s-approach-pressman-maxim/M9780078022128.html
+- Evans, E. (2003). Domain-driven design: Tackling complexity in the heart of software. Addison-Wesley.
+https://www.pearson.com/en-us/subject-catalog/p/domain-driven-design/P200000003420
+- Fowler, M. (2018). Refactoring: Improving the design of existing code (2nd ed.). Addison-Wesley.
+https://martinfowler.com/books/refactoring.html
+- Newman, S. (2015). Building microservices: Designing fine-grained systems. O’Reilly Media.
+https://www.oreilly.com/library/view/building-microservices/9781491950340/
+- Cohn, M. (2004). User stories applied: For agile software development. Addison-Wesley.
+https://www.mountaingoatsoftware.com/books/user-stories-applied
+- Poppendieck, M., & Poppendieck, T. (2003). Lean software development: An agile toolkit. Addison-Wesley.
+https://www.pearson.com/en-us/subject-catalog/p/lean-software-development/P200000003221
+- Bass, L., Clements, P., & Kazman, R. (2012). Software architecture in practice (3rd ed.). Addison-Wesley.
+https://www.pearson.com/en-us/subject-catalog/p/software-architecture-in-practice/P200000003187
+- International Organization for Standardization. (2011). ISO/IEC 25010: Systems and software quality models.
+https://www.iso.org/standard/35733.html
+
+# Anexos
