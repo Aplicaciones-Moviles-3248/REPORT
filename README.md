@@ -3105,6 +3105,110 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
   </table>
 </div>
 
+<h2>SPM01</h2>
+<table border="1" cellspacing="0" cellpadding="8" width="100%">
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SPM01</td>
+    <td>Developer</td>
+    <td>Alta</td>
+    <td>EP04</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Investigar la integración del módulo de pagos en Courtly</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Developer, quiero investigar la viabilidad técnica del módulo de pagos en Courtly, para identificar los datos, reglas, riesgos y dependencias necesarias antes de implementar el flujo de pago de reservas dentro de la aplicación móvil.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Escenario 1: Análisis del flujo de pago</b><br>
+      <b>Given</b> que Courtly requiere procesar pagos asociados a reservas deportivas,<br>
+      <b>When</b> el Developer analiza el flujo desde la selección de reserva hasta la confirmación del pago,<br>
+      <b>Then</b> se documentan los pasos principales del proceso, incluyendo usuario, monto, estado del pago y confirmación de la operación.<br><br>
+      <b>Escenario 2: Revisión de datos requeridos</b><br>
+      <b>Given</b> que el backend cuenta con un contexto de pagos,<br>
+      <b>When</b> el Developer revisa los atributos necesarios para registrar una transacción,<br>
+      <b>Then</b> se identifican los campos mínimos como amount, userId, paymentStatus y paymentDate.<br><br>
+      <b>Escenario 3: Identificación de riesgos técnicos</b><br>
+      <b>Given</b> que el pago es una funcionalidad crítica para el negocio,<br>
+      <b>When</b> el Developer evalúa posibles errores de transacción, pagos rechazados o estados incompletos,<br>
+      <b>Then</b> se documentan riesgos y recomendaciones para manejar estados como PENDING, COMPLETED, FAILED y CANCELLED.<br><br>
+      <b>Escenario 4: Resultado documentado</b><br>
+      <b>Given</b> que la investigación fue completada,<br>
+      <b>When</b> el equipo revisa los hallazgos,<br>
+      <b>Then</b> se genera un resumen técnico con conclusiones y recomendaciones para implementar correctamente el módulo de pagos.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<h2>SPM02</h2>
+<table border="1" cellspacing="0" cellpadding="8" width="100%">
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SPM02</td>
+    <td>Developer</td>
+    <td>Alta</td>
+    <td>EP03</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Investigar la arquitectura de reservas y disponibilidad en Courtly</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Developer, quiero investigar cómo deben relacionarse las reservas, canchas, usuarios y disponibilidad de entrenadores en Courtly, para validar una arquitectura coherente que evite cruces de horarios, reservas duplicadas o conflictos en la agenda.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Escenario 1: Identificación de entidades relacionadas</b><br>
+      <b>Given</b> que Courtly necesita gestionar reservas de canchas y sesiones con entrenadores,<br>
+      <b>When</b> el Developer analiza los bounded contexts involucrados,<br>
+      <b>Then</b> se identifican las relaciones entre Users, Courts, Bookings, Coaches y Availabilities.<br><br>
+      <b>Escenario 2: Validación de reglas de disponibilidad</b><br>
+      <b>Given</b> que una cancha o entrenador solo puede ser reservado en horarios disponibles,<br>
+      <b>When</b> el Developer revisa el comportamiento esperado del flujo de reserva,<br>
+      <b>Then</b> se documentan reglas para evitar reservas duplicadas, horarios ocupados o conflictos de agenda.<br><br>
+      <b>Escenario 3: Revisión del flujo de cancelación</b><br>
+      <b>Given</b> que el usuario puede cancelar una reserva registrada,<br>
+      <b>When</b> el Developer analiza el impacto de la cancelación sobre la disponibilidad,<br>
+      <b>Then</b> se define que el horario cancelado debe volver a quedar disponible según las reglas del sistema.<br><br>
+      <b>Escenario 4: Resultado documentado</b><br>
+      <b>Given</b> que el análisis de reservas y disponibilidad fue realizado,<br>
+      <b>When</b> el equipo revisa los resultados,<br>
+      <b>Then</b> se registra un documento técnico con reglas de negocio, riesgos detectados y recomendaciones para la implementación.
+    </td>
+  </tr>
+</table>
+
 ### 2.4.2. Impact Mapping
 
 <img src="assets/chapter2/Impact-Mapping.jpg" alt="Impact Mapping" width="700">
