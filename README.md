@@ -451,6 +451,15 @@ INGENIERÍA DE SOFTWARE
         <li>2.6.11.6 Code Level Diagrams</li>
         <li>2.6.11.6.1 Class Diagram</li>
         <li>2.6.11.6.2 Database Diagram</li>
+        <li><strong>2.6.12 Bounded Context: TrainingSessions</strong></li>
+        <li>2.6.12.1 Domain Layer</li>
+        <li>2.6.12.2 Interface Layer</li>
+        <li>2.6.12.3 Application Layer</li>
+        <li>2.6.12.4 Infrastructure Layer</li>
+        <li>2.6.12.5 Component Level Diagrams</li>
+        <li>2.6.12.6 Code Level Diagrams</li>
+        <li>2.6.12.6.1 Class Diagram</li>
+        <li>2.6.12.6.2 Database Diagram</li>
         </ul>
     </td>
   </tr>
@@ -539,7 +548,7 @@ INGENIERÍA DE SOFTWARE
     - [2.6.4.6. Bounded Context Software Architecture Code Level Diagrams](#26x6-bounded-context-software-architecture-code-level-diagrams)  
     - [2.6.4.6.1. Bounded Context Domain Layer Class Diagrams](#26x61-bounded-context-domain-layer-class-diagrams)  
     - [2.6.4.6.2. Bounded Context Database Design Diagram](#26x62-bounded-context-database-design-diagram)
-  - [2.6.5. Bounded Context: Court & Venue Management](#26x-bounded-context-bounded-context-name)  
+  - [2.6.5. Bounded Context: Courts](#26x-bounded-context-bounded-context-name)  
     - [2.6.5.1. Domain Layer](#26x1-domain-layer)  
     - [2.6.5.2. Interface Layer](#26x2-interface-layer)  
     - [2.6.5.3. Application Layer](#26x3-application-layer)  
@@ -602,6 +611,15 @@ INGENIERÍA DE SOFTWARE
     - [2.6.11.6. Bounded Context Software Architecture Code Level Diagrams](#26x6-bounded-context-software-architecture-code-level-diagrams)  
     - [2.6.11.6.1. Bounded Context Domain Layer Class Diagrams](#26x61-bounded-context-domain-layer-class-diagrams)  
     - [2.6.11.6.2. Bounded Context Database Design Diagram](#26x62-bounded-context-database-design-diagram)
+  - [2.6.12. Bounded Context: TrainingSessions](#26x-bounded-context-bounded-context-name)  
+    - [2.6.12.1. Domain Layer](#26x1-domain-layer)  
+    - [2.6.12.2. Interface Layer](#26x2-interface-layer)  
+    - [2.6.12.3. Application Layer](#26x3-application-layer)  
+    - [2.6.12.4. Infrastructure Layer](#26x4-infrastructure-layer)  
+    - [2.6.12.5. Bounded Context Software Architecture Component Level Diagrams](#26x5-bounded-context-software-architecture-component-level-diagrams)  
+    - [2.6.12.6. Bounded Context Software Architecture Code Level Diagrams](#26x6-bounded-context-software-architecture-code-level-diagrams)  
+    - [2.6.12.6.1. Bounded Context Domain Layer Class Diagrams](#26x61-bounded-context-domain-layer-class-diagrams)  
+    - [2.6.12.6.2. Bounded Context Database Design Diagram](#26x62-bounded-context-database-design-diagram)
 
 [Capítulo III: Solution UI/UX Design](#capítulo-iii-solution-uiux-design)
 - [3.1. Product design](#31-product-design)
@@ -2151,12 +2169,12 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
 | Epic ID | Epic | Descripción |
 |---|---|---|
 | EP01 | Gestión de cuentas y acceso | Permite a jugadores y entrenadores registrarse, iniciar sesión, cerrar sesión y administrar el acceso seguro a la aplicación móvil Courtly. |
-| EP02 | Búsqueda y exploración | Permite a los usuarios buscar canchas y entrenadores mediante filtros relevantes como ubicación, deporte, precio y disponibilidad. |
-| EP03 | Reservas y agenda | Permite a los jugadores reservar canchas o sesiones, y a los entrenadores gestionar su disponibilidad y solicitudes recibidas. |
-| EP04 | Pagos y suscripciones | Permite procesar pagos dentro de la app y administrar planes o beneficios asociados al uso de Courtly. |
+| EP02 | Búsqueda y exploración | Permite a los usuarios buscar canchas y entrenadores, consultar sus detalles y revisar disponibilidad relevante antes de operar dentro de Courtly. |
+| EP03 | Reservas y agenda | Permite gestionar dos flujos: reserva simple de cancha y solicitud de sesión con entrenador, además de la administración de disponibilidades y estados. |
+| EP04 | Pagos y transacciones | Permite procesar pagos asociados a reservas y sesiones, confirmar operaciones y visualizar movimientos relacionados dentro de la plataforma. |
 | EP05 | Reseñas y reputación | Permite a los jugadores calificar canchas y entrenadores, fortaleciendo la confianza y transparencia dentro de la plataforma. |
-| EP06 | Comunidad y torneos | Permite organizar partidos, unirse a eventos deportivos y participar en torneos desde la aplicación móvil. |
-| EP07 | Perfil y notificaciones | Permite a los usuarios administrar su perfil, visualizar su actividad y recibir notificaciones relevantes dentro de la app. |
+| EP06 | Comunidad y partidos | Permite organizar partidos, unirse a eventos deportivos y visualizar participantes desde la aplicación móvil. |
+| EP07 | Perfil, notificaciones y actividad | Permite a los usuarios administrar su perfil, visualizar su actividad y recibir notificaciones relevantes dentro de la app. |
 
 <div>
 
@@ -2360,7 +2378,7 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
       <td>USM05</td>
       <td>Jugador</td>
       <td>Alta</td>
-      <td>EP03</td>
+      <td>EP02</td>
     </tr>
     <tr>
       <th>Title</th>
@@ -2417,17 +2435,17 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
       <th colspan="4">Description</th>
     </tr>
     <tr>
-      <td colspan="4">Como jugador, quiero reservar una cancha desde la app, para asegurar mi espacio de juego en una fecha y hora determinadas.</td>
+      <td colspan="4">Como jugador, quiero crear una reserva simple de cancha desde la app, para separar un horario disponible en una fecha y hora determinadas.</td>
     </tr>
     <tr>
       <th colspan="4">Acceptance Criteria</th>
     </tr>
     <tr>
       <td colspan="4">
-        <b>Escenario 1: Reserva exitosa</b><br>
+        <b>Escenario 1: Reserva creada</b><br>
         Given que el jugador selecciona una cancha y un horario disponible,<br>
         When confirma la reserva,<br>
-        Then la aplicación registra la operación y muestra su confirmación.<br><br>
+        Then la aplicación registra la operación y la deja lista para continuar con el pago.<br><br>
         <b>Escenario 2: Horario ocupado</b><br>
         Given que otro usuario tomó el mismo horario previamente,<br>
         When el jugador intenta confirmar la reserva,<br>
@@ -2793,7 +2811,7 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
       <th colspan="4">Description</th>
     </tr>
     <tr>
-      <td colspan="4">Como entrenador, quiero aceptar o rechazar solicitudes de reserva, para administrar adecuadamente mi tiempo y mi agenda.</td>
+      <td colspan="4">Como entrenador, quiero aceptar o rechazar solicitudes de sesión de entrenamiento, para administrar adecuadamente mi tiempo y mi agenda.</td>
     </tr>
     <tr>
       <th colspan="4">Acceptance Criteria</th>
@@ -2803,14 +2821,14 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
         <b>Escenario 1: Solicitud aceptada</b><br>
         Given que el entrenador recibe una solicitud pendiente,<br>
         When selecciona la opción de aceptar,<br>
-        Then la aplicación cambia el estado de la reserva y notifica al jugador.<br><br>
+        Then la aplicación cambia el estado de la sesión y notifica al jugador.<br><br>
         <b>Escenario 2: Solicitud rechazada</b><br>
         Given que el entrenador recibe una solicitud pendiente,<br>
         When selecciona la opción de rechazar,<br>
-        Then la aplicación actualiza el estado y comunica la decisión al jugador.<br><br>
+        Then la aplicación actualiza el estado de la sesión y comunica la decisión al jugador.<br><br>
         <b>Escenario 3: Consulta de solicitudes</b><br>
         Given que existen solicitudes enviadas al entrenador,<br>
-        When accede a su bandeja o sección de reservas,<br>
+        When accede a su bandeja o sección de solicitudes,<br>
         Then la aplicación muestra el listado de solicitudes pendientes y procesadas.
       </td>
     </tr>
@@ -3069,14 +3087,14 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
     </tr>
     <tr>
       <th>Title</th>
-      <td colspan="3">Cancelar una reserva registrada</td>
+      <td colspan="3">Cancelar una reserva o sesión registrada</td>
     </tr>
     <tr>
       <th colspan="4">Description</th>
     </tr>
         <tr>
       <td colspan="4">
-        Como usuario, quiero cancelar una reserva registrada desde la aplicación móvil Courtly, para poder liberar el horario reservado cuando ya no pueda asistir.
+        Como usuario, quiero cancelar una reserva o sesión registrada desde la aplicación móvil Courtly, para poder liberar el horario reservado cuando ya no pueda asistir.
       </td>
     </tr>
     <tr>
@@ -3084,22 +3102,257 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
     </tr>
     <tr>
       <td colspan="4">
-        <b>Escenario 1: Cancelación exitosa de reserva</b><br>
-        <b>Given</b> que el usuario tiene una reserva activa registrada en Courtly,<br>
+        <b>Escenario 1: Cancelación exitosa de operación</b><br>
+        <b>Given</b> que el usuario tiene una reserva o sesión activa registrada en Courtly,<br>
         <b>When</b> selecciona la opción de cancelar y confirma la acción dentro del tiempo permitido,<br>
-        <b>Then</b> la aplicación cambia el estado de la reserva a cancelada y muestra un mensaje de confirmación.<br><br>
+        <b>Then</b> la aplicación cambia el estado de la operación a cancelada y muestra un mensaje de confirmación.<br><br>
         <b>Escenario 2: Visualización del estado actualizado</b><br>
-        <b>Given</b> que el usuario canceló correctamente una reserva,<br>
-        <b>When</b> accede al listado de sus reservas,<br>
-        <b>Then</b> la aplicación muestra la reserva con estado cancelado.<br><br>
+        <b>Given</b> que el usuario canceló correctamente una operación,<br>
+        <b>When</b> accede al listado de sus reservas o sesiones,<br>
+        <b>Then</b> la aplicación muestra la operación con estado cancelado.<br><br>
         <b>Escenario 3: Restricción por política de cancelación</b><br>
-        <b>Given</b> que la reserva ya no cumple con las reglas de cancelación establecidas,<br>
+        <b>Given</b> que la reserva o sesión ya no cumple con las reglas de cancelación establecidas,<br>
         <b>When</b> el usuario intenta cancelarla,<br>
         <b>Then</b> la aplicación informa que la cancelación no está permitida.<br><br>
         <b>Escenario 4: Liberación de disponibilidad</b><br>
-        <b>Given</b> que una reserva fue cancelada exitosamente,<br>
+        <b>Given</b> que una reserva o sesión fue cancelada exitosamente,<br>
         <b>When</b> el sistema actualiza la agenda correspondiente,<br>
         <b>Then</b> el horario reservado vuelve a quedar disponible para futuras reservas.
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <h2>USM21</h2>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+    <tr>
+      <td>USM21</td>
+      <td>Entrenador</td>
+      <td>Alta</td>
+      <td>EP01</td>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <td colspan="3">Iniciar sesión como entrenador</td>
+    </tr>
+    <tr>
+      <th colspan="4">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4">Como entrenador, quiero iniciar sesión en Courtly, para gestionar mi perfil profesional, disponibilidades, solicitudes y pagos.</td>
+    </tr>
+    <tr>
+      <th colspan="4">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Inicio de sesión válido</b><br>
+        Given que el entrenador ingresa credenciales correctas,<br>
+        When pulsa el botón de iniciar sesión,<br>
+        Then la aplicación permite el acceso y muestra su panel profesional.<br><br>
+        <b>Escenario 2: Credenciales inválidas</b><br>
+        Given que el entrenador ingresa datos incorrectos,<br>
+        When intenta iniciar sesión,<br>
+        Then la aplicación muestra un mensaje de error y mantiene al usuario en la pantalla de acceso.<br><br>
+        <b>Escenario 3: Sesión persistente</b><br>
+        Given que el entrenador inició sesión correctamente,<br>
+        When vuelve a abrir la aplicación,<br>
+        Then Courtly conserva la sesión mientras siga vigente.
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <h2>USM22</h2>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+    <tr>
+      <td>USM22</td>
+      <td>Jugador</td>
+      <td>Alta</td>
+      <td>EP02</td>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <td colspan="3">Buscar entrenadores disponibles</td>
+    </tr>
+    <tr>
+      <th colspan="4">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4">Como jugador, quiero buscar entrenadores disponibles, para encontrar un profesional acorde a mi disciplina y necesidad.</td>
+    </tr>
+    <tr>
+      <th colspan="4">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Búsqueda con resultados</b><br>
+        Given que existen entrenadores registrados con perfil profesional activo,<br>
+        When el jugador accede a la sección de entrenadores,<br>
+        Then la aplicación muestra un catálogo con los perfiles disponibles.<br><br>
+        <b>Escenario 2: Consulta del perfil profesional</b><br>
+        Given que el jugador selecciona un entrenador del catálogo,<br>
+        When abre su perfil,<br>
+        Then la aplicación muestra especialidad, disponibilidad y reseñas asociadas.<br><br>
+        <b>Escenario 3: Sin entrenadores disponibles</b><br>
+        Given que no existen entrenadores visibles para la consulta realizada,<br>
+        When el jugador revisa el resultado,<br>
+        Then la aplicación informa que no hay perfiles disponibles.
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <h2>USM23</h2>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+    <tr>
+      <td>USM23</td>
+      <td>Jugador</td>
+      <td>Alta</td>
+      <td>EP03</td>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <td colspan="3">Solicitar una sesión con entrenador</td>
+    </tr>
+    <tr>
+      <th colspan="4">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4">Como jugador, quiero solicitar una sesión con entrenador incluyendo cancha, disponibilidad y horario, para reservar una experiencia completa dentro de la app.</td>
+    </tr>
+    <tr>
+      <th colspan="4">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Solicitud creada</b><br>
+        Given que el jugador selecciona un entrenador, una disponibilidad y una cancha compatible,<br>
+        When confirma la solicitud,<br>
+        Then la aplicación registra una sesión en estado pendiente.<br><br>
+        <b>Escenario 2: Disponibilidad no válida</b><br>
+        Given que la disponibilidad seleccionada ya no está libre,<br>
+        When el jugador intenta confirmar la solicitud,<br>
+        Then la aplicación informa que el horario ya no está disponible.<br><br>
+        <b>Escenario 3: Resumen previo</b><br>
+        Given que el jugador está por crear la solicitud,<br>
+        When revisa el paso final del proceso,<br>
+        Then la aplicación muestra entrenador, cancha, horario y costo estimado.
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <h2>USM24</h2>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+    <tr>
+      <td>USM24</td>
+      <td>Jugador</td>
+      <td>Alta</td>
+      <td>EP04</td>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <td colspan="3">Pagar una sesión con entrenador aceptada</td>
+    </tr>
+    <tr>
+      <th colspan="4">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4">Como jugador, quiero pagar una sesión con entrenador una vez aceptada, para completar la operación y asegurar el servicio.</td>
+    </tr>
+    <tr>
+      <th colspan="4">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Pago aprobado</b><br>
+        Given que la sesión fue aceptada por el entrenador y está pendiente de pago,<br>
+        When el jugador confirma un método de pago válido,<br>
+        Then la aplicación procesa la transacción y registra la confirmación correspondiente.<br><br>
+        <b>Escenario 2: Pago rechazado</b><br>
+        Given que ocurre un error durante la transacción,<br>
+        When el jugador intenta pagar la sesión,<br>
+        Then la aplicación informa el rechazo y mantiene la operación pendiente.<br><br>
+        <b>Escenario 3: Comprobante de la sesión</b><br>
+        Given que la transacción fue exitosa,<br>
+        When el jugador revisa el detalle de la sesión,<br>
+        Then la aplicación muestra la confirmación o comprobante asociado.
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+  <h2>USM25</h2>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+    <tr>
+      <td>USM25</td>
+      <td>Jugador</td>
+      <td>Media</td>
+      <td>EP05</td>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <td colspan="3">Valorar a un entrenador después de una sesión completada</td>
+    </tr>
+    <tr>
+      <th colspan="4">Description</th>
+    </tr>
+    <tr>
+      <td colspan="4">Como jugador, quiero valorar a un entrenador después de completar una sesión con él, para compartir mi experiencia y contribuir a su reputación dentro de Courtly.</td>
+    </tr>
+    <tr>
+      <th colspan="4">Acceptance Criteria</th>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Reseña publicada</b><br>
+        Given que el jugador completó una sesión con el entrenador,<br>
+        When registra una calificación y comentario válidos,<br>
+        Then la aplicación publica la reseña en el perfil profesional del entrenador.<br><br>
+        <b>Escenario 2: Restricción por sesión no completada</b><br>
+        Given que el jugador no completó ninguna sesión con ese entrenador,<br>
+        When intenta publicar una opinión,<br>
+        Then la aplicación no permite registrar la reseña.<br><br>
+        <b>Escenario 3: Reputación visible</b><br>
+        Given que la reseña fue registrada correctamente,<br>
+        When otros usuarios revisan el perfil del entrenador,<br>
+        Then la aplicación muestra la valoración publicada.
       </td>
     </tr>
   </table>
@@ -3299,7 +3552,7 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
     <tr>
       <td>13</td>
       <td>USM20</td>
-      <td>Cancelar una reserva registrada</td>
+      <td>Cancelar una reserva o sesión registrada</td>
       <td>3</td>
     </tr>
     <tr>
@@ -3343,6 +3596,36 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
       <td>USM17</td>
       <td>Ver estadísticas de rendimiento</td>
       <td>3</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>USM21</td>
+      <td>Iniciar sesión como entrenador</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>USM22</td>
+      <td>Buscar entrenadores disponibles</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>USM23</td>
+      <td>Solicitar una sesión con entrenador</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>USM24</td>
+      <td>Pagar una sesión con entrenador aceptada</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>USM25</td>
+      <td>Valorar a un entrenador después de una sesión completada</td>
+      <td>2</td>
     </tr>
   </table>
 </div>
@@ -4070,403 +4353,280 @@ Diagrama de componentes Analytics
 
 ## 2.6. Tactical-Level Domain-Driven Design
 
-### 2.6.1. Bounded Context: Bookings
+La presente seccion desarrolla el Tactical-Level Domain-Driven Design del backend de Courtly a partir del codigo fuente actual. El objetivo es describir, para cada bounded context, su agregado principal, sus objetos de coordinacion, las reglas de negocio identificables en el codigo, sus puntos de integracion con otros contextos y los diagramas tecnicos que representan su estructura.
 
-El bounded context **Bookings** representa la capacidad del sistema encargada de gestionar las reservas de canchas deportivas. Su propósito es permitir que un usuario funcional del negocio registre, consulte, actualice y elimine reservas asociadas a una cancha en un intervalo de tiempo determinado. Dentro de este contexto, la entidad principal es `Booking`, ya que concentra la información esencial de la operación de reserva y establece la relación entre el usuario que reserva y la cancha reservada.
-
-Este contexto se relaciona directamente con los bounded contexts **Users** y **Courts**, debido a que cada reserva depende de un `UserProfile` y de una `Court`. De esta forma, Bookings constituye uno de los contextos operativos centrales del sistema, ya que articula una de las capacidades más importantes del producto Courtly: la gestión de reservas deportivas.
+El analisis se realiza sobre la implementacion real del backend en `com.upc.courtly`, por lo que cada descripcion se ha construido a partir de controladores, agregados, servicios, comandos, queries, repositorios y recursos REST existentes. Cuando un elemento no se identifica de forma explicita en el codigo, se indica expresamente.
 
 ---
 
+### 2.6.1. Bounded Context: Bookings
+
+El bounded context **Bookings** representa la capacidad del sistema encargada de gestionar la reserva simple de canchas deportivas. Su proposito es permitir que un usuario cree, consulte, actualice, cancele, complete y elimine reservas asociadas a una cancha dentro de un intervalo de tiempo determinado. La entidad principal del contexto es `Booking`, ya que concentra la relacion entre el usuario funcional, la cancha reservada, el rango horario y el estado operativo de la reserva.
+
+Este contexto se relaciona directamente con **Users**, **Courts**, **Payments** y **Notifications**. Depende de `UserProfile` y `Court` para construir la reserva, de `Payments` para confirmar economicamente la operacion y de `Notifications` para informar eventos como creacion, confirmacion o cancelacion.
+
 #### 2.6.1.1. Domain Layer
 
-La capa de dominio del bounded context **Bookings** contiene las clases que modelan el núcleo de la reserva de canchas y las reglas de negocio asociadas a este proceso. A partir del análisis del código, se identifica que el agregado principal del contexto es `Booking`, acompañado por comandos, consultas e interfaces de servicio que estructuran la lógica del dominio.
+La Domain Layer del bounded context **Bookings** contiene el agregado raiz, los comandos, las queries, los contratos de servicio y el repositorio que modelan el flujo de reserva simple de cancha.
 
 ##### a) Entity / Aggregate Root: `Booking`
 
 **Nombre de la clase:** `Booking`  
-**Paquete:** `com.upc.matchpoint.bookings.domain.model.aggregates`  
+**Paquete:** `com.upc.courtly.bookings.domain.model.aggregates`
 
-**Propósito:**  
-Representa la entidad principal del bounded context Bookings. Modela una reserva de cancha realizada por un usuario en un intervalo de tiempo específico y constituye el agregado raíz del contexto.
+**Proposito:**  
+Representa la reserva simple de una cancha para un usuario funcional. Es el agregado raiz del contexto y encapsula el estado de negocio de la reserva.
 
-**Atributos:**
-- `id: Long` → identificador único de la reserva.
-- `startTime: LocalDateTime` → fecha y hora de inicio de la reserva.
-- `endTime: LocalDateTime` → fecha y hora de fin de la reserva.
-- `user: UserProfile` → referencia al usuario que realiza la reserva.
-- `court: Court` → referencia a la cancha reservada.
-- `createdAt: LocalDateTime` → fecha y hora de creación automática de la reserva.
+**Atributos identificados en el codigo:**
+- `id: Long`
+- `startTime: LocalDateTime`
+- `endTime: LocalDateTime`
+- `user: UserProfile`
+- `court: Court`
+- `status: BookingStatus`
+- `createdAt: LocalDateTime`
 
-**Métodos:**
-- `Booking(LocalDateTime startTime, LocalDateTime endTime, UserProfile user, Court court)` → constructor que inicializa una nueva reserva.
-- `updateBooking(LocalDateTime startTime, LocalDateTime endTime)` → actualiza los horarios de la reserva.
-- `onCreate()` → método de ciclo de vida que asigna automáticamente la fecha de creación mediante `@PrePersist`.
+**Metodos identificados:**
+- `Booking(LocalDateTime startTime, LocalDateTime endTime, UserProfile user, Court court)`
+- `updateBooking(LocalDateTime startTime, LocalDateTime endTime)`
+- `confirm()`
+- `cancel()`
+- `complete()`
+- `onCreate()`
 
-**Relaciones:**
-- Una reserva pertenece a un solo `UserProfile`.
-- Una reserva pertenece a una sola `Court`.
-- Un usuario puede tener múltiples reservas.
-- Una cancha puede estar asociada a múltiples reservas a lo largo del tiempo.
+**Relaciones principales:**
+- Un `Booking` pertenece a un solo `UserProfile`.
+- Un `Booking` pertenece a una sola `Court`.
+- Un `UserProfile` puede tener multiples bookings.
+- Una `Court` puede participar en multiples bookings en distintos periodos.
 
 ##### b) Referencias externas del dominio
 
-Dentro del bounded context Bookings existen referencias a entidades de otros contextos, necesarias para completar la lógica de negocio de la reserva.
-
-###### `UserProfile`
+**`UserProfile`**  
 **Bounded context de origen:** `Users`  
-**Propósito dentro de Bookings:**  
-Representa al usuario funcional que realiza la reserva.
+**Uso dentro de Bookings:** representa al usuario que crea la reserva.
 
-**Atributos relevantes utilizados por Bookings:**
-- `id`
-- `name`
-
-###### `Court`
+**`Court`**  
 **Bounded context de origen:** `Courts`  
-**Propósito dentro de Bookings:**  
-Representa la cancha que será reservada.
-
-**Atributos relevantes utilizados por Bookings:**
-- `id`
-- `name`
+**Uso dentro de Bookings:** representa la cancha reservada y aporta su identidad para validaciones de solapamiento.
 
 ##### c) Value Objects
 
-En el bounded context **Bookings** no se identifican **Value Objects explícitos** implementados en el código actual. El sistema utiliza tipos primitivos y tipos estándar de Java, como `LocalDateTime`, directamente dentro del agregado `Booking`. Sin embargo, desde una perspectiva de mejora arquitectónica, sería posible introducir objetos de valor para encapsular conceptos como el rango horario de la reserva.
+En el codigo actual no se identifica un value object propio para el rango horario. Sin embargo, si existe el enum `BookingStatus` en `com.upc.courtly.bookings.domain.model.valueobjects`.
+
+**`BookingStatus`**
+- `PENDING_PAYMENT`
+- `CONFIRMED`
+- `CANCELLED`
+- `COMPLETED`
 
 ##### d) Commands del dominio
 
-Los comandos del contexto Bookings encapsulan la intención de ejecutar operaciones sobre el agregado `Booking`.
-
-###### `CreateBookingCommand`
-**Paquete:** `com.upc.matchpoint.bookings.domain.model.commands`  
-**Propósito:**  
-Representa la intención de crear una nueva reserva.
-
-**Atributos:**
-- `startTime: LocalDateTime`
-- `endTime: LocalDateTime`
-- `userId: Long`
-- `courtId: Long`
-
-###### `UpdateBookingCommand`
-**Paquete:** `com.upc.matchpoint.bookings.domain.model.commands`  
-**Propósito:**  
-Representa la intención de actualizar una reserva existente.
-
-**Atributos:**
-- `bookingId: Long`
-- `startTime: LocalDateTime`
-- `endTime: LocalDateTime`
-
-###### `DeleteBookingCommand`
-**Paquete:** `com.upc.matchpoint.bookings.domain.model.commands`  
-**Propósito:**  
-Representa la intención de eliminar una reserva.
-
-**Atributos:**
-- `bookingId: Long`
-
-##### e) Queries del dominio
-
-El contexto también define objetos de consulta para la recuperación de información.
-
-###### `GetAllBookingsQuery`
-**Paquete:** `com.upc.matchpoint.bookings.domain.model.queries`  
-**Propósito:**  
-Representa la intención de obtener todas las reservas del sistema.  
-**Atributos:** no contiene atributos.
-
-###### `GetBookingByIdQuery`
-**Paquete:** `com.upc.matchpoint.bookings.domain.model.queries`  
-**Propósito:**  
-Representa la intención de obtener una reserva específica por identificador.
-
-**Atributos:**
-- `bookingId: Long`
-
-##### f) Domain Services
-
-El dominio define interfaces de servicio que abstraen la ejecución de comandos y consultas.
-
-###### `BookingCommandService`
-**Paquete:** `com.upc.matchpoint.bookings.domain.services`  
-**Propósito:**  
-Define el contrato para ejecutar operaciones de creación, actualización y eliminación sobre reservas.
-
-**Métodos:**
-- `Optional<Booking> handle(CreateBookingCommand command)`
-- `Optional<Booking> handle(UpdateBookingCommand command)`
-- `void handle(DeleteBookingCommand command)`
-
-###### `BookingQueryService`
-**Paquete:** `com.upc.matchpoint.bookings.domain.services`  
-**Propósito:**  
-Define el contrato para ejecutar operaciones de consulta sobre reservas.
-
-**Métodos:**
-- `List<Booking> handle(GetAllBookingsQuery query)`
-- `Optional<Booking> handle(GetBookingByIdQuery query)`
-
-##### g) Repository
-
-###### `BookingRepository`
-**Paquete:** `com.upc.matchpoint.bookings.infrastructure.persistence.jpa.repositories`  
-**Propósito dentro del dominio:**  
-Abstraer la persistencia de reservas, permitiendo operaciones de guardado, consulta y eliminación.
-
-**Operaciones disponibles:**
-- `save(Booking)`
-- `findById(Long)`
-- `findAll()`
-- `deleteById(Long)`
-- `existsById(Long)`
-
-##### h) Reglas de negocio identificadas
-
-**Reglas implementadas actualmente:**
-- Una reserva debe estar asociada a un usuario válido.
-- Una reserva debe estar asociada a una cancha válida.
-- Una reserva debe tener hora de inicio.
-- Una reserva debe tener hora de fin.
-- La fecha de creación se genera automáticamente.
-- La actualización de una reserva solo modifica los horarios.
-
-**Reglas de negocio no implementadas aún:**
-- Validación de que `startTime < endTime`.
-- Validación de conflictos de horario sobre la misma cancha.
-- Validación de reservas en fechas pasadas.
-- Validación del horario operativo de la cancha.
-- Cancelación lógica con estado.
-- Integración con notificaciones o comprobantes.
-
-En conjunto, la Domain Layer de Bookings está correctamente definida en términos estructurales, aunque todavía presenta oportunidades de mejora en la formalización de reglas de negocio más ricas.
-
----
-
-#### 2.6.1.2. Interface Layer
-
-La Interface Layer del bounded context **Bookings** contiene las clases responsables de exponer las funcionalidades del contexto mediante endpoints REST y de transformar la información entre las estructuras internas del sistema y los recursos consumidos por el frontend móvil.
-
-##### a) `BookingsController`
-
-**Paquete:** `com.upc.matchpoint.bookings.interfaces.rest`  
-
-**Propósito:**  
-Exponer los endpoints HTTP para la gestión de reservas. Actúa como punto de entrada del bounded context desde el cliente móvil o cualquier consumidor externo. 
-
-**Dependencias:**
-- `BookingCommandService`
-- `BookingQueryService`
-
-**Endpoints expuestos:**
-- `POST /api/v1/bookings` → crear reserva
-- `GET /api/v1/bookings` → obtener todas las reservas
-- `GET /api/v1/bookings/{id}` → obtener reserva por id
-- `PUT /api/v1/bookings/{id}` → actualizar reserva
-- `DELETE /api/v1/bookings/{id}` → eliminar reserva
-
-##### b) Resources / DTOs
-
-###### `BookingResource`
-**Paquete:** `com.upc.matchpoint.bookings.interfaces.rest.resources`  
-
-**Propósito:**  
-Representar la respuesta de una reserva hacia el frontend.
-
-**Atributos:**
-- `id`
-- `startTime`
-- `endTime`
-- `user: UserSummaryResource`
-- `court: CourtSummaryResource`
-
-**Estructuras internas resumidas:**
-- `UserSummaryResource(Long id, String name)`
-- `CourtSummaryResource(Long id, String name)`
-
-###### `CreateBookingResource`
-**Propósito:**  
-Representar los datos de entrada requeridos para crear una nueva reserva.
-
-**Atributos:**
+**`CreateBookingCommand`**  
+Paquete: `com.upc.courtly.bookings.domain.model.commands`
 - `startTime`
 - `endTime`
 - `userId`
 - `courtId`
 
-###### `UpdateBookingResource`
-**Propósito:**  
-Representar los datos de entrada necesarios para actualizar una reserva existente.
+**`UpdateBookingCommand`**
+- `bookingId`
+- `startTime`
+- `endTime`
 
-**Atributos:**
+**`CancelBookingCommand`**
+- `bookingId`
+
+**`CompleteBookingCommand`**
+- `bookingId`
+
+**`DeleteBookingCommand`**
+- `bookingId`
+
+##### e) Queries del dominio
+
+**`GetAllBookingsQuery`**  
+No contiene atributos.
+
+**`GetBookingByIdQuery`**
+- `bookingId`
+
+##### f) Domain Services
+
+**`BookingCommandService`**
+- `Optional<Booking> handle(CreateBookingCommand command)`
+- `Optional<Booking> handle(UpdateBookingCommand command)`
+- `Optional<Booking> handle(CancelBookingCommand command)`
+- `Optional<Booking> handle(CompleteBookingCommand command)`
+- `void handle(DeleteBookingCommand command)`
+
+**`BookingQueryService`**
+- `List<Booking> handle(GetAllBookingsQuery query)`
+- `Optional<Booking> handle(GetBookingByIdQuery query)`
+
+##### g) Repository
+
+**`BookingRepository`**  
+Paquete: `com.upc.courtly.bookings.infrastructure.persistence.jpa.repositories`
+
+**Operaciones identificadas:**
+- `save(...)`
+- `findById(...)`
+- `findAll()`
+- `deleteById(...)`
+- `existsById(...)`
+- `existsOverlappingBooking(...)`
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- el usuario referenciado debe existir;
+- la cancha referenciada debe existir;
+- no se permite crear o actualizar una reserva si ya existe un booking solapado para la misma cancha con estados `PENDING_PAYMENT` o `CONFIRMED`;
+- la reserva se crea inicialmente con estado `PENDING_PAYMENT`;
+- una reserva puede pasar a `CONFIRMED` cuando se registra un pago valido;
+- una reserva puede cancelarse y completarse mediante comandos especificos;
+- el contexto emite notificaciones de creacion y cancelacion.
+
+**Observaciones de mejora:**
+- no se identifica una validacion explicita de `startTime < endTime` dentro del agregado `Booking`;
+- no se modela el rango horario como value object;
+- el contexto no incorpora politicas avanzadas de reprogramacion ni expiracion automatica.
+
+#### 2.6.1.2. Interface Layer
+
+La Interface Layer de **Bookings** expone las operaciones REST del contexto y transforma los recursos externos en comandos o respuestas.
+
+##### a) `BookingsController`
+
+**Paquete:** `com.upc.courtly.bookings.interfaces.rest`
+
+**Responsabilidad principal:**  
+Recibir solicitudes HTTP para el flujo de reserva simple y delegarlas a `BookingCommandService` y `BookingQueryService`.
+
+**Endpoints expuestos:**
+- `POST /api/v1/bookings`
+- `GET /api/v1/bookings`
+- `GET /api/v1/bookings/{id}`
+- `PUT /api/v1/bookings/{id}`
+- `POST /api/v1/bookings/{id}/cancel`
+- `POST /api/v1/bookings/{id}/complete`
+- `DELETE /api/v1/bookings/{id}`
+
+##### b) Resources / DTOs
+
+**`BookingResource`**
+- `id`
+- `startTime`
+- `endTime`
+- `status`
+- `user: UserSummaryResource`
+- `court: CourtSummaryResource`
+
+**`CreateBookingResource`**
+- `startTime`
+- `endTime`
+- `userId`
+- `courtId`
+
+**`UpdateBookingResource`**
 - `startTime`
 - `endTime`
 
 ##### c) Assemblers
 
-###### `BookingResourceFromEntityAssembler`
-**Paquete:** `com.upc.matchpoint.bookings.interfaces.rest.transform`  
-**Propósito:**  
-Transformar una entidad `Booking` del dominio en un `BookingResource` apto para ser enviado al frontend. Además, resume la relación con `UserProfile` y `Court` mostrando únicamente `id` y `name`.
+**`BookingResourceFromEntityAssembler`**  
+Transforma `Booking` en `BookingResource`.
 
-###### `CreateBookingCommandFromResourceAssembler`
-**Propósito:**  
-Transformar un `CreateBookingResource` en un `CreateBookingCommand`.
+**`CreateBookingCommandFromResourceAssembler`**  
+Transforma `CreateBookingResource` en `CreateBookingCommand`.
 
-###### `UpdateBookingCommandFromResourceAssembler`
-**Propósito:**  
-Transformar un `UpdateBookingResource`, junto con el identificador de la reserva, en un `UpdateBookingCommand`.
+**`UpdateBookingCommandFromResourceAssembler`**  
+Transforma `UpdateBookingResource` y el id path en `UpdateBookingCommand`.
 
 ##### d) Responsabilidad de la capa de interfaz
 
-La responsabilidad principal de esta capa es:
-- recibir solicitudes del cliente,
-- convertir recursos de entrada en comandos o consultas,
-- delegar la ejecución a la capa de aplicación,
-- y transformar los resultados en recursos de salida adecuados para la aplicación móvil.
-
----
+La capa de interfaz recibe los datos del cliente, los adapta a la semantica del dominio y devuelve respuestas simplificadas para el frontend movil.
 
 #### 2.6.1.3. Application Layer
 
-La Application Layer del bounded context **Bookings** coordina los flujos de proceso del negocio. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y con la infraestructura de persistencia.
+La Application Layer coordina los casos de uso del bounded context **Bookings** y articula las dependencias hacia Users, Courts y Notifications.
 
-Las capacidades principales del contexto son:
-- crear una reserva,
-- actualizar una reserva,
-- eliminar una reserva,
-- obtener una reserva por id,
-- obtener todas las reservas.
+##### a) Command Services / Command Handlers
 
-##### a) Command Handlers / Command Services
+**`BookingCommandServiceImpl`**  
+Paquete: `com.upc.courtly.bookings.application.internal.commandservices`
 
-###### `BookingCommandServiceImpl`
-**Paquete:** `com.upc.matchpoint.bookings.application.internal.commandservices`  
-**Propósito:**  
-Implementar el contrato `BookingCommandService` y ejecutar los casos de uso de escritura del contexto Bookings.
-
-**Dependencias:**
+**Dependencias identificadas:**
 - `BookingRepository`
 - `UserProfileRepository`
 - `CourtRepository`
+- `NotificationRepository`
 
 **Operaciones que maneja:**
+- crear booking;
+- actualizar booking;
+- cancelar booking;
+- completar booking;
+- eliminar booking.
 
-**`handle(CreateBookingCommand command)`**
-- valida que el usuario exista,
-- valida que la cancha exista,
-- crea una nueva entidad `Booking`,
-- persiste la reserva en base de datos,
-- retorna la reserva creada.
+##### b) Query Services / Query Handlers
 
-**`handle(UpdateBookingCommand command)`**
-- busca la reserva por id,
-- actualiza `startTime` y `endTime`,
-- guarda el cambio,
-- retorna la reserva actualizada si existe.
+**`BookingQueryServiceImpl`**
 
-**`handle(DeleteBookingCommand command)`**
-- verifica si la reserva existe,
-- la elimina por identificador,
-- lanza excepción si no existe.
-
-##### b) Query Handlers / Query Services
-
-###### `BookingQueryServiceImpl`
-**Paquete:** `com.upc.matchpoint.bookings.application.internal.queryservices`  
-**Propósito:**  
-Implementar el contrato `BookingQueryService` y ejecutar los casos de uso de lectura del contexto Bookings.
-
-**Dependencia:**
+**Dependencias:**
 - `BookingRepository`
 
-**Operaciones que maneja:**
-
-**`handle(GetAllBookingsQuery query)`**
-- recupera todas las reservas del sistema mediante `findAll()`,
-- devuelve una lista de entidades `Booking`.
-
-**`handle(GetBookingByIdQuery query)`**
-- busca una reserva específica por su id,
-- devuelve un `Optional<Booking>`.
+**Operaciones:**
+- recuperar todas las reservas;
+- recuperar una reserva por identificador.
 
 ##### c) Flujos principales del negocio
 
-###### Flujo de creación de reserva
-1. El frontend envía un `CreateBookingResource`.
-2. La capa de interfaz lo transforma a `CreateBookingCommand`.
-3. `BookingCommandServiceImpl` valida la existencia de usuario y cancha.
-4. Se construye una instancia de `Booking`.
-5. La reserva se persiste mediante `BookingRepository`.
-6. El resultado se transforma en `BookingResource` y se retorna al cliente.
+**Flujo de creacion**
+1. El cliente envia `CreateBookingResource`.
+2. El controller genera `CreateBookingCommand`.
+3. `BookingCommandServiceImpl` valida usuario, cancha y solapamientos.
+4. Se construye `Booking` en estado `PENDING_PAYMENT`.
+5. Se persiste la reserva y se registra una notificacion `BOOKING_CREATED`.
 
-###### Flujo de actualización
-1. El frontend envía un `UpdateBookingResource`.
-2. Se transforma en `UpdateBookingCommand`.
-3. `BookingCommandServiceImpl` recupera la reserva existente.
-4. Se actualizan los horarios con `updateBooking(...)`.
-5. Se guarda la modificación.
-6. Se retorna la reserva actualizada.
+**Flujo de actualizacion**
+1. Se recibe `UpdateBookingResource`.
+2. El service recupera la reserva.
+3. Se verifica que el nuevo horario no genere conflicto.
+4. Se actualizan `startTime` y `endTime`.
 
-###### Flujo de consulta
-1. El frontend solicita una o varias reservas.
-2. El controlador construye el objeto de consulta correspondiente.
-3. `BookingQueryServiceImpl` recupera la información desde `BookingRepository`.
-4. Los resultados se transforman a `BookingResource`.
-5. Se retorna la respuesta al cliente.
+**Flujo de cancelacion**
+1. Se recibe `CancelBookingCommand`.
+2. El booking cambia a `CANCELLED`.
+3. Se registra una notificacion `BOOKING_CANCELLED`.
 
-###### Flujo de eliminación
-1. El frontend solicita eliminar una reserva.
-2. Se construye un `DeleteBookingCommand`.
-3. `BookingCommandServiceImpl` verifica la existencia del booking.
-4. Se elimina la reserva del repositorio.
-5. Se devuelve la confirmación de eliminación.
+**Flujo de completado**
+1. Se recibe `CompleteBookingCommand`.
+2. El booking pasa a `COMPLETED`.
 
-##### d) Observaciones de la capa de aplicación
+##### d) Observaciones de la capa de aplicacion
 
-Aunque esta capa ya implementa correctamente los casos de uso CRUD del bounded context, aún presenta limitaciones funcionales relevantes:
-- no valida conflictos de horario,
-- no valida reservas en el pasado,
-- no valida disponibilidad real de la cancha,
-- no incorpora paginación ni filtros en consultas,
-- y no publica eventos de dominio.
-
----
+La capa de aplicacion ya no es un CRUD plano, porque incorpora control de estado, validacion de solapamiento y eventos de notificacion. Aun asi, no se identifica una politica de expiracion automatica para bookings pendientes de pago.
 
 #### 2.6.1.4. Infrastructure Layer
 
-La Infrastructure Layer del bounded context **Bookings** contiene los componentes encargados del acceso a base de datos y de la persistencia de las reservas. En esta capa se materializa el almacenamiento del agregado `Booking` y se soportan las operaciones que ejecuta la aplicación.
+La Infrastructure Layer implementa la persistencia JPA del agregado `Booking` y sus consultas de apoyo.
 
-##### a) Repositorio de persistencia
+##### a) Repositorios de persistencia
 
-###### `BookingRepository`
-**Paquete:** `com.upc.matchpoint.bookings.infrastructure.persistence.jpa.repositories`  
-**Propósito:**  
-Gestionar la persistencia y recuperación de reservas utilizando Spring Data JPA. La implementación concreta es generada automáticamente por el framework al extender `JpaRepository<Booking, Long>`.
+**`BookingRepository`** extiende `JpaRepository<Booking, Long>` y agrega una consulta de solapamiento.
 
-**Operaciones disponibles:**
-- `save`
-- `findById`
-- `findAll`
-- `deleteById`
-- `existsById`
+##### b) Persistencia de entidades
 
-**Observación:**  
-No se identifican métodos personalizados de consulta para validaciones avanzadas o búsquedas por rango horario.
-
-##### b) Persistencia de la entidad `Booking`
-
-La entidad `Booking` está mapeada como una entidad JPA con las siguientes características:
+`Booking` se persiste con:
 - `@Entity`
 - `@Table(name = "bookings")`
-- `@Id`
-- `@GeneratedValue(strategy = GenerationType.IDENTITY)`
-- relaciones `@ManyToOne(fetch = FetchType.LAZY)` con `UserProfile` y `Court`
-- método `@PrePersist` para inicializar `createdAt` automáticamente.
+- `@ManyToOne(fetch = FetchType.LAZY)` hacia `UserProfile`
+- `@ManyToOne(fetch = FetchType.LAZY)` hacia `Court`
+- `@Enumerated(EnumType.STRING)` para `status`
 
-##### c) Diseño de persistencia
+##### c) Diseno de persistencia
 
 **Tabla principal:** `bookings`
 
@@ -4476,3833 +4636,2099 @@ La entidad `Booking` está mapeada como una entidad JPA con las siguientes carac
 - `end_time`
 - `user_id`
 - `court_id`
+- `status`
 - `created_at`
 
-**Restricciones y relaciones:**
-- `id` → Primary Key
-- `user_id` → Foreign Key hacia `user_profiles.id`
-- `court_id` → Foreign Key hacia `courts.id`
-- `start_time`, `end_time`, `user_id`, `court_id`, `created_at` → `NOT NULL`
+##### d) Integracion con otros bounded contexts
 
-##### d) Integración con otros bounded contexts
+El contexto se integra con:
+- `Users`, mediante `UserProfileRepository`;
+- `Courts`, mediante `CourtRepository`;
+- `Notifications`, mediante `NotificationRepository`;
+- `Payments`, de forma indirecta, porque el pago confirma el booking.
 
-La infraestructura del contexto Bookings depende de:
-- `UserProfileRepository` del contexto **Users**, para validar usuarios existentes.
-- `CourtRepository` del contexto **Courts**, para validar canchas existentes.
+##### e) Configuracion tecnica relevante
 
-##### e) Configuración técnica relevante
+No se identifica configuracion especifica propia del contexto. El comportamiento de persistencia depende de la configuracion JPA global del proyecto.
 
-El proyecto utiliza configuración JPA con:
-- `spring.jpa.hibernate.ddl-auto=update`
-- `spring.jpa.open-in-view=true`
+##### f) Limitaciones de infraestructura
 
-Esto permite que los recursos puedan resolver relaciones LAZY durante la construcción de respuestas, aunque también introduce una dependencia técnica que puede afectar el comportamiento si dicha configuración cambia.
-
-##### f) Limitaciones de la capa de infraestructura
-
-La infraestructura actual cumple con la persistencia básica del contexto, pero aún no incorpora:
-- consultas personalizadas para disponibilidad,
-- validación de solapamiento de reservas,
-- paginación optimizada,
-- índices o estrategias de rendimiento adicionales,
-- integraciones con servicios externos como pagos o notificaciones.
-
-En consecuencia, la Infrastructure Layer del bounded context Bookings es funcional para el escenario actual, pero todavía puede evolucionar para soportar una operación más robusta y escalable.
+No se identifican indices ni restricciones fisicas para prevenir solapamientos a nivel de base de datos; la validacion se resuelve en la capa de aplicacion.
 
 #### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Descripción:**
-
-El Component Diagram del bounded context **Bookings** representa la descomposición del contenedor backend encargado de gestionar las reservas de canchas deportivas. A nivel arquitectónico, este container está conformado por componentes con responsabilidades bien delimitadas dentro del sistema: recepción de solicitudes REST, transformación de datos entre capas, ejecución de comandos y consultas, acceso a persistencia y validación de referencias provenientes de otros bounded contexts como **Users** y **Courts**.
-
-A partir del análisis del código real, se identifican los siguientes componentes principales:
+**Descripcion:**  
+El diagrama de componentes del bounded context **Bookings** representa la descomposicion del contexto en controller REST, transformadores, servicios de aplicacion, agregado de dominio, persistencia y acceso a contextos externos. La arquitectura separa lectura y escritura, y muestra que el contexto valida usuarios y canchas antes de persistir una reserva.
 
 **Componentes principales:**
-
-- **Bookings REST API Component**  
-  Expone los endpoints HTTP del bounded context mediante `BookingsController`. Su responsabilidad es recibir solicitudes del frontend, delegar comandos y consultas, y devolver respuestas estructuradas.
-
-- **Booking Transformation Component**  
-  Agrupa los assemblers y resources que permiten transformar datos entre la capa de interfaz y la capa de aplicación. Incluye `BookingResourceFromEntityAssembler`, `CreateBookingCommandFromResourceAssembler` y `UpdateBookingCommandFromResourceAssembler`.
-
-- **Booking Command Processing Component**  
-  Implementado por `BookingCommandServiceImpl`, se encarga de coordinar las operaciones de escritura del contexto: creación, actualización y eliminación de reservas. Además, valida la existencia del usuario y de la cancha antes de crear una reserva.
-
-- **Booking Query Processing Component**  
-  Implementado por `BookingQueryServiceImpl`, gestiona las operaciones de consulta del contexto, como obtener todas las reservas o buscar una reserva por identificador.
-
-- **Booking Domain Component**  
-  Representa el núcleo del dominio mediante el agregado `Booking`, junto con los comandos (`CreateBookingCommand`, `UpdateBookingCommand`, `DeleteBookingCommand`) y las queries (`GetAllBookingsQuery`, `GetBookingByIdQuery`).
-
-- **Booking Persistence Component**  
-  Encapsula el acceso a persistencia a través de `BookingRepository`, utilizando Spring Data JPA para almacenar y recuperar reservas desde la base de datos relacional.
-
-- **External Context Access Component**  
-  Representa la dependencia del bounded context Bookings hacia `UserProfileRepository` del contexto **Users** y `CourtRepository` del contexto **Courts**, utilizados para validar las referencias externas requeridas por la reserva.
-
----
+- REST API Component
+- REST Resources and Assemblers Component
+- Domain Services Component
+- Application Command Component
+- Application Query Component
+- Domain Model Component
+- Persistence Component
+- External Context Access Component
 
 **Diagrama de componentes propuesto:**
 
-![Component Diagram Analytics](assets/chapter2/componentes_bookings.png)
+![Component Diagram Bookings](assets/refactor/booking-componentes.png)
 
 **Relaciones entre componentes:**
-
-- **Bookings REST API Component → Booking Transformation Component**  
-  Transforma los datos de entrada y salida entre resources, commands y entidades.
-
-- **Bookings REST API Component → Booking Command Processing Component**  
-  Delega operaciones de creación, actualización y eliminación.
-
-- **Bookings REST API Component → Booking Query Processing Component**  
-  Delega operaciones de lectura.
-
-- **Booking Command Processing Component → External Context Access Component**  
-  Valida la existencia del usuario y de la cancha antes de crear un booking.
-
-- **Booking Command Processing Component → Booking Domain Component**  
-  Construye o actualiza la entidad `Booking`.
-
-- **Booking Command Processing Component → Booking Persistence Component**  
-  Persiste los cambios del agregado.
-
-- **Booking Query Processing Component → Booking Persistence Component**  
-  Recupera reservas desde la base de datos.
-
-- **Booking Persistence Component → bookings**  
-  Almacena y consulta la información persistida.
-
-- **External Context Access Component → user_profiles / courts**  
-  Accede a los bounded contexts externos para validar relaciones de negocio.
+- el controller invoca servicios de comando y consulta;
+- los assemblers convierten resources en comandos y entidades en resources;
+- el command service utiliza repositorios externos para validar usuario y cancha;
+- el repository persiste el agregado `Booking`;
+- el contexto externo de notificaciones participa en eventos de negocio.
 
 #### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 
-En esta sección se presentan los diagramas a nivel de código del bounded context **Bookings**, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
-
-Se incluyen dos representaciones principales:
-- El **Class Diagram del Domain Layer**, que describe la estructura del modelo de dominio.
-- El **Database Design Diagram**, que representa la persistencia de datos en la base de datos relacional.
-
----
+En esta subseccion se presentan los diagramas a nivel de codigo del bounded context **Bookings**, orientados a mostrar la estructura del dominio y la persistencia relacional del agregado.
 
 ##### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-**Descripción:**
-
-El diagrama de clases del Domain Layer del bounded context **Bookings** presenta el agregado principal `Booking`, junto con sus relaciones hacia entidades externas (`UserProfile` y `Court`), así como las interfaces de servicios y los objetos que representan comandos y consultas.
-
-El diseño evidencia que `Booking` es el núcleo del dominio y que las operaciones del sistema se organizan alrededor de comandos (acciones de escritura) y queries (acciones de lectura).
-
----
+**Descripcion:**  
+El diagrama de clases del Domain Layer muestra a `Booking` como agregado raiz, el enum `BookingStatus`, los comandos que modelan las operaciones de escritura y las queries que representan las consultas del contexto.
 
 **Diagrama UML de clases (Domain Layer):**
 
-![Domain Layer Analytics](assets/chapter2/domainlayer_bookings.png)
+![Domain Layer Bookings](assets/refactor/booking-clases.png)
 
 **Relaciones principales del modelo**
-
-- **Booking** es el Aggregate Root del bounded context.
-- **Booking** mantiene una relación Many-to-One con **UserProfile**.
-- **Booking** mantiene una relación Many-to-One con **Court**.
-- **BookingCommandService** define las operaciones de escritura.
-- **BookingQueryService** define las operaciones de lectura.
-- Los comandos encapsulan acciones de negocio.
-- Las queries encapsulan solicitudes de consulta.
+- `Booking` es el aggregate root;
+- `Booking` referencia a `UserProfile` y `Court`;
+- `BookingCommandService` coordina create, update, cancel, complete y delete;
+- `BookingQueryService` coordina las consultas.
 
 **Observaciones**
-
-El modelo de dominio presenta una estructura clara y centrada en el agregado **Booking**. Sin embargo, no se identifican aún value objects ni reglas complejas encapsuladas dentro del dominio, lo que sugiere oportunidades de mejora como la incorporación de validaciones de disponibilidad o control de solapamiento de horarios.
-
----
+- el modelo ya incorpora estado explicito de reserva;
+- no se identifica un value object propio para el rango de tiempo.
 
 ##### 2.6.1.6.2. Bounded Context Database Design Diagram
 
-**Descripción**
-
-El diagrama de base de datos del bounded context **Bookings** representa la estructura relacional utilizada para persistir la información de reservas. La tabla principal es **bookings**, la cual mantiene relaciones con las tablas **user_profiles** y **courts**.
+**Descripcion**  
+El diagrama ERD del bounded context **Bookings** muestra la tabla `bookings` y sus relaciones con `user_profiles` y `courts`.
 
 **Diagrama de base de datos (ERD)**
 
-![Database Analytics](assets/chapter2/basededatos_bookings.png)
+![Database Bookings](assets/refactor/booking-db.png)
 
 **Tablas y atributos**
 
 Tabla `bookings`
-
-- `id`: identificador único de la reserva (PK)
-- `start_time`: fecha y hora de inicio
-- `end_time`: fecha y hora de fin
-- `user_id`: referencia al usuario (FK)
-- `court_id`: referencia a la cancha (FK)
-- `created_at`: fecha de creación
+- `id`
+- `start_time`
+- `end_time`
+- `user_id`
+- `court_id`
+- `status`
+- `created_at`
 
 Tabla `user_profiles`
-
 - `id`
 - `name`
 - `email`
 - `phone`
+- `image_url`
+- `iam_user_id`
 
 Tabla `courts`
-
 - `id`
 - `name`
 - `location`
 - `type`
+- `image_url`
+- `price_per_hour`
 
-Constraints
+**Constraints**
+- primary key en `bookings.id`;
+- foreign key `user_id -> user_profiles.id`;
+- foreign key `court_id -> courts.id`;
+- `start_time`, `end_time`, `user_id`, `court_id`, `status` y `created_at` son obligatorios.
 
-- PRIMARY KEY (`id`) en `bookings`
-- FOREIGN KEY (`user_id`) → `user_profiles(id)`
-- FOREIGN KEY (`court_id`) → `courts(id)`
-- Restricciones NOT NULL en campos críticos
-
-Relaciones entre tablas
-
-- `user_profiles (1)` ──── `(*) bookings`
-- `courts (1)` ──── `(*) bookings`
+**Relaciones entre tablas**
+- `user_profiles (1) ---- (*) bookings`
+- `courts (1) ---- (*) bookings`
 
 **Observaciones**
-
-El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente las reservas. Sin embargo, actualmente no se implementan restricciones avanzadas como control de solapamiento de horarios o validación de disponibilidad, lo que representa una oportunidad de mejora para fortalecer la lógica de negocio a nivel de base de datos.
+- la tabla refleja adecuadamente el estado del booking;
+- la restriccion de no solapamiento no se implementa fisicamente en la base de datos.
 
 ---
 
 ### 2.6.2. Bounded Context: Payments
 
+El bounded context **Payments** representa la capacidad encargada de registrar pagos asociados a una reserva simple de cancha o a una sesion con entrenador. Su proposito es consolidar la confirmacion economica de una operacion y enlazarla con el usuario que paga. La entidad principal es `Payment`, que actua como agregado raiz del contexto.
+
+Este contexto se relaciona con **Users**, **Bookings**, **TrainingSessions** y **Notifications**, ya que requiere validar el usuario pagador, la operacion que se cancela y las notificaciones derivadas de la confirmacion del pago.
+
 #### 2.6.2.1. Domain Layer
 
-**Entities / Aggregates**
+La Domain Layer de **Payments** modela el agregado de pago, sus value objects de estado y contexto, y los contratos de lectura y escritura asociados.
 
-```
-Payment (Pago - Aggregate Root)
-├── paymentId: int → Identificador único de pago
-├── amount: Decimal → Cantidad transferida en el pago
-├── user: User → Usuario a realizar la transferencia
-├── paymentStatus: PaymentStatus → Descripción de la cancha
-├── createdAt: DateTime → Fecha de creación
+##### a) Entity / Aggregate Root: `Payment`
 
-Métodos:
-├── createPayment(userId, amount) → Crea un nuevo pago
-├── complete() → Marca el pago como COMPLETED
-├── fail() → Marca el pago como FAILED
-├── cancel() → Marca el pago como CANCELLED
-├── getPaymentById(paymentId) → Obtiene un pago realizado por su identificador
-```
+**Paquete:** `com.upc.courtly.payments.domain.model.aggregates`
 
-**Value Objects**
+**Atributos identificados:**
+- `id: Long`
+- `amount: BigDecimal`
+- `user: UserProfile`
+- `paymentStatus: PaymentStatus`
+- `contextType: PaymentContextType`
+- `booking: Booking`
+- `trainingSession: TrainingSession`
+- `createdAt: LocalDateTime`
 
-```
-PaymentStatus
-├── pending: PENDING -> Pago Pendiente (estado inicial)
-├── completed: COMPLETED -> Pago completado
-├── failed: FAILED → Pago fallido
-├── cancelled: CANCELLED → Pago cancelado
-```
+**Metodos identificados:**
+- constructores de creacion;
+- `getPaymentDate()`
+- `getStatus()`
+- `updateStatus(PaymentStatus newStatus)`
+- `onCreate()`
 
-**Domain Events**
+##### b) Referencias externas del dominio
 
-```
-PaymentCreated(paymentId, userId, amount, createdAt)
-PaymentCompleted(paymentId, status)
-PaymentFailed(paymentId, status)
-PaymentCancelled(paymentId, status)
-```
----
+**`UserProfile`** desde `Users`  
+Representa al usuario que realiza el pago.
+
+**`Booking`** desde `Bookings`  
+Representa una reserva simple de cancha pagable.
+
+**`TrainingSession`** desde `TrainingSessions`  
+Representa una sesion con entrenador aceptada y pagable.
+
+##### c) Value Objects
+
+**`PaymentStatus`**
+- `PENDING`
+- `COMPLETED`
+- `FAILED`
+- `CANCELLED`
+
+**`PaymentContextType`**
+- `BOOKING`
+- `TRAINING_SESSION`
+
+##### d) Commands del dominio
+
+**`CreatePaymentCommand`**
+- `userId`
+- `bookingId`
+- `trainingSessionId`
+
+No se identifican comandos de actualizacion o eliminacion propios del contexto.
+
+##### e) Queries del dominio
+
+**`GetPaymentByIdQuery`**
+- `paymentId`
+
+No se identifica una query formal de lista global; la consulta de pagos del usuario se materializa desde controller y repositorio.
+
+##### f) Domain Services
+
+**`PaymentCommandService`**
+- `Optional<Payment> handle(CreatePaymentCommand command)`
+
+**`PaymentQueryService`**
+- `Optional<Payment> handle(GetPaymentByIdQuery query)`
+- `List<Payment> handle()`
+
+##### g) Repository
+
+**`PaymentRepository`**
+- `save(...)`
+- `findById(...)`
+- `findAll()`
+- `findByUserIdOrderByCreatedAtDesc(...)`
+- `existsByBookingIdAndPaymentStatus(...)`
+- `existsByTrainingSessionIdAndPaymentStatus(...)`
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- el usuario debe existir;
+- el pago debe apuntar exactamente a una operacion: booking o training session;
+- si el pago apunta a un booking, este debe pertenecer al usuario;
+- no se permite pagar dos veces un mismo booking con estado `COMPLETED`;
+- el monto del booking se calcula en servidor usando la duracion y `pricePerHour`;
+- si el pago apunta a una training session, esta debe pertenecer al jugador y estar en estado `ACCEPTED`;
+- no se permite pagar dos veces una misma training session con pago completado;
+- el pago completado actualiza el booking a `CONFIRMED` cuando corresponde;
+- el contexto registra notificaciones de confirmacion.
+
+**Observaciones de mejora:**
+- no se identifica integracion con pasarela de pago externa;
+- no existe un flujo de conciliacion o reintento;
+- la clase `Payment` no encapsula por si sola las reglas de calculo del monto.
 
 #### 2.6.2.2. Interface Layer
 
-**REST Controllers**
+La Interface Layer del bounded context **Payments** expone las operaciones REST necesarias para crear pagos y consultar los pagos del usuario autenticado.
 
-```
-PaymentController
-├── POST /api/v1/payments → Crear nuevo pago
-│   Request: CreatePaymentDTO
-│   Response: PaymentResponseDTO
-│
-└── GET /api/v1/payments/{paymentId} → Obtener pago por identificador
-    Response: PaymentResponseDTO
-```
+##### a) `PaymentsController`
 
-**DTOs (Data Transfer Objects)**
+**Paquete:** `com.upc.courtly.payments.interfaces.rest`
 
-```
-CreatePaymentDTO
-├── userId: Long
-└── amount: BigDecimal
+**Endpoints expuestos:**
+- `POST /api/v1/payments`
+- `GET /api/v1/payments`
+- `GET /api/v1/payments/{id}`
 
-PaymentResponseDTO
-├── paymentId: Long
-├── amount: BigDecimal
-├── paymentDate: DateTime
-├── status: PaymentStatus
-└── user: UserSummaryDTO
+**Dependencias principales:**
+- `PaymentCommandService`
+- `PaymentQueryService`
+- `PaymentRepository`
+- `AuthenticatedContextFacade`
 
-UserSummaryDTO
-├── userId: Long
-└── name: String
-```
+##### b) Resources / DTOs
 
----
+**`PaymentResource`**
+- `id`
+- `amount`
+- `paymentDate`
+- `status`
+- `contextType`
+- `bookingId`
+- `trainingSessionId`
+- `user`
+
+**`CreatePaymentResource`**
+- `userId`
+- `bookingId`
+- `trainingSessionId`
+
+##### c) Assemblers
+
+**`PaymentResourceFromEntityAssembler`**  
+Transforma `Payment` en `PaymentResource`.
+
+**`CreatePaymentCommandFromResourceAssembler`**  
+Transforma `CreatePaymentResource` en `CreatePaymentCommand`.
+
+##### d) Responsabilidad de la capa de interfaz
+
+La capa de interfaz expone el alta de pagos y protege la consulta de pagos del usuario autenticado. El listado no es una consulta abierta del sistema, sino una vista de pagos propios.
 
 #### 2.6.2.3. Application Layer
 
-**Command Handlers**
+La Application Layer de **Payments** implementa la validacion del contexto pagado, el calculo del monto y la emision de notificaciones.
 
-```
-CreatePaymentCommandHandler
-├── Input: CreatePaymentCommand (userId, amount)
-├── Validaciones:
-│   ├── Verificar que el usuario existe
-│   ├── Validar que el monto es mayor a 0
-│   └── Validar que el monto no sea nulo
-├── Proceso:
-│   ├── Obtener UserProfile
-│   ├── Crear Payment (estado inicial PENDING)
-│   └── Persistir Payment
-└── Output: PaymentCreatedEvent
+##### a) Command Services / Command Handlers
 
+**`PaymentCommandServiceImpl`**
 
-CompletePaymentCommandHandler
-├── Input: CompletePaymentCommand (paymentId)
-├── Validaciones:
-│   ├── Verificar que el pago existe
-│   ├── Verificar que el estado es PENDING
-│   └── Validar que no esté CANCELLED o FAILED
-├── Proceso:
-│   ├── Obtener Payment
-│   ├── Ejecutar payment.complete()
-│   └── Persistir cambios
-└── Output: PaymentCompletedEvent
+**Dependencias identificadas:**
+- `PaymentRepository`
+- `UserProfileRepository`
+- `BookingRepository`
+- `TrainingSessionRepository`
+- `NotificationRepository`
 
+**Operaciones que maneja:**
+- crear pago para booking;
+- crear pago para training session.
 
-FailPaymentCommandHandler
-├── Input: FailPaymentCommand (paymentId)
-├── Validaciones:
-│   ├── Verificar que el pago existe
-│   ├── Verificar que el estado es PENDING
-│   └── Validar que no esté COMPLETED
-├── Proceso:
-│   ├── Obtener Payment
-│   ├── Ejecutar payment.fail()
-│   └── Persistir cambios
-└── Output: PaymentFailedEvent
+##### b) Query Services / Query Handlers
 
+**`PaymentQueryServiceImpl`**
 
-CancelPaymentCommandHandler
-├── Input: CancelPaymentCommand (paymentId)
-├── Validaciones:
-│   ├── Verificar que el pago existe
-│   ├── Verificar que no esté COMPLETED
-│   └── Validar reglas de cancelación
-├── Proceso:
-│   ├── Obtener Payment
-│   ├── Ejecutar payment.cancel()
-│   └── Persistir cambios
-└── Output: PaymentCancelledEvent
-```
+**Dependencias:**
+- `PaymentRepository`
 
-**Event Handlers**
+**Operaciones:**
+- obtener pago por id;
+- obtener lista general de pagos persistidos.
 
-```
-OnPaymentCreatedHandler
-├── Escucha: PaymentCreatedEvent
-└── Acciones:
-    ├── Registrar el pago en el sistema
-    ├── Preparar información para frontend
-    └── Inicializar estado del pago
+##### c) Flujos principales del negocio
 
+**Flujo de pago de booking**
+1. El cliente envia `CreatePaymentResource`.
+2. El service valida usuario y booking.
+3. Calcula el monto desde la duracion y el precio por hora de la cancha.
+4. Persiste `Payment` como completado.
+5. Confirma el booking.
+6. Registra `PAYMENT_CONFIRMED` y `BOOKING_CONFIRMED`.
 
-OnPaymentCompletedHandler
-├── Escucha: PaymentCompletedEvent
-└── Acciones:
-    ├── Notificar confirmación de pago al usuario
-    ├── Actualizar estado visible en frontend
-    └── Registrar operación como completada
+**Flujo de pago de training session**
+1. Se valida que la sesion exista y pertenezca al jugador.
+2. La sesion debe estar `ACCEPTED`.
+3. El monto se obtiene de `trainingSession.price`.
+4. Se persiste el pago y se notifica la confirmacion.
 
+##### d) Observaciones de la capa de aplicacion
 
-OnPaymentFailedHandler
-├── Escucha: PaymentFailedEvent
-└── Acciones:
-    ├── Notificar fallo al usuario
-    ├── Registrar intento fallido
-    └── Permitir reintento de pago
-
-
-OnPaymentCancelledHandler
-├── Escucha: PaymentCancelledEvent
-└── Acciones:
-    ├── Notificar cancelación al usuario
-    ├── Liberar recursos asociados (si aplica)
-    └── Registrar cancelación
-```
-
----
+El contexto ya resuelve reglas transaccionales relevantes, pero todavia no integra infraestructura financiera real ni politicas de idempotencia externa.
 
 #### 2.6.2.4. Infrastructure Layer
 
-**Repositories**
+La Infrastructure Layer de **Payments** persiste el agregado `Payment` y sus referencias hacia bookings y training sessions.
 
-```
-PaymentRepository
-├── save(payment: Payment) → void
-├── findById(paymentId: Long) → Payment
-├── findByUserId(userId: Long) → List<Payment>
-├── update(payment: Payment) → void
-└── delete(paymentId: Long) → void
-```
+##### a) Repositorios de persistencia
 
-**Adapters**
+`PaymentRepository` extiende `JpaRepository<Payment, Long>` y agrega busquedas por usuario y validaciones de pago duplicado por contexto.
 
-```
-NotificationAdapter
-├── sendPaymentConfirmation(user, payment) → void
-├── sendPaymentFailureNotification(user, payment) → void
-└── sendPaymentCancellationNotification(user, payment) → void
-```
+##### b) Persistencia de entidades
 
-**Persistencia**
+`Payment` utiliza relaciones `@ManyToOne` con `UserProfile`, `Booking` y `TrainingSession`, y enums persistidos como string para `paymentStatus` y `contextType`.
 
-```
-Tabla: payments
-├── payment_id (PK, BIGINT, AUTO_INCREMENT)
-├── user_id (FK → users.user_id)
-├── amount (DECIMAL(10,2), NOT NULL)
-├── status (ENUM: PENDING, COMPLETED, FAILED, CANCELLED)
-├── created_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP)
-└── INDEX (user_id, status)
-```
+##### c) Diseno de persistencia
 
----
+**Tabla principal:** `payments`
+
+**Columnas identificadas:**
+- `id`
+- `amount`
+- `user_id`
+- `payment_status`
+- `context_type`
+- `booking_id`
+- `training_session_id`
+- `created_at`
+
+##### d) Integracion con otros bounded contexts
+
+El contexto depende de:
+- `Users`, para resolver el pagador;
+- `Bookings`, para pagos de reserva simple;
+- `TrainingSessions`, para pagos de sesiones;
+- `Notifications`, para registrar eventos.
+
+##### e) Configuracion tecnica relevante
+
+No se identifica configuracion tecnica propia del contexto.
+
+##### f) Limitaciones de infraestructura
+
+No existe pasarela de pago externa ni persistencia de auditoria financiera avanzada.
 
 #### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Descripción:**
+**Descripcion:**  
+El diagrama de componentes del bounded context **Payments** muestra como el controller REST convierte solicitudes en comandos, como el command service valida el contexto objetivo del pago y como la persistencia registra la transaccion.
 
-El diagrama de componentes para el Payments Context presenta la descomposición del contenedor en componentes responsables de la gestión del ciclo de vida de los pagos. Estos componentes coordinan la creación, validación, procesamiento y notificación de eventos relacionados con los pagos:
+**Componentes principales:**
+- REST API Component
+- REST Resources and Assemblers Component
+- Domain Services Component
+- Application Command Component
+- Application Query Component
+- Domain Model Component
+- Persistence Component
+- External Context Access Component
 
-**Diagrama de Componentes:**
+**Diagrama de componentes propuesto:**
 
-![Components-Payments](/assets/chapter2/Components-Payments.png)
+![Component Diagram Payments](assets/refactor/payment-componentes.png)
 
-**Relaciones entre Componentes:**
-
-- **Payment API → Payment Application Service:** Delega las peticiones del frontend y los DTOs transformados para iniciar el flujo de procesamiento.
-- **Payment Application Service → Payment Management:** Usa la lógica de negocio central para orquestar los casos de uso y manejar validaciones de aplicación.
-- **Payment Application Service → Repository & Data Access:** Persiste la información del pago directamente después de coordinar el flujo entre capas.
-- **Payment Management → Payment Event Handling:** Dispara eventos de dominio cuando ocurre un cambio relevante en el estado del pago (como la creación de un pago PENDING).
-- **Payment Event Handling → Notification Adapter:** Notifica al adaptador cuando se requiere enviar confirmaciones, fallos o cancelaciones a servicios externos.
-- **Notification Adapter → Notification System:** Envía las alertas finales al usuario a través de canales externos como Email o notificaciones Push.
-- **Repository & Data Access → SQLite (Payments):** Accede y persiste toda la información transaccional de los pagos en el motor de base de datos.
-
----
+**Relaciones entre componentes:**
+- el controller delega creacion y consultas;
+- el command service valida usuario, booking o training session;
+- el repository persiste `Payment`;
+- el acceso externo integra notificaciones y estado del booking.
 
 #### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
 
+La representacion a nivel de codigo de **Payments** muestra el agregado `Payment`, sus enums y la estructura relacional de la tabla `payments`.
+
 ##### 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams
 
-**Diagrama UML de Clases - Payments Domain Layer**
+**Descripcion:**  
+El diagrama de clases del Domain Layer presenta `Payment` como agregado raiz y expone su relacion con `UserProfile`, `Booking` y `TrainingSession`.
 
-![umlClass-Payments](/assets/chapter2/umlClass-Payments.png)
+**Diagrama UML de clases (Domain Layer):**
 
-**Relaciones:**
+![Domain Layer Payments](assets/refactor/payment-clases.png)
 
-- Payment * ──────── 1 PaymentStatus (uses): Indica que un pago utiliza un estado específico para definir su situación actual.
-- PaymentRepository ◄────────────── Payment (manages): Relación de gestión donde el repositorio se encarga de mediar la persistencia del Agregado.
-- PaymentRepositoryImpl ───────────► PaymentRepository (implements): La clase concreta implementa el contrato definido por la interfaz del repositorio.
-- Payment ───────────► PaymentCreated (generates): El Agregado genera este evento de dominio al momento de ser instanciado o registrado.
-- Payment ───────────► PaymentCompleted (generates): Evento disparado tras una transición de estado exitosa a completado.
-- Payment ───────────► PaymentFailed (generates): Evento generado cuando el proceso de pago encuentra un error crítico.
-- Payment ───────────► PaymentCancelled (generates): Notifica la anulación del pago por parte del usuario o del sistema.
-- Payment * ──────── 1 User (associated with): Vincula cada transacción de pago con un perfil de usuario específico como propietario
+**Relaciones principales del modelo**
+- `Payment` es el aggregate root;
+- `Payment` utiliza `PaymentStatus` y `PaymentContextType`;
+- `PaymentCommandService` gestiona el alta del pago;
+- `PaymentQueryService` resuelve consultas.
 
----
+**Observaciones**
+- el modelo refleja bien el contexto pagado;
+- las reglas fuertes residen en la capa de aplicacion.
 
 ##### 2.6.2.6.2. Bounded Context Database Design Diagram
 
-**Entity Relationship Diagram (ERD) - Payments**
+**Descripcion**  
+El ERD de **Payments** muestra la tabla `payments` y su relacion con `user_profiles`, `bookings` y `training_sessions`.
 
-![ERD-Payments](/assets/chapter2/ERD-Payments.png)
+**Diagrama de base de datos (ERD)**
 
-**Relaciones:**
-- users (1) ──── (*) payments: Indica que un usuario puede realizar múltiples pagos, pero cada pago pertenece obligatoriamente a un único usuario.
+![Database Payments](assets/refactor/payment-db.png)
+
+**Tablas y atributos**
+
+Tabla `payments`
+- `id`
+- `amount`
+- `user_id`
+- `payment_status`
+- `context_type`
+- `booking_id`
+- `training_session_id`
+- `created_at`
+
+**Constraints**
+- primary key en `payments.id`;
+- foreign key `user_id -> user_profiles.id`;
+- `booking_id` y `training_session_id` son referencias opcionales mutuamente excluyentes a nivel logico;
+- `amount`, `payment_status`, `context_type` y `created_at` son obligatorios.
+
+**Relaciones entre tablas**
+- `user_profiles (1) ---- (*) payments`
+- `bookings (1) ---- (0..1) payments`
+- `training_sessions (1) ---- (0..1) payments`
+
+**Observaciones**
+- la exclusividad entre booking y training session se controla en codigo, no mediante constraint fisico visible en el diagrama.
 
 ---
 
 ### 2.6.3. Bounded Context: Users
 
-El bounded context **Users** representa la capacidad del sistema encargada de gestionar el perfil funcional de los usuarios del negocio. Su propósito es permitir la creación, consulta, actualización y eliminación de perfiles que contienen la información operativa utilizada por los demás bounded contexts.
+El bounded context **Users** representa la identidad funcional del usuario dentro del dominio del negocio. Su proposito es almacenar el perfil operativo que utiliza el resto del sistema para reservas, reseñas, partidos, pagos y notificaciones. La entidad principal es `UserProfile`.
 
-Dentro de este contexto, la entidad principal es `UserProfile`, ya que concentra los datos funcionales del usuario, incluyendo nombre, correo electrónico y teléfono. En consecuencia, este bounded context modela la identidad de negocio y no la identidad autenticada, por lo que se complementa con IAM en lugar de duplicarlo.
-
-Este contexto se relaciona de forma directa con los bounded contexts **IAM** y **Notifications**. Con IAM se vincula conceptualmente porque ambos representan a la misma persona desde perspectivas distintas: autenticación versus perfil funcional. Con Notifications se relaciona de forma persistente, ya que cada notificación pertenece a un `UserProfile`. A diferencia de IAM, aquí sí existe una entidad de negocio explícita y utilizada como referencia por otros contextos.
-
----
+El contexto se relaciona con **IAM**, porque vincula el perfil de negocio con `User`, y con practicamente todos los bounded contexts operativos, ya que `UserProfile` participa como actor del sistema.
 
 #### 2.6.3.1. Domain Layer
 
-La Domain Layer del bounded context **Users** contiene las clases que modelan el núcleo funcional de la gestión de perfiles de usuario, así como los comandos, consultas y contratos de servicios de dominio que soportan sus casos de uso principales. A partir del análisis del código, se identifica que el agregado principal del contexto es `UserProfile`, acompañado por sus comandos, queries y servicios de dominio.
-
 ##### a) Entity / Aggregate Root: `UserProfile`
 
-**Nombre de la clase:** `UserProfile`  
-**Paquete:** `com.upc.matchpoint.users.domain.model.aggregates`
-
-**Propósito:**  
-Representa el perfil funcional de un usuario del sistema. Modela la información operativa que consumen otros bounded contexts.
-
-**Atributos:**
-- `id: Long` → identificador único del perfil.
-- `name: String` → nombre completo o nombre funcional del usuario.
-- `email: String` → correo electrónico único del perfil.
-- `phone: String` → número telefónico del usuario.
-
-**Métodos identificados:**
-- `UserProfile()` → constructor vacío.
-- `UserProfile(String name, String email, String phone)` → constructor con datos principales.
-- `updateProfile(String name, String email, String phone)` → actualiza los datos del perfil.
-
-**Relaciones:**
-- Un `UserProfile` puede ser referenciado por múltiples notificaciones.
-- La relación entre `UserProfile` y `Notification` es de tipo **One-to-Many** desde la perspectiva de Users.
-
-##### b) Value Objects / Enumerations
-
-En el código revisado no se identifican enums ni value objects propios del bounded context `Users`. El modelo se apoya en atributos simples para representar la información del perfil.
-
-##### c) Commands del dominio
-
-Los comandos del contexto Users encapsulan la intención de crear, actualizar y eliminar perfiles de usuario.
-
-###### `CreateUserProfileCommand`
-**Paquete:** `com.upc.matchpoint.users.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de crear un nuevo perfil de usuario.
-
-**Atributos:**
-- `name: String`
-- `email: String`
-- `phone: String`
-
-###### `UpdateUserProfileCommand`
-**Paquete:** `com.upc.matchpoint.users.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de modificar un perfil de usuario existente.
-
-**Atributos:**
-- `userId: Long`
-- `name: String`
-- `email: String`
-- `phone: String`
-
-###### `DeleteUserProfileCommand`
-**Paquete:** `com.upc.matchpoint.users.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de eliminar un perfil de usuario existente.
-
-**Atributos:**
-- `userId: Long`
-
-##### d) Queries del dominio
-
-El contexto Users define consultas para recuperar perfiles de usuario persistidos.
-
-###### `GetAllUserProfilesQuery`
-**Propósito:**  
-Representa la intención de obtener todos los perfiles de usuario del sistema.
-
-###### `GetUserProfileByIdQuery`
-**Propósito:**  
-Representa la intención de obtener un perfil de usuario específico por identificador.
-
-**Atributos:**
-- `userId: Long`
-
-##### e) Domain Services
-
-El dominio define servicios que abstraen los casos de uso principales del contexto Users.
-
-###### `UserProfileCommandService`
-**Propósito:**  
-Define el contrato para ejecutar operaciones de creación, actualización y eliminación.
-
-**Métodos identificados:**
-- `handle(CreateUserProfileCommand command)`
-- `handle(UpdateUserProfileCommand command)`
-- `handle(DeleteUserProfileCommand command)`
-
-###### `UserProfileQueryService`
-**Propósito:**  
-Define el contrato para recuperar información de perfiles de usuario.
-
-**Métodos identificados:**
-- `handle(GetAllUserProfilesQuery query)`
-- `handle(GetUserProfileByIdQuery query)`
-
-##### f) Repository
-
-###### `UserProfileRepository`
-**Paquete:** `com.upc.matchpoint.users.infrastructure.persistence.jpa.repositories`
-
-**Propósito dentro del dominio:**  
-Abstraer la persistencia y recuperación de perfiles de usuario.
-
-**Operaciones identificadas:**
-- `save(UserProfile)`
-- `findById(Long)`
-- `findAll()`
-- `findByEmail(String)`
-- `existsByEmail(String)`
-
-##### g) Reglas de negocio identificadas
-
-**Reglas implementadas actualmente:**
-- El correo electrónico debe ser único al momento de crear un perfil.
-- El perfil puede ser actualizado con nuevos datos funcionales.
-- El sistema puede listar perfiles existentes.
-- El sistema puede obtener un perfil por id.
-- El sistema puede eliminar perfiles cuando existen.
-
-**Reglas no implementadas o incompletas:**
-- No existe validación de formato de correo más allá de la unicidad.
-- No existe validación semántica del teléfono.
-- No existe asociación directa con la cuenta autenticada de IAM.
-- No existe historial de cambios del perfil.
-
-En conjunto, la Domain Layer de Users es simple y funcional, y actúa como la fuente de verdad del perfil operativo de cada usuario.
-
----
-
-#### 2.6.3.2. Interface Layer
-
-La Interface Layer del bounded context **Users** contiene las clases responsables de exponer las funcionalidades del contexto mediante endpoints REST y de transformar la información entre las estructuras internas del sistema y los recursos consumidos por el frontend.
-
-##### a) `UserProfilesController`
-
-**Paquete:** `com.upc.matchpoint.users.interfaces.rest`
-
-**Propósito:**  
-Exponer los endpoints HTTP relacionados con la administración de perfiles de usuario.
-
-**Endpoints expuestos:**
-- `POST /api/v1/user-profiles` → crear perfil.
-- `GET /api/v1/user-profiles` → obtener todos los perfiles.
-- `GET /api/v1/user-profiles/{id}` → obtener perfil por id.
-- `PUT /api/v1/user-profiles/{id}` → actualizar perfil.
-- `DELETE /api/v1/user-profiles/{id}` → eliminar perfil.
-
-##### b) Resources / DTOs
-
-###### `CreateUserProfileResource`
-**Propósito:**  
-Representar los datos de entrada requeridos para crear un perfil de usuario.
-
-**Atributos:**
-- `name`
-- `email`
-- `phone`
-
-###### `UpdateUserProfileResource`
-**Propósito:**  
-Representar los datos de entrada requeridos para actualizar un perfil de usuario.
-
-**Atributos:**
-- `name`
-- `email`
-- `phone`
-
-###### `UserProfileResource`
-**Propósito:**  
-Representar la información de un perfil de usuario hacia el frontend.
+**Paquete:** `com.upc.courtly.users.domain.model.aggregates`
 
 **Atributos:**
 - `id`
 - `name`
 - `email`
 - `phone`
+- `imageUrl`
+- `user: User`
+
+**Metodos identificados:**
+- constructores de inicializacion;
+- `updateProfile(...)`
+- `assignUser(User user)`
+
+##### b) Referencias externas del dominio
+
+**`User`**  
+**Bounded context de origen:** `IAM`  
+Representa la cuenta autenticable a la que se vincula el perfil funcional.
+
+##### c) Value Objects
+
+No se identifican value objects propios en el codigo actual.
+
+##### d) Commands del dominio
+
+**`CreateUserProfileCommand`**
+- `name`
+- `email`
+- `phone`
+- `imageUrl`
+- `userId`
+
+**`UpdateUserProfileCommand`**
+- `userProfileId`
+- `name`
+- `email`
+- `phone`
+- `imageUrl`
+
+**`DeleteUserProfileCommand`**
+- `userProfileId`
+
+##### e) Queries del dominio
+
+**`GetAllUserProfilesQuery`**  
+Sin atributos.
+
+**`GetUserProfileByIdQuery`**
+- `userProfileId`
+
+##### f) Domain Services
+
+**`UserProfileCommandService`**
+- create
+- update
+- delete
+
+**`UserProfileQueryService`**
+- get all
+- get by id
+
+##### g) Repository
+
+**`UserProfileRepository`**
+- `save(...)`
+- `findById(...)`
+- `findAll()`
+- `deleteById(...)`
+- `findByEmail(...)`
+- `existsByEmail(...)`
+- `findByUserId(...)`
+- `existsByUserId(...)`
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- el email debe ser unico;
+- un usuario IAM no puede tener mas de un `UserProfile`;
+- si se proporciona `userId`, este debe existir en IAM;
+- el perfil puede incluir `imageUrl`.
+
+**Observaciones de mejora:**
+- no se identifica validacion de formato de email;
+- no se identifica un value object para informacion de contacto.
+
+#### 2.6.3.2. Interface Layer
+
+##### a) `UserProfilesController`
+
+**Endpoints expuestos:**
+- `POST /api/v1/user-profiles`
+- `GET /api/v1/user-profiles/me`
+- `GET /api/v1/user-profiles`
+- `GET /api/v1/user-profiles/{id}`
+- `PUT /api/v1/user-profiles/{id}`
+- `DELETE /api/v1/user-profiles/{id}`
+
+##### b) Resources / DTOs
+
+**`UserProfileResource`**
+- `id`
+- `name`
+- `email`
+- `phone`
+- `imageUrl`
+- `userId`
+
+**`CreateUserProfileResource`**
+- `name`
+- `email`
+- `phone`
+- `imageUrl`
+- `userId`
+
+**`UpdateUserProfileResource`**
+- `name`
+- `email`
+- `phone`
+- `imageUrl`
 
 ##### c) Assemblers
 
-La capa de interfaz del contexto Users incluye assemblers encargados de transformar datos entre resources, commands y entidades.
+**`UserProfileResourceFromEntityAssembler`**  
+Convierte entidad a resource.
 
-**Assemblers identificados:**
-- `CreateUserProfileCommandFromResourceAssembler`
-- `UpdateUserProfileCommandFromResourceAssembler`
-- `UserProfileResourceFromEntityAssembler`
+**`CreateUserProfileCommandFromResourceAssembler`**  
+Convierte el resource de creacion en comando.
+
+**`UpdateUserProfileCommandFromResourceAssembler`**  
+Convierte el resource de actualizacion en comando.
 
 ##### d) Responsabilidad de la capa de interfaz
 
-La responsabilidad principal de esta capa es:
-- recibir solicitudes del cliente,
-- convertir resources de entrada en commands,
-- delegar la ejecución a la capa de aplicación,
-- y transformar los resultados en resources de salida adecuados para el frontend.
-
-En el caso de Users, esta capa expone la identidad funcional del negocio que luego consumen otros bounded contexts como Notifications.
-
----
+Permite la gestion del perfil del usuario funcional y la consulta del propio perfil a traves de `/me`.
 
 #### 2.6.3.3. Application Layer
 
-La Application Layer del bounded context **Users** coordina los flujos de proceso relacionados con la creación, consulta, actualización y eliminación de perfiles de usuario. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y con la infraestructura de persistencia.
+##### a) Command Services / Command Handlers
 
-Las capacidades principales del contexto son:
-- crear perfil,
-- listar perfiles,
-- obtener perfil por id,
-- actualizar perfil,
+**`UserProfileCommandServiceImpl`**
+
+**Dependencias:**
+- `UserProfileRepository`
+- `UserRepository`
+
+**Operaciones:**
+- crear perfil;
+- actualizar perfil;
 - eliminar perfil.
 
-##### a) Command Handlers / Command Services
+##### b) Query Services / Query Handlers
 
-###### `UserProfileCommandServiceImpl`
-
-**Paquete:** `com.upc.matchpoint.users.application.internal.commandservices`
-
-**Propósito:**  
-Implementar los casos de uso de creación, actualización y eliminación de perfiles de usuario.
+**`UserProfileQueryServiceImpl`**
 
 **Dependencias:**
 - `UserProfileRepository`
 
-**Operaciones que maneja:**
+##### c) Flujos principales del negocio
 
-**`handle(CreateUserProfileCommand command)`**
-- valida que el correo electrónico no exista,
-- crea una nueva entidad `UserProfile`,
-- persiste el perfil,
-- retorna el perfil creado.
+**Flujo de creacion**
+1. Se recibe `CreateUserProfileResource`.
+2. Se valida unicidad de email.
+3. Si existe `userId`, se valida la cuenta IAM.
+4. Se persiste el perfil.
 
-**`handle(UpdateUserProfileCommand command)`**
-- busca el perfil por `userId`,
-- actualiza los datos funcionales,
-- guarda la entidad actualizada,
-- retorna el perfil modificado.
+**Flujo de consulta propia**
+1. El controller consulta el usuario autenticado.
+2. Resuelve su `UserProfile` asociado.
 
-**`handle(DeleteUserProfileCommand command)`**
-- verifica que el perfil exista,
-- elimina el perfil persistido.
+##### d) Observaciones de la capa de aplicacion
 
-##### b) Query Handlers / Query Services
-
-###### `UserProfileQueryServiceImpl`
-
-**Paquete:** `com.upc.matchpoint.users.application.internal.queryservices`
-
-**Propósito:**  
-Implementar los casos de uso de lectura sobre perfiles de usuario.
-
-**Dependencias:**
-- `UserProfileRepository`
-
-**Operaciones que maneja:**
-- `handle(GetAllUserProfilesQuery query)`
-- `handle(GetUserProfileByIdQuery query)`
-
-##### c) Event Handlers
-
-En el bounded context **Users** no se identifican event handlers en el código revisado. Esto sugiere que el contexto opera de forma síncrona y centrada en REST, sin automatización basada en eventos de dominio o aplicación.
-
-##### d) Flujos principales del negocio
-
-###### Flujo de creación de perfil
-1. El frontend envía un `CreateUserProfileResource`.
-2. La capa de interfaz lo transforma a `CreateUserProfileCommand`.
-3. `UserProfileCommandServiceImpl` valida que el correo no exista.
-4. Se crea una instancia de `UserProfile`.
-5. El perfil se persiste mediante `UserProfileRepository`.
-6. Se transforma el resultado en `UserProfileResource`.
-7. Se retorna la respuesta al cliente.
-
-###### Flujo de consulta de perfiles
-1. El cliente solicita la lista o detalle de perfiles.
-2. El controlador construye la query correspondiente.
-3. `UserProfileQueryServiceImpl` recupera la información desde `UserProfileRepository`.
-4. Los resultados se transforman a resources.
-5. Se retorna la respuesta.
-
-###### Flujo de actualización de perfil
-1. El frontend envía un `UpdateUserProfileResource`.
-2. La capa de interfaz lo transforma a `UpdateUserProfileCommand`.
-3. `UserProfileCommandServiceImpl` busca el perfil por id.
-4. Actualiza los datos funcionales.
-5. Persiste el cambio.
-6. Retorna el perfil actualizado.
-
-###### Flujo de eliminación de perfil
-1. El cliente solicita la eliminación de un perfil.
-2. El controlador construye el comando de eliminación.
-3. `UserProfileCommandServiceImpl` valida la existencia.
-4. El perfil se elimina de la base de datos.
-5. Se retorna una respuesta de confirmación.
-
-##### e) Observaciones de la capa de aplicación
-
-La capa de aplicación implementa de forma consistente los casos de uso principales de Users: creación, consulta, actualización y eliminación de perfiles. Su estructura es simple y clara, y mantiene al contexto enfocado en administrar la identidad funcional del usuario con validación de unicidad por correo.
-
----
+La logica de negocio es simple pero consistente. El contexto cumple la funcion de identidad operativa del usuario.
 
 #### 2.6.3.4. Infrastructure Layer
 
-La Infrastructure Layer del bounded context **Users** contiene los componentes encargados del acceso a base de datos y de la persistencia de perfiles de usuario. En esta capa se materializa el soporte técnico para almacenar y consultar perfiles funcionales.
-
 ##### a) Repositorios de persistencia
 
-###### `UserProfileRepository`
+`UserProfileRepository` extiende `JpaRepository<UserProfile, Long>` y agrega busquedas por email y por usuario IAM asociado.
 
-**Paquete:** `com.upc.matchpoint.users.infrastructure.persistence.jpa.repositories`
+##### b) Persistencia de entidades
 
-**Propósito:**  
-Gestionar la persistencia y recuperación de perfiles de usuario utilizando Spring Data JPA.
+`UserProfile` se persiste en la tabla `user_profiles` y mantiene una relacion hacia `users` del bounded context IAM.
 
-**Operaciones disponibles:**
-- `save`
-- `findById`
-- `findAll`
-- `findByEmail`
-- `existsByEmail`
+##### c) Diseno de persistencia
 
-##### b) Persistencia de la entidad `UserProfile`
+**Tabla principal:** `user_profiles`
 
-La entidad `UserProfile` está mapeada como una entidad JPA con las siguientes características:
-- `@Entity`
-- `@Table(name = "user_profiles")`
-- restricción de unicidad para `email`
+**Columnas identificadas:**
+- `id`
+- `name`
+- `email`
+- `phone`
+- `image_url`
+- `iam_user_id`
 
-##### c) Integración con otros bounded contexts
+##### d) Integracion con otros bounded contexts
 
-Users expone la identidad funcional que consumen otros bounded contexts, especialmente Notifications. La integración se materializa mediante la referencia persistente a `UserProfile`, que permite a otros contextos asociar sus registros con un usuario del negocio.
+Depende de `IAM` para enlazar el perfil con `User`.
 
-**Observación importante:**  
-No se identificó una fachada ACL específica para Users. El contexto funciona como proveedor del perfil funcional, pero no como integrador activo de otros bounded contexts mediante una interfaz dedicada.
+##### e) Configuracion tecnica relevante
 
-##### d) Limitaciones de la capa de infraestructura
+No se identifica configuracion especifica propia.
 
-La infraestructura actual cumple con la persistencia básica de perfiles de usuario, pero todavía presenta limitaciones relevantes:
-- no existe integración con autenticación de IAM;
-- no existe sincronización automática con el registro de cuenta autenticada;
-- no existe historial o auditoría avanzada del perfil;
-- no existe infraestructura adicional de mensajería o eventos.
+##### f) Limitaciones de infraestructura
 
-En consecuencia, la Infrastructure Layer del bounded context Users es funcional para persistencia de perfiles, pero aún no resuelve la unificación automática entre identidad autenticada e identidad funcional.
-
----
+No se identifican consultas dedicadas para busquedas paginadas o filtradas.
 
 #### 2.6.3.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Descripción:**
-
-El Component Diagram del bounded context **Users** representa la descomposición del contenedor backend encargado de gestionar perfiles funcionales de usuario. A nivel arquitectónico, este container está conformado por componentes con responsabilidades bien delimitadas: recepción de solicitudes REST, transformación de datos entre capas, ejecución de comandos y consultas, y acceso a persistencia.
-
-A partir del análisis del contexto, se identifican los siguientes componentes principales:
+**Descripcion:**  
+El diagrama de componentes de **Users** muestra el controller, los assemblers, los servicios de aplicacion, el agregado `UserProfile`, el repositorio y el acceso al bounded context IAM.
 
 **Componentes principales:**
-
-- **User Profile REST API Component**  
-  Expone los endpoints HTTP relacionados con crear, listar, consultar, actualizar y eliminar perfiles.
-
-- **User Profile Transformation Component**  
-  Agrupa los assemblers y resources que permiten transformar datos entre la capa de interfaz y la capa de aplicación.
-
-- **User Profile Command Processing Component**  
-  Implementado por el servicio de comandos, coordina los casos de uso de creación, actualización y eliminación.
-
-- **User Profile Query Processing Component**  
-  Implementado por el servicio de consultas, coordina la lectura de perfiles.
-
-- **User Profile Domain Component**  
-  Representa el núcleo del dominio mediante la entidad `UserProfile`, comandos, queries y contratos de servicio.
-
-- **User Profile Persistence Component**  
-  Encapsula el acceso a persistencia mediante `UserProfileRepository` usando Spring Data JPA.
+- REST API Component
+- REST Resources and Assemblers Component
+- Domain Services Component
+- Application Command Component
+- Application Query Component
+- Domain Model Component
+- Persistence Component
+- External Context Access Component
 
 **Diagrama de componentes propuesto:**
 
-![Component Diagram Users](assets/chapter2/componentes_users.png)
+![Component Diagram Users](assets/refactor/users-componentes.png)
 
-##### Relaciones entre componentes
-
-- **User Profile REST API Component → User Profile Transformation Component**  
-  Transforma datos de entrada y salida entre resources, commands y entidades.
-
-- **User Profile REST API Component → User Profile Command Processing Component**  
-  Delega operaciones de creación, actualización y eliminación.
-
-- **User Profile REST API Component → User Profile Query Processing Component**  
-  Delega operaciones de lectura sobre perfiles.
-
-- **User Profile Command Processing Component → User Profile Domain Component**  
-  Construye y actualiza la entidad `UserProfile`.
-
-- **User Profile Command Processing Component → User Profile Persistence Component**  
-  Persiste perfiles y consulta su existencia.
-
-- **User Profile Query Processing Component → User Profile Persistence Component**  
-  Recupera perfiles desde base de datos.
-
-- **User Profile Transformation Component → User Profile Domain Component**  
-  Convierte entidades en resources de salida.
-
----
+**Relaciones entre componentes:**
+- el controller crea comandos y consultas;
+- el service valida unicidad y relacion con IAM;
+- el repository persiste `UserProfile`.
 
 #### 2.6.3.6. Bounded Context Software Architecture Code Level Diagrams
 
-En esta sección se presentan los diagramas a nivel de código del bounded context **Users**, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
-
-Se incluyen dos representaciones principales:
-
-- el **Class Diagram del Domain Layer**, que describe la estructura del modelo de dominio;
-- y el **Database Design Diagram**, que representa la persistencia de datos en la base de datos relacional.
-
----
-
 ##### 2.6.3.6.1. Bounded Context Domain Layer Class Diagrams
 
-**Descripción:**
-
-El diagrama de clases del Domain Layer del bounded context **Users** presenta el agregado principal `UserProfile`, junto con los comandos, queries y servicios de dominio que soportan las operaciones del contexto. El diseño evidencia que `UserProfile` es el núcleo del contexto y que las operaciones del sistema se organizan alrededor de la administración de perfiles funcionales.
+**Descripcion:**  
+El diagrama de clases de **Users** presenta a `UserProfile` como agregado raiz y su relacion con `User`.
 
 **Diagrama UML de clases (Domain Layer):**
 
-![Domain Layer Users](assets/chapter2/domainlayer_users.png)
+![Domain Layer Users](assets/refactor/users-clases.png)
 
-###### Relaciones principales del modelo
+**Relaciones principales del modelo**
+- `UserProfile` es el aggregate root;
+- `UserProfile` referencia a `User`;
+- los comandos encapsulan creacion, actualizacion y eliminacion.
 
-- `UserProfile` es el **Aggregate Root** del bounded context.
-- `UserProfile` puede ser referenciado por múltiples notificaciones.
-- `UserProfileCommandService` define las operaciones de creación, actualización y eliminación.
-- `UserProfileQueryService` define las operaciones de lectura de perfiles.
-- Los comandos encapsulan acciones de administración de perfiles.
-- Las queries encapsulan solicitudes de consulta.
-
-###### Observaciones
-
-El modelo de dominio presenta una estructura simple, clara y centrada en la identidad funcional del usuario. El agregado `UserProfile` encapsula la información operativa mínima que el contexto necesita para representar perfiles consistentes y reutilizables.
-
----
+**Observaciones**
+- el modelo es simple y estable;
+- no se identifican value objects especializados.
 
 ##### 2.6.3.6.2. Bounded Context Database Design Diagram
 
-**Descripción:**
+**Descripcion**  
+El diagrama de base de datos de **Users** representa la tabla `user_profiles` y su vinculo con `users`.
 
-El diagrama de base de datos del bounded context **Users** representa la estructura relacional utilizada para persistir la información de perfiles de usuario. La tabla principal es `user_profiles`.
+**Diagrama de base de datos (ERD)**
 
-**Diagrama de base de datos (ERD):**
+![Database Users](assets/refactor/users-db.png)
 
-![Database Users](assets/chapter2/basededatos_users.png)
+**Tablas y atributos**
 
-###### Tablas y atributos
+Tabla `user_profiles`
+- `id`
+- `name`
+- `email`
+- `phone`
+- `image_url`
+- `iam_user_id`
 
-###### Tabla `user_profiles`
+**Constraints**
+- primary key en `id`;
+- unicidad logica de `email`;
+- unicidad logica de `iam_user_id`.
 
-- `id`: identificador único del perfil (PK)
-- `name`: nombre del usuario
-- `email`: correo electrónico único
-- `phone`: teléfono del usuario
+**Relaciones entre tablas**
+- `users (1) ---- (0..1) user_profiles`
 
-###### Constraints
-
-- `PRIMARY KEY (id)` en `user_profiles`
-- `UNIQUE (email)` en `user_profiles`
-- restricción de `NOT NULL` en `name`
-- restricción de `NOT NULL` en `email`
-- restricción de `NOT NULL` en `phone`
-
-###### Relaciones entre tablas
-
-- `user_profiles (1) ──── (*) notifications` mediante la clave foránea definida en Notifications.
-
-###### Observaciones
-
-El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente perfiles funcionales de usuario con una restricción clara de unicidad sobre el correo. La tabla `user_profiles` refleja de manera directa el alcance del contexto y mantiene la persistencia alineada con su responsabilidad de negocio.
+**Observaciones**
+- la asociacion con IAM separa correctamente identidad tecnica e identidad de negocio.
 
 ---
 
 ### 2.6.4. Bounded Context: Coaches
 
-El bounded context **Coaches** representa la capacidad del sistema encargada de gestionar, registrar y consultar la información de entrenadores dentro de la plataforma Courtly. Su propósito es permitir la administración del catálogo de coaches que participan en el ecosistema deportivo digital, almacenando sus datos relevantes y habilitando su uso por otros bounded contexts del sistema. Dentro de este contexto, la entidad principal es `Coach`, ya que concentra la información esencial del entrenador y constituye el agregado raíz del contexto.
+El bounded context **Coaches** representa el perfil profesional del entrenador dentro del sistema. Su proposito es registrar la identidad publica del instructor, su especialidad y sus datos de contacto operativos para que los jugadores puedan solicitar sesiones y ver su reputacion.
 
-Este contexto se relaciona directamente con los bounded contexts **Availabilities**, **Analytics** y **Reviews**, debido a que la información de un coach es utilizada para registrar disponibilidades, asociar métricas de desempeño y recibir reseñas desde otros módulos del sistema. De esta manera, Coaches cumple un rol de catálogo base y de soporte para otros procesos funcionales de Courtly.
+La entidad principal del contexto es `Coach`. Este contexto se relaciona con **IAM** para asociar el coach a un usuario autenticable, y con **Availabilities**, **TrainingSessions**, **Analytics** y **Reviews** como consumidor o productor de informacion asociada al entrenador.
 
 #### 2.6.4.1. Domain Layer
 
-La capa de dominio del bounded context **Coaches** contiene las clases que modelan el núcleo del catálogo de entrenadores y las reglas de negocio asociadas a su administración. A partir del análisis de la arquitectura general del backend, se identifica que el agregado principal del contexto es `Coach`, acompañado por comandos, consultas y servicios de dominio que estructuran la lógica interna del módulo.
-
 ##### a) Entity / Aggregate Root: `Coach`
 
-**Nombre de la clase:** `Coach`  
-**Paquete:** `com.upc.matchpoint.coaches.domain.model.aggregates`
-
-**Propósito:**  
-Representa la entidad principal del bounded context Coaches. Modela a un entrenador registrado dentro de Courtly y constituye el agregado raíz del contexto.
-
-**Atributos:**
-- `id: Long` → identificador único del coach.
-- `name: String` → nombre del entrenador.
-- `expertise: String` → especialidad o experiencia del entrenador.
-- `phone: String` → número de contacto del entrenador.
-
-**Métodos:**
-- `Coach(String name, String expertise, String phone)` → constructor que inicializa un nuevo coach.
-- `updateInformation(String name, String expertise, String phone)` → actualiza los datos del entrenador.
-
-**Relaciones:**
-- Un coach puede tener múltiples disponibilidades en el bounded context **Availabilities**.
-- Un coach puede tener múltiples métricas en el bounded context **Analytics**.
-- Un coach puede recibir múltiples reseñas en el bounded context **Reviews** mediante `targetType = COACH` y `targetId`.
-
-##### b) Referencias externas del dominio
-
-Dentro del bounded context Coaches no se identifican referencias obligatorias a otras entidades de dominio para el funcionamiento base del agregado `Coach`. El contexto es relativamente autónomo y actúa como proveedor de datos para otros módulos del sistema.
-
-##### c) Value Objects
-
-No se identifican value objects explícitos implementados en el bounded context **Coaches**. Actualmente, los atributos del agregado `Coach` son tipos simples (`String`, `Long`), sin encapsulación adicional mediante enums o clases de valor.
-
-##### d) Commands del dominio
-
-Los comandos del contexto Coaches encapsulan la intención de ejecutar operaciones de escritura sobre el agregado `Coach`.
-
-###### `CreateCoachCommand`
-
-**Paquete:** `com.upc.matchpoint.coaches.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de crear un nuevo entrenador.
-
-**Atributos:**
-- `name: String`
-- `expertise: String`
-- `phone: String`
-
-###### `UpdateCoachCommand`
-
-**Paquete:** `com.upc.matchpoint.coaches.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de actualizar un entrenador existente.
-
-**Atributos:**
-- `coachId: Long`
-- `name: String`
-- `expertise: String`
-- `phone: String`
-
-###### `DeleteCoachCommand`
-
-**Paquete:** `com.upc.matchpoint.coaches.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de eliminar un entrenador.
-
-**Atributos:**
-- `coachId: Long`
-
-##### e) Queries del dominio
-
-El contexto también define objetos de consulta para la recuperación de información.
-
-###### `GetAllCoachesQuery`
-
-**Paquete:** `com.upc.matchpoint.coaches.domain.model.queries`
-
-**Propósito:**  
-Representa la intención de obtener todos los entrenadores del sistema.
-
-**Atributos:** no contiene atributos.
-
-###### `GetCoachByIdQuery`
-
-**Paquete:** `com.upc.matchpoint.coaches.domain.model.queries`
-
-**Propósito:**  
-Representa la intención de obtener un entrenador específico por identificador.
-
-**Atributos:**
-- `coachId: Long`
-
-##### f) Domain Services
-
-El dominio define interfaces de servicio que abstraen la ejecución de comandos y consultas.
-
-###### `CoachCommandService`
-
-**Paquete:** `com.upc.matchpoint.coaches.domain.services`
-
-**Propósito:**  
-Define el contrato para ejecutar operaciones de creación, actualización y eliminación sobre entrenadores.
-
-**Métodos:**
-- `Optional<Coach> handle(CreateCoachCommand command)`
-- `Optional<Coach> handle(UpdateCoachCommand command)`
-- `void handle(DeleteCoachCommand command)`
-
-###### `CoachQueryService`
-
-**Paquete:** `com.upc.matchpoint.coaches.domain.services`
-
-**Propósito:**  
-Define el contrato para ejecutar operaciones de consulta sobre entrenadores.
-
-**Métodos:**
-- `List<Coach> handle(GetAllCoachesQuery query)`
-- `Optional<Coach> handle(GetCoachByIdQuery query)`
-
-##### g) Repository
-
-###### `CoachRepository`
-
-**Paquete:** `com.upc.matchpoint.coaches.infrastructure.persistence.jpa.repositories`
-
-**Propósito dentro del dominio:**  
-Abstraer la persistencia de entrenadores, permitiendo operaciones de guardado, consulta y eliminación.
-
-**Operaciones disponibles:**
-- `save(Coach)`
-- `findById(Long)`
-- `findAll()`
-- `deleteById(Long)`
-- `existsById(Long)`
-
-##### h) Reglas de negocio identificadas
-
-**Reglas implementadas actualmente:**
-- Un coach debe tener obligatoriamente nombre.
-- Un coach debe tener obligatoriamente una especialidad o expertise.
-- Un coach debe tener obligatoriamente un teléfono.
-- El nombre del coach se valida como único al momento de creación.
-
-**Reglas de negocio no implementadas aún:**
-- Validación formal del formato del teléfono.
-- Separación estructurada de especialidades mediante value objects o enums.
-- Asociación directa entre coach y cuenta autenticada del contexto IAM.
-- Reglas para disponibilidad automática o asignación de sesiones.
-- Reglas de consistencia frente a eliminación cuando existen métricas, reseñas o disponibilidades asociadas.
-
-En conjunto, la Domain Layer de Coaches presenta una estructura simple y clara, apropiada para un contexto de catálogo, aunque todavía puede enriquecerse con validaciones de mayor profundidad y una mejor integración con otros bounded contexts funcionales.
-
-#### 2.6.4.2. Interface Layer
-
-La Interface Layer del bounded context **Coaches** contiene las clases responsables de exponer las funcionalidades del contexto mediante endpoints REST y de transformar la información entre las estructuras internas del sistema y los recursos consumidos por el frontend.
-
-##### a) `CoachesController`
-
-**Paquete:** `com.upc.matchpoint.coaches.interfaces.rest`
-
-**Propósito:**  
-Exponer los endpoints HTTP para la gestión de entrenadores. Actúa como punto de entrada del bounded context desde el cliente o cualquier consumidor externo.
-
-**Dependencias:**
-- `CoachCommandService`
-- `CoachQueryService`
-
-**Endpoints expuestos:**
-- `POST /api/v1/coaches` → crear coach
-- `GET /api/v1/coaches` → obtener todos los coaches
-- `GET /api/v1/coaches/{id}` → obtener coach por id
-- `PUT /api/v1/coaches/{id}` → actualizar coach
-- `DELETE /api/v1/coaches/{id}` → eliminar coach
-
-##### b) Resources / DTOs
-
-###### `CoachResource`
-
-**Paquete:** `com.upc.matchpoint.coaches.interfaces.rest.resources`
-
-**Propósito:**  
-Representar la respuesta de un entrenador hacia el frontend.
+**Paquete:** `com.upc.courtly.coaches.domain.model.aggregates`
 
 **Atributos:**
 - `id`
 - `name`
 - `expertise`
 - `phone`
+- `user: User`
 
-###### `CreateCoachResource`
+**Metodos:**
+- constructores;
+- `updateCoach(...)`
+- `assignUser(User user)`
 
-**Propósito:**  
-Representar los datos de entrada requeridos para crear un nuevo entrenador.
+##### b) Referencias externas del dominio
 
-**Atributos:**
+**`User`** desde `IAM`  
+Representa la cuenta autenticable del instructor.
+
+##### c) Value Objects
+
+No se identifican value objects propios del contexto.
+
+##### d) Commands del dominio
+
+**`CreateCoachCommand`**
+- `name`
+- `expertise`
+- `phone`
+- `userId`
+
+**`UpdateCoachCommand`**
+- `coachId`
 - `name`
 - `expertise`
 - `phone`
 
-###### `UpdateCoachResource`
+**`DeleteCoachCommand`**
+- `coachId`
 
-**Propósito:**  
-Representar los datos de entrada necesarios para actualizar un entrenador existente.
+##### e) Queries del dominio
 
-**Atributos:**
+**`GetAllCoachesQuery`**  
+Sin atributos.
+
+**`GetCoachByIdQuery`**
+- `coachId`
+
+##### f) Domain Services
+
+**`CoachCommandService`**
+- create
+- update
+- delete
+
+**`CoachQueryService`**
+- get all
+- get by id
+
+##### g) Repository
+
+**`CoachRepository`**
+- `save(...)`
+- `findById(...)`
+- `findAll()`
+- `deleteById(...)`
+- `existsByName(...)`
+- `findByUserId(...)`
+- `existsByUserId(...)`
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- el nombre del coach debe ser unico;
+- un usuario IAM no puede tener mas de un coach;
+- si se proporciona `userId`, este debe existir;
+- las operaciones de escritura del controller se restringen a `ROLE_INSTRUCTOR`.
+
+**Observaciones de mejora:**
+- no se identifica un modelo de certificaciones o especialidades estructuradas;
+- `expertise` se maneja como string simple.
+
+#### 2.6.4.2. Interface Layer
+
+##### a) `CoachesController`
+
+**Endpoints expuestos:**
+- `POST /api/v1/coaches`
+- `GET /api/v1/coaches/me`
+- `GET /api/v1/coaches`
+- `GET /api/v1/coaches/{id}`
+- `PUT /api/v1/coaches/{id}`
+- `DELETE /api/v1/coaches/{id}`
+
+##### b) Resources / DTOs
+
+**`CoachResource`**
+- `id`
+- `name`
+- `expertise`
+- `phone`
+- `userId`
+
+**`CreateCoachResource`**
+- `name`
+- `expertise`
+- `phone`
+- `userId`
+
+**`UpdateCoachResource`**
 - `name`
 - `expertise`
 - `phone`
 
 ##### c) Assemblers
 
-###### `CoachResourceFromEntityAssembler`
+**`CoachResourceFromEntityAssembler`**  
+Convierte entidad en DTO.
 
-**Paquete:** `com.upc.matchpoint.coaches.interfaces.rest.transform`
+**`CreateCoachCommandFromResourceAssembler`**
 
-**Propósito:**  
-Transformar una entidad `Coach` del dominio en un `CoachResource` apto para ser enviado al frontend.
-
-###### `CreateCoachCommandFromResourceAssembler`
-
-**Propósito:**  
-Transformar un `CreateCoachResource` en un `CreateCoachCommand`.
-
-###### `UpdateCoachCommandFromResourceAssembler`
-
-**Propósito:**  
-Transformar un `UpdateCoachResource`, junto con el identificador del coach, en un `UpdateCoachCommand`.
+**`UpdateCoachCommandFromResourceAssembler`**
 
 ##### d) Responsabilidad de la capa de interfaz
 
-La responsabilidad principal de esta capa es:
-- recibir solicitudes del cliente,
-- convertir recursos de entrada en comandos o consultas,
-- delegar la ejecución a la capa de aplicación,
-- y transformar los resultados en recursos de salida adecuados para el frontend.
+Expone el perfil profesional del entrenador y la consulta del coach asociado al usuario autenticado.
 
 #### 2.6.4.3. Application Layer
 
-La Application Layer del bounded context **Coaches** coordina los flujos de proceso del negocio. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y con la infraestructura de persistencia.
+##### a) Command Services / Command Handlers
 
-Las capacidades principales del contexto son:
-- crear un coach,
-- actualizar un coach,
-- eliminar un coach,
-- obtener un coach por id,
-- obtener todos los coaches.
+**`CoachCommandServiceImpl`**
 
-##### a) Command Handlers / Command Services
-
-###### `CoachCommandServiceImpl`
-
-**Paquete:** `com.upc.matchpoint.coaches.application.internal.commandservices`
-
-**Propósito:**  
-Implementar el contrato `CoachCommandService` y ejecutar los casos de uso de escritura del contexto Coaches.
-
-**Dependencia:**
+**Dependencias:**
 - `CoachRepository`
+- `UserRepository`
 
-**Operaciones que maneja:**
+##### b) Query Services / Query Handlers
 
-**`handle(CreateCoachCommand command)`**
-- valida reglas de creación,
-- crea una nueva entidad `Coach`,
-- persiste el entrenador en base de datos,
-- retorna el coach creado.
-
-**`handle(UpdateCoachCommand command)`**
-- busca el entrenador por id,
-- actualiza `name`, `expertise` y `phone`,
-- guarda el cambio,
-- retorna el coach actualizado si existe.
-
-**`handle(DeleteCoachCommand command)`**
-- verifica si el entrenador existe,
-- lo elimina por identificador,
-- lanza excepción si no existe.
-
-##### b) Query Handlers / Query Services
-
-###### `CoachQueryServiceImpl`
-
-**Paquete:** `com.upc.matchpoint.coaches.application.internal.queryservices`
-
-**Propósito:**  
-Implementar el contrato `CoachQueryService` y ejecutar los casos de uso de lectura del contexto Coaches.
-
-**Dependencia:**
-- `CoachRepository`
-
-**Operaciones que maneja:**
-
-**`handle(GetAllCoachesQuery query)`**
-- recupera todos los entrenadores del sistema mediante `findAll()`,
-- devuelve una lista de entidades `Coach`.
-
-**`handle(GetCoachByIdQuery query)`**
-- busca un entrenador específico por su id,
-- devuelve un `Optional<Coach>`.
+**`CoachQueryServiceImpl`**
+- consulta lista y detalle.
 
 ##### c) Flujos principales del negocio
 
-###### Flujo de creación de coach
-1. El frontend envía un `CreateCoachResource`.
-2. La capa de interfaz lo transforma a `CreateCoachCommand`.
-3. `CoachCommandServiceImpl` valida la información del entrenador.
-4. Se construye una instancia de `Coach`.
-5. El coach se persiste mediante `CoachRepository`.
-6. El resultado se transforma en `CoachResource` y se retorna al cliente.
+**Flujo de alta del coach**
+1. Se recibe el resource de creacion.
+2. Se valida unicidad de nombre.
+3. Se valida unicidad de `userId`.
+4. Se persiste `Coach`.
 
-###### Flujo de actualización
-1. El frontend envía un `UpdateCoachResource`.
-2. Se transforma en `UpdateCoachCommand`.
-3. `CoachCommandServiceImpl` recupera el coach existente.
-4. Se actualizan los datos del entrenador.
-5. Se guarda la modificación.
-6. Se retorna el coach actualizado.
+##### d) Observaciones de la capa de aplicacion
 
-###### Flujo de consulta
-1. El frontend solicita uno o varios entrenadores.
-2. El controlador construye el objeto de consulta correspondiente.
-3. `CoachQueryServiceImpl` recupera la información desde `CoachRepository`.
-4. Los resultados se transforman a `CoachResource`.
-5. Se retorna la respuesta al cliente.
-
-###### Flujo de eliminación
-1. El frontend solicita eliminar un entrenador.
-2. Se construye un `DeleteCoachCommand`.
-3. `CoachCommandServiceImpl` verifica la existencia del entrenador.
-4. Se elimina el entrenador del repositorio.
-5. Se devuelve la confirmación de eliminación.
-
-##### d) Observaciones de la capa de aplicación
-
-Aunque esta capa implementa correctamente los casos de uso CRUD del bounded context, aún presenta limitaciones funcionales relevantes:
-- no vincula coaches con cuentas de autenticación del contexto IAM,
-- no integra automáticamente métricas, disponibilidades o reseñas,
-- no incorpora paginación ni filtros especializados,
-- y no implementa validaciones avanzadas sobre formato o consistencia de datos.
-
-Además, no se identifican **Event Handlers** implementados en el contexto Coaches. Todas las operaciones se ejecutan únicamente mediante comandos HTTP.
+La logica del contexto es sencilla, pero fundamental para habilitar disponibilidades y sesiones.
 
 #### 2.6.4.4. Infrastructure Layer
 
-La Infrastructure Layer del bounded context **Coaches** contiene los componentes encargados del acceso a base de datos y de la persistencia de los entrenadores. En esta capa se materializa el almacenamiento del agregado `Coach` y se soportan las operaciones que ejecuta la aplicación.
+##### a) Repositorios de persistencia
 
-##### a) Repositorio de persistencia
+`CoachRepository` persiste el agregado y agrega consultas de unicidad por nombre y por usuario IAM.
 
-###### `CoachRepository`
+##### b) Persistencia de entidades
 
-**Paquete:** `com.upc.matchpoint.coaches.infrastructure.persistence.jpa.repositories`
+`Coach` se persiste en `coaches` con referencia hacia `users`.
 
-**Propósito:**  
-Gestionar la persistencia y recuperación de entrenadores utilizando Spring Data JPA. La implementación concreta es generada automáticamente por el framework al extender `JpaRepository<Coach, Long>`.
-
-**Operaciones disponibles:**
-- `save`
-- `findById`
-- `findAll`
-- `deleteById`
-- `existsById`
-
-**Observación:**  
-No se identifican métodos personalizados de consulta por especialidad, disponibilidad o reputación.
-
-##### b) Persistencia de la entidad `Coach`
-
-La entidad `Coach` está mapeada como una entidad JPA con las siguientes características:
-- `@Entity`
-- `@Table(name = "coaches")`
-- `@Id`
-- `@GeneratedValue(strategy = GenerationType.IDENTITY)`
-
-##### c) Diseño de persistencia
+##### c) Diseno de persistencia
 
 **Tabla principal:** `coaches`
 
-**Columnas identificadas:**
+**Columnas:**
 - `id`
 - `name`
 - `expertise`
 - `phone`
+- `iam_user_id`
 
-**Restricciones y relaciones:**
-- `id` → Primary Key
-- `name`, `expertise`, `phone` → `NOT NULL`
+##### d) Integracion con otros bounded contexts
 
-##### d) Integración con otros bounded contexts
+Se integra con `IAM` para asociar la cuenta tecnica del entrenador.
 
-La infraestructura del contexto Coaches es utilizada por:
-- `Availability` del contexto **Availabilities**
-- `Metric` del contexto **Analytics**
-- `Review` del contexto **Reviews** de forma semántica mediante `targetType = COACH`
+##### e) Configuracion tecnica relevante
 
-##### e) Configuración técnica relevante
+No se identifica configuracion propia.
 
-El proyecto utiliza configuración JPA centralizada y persistencia relacional compartida, con soporte de Spring Data JPA y mapeo de entidades compatible con MySQL.
+##### f) Limitaciones de infraestructura
 
-##### f) Limitaciones de la capa de infraestructura
-
-La infraestructura actual cumple con la persistencia básica del contexto, pero aún no incorpora:
-- búsquedas avanzadas por expertise,
-- índices especializados,
-- integraciones explícitas con perfiles funcionales o autenticación,
-- ni reglas de integridad más sofisticadas frente a dependencias externas.
-
-En consecuencia, la Infrastructure Layer del bounded context Coaches es funcional para el escenario actual, aunque todavía puede evolucionar para soportar un catálogo de entrenadores más rico y conectado con la lógica del dominio.
+No se identifican relaciones directas persistidas con disponibilidad o metricas dentro del mismo contexto; esas dependencias viven en otros bounded contexts.
 
 #### 2.6.4.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Descripción:**
-
-El Component Diagram del bounded context **Coaches** representa la descomposición del contenedor backend encargado de gestionar entrenadores. A nivel arquitectónico, este container está conformado por componentes con responsabilidades bien definidas dentro del sistema: recepción de solicitudes REST, transformación de datos entre capas, ejecución de comandos y consultas, y acceso a persistencia.
+**Descripcion:**  
+El diagrama de componentes de **Coaches** representa el flujo de gestion del perfil profesional del entrenador, desde el controller REST hasta la persistencia y su vinculacion con IAM.
 
 **Componentes principales:**
-
-- **Coaches REST API Component**  
-  Expone los endpoints HTTP del bounded context mediante `CoachesController`.
-
-- **Coach Transformation Component**  
-  Agrupa los assemblers y resources que permiten transformar datos entre la capa de interfaz y la capa de aplicación.
-
-- **Coach Command Processing Component**  
-  Implementado por `CoachCommandServiceImpl`, coordina las operaciones de creación, actualización y eliminación.
-
-- **Coach Query Processing Component**  
-  Implementado por `CoachQueryServiceImpl`, gestiona las operaciones de consulta.
-
-- **Coach Domain Component**  
-  Representa el núcleo del dominio mediante el agregado `Coach`, junto con sus comandos y queries.
-
-- **Coach Persistence Component**  
-  Encapsula el acceso a persistencia a través de `CoachRepository`.
+- REST API Component
+- REST Resources and Assemblers Component
+- Domain Services Component
+- Application Command Component
+- Application Query Component
+- Domain Model Component
+- Persistence Component
+- External Context Access Component
 
 **Diagrama de componentes propuesto:**
 
-<img src="assets/chapter2/coaches_Diagrama de componentes.jpeg" alt="Descripción de la imagen" width="700">
+![Component Diagram Coaches](assets/refactor/coaches-componentes.png)
+
+**Relaciones entre componentes:**
+- la interfaz expone CRUD y consulta propia del coach;
+- los services validan integridad con IAM;
+- el repository persiste el agregado `Coach`.
 
 #### 2.6.4.6. Bounded Context Software Architecture Code Level Diagrams
 
-En esta sección se presentan los diagramas a nivel de código del bounded context Coaches, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
-
-Se incluyen dos representaciones principales:
-
-- El Class Diagram del Domain Layer, que describe la estructura del modelo de dominio.
-- El Database Design Diagram, que representa la persistencia de datos en la base de datos relacional.
-
 ##### 2.6.4.6.1. Bounded Context Domain Layer Class Diagrams
 
-**Descripción**
+**Descripcion:**  
+El diagrama UML del contexto **Coaches** muestra `Coach` como agregado raiz y su relacion con `User`.
 
-El diagrama de clases del Domain Layer del bounded context Coaches presenta el agregado principal Coach, así como las interfaces de servicios y los objetos que representan comandos y consultas.
+**Diagrama UML de clases (Domain Layer):**
 
-**Diagrama UML de clases (Domain Layer)**
+![Domain Layer Coaches](assets/refactor/coaches-clases.png)
 
-<img src="assets/chapter2/coaches_Diagrama UML de clases (Domain Layer).jpeg" alt="Descripción de la imagen" width="700">
+**Relaciones principales del modelo**
+- `Coach` es el aggregate root;
+- `Coach` referencia a `User`;
+- los comandos coordinan create, update y delete.
+
+**Observaciones**
+- el dominio es intencionalmente ligero;
+- la especialidad aun no se modela como enum o value object.
 
 ##### 2.6.4.6.2. Bounded Context Database Design Diagram
 
-**Descripción**
-
-El diagrama de base de datos del bounded context Coaches representa la estructura relacional utilizada para persistir la información de entrenadores. La tabla principal es coaches.
+**Descripcion**  
+El ERD de **Coaches** muestra la tabla `coaches` y su referencia hacia `users`.
 
 **Diagrama de base de datos (ERD)**
 
-<img src="assets/chapter2/coaches_Diagrama de base de datos (ERD).jpeg" alt="Descripción de la imagen" width="700">
+![Database Coaches](assets/refactor/coaches-db.png)
 
 **Tablas y atributos**
 
 Tabla `coaches`
-- `id`: identificador único del entrenador (PK)
-- `name`: nombre del coach
-- `expertise`: especialidad del coach
-- `phone`: teléfono de contacto
+- `id`
+- `name`
+- `expertise`
+- `phone`
+- `iam_user_id`
 
-Constraints
-- PRIMARY KEY (`id`) en `coaches`
-- Restricciones NOT NULL en `name`, `expertise`, `phone`
+**Constraints**
+- primary key en `id`;
+- unicidad logica de `name`;
+- unicidad logica de `iam_user_id`.
+
+**Relaciones entre tablas**
+- `users (1) ---- (0..1) coaches`
 
 **Observaciones**
+- el coach funciona como perfil profesional separado del perfil general del usuario.
 
-El diseño de persistencia del bounded context Coaches es simple y consistente con su rol de catálogo base del sistema. Sin embargo, aún no incorpora restricciones más especializadas, búsquedas por expertise o relaciones explícitas con cuentas autenticadas del sistema.
+---
 
-### 2.6.5. Bounded Context: Court & Venue Management
+### 2.6.5. Bounded Context: Courts
+
+El bounded context **Courts** representa el catalogo de canchas deportivas disponibles en la plataforma. Su proposito es exponer la informacion necesaria para que los usuarios puedan evaluar una cancha, reservarla y utilizarla como parte de una sesion con entrenador. La entidad principal del contexto es `Court`.
+
+Este contexto se relaciona con **Bookings**, **TrainingSessions**, **Matches** y **Reviews**, ya que la cancha es un recurso central del dominio deportivo.
 
 #### 2.6.5.1. Domain Layer
 
-**Entities / Aggregates**
+##### a) Entity / Aggregate Root: `Court`
 
-```
-Court (Cancha - Aggregate Root)
-├── courtId: int → Identificador único de la cancha
-├── ownerId: int → Propietario de la cancha
-├── name: String → Nombre de la cancha
-├── description: String → Descripción de la cancha
-├── location: Location (Value Object)
-├── sportType: SportType (Enum) → Tipo de deporte (Fútbol, Tenis, Básquet, etc.)
-├── surface: String → Tipo de superficie (Sintética, Grass, Cemento)
-├── pricePerHour: double → Precio por hora de uso
-├── capacity: int → Capacidad máxima de usuarios
-├── amenities: List<Amenity> → Servicios adicionales (estacionamiento, vestuarios, etc.)
-├── rating: double → Calificación promedio
-├── availability: AvailabilitySchedule (Value Object)
-├── images: List<ImageUrl> → Fotos de la cancha
-├── state: CourtState (Enum) → Estado (Activa, Inactiva, Bloqueada)
-├── createdAt: DateTime → Fecha de creación
-├── updatedAt: DateTime → Fecha de última actualización
+**Paquete:** `com.upc.courtly.courts.domain.model.aggregates`
 
-Métodos:
-├── createAvailability(horario) → Crea disponibilidad para horarios específicos
-├── updatePricing(newPrice) → Actualiza el precio por hora
-├── updateAvailability(slot, available) → Marca un slot como disponible o no
-├── blockTime(startTime, endTime, reason) → Bloquea tiempo por mantenimiento
-├── publishCourt() → Publica la cancha en la plataforma
-├── deactivateCourt() → Desactiva la cancha
-└── calculateOccupancy(period) → Calcula porcentaje de ocupación
-```
+**Atributos:**
+- `id`
+- `name`
+- `location`
+- `type`
+- `imageUrl`
+- `pricePerHour`
 
-**Value Objects**
+**Metodos:**
+- constructor de creacion
+- `updateCourt(...)`
 
-```
-Location
-├── address: String → Dirección completa
-├── city: String → Ciudad
-├── latitude: double → Latitud
-├── longitude: double → Longitud
-└── districtCode: String → Código del distrito
+##### b) Referencias externas del dominio
 
-AvailabilitySchedule
-├── slots: List<TimeSlot>
-├── workingHours: WorkingHours (lunes-domingo, hora inicio-fin)
-└── exceptions: List<BlockedPeriod> (fechas cerradas, mantenimiento)
+No se identifican referencias externas directas dentro del agregado `Court`.
 
-TimeSlot
-├── date: Date → Fecha específica
-├── startTime: Time → Hora de inicio
-├── endTime: Time → Hora de finalización
-└── isAvailable: boolean → Disponibilidad actual
+##### c) Value Objects
 
-Amenity
-├── amenityId: int
-├── name: String (Estacionamiento, Vestuarios, Ducha, Cafetería, etc.)
-└── included: boolean
-```
+No se identifican value objects propios en el codigo actual.
 
-**Domain Services**
+##### d) Commands del dominio
 
-```
-CourtAvailabilityService
-├── checkAvailability(courtId, dateTime, duration) → boolean
-└── suggestAlternativeSlots(courtId, preferences) → List<TimeSlot>
+**`CreateCourtCommand`**
+- `name`
+- `location`
+- `type`
+- `imageUrl`
+- `pricePerHour`
 
-PricingService
-├── calculatePrice(courtId, duration, dayOfWeek) → double
-├── applyDiscount(courtId, reservationCount) → double
-└── validatePriceRange(price) → boolean
+**`UpdateCourtCommand`**
+- `courtId`
+- `name`
+- `location`
+- `type`
+- `imageUrl`
+- `pricePerHour`
 
-CourtScheduleService
-├── generateAvailabilityCalendar(courtId, month) → Calendar
-├── publishSchedule(courtId, schedule) → void
-└── syncWithReservationSystem(courtId) → void
-```
+**`DeleteCourtCommand`**
+- `courtId`
 
-**Domain Events**
+##### e) Queries del dominio
 
-```
-CourtPublished(courtId, ownerId, timestamp)
-CourtDeactivated(courtId, reason, timestamp)
-PricingUpdated(courtId, oldPrice, newPrice, timestamp)
-AvailabilityUpdated(courtId, slot, isAvailable, timestamp)
-TimeBlocked(courtId, startTime, endTime, reason, timestamp)
-CourtReviewed(courtId, rating, timestamp)
-```
+**`GetAllCourtsQuery`**
 
-**Enums**
+**`GetCourtByIdQuery`**
+- `courtId`
 
-```
-SportType: FUTBOL, TENIS, BASQUET, VOLEIBOL, PADEL, BADMINTON, OTRO
-CourtState: ACTIVA, INACTIVA, BLOQUEADA, EN_MANTENIMIENTO
-```
+##### f) Domain Services
 
----
+**`CourtCommandService`**
+- create
+- update
+- delete
+
+**`CourtQueryService`**
+- get all
+- get by id
+
+##### g) Repository
+
+**`CourtRepository`**
+- `save(...)`
+- `findById(...)`
+- `findAll()`
+- `deleteById(...)`
+- `existsByName(...)`
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- el nombre de la cancha debe ser unico;
+- `pricePerHour` debe ser mayor que cero;
+- las operaciones de escritura estan restringidas a `ROLE_ADMIN`.
+
+**Observaciones de mejora:**
+- no se identifica una taxonomia formal de deportes o tipos de cancha;
+- no se identifica manejo de disponibilidad propia de la cancha dentro de este contexto.
 
 #### 2.6.5.2. Interface Layer
 
-**REST Controllers**
+##### a) `CourtsController`
 
-```
-CourtController
-├── POST /courts → Crear nueva cancha
-│   Request: CreateCourtDTO
-│   Response: CourtResponseDTO
-│
-├── GET /courts/{courtId} → Obtener detalles de cancha
-│   Response: CourtDetailDTO
-│
-├── PUT /courts/{courtId} → Actualizar información de cancha
-│   Request: UpdateCourtDTO
-│   Response: CourtResponseDTO
-│
-├── GET /courts → Listar canchas (con filtros)
-│   Query: ?sport=FUTBOL&city=Lima&page=1
-│   Response: PagedCourtDTO
-│
-├── PATCH /courts/{courtId}/pricing → Actualizar precio
-│   Request: UpdatePricingDTO
-│   Response: PricingResponseDTO
-│
-├── PATCH /courts/{courtId}/availability → Actualizar disponibilidad
-│   Request: UpdateAvailabilityDTO
-│   Response: AvailabilityResponseDTO
-│
-├── POST /courts/{courtId}/block-time → Bloquear tiempo
-│   Request: BlockTimeDTO
-│   Response: BlockResponseDTO
-│
-├── DELETE /courts/{courtId} → Desactivar cancha
-│   Response: 204 No 
-│
-├── GET /courts/{courtId}/calendar → Obtener calendario
-│   Query: ?month=2024-04
-│   Response: CalendarDTO
-│
-└── GET /courts/{courtId}/occupancy → Estadísticas de ocupación
-    Query: ?period=MONTH
-    Response: OccupancyStatisticsDTO
-```
+**Endpoints expuestos:**
+- `POST /api/v1/courts`
+- `GET /api/v1/courts`
+- `GET /api/v1/courts/{id}`
+- `PUT /api/v1/courts/{id}`
+- `DELETE /api/v1/courts/{id}`
 
-**DTOs (Data Transfer Objects)**
+##### b) Resources / DTOs
 
-```
-CreateCourtDTO
-├── name: String
-├── description: String
-├── location: LocationDTO
-├── sportType: String
-├── surface: String
-├── pricePerHour: double
-├── capacity: int
-├── amenities: List<String>
-└── images: List<MultipartFile>
+**`CourtResource`**
+- `id`
+- `name`
+- `location`
+- `type`
+- `imageUrl`
+- `pricePerHour`
 
-UpdateCourtDTO
-├── name: String
-├── description: String
-├── amenities: List<String>
-└── images: List<MultipartFile>
+**`CreateCourtResource`**
+- `name`
+- `location`
+- `type`
+- `imageUrl`
+- `pricePerHour`
 
-UpdatePricingDTO
-├── pricePerHour: double
-└── effectiveDate: Date
+**`UpdateCourtResource`**
+- `name`
+- `location`
+- `type`
+- `imageUrl`
+- `pricePerHour`
 
-UpdateAvailabilityDTO
-├── workingHours: WorkingHoursDTO
-└── exceptions: List<BlockedPeriodDTO>
+##### c) Assemblers
 
-BlockTimeDTO
-├── startTime: DateTime
-├── endTime: DateTime
-└── reason: String
+**`CourtResourceFromEntityAssembler`**
 
-CourtResponseDTO
-├── courtId: int
-├── name: String
-├── location: LocationDTO
-├── sportType: String
-├── pricePerHour: double
-├── rating: double
-├── availability: AvailabilityDTO
-└── state: String
+**`CreateCourtCommandFromResourceAssembler`**
 
-CourtDetailDTO
-├── (todos los campos de CourtResponseDTO)
-├── description: String
-├── surface: String
-├── capacity: int
-├── amenities: List<AmenityDTO>
-├── images: List<ImageDTO>
-├── owner: CourtOwnerDTO
-└── reviews: List<ReviewDTO>
+**`UpdateCourtCommandFromResourceAssembler`**
 
-CalendarDTO
-├── courtId: int
-├── month: String
-└── slots: List<SlotDTO>
+##### d) Responsabilidad de la capa de interfaz
 
-OccupancyStatisticsDTO
-├── courtId: int
-├── period: String
-├── totalSlots: int
-├── bookedSlots: int
-├── occupancyPercentage: double
-└── revenueEstimate: double
-```
-
----
+Expone el catalogo de canchas para lectura publica del backend y administra las operaciones de escritura reservadas al administrador.
 
 #### 2.6.5.3. Application Layer
 
-**Command Handlers**
+##### a) Command Services / Command Handlers
 
-```
-CreateCourtCommandHandler
-├── Input: CreateCourtCommand (name, location, sportType, pricePerHour, etc.)
-├── Validaciones:
-│   ├── Verificar que el propietario existe y está activo
-│   ├── Validar que la ubicación es válida
-│   ├── Validar que el precio está en rango permitido
-│   └── Verificar que el usuario no tiene más de N canchas activas
-└── Output: CourtCreatedEvent
+**`CourtCommandServiceImpl`**
 
-UpdateCourtCommandHandler
-├── Input: UpdateCourtCommand (courtId, updates)
-├── Validaciones:
-│   ├── Verificar que la cancha existe
-│   ├── Verificar que el usuario es propietario
-│   └── Validar datos actualizados
-└── Output: CourtUpdatedEvent
+**Dependencias:**
+- `CourtRepository`
 
-UpdatePricingCommandHandler
-├── Input: UpdatePricingCommand (courtId, newPrice)
-├── Validaciones:
-│   ├── Precio debe ser > 0
-│   ├── No puede cambiar si hay reservas próximas (< 24 horas)
-│   └── Verificar permisos del propietario
-└── Output: PricingUpdatedEvent
+**Operaciones:**
+- alta;
+- actualizacion;
+- eliminacion.
 
-UpdateAvailabilityCommandHandler
-├── Input: UpdateAvailabilityCommand (courtId, schedule)
-├── Validaciones:
-│   ├── Horarios deben ser realistas (06:00 - 23:00)
-│   ├── No puede cerrar con reservas activas
-│   └── Validar formato de horarios
-└── Output: AvailabilityUpdatedEvent
+##### b) Query Services / Query Handlers
 
-BlockTimeCommandHandler
-├── Input: BlockTimeCommand (courtId, startTime, endTime, reason)
-├── Validaciones:
-│   ├── Verificar que no hay reservas en ese período
-│   ├── Bloque no puede ser > 30 días
-│   └── Verificar permisos del propietario
-└── Output: TimeBlockedEvent
+**`CourtQueryServiceImpl`**
+- lista y detalle.
 
-DeactivateCourtCommandHandler
-├── Input: DeactivateCourtCommand (courtId, reason)
-├── Validaciones:
-│   ├── Verificar que no hay reservas activas
-│   ├── Cancelar todas las reservas futuras
-│   └── Verificar permisos del propietario
-└── Output: CourtDeactivatedEvent
-```
+##### c) Flujos principales del negocio
 
-**Event Handlers**
+**Flujo de alta de cancha**
+1. Se recibe el resource de creacion.
+2. Se valida unicidad del nombre.
+3. Se valida `pricePerHour > 0`.
+4. Se persiste la cancha.
 
-```
-OnCourtPublishedHandler
-├── Escucha: CourtPublishedEvent
-├── Acciones:
-│   ├── Indexar cancha en Search & Discovery Context
-│   ├── Enviar confirmación por email al propietario
-│   └── Inicializar estadísticas
-└── Publica: CourtIndexedEvent
+##### d) Observaciones de la capa de aplicacion
 
-OnPricingUpdatedHandler
-├── Escucha: PricingUpdatedEvent
-├── Acciones:
-│   ├── Notificar a propietario sobre cambio
-│   ├── Enviar notificación a deportistas que la siguen
-│   └── Actualizar índices de búsqueda
-└── Publica: SearchIndexUpdatedEvent
-
-OnAvailabilityUpdatedHandler
-├── Escucha: AvailabilityUpdatedEvent
-├── Acciones:
-│   ├── Sincronizar con Booking & Reservation Context
-│   ├── Actualizar calendario de reservas disponibles
-│   └── Notificar cambios a usuarios interesados
-└── Publica: ReservationAvailabilityChangedEvent
-
-OnTimeBlockedHandler
-├── Escucha: TimeBlockedEvent
-├── Acciones:
-│   ├── Marcar slots como no disponibles
-│   ├── Notificar sobre cierre temporal
-│   └── Generar recordatorio de reapertura
-└── Publica: TimeSlotBlockedEvent
-```
-
----
+El contexto es simple, pero aporta datos criticos para calculo de pagos y reservas.
 
 #### 2.6.5.4. Infrastructure Layer
 
-**Repositories**
+##### a) Repositorios de persistencia
 
-```
-CourtRepository
-├── save(court: Court) → void
-├── findById(courtId: int) → Court
-├── findByOwnerId(ownerId: int) → List<Court>
-├── findBySportType(sportType: SportType) → List<Court>
-├── findByLocation(latitude, longitude, radiusKm) → List<Court>
-├── update(court: Court) → void
-├── delete(courtId: int) → void
-└── findAvailableCourts(sportType, date, time, duration) → List<Court>
+`CourtRepository` extiende `JpaRepository<Court, Long>`.
 
-AvailabilityRepository
-├── save(availability: AvailabilitySchedule) → void
-├── findByCourtId(courtId: int) → AvailabilitySchedule
-├── updateSlot(courtId, slot, available) → void
-├── blockTime(courtId, startTime, endTime) → void
-└── getCalendar(courtId, month) → Calendar
+##### b) Persistencia de entidades
 
-CourtRatingRepository
-├── save(rating: Rating) → void
-├── findByCourtId(courtId: int) → List<Rating>
-├── calculateAverageRating(courtId: int) → double
-└── updateCourtRating(courtId, newAverage) → void
-```
+`Court` se persiste en la tabla `courts`.
 
-**Adapters**
+##### c) Diseno de persistencia
 
-```
-ImageStorageAdapter (Cloud Storage: AWS S3 / Google Cloud Storage)
-├── uploadImage(file: MultipartFile, courtId: int) → String (URL)
-├── deleteImage(imageUrl: String) → void
-└── generateThumbnail(imageUrl: String) → String
+**Tabla principal:** `courts`
 
-LocationGeocoder (Google Maps API)
-├── geocode(address: String) → Location (lat, lng)
-├── reverseGeocode(lat, lng) → Address
-└── calculateDistance(lat1, lng1, lat2, lng2) → double
+**Columnas:**
+- `id`
+- `name`
+- `location`
+- `type`
+- `image_url`
+- `price_per_hour`
 
-CourtNotificationAdapter
-├── sendCourtPublishedEmail(owner, court) → void
-├── sendPricingChangeNotification(followers, court, oldPrice, newPrice) → void
-└── sendAvailabilityAlert(users, court, newSchedule) → void
+##### d) Integracion con otros bounded contexts
 
-SearchIndexAdapter (Elasticsearch / Algolia)
-├── indexCourt(court: Court) → void
-├── updateIndex(courtId, updates) → void
-├── removeCourt(courtId: int) → void
-└── searchCourts(filters) → List<CourtSearchResult>
-```
+Es consumido por `Bookings`, `TrainingSessions`, `Matches`, `Reviews` y `Payments`.
 
-**Persistencia**
+##### e) Configuracion tecnica relevante
 
-```
-Tabla: courts
-├── court_id (PK, INT, AUTO_INCREMENT)
-├── owner_id (FK → users.user_id)
-├── name (VARCHAR(255), NOT NULL)
-├── description (TEXT)
-├── address (VARCHAR(500), NOT NULL)
-├── city (VARCHAR(100), NOT NULL)
-├── latitude (DECIMAL(10,8), NOT NULL)
-├── longitude (DECIMAL(11,8), NOT NULL)
-├── sport_type (ENUM, NOT NULL)
-├── surface (VARCHAR(50))
-├── price_per_hour (DECIMAL(10,2), NOT NULL)
-├── capacity (INT, NOT NULL)
-├── rating (DECIMAL(3,2), DEFAULT 0)
-├── state (ENUM, DEFAULT 'ACTIVA')
-├── created_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP)
-├── updated_at (TIMESTAMP, ON UPDATE CURRENT_TIMESTAMP)
-└── INDEX (owner_id, state), INDEX (sport_type, city), SPATIAL INDEX (latitude, longitude)
+No se identifica configuracion propia.
 
-Tabla: court_amenities
-├── amenity_id (PK, INT, AUTO_INCREMENT)
-├── court_id (FK → courts.court_id)
-├── amenity_name (VARCHAR(100))
-├── included (BOOLEAN)
-└── INDEX (court_id)
+##### f) Limitaciones de infraestructura
 
-Tabla: court_availability
-├── availability_id (PK, INT, AUTO_INCREMENT)
-├── court_id (FK → courts.court_id, UNIQUE)
-├── monday_start (TIME)
-├── monday_end (TIME)
-├── tuesday_start (TIME)
-├── ... (miércoles a domingo)
-└── updated_at (TIMESTAMP)
-
-Tabla: court_blocked_periods
-├── block_id (PK, INT, AUTO_INCREMENT)
-├── court_id (FK → courts.court_id)
-├── start_time (DATETIME)
-├── end_time (DATETIME)
-├── reason (VARCHAR(255))
-├── created_at (TIMESTAMP)
-└── INDEX (court_id, start_time)
-
-Tabla: court_images
-├── image_id (PK, INT, AUTO_INCREMENT)
-├── court_id (FK → courts.court_id)
-├── image_url (VARCHAR(500))
-├── is_primary (BOOLEAN)
-└── created_at (TIMESTAMP)
-
-Tabla: court_ratings
-├── rating_id (PK, INT, AUTO_INCREMENT)
-├── court_id (FK → courts.court_id)
-├── user_id (FK → users.user_id)
-├── score (INT, CONSTRAINT CHECK (score >= 1 AND score <= 5))
-├── comment (TEXT)
-├── created_at (TIMESTAMP)
-└── INDEX (court_id, created_at)
-```
-
----
+No se identifica modelado de mantenimiento, aforo o disponibilidad nativa de la cancha.
 
 #### 2.6.5.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Descripción:**
+**Descripcion:**  
+El diagrama de componentes de **Courts** representa el catalogo de canchas y su administracion por parte del backend, mostrando separacion entre interfaz, aplicacion, dominio y persistencia.
 
-El diagrama de componentes para el Court & Venue Management Context presenta la descomposición del contenedor en componentes funcionales cohesivos que manejan aspectos específicos del negocio de gestión de canchas:
+**Componentes principales:**
+- REST API Component
+- REST Resources and Assemblers Component
+- Domain Services Component
+- Application Command Component
+- Application Query Component
+- Domain Model Component
+- Persistence Component
 
-**Componentes Principales:**
+**Diagrama de componentes propuesto:**
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│         Court & Venue Management Container                  │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Court Management Component                          │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Crear/Actualizar canchas                           │   │
-│  │ • Gestionar información de canchas                   │   │
-│  │ • Validar datos de entrada                           │   │
-│  │ • Publicar/Desactivar canchas                        │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                               │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Availability & Scheduling Component                │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Gestionar disponibilidad por horarios              │   │
-│  │ • Bloquear tiempo para mantenimiento                 │   │
-│  │ • Generar calendario de disponibilidad               │   │
-│  │ • Sincronizar con sistema de reservas                │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                               │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Pricing & Commerce Component                        │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Gestionar precios por hora                         │   │
-│  │ • Aplicar descuentos dinámicos                       │   │
-│  │ • Calcular ingresos y estadísticas                   │   │
-│  │ • Validar rangos de precios                          │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                               │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Search & Discovery Component                        │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Indexar canchas en motor de búsqueda               │   │
-│  │ • Mantener metadatos para búsqueda                   │   │
-│  │ • Optimizar para consultas geoespaciales             │   │
-│  │ • Actualizar índices en tiempo real                  │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                               │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Notification Component                              │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Enviar notificaciones a propietarios                │   │
-│  │ • Alertas de cambios de disponibilidad                │   │
-│  │ • Recordatorios de eventos importantes                │   │
-│  │ • Coordinar con Notification & Communication Context  │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                               │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Repository & Data Access Component                  │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • CourtRepository                                     │   │
-│  │ • AvailabilityRepository                              │   │
-│  │ • CourtRatingRepository                               │   │
-│  │ • Implementación de patrones de persistencia          │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                               │
-└─────────────────────────────────────────────────────────────┘
-         ↓                           ↓                   ↓
-    ┌────────────┐      ┌────────────────┐      ┌──────────────┐
-    │   SQLite   │      │  AWS S3 / GCS  │      │   Elasticsearch│
-    │  (Courts)  │      │  (Images)      │      │  (Índices)     │
-    └────────────┘      └────────────────┘      └──────────────┘
-```
+![Component Diagram Courts](assets/refactor/courts-componentes.png)
 
-**Relaciones entre Componentes:**
-
-- **Court Management ↔ Availability & Scheduling:** Court Management actualiza Availability cuando se publica una cancha
-- **Pricing & Commerce → Repository:** Persiste cambios de precios en la base de datos
-- **Availability & Scheduling → Search & Discovery:** Notifica cambios de disponibilidad para actualizar índices
-- **Notification ← Todos:** Se suscribe a eventos de todos los componentes para enviar notificaciones
-- **Repository → Data Store:** Accede y persiste toda la información en SQLite
-- **Search & Discovery ↔ Elasticsearch:** Mantiene sincronizado el índice de búsqueda
-
----
+**Relaciones entre componentes:**
+- el controller expone operaciones CRUD;
+- los assemblers transforman DTOs;
+- el repository persiste el agregado `Court`.
 
 #### 2.6.5.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 2.6.5.6.1. Bounded Context Domain Layer Class Diagrams
 
-**Diagrama UML de Clases - Court & Venue Management Domain Layer**
+**Descripcion:**  
+El diagrama UML de **Courts** muestra a `Court` como agregado raiz del catalogo.
 
-```
-┌─────────────────────────────┐
-│      <<Aggregate>>          │
-│         Court               │
-├─────────────────────────────┤
-│ - courtId: int              │
-│ - ownerId: int              │
-│ - name: String              │
-│ - description: String       │
-│ - location: Location        │
-│ - sportType: SportType      │
-│ - surface: String           │
-│ - pricePerHour: double      │
-│ - capacity: int             │
-│ - amenities: List<Amenity>  │
-│ - rating: double            │
-│ - availability: AvailSched  │
-│ - images: List<ImageUrl>    │
-│ - state: CourtState         │
-│ - createdAt: DateTime       │
-│ - updatedAt: DateTime       │
-├─────────────────────────────┤
-│ + publishCourt(): void      │
-│ + updatePricing(p): void    │
-│ + updateAvailability(): void│
-│ + blockTime(s,e,r): void    │
-│ + deactivateCourt(): void   │
-│ + calculateOccupancy(): dbl │
-│ + addAmenity(a): void       │
-│ + removeAmenity(a): void    │
-└────────────────┬────────────┘
-                 │
-     ┌───────────┴────────────┐
-     │                        │
-┌────▼──────────────────┐ ┌──▼──────────────────────────┐
-│   <<ValueObject>>     │ │  <<ValueObject>>            │
-│     Location          │ │  AvailabilitySchedule       │
-├───────────────────────┤ ├─────────────────────────────┤
-│ - address: String     │ │ - slots: List<TimeSlot>     │
-│ - city: String        │ │ - workingHours: WorkHours   │
-│ - latitude: double    │ │ - exceptions: List<Block>   │
-│ - longitude: double   │ ├─────────────────────────────┤
-│ - districtCode: String│ │ + isAvailable(slot): bool   │
-├───────────────────────┤ │ + getAvailableSlots(): List │
-│ + distance(loc): dbl  │ │ + blockPeriod(s,e): void    │
-│ + isValid(): boolean  │ │ + unblockPeriod(s,e): void  │
-└───────────────────────┘ └─────────────────────────────┘
-          ▲                          ▲
-          │                          │
-          │ uses                     │ contains
-          │                          │
-     ┌────┴───────────────┐    ┌────┴─────────────────────┐
-     │                    │    │                          │
-┌────▼─────────────────┐  │ ┌──▼────────────────────────┐│
-│  <<ValueObject>>     │  │ │  <<ValueObject>>          ││
-│   TimeSlot           │  │ │   Amenity                 ││
-├──────────────────────┤  │ ├──────────────────────────┤│
-│ - date: Date         │  │ │ - amenityId: int         ││
-│ - startTime: Time    │  │ │ - name: String           ││
-│ - endTime: Time      │  │ │ - included: boolean      ││
-│ - isAvailable: bool  │  │ ├──────────────────────────┤│
-├──────────────────────┤  │ │ + getName(): String      ││
-│ + duration(): int    │  │ │ + isIncluded(): bool     ││
-│ + overlaps(ts): bool │  │ └──────────────────────────┘│
-└──────────────────────┘  └───────────────────────────┘
+**Diagrama UML de clases (Domain Layer):**
 
-┌─────────────────────────────┐      ┌────────────────────┐
-│   <<Interface>>             │      │   <<Enum>>         │
-│   CourtRepository           │      │   SportType        │
-├─────────────────────────────┤      ├────────────────────┤
-│ + save(c: Court): void      │      │ FUTBOL             │
-│ + findById(id): Court       │      │ TENIS              │
-│ + findByOwnerId(id): List   │      │ BASQUET            │
-│ + update(c: Court): void    │      │ VOLEIBOL           │
-│ + delete(id): void          │      │ PADEL              │
-│ + findAvailable(): List     │      │ BADMINTON          │
-└─────────────────────────────┘      │ OTRO               │
-           △                         └────────────────────┘
-           │ implements
-           │                        ┌────────────────────┐
-    ┌──────┴───────┐                │   <<Enum>>         │
-    │              │                │   CourtState       │
-┌───▼──────────────────────────┐    ├────────────────────┤
-│ CourtRepositoryImpl           │    │ ACTIVA             │
-├──────────────────────────────┤    │ INACTIVA           │
-│ - db: Database               │    │ BLOQUEADA          │
-├──────────────────────────────┤    │ EN_MANTENIMIENTO   │
-│ + save(c): void              │    └────────────────────┘
-│ + findById(id): Court        │
-│ + update(c): void            │
-│ + delete(id): void           │
-└──────────────────────────────┘
+![Domain Layer Courts](assets/refactor/courts-clases.png)
 
-┌────────────────────────────────────┐
-│   <<Service>>                      │
-│   CourtAvailabilityService         │
-├────────────────────────────────────┤
-│ - courtRepository: CourtRepository │
-├────────────────────────────────────┤
-│ + checkAvailability(): boolean     │
-│ + suggestAlternativeSlots(): List  │
-│ + reserveSlot(slot): void          │
-│ + releaseSlot(slot): void          │
-└────────────────────────────────────┘
+**Relaciones principales del modelo**
+- `Court` es el aggregate root;
+- los comandos gestionan create, update y delete;
+- las queries resuelven lista y detalle.
 
-Relaciones:
-- Court *──────── 1 Location (contains)
-- Court *──────── 1 AvailabilitySchedule (contains)
-- Court *──────── * Amenity (contains)
-- AvailabilitySchedule *──────── * TimeSlot (contains)
-- CourtRepository ◄────────────── Court (manages)
-- CourtAvailabilityService ───────► CourtRepository (uses)
-```
-
----
+**Observaciones**
+- el modelo es deliberadamente simple para funcionar como catalogo compartido.
 
 ##### 2.6.5.6.2. Bounded Context Database Design Diagram
 
-**Entity Relationship Diagram (ERD) - Court & Venue Management**
+**Descripcion**  
+El ERD de **Courts** representa la tabla `courts` como catalogo base del sistema.
 
-```
-┌──────────────────────────────┐
-│         users                │
-├──────────────────────────────┤
-│ PK user_id (INT)             │
-│ name (VARCHAR)               │
-│ email (VARCHAR, UNIQUE)      │
-│ role (ENUM)                  │
-└──────────────────────────────┘
-         ▲
-         │ FK (owner_id)
-         │
-┌─────────┴──────────────────────────────┐
-│          courts                        │
-├────────────────────────────────────────┤
-│ PK court_id (INT, AUTO_INCREMENT)      │
-│ FK owner_id (INT)                      │
-│ name (VARCHAR(255), NOT NULL)          │
-│ description (TEXT)                     │
-│ address (VARCHAR(500), NOT NULL)       │
-│ city (VARCHAR(100), NOT NULL)          │
-│ district_code (VARCHAR(20))            │
-│ latitude (DECIMAL(10,8), NOT NULL)     │
-│ longitude (DECIMAL(11,8), NOT NULL)    │
-│ sport_type (ENUM, NOT NULL)            │
-│ surface (VARCHAR(50))                  │
-│ price_per_hour (DECIMAL(10,2))         │
-│ capacity (INT)                         │
-│ rating (DECIMAL(3,2), DEFAULT 0)       │
-│ state (ENUM, DEFAULT 'ACTIVA')         │
-│ created_at (TIMESTAMP)                 │
-│ updated_at (TIMESTAMP)                 │
-│ UNIQUE KEY (owner_id, name)            │
-│ INDEX idx_sport_city (sport_type, city)│
-│ SPATIAL INDEX idx_location (lat, lng)  │
-└─────────────────────┬────────────────────┘
-     ┌────────────────┼────────────────┐
-     │                │                │
-     │                │                │
-┌────▼──────────┐ ┌──▼────────────┐ ┌▼─────────────────┐
-│court_amenities│ │court_images    │ │court_availability│
-├───────────────┤ ├────────────────┤ ├──────────────────┤
-│PK amenity_id  │ │PK image_id     │ │PK availability_id│
-│FK court_id    │ │FK court_id     │ │FK court_id (UNIQ)│
-│amenity_name   │ │image_url       │ │monday_start (TIM)│
-│included (BOOL)│ │is_primary (BOO)│ │monday_end (TIME) │
-│               │ │created_at      │ │tuesday_start     │
-│               │ │                │ │tuesday_end       │
-│               │ │                │ │...wednesday-sun..│
-│               │ │                │ │updated_at        │
-└───────────────┘ └────────────────┘ └──────────────────┘
-     │                │
-     │                │
-     └────────┬───────┘
-              │ FK (court_id)
-              │
-┌─────────────▼──────────────────┐
-│ court_blocked_periods          │
-├────────────────────────────────┤
-│ PK block_id (INT)              │
-│ FK court_id (INT)              │
-│ start_time (DATETIME)          │
-│ end_time (DATETIME)            │
-│ reason (VARCHAR(255))          │
-│ created_at (TIMESTAMP)         │
-│ CONSTRAINT no_overlapping_blocks│
-│ INDEX idx_court_dates          │
-└────────────────────────────────┘
+**Diagrama de base de datos (ERD)**
 
-┌────────────────────────────────┐
-│ court_ratings                  │
-├────────────────────────────────┤
-│ PK rating_id (INT)             │
-│ FK court_id (INT)              │
-│ FK user_id (INT)               │
-│ score (INT, CHECK 1-5)         │
-│ comment (TEXT)                 │
-│ created_at (TIMESTAMP)         │
-│ UNIQUE (court_id, user_id)     │
-│ INDEX idx_court_score          │
-└────────────────────────────────┘
+![Database Courts](assets/refactor/courts-db.png)
 
-Relaciones:
-- users (1) ──── (*) courts
-- courts (1) ──── (*) court_amenities
-- courts (1) ──── (*) court_images
-- courts (1) ──── (1) court_availability
-- courts (1) ──── (*) court_blocked_periods
-- courts (1) ──── (*) court_ratings
-- users (1) ──── (*) court_ratings
-```
+**Tablas y atributos**
+
+Tabla `courts`
+- `id`
+- `name`
+- `location`
+- `type`
+- `image_url`
+- `price_per_hour`
+
+**Constraints**
+- primary key en `id`;
+- unicidad logica del nombre;
+- `price_per_hour` obligatorio y positivo por regla de aplicacion.
+
+**Relaciones entre tablas**
+- contexto raiz consumido externamente por bookings, matches y training sessions.
+
+**Observaciones**
+- el diagrama refleja la funcion de catalogo del contexto.
+
+---
 
 ### 2.6.6. Bounded Context: Availabilities
 
+El bounded context **Availabilities** representa la agenda publicada por los entrenadores. Su proposito es permitir que un coach declare bloques horarios disponibles para recibir solicitudes de sesiones, y que dichos bloques puedan cambiar de estado conforme se reservan o liberan. La entidad principal del contexto es `Availability`.
+
+El contexto se relaciona con **Coaches**, porque cada disponibilidad pertenece a un coach, y con **TrainingSessions**, ya que una sesion utiliza y bloquea una disponibilidad concreta.
+
 #### 2.6.6.1. Domain Layer
 
-**Entities / Aggregates**
+##### a) Entity / Aggregate Root: `Availability`
 
-```
-Availability (Aggregate Root)
-├── id: int → Identificador único de la disponibilidad
-├── date: Date → Fecha del bloque horario
-├── startTime: Time → Hora de inicio del bloque
-├── endTime: Time → Hora de finalización del bloque
-├── status: AvailabilityStatus (Enum) → Estado actual
-├── coach: Coach (Reference) → Entrenador propietario
-├── createdAt: DateTime → Fecha de creación
-└── updatedAt: DateTime → Fecha de última actualización
+**Paquete:** `com.upc.courtly.availabilities.domain.model.aggregates`
 
-Métodos:
-├── isConflictWith(otherAvailability) → boolean
-├── getSlotDuration() → int (en minutos)
-├── markAsReserved() → void
-├── markAsAvailable() → void
-├── markAsUnavailable() → void
-├── isValidTimeRange() → boolean
-├── canBeModified() → boolean
-└── overlapsWithDate(date) → boolean
-```
+**Atributos:**
+- `id`
+- `date`
+- `startTime`
+- `endTime`
+- `status`
+- `coach`
+- `createdAt`
 
-**Value Objects**
+**Metodos:**
+- constructor;
+- `updateAvailability(...)`
+- `onCreate()`
 
-```
-AvailabilityStatus
-├── AVAILABLE → Slot disponible para reserva
-├── RESERVED → Slot ya reservado por un cliente
-└── UNAVAILABLE → Slot bloqueado por el entrenador
-```
+##### b) Referencias externas del dominio
 
-**Domain Services**
+**`Coach`** desde `Coaches`  
+Representa al entrenador propietario de la disponibilidad.
 
-```
-AvailabilityScheduleService
-├── generateWeeklySchedule(coachId, schedule) → void
-├── checkConflicts(coachId, date, startTime, endTime) → List<Availability>
-├── suggestAlternativeSlots(coachId, date, duration) → List<Availability>
-└── validateAvailabilityRange(startTime, endTime) → boolean
+##### c) Value Objects
 
-AvailabilityStatusService
-├── updateStatusFromBooking(availability, booking) → void
-├── releaseSlot(availability) → void
-├── markPermanentlyUnavailable(availability, reason) → void
-└── syncStatusWithBookings(coachId) → void
-```
+**`AvailabilityStatus`**
+- `AVAILABLE`
+- `RESERVED`
+- `UNAVAILABLE`
 
-**Domain Events**
+##### d) Commands del dominio
 
-```
-AvailabilityCreated(availabilityId, coachId, date, startTime, endTime)
-AvailabilityReserved(availabilityId, coachId, bookingId, timestamp)
-AvailabilityReleased(availabilityId, coachId, timestamp)
-AvailabilityMarkedUnavailable(availabilityId, coachId, reason, timestamp)
-SlotDurationCalculated(availabilityId, durationMinutes, timestamp)
-ConflictDetected(availabilityId, conflictingSlots[], timestamp)
-```
+**`CreateAvailabilityCommand`**
+- `date`
+- `startTime`
+- `endTime`
+- `status`
+- `coachId`
 
-**Enums**
+**`UpdateAvailabilityCommand`**
+- `availabilityId`
+- `date`
+- `startTime`
+- `endTime`
+- `status`
 
-```
-AvailabilityStatus: AVAILABLE, RESERVED, UNAVAILABLE
-TimeRange: [06:00 - 23:00] (válido solo dentro de este rango)
-```
+**`DeleteAvailabilityCommand`**
+- `availabilityId`
 
----
+##### e) Queries del dominio
+
+**`GetAllAvailabilitiesQuery`**
+
+**`GetAvailabilityByIdQuery`**
+- `availabilityId`
+
+##### f) Domain Services
+
+**`AvailabilityCommandService`**
+- create
+- update
+- delete
+
+**`AvailabilityQueryService`**
+- get all
+- get by id
+- obtener disponibilidades del coach autenticado
+
+##### g) Repository
+
+**`AvailabilityRepository`**
+- `save(...)`
+- `findById(...)`
+- `findAll()`
+- `deleteById(...)`
+- `findByCoachUserIdOrderByDateAscStartTimeAsc(...)`
+- `existsOverlappingAvailability(...)`
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- el coach debe existir;
+- `startTime` debe ser menor que `endTime`;
+- no se permiten disponibilidades solapadas para el mismo coach en la misma fecha;
+- una disponibilidad `RESERVED` no puede modificarse ni eliminarse.
+
+**Observaciones de mejora:**
+- no se identifica una politica de recurrencia semanal o mensual;
+- el modelo separa fecha y hora, lo cual simplifica la agenda, pero no modela zona horaria explicita.
 
 #### 2.6.6.2. Interface Layer
 
-**REST Controllers**
+##### a) `AvailabilitiesController`
 
-```
-AvailabilityController
-├── POST /api/v1/availabilities → Crear nueva disponibilidad
-│   Request: CreateAvailabilityDTO
-│   Response: AvailabilityResponseDTO
-│
-├── GET /api/v1/availabilities → Listar disponibilidades (con filtros)
-│   Query: ?coachId=1&date=2024-04-25&status=AVAILABLE
-│   Response: PagedAvailabilityDTO
-│
-├── GET /api/v1/availabilities/{id} → Obtener disponibilidad específica
-│   Response: AvailabilityDetailDTO
-│
-├── PUT /api/v1/availabilities/{id} → Actualizar disponibilidad
-│   Request: UpdateAvailabilityDTO
-│   Response: AvailabilityResponseDTO
-│
-├── DELETE /api/v1/availabilities/{id} → Eliminar disponibilidad
-│   Response: 204 No 
-│
-├── GET /api/v1/availabilities/coach/{coachId} → Listar por entrenador
-│   Query: ?startDate=2024-04-25&endDate=2024-05-25
-│   Response: List<AvailabilityDTO>
-│
-├── GET /api/v1/availabilities/coach/{coachId}/weekly → Agenda semanal
-│   Query: ?week=2024-W17
-│   Response: WeeklyScheduleDTO
-│
-├── PATCH /api/v1/availabilities/{id}/mark-reserved → Marcar como reservado
-│   Request: MarkReservedDTO { bookingId }
-│   Response: AvailabilityResponseDTO
-│
-├── PATCH /api/v1/availabilities/{id}/mark-available → Marcar como disponible
-│   Request: EmptyRequest
-│   Response: AvailabilityResponseDTO
-│
-└── GET /api/v1/availabilities/coach/{coachId}/conflicts → Detectar conflictos
-    Query: ?startDate=2024-04-25
-    Response: List<ConflictDTO>
-```
+**Endpoints expuestos:**
+- `POST /api/v1/availabilities`
+- `GET /api/v1/availabilities`
+- `GET /api/v1/availabilities/me`
+- `GET /api/v1/availabilities/{id}`
+- `PUT /api/v1/availabilities/{id}`
+- `DELETE /api/v1/availabilities/{id}`
 
-**DTOs (Data Transfer Objects)**
+##### b) Resources / DTOs
 
-```
-CreateAvailabilityDTO
-├── coachId: int (obligatorio)
-├── date: Date (obligatorio)
-├── startTime: Time (obligatorio, formato HH:mm)
-├── endTime: Time (obligatorio, formato HH:mm)
-└── status: String (opcional, default: AVAILABLE)
+**`AvailabilityResource`**
+- `id`
+- `date`
+- `startTime`
+- `endTime`
+- `status`
+- `createdAt`
+- `coach`
 
-UpdateAvailabilityDTO
-├── date: Date
-├── startTime: Time
-├── endTime: Time
-└── status: String
+**`CreateAvailabilityResource`**
+- `date`
+- `startTime`
+- `endTime`
+- `status`
+- `coachId`
 
-AvailabilityResponseDTO
-├── id: int
-├── date: Date
-├── startTime: Time
-├── endTime: Time
-├── status: String
-├── durationMinutes: int
-├── coach: CoachSummaryDTO { id, name }
-└── createdAt: DateTime
+**`UpdateAvailabilityResource`**
+- `date`
+- `startTime`
+- `endTime`
+- `status`
 
-AvailabilityDetailDTO
-├── (todos los campos de AvailabilityResponseDTO)
-├── updatedAt: DateTime
-├── canBeModified: boolean
-└── relatedBooking: BookingSummaryDTO (si status=RESERVED)
+##### c) Assemblers
 
-WeeklyScheduleDTO
-├── coachId: int
-├── weekStart: Date
-├── weekEnd: Date
-└── slots: List<DayScheduleDTO>
+**`AvailabilityResourceFromEntityAssembler`**
 
-DayScheduleDTO
-├── date: Date
-├── dayName: String
-├── availabilities: List<SlotDTO>
+**`CreateAvailabilityCommandFromResourceAssembler`**
 
-SlotDTO
-├── id: int
-├── startTime: Time
-├── endTime: Time
-├── status: String
-└── isConflicted: boolean
+**`UpdateAvailabilityCommandFromResourceAssembler`**
 
-CoachSummaryDTO
-├── id: int
-└── name: String
+##### d) Responsabilidad de la capa de interfaz
 
-ConflictDTO
-├── slot1Id: int
-├── slot2Id: int
-├── startTime: Time
-├── endTime: Time
-└── reason: String
-
-MarkReservedDTO
-├── bookingId: int → ID de la reserva asociada
-└── reservedAt: DateTime
-
-PagedAvailabilityDTO
-├── : List<AvailabilityDTO>
-├── totalElements: long
-├── totalPages: int
-├── currentPage: int
-└── pageSize: int
-```
-
----
+Expone la agenda del entrenador y permite gestionar sus bloques disponibles.
 
 #### 2.6.6.3. Application Layer
 
-**Command Handlers**
+##### a) Command Services / Command Handlers
 
-```
-CreateAvailabilityCommandHandler
-├── Input: CreateAvailabilityCommand (coachId, date, startTime, endTime, status)
-├── Validaciones:
-│   ├── Coach debe existir y estar activo
-│   ├── startTime debe ser >= 06:00
-│   ├── endTime debe ser <= 23:00
-│   ├── startTime < endTime (validación débil, no implementada)
-│   └── No validar solapes con otros slots (limitación actual)
-├── Acciones:
-│   ├── Crear entidad Availability
-│   ├── Persistir en repositorio
-│   └── Emitir evento AvailabilityCreated
-└── Output: AvailabilityCreatedEvent
+**`AvailabilityCommandServiceImpl`**
 
-UpdateAvailabilityCommandHandler
-├── Input: UpdateAvailabilityCommand (availabilityId, updates)
-├── Validaciones:
-│   ├── Availability debe existir
-│   ├── Status actual != RESERVED (si está reservado no se puede cambiar)
-│   ├── Validar rango horario si se envía
-│   └── Verificar que el coach propietario autoriza el cambio
-├── Acciones:
-│   ├── Actualizar campos (date, startTime, endTime)
-│   ├── Mantener integridad de reservas
-│   └── Emitir evento AvailabilityUpdated
-└── Output: AvailabilityUpdatedEvent
+**Dependencias:**
+- `AvailabilityRepository`
+- `CoachRepository`
 
-MarkAsReservedCommandHandler
-├── Input: MarkAsReservedCommand (availabilityId, bookingId)
-├── Validaciones:
-│   ├── Availability debe estar en estado AVAILABLE
-│   ├── Booking debe existir
-│   └── Fechas deben coincidir
-├── Acciones:
-│   ├── Cambiar status a RESERVED
-│   ├── Guardar referencia a booking
-│   └── Emitir evento AvailabilityReserved
-└── Output: AvailabilityReservedEvent
+##### b) Query Services / Query Handlers
 
-MarkAsAvailableCommandHandler
-├── Input: MarkAsAvailableCommand (availabilityId)
-├── Validaciones:
-│   ├── Availability debe existir
-│   └── Puede ser RESERVED o UNAVAILABLE
-├── Acciones:
-│   ├── Cambiar status a AVAILABLE
-│   ├── Limpiar referencia a booking si existe
-│   └── Emitir evento AvailabilityReleased
-└── Output: AvailabilityReleasedEvent
+**`AvailabilityQueryServiceImpl`**
 
-MarkAsUnavailableCommandHandler
-├── Input: MarkAsUnavailableCommand (availabilityId, reason)
-├── Validaciones:
-│   ├── Availability debe existir
-│   └── No puede estar RESERVED
-├── Acciones:
-│   ├── Cambiar status a UNAVAILABLE
-│   ├── Guardar reason/motivo
-│   └── Emitir evento AvailabilityMarkedUnavailable
-└── Output: AvailabilityMarkedUnavailableEvent
+**Dependencias:**
+- `AvailabilityRepository`
 
-DeleteAvailabilityCommandHandler
-├── Input: DeleteAvailabilityCommand (availabilityId)
-├── Validaciones:
-│   ├── Availability debe existir
-│   └── No puede estar RESERVED
-├── Acciones:
-│   ├── Eliminar registro
-│   └── Emitir evento AvailabilityDeleted
-└── Output: AvailabilityDeletedEvent
-```
+##### c) Flujos principales del negocio
 
-**Event Handlers**
+**Flujo de publicacion**
+1. Se recibe la disponibilidad.
+2. Se valida coach, horario y ausencia de solapamiento.
+3. Se persiste con estado inicial definido por el request.
 
-```
-OnAvailabilityCreatedHandler
-├── Escucha: AvailabilityCreatedEvent
-├── Acciones:
-│   ├── Notificar al coach que su disponibilidad fue creada
-│   ├── Indexar en Search & Discovery para búsquedas futuras
-│   └── Actualizar calendario visible en frontend
-└── Publica: AvailabilityIndexedEvent
+**Flujo de consulta propia**
+1. El coach autenticado solicita `/me`.
+2. Se recuperan sus disponibilidades ordenadas por fecha y hora.
 
-OnAvailabilityReservedHandler
-├── Escucha: AvailabilityReservedEvent
-├── Acciones:
-│   ├── Notificar al coach que su slot fue reservado
-│   ├── Actualizar estado en índices de búsqueda
-│   ├── Enviar confirmación al usuario que hizo la reserva
-│   └── Iniciar proceso de facturación si aplica
-└── Publica: SlotReservedConfirmedEvent
+##### d) Observaciones de la capa de aplicacion
 
-OnAvailabilityReleasedHandler
-├── Escucha: AvailabilityReleasedEvent
-├── Acciones:
-│   ├── Revertir a AVAILABLE si fue RESERVED
-│   ├── Notificar cambio de estado
-│   ├── Actualizar índices de búsqueda
-│   └── Generar notificación a usuarios interesados
-└── Publica: SlotBecameAvailableEvent
-
-OnBookingCancelledHandler (desde Booking Context)
-├── Escucha: BookingCancelledEvent
-├── Acciones:
-│   ├── Encontrar Availability asociada
-│   ├── Cambiar status de RESERVED a AVAILABLE
-│   └── Notificar al coach que el slot quedó libre
-└── Publica: AvailabilityReleasedEvent
-```
-
----
+El contexto ya incluye reglas utiles de agenda y ownership indirecto por coach, pero no incorpora recurrente ni optimizacion avanzada de calendario.
 
 #### 2.6.6.4. Infrastructure Layer
 
-**Repositories**
+##### a) Repositorios de persistencia
 
-```
-AvailabilityRepository
-├── save(availability: Availability) → void
-├── findById(availabilityId: int) → Availability
-├── findByCoachId(coachId: int) → List<Availability>
-├── findByCoachAndDate(coachId, date) → List<Availability>
-├── findByCoachAndDateRange(coachId, startDate, endDate) → List<Availability>
-├── findByStatus(status: AvailabilityStatus) → List<Availability>
-├── findConflicts(coachId, date, startTime, endTime) → List<Availability>
-├── findAvailableSlots(coachId, date) → List<Availability>
-├── update(availability: Availability) → void
-├── delete(availabilityId: int) → void
-└── findByCoachIdAndWeek(coachId, weekNumber) → List<Availability>
-```
+`AvailabilityRepository` agrega consultas por coach y validacion de solapamiento.
 
-**Adapters**
+##### b) Persistencia de entidades
 
-```
-AvailabilityNotificationAdapter
-├── notifyCoachSlotCreated(coach, availability) → void
-├── notifyCoachSlotReserved(coach, availability, booking) → void
-├── notifyCoachSlotReleased(coach, availability) → void
-├── notifyUserSlotAvailable(user, availability, coach) → void
-└── sendWeeklyScheduleReminder(coach) → void
+`Availability` se persiste en la tabla `availabilities` y se relaciona con `coaches`.
 
-AvailabilitySearchIndexAdapter (Elasticsearch)
-├── indexAvailability(availability) → void
-├── updateIndex(availabilityId, updates) → void
-├── removeFromIndex(availabilityId) → void
-├── searchAvailableSlots(coachId, date, duration) → List<SearchResult>
-└── bulkIndexCoachSchedule(coachId) → void
+##### c) Diseno de persistencia
 
-AvailabilityCalendarAdapter (Google Calendar Integration)
-├── syncToCalendar(coach, availability) → void
-├── removeFromCalendar(availability) → void
-├── getCoachCalendarEvents(coachId, dateRange) → List<CalendarEvent>
-└── markBlockedTime(coach, startDate, endDate, reason) → void
+**Tabla principal:** `availabilities`
 
-ConflictDetectionAdapter
-├── detectTimeConflicts(coachId, startTime, endTime, date) → List<Conflict>
-├── validateTimeRange(startTime, endTime) → boolean
-└── calculateSlotsOverlap(slot1, slot2) → int (duración en minutos)
-```
+**Columnas:**
+- `id`
+- `date`
+- `start_time`
+- `end_time`
+- `status`
+- `coach_id`
+- `created_at`
 
-**Persistencia**
+##### d) Integracion con otros bounded contexts
 
-```
-Tabla: availabilities
-├── availability_id (PK, INT, AUTO_INCREMENT)
-├── coach_id (FK → coaches.coach_id, NOT NULL)
-├── date (DATE, NOT NULL)
-├── start_time (TIME, NOT NULL)
-├── end_time (TIME, NOT NULL)
-├── status (ENUM, DEFAULT 'AVAILABLE')
-├── booking_id (FK → bookings.booking_id, NULLABLE)
-├── created_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP)
-├── updated_at (TIMESTAMP, ON UPDATE CURRENT_TIMESTAMP)
-├── UNIQUE KEY (coach_id, date, start_time, end_time)
-├── INDEX idx_coach_date (coach_id, date)
-├── INDEX idx_coach_status (coach_id, status)
-├── INDEX idx_date_status (date, status)
-└── CONSTRAINT check_time_range (start_time < end_time AND HOUR(start_time) >= 6 AND HOUR(end_time) <= 23)
+Depende de `Coaches` y es consumido fuertemente por `TrainingSessions`.
 
-Tabla: availability_conflicts_log (para auditoría)
-├── conflict_id (PK, INT, AUTO_INCREMENT)
-├── availability_id1 (FK → availabilities.availability_id)
-├── availability_id2 (FK → availabilities.availability_id)
-├── conflict_type (VARCHAR, e.g., 'TIME_OVERLAP')
-├── detected_at (TIMESTAMP)
-└── resolved (BOOLEAN, DEFAULT FALSE)
-```
+##### e) Configuracion tecnica relevante
 
----
+No se identifica configuracion propia.
+
+##### f) Limitaciones de infraestructura
+
+La validacion de solapamiento se realiza en codigo, no como restriccion fisica de base de datos.
 
 #### 2.6.6.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Descripción:**
+**Descripcion:**  
+El diagrama de componentes de **Availabilities** muestra la agenda del coach como un contexto separado, con validaciones de solapamiento y consulta especializada por propietario.
 
-El diagrama de componentes para el Availabilities Context muestra cómo se organiza la gestión de disponibilidad de coaches:
+**Componentes principales:**
+- REST API Component
+- REST Resources and Assemblers Component
+- Domain Services Component
+- Application Command Component
+- Application Query Component
+- Domain Model Component
+- Persistence Component
+- External Context Access Component
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│      Availabilities Container                               │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Availability Management Component                   │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Crear/Actualizar disponibilidades                  │   │
-│  │ • Gestionar duración de slots                        │   │
-│  │ • Cambiar estados (AVAILABLE/RESERVED/UNAVAILABLE)   │   │
-│  │ • Validar rangos horarios                            │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                               │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Conflict Detection Component                        │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Detectar solapes de horarios                       │   │
-│  │ • Validar integridad de slots                        │   │
-│  │ • Sugerir slots alternativos                         │   │
-│  │ • Generar reportes de conflictos                     │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                               │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Schedule Generation Component                       │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Generar agenda semanal/mensual                     │   │
-│  │ • Crear bloques horarios recurrentes                 │   │
-│  │ • Gestionar excepciones y bloques                    │   │
-│  │ • Sincronizar con calendario externo                 │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                               │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Status Management Component                         │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Actualizar estado de slots                         │   │
-│  │ • Sincronizar con reservas (Booking Context)         │   │
-│  │ • Liberar slots cuando se cancela reserva            │   │
-│  │ • Bloquear slots permanentemente                     │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                               │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Notification Component                              │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • Notificar al coach sobre cambios                   │   │
-│  │ • Alertar a usuarios de nuevos slots                 │   │
-│  │ • Enviar recordatorios de sesiones próximas          │   │
-│  │ • Coordinar con Notification & Communication Context │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                               │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Repository & Data Access Component                  │   │
-│  ├──────────────────────────────────────────────────────┤   │
-│  │ • AvailabilityRepository                             │   │
-│  │ • Persistencia en base de datos                      │   │
-│  │ • Caché de disponibilidades frecuentes               │   │
-│  │ • Optimización de queries                            │   │
-│  └──────────────────────────────────────────────────────┘   │
-│                                                               │
-└─────────────────────────────────────────────────────────────┘
-         ↓                           ↓                   ↓
-    ┌────────────┐      ┌────────────────┐      ┌──────────────┐
-    │   SQLite   │      │  Elasticsearch  │      │Google Calendar│
-    │(Availabil) │      │  (Índices)      │      │  (Sync)      │
-    └────────────┘      └────────────────┘      └──────────────┘
-         ↑                                              
-         │ Interacción con Booking Context
-    ┌────────────┐
-    │  Bookings  │
-    └────────────┘
-```
+**Diagrama de componentes propuesto:**
 
-**Relaciones entre Componentes:**
+![Component Diagram Availabilities](assets/refactor/availabilities-componentes.png)
 
-- **Availability Management ↔ Conflict Detection:** Valida y detecta conflictos antes de persistir
-- **Schedule Generation → Availability Management:** Genera slots que luego Availability Management persiste
-- **Status Management ← Booking Context:** Escucha cambios en reservas para actualizar estados
-- **Notification ← Todos:** Se suscribe a eventos de todos los componentes
-- **Repository ← Todos:** Accede a los datos persistidos en SQLite
-- **Elasticsearch:** Mantiene índices para búsquedas rápidas de slots disponibles
-- **Google Calendar:** Sincroniza la agenda del coach para coordinación externa
-
----
+**Relaciones entre componentes:**
+- el controller delega creacion, actualizacion y consultas;
+- el command service valida el coach y el horario;
+- el repository persiste la agenda;
+- `TrainingSessions` consume la disponibilidad como recurso externo.
 
 #### 2.6.6.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 2.6.6.6.1. Bounded Context Domain Layer Class Diagrams
 
-**Diagrama UML de Clases - Availabilities Domain Layer**
+**Descripcion:**  
+El diagrama de clases de **Availabilities** presenta a `Availability` junto con el enum `AvailabilityStatus` y la referencia al `Coach`.
 
-```
-┌─────────────────────────────────────┐
-│      <<Aggregate>>                  │
-│      Availability                   │
-├─────────────────────────────────────┤
-│ - id: int                           │
-│ - date: Date                        │
-│ - startTime: Time                   │
-│ - endTime: Time                     │
-│ - status: AvailabilityStatus        │
-│ - coach: Coach (Reference)          │
-│ - bookingId: int (nullable)         │
-│ - createdAt: DateTime               │
-│ - updatedAt: DateTime               │
-├─────────────────────────────────────┤
-│ + isConflictWith(other): boolean    │
-│ + getSlotDuration(): int            │
-│ + markAsReserved(): void            │
-│ + markAsAvailable(): void           │
-│ + markAsUnavailable(): void         │
-│ + isValidTimeRange(): boolean       │
-│ + canBeModified(): boolean          │
-│ + overlapsWithDate(date): boolean   │
-└────────────────┬────────────────────┘
-                 │
-     ┌───────────┴────────────┐
-     │                        │
-┌────▼──────────────────┐ ┌──▼────────────────────────┐
-│   <<ValueObject>>     │ │  <<ValueObject>>          │
-│  AvailabilityStatus   │ │  TimeRange                │
-├───────────────────────┤ ├───────────────────────────┤
-│ - name: String        │ │ - startTime: Time         │
-│ - value: String       │ │ - endTime: Time           │
-├───────────────────────┤ ├───────────────────────────┤
-│ + isAvailable(): bool │ │ + isValid(): boolean      │
-│ + isReserved(): bool  │ │ + duration(): int         │
-│ + isUnavailable(): bo │ │ + overlaps(range): bool   │
-└───────────────────────┘ │ + contains(time): bool    │
-          ▲                └───────────────────────────┘
-          │                         ▲
-          │                         │
-          │                    uses │
-          │                         │
-          ├─────────────────────────┤
+**Diagrama UML de clases (Domain Layer):**
 
-┌─────────────────────────────────────┐
-│   <<Reference>>                     │
-│   Coach                             │
-├─────────────────────────────────────┤
-│ - id: int                           │
-│ - name: String                      │
-│ - expertise: String                 │
-│ - phone: String                     │
-└─────────────────────────────────────┘
-          ▲
-          │ references
-          │
-    ┌─────┴──────────┐
+![Domain Layer Availabilities](assets/refactor/availabilities-clases.png)
 
-┌──────────────────────────────────────┐
-│   <<Interface>>                      │
-│   AvailabilityRepository             │
-├──────────────────────────────────────┤
-│ + save(a: Availability): void        │
-│ + findById(id: int): Availability    │
-│ + findByCoachId(coachId): List       │
-│ + findByCoachAndDate(c, d): List     │
-│ + findByStatus(status): List         │
-│ + findConflicts(c, d, s, e): List    │
-│ + update(a: Availability): void      │
-│ + delete(id: int): void              │
-└──────────────────────────────────────┘
-           △
-           │ implements
-           │
-    ┌──────┴───────┐
-    │              │
-┌───▼───────────────────────────────┐
-│ AvailabilityRepositoryImpl         │
-├───────────────────────────────────┤
-│ - db: Database                    │
-├───────────────────────────────────┤
-│ + save(a): void                   │
-│ + findById(id): Availability      │
-│ + findByCoachId(cId): List        │
-│ + findByCoachAndDate(c,d): List   │
-│ + update(a): void                 │
-│ + delete(id): void                │
-└───────────────────────────────────┘
+**Relaciones principales del modelo**
+- `Availability` es el aggregate root;
+- `Availability` referencia a `Coach`;
+- `AvailabilityStatus` define el estado operativo de la agenda.
 
-┌────────────────────────────────────────┐
-│   <<Service>>                          │
-│   AvailabilityScheduleService          │
-├────────────────────────────────────────┤
-│ - availabilityRepository               │
-├────────────────────────────────────────┤
-│ + generateWeeklySchedule(): void       │
-│ + checkConflicts(): List               │
-│ + suggestAlternativeSlots(): List      │
-│ + validateAvailabilityRange(): boolean │
-└────────────────────────────────────────┘
-
-┌─────────────────────────────────────┐
-│   <<Service>>                       │
-│   AvailabilityStatusService         │
-├─────────────────────────────────────┤
-│ - availabilityRepository            │
-├─────────────────────────────────────┤
-│ + updateStatusFromBooking(): void   │
-│ + releaseSlot(): void               │
-│ + markPermanentlyUnavailable(): v   │
-│ + syncStatusWithBookings(): void    │
-└─────────────────────────────────────┘
-
-┌────────────────────────────────────────┐
-│   <<Enum>>                             │
-│   AvailabilityStatus                   │
-├────────────────────────────────────────┤
-│ AVAILABLE                              │
-│ RESERVED                               │
-│ UNAVAILABLE                            │
-└────────────────────────────────────────┘
-
-Relaciones:
-- Availability *───────── 1 Coach (references)
-- Availability 1───────── * AvailabilityRepository (persisted by)
-- AvailabilityScheduleService ──────► AvailabilityRepository
-- AvailabilityStatusService ──────► AvailabilityRepository
-- Availability ───────► AvailabilityStatus (has-a)
-- Availability ───────► TimeRange (contains)
-```
-
----
+**Observaciones**
+- el contexto modela correctamente la agenda minima necesaria para sesiones con entrenador.
 
 ##### 2.6.6.6.2. Bounded Context Database Design Diagram
 
-**Entity Relationship Diagram (ERD) - Availabilities**
+**Descripcion**  
+El ERD de **Availabilities** muestra la tabla `availabilities` y su relacion con `coaches`.
 
-```
-┌──────────────────────────────────┐
-│        coaches                    │
-├──────────────────────────────────┤
-│ PK coach_id (INT)                │
-│ name (VARCHAR)                   │
-│ expertise (VARCHAR)              │
-│ phone (VARCHAR)                  │
-└──────────────────────────────────┘
-         ▲
-         │ FK (coach_id)
-         │
-┌────────┴───────────────────────────────────────┐
-│       availabilities                           │
-├────────────────────────────────────────────────┤
-│ PK availability_id (INT, AUTO_INCREMENT)       │
-│ FK coach_id (INT, NOT NULL)                    │
-│ date (DATE, NOT NULL)                          │
-│ start_time (TIME, NOT NULL)                    │
-│ end_time (TIME, NOT NULL)                      │
-│ status (ENUM: AVAILABLE/RESERVED/UNAVAILABLE)  │
-│ FK booking_id (INT, NULLABLE)                  │
-│ created_at (TIMESTAMP)                         │
-│ updated_at (TIMESTAMP)                         │
-│ UNIQUE (coach_id, date, start_time, end_time)  │
-│ INDEX idx_coach_date (coach_id, date)          │
-│ INDEX idx_coach_status (coach_id, status)      │
-│ INDEX idx_date_status (date, status)           │
-│ CONSTRAINT check_time (start_time < end_time)  │
-│ CONSTRAINT check_hours (HOUR >= 6 AND <= 23)   │
-└───────────┬────────────────────────────────────┘
-            │
-            │ FK (booking_id)
-            │
-┌───────────▼────────────────────────┐
-│        bookings                    │
-├────────────────────────────────────┤
-│ PK booking_id (INT)                │
-│ FK user_id (INT)                   │
-│ FK court_id (INT)                  │
-│ start_time (DATETIME)              │
-│ end_time (DATETIME)                │
-│ created_at (TIMESTAMP)             │
-└────────────────────────────────────┘
+**Diagrama de base de datos (ERD)**
 
-┌────────────────────────────────────────┐
-│ availability_conflicts_log (auditoría) │
-├────────────────────────────────────────┤
-│ PK conflict_id (INT)                   │
-│ FK availability_id1 (INT)              │
-│ FK availability_id2 (INT)              │
-│ conflict_type (VARCHAR)                │
-│ detected_at (TIMESTAMP)                │
-│ resolved (BOOLEAN)                     │
-│ FOREIGN KEY (availability_id1) refs    │
-│   availabilities.availability_id       │
-│ FOREIGN KEY (availability_id2) refs    │
-│   availabilities.availability_id       │
-└────────────────────────────────────────┘
+![Database Availabilities](assets/refactor/availabilities-db.png)
 
-Relaciones:
-- coaches (1) ──── (*) availabilities
-- availabilities (*) ──── (1) bookings (reference cuando está RESERVED)
-- availabilities (1) ──── (*) availability_conflicts_log
-```
+**Tablas y atributos**
+
+Tabla `availabilities`
+- `id`
+- `date`
+- `start_time`
+- `end_time`
+- `status`
+- `coach_id`
+- `created_at`
+
+**Constraints**
+- primary key en `id`;
+- foreign key `coach_id -> coaches.id`;
+- `date`, `start_time`, `end_time`, `status`, `coach_id` y `created_at` son obligatorios.
+
+**Relaciones entre tablas**
+- `coaches (1) ---- (*) availabilities`
+
+**Observaciones**
+- el bloqueo de disponibilidad por sesion aceptada se controla a nivel de dominio y aplicacion.
+
+---
 
 ### 2.6.7. Bounded Context: Reviews
 
-El bounded context **Reviews** representa la capacidad del sistema encargada de gestionar, registrar, consultar y mantener reseñas dentro de la plataforma Courtly. Su propósito es permitir que los usuarios funcionales del sistema publiquen valoraciones y comentarios sobre entidades reseñables del ecosistema deportivo. Dentro de este contexto, la entidad principal es `Review`, ya que concentra la información esencial de una reseña y establece la relación entre el usuario que la emite, el contenido registrado y el objetivo reseñado.
+El bounded context **Reviews** representa la publicacion de reseñas legitimas sobre canchas o entrenadores. Su proposito es permitir que un usuario exprese una opinion luego de haber completado una operacion valida del sistema. La entidad principal es `Review`.
 
-Este contexto se relaciona directamente con los bounded contexts **Users**, **Courts** y **Coaches**, debido a que cada reseña pertenece a un `UserProfile` y puede estar dirigida semánticamente a una cancha o a un entrenador a través de `targetType` y `targetId`. De esta manera, Reviews cumple un rol de soporte orientado a confianza, reputación y retroalimentación dentro de Courtly.
+Este contexto se relaciona con **Users**, **Bookings**, **TrainingSessions**, **Courts** y **Coaches**, pues depende de la operacion completada para determinar el objetivo valido de la reseña.
 
 #### 2.6.7.1. Domain Layer
 
-La capa de dominio del bounded context **Reviews** contiene las clases que modelan el núcleo de la gestión de reseñas y las reglas de negocio asociadas a este proceso. A partir del análisis de la arquitectura general del backend, se identifica que el agregado principal del contexto es `Review`, acompañado por comandos, consultas, un value object representado por un enum y servicios de dominio que estructuran la lógica del contexto.
-
 ##### a) Entity / Aggregate Root: `Review`
 
-**Nombre de la clase:** `Review`  
-**Paquete:** `com.upc.matchpoint.reviews.domain.model.aggregates`
-
-**Propósito:**  
-Representa la entidad principal del bounded context Reviews. Modela una reseña emitida por un usuario funcional sobre un objetivo reseñable del sistema y constituye el agregado raíz del contexto.
+**Paquete:** `com.upc.courtly.reviews.domain.model.aggregates`
 
 **Atributos:**
-- `id: Long` → identificador único de la reseña.
-- `score: Integer` → calificación otorgada.
-- `comment: String` → comentario textual de la reseña.
-- `type: String` → clasificación textual adicional de la reseña.
-- `targetId: Long` → identificador del recurso reseñado.
-- `targetType: ReviewTargetType` → tipo del objetivo reseñado.
-- `user: UserProfile` → referencia al perfil de usuario que emite la reseña.
-- `createdAt: LocalDateTime` → fecha de creación automática.
+- `id`
+- `score`
+- `comment`
+- `type`
+- `targetId`
+- `targetType`
+- `bookingId`
+- `trainingSessionId`
+- `user`
+- `createdAt`
 
-**Métodos:**
-- `Review(Integer score, String comment, String type, Long targetId, ReviewTargetType targetType, UserProfile user)` → constructor que inicializa una nueva reseña.
-- `updateReview(Integer score, String comment, String type)` → actualiza la calificación, comentario y tipo.
-- `onCreate()` → método de ciclo de vida que asigna automáticamente la fecha de creación mediante `@PrePersist`.
-
-**Relaciones:**
-- Una reseña pertenece a un solo `UserProfile`.
-- Un usuario puede registrar múltiples reseñas.
-- Una reseña se dirige semánticamente a una `Court` o a un `Coach` usando `targetType` + `targetId`.
-- No existe relación JPA directa con `Court` ni con `Coach`.
+**Metodos:**
+- constructor;
+- `updateReview(...)`
+- `onCreate()`
 
 ##### b) Referencias externas del dominio
 
-Dentro del bounded context Reviews existen referencias a entidades de otros contextos, necesarias para completar la lógica del registro de reseñas.
+**`UserProfile`** desde `Users`  
+Autor de la reseña.
 
-###### `UserProfile`
+**`Booking`** desde `Bookings`  
+Operacion completada para reseña de cancha.
 
-**Bounded context de origen:** `Users`
-
-**Propósito dentro de Reviews:**  
-Representa al usuario funcional que publica la reseña.
-
-**Atributos relevantes utilizados por Reviews:**
-- `id`
-- `name`
+**`TrainingSession`** desde `TrainingSessions`  
+Operacion completada para reseña de coach o cancha.
 
 ##### c) Value Objects
 
-###### `ReviewTargetType`
-
-**Paquete:** `com.upc.matchpoint.reviews.domain.model.valueobjects`
-
-**Propósito:**  
-Enum que encapsula los tipos posibles de destino de una reseña dentro del sistema.
-
-**Valores definidos:**
+**`ReviewTargetType`**
 - `COURT`
 - `COACH`
 
-**Rol dentro del dominio:**  
-Actúa como value object del objetivo reseñado, restringiendo el conjunto de valores válidos que puede tomar una instancia de `Review`.
-
 ##### d) Commands del dominio
 
-Los comandos del contexto Reviews encapsulan la intención de ejecutar operaciones de escritura sobre el agregado `Review`.
+**`CreateReviewCommand`**
+- `score`
+- `comment`
+- `type`
+- `targetId`
+- `targetType`
+- `bookingId`
+- `trainingSessionId`
+- `userId`
 
-###### `CreateReviewCommand`
+**`UpdateReviewCommand`**
+- `reviewId`
+- `score`
+- `comment`
+- `type`
+- `targetId`
+- `targetType`
 
-**Paquete:** `com.upc.matchpoint.reviews.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de crear una nueva reseña.
-
-**Atributos:**
-- `score: Integer`
-- `comment: String`
-- `type: String`
-- `targetId: Long`
-- `targetType: ReviewTargetType`
-- `userId: Long`
-
-###### `UpdateReviewCommand`
-
-**Paquete:** `com.upc.matchpoint.reviews.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de actualizar una reseña existente.
-
-**Atributos:**
-- `reviewId: Long`
-- `score: Integer`
-- `comment: String`
-- `type: String`
-
-###### `DeleteReviewCommand`
-
-**Paquete:** `com.upc.matchpoint.reviews.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de eliminar una reseña.
-
-**Atributos:**
-- `reviewId: Long`
+**`DeleteReviewCommand`**
+- `reviewId`
 
 ##### e) Queries del dominio
 
-El contexto también define objetos de consulta para la recuperación de información.
+**`GetAllReviewsQuery`**
 
-###### `GetAllReviewsQuery`
-
-**Paquete:** `com.upc.matchpoint.reviews.domain.model.queries`
-
-**Propósito:**  
-Representa la intención de obtener todas las reseñas del sistema.
-
-**Atributos:** no contiene atributos.
-
-###### `GetReviewByIdQuery`
-
-**Paquete:** `com.upc.matchpoint.reviews.domain.model.queries`
-
-**Propósito:**  
-Representa la intención de obtener una reseña específica por identificador.
-
-**Atributos:**
-- `reviewId: Long`
+**`GetReviewByIdQuery`**
+- `reviewId`
 
 ##### f) Domain Services
 
-El dominio define interfaces de servicio que abstraen la ejecución de comandos y consultas.
+**`ReviewCommandService`**
+- create
+- update
+- delete
 
-###### `ReviewCommandService`
-
-**Paquete:** `com.upc.matchpoint.reviews.domain.services`
-
-**Propósito:**  
-Define el contrato para ejecutar operaciones de creación, actualización y eliminación sobre reseñas.
-
-**Métodos:**
-- `Optional<Review> handle(CreateReviewCommand command)`
-- `Optional<Review> handle(UpdateReviewCommand command)`
-- `void handle(DeleteReviewCommand command)`
-
-###### `ReviewQueryService`
-
-**Paquete:** `com.upc.matchpoint.reviews.domain.services`
-
-**Propósito:**  
-Define el contrato para ejecutar operaciones de consulta sobre reseñas.
-
-**Métodos:**
-- `List<Review> handle(GetAllReviewsQuery query)`
-- `Optional<Review> handle(GetReviewByIdQuery query)`
+**`ReviewQueryService`**
+- get all
+- get by id
 
 ##### g) Repository
 
-###### `ReviewRepository`
-
-**Paquete:** `com.upc.matchpoint.reviews.infrastructure.persistence.jpa.repositories`
-
-**Propósito dentro del dominio:**  
-Abstraer la persistencia de reseñas, permitiendo operaciones de guardado, consulta y eliminación.
-
-**Operaciones disponibles:**
-- `save(Review)`
-- `findById(Long)`
+**`ReviewRepository`**
+- `save(...)`
+- `findById(...)`
 - `findAll()`
-- `deleteById(Long)`
-- `existsById(Long)`
+- `deleteById(...)`
 
 ##### h) Reglas de negocio identificadas
 
 **Reglas implementadas actualmente:**
-- Una reseña debe estar asociada obligatoriamente a un `UserProfile` válido.
-- Una reseña debe indicar obligatoriamente un `targetId`.
-- Una reseña debe indicar obligatoriamente un `targetType`.
-- La fecha de creación se genera automáticamente.
-- Una reseña puede actualizar `score`, `comment` y `type`.
+- una reseña debe referenciar un booking completado o una training session completada;
+- una reseña derivada de booking solo puede apuntar a la cancha del booking;
+- una reseña de training session solo puede apuntar al coach o a la cancha de esa sesion;
+- el autor debe ser el propietario del booking o el jugador de la training session.
 
-**Reglas de negocio no implementadas aún:**
-- Validación del rango del `score`.
-- Validación de existencia real del `targetId` según `targetType`.
-- Prevención de reseñas duplicadas para un mismo usuario y objetivo.
-- Restricción para reseñar únicamente luego de una reserva o interacción válida.
-- Normalización o validación formal del campo `type`.
-
-En conjunto, la Domain Layer de Reviews se encuentra estructurada de manera clara, aunque todavía presenta oportunidades de mejora importantes en validación semántica y control de integridad del negocio.
+**Observaciones de mejora:**
+- no se identifica una restriccion que impida multiples reseñas del mismo usuario para la misma operacion;
+- el campo `type` se mantiene como string adicional al enum `targetType`.
 
 #### 2.6.7.2. Interface Layer
 
-La Interface Layer del bounded context **Reviews** contiene las clases responsables de exponer las funcionalidades del contexto mediante endpoints REST y de transformar la información entre las estructuras internas del sistema y los recursos consumidos por el frontend.
-
 ##### a) `ReviewsController`
 
-**Paquete:** `com.upc.matchpoint.reviews.interfaces.rest`
-
-**Propósito:**  
-Exponer los endpoints HTTP para la gestión de reseñas. Actúa como punto de entrada del bounded context desde el cliente o cualquier consumidor externo.
-
-**Dependencias:**
-- `ReviewCommandService`
-- `ReviewQueryService`
-
 **Endpoints expuestos:**
-- `POST /api/v1/reviews` → crear reseña
-- `GET /api/v1/reviews` → obtener todas las reseñas
-- `GET /api/v1/reviews/{id}` → obtener reseña por id
-- `PUT /api/v1/reviews/{id}` → actualizar reseña
-- `DELETE /api/v1/reviews/{id}` → eliminar reseña
+- `POST /api/v1/reviews`
+- `GET /api/v1/reviews`
+- `GET /api/v1/reviews/{id}`
+- `PUT /api/v1/reviews/{id}`
+- `DELETE /api/v1/reviews/{id}`
 
 ##### b) Resources / DTOs
 
-###### `ReviewResource`
-
-**Paquete:** `com.upc.matchpoint.reviews.interfaces.rest.resources`
-
-**Propósito:**  
-Representar la respuesta de una reseña hacia el frontend.
-
-**Atributos:**
+**`ReviewResource`**
 - `id`
 - `score`
 - `comment`
 - `type`
 - `targetId`
 - `targetType`
+- `bookingId`
+- `trainingSessionId`
 - `createdAt`
-- `user: UserSummaryResource`
+- `user`
 
-**Estructuras internas resumidas:**
-- `UserSummaryResource(Long id, String name)`
-
-###### `CreateReviewResource`
-
-**Propósito:**  
-Representar los datos de entrada requeridos para crear una nueva reseña.
-
-**Atributos:**
+**`CreateReviewResource`**
 - `score`
 - `comment`
 - `type`
 - `targetId`
 - `targetType`
+- `bookingId`
+- `trainingSessionId`
 - `userId`
 
-###### `UpdateReviewResource`
-
-**Propósito:**  
-Representar los datos de entrada necesarios para actualizar una reseña existente.
-
-**Atributos:**
+**`UpdateReviewResource`**
 - `score`
 - `comment`
 - `type`
+- `targetId`
+- `targetType`
 
 ##### c) Assemblers
 
-###### `ReviewResourceFromEntityAssembler`
+**`ReviewResourceFromEntityAssembler`**
 
-**Paquete:** `com.upc.matchpoint.reviews.interfaces.rest.transform`
+**`CreateReviewCommandFromResourceAssembler`**
 
-**Propósito:**  
-Transformar una entidad `Review` del dominio en un `ReviewResource` apto para ser enviado al frontend. Además, resume la relación con `UserProfile` mostrando únicamente `id` y `name`.
-
-###### `CreateReviewCommandFromResourceAssembler`
-
-**Propósito:**  
-Transformar un `CreateReviewResource` en un `CreateReviewCommand`, convirtiendo además el `targetType` desde string hacia el enum `ReviewTargetType` si corresponde.
-
-###### `UpdateReviewCommandFromResourceAssembler`
-
-**Propósito:**  
-Transformar un `UpdateReviewResource`, junto con el identificador de la reseña, en un `UpdateReviewCommand`.
+**`UpdateReviewCommandFromResourceAssembler`**
 
 ##### d) Responsabilidad de la capa de interfaz
 
-La responsabilidad principal de esta capa es:
-- recibir solicitudes del cliente,
-- convertir recursos de entrada en comandos o consultas,
-- delegar la ejecución a la capa de aplicación,
-- y transformar los resultados en recursos de salida adecuados para el frontend.
+Expone la lectura y escritura de reseñas, delegando las validaciones de legitimidad a la capa de aplicacion.
 
 #### 2.6.7.3. Application Layer
 
-La Application Layer del bounded context **Reviews** coordina los flujos de proceso del negocio. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y con la infraestructura de persistencia.
+##### a) Command Services / Command Handlers
 
-Las capacidades principales del contexto son:
-- crear una reseña,
-- actualizar una reseña,
-- eliminar una reseña,
-- obtener una reseña por id,
-- obtener todas las reseñas.
-
-##### a) Command Handlers / Command Services
-
-###### `ReviewCommandServiceImpl`
-
-**Paquete:** `com.upc.matchpoint.reviews.application.internal.commandservices`
-
-**Propósito:**  
-Implementar el contrato `ReviewCommandService` y ejecutar los casos de uso de escritura del contexto Reviews.
+**`ReviewCommandServiceImpl`**
 
 **Dependencias:**
 - `ReviewRepository`
 - `UserProfileRepository`
+- `BookingRepository`
+- `TrainingSessionRepository`
 
-**Operaciones que maneja:**
+##### b) Query Services / Query Handlers
 
-**`handle(CreateReviewCommand command)`**
-- valida que el usuario exista,
-- crea una nueva entidad `Review`,
-- persiste la reseña en base de datos,
-- retorna la reseña creada.
-
-**`handle(UpdateReviewCommand command)`**
-- busca la reseña por id,
-- actualiza `score`, `comment` y `type`,
-- guarda el cambio,
-- retorna la reseña actualizada si existe.
-
-**`handle(DeleteReviewCommand command)`**
-- verifica si la reseña existe,
-- la elimina por identificador,
-- lanza excepción si no existe.
-
-##### b) Query Handlers / Query Services
-
-###### `ReviewQueryServiceImpl`
-
-**Paquete:** `com.upc.matchpoint.reviews.application.internal.queryservices`
-
-**Propósito:**  
-Implementar el contrato `ReviewQueryService` y ejecutar los casos de uso de lectura del contexto Reviews.
-
-**Dependencia:**
-- `ReviewRepository`
-
-**Operaciones que maneja:**
-
-**`handle(GetAllReviewsQuery query)`**
-- recupera todas las reseñas del sistema mediante `findAll()`,
-- devuelve una lista de entidades `Review`.
-
-**`handle(GetReviewByIdQuery query)`**
-- busca una reseña específica por su id,
-- devuelve un `Optional<Review>`.
+**`ReviewQueryServiceImpl`**
+- lista y detalle.
 
 ##### c) Flujos principales del negocio
 
-###### Flujo de creación de reseña
-1. El frontend envía un `CreateReviewResource`.
-2. La capa de interfaz lo transforma a `CreateReviewCommand`.
-3. `ReviewCommandServiceImpl` valida la existencia del usuario funcional.
-4. Se construye una instancia de `Review`.
-5. La reseña se persiste mediante `ReviewRepository`.
-6. El resultado se transforma en `ReviewResource` y se retorna al cliente.
+**Flujo de reseña de cancha desde booking**
+1. Se valida el booking.
+2. El booking debe estar `COMPLETED`.
+3. El autor debe coincidir con el usuario del booking.
+4. El `targetType` debe ser `COURT` y el `targetId` debe coincidir con la cancha.
 
-###### Flujo de actualización
-1. El frontend envía un `UpdateReviewResource`.
-2. Se transforma en `UpdateReviewCommand`.
-3. `ReviewCommandServiceImpl` recupera la reseña existente.
-4. Se actualizan los datos editables.
-5. Se guarda la modificación.
-6. Se retorna la reseña actualizada.
+**Flujo de reseña desde training session**
+1. Se valida la sesion.
+2. Debe estar `COMPLETED`.
+3. El jugador debe ser el autor.
+4. El target debe ser el coach o la cancha de la sesion.
 
-###### Flujo de consulta
-1. El frontend solicita una o varias reseñas.
-2. El controlador construye el objeto de consulta correspondiente.
-3. `ReviewQueryServiceImpl` recupera la información desde `ReviewRepository`.
-4. Los resultados se transforman a `ReviewResource`.
-5. Se retorna la respuesta al cliente.
+##### d) Observaciones de la capa de aplicacion
 
-###### Flujo de eliminación
-1. El frontend solicita eliminar una reseña.
-2. Se construye un `DeleteReviewCommand`.
-3. `ReviewCommandServiceImpl` verifica la existencia de la reseña.
-4. Se elimina la reseña del repositorio.
-5. Se devuelve la confirmación de eliminación.
-
-##### d) Observaciones de la capa de aplicación
-
-Aunque esta capa implementa correctamente los casos de uso CRUD del bounded context, aún presenta limitaciones funcionales relevantes:
-- no valida la existencia real del objetivo reseñado (`Court` o `Coach`),
-- no restringe el rango del score,
-- no previene reseñas duplicadas,
-- no verifica si el usuario tuvo una interacción previa válida con el objetivo,
-- y no incorpora paginación ni filtros especializados.
-
-Además, no se identifican **Event Handlers** implementados en el contexto Reviews. Todas las operaciones se ejecutan únicamente mediante comandos HTTP.
+La capa de aplicacion contiene la parte mas relevante del contexto, ya que verifica la legitimidad real de la reseña.
 
 #### 2.6.7.4. Infrastructure Layer
 
-La Infrastructure Layer del bounded context **Reviews** contiene los componentes encargados del acceso a base de datos y de la persistencia de las reseñas. En esta capa se materializa el almacenamiento del agregado `Review` y se soportan las operaciones que ejecuta la aplicación.
+##### a) Repositorios de persistencia
 
-##### a) Repositorio de persistencia
+`ReviewRepository` extiende `JpaRepository<Review, Long>`.
 
-###### `ReviewRepository`
+##### b) Persistencia de entidades
 
-**Paquete:** `com.upc.matchpoint.reviews.infrastructure.persistence.jpa.repositories`
+`Review` se persiste en la tabla `reviews` y referencia al autor mediante `user_id`.
 
-**Propósito:**  
-Gestionar la persistencia y recuperación de reseñas utilizando Spring Data JPA. La implementación concreta es generada automáticamente por el framework al extender `JpaRepository<Review, Long>`.
-
-**Operaciones disponibles:**
-- `save`
-- `findById`
-- `findAll`
-- `deleteById`
-- `existsById`
-
-**Observación:**  
-No se identifican métodos personalizados de consulta por usuario, `targetType`, `targetId` o score.
-
-##### b) Persistencia de la entidad `Review`
-
-La entidad `Review` está mapeada como una entidad JPA con las siguientes características:
-- `@Entity`
-- `@Table(name = "reviews")`
-- `@Id`
-- `@GeneratedValue(strategy = GenerationType.IDENTITY)`
-- `@Enumerated(EnumType.STRING)` para `targetType`
-- relación `@ManyToOne(fetch = FetchType.LAZY)` con `UserProfile`
-- método `@PrePersist` para inicializar `createdAt` automáticamente.
-
-##### c) Diseño de persistencia
+##### c) Diseno de persistencia
 
 **Tabla principal:** `reviews`
 
-**Columnas identificadas:**
+**Columnas:**
 - `id`
 - `score`
 - `comment`
 - `type`
 - `target_id`
 - `target_type`
+- `booking_id`
+- `training_session_id`
 - `user_id`
 - `created_at`
 
-**Restricciones y relaciones:**
-- `id` → Primary Key
-- `user_id` → Foreign Key hacia `user_profiles.id`
-- `target_id`, `target_type`, `user_id`, `created_at` → obligatorios
-- `score`, `comment`, `type` → persistidos como atributos del registro de reseña.
+##### d) Integracion con otros bounded contexts
 
-##### d) Integración con otros bounded contexts
+Depende de `Users`, `Bookings`, `TrainingSessions`, `Courts` y `Coaches`.
 
-La infraestructura del contexto Reviews depende de:
-- `UserProfileRepository` del contexto **Users**, para validar que el usuario exista antes de registrar una reseña.
-- `Court` y `Coach` de forma semántica, a través de `targetType` y `targetId`, aunque sin foreign key directa.
+##### e) Configuracion tecnica relevante
 
-##### e) Configuración técnica relevante
+No se identifica configuracion propia.
 
-El proyecto utiliza configuración JPA centralizada y persistencia relacional compartida. Además, los resources REST resumen la relación con el usuario devolviendo solo `id` y `name`, lo que depende del uso actual de `spring.jpa.open-in-view=true`.
+##### f) Limitaciones de infraestructura
 
-##### f) Limitaciones de la capa de infraestructura
-
-La infraestructura actual cumple con la persistencia básica del contexto, pero aún no incorpora:
-- validación referencial estricta hacia canchas o coaches,
-- índices especializados por objetivo o usuario,
-- consultas optimizadas,
-- ni restricciones para prevenir duplicidad de reseñas.
-
-En consecuencia, la Infrastructure Layer del bounded context Reviews es funcional para el escenario actual, pero todavía puede evolucionar para soportar una gestión más robusta de reputación y retroalimentación.
+No se identifica un indice funcional para evitar duplicidad de reseñas por operacion y usuario.
 
 #### 2.6.7.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Descripción:**
-
-El Component Diagram del bounded context **Reviews** representa la descomposición del contenedor backend encargado de gestionar reseñas. A nivel arquitectónico, este container está conformado por componentes con responsabilidades bien definidas dentro del sistema: recepción de solicitudes REST, transformación de datos entre capas, ejecución de comandos y consultas, acceso a persistencia y validación de referencias provenientes del bounded context **Users**.
+**Descripcion:**  
+El diagrama de componentes de **Reviews** muestra el controller REST, la transformacion de resources, los servicios de aplicacion y la validacion contra bookings o training sessions completadas.
 
 **Componentes principales:**
-
-- **Reviews REST API Component**  
-  Expone los endpoints HTTP del bounded context mediante `ReviewsController`.
-
-- **Review Transformation Component**  
-  Agrupa los assemblers y resources que permiten transformar datos entre la capa de interfaz y la capa de aplicación.
-
-- **Review Command Processing Component**  
-  Implementado por `ReviewCommandServiceImpl`, coordina las operaciones de escritura del contexto.
-
-- **Review Query Processing Component**  
-  Implementado por `ReviewQueryServiceImpl`, gestiona las operaciones de lectura del contexto.
-
-- **Review Domain Component**  
-  Representa el núcleo del dominio mediante el agregado `Review`, junto con sus comandos, queries y el value object `ReviewTargetType`.
-
-- **Review Persistence Component**  
-  Encapsula el acceso a persistencia a través de `ReviewRepository`.
-
-- **External Context Access Component**  
-  Representa la dependencia del bounded context Reviews hacia `UserProfileRepository` del contexto **Users**.
+- REST API Component
+- REST Resources and Assemblers Component
+- Domain Services Component
+- Application Command Component
+- Application Query Component
+- Domain Model Component
+- Persistence Component
+- External Context Access Component
 
 **Diagrama de componentes propuesto:**
 
-<img src="assets/chapter2/reviews_Diagrama de componentes.jpeg" alt="Descripción de la imagen" width="700">
+![Component Diagram Reviews](assets/refactor/reviews-componentes.png)
+
+**Relaciones entre componentes:**
+- el command service valida autor y operacion;
+- el repository persiste la reseña;
+- el acceso externo resuelve targets validos.
 
 #### 2.6.7.6. Bounded Context Software Architecture Code Level Diagrams
 
-En esta sección se presentan los diagramas a nivel de código del bounded context Reviews, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
-
-Se incluyen dos representaciones principales:
-
-- El Class Diagram del Domain Layer, que describe la estructura del modelo de dominio.
-- El Database Design Diagram, que representa la persistencia de datos en la base de datos relacional.
-
 ##### 2.6.7.6.1. Bounded Context Domain Layer Class Diagrams
 
-**Descripción**
+**Descripcion:**  
+El diagrama de clases de **Reviews** muestra `Review` como agregado raiz y el enum `ReviewTargetType`.
 
-El diagrama de clases del Domain Layer del bounded context Reviews presenta el agregado principal Review, junto con su relación hacia la entidad externa UserProfile, así como las interfaces de servicios y los objetos que representan comandos y consultas.
+**Diagrama UML de clases (Domain Layer):**
 
-**Diagrama UML de clases (Domain Layer)**
+![Domain Layer Reviews](assets/refactor/reviews-clases.png)
 
-<img src="assets/chapter2/reviews_Diagrama UML de clases (Domain Layer).jpeg" alt="Descripción de la imagen" width="700">
+**Relaciones principales del modelo**
+- `Review` es el aggregate root;
+- `Review` utiliza `ReviewTargetType`;
+- la reseña referencia al autor mediante `UserProfile`.
 
+**Observaciones**
+- el dominio distingue entre objetivo de cancha y de coach, pero conserva un campo `type` adicional en string.
 
 ##### 2.6.7.6.2. Bounded Context Database Design Diagram
 
-**Descripción**
-
-El diagrama de base de datos del bounded context Reviews representa la estructura relacional utilizada para persistir la información de reseñas. La tabla principal es reviews, la cual mantiene una relación con la tabla user_profiles.
+**Descripcion**  
+El ERD de **Reviews** representa la tabla `reviews` y su vinculo con `user_profiles`.
 
 **Diagrama de base de datos (ERD)**
 
-<img src="assets/chapter2/reviews_Diagrama de base de datos (ERD).jpeg" alt="Descripción de la imagen" width="700">
+![Database Reviews](assets/refactor/reviews-db.png)
 
 **Tablas y atributos**
 
 Tabla `reviews`
-- `id`: identificador único de la reseña (PK)
-- `score`: calificación numérica
-- `comment`: comentario textual
-- `type`: clasificación textual adicional
-- `target_id`: identificador del recurso reseñado
-- `target_type`: tipo de objetivo reseñado
-- `user_id`: referencia al usuario funcional (FK)
-- `created_at`: fecha de creación
-
-Tabla `user_profiles`
 - `id`
-- `name`
-- `email`
-- `phone`
+- `score`
+- `comment`
+- `type`
+- `target_id`
+- `target_type`
+- `booking_id`
+- `training_session_id`
+- `user_id`
+- `created_at`
 
-Constraints
-- PRIMARY KEY (`id`) en reviews
-- FOREIGN KEY (`user_id`) → user_profiles(`id`)
-- Restricciones obligatorias en `target_id`, `target_type`, `user_id`, `created_at`
-Relaciones entre tablas
-`user_profiles (1)` ──── `(*) reviews`
+**Constraints**
+- primary key en `id`;
+- foreign key `user_id -> user_profiles.id`;
+- `score`, `comment`, `target_id`, `target_type`, `user_id` y `created_at` son obligatorios.
+
+**Relaciones entre tablas**
+- `user_profiles (1) ---- (*) reviews`
 
 **Observaciones**
-
-El diseño de persistencia de Reviews es consistente con el modelo de dominio y con la necesidad de asociar reseñas a usuarios funcionales. Sin embargo, actualmente no se implementan restricciones avanzadas como control de duplicidad, validación del objetivo reseñado o restricciones de rango para el score.
-
-### 2.6.8. Bounded Context: Analytics
-
-El bounded context **Analytics** representa la capacidad del sistema encargada de gestionar, registrar y consultar métricas de desempeño asociadas a entrenadores. Su propósito es permitir el almacenamiento y administración de indicadores cuantitativos vinculados al rendimiento de un coach dentro de la plataforma. Dentro de este contexto, la entidad principal es `Metric`, ya que concentra la información esencial de una métrica y establece la relación entre el valor medido, su tipo, su período y el entrenador asociado.
-
-Este contexto se relaciona directamente con el bounded context **Coaches**, debido a que cada métrica depende de un `Coach`. De esta manera, Analytics cumple un rol de soporte especializado, orientado a la observación y registro del desempeño de entrenadores dentro de Courtly.
+- `booking_id` y `training_session_id` se usan como referencias logicas opcionales de la operacion origen.
 
 ---
 
-#### 2.6.8.1. Domain Layer
+### 2.6.8. Bounded Context: Analytics
 
-La capa de dominio del bounded context **Analytics** contiene las clases que modelan el núcleo de la gestión de métricas y las reglas de negocio asociadas a este proceso. A partir del análisis del código, se identifica que el agregado principal del contexto es `Metric`, acompañado por comandos, consultas, un value object representado por un enum y servicios de dominio que estructuran la lógica del contexto.
+El bounded context **Analytics** representa la capacidad de exponer metricas del desempeno del entrenador. Su proposito es construir una vista de analitica a partir de informacion persistida y, sobre todo, de proyecciones derivadas desde otros bounded contexts operativos. La entidad principal persistida es `Metric`, aunque la logica principal del backend actual se concentra en la composicion de metricas por consulta.
+
+Este contexto se relaciona con **Coaches**, **TrainingSessions**, **Payments** y **Reviews**.
+
+#### 2.6.8.1. Domain Layer
 
 ##### a) Entity / Aggregate Root: `Metric`
 
-**Nombre de la clase:** `Metric`  
-**Paquete:** `com.upc.matchpoint.analytics.domain.model.aggregates`
-
-**Propósito:**  
-Representa la entidad principal del bounded context Analytics. Modela una métrica de desempeño asociada a un entrenador y constituye el agregado raíz del contexto.
+**Paquete:** `com.upc.courtly.analytics.domain.model.aggregates`
 
 **Atributos:**
-- `id: Long` → identificador único de la métrica.
-- `metricType: MetricType` → tipo de métrica registrada.
-- `value: BigDecimal` → valor numérico de la métrica.
-- `period: String` → período de la métrica.
-- `coach: Coach` → referencia al entrenador asociado.
-- `createdAt: LocalDateTime` → fecha de creación automática de la métrica.
+- `id`
+- `metricType`
+- `value`
+- `period`
+- `coach`
+- `createdAt`
 
-**Métodos:**
-- `Metric(MetricType metricType, BigDecimal value, String period, Coach coach)` → constructor que inicializa una nueva métrica.
-- `updateMetric(MetricType metricType, BigDecimal value, String period)` → actualiza el tipo, valor y período de la métrica.
-- `onCreate()` → método de ciclo de vida que asigna automáticamente la fecha de creación mediante `@PrePersist`.
-
-**Relaciones:**
-- Una métrica pertenece a un solo `Coach`.
-- Un coach puede tener múltiples métricas registradas a lo largo del tiempo.
+**Metodos:**
+- constructor;
+- `updateMetric(...)`
+- `setId(...)`
+- `setCreatedAt(...)`
+- `onCreate()`
 
 ##### b) Referencias externas del dominio
 
-Dentro del bounded context Analytics existen referencias a entidades de otros contextos, necesarias para completar la lógica del registro de métricas.
-
-###### `Coach`
-**Bounded context de origen:** `Coaches`  
-**Propósito dentro de Analytics:**  
-Representa al entrenador cuyo desempeño está siendo medido por la métrica.
-
-**Atributos relevantes utilizados por Analytics:**
-- `id`
-- `name`
+**`Coach`** desde `Coaches`  
+Representa al entrenador propietario de la metrica.
 
 ##### c) Value Objects
 
-###### `MetricType`
-**Paquete:** `com.upc.matchpoint.analytics.domain.model.valueobjects`  
-
-**Propósito:**  
-Enum que encapsula los tipos posibles de métricas dentro del sistema.
-
-**Valores definidos:**
+**`MetricType`**
 - `SESSIONS_COMPLETED`
 - `BOOKINGS_RECEIVED`
 - `REVENUE_TOTAL`
 - `AVERAGE_RATING`
 
-**Rol dentro del dominio:**  
-Actúa como value object del tipo de métrica, permitiendo restringir el conjunto de valores válidos que puede tomar una instancia de `Metric`.
-
 ##### d) Commands del dominio
 
-Los comandos del contexto Analytics encapsulan la intención de ejecutar operaciones de escritura sobre el agregado `Metric`.
-
-###### `CreateMetricCommand`
-**Paquete:** `com.upc.matchpoint.analytics.domain.model.commands`  
-**Propósito:**  
-Representa la intención de crear una nueva métrica.
-
-**Atributos:**
-- `metricType: MetricType`
-- `value: BigDecimal`
-- `period: String`
-- `coachId: Long`
-
-###### `UpdateMetricCommand`
-**Paquete:** `com.upc.matchpoint.analytics.domain.model.commands`  
-**Propósito:**  
-Representa la intención de actualizar una métrica existente.
-
-**Atributos:**
-- `metricId: Long`
-- `metricType: MetricType`
-- `value: BigDecimal`
-- `period: String`
-
-###### `DeleteMetricCommand`
-**Paquete:** `com.upc.matchpoint.analytics.domain.model.commands`  
-**Propósito:**  
-Representa la intención de eliminar una métrica.
-
-**Atributos:**
-- `metricId: Long`
-
-##### e) Queries del dominio
-
-El contexto también define objetos de consulta para la recuperación de información.
-
-###### `GetAllMetricsQuery`
-**Paquete:** `com.upc.matchpoint.analytics.domain.model.queries`  
-**Propósito:**  
-Representa la intención de obtener todas las métricas del sistema.  
-**Atributos:** no contiene atributos.
-
-###### `GetMetricByIdQuery`
-**Paquete:** `com.upc.matchpoint.analytics.domain.model.queries`  
-**Propósito:**  
-Representa la intención de obtener una métrica específica por identificador.
-
-**Atributos:**
-- `metricId: Long`
-
-##### f) Domain Services
-
-El dominio define interfaces de servicio que abstraen la ejecución de comandos y consultas.
-
-###### `MetricCommandService`
-**Paquete:** `com.upc.matchpoint.analytics.domain.services`  
-**Propósito:**  
-Define el contrato para ejecutar operaciones de creación, actualización y eliminación sobre métricas.
-
-**Métodos:**
-- `Optional<Metric> handle(CreateMetricCommand command)`
-- `Optional<Metric> handle(UpdateMetricCommand command)`
-- `void handle(DeleteMetricCommand command)`
-
-###### `MetricQueryService`
-**Paquete:** `com.upc.matchpoint.analytics.domain.services`  
-**Propósito:**  
-Define el contrato para ejecutar operaciones de consulta sobre métricas.
-
-**Métodos:**
-- `List<Metric> handle(GetAllMetricsQuery query)`
-- `Optional<Metric> handle(GetMetricByIdQuery query)`
-
-##### g) Repository
-
-###### `MetricRepository`
-**Paquete:** `com.upc.matchpoint.analytics.infrastructure.persistence.jpa.repositories`  
-**Propósito dentro del dominio:**  
-Abstraer la persistencia de métricas, permitiendo operaciones de guardado, consulta y eliminación.
-
-**Operaciones disponibles:**
-- `save(Metric)`
-- `findById(Long)`
-- `findAll()`
-- `deleteById(Long)`
-- `existsById(Long)`
-
-##### h) Reglas de negocio identificadas
-
-**Reglas implementadas actualmente:**
-- Una métrica debe estar asociada obligatoriamente a un coach válido.
-- Una métrica debe tener obligatoriamente un tipo (`MetricType`).
-- Una métrica debe tener obligatoriamente un valor numérico.
-- Una métrica debe tener obligatoriamente un período.
-- La fecha de creación se genera automáticamente.
-- Una métrica puede actualizar tipo, valor y período, pero no el coach asociado.
-
-**Reglas de negocio no implementadas aún:**
-- Validación de que el valor sea positivo.
-- Validación del formato o validez del período.
-- Validación de unicidad para evitar duplicados del mismo tipo para el mismo coach y período.
-- Cálculo automático de métricas desde otros bounded contexts.
-- Auditoría de cambios o historial.
-- Alertas por umbrales o comparaciones temporales.
-
-En conjunto, la Domain Layer de Analytics está bien estructurada desde el punto de vista de modelado básico, aunque todavía presenta oportunidades de mejora en la incorporación de reglas más ricas y automatización de cálculo.
-
----
-
-#### 2.6.8.2. Interface Layer
-
-La Interface Layer del bounded context **Analytics** contiene las clases responsables de exponer las funcionalidades del contexto mediante endpoints REST y de transformar la información entre las estructuras internas del sistema y los recursos consumidos por el frontend.
-
-##### a) `AnalyticsController`
-
-**Paquete:** `com.upc.matchpoint.analytics.interfaces.rest`
-
-**Propósito:**  
-Exponer los endpoints HTTP para la gestión de métricas. Actúa como punto de entrada del bounded context desde el cliente o cualquier consumidor externo.
-
-**Dependencias:**
-- `MetricCommandService`
-- `MetricQueryService`
-
-**Endpoints expuestos:**
-- `POST /api/v1/analytics` → crear métrica
-- `GET /api/v1/analytics` → obtener todas las métricas
-- `GET /api/v1/analytics/{id}` → obtener métrica por id
-- `PUT /api/v1/analytics/{id}` → actualizar métrica
-- `DELETE /api/v1/analytics/{id}` → eliminar métrica
-
-##### b) Resources / DTOs
-
-###### `MetricResource`
-**Paquete:** `com.upc.matchpoint.analytics.interfaces.rest.resources`
-
-**Propósito:**  
-Representar la respuesta de una métrica hacia el frontend.
-
-**Atributos:**
-- `id`
-- `metricType`
-- `value`
-- `period`
-- `createdAt`
-- `coach: CoachSummaryResource`
-
-**Estructuras internas resumidas:**
-- `CoachSummaryResource(Long id, String name)`
-
-###### `CreateMetricResource`
-**Propósito:**  
-Representar los datos de entrada requeridos para crear una nueva métrica.
-
-**Atributos:**
+**`CreateMetricCommand`**
 - `metricType`
 - `value`
 - `period`
 - `coachId`
 
-###### `UpdateMetricResource`
-**Propósito:**  
-Representar los datos de entrada necesarios para actualizar una métrica existente.
+**`UpdateMetricCommand`**
+- `metricId`
+- `metricType`
+- `value`
+- `period`
 
-**Atributos:**
+**`DeleteMetricCommand`**
+- `metricId`
+
+##### e) Queries del dominio
+
+**`GetAllMetricsQuery`**
+
+**`GetMetricByIdQuery`**
+- `metricId`
+
+##### f) Domain Services
+
+**`MetricCommandService`**
+- create
+- update
+- delete
+
+**`MetricQueryService`**
+- get all
+- get by id
+- obtener metricas del coach
+
+##### g) Repository
+
+**`MetricRepository`**
+- `save(...)`
+- `findById(...)`
+- `findAll()`
+- `deleteById(...)`
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- la persistencia CRUD valida la existencia del coach;
+- la consulta `/me` construye metricas derivadas desde training sessions, pagos y reviews;
+- las metricas sinteticas usan ids temporales `1..4` para la respuesta.
+
+**Observaciones de mejora:**
+- el contexto mezcla soporte CRUD heredado y proyeccion derivada;
+- no se identifica persistencia consolidada obligatoria para las metricas calculadas en consulta.
+
+#### 2.6.8.2. Interface Layer
+
+##### a) `AnalyticsController`
+
+**Endpoints expuestos actualmente:**
+- `GET /api/v1/analytics`
+- `GET /api/v1/analytics/me`
+- `GET /api/v1/analytics/{id}`
+
+**Endpoints presentes pero bloqueados funcionalmente:**
+- `POST /api/v1/analytics`
+- `PUT /api/v1/analytics/{id}`
+- `DELETE /api/v1/analytics/{id}`
+
+##### b) Resources / DTOs
+
+**`MetricResource`**
+- `id`
+- `metricType`
+- `value`
+- `period`
+- `createdAt`
+- `coach`
+
+**`CreateMetricResource`**
+- `metricType`
+- `value`
+- `period`
+- `coachId`
+
+**`UpdateMetricResource`**
 - `metricType`
 - `value`
 - `period`
 
 ##### c) Assemblers
 
-###### `MetricResourceFromEntityAssembler`
-**Paquete:** `com.upc.matchpoint.analytics.interfaces.rest.transform`  
-**Propósito:**  
-Transformar una entidad `Metric` del dominio en un `MetricResource` apto para ser enviado al frontend. Además, resume la relación con `Coach` mostrando únicamente `id` y `name`.
+**`MetricResourceFromEntityAssembler`**
 
-###### `CreateMetricCommandFromResourceAssembler`
-**Propósito:**  
-Transformar un `CreateMetricResource` en un `CreateMetricCommand`, convirtiendo además el `metricType` desde string hacia el enum `MetricType`.
+**`CreateMetricCommandFromResourceAssembler`**
 
-###### `UpdateMetricCommandFromResourceAssembler`
-**Propósito:**  
-Transformar un `UpdateMetricResource`, junto con el identificador de la métrica, en un `UpdateMetricCommand`.
+**`UpdateMetricCommandFromResourceAssembler`**
 
 ##### d) Responsabilidad de la capa de interfaz
 
-La responsabilidad principal de esta capa es:
-- recibir solicitudes del cliente,
-- convertir recursos de entrada en comandos o consultas,
-- delegar la ejecución a la capa de aplicación,
-- y transformar los resultados en recursos de salida adecuados para el frontend.
-
----
+La capa de interfaz expone el dashboard de metricas, especialmente la vista `/me` para el coach autenticado.
 
 #### 2.6.8.3. Application Layer
 
-La Application Layer del bounded context **Analytics** coordina los flujos de proceso del negocio. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y con la infraestructura de persistencia.
+##### a) Command Services / Command Handlers
 
-Las capacidades principales del contexto son:
-- crear una métrica,
-- actualizar una métrica,
-- eliminar una métrica,
-- obtener una métrica por id,
-- obtener todas las métricas.
-
-##### a) Command Handlers / Command Services
-
-###### `MetricCommandServiceImpl`
-**Paquete:** `com.upc.matchpoint.analytics.application.internal.commandservices`  
-**Propósito:**  
-Implementar el contrato `MetricCommandService` y ejecutar los casos de uso de escritura del contexto Analytics.
+**`MetricCommandServiceImpl`**
 
 **Dependencias:**
 - `MetricRepository`
 - `CoachRepository`
 
-**Operaciones que maneja:**
+##### b) Query Services / Query Handlers
 
-**`handle(CreateMetricCommand command)`**
-- valida que el coach exista,
-- crea una nueva entidad `Metric`,
-- persiste la métrica en base de datos,
-- retorna la métrica creada.
+**`MetricQueryServiceImpl`**
 
-**`handle(UpdateMetricCommand command)`**
-- busca la métrica por id,
-- actualiza `metricType`, `value` y `period`,
-- guarda el cambio,
-- retorna la métrica actualizada si existe.
-
-**`handle(DeleteMetricCommand command)`**
-- verifica si la métrica existe,
-- la elimina por identificador,
-- lanza excepción si no existe.
-
-##### b) Query Handlers / Query Services
-
-###### `MetricQueryServiceImpl`
-**Paquete:** `com.upc.matchpoint.analytics.application.internal.queryservices`  
-**Propósito:**  
-Implementar el contrato `MetricQueryService` y ejecutar los casos de uso de lectura del contexto Analytics.
-
-**Dependencia:**
+**Dependencias:**
 - `MetricRepository`
-
-**Operaciones que maneja:**
-
-**`handle(GetAllMetricsQuery query)`**
-- recupera todas las métricas del sistema mediante `findAll()`,
-- devuelve una lista de entidades `Metric`.
-
-**`handle(GetMetricByIdQuery query)`**
-- busca una métrica específica por su id,
-- devuelve un `Optional<Metric>`.
+- `CoachRepository`
+- `TrainingSessionRepository`
+- `PaymentRepository`
+- `ReviewRepository`
+- `AuthenticatedContextFacade`
 
 ##### c) Flujos principales del negocio
 
-###### Flujo de creación de métrica
-1. El frontend envía un `CreateMetricResource`.
-2. La capa de interfaz lo transforma a `CreateMetricCommand`.
-3. `MetricCommandServiceImpl` valida la existencia del coach.
-4. Se construye una instancia de `Metric`.
-5. La métrica se persiste mediante `MetricRepository`.
-6. El resultado se transforma en `MetricResource` y se retorna al cliente.
+**Flujo de metricas del coach autenticado**
+1. Se identifica el coach del usuario autenticado.
+2. Se recuperan sesiones, pagos y reseñas relacionadas.
+3. Se calculan:
+   - sesiones completadas;
+   - solicitudes recibidas;
+   - ingresos por sesiones;
+   - rating promedio del coach.
+4. Se devuelven metricas sinteticas.
 
-###### Flujo de actualización
-1. El frontend envía un `UpdateMetricResource`.
-2. Se transforma en `UpdateMetricCommand`.
-3. `MetricCommandServiceImpl` recupera la métrica existente.
-4. Se actualizan los datos con `updateMetric(...)`.
-5. Se guarda la modificación.
-6. Se retorna la métrica actualizada.
+##### d) Observaciones de la capa de aplicacion
 
-###### Flujo de consulta
-1. El frontend solicita una o varias métricas.
-2. El controlador construye el objeto de consulta correspondiente.
-3. `MetricQueryServiceImpl` recupera la información desde `MetricRepository`.
-4. Los resultados se transforman a `MetricResource`.
-5. Se retorna la respuesta al cliente.
-
-###### Flujo de eliminación
-1. El frontend solicita eliminar una métrica.
-2. Se construye un `DeleteMetricCommand`.
-3. `MetricCommandServiceImpl` verifica la existencia de la métrica.
-4. Se elimina la métrica del repositorio.
-5. Se devuelve la confirmación de eliminación.
-
-##### d) Observaciones de la capa de aplicación
-
-Aunque esta capa ya implementa correctamente los casos de uso CRUD del bounded context, aún presenta limitaciones funcionales relevantes:
-- no calcula métricas automáticamente desde otros bounded contexts,
-- no incorpora paginación ni filtros en consultas,
-- no publica eventos de dominio,
-- y no implementa validaciones avanzadas sobre valor, período o unicidad.
-
-Además, no se identifican **Event Handlers** implementados en el contexto Analytics. Todas las métricas se crean y actualizan únicamente mediante comandos HTTP.
-
----
+La capa de aplicacion concentra la inteligencia del contexto. La mayor parte del valor de negocio esta en las consultas derivadas, no en el CRUD base.
 
 #### 2.6.8.4. Infrastructure Layer
 
-La Infrastructure Layer del bounded context **Analytics** contiene los componentes encargados del acceso a base de datos y de la persistencia de las métricas. En esta capa se materializa el almacenamiento del agregado `Metric` y se soportan las operaciones que ejecuta la aplicación.
+##### a) Repositorios de persistencia
 
-##### a) Repositorio de persistencia
+`MetricRepository` extiende `JpaRepository<Metric, Long>`.
 
-###### `MetricRepository`
-**Paquete:** `com.upc.matchpoint.analytics.infrastructure.persistence.jpa.repositories`  
-**Propósito:**  
-Gestionar la persistencia y recuperación de métricas utilizando Spring Data JPA. La implementación concreta es generada automáticamente por el framework al extender `JpaRepository<Metric, Long>`.
+##### b) Persistencia de entidades
 
-**Operaciones disponibles:**
-- `save`
-- `findById`
-- `findAll`
-- `deleteById`
-- `existsById`
+`Metric` se persiste en `metrics` y referencia a `Coach`.
 
-**Observación:**  
-No se identifican métodos personalizados de consulta para búsquedas por coach, tipo de métrica o período.
-
-##### b) Persistencia de la entidad `Metric`
-
-La entidad `Metric` está mapeada como una entidad JPA con las siguientes características:
-- `@Entity`
-- `@Table(name = "metrics")`
-- `@Id`
-- `@GeneratedValue(strategy = GenerationType.IDENTITY)`
-- `@Enumerated(EnumType.STRING)` para `metricType`
-- relaciones `@ManyToOne(fetch = FetchType.LAZY)` con `Coach`
-- método `@PrePersist` para inicializar `createdAt` automáticamente.
-
-##### c) Diseño de persistencia
+##### c) Diseno de persistencia
 
 **Tabla principal:** `metrics`
 
-**Columnas identificadas:**
+**Columnas:**
 - `id`
 - `metric_type`
 - `value`
@@ -8310,607 +6736,317 @@ La entidad `Metric` está mapeada como una entidad JPA con las siguientes caract
 - `coach_id`
 - `created_at`
 
-**Restricciones y relaciones:**
-- `id` → Primary Key
-- `coach_id` → Foreign Key hacia `coaches.id`
-- `metric_type`, `value`, `period`, `coach_id`, `created_at` → `NOT NULL`
+##### d) Integracion con otros bounded contexts
 
-##### d) Integración con otros bounded contexts
+Depende de `Coaches`, `TrainingSessions`, `Payments` y `Reviews`.
 
-La infraestructura del contexto Analytics depende de:
-- `CoachRepository` del contexto **Coaches**, para validar que el entrenador exista antes de registrar una métrica.
+##### e) Configuracion tecnica relevante
 
-##### e) Configuración técnica relevante
+No se identifica configuracion propia.
 
-El proyecto utiliza configuración JPA con:
-- `spring.jpa.show-sql=true`
-- `spring.jpa.hibernate.ddl-auto=update`
-- `spring.jpa.open-in-view=true`
-- una estrategia de naming físico para convertir nombres camelCase a snake_case pluralizado.
+##### f) Limitaciones de infraestructura
 
-##### f) Limitaciones de la capa de infraestructura
-
-La infraestructura actual cumple con la persistencia básica del contexto, pero aún no incorpora:
-- consultas personalizadas por coach, tipo o período,
-- búsquedas optimizadas,
-- índices adicionales más allá de los implícitos,
-- adaptadores explícitos,
-- integraciones externas,
-- ni mecanismos de cálculo automático de métricas.
-
-En consecuencia, la Infrastructure Layer del bounded context Analytics es funcional para el escenario actual, pero todavía puede evolucionar para soportar un manejo más robusto y especializado de métricas.
-
----
+La informacion mas valiosa del contexto no necesariamente se persiste como registro estable; varias metricas son proyecciones calculadas en tiempo de consulta.
 
 #### 2.6.8.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Descripción:**
-
-El Component Diagram del bounded context **Analytics** representa la descomposición del contenedor backend encargado de gestionar métricas de desempeño de entrenadores. A nivel arquitectónico, este container está conformado por componentes con responsabilidades bien definidas dentro del sistema: recepción de solicitudes REST, transformación de datos entre capas, ejecución de comandos y consultas, acceso a persistencia y validación de referencias provenientes del bounded context **Coaches**.
+**Descripcion:**  
+El diagrama de componentes de **Analytics** muestra un contexto predominantemente de lectura, que compone informacion desde otros bounded contexts para exponer metricas.
 
 **Componentes principales:**
-
-- **Analytics REST API Component**  
-  Expone los endpoints HTTP del bounded context mediante `AnalyticsController`. Su responsabilidad es recibir solicitudes del frontend, delegar comandos y consultas, y devolver respuestas estructuradas.
-
-- **Metric Transformation Component**  
-  Agrupa los assemblers y resources que permiten transformar datos entre la capa de interfaz y la capa de aplicación. Incluye `MetricResourceFromEntityAssembler`, `CreateMetricCommandFromResourceAssembler` y `UpdateMetricCommandFromResourceAssembler`.
-
-- **Metric Command Processing Component**  
-  Implementado por `MetricCommandServiceImpl`, se encarga de coordinar las operaciones de escritura del contexto: creación, actualización y eliminación de métricas. Además, valida la existencia del coach antes de crear una métrica.
-
-- **Metric Query Processing Component**  
-  Implementado por `MetricQueryServiceImpl`, gestiona las operaciones de consulta del contexto, como obtener todas las métricas o buscar una métrica por identificador.
-
-- **Metric Domain Component**  
-  Representa el núcleo del dominio mediante el agregado `Metric`, junto con los comandos (`CreateMetricCommand`, `UpdateMetricCommand`, `DeleteMetricCommand`), las queries (`GetAllMetricsQuery`, `GetMetricByIdQuery`) y el value object `MetricType`.
-
-- **Metric Persistence Component**  
-  Encapsula el acceso a persistencia a través de `MetricRepository`, utilizando Spring Data JPA para almacenar y recuperar métricas desde la base de datos relacional.
-
-- **External Context Access Component**  
-  Representa la dependencia del bounded context Analytics hacia `CoachRepository` del contexto **Coaches**, utilizado para validar las referencias externas requeridas por cada métrica.
+- REST API Component
+- REST Resources and Assemblers Component
+- Domain Services Component
+- Application Command Component
+- Application Query Component
+- Domain Model Component
+- Persistence Component
+- External Context Access Component
 
 **Diagrama de componentes propuesto:**
 
-![Component Diagram Analytics](assets/chapter2/componentes_analytics.png)
+![Component Diagram Analytics](assets/refactor/analytics-componentes.png)
 
-**Relaciones entre componentes**
-
-- **Analytics REST API Component** → **Metric Transformation Component**  
-  Transforma los datos de entrada y salida entre resources, commands y entidades.
-
-- **Analytics REST API Component** → **Metric Command Processing Component**  
-  Delega operaciones de creación, actualización y eliminación.
-
-- **Analytics REST API Component** → **Metric Query Processing Component**  
-  Delega operaciones de lectura.
-
-- **Metric Command Processing Component** → **External Context Access Component**  
-  Valida la existencia del coach antes de crear una métrica.
-
-- **Metric Command Processing Component** → **Metric Domain Component**  
-  Construye o actualiza la entidad **Metric**.
-
-- **Metric Command Processing Component** → **Metric Persistence Component**  
-  Persiste los cambios del agregado.
-
-- **Metric Query Processing Component** → **Metric Persistence Component**  
-  Recupera métricas desde la base de datos.
-
-- **Metric Persistence Component** → `metrics`  
-  Almacena y consulta la información persistida.
-
-- **External Context Access Component** → `coaches`  
-  Accede al bounded context externo para validar relaciones de negocio.
-
----
+**Relaciones entre componentes:**
+- la consulta del coach autenticado compone datos de varios contextos;
+- `MetricRepository` sostiene el soporte persistido;
+- los assemblers exponen el resultado al frontend.
 
 #### 2.6.8.6. Bounded Context Software Architecture Code Level Diagrams
 
-En esta sección se presentan los diagramas a nivel de código del bounded context **Analytics**, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
-
-Se incluyen dos representaciones principales:
-
-- El **Class Diagram del Domain Layer**, que describe la estructura del modelo de dominio.
-- El **Database Design Diagram**, que representa la persistencia de datos en la base de datos relacional.
-
----
-
 ##### 2.6.8.6.1. Bounded Context Domain Layer Class Diagrams
 
-**Descripción**
+**Descripcion:**  
+El diagrama UML de **Analytics** muestra `Metric` y `MetricType`, asi como los comandos y queries del contexto.
 
-El diagrama de clases del Domain Layer del bounded context **Analytics** presenta el agregado principal **Metric**, junto con su relación hacia la entidad externa **Coach**, así como las interfaces de servicios y los objetos que representan comandos y consultas.
+**Diagrama UML de clases (Domain Layer):**
 
-El diseño evidencia que **Metric** es el núcleo del dominio y que las operaciones del sistema se organizan alrededor de comandos de escritura y queries de lectura.
-
-**Diagrama UML de clases (Domain Layer)**
-
-![Domain Layer Analytics](assets/chapter2/domainlayer_analytics.png)
+![Domain Layer Analytics](assets/refactor/analytics-clases.png)
 
 **Relaciones principales del modelo**
-
-- **Metric** es el Aggregate Root del bounded context.
-- **Metric** mantiene una relación Many-to-One con **Coach**.
-- **MetricType** representa un Value Object del dominio mediante un enum.
-- **MetricCommandService** define las operaciones de escritura.
-- **MetricQueryService** define las operaciones de lectura.
-- Los comandos encapsulan acciones de negocio.
-- Las queries encapsulan solicitudes de consulta.
+- `Metric` es el aggregate root persistido;
+- `Metric` referencia a `Coach`;
+- `MetricType` clasifica la metrica.
 
 **Observaciones**
-
-El modelo de dominio presenta una estructura clara y centrada en el agregado **Metric**. Sin embargo, no se identifican value objects adicionales para encapsular el período o el valor numérico, ni reglas más complejas relacionadas con validación de unicidad, cálculos automáticos o comparación entre períodos.
-
----
+- el diagrama representa bien la parte persistida, pero el valor principal del contexto se encuentra en `MetricQueryServiceImpl`.
 
 ##### 2.6.8.6.2. Bounded Context Database Design Diagram
 
-**Descripción**
+**Descripcion**  
+El ERD de **Analytics** muestra la tabla `metrics` vinculada a `coaches`.
 
-El diagrama de base de datos del bounded context **Analytics** representa la estructura relacional utilizada para persistir la información de métricas. La tabla principal es **metrics**, la cual mantiene una relación con la tabla **coaches**.
+**Diagrama de base de datos (ERD)**
 
-**Diagrama de base de datos (ERD):**
+![Database Analytics](assets/refactor/analytics-db.png)
 
-![Database Analytics](assets/chapter2/basededatos_analytics.png)
-
-Tablas y atributos
+**Tablas y atributos**
 
 Tabla `metrics`
-
-- `id`: identificador único de la métrica (PK)
-- `metric_type`: tipo de métrica almacenado como string
-- `value`: valor numérico de la métrica
-- `period`: período de la métrica
-- `coach_id`: referencia al coach (FK)
-- `created_at`: fecha de creación
-
-Tabla `coaches`
-
 - `id`
-- `name`
-- `expertise`
-- `phone`
+- `metric_type`
+- `value`
+- `period`
+- `coach_id`
+- `created_at`
 
-Constraints
+**Constraints**
+- primary key en `id`;
+- foreign key `coach_id -> coaches.id`;
+- `metric_type`, `value`, `period`, `coach_id` y `created_at` son obligatorios.
 
-- PRIMARY KEY (`id`) en `metrics`
-- FOREIGN KEY (`coach_id`) → `coaches(id)`
-- Restricciones NOT NULL en `metric_type`, `value`, `period`, `coach_id`, `created_at`
-
-Relaciones entre tablas
-
-- `coaches (1)` ──── `(*) metrics`
+**Relaciones entre tablas**
+- `coaches (1) ---- (*) metrics`
 
 **Observaciones**
-
-El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente las métricas. Sin embargo, actualmente no se implementan restricciones avanzadas como control de duplicidad por tipo, período y coach, ni índices personalizados o mecanismos automáticos de cálculo. Esto representa una oportunidad de mejora para fortalecer la lógica del negocio y la eficiencia del acceso a datos.
+- el modelo relacional representa solo una parte del comportamiento real del contexto.
 
 ---
 
 ### 2.6.9. Bounded Context: Matches
 
-El bounded context **Matches** representa la gestión de partidos dentro del sistema. Su propósito es permitir que un usuario funcional del negocio registre, gestione, y participe en partidos.
+El bounded context **Matches** representa la capacidad social del sistema para crear partidos y permitir que otros usuarios se unan. Su proposito es coordinar encuentros deportivos organizados por un usuario en una cancha determinada. La entidad principal del contexto es `Match`.
+
+Este contexto se relaciona con **Users** y **Courts**, ya que requiere un creador funcional y una cancha para alojar el partido.
 
 #### 2.6.9.1. Domain Layer
 
-La capa de dominio del bounded context **Matches** contiene las clases que modelan el núcleo de los partidos organizados dentro de la plataforma, así como las reglas de negocio asociadas a su creación, gestión y participación.
-
-**a. Entity / Aggregate Root:**
-
-**Nombre de la clase:** `Match`
+##### a) Entity / Aggregate Root: `Match`
 
 **Paquete:** `com.upc.courtly.matches.domain.model.aggregates`
 
-**Propósito:**
-Representa la entidad principal del bounded context Bookings. Modela una reserva de cancha realizada por un usuario en un intervalo de tiempo específico y constituye el agregado raíz del contexto.
-
 **Atributos:**
-
-- `matchId: Long` → Identificador único del partido
-- `title: String` → Nombre o título del partido
-- `description: String` → Descripción del encuentro
-- `dateTime: DateTime` → Fecha y hora del partido
-- `status: MatchStatus` → Estado del partido
-- `maxPlayers:` int → Número máximo de jugadores
-- `currentPlayers:` int → Número actual de jugadores
-- `court: Court` → Cancha donde se realizará el partido
-- `createdBy: UserProfile` → Usuario que creó el partido
-- `createdAt: DateTime` → Fecha de creación
-
-**Métodos:**
-
-- `createMatch(title, description, dateTime, maxPlayers, court, createdBy)` → Crea un nuevo partido en estado OPEN.
-- `updateMatch(title, description, dateTime, maxPlayers)` → Permite actualizar la información del partido.
-- `cancelMatch()` → Cambia el estado del partido a CANCELLED.
-- `completeMatch()` → Marca el partido como COMPLETED.
-
-**Relaciones:**
-
-- Un Match pertenece a una sola Court.
-- Un Match pertenece a un solo UserProfile (creador).
-- Un Court puede tener múltiples partidos asociados.
-- Un usuario puede crear múltiples partidos.
-
-**b. Referencias externas del dominio:**
-
-Dentro del contexto Matches se utilizan entidades provenientes de otros bounded contexts:
-
-**Court**
-- Origen: `Court & Venue Management`
-- Propósito: Representa la cancha donde se jugará el partido.
-- Atributos relevantes:
-  - `id`
-  - `name`
-
-**UserProfile**
-- Origen: `Users`
-- Propósito: Representa al usuario que crea el partido.
-- Atributos relevantes:
-  - `id`
-  - `name`
-
-**c. Value Objects:**
-
-`MatchStatus`
-
-Representa el estado del partido dentro del sistema.
-
-- `OPEN` → Partido abierto para unirse
-- `FULL` → Partido completo (sin cupos disponibles)
-- `CANCELLED` → Partido cancelado
-- `COMPLETED` → Partido finalizado
-
-**d. Commands del dominio:**
-
-`CreateMatchCommand`
-
-**Paquete:** `com.upc.courtly.matches.domain.model.commands`
-
-**Propósito:** Representa la intención de crear un nuevo partido.
-
-**Atributos:**
-
-- `title: String`
-- `description: String`
-- `dateTime: DateTime`
-- `maxPlayers: int`
-- `courtId: Long`
-- `createdById: Long`
-
-`UpdateMatchCommand`
-
-**Paquete:** `com.upc.courtly.matches.domain.model.commands`
-
-**Propósito:** Actualizar un partido existente.
-
-**Atributos:**
-
-- `matchId: Long`
-- `title: String`
-- `description: String`
-- `dateTime: DateTime`
-- `maxPlayers: int`
-
-`DeleteMatchCommand`
-
-**Paquete:** `com.upc.courtly.matches.domain.model.commands`
-
-**Propósito:** Eliminar un partido.
-
-**Atributos:**
-
-- `matchId: Long`
-
-
-**e. Queries del dominio:**
-
-`GetAllMatchesQuery`
-
-**Paquete:** `com.upc.courtly.matches.domain.model.queries`
-
-**Propósito:** Obtener todos los partidos.
-
-**Atributos:**
-
-- `matchId: Long`
-
-**f. Domain Services:**
-
-`MatchCommandService`
-
-**Paquete:** `com.upc.courtly.matches.domain.services`
-
-**Propósito:** Define las operaciones de escritura sobre el agregado Match.
-
-- `handle(CreateMatchCommand)`
-- `handle(UpdateMatchCommand)`
-- `handle(DeleteMatchCommand)`
-
-`MatchQueryService`
-
-**Propósito:** Define las operaciones de lectura.
-
-- `handle(GetAllMatchesQuery)`
-- `handle(GetMatchByIdQuery)`
-
-
-**g. Repository:**
-
-`MatchRepository`
-
-**Paquete:** com.upc.courtly.matches.infrastructure.persistence.jpa.repositories
-
-**Propósito:** Permite acceder a la persistencia de partidos.
-
-- `save(Match)`
-- `findById(Long)`
-- `findAll()`
-- `deleteById(Long)`
-
-
-**h. Reglas de negocio identificadas:**
-
-**Reglas implementadas actualmente:**
-- Un partido debe estar asociado a una cancha válida
-- Un partido debe tener un creador (UserProfile)
-- Un partido tiene un estado inicial OPEN
-- Se permite CRUD completo sobre partidos
-
-**Reglas de negocio no implementadas (oportunidades de mejora):**
-- Validar que currentPlayers <= maxPlayers.
-- Cambiar automáticamente el estado a FULL cuando se alcanza el límite.
-- Evitar crear partidos en fechas pasadas.
-- Validar conflictos de horario en la misma cancha.
-- Implementar una tabla de participantes.
-- Gestionar la inscripción de jugadores al partido.
-
----
-
-#### 2.6.9.2. Interface Layer
-
-La Interface Layer del bounded context `Matches` contiene las clases responsables de exponer las funcionalidades relacionadas a los partidos organizados mediante endpoints REST, así como de transformar la información entre el dominio y los recursos consumidos por el frontend móvil.
-
-Esta capa actúa como punto de entrada al sistema, permitiendo que los usuarios creen, consulten, actualicen y eliminen partidos, además de visualizar información relevante como la cancha y los cupos disponibles.
-
-**a. MatchesController:**
-
-**Paquete:** `com.upc.courtly.matches.interfaces.rest`
-
-**Propósito:** Exponer los endpoints HTTP para la gestión de partidos. Funciona como punto de entrada para el frontend (por ejemplo, el feed de partidos abiertos o el formulario de creación).
-
-**Dependencias:**
-- `MatchCommandService`
-- `MatchQueryService`
-
-**Endpoints expuestos:**
-- `POST /api/v1/matches` → crear partido
-- `GET /api/v1/matches` → listar partidos
-- `GET /api/v1/matches/{id}` → obtener partido por id
-- `PUT /api/v1/matches/{id}` → actualizar partido
-- `DELETE /api/v1/matches/{id}` → eliminar partido
-
-**b. Resources / DTOs:**
-
-`MatchResource`
-
-**Paquete:** `com.upc.courtly.matches.interfaces.rest.resources`
-
-**Propósito:** Representar la información de un partido que será enviada al frontend.
-
-**Atributos:**
-
-- `matchId`  
-- `title` 
-- `description`
-- `dateTime`  
-- `status`  
-- `maxPlayers`  
-- `currentPlayers`  
-- `court: CourtSummaryResource`  
-- `createdBy: UserSummaryResource`  
-
-**Estructuras internas resumidas:**
-
-- `CourtSummaryResource(Long id, String name)`
-- `UserSummaryResource(Long id, String name)`
-
-`CreateMatchResource`
-
-**Propósito:** Representar los datos necesarios para crear un nuevo partido.
-
-**Atributos:**
-
+- `id`
 - `title`
 - `description`
 - `dateTime`
+- `status`
 - `maxPlayers`
+- `currentPlayers`
+- `court`
+- `createdBy`
+- `participants`
+- `createdAt`
+
+**Metodos:**
+- constructor;
+- `updateMatch(...)`
+- `hasParticipant(...)`
+- `join(...)`
+- `recomputeStatus()`
+- `onCreate()`
+
+##### b) Referencias externas del dominio
+
+**`Court`** desde `Courts`  
+Cancha del partido.
+
+**`UserProfile`** desde `Users`  
+Creador y participantes.
+
+##### c) Value Objects
+
+**`MatchStatus`**
+- `OPEN`
+- `FULL`
+- `CANCELLED`
+- `COMPLETED`
+
+##### d) Commands del dominio
+
+**`CreateMatchCommand`**
+- `title`
+- `description`
+- `dateTime`
+- `status`
+- `maxPlayers`
+- `currentPlayers`
 - `courtId`
 - `createdById`
 
-`UpdateMatchResource`
-
-**Propósito:** Representar los datos necesarios para actualizar un partido existente.
-
-**Atributos:**
-
+**`UpdateMatchCommand`**
+- `matchId`
 - `title`
 - `description`
 - `dateTime`
+- `status`
 - `maxPlayers`
 
-**c. Assemblers:**
+**`JoinMatchCommand`**
+- `matchId`
+- `userId`
 
-`MatchResourceFromEntityAssembler`
+**`DeleteMatchCommand`**
+- `matchId`
 
-**Paquete:** `com.upc.courtly.matches.interfaces.rest.transform`
+##### e) Queries del dominio
 
-**Propósito:** Transformar una entidad `Match` del dominio en un `MatchResource` listo para el frontend. Además, resume las relaciones con `Court` y `UserProfile`, mostrando únicamente id y name.
+**`GetAllMatchesQuery`**
 
-`CreateMatchCommandFromResourceAssembler`
+**`GetMatchByIdQuery`**
+- `matchId`
 
-**Propósito:** Convertir un `CreateMatchResource` en un `CreateMatchCommand`.
+##### f) Domain Services
 
-`UpdateMatchCommandFromResourceAssembler`
+**`MatchCommandService`**
+- create
+- update
+- join
+- delete
 
-Propósito: Transformar un `UpdateMatchResource`, junto con el `matchId`, en un `UpdateMatchCommand`.
+**`MatchQueryService`**
+- get all
+- get by id
 
----
+##### g) Repository
+
+**`MatchRepository`**
+- `save(...)`
+- `findById(...)`
+- `findAll()`
+- `deleteById(...)`
+
+Adicionalmente, usa `@EntityGraph` para cargar participantes, cancha y creador.
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- la cancha debe existir;
+- el creador debe existir;
+- `maxPlayers` debe ser al menos 2;
+- el partido se crea con estado `OPEN` y `currentPlayers = 1`;
+- el creador se agrega como participante;
+- no se puede reducir `maxPlayers` por debajo del numero actual de participantes;
+- `join()` evita unirse dos veces y recalcula el estado.
+
+**Observaciones de mejora:**
+- no se identifica validacion de horario conflictivo con bookings o training sessions;
+- el estado `COMPLETED` no presenta un flujo de cierre automatizado.
+
+#### 2.6.9.2. Interface Layer
+
+##### a) `MatchesController`
+
+**Endpoints expuestos:**
+- `POST /api/v1/matches`
+- `GET /api/v1/matches`
+- `GET /api/v1/matches/{id}`
+- `PUT /api/v1/matches/{id}`
+- `POST /api/v1/matches/{id}/join`
+- `DELETE /api/v1/matches/{id}`
+
+##### b) Resources / DTOs
+
+**`MatchResource`**
+- `id`
+- `title`
+- `description`
+- `dateTime`
+- `status`
+- `maxPlayers`
+- `currentPlayers`
+- `createdAt`
+- `court`
+- `createdBy`
+- `participants`
+
+**`CreateMatchResource`**
+- `title`
+- `description`
+- `dateTime`
+- `status`
+- `maxPlayers`
+- `currentPlayers`
+- `courtId`
+- `createdById`
+
+**`UpdateMatchResource`**
+- `title`
+- `description`
+- `dateTime`
+- `status`
+- `maxPlayers`
+
+##### c) Assemblers
+
+**`MatchResourceFromEntityAssembler`**
+
+**`CreateMatchCommandFromResourceAssembler`**
+
+**`UpdateMatchCommandFromResourceAssembler`**
+
+##### d) Responsabilidad de la capa de interfaz
+
+Expone la creacion de partidos, su consulta, actualizacion y la union de participantes.
 
 #### 2.6.9.3. Application Layer
 
-La Application Layer del bounded context `Matches` coordina los flujos de proceso relacionados a la gestión de partidos organizados. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y la infraestructura de persistencia.
+##### a) Command Services / Command Handlers
 
-**Capacidades principales del contexto:**
-- Crear un partido
-- Actualizar un partido
-- Eliminar un partido
-- Obtener un partido por id
-- Listar partidos disponibles
-
-**a. Command Handlers / Command Services:**
-
-`MatchCommandServiceImpl`
-
-**Paquete:** `com.upc.courtly.matches.application.internal.commandservices`
-
-**Propósito:** Implementar el contrato MatchCommandService y ejecutar los casos de uso de escritura del contexto Matches.
+**`MatchCommandServiceImpl`**
 
 **Dependencias:**
 - `MatchRepository`
 - `CourtRepository`
 - `UserProfileRepository`
 
-**Operaciones que maneja:**
+##### b) Query Services / Query Handlers
 
-`handle(CreateMatchCommand command)`
-- Valida que la cancha (`courtId`) exista.
-- Valida que el usuario creador (`createdById`) exista.
-- Crea una nueva entidad `Match`.
-- Inicializa `currentPlayers` en 1 (creador).
-- Establece el estado inicial como `OPEN`.
-- Persiste el partido en base de datos.
-- Retorna el partido creado.
+**`MatchQueryServiceImpl`**
+- lista y detalle.
 
-`handle(UpdateMatchCommand command)`
-- Busca el partido por matchId.
-- Actualiza `title`, `description`, `dateTime` y `maxPlayers`.
-- Guarda los cambios en el repositorio.
-- Retorna el partido actualizado.
+##### c) Flujos principales del negocio
 
-`handle(DeleteMatchCommand command)`
-- Verifica si el partido existe.
-- Elimina el partido por `matchId`.
-- Lanza excepción si no existe.
+**Flujo de creacion**
+1. Se valida cancha y creador.
+2. Se fuerza estado `OPEN`.
+3. El creador queda como primer participante.
 
+**Flujo de union**
+1. Se recupera el partido.
+2. Se recupera el usuario participante.
+3. `join(...)` valida la operacion y recalcula el estado.
 
-**b. Query Handlers / Query Services:**
+##### d) Observaciones de la capa de aplicacion
 
-`MatchQueryServiceImpl`
-
-**Paquete:** `com.upc.courtly.matches.application.internal.queryservices`
-
-**Propósito:** Implementar el contrato `MatchQueryService` y ejecutar los casos de uso de lectura del contexto `Matches`.
-
-**Dependencia:**
-- `MatchRepository`
-
-**Operaciones que maneja:**
-
-`handle(GetAllMatchesQuery query)`
-- Recupera todos los partidos mediante `findAll()`
-- Puede filtrar por estado (`OPEN`, `FULL`, etc.)
-- Devuelve una lista de `Match`
-
-`handle(GetMatchByIdQuery query)`
-- Busca un partido específico por `matchId`
-- Devuelve un `Optional<Match>`
-
-**c. Flujos principales del negocio:**
-
-**Flujo de creación de partido:**
-- El frontend envía un `CreateMatchResource`.
-- La capa de interfaz lo transforma en `CreateMatchCommand`.
-- `MatchCommandServiceImpl` valida la cancha y el usuario.
-- Se crea una instancia de `Match`.
-- Se inicializa el estado en `OPEN`.
-- El partido se persiste mediante `MatchRepository`.
-- El resultado se transforma en `MatchResource`.
-- Se retorna al cliente.
-
-**Flujo de actualización:**
-- El frontend envía un `UpdateMatchResource`.
-- Se transforma en `UpdateMatchCommand`.
-- `MatchCommandServiceImpl` recupera el partido.
-- Se actualizan los datos del partido.
-- Se guarda la modificación.
-- Se retorna el partido actualizado.
-
-**Flujo de consulta:**
-- El frontend solicita uno o varios partidos.
-- El controlador construye `GetAllMatchesQuery` o `GetMatchByIdQuery`.
-- `MatchQueryServiceImpl` consulta el repositorio.
-- Los resultados se transforman en `MatchResource`.
-- Se retorna la respuesta al cliente.
-
-**Flujo de eliminación:**
-- El frontend solicita eliminar un partido.
-- Se construye `DeleteMatchCommand`.
-- `MatchCommandServiceImpl` verifica la existencia.
-- Se elimina el partido del repositorio.
-- Se devuelve la confirmación.
-
----
+El contexto ya tiene un comportamiento social real, aunque todavia no se integra con pagos ni reservas de cancha.
 
 #### 2.6.9.4. Infrastructure Layer
 
-La Infrastructure Layer del bounded context `Matches` contiene los componentes encargados del acceso a base de datos y de la persistencia de los partidos organizados. En esta capa se materializa el almacenamiento del agregado `Match` y se soportan las operaciones que ejecuta la aplicación.
+##### a) Repositorios de persistencia
 
-**a. Repositorio de persistencia:**
+`MatchRepository` utiliza `@EntityGraph` para consultas enriquecidas.
 
-`MatchRepository`
+##### b) Persistencia de entidades
 
-**Paquete:** `com.upc.courtly.matches.infrastructure.persistence.jpa.repositories`
+`Match` se persiste en `matches` y la coleccion `participants` se materializa mediante una tabla intermedia.
 
-**Propósito:** Gestionar la persistencia y recuperación de partidos utilizando Spring Data JPA. La implementación concreta es generada automáticamente por el framework al extender JpaRepository<Match, Long>.
-
-**Operaciones disponibles:**
-- `save`
-- `findById`
-- `findAll`
-- `deleteById`
-- `existsById`
-
-**Observación:**
-
-Actualmente no se identifican métodos personalizados como:
-
-- Búsqueda por estado (`findByStatus`)
-- Filtros por fecha (`findByDateTime`)
-- Búsqueda por cancha (`findByCourtId`)
-
-Esto limita la eficiencia del feed de partidos y las consultas específicas del frontend.
-
-
-**b. Persistencia de la entidad Match:**
-
-La entidad `Match` está mapeada como una entidad JPA con las siguientes características:
-
-- `@Entity`
-- `@Table(name = "matches")`
-- `@Id`
-- `@GeneratedValue(strategy = GenerationType.IDENTITY)`
-- Relaciones `@ManyToOne(fetch = FetchType.LAZY)` con `Court` y `UserProfile`
-- Atributo `createdAt` inicializado automáticamente
-
-
-**c. Diseño de persistencia:**
+##### c) Diseno de persistencia
 
 **Tabla principal:** `matches`
 
-**Columnas:**
-- `match_id`
+**Columnas principales:**
+- `id`
 - `title`
 - `description`
 - `date_time`
@@ -8918,398 +7054,118 @@ La entidad `Match` está mapeada como una entidad JPA con las siguientes caracte
 - `max_players`
 - `current_players`
 - `court_id`
-- `created_by`
+- `created_by_user_id`
 - `created_at`
 
-**Restricciones y relaciones:**
-- `match_id` → Primary Key
-- `court_id` → Foreign Key hacia `courts.id`
-- `created_by` → Foreign Key hacia `user_profiles.id`
+**Tabla asociativa:** `match_participants`
 
-**Campos obligatorios (NOT NULL):**
+##### d) Integracion con otros bounded contexts
 
-- `title`
-- `date_time`
-- `status`
-- `max_players`
-- `court_id`
-- `created_by`
-- `created_at`
+Depende de `Courts` y `Users`.
 
+##### e) Configuracion tecnica relevante
 
-**d. Integración con otros bounded contexts**
+No se identifica configuracion propia.
 
-La infraestructura del bounded context `Matches` depende de:
-- `CourtRepository` del bounded context `Courts`, para validar la existencia de la cancha.
-- `UserProfileRepository` del bounded context `Users`, para validar el creador del partido.
+##### f) Limitaciones de infraestructura
 
----
+No se identifica control de concurrencia explicito para el join de participantes.
 
 #### 2.6.9.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Descripción:**
-
-El Component Diagram del bounded context `Matches` representa la descomposición del contenedor backend encargado de gestionar los partidos organizados. Este container está compuesto por componentes para cubrir todo el flujo.
+**Descripcion:**  
+El diagrama de componentes de **Matches** presenta un contexto que combina CRUD con una operacion especifica de negocio: unirse a un partido.
 
 **Componentes principales:**
+- REST API Component
+- REST Resources and Assemblers Component
+- Domain Services Component
+- Application Command Component
+- Application Query Component
+- Domain Model Component
+- Persistence Component
+- External Context Access Component
 
-- **Matches REST API Component:** Expone los endpoints HTTP del bounded context mediante `MatchesController`.
+**Diagrama de componentes propuesto:**
 
-**Responsabilidades:**
-
-- Recibir solicitudes del frontend.
-- Delegar comandos y consultas.
-- Devolver respuestas estructuradas.
-
-- **Match Transformation Component:** Encargado de transformar los datos entre capas.
-
-**Incluye:**
-
-- `MatchResourceFromEntityAssembler`
-- `CreateMatchCommandFromResourceAssembler`
-- `UpdateMatchCommandFromResourceAssembler`
-- `MatchResource`, `CreateMatchResource`, `UpdateMatchResource`
-
-- **Match Command Processing Component:** Implementado por `MatchCommandServiceImpl`.
-
-**Responsabilidades:**
-
-- Crear partidos.
-- Actualizar partidos.
-- Eliminar partidos.
-- Validar existencia de `Court` y `UserProfile`.
-
-- **Match Query Processing Component:** Implementado por `MatchQueryServiceImpl`.
-
-**Responsabilidades:**
-
-- Obtener todos los partidos.
-- Obtener partido por `matchId`.
-- Soportar consultas del frontend (feed de partidos).
-
-- **Match Domain Component:** Representa el núcleo del dominio.
-
-**Incluye:**
-
-- `Match` (Aggregate Root)
-- `MatchStatus`
-- Métodos del dominio (creación y actualización del partido)
-
-- **Match Persistence Component:** Encapsula el acceso a base de datos mediante `MatchRepository`.
-
-**Responsabilidades:**
-
-- Persistir partidos
-- Recuperar información
-- Interactuar con Spring Data JPA / Hibernate
-
-- **External Context Access Component:** Representa la interacción con otros bounded contexts.
-
-**Incluye:**
-
-- `UserProfileRepository` (`Users`)
-- `CourtRepository` (`Courts`)
-
-**Responsabilidades:**
-
-- Validar referencias externas necesarias para crear un partido
-
-
-**Diagrama de Componentes:**
-
-![Components-Matches](/assets/chapter2/Components-Matches.png)
+![Component Diagram Matches](assets/refactor/matches-componentes.png)
 
 **Relaciones entre componentes:**
-
-- **Matches REST API Component → Match Transformation Component:** Transforma datos entre resources, commands y entidades.
-- **Matches REST API Component → Match Command Processing Component:** Ejecuta operaciones de creación, actualización y eliminación.
-- **Matches REST API Component → Match Query Processing Component:** Ejecuta operaciones de CRUD.
-- **Match Command Processing Component → External Context Access Component:** Valida la existencia de la cancha y del usuario.
-- **Match Command Processing Component → Match Domain Component:** Construye o modifica el agregado `Match`.
-- **Match Command Processing Component → Match Persistence Component:** Persiste los cambios.
-- **Match Query Processing Component → Match Persistence Component:** Recupera datos desde la base de datos.
-- **Match Persistence Component → matches:** Gestiona la persistencia en la tabla.
-- **External Context Access Component → user_profiles / courts:** Consulta otros bounded contexts para validar relaciones.
-
----
+- el command service valida creador y cancha;
+- el agregado maneja participantes y estado;
+- el repository persiste el partido y su tabla intermedia.
 
 #### 2.6.9.6. Bounded Context Software Architecture Code Level Diagrams
 
-En esta sección se presentan los diagramas a nivel de código del bounded context Matches, permitiendo entender cómo está construido internamente el dominio y cómo se estructura la persistencia.
-
 ##### 2.6.9.6.1. Bounded Context Domain Layer Class Diagrams
 
-El diagrama de clases del Domain Layer del bounded context `Matches` muestra al agregado principal `Match`, que representa un partido organizado dentro del sistema.
-Este agregado se relaciona con entidades externas como `Court` y `UserProfile`, y encapsula la información clave del partido como cupos, estado y programación.
+**Descripcion:**  
+El diagrama UML de **Matches** muestra a `Match` como agregado raiz y el enum `MatchStatus`.
 
-Además, se incluyen:
+**Diagrama UML de clases (Domain Layer):**
 
-- `MatchStatus` como Value Object (enum).
-- Comandos y queries para operaciones del sistema.
-- Servicios del dominio para manejar la lógica.
+![Domain Layer Matches](assets/refactor/matches-clases.png)
 
-**Diagrama UML de Clases (Domain Layer):**
+**Relaciones principales del modelo**
+- `Match` referencia a `Court`, `createdBy` y `participants`;
+- `MatchStatus` controla la apertura o cierre operativo del partido.
 
-![umlClass-Matches](/assets/chapter2/umlClass-Matches.png)
-
-**Relaciones:**
-
-- `Match` es el Aggregate Root del bounded context.
-- `Match` *──────── 1 Court ─► cada partido se organiza en una cancha específica.
-- `Match` *──────── 1 UserProfile ─► representa al usuario creador del partido.
-- `MatchStatus` representa un Value Object del dominio mediante un enum, encargado de definir el estado del partido (OPEN, FULL, CANCELLED, COMPLETED).
-- `MatchCommandService` ───────► `MatchRepository` (uses)
-- `MatchQueryService` ───────► `MatchRepository` (uses)
-
----
+**Observaciones**
+- el agregado concentra bien la logica de participacion.
 
 ##### 2.6.9.6.2. Bounded Context Database Design Diagram
 
-El diagrama de base de datos del bounded context `Matches` representa la estructura relacional utilizada para persistir la información de los partidos organizados.
-La tabla principal es `matches`, la cual mantiene relaciones con las tablas `courts` y `user_profiles`, que representan la cancha donde se juega el partido y el usuario creador respectivamente.
+**Descripcion**  
+El ERD de **Matches** representa la tabla `matches` y la tabla de union `match_participants`.
 
-**Diagrama de base de datos (ERD):**
+**Diagrama de base de datos (ERD)**
 
-![ERD-Matches](/assets/chapter2/ERD-Matches.png)
+![Database Matches](assets/refactor/matches-db.png)
 
-**Tablas y atributos:**
+**Tablas y atributos**
 
-**Tabla matches:**
-- `match_id`: Identificador único del partido (PK).
-- `title`: Título del partido.
-- `description`: Descripción del partido.
-- `date_time`: Fecha y hora del partido.
-- `status`: Estado del partido (OPEN, FULL, CANCELLED, COMPLETED).
-- `max_players`: Número máximo de jugadores permitidos.
-- `current_players`: Número actual de jugadores inscritos.
-- `court_id`: Referencia a la cancha (FK).
-- `created_by`: Referencia al usuario creador (FK).
-- `created_at`: Fecha de creación.
+Tabla `matches`
+- `id`
+- `title`
+- `description`
+- `date_time`
+- `status`
+- `max_players`
+- `current_players`
+- `court_id`
+- `created_by_user_id`
+- `created_at`
 
-**Tabla user_profiles:**
-- `id`: Identificador del usuario (PK).
-- `name`: Nombre del usuario.
-- `email`: Correo electrónico.
+Tabla `match_participants`
+- `match_id`
+- `user_profile_id`
 
-**Tabla courts:**
-- `id:` Identificador de la cancha (PK).
-- `name:` Nombre de la cancha.
-- `location:` Ubicación de la cancha.
+**Constraints**
+- primary key en `matches.id`;
+- foreign key `court_id -> courts.id`;
+- foreign key `created_by_user_id -> user_profiles.id`.
 
-**Constraints:**
-- PRIMARY KEY (`match_id`) en `matches`
-- FOREIGN KEY (`court_id`) → `courts`(`id`)
-- FOREIGN KEY (`created_by`) → `user_profiles`(`id`)
-- NOT NULL en `title`, `date_time`, `status`, `max_players`, `court_id`, `created_by`, `created_at`
+**Relaciones entre tablas**
+- `courts (1) ---- (*) matches`
+- `user_profiles (1) ---- (*) matches` como creador
+- `matches (*) ---- (*) user_profiles` como participantes
 
-**Relaciones entre tablas:**
-- `user_profiles` (1) ──── (*) `matches`
-- `courts` (1) ──── (*) `matches`
+**Observaciones**
+- el modelo relacional soporta adecuadamente la participacion multiple en partidos.
 
 ---
-
-
-
 
 ### 2.6.10. Bounded Context: Notifications
 
-El bounded context **Notifications** representa la capacidad del sistema encargada de gestionar notificaciones persistidas asociadas a un perfil de usuario del bounded context **Users**. Su propósito es permitir la creación, consulta, actualización y eliminación de notificaciones que contienen información como título, mensaje, tipo, estado de lectura y fecha de creación.
+El bounded context **Notifications** representa la capacidad del sistema de informar eventos relevantes al usuario funcional. Su proposito es almacenar notificaciones derivadas de operaciones de negocio como reservas, sesiones, pagos y habilitacion de reseñas. La entidad principal del contexto es `Notification`.
 
-Dentro de este contexto, la entidad principal es `Notification`, ya que concentra la información central del mensaje notificado y mantiene la referencia al destinatario funcional mediante `UserProfile`. En consecuencia, este bounded context actúa como un contexto operativo transversal, porque depende del contexto **Users** para identificar a quién pertenece cada notificación.
-
-Este contexto se relaciona conceptualmente con **Users** de forma directa, ya que la entidad `Notification` posee una asociación JPA hacia `users.UserProfile`. A diferencia de IAM, aquí sí existe una relación persistente entre el contexto y la identidad funcional del negocio. Sin embargo, Notifications no administra autenticación ni seguridad; su responsabilidad se limita a la persistencia y exposición de notificaciones por REST.
-
----
+Este contexto se relaciona transversalmente con **Users**, **Bookings**, **Payments**, **TrainingSessions** y **Reviews**.
 
 #### 2.6.10.1. Domain Layer
 
-La Domain Layer del bounded context **Notifications** contiene las clases que modelan el núcleo funcional de la administración de notificaciones, así como los comandos, consultas y servicios de dominio que estructuran sus casos de uso principales. A partir del análisis del código, se identifica que el agregado principal del contexto es `Notification`, acompañado por sus comandos, queries y contratos de servicios.
-
 ##### a) Entity / Aggregate Root: `Notification`
 
-**Nombre de la clase:** `Notification`  
-**Paquete:** `com.upc.matchpoint.notifications.domain.model.aggregates`
-
-**Propósito:**  
-Representa la notificación persistida del sistema. Modela el mensaje enviado o almacenado para un `UserProfile` y constituye el agregado principal del contexto.
-
-**Atributos:**
-- `id: Long` → identificador único de la notificación.
-- `title: String` → título o asunto de la notificación.
-- `message: String` → contenido principal del mensaje.
-- `type: String` → tipo o categoría de la notificación.
-- `isRead: boolean` → indica si la notificación fue leída.
-- `user: UserProfile` → perfil de usuario al que pertenece la notificación.
-- `createdAt: LocalDateTime` → fecha y hora de creación.
-
-**Métodos identificados:**
-- `Notification()` → constructor vacío.
-- `Notification(String title, String message, String type, boolean isRead, UserProfile user)` → constructor con datos principales.
-- `updateNotification(String title, String message, String type, boolean isRead)` → actualiza los campos editables.
-- `onCreate()` → inicializa `createdAt` antes de persistir.
-
-**Relaciones:**
-- Una `Notification` pertenece a un único `UserProfile`.
-- Un `UserProfile` puede tener muchas `Notification`.
-- La relación entre `Notification` y `UserProfile` es de tipo **Many-to-One**.
-
-##### b) Value Objects / Enumerations
-
-En el código revisado no se identifican enums ni value objects propios del bounded context `Notifications`. El atributo `type` se modela como `String`, por lo que la categorización de la notificación queda abierta a la validación externa o a reglas futuras.
-
-##### c) Commands del dominio
-
-Los comandos del contexto Notifications encapsulan la intención de crear, actualizar y eliminar notificaciones.
-
-###### `CreateNotificationCommand`
-**Paquete:** `com.upc.matchpoint.notifications.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de crear una nueva notificación.
-
-**Atributos:**
-- `title: String`
-- `message: String`
-- `type: String`
-- `isRead: boolean`
-- `userId: Long`
-
-###### `UpdateNotificationCommand`
-**Paquete:** `com.upc.matchpoint.notifications.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de modificar una notificación existente.
-
-**Atributos:**
-- `notificationId: Long`
-- `title: String`
-- `message: String`
-- `type: String`
-- `isRead: boolean`
-
-###### `DeleteNotificationCommand`
-**Paquete:** `com.upc.matchpoint.notifications.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de eliminar una notificación existente.
-
-**Atributos:**
-- `notificationId: Long`
-
-##### d) Queries del dominio
-
-El contexto Notifications define consultas para recuperar notificaciones persistidas.
-
-###### `GetAllNotificationsQuery`
-**Propósito:**  
-Representa la intención de obtener todas las notificaciones del sistema.
-
-###### `GetNotificationByIdQuery`
-**Propósito:**  
-Representa la intención de obtener una notificación específica por identificador.
-
-**Atributos:**
-- `notificationId: Long`
-
-##### e) Domain Services
-
-El dominio define servicios que abstraen los casos de uso principales del contexto Notifications.
-
-###### `NotificationCommandService`
-**Propósito:**  
-Define el contrato para ejecutar operaciones de creación, actualización y eliminación.
-
-**Métodos identificados:**
-- `handle(CreateNotificationCommand command)`
-- `handle(UpdateNotificationCommand command)`
-- `handle(DeleteNotificationCommand command)`
-
-###### `NotificationQueryService`
-**Propósito:**  
-Define el contrato para recuperar información de notificaciones.
-
-**Métodos identificados:**
-- `handle(GetAllNotificationsQuery query)`
-- `handle(GetNotificationByIdQuery query)`
-
-##### f) Repository
-
-###### `NotificationRepository`
-**Paquete:** `com.upc.matchpoint.notifications.infrastructure.persistence.jpa.repositories`
-
-**Propósito dentro del dominio:**  
-Abstraer la persistencia y recuperación de notificaciones.
-
-**Operaciones identificadas:**
-- `save(Notification)`
-- `findById(Long)`
-- `findAll()`
-- `deleteById(Long)`
-- `existsById(Long)`
-
-##### g) Reglas de negocio identificadas
-
-**Reglas implementadas actualmente:**
-- Cada notificación queda asociada a un `UserProfile` existente.
-- La creación registra automáticamente la fecha `createdAt`.
-- La consulta permite listar notificaciones y obtenerlas por id.
-- La actualización permite modificar título, mensaje, tipo y estado de lectura.
-- La eliminación borra una notificación si existe.
-
-**Reglas no implementadas o incompletas:**
-- No existe validación del contenido semántico del atributo `type`.
-- No existe filtrado por usuario en la consulta de lectura.
-- No existe envío asíncrono o integración con canales externos de notificación.
-- No existe expiración, prioridad ni plantilla de notificación.
-
-En conjunto, la Domain Layer de Notifications es simple y funcional, pero está orientada a persistir y administrar notificaciones más que a orquestar un sistema de mensajería completo.
-
----
-
-#### 2.6.10.2. Interface Layer
-
-La Interface Layer del bounded context **Notifications** contiene las clases responsables de exponer las funcionalidades del contexto mediante endpoints REST y de transformar la información entre las estructuras internas del sistema y los recursos consumidos por el frontend.
-
-##### a) `NotificationsController`
-
-**Paquete:** `com.upc.matchpoint.notifications.interfaces.rest`
-
-**Propósito:**  
-Exponer los endpoints HTTP relacionados con la administración de notificaciones.
-
-**Endpoints expuestos:**
-- `POST /api/v1/notifications` → crear notificación.
-- `GET /api/v1/notifications` → obtener todas las notificaciones.
-- `GET /api/v1/notifications/{id}` → obtener notificación por id.
-- `PUT /api/v1/notifications/{id}` → actualizar notificación.
-- `DELETE /api/v1/notifications/{id}` → eliminar notificación.
-
-##### b) Resources / DTOs
-
-###### `CreateNotificationResource`
-**Propósito:**  
-Representar los datos de entrada requeridos para crear una notificación.
-
-**Atributos:**
-- `title`
-- `message`
-- `type`
-- `isRead`
-- `userId`
-
-###### `UpdateNotificationResource`
-**Propósito:**  
-Representar los datos de entrada requeridos para actualizar una notificación.
-
-**Atributos:**
-- `title`
-- `message`
-- `type`
-- `isRead`
-
-###### `NotificationResource`
-**Propósito:**  
-Representar la información de una notificación hacia el frontend.
+**Paquete:** `com.upc.courtly.notifications.domain.model.aggregates`
 
 **Atributos:**
 - `id`
@@ -9317,690 +7173,477 @@ Representar la información de una notificación hacia el frontend.
 - `message`
 - `type`
 - `isRead`
+- `relatedEntityType`
+- `relatedEntityId`
+- `user`
 - `createdAt`
-- `user` → resumen con `id` y `name`.
+
+**Metodos:**
+- constructor;
+- `updateNotification(...)`
+- `markAsRead()`
+- `onCreate()`
+
+##### b) Referencias externas del dominio
+
+**`UserProfile`** desde `Users`  
+Destinatario de la notificacion.
+
+##### c) Value Objects
+
+**`NotificationType`**
+- `BOOKING_CREATED`
+- `BOOKING_CONFIRMED`
+- `BOOKING_CANCELLED`
+- `TRAINING_SESSION_REQUESTED`
+- `TRAINING_SESSION_ACCEPTED`
+- `TRAINING_SESSION_REJECTED`
+- `TRAINING_SESSION_CANCELLED`
+- `PAYMENT_CONFIRMED`
+- `REVIEW_ENABLED`
+
+##### d) Commands del dominio
+
+**`CreateNotificationCommand`**
+- `title`
+- `message`
+- `type`
+- `isRead`
+- `relatedEntityType`
+- `relatedEntityId`
+- `userId`
+
+**`UpdateNotificationCommand`**
+- `notificationId`
+- `title`
+- `message`
+- `type`
+- `isRead`
+- `relatedEntityType`
+- `relatedEntityId`
+
+**`MarkNotificationAsReadCommand`**
+- `notificationId`
+
+**`DeleteNotificationCommand`**
+- `notificationId`
+
+##### e) Queries del dominio
+
+**`GetAllNotificationsQuery`**
+
+**`GetNotificationByIdQuery`**
+- `notificationId`
+
+**`GetNotificationsByUserIdQuery`**
+- `userId`
+
+**`CountUnreadNotificationsByUserIdQuery`**
+- `userId`
+
+##### f) Domain Services
+
+**`NotificationCommandService`**
+- create
+- update
+- mark as read
+- delete
+
+**`NotificationQueryService`**
+- get all
+- get by id
+- get by user
+- count unread
+
+##### g) Repository
+
+**`NotificationRepository`**
+- `save(...)`
+- `findById(...)`
+- `findAll()`
+- `deleteById(...)`
+- `findByUserIdOrderByCreatedAtDesc(...)`
+- `countByUserIdAndIsReadFalse(...)`
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- las notificaciones se crean desde eventos del negocio;
+- el controller bloquea la creacion y actualizacion manual con `405 Method Not Allowed`;
+- el usuario solo puede leer, marcar o eliminar sus propias notificaciones.
+
+**Observaciones de mejora:**
+- el dominio aun conserva `CreateNotificationCommand` y `UpdateNotificationCommand`, aunque la interfaz publica ya no permite crear ni editar manualmente;
+- no se identifica un mecanismo asincrono de publicacion de eventos.
+
+#### 2.6.10.2. Interface Layer
+
+##### a) `NotificationsController`
+
+**Endpoints expuestos:**
+- `POST /api/v1/notifications` -> no permitido manualmente
+- `GET /api/v1/notifications`
+- `GET /api/v1/notifications/{id}`
+- `GET /api/v1/notifications/users/{userId}`
+- `GET /api/v1/notifications/me`
+- `GET /api/v1/notifications/users/{userId}/unread-count`
+- `GET /api/v1/notifications/me/unread-count`
+- `PUT /api/v1/notifications/{id}` -> no permitido manualmente
+- `POST /api/v1/notifications/{id}/read`
+- `DELETE /api/v1/notifications/{id}`
+
+##### b) Resources / DTOs
+
+**`NotificationResource`**
+- `id`
+- `title`
+- `message`
+- `type`
+- `isRead`
+- `relatedEntityType`
+- `relatedEntityId`
+- `createdAt`
+- `user`
+
+**`NotificationCountResource`**
+- `userId`
+- `unreadCount`
+
+**`UpdateNotificationResource`**
+- `title`
+- `message`
+- `type`
+- `isRead`
+- `relatedEntityType`
+- `relatedEntityId`
 
 ##### c) Assemblers
 
-La capa de interfaz del contexto Notifications incluye assemblers encargados de transformar datos entre resources, commands y entidades.
+**`NotificationResourceFromEntityAssembler`**
 
-**Assemblers identificados:**
-- `CreateNotificationCommandFromResourceAssembler`
-- `UpdateNotificationCommandFromResourceAssembler`
-- `NotificationResourceFromEntityAssembler`
+**`UpdateNotificationCommandFromResourceAssembler`**
 
 ##### d) Responsabilidad de la capa de interfaz
 
-La responsabilidad principal de esta capa es:
-- recibir solicitudes del cliente,
-- convertir resources de entrada en commands,
-- delegar la ejecución a la capa de aplicación,
-- y transformar los resultados en resources de salida adecuados para el frontend.
-
-En el caso de Notifications, esta capa también refleja explícitamente la dependencia con `UserProfile`, ya que la respuesta expone un resumen del usuario asociado a la notificación.
-
----
+Exponer la consulta de notificaciones del usuario autenticado y habilitar operaciones de lectura, marcado como leida y eliminacion, evitando la manipulacion manual de eventos de negocio.
 
 #### 2.6.10.3. Application Layer
 
-La Application Layer del bounded context **Notifications** coordina los flujos de proceso relacionados con la creación, consulta, actualización y eliminación de notificaciones. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y con la infraestructura de persistencia.
+##### a) Command Services / Command Handlers
 
-Las capacidades principales del contexto son:
-- crear notificación,
-- listar notificaciones,
-- obtener notificación por id,
-- actualizar notificación,
-- eliminar notificación.
-
-##### a) Command Handlers / Command Services
-
-###### `NotificationCommandServiceImpl`
-
-**Paquete:** `com.upc.matchpoint.notifications.application.internal.commandservices`
-
-**Propósito:**  
-Implementar los casos de uso de creación, actualización y eliminación de notificaciones.
+**`NotificationCommandServiceImpl`**
 
 **Dependencias:**
 - `NotificationRepository`
 - `UserProfileRepository`
 
-**Operaciones que maneja:**
+##### b) Query Services / Query Handlers
 
-**`handle(CreateNotificationCommand command)`**
-- busca el `UserProfile` por `userId`,
-- crea una nueva entidad `Notification`,
-- persiste la notificación,
-- retorna la notificación creada.
-
-**`handle(UpdateNotificationCommand command)`**
-- busca la notificación por `notificationId`,
-- actualiza los campos editables,
-- guarda la entidad actualizada,
-- retorna la notificación modificada.
-
-**`handle(DeleteNotificationCommand command)`**
-- verifica que la notificación exista,
-- elimina la notificación persistida.
-
-##### b) Query Handlers / Query Services
-
-###### `NotificationQueryServiceImpl`
-
-**Paquete:** `com.upc.matchpoint.notifications.application.internal.queryservices`
-
-**Propósito:**  
-Implementar los casos de uso de lectura sobre notificaciones.
+**`NotificationQueryServiceImpl`**
 
 **Dependencias:**
 - `NotificationRepository`
 
-**Operaciones que maneja:**
-- `handle(GetAllNotificationsQuery query)`
-- `handle(GetNotificationByIdQuery query)`
+##### c) Flujos principales del negocio
 
-##### c) Event Handlers
+**Flujo de consulta de notificaciones propias**
+1. Se obtiene el `UserProfile` autenticado.
+2. Se buscan sus notificaciones ordenadas por fecha descendente.
 
-En el bounded context **Notifications** no se identifican event handlers en el código revisado. Esto sugiere que el contexto opera de forma síncrona y centrada en REST, sin automatización basada en eventos de dominio o eventos de aplicación.
+**Flujo de marcado como leida**
+1. Se valida ownership de la notificacion.
+2. Se ejecuta `markAsRead()`.
+3. Se persiste el cambio.
 
-##### d) Flujos principales del negocio
+##### d) Observaciones de la capa de aplicacion
 
-###### Flujo de creación de notificación
-1. El frontend envía un `CreateNotificationResource`.
-2. La capa de interfaz lo transforma a `CreateNotificationCommand`.
-3. `NotificationCommandServiceImpl` busca el `UserProfile` asociado.
-4. Se crea una instancia de `Notification`.
-5. La notificación se persiste mediante `NotificationRepository`.
-6. Se transforma el resultado en `NotificationResource`.
-7. Se retorna la respuesta al cliente.
-
-###### Flujo de consulta de notificaciones
-1. El cliente solicita la lista o detalle de notificaciones.
-2. El controlador construye la query correspondiente.
-3. `NotificationQueryServiceImpl` recupera la información desde `NotificationRepository`.
-4. Los resultados se transforman a resources.
-5. Se retorna la respuesta.
-
-###### Flujo de actualización de notificación
-1. El frontend envía un `UpdateNotificationResource`.
-2. La capa de interfaz lo transforma a `UpdateNotificationCommand`.
-3. `NotificationCommandServiceImpl` busca la notificación por id.
-4. Actualiza los campos editables.
-5. Persiste el cambio.
-6. Retorna la notificación actualizada.
-
-###### Flujo de eliminación de notificación
-1. El cliente solicita la eliminación de una notificación.
-2. El controlador construye el comando de eliminación.
-3. `NotificationCommandServiceImpl` valida la existencia.
-4. La notificación se elimina de la base de datos.
-5. Se retorna una respuesta de confirmación.
-
-##### e) Observaciones de la capa de aplicación
-
-La capa de aplicación implementa de forma coherente los flujos principales de Notifications: creación, consulta, actualización y eliminación. Además, coordina la validación del destinatario y la persistencia de cada notificación, lo que mantiene el comportamiento del contexto simple y enfocado en la administración del mensaje y su estado.
-
----
+El bounded context esta orientado a consumo de eventos y no a escritura manual desde cliente.
 
 #### 2.6.10.4. Infrastructure Layer
 
-La Infrastructure Layer del bounded context **Notifications** contiene los componentes encargados del acceso a base de datos y de la integración técnica con el bounded context **Users** para recuperar perfiles de usuario. En esta capa se materializa el soporte técnico para persistir y leer notificaciones.
-
 ##### a) Repositorios de persistencia
 
-###### `NotificationRepository`
+`NotificationRepository` agrega busqueda por usuario y conteo de no leidas.
 
-**Paquete:** `com.upc.matchpoint.notifications.infrastructure.persistence.jpa.repositories`
+##### b) Persistencia de entidades
 
-**Propósito:**  
-Gestionar la persistencia y recuperación de notificaciones utilizando Spring Data JPA.
+`Notification` se persiste en `notifications` y referencia a `user_profiles`.
 
-**Operaciones disponibles:**
-- `save`
-- `findById`
-- `findAll`
-- `deleteById`
-- `existsById`
+##### c) Diseno de persistencia
 
-##### b) Persistencia de la entidad `Notification`
+**Tabla principal:** `notifications`
 
-La entidad `Notification` está mapeada como una entidad JPA con las siguientes características:
-- `@Entity`
-- `@Table(name = "notifications")`
-- `@ManyToOne(fetch = FetchType.LAZY)` con `UserProfile`
-- `@JoinColumn(name = "user_id", nullable = false)`
-- `@PrePersist` para inicializar la fecha de creación
+**Columnas:**
+- `id`
+- `title`
+- `message`
+- `type`
+- `is_read`
+- `related_entity_type`
+- `related_entity_id`
+- `user_id`
+- `created_at`
 
-##### c) Integración con otros bounded contexts
+##### d) Integracion con otros bounded contexts
 
-Notifications depende estructuralmente del bounded context **Users** para resolver el perfil funcional asociado a cada notificación. La dependencia se materializa mediante `UserProfileRepository`, lo que permite validar la existencia del usuario receptor antes de persistir la notificación.
+El contexto recibe eventos o datos desde `Bookings`, `Payments`, `TrainingSessions` y `Reviews`, aunque la materializacion se realiza mediante llamadas directas a repositorio.
 
-**Observación importante:**  
-Aunque existe integración directa con `UserProfile`, no se identificó una fachada ACL específica para Notifications. La relación con Users se implementa mediante acceso directo al repositorio del otro bounded context.
+##### e) Configuracion tecnica relevante
 
-##### d) Limitaciones de la capa de infraestructura
+No se identifica configuracion propia.
 
-La infraestructura actual cumple con la persistencia básica de notificaciones, pero todavía presenta limitaciones relevantes:
-- no existe integración con servicios externos de correo, SMS o push;
-- no existe una cola de mensajes ni un broker de eventos;
-- no existe separación entre notificación persistida y notificación entregada;
-- no se modela prioridad, expiración ni plantillas.
+##### f) Limitaciones de infraestructura
 
-En consecuencia, la Infrastructure Layer del bounded context Notifications es funcional para persistencia y consulta, pero todavía no implementa una verdadera infraestructura de mensajería distribuida.
-
----
+No existe un bus de eventos ni colas asincronas; la notificacion se persiste de forma directa y sin desacoplamiento infrastructural fuerte.
 
 #### 2.6.10.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Descripción:**
-
-El Component Diagram del bounded context **Notifications** representa la descomposición del contenedor backend encargado de gestionar notificaciones persistidas para perfiles de usuario. A nivel arquitectónico, este container está conformado por componentes con responsabilidades bien delimitadas: recepción de solicitudes REST, transformación de datos entre capas, ejecución de comandos y consultas, acceso a persistencia y resolución del perfil de usuario destinatario.
-
-A partir del análisis del contexto, se identifican los siguientes componentes principales:
+**Descripcion:**  
+El diagrama de componentes de **Notifications** muestra un contexto transversal, centrado en persistir eventos legibles para el usuario final.
 
 **Componentes principales:**
-
-- **Notification REST API Component**  
-  Expone los endpoints HTTP relacionados con crear, listar, consultar, actualizar y eliminar notificaciones.
-
-- **Notification Transformation Component**  
-  Agrupa los assemblers y resources que permiten transformar datos entre la capa de interfaz y la capa de aplicación.
-
-- **Notification Command Processing Component**  
-  Implementado por el servicio de comandos, coordina los casos de uso de creación, actualización y eliminación.
-
-- **Notification Query Processing Component**  
-  Implementado por el servicio de consultas, coordina la lectura de notificaciones.
-
-- **Notification Domain Component**  
-  Representa el núcleo del dominio mediante la entidad `Notification`, comandos, queries y contratos de servicio.
-
-- **Notification Persistence Component**  
-  Encapsula el acceso a persistencia mediante `NotificationRepository` usando Spring Data JPA.
-
-- **Users Integration Component**  
-  Representa la dependencia técnica hacia `UserProfileRepository` del bounded context Users para resolver el perfil destinatario.
+- REST API Component
+- REST Resources and Assemblers Component
+- Domain Services Component
+- Application Command Component
+- Application Query Component
+- Domain Model Component
+- Persistence Component
+- External Context Access Component
 
 **Diagrama de componentes propuesto:**
 
-![Component Diagram Notifications](assets/chapter2/componentes_notifications.png)
+![Component Diagram Notifications](assets/refactor/notifications-componentes.png)
 
-###### Relaciones entre componentes
-
-- **Notification REST API Component → Notification Transformation Component**  
-  Transforma datos de entrada y salida entre resources, commands y entidades.
-
-- **Notification REST API Component → Notification Command Processing Component**  
-  Delega operaciones de creación, actualización y eliminación.
-
-- **Notification REST API Component → Notification Query Processing Component**  
-  Delega operaciones de lectura sobre notificaciones.
-
-- **Notification Command Processing Component → Notification Domain Component**  
-  Construye y actualiza la entidad `Notification`.
-
-- **Notification Command Processing Component → Notification Persistence Component**  
-  Persiste notificaciones y consulta su existencia.
-
-- **Notification Command Processing Component → Users Integration Component**  
-  Valida y resuelve el `UserProfile` asociado a la notificación.
-
-- **Notification Query Processing Component → Notification Persistence Component**  
-  Recupera notificaciones desde base de datos.
-
-- **Notification Transformation Component → Notification Domain Component**  
-  Convierte entidades en resources de salida.
-
----
+**Relaciones entre componentes:**
+- el controller protege acceso por ownership;
+- el command service marca como leida o elimina;
+- el repository organiza las consultas por usuario.
 
 #### 2.6.10.6. Bounded Context Software Architecture Code Level Diagrams
 
-En esta sección se presentan los diagramas a nivel de código del bounded context **Notifications**, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
-
-Se incluyen dos representaciones principales:
-
-- el **Class Diagram del Domain Layer**, que describe la estructura del modelo de dominio;
-- y el **Database Design Diagram**, que representa la persistencia de datos en la base de datos relacional.
-
----
-
 ##### 2.6.10.6.1. Bounded Context Domain Layer Class Diagrams
 
-**Descripción:**
-
-El diagrama de clases del Domain Layer del bounded context **Notifications** presenta el agregado principal `Notification`, junto con los comandos, queries y servicios de dominio que soportan las operaciones del contexto. El diseño evidencia que `Notification` es el núcleo del contexto y que las operaciones del sistema se organizan alrededor de la administración de notificaciones persistidas.
+**Descripcion:**  
+El diagrama de clases de **Notifications** muestra el agregado `Notification` y el enum `NotificationType`.
 
 **Diagrama UML de clases (Domain Layer):**
 
-![Domain Layer Notifications](assets/chapter2/domainlayer_notifications.png)
+![Domain Layer Notifications](assets/refactor/notifications-clases.png)
 
-###### Relaciones principales del modelo
+**Relaciones principales del modelo**
+- `Notification` es el aggregate root;
+- `Notification` referencia a `UserProfile`;
+- `NotificationType` clasifica el evento emitido.
 
-- `Notification` es el **Aggregate Root** del bounded context.
-- `Notification` mantiene una relación **Many-to-One** con `UserProfile`.
-- `NotificationCommandService` define las operaciones de creación, actualización y eliminación.
-- `NotificationQueryService` define las operaciones de lectura de notificaciones.
-- Los comandos encapsulan acciones de escritura sobre notificaciones.
-- Las queries encapsulan solicitudes de consulta.
-
-###### Observaciones
-
-El modelo de dominio presenta una estructura clara y centrada en el agregado `Notification`. La presencia de los campos de estado, tipo, contenido y destinatario permite representar con precisión el ciclo de vida de una notificación dentro del contexto.
-
----
+**Observaciones**
+- el dominio conserva soporte CRUD, aunque la interfaz actual ya restringe la escritura manual.
 
 ##### 2.6.10.6.2. Bounded Context Database Design Diagram
 
-**Descripción:**
+**Descripcion**  
+El ERD de **Notifications** representa la tabla `notifications` y su relacion con `user_profiles`.
 
-El diagrama de base de datos del bounded context **Notifications** representa la estructura relacional utilizada para persistir la información de notificaciones. La tabla principal es `notifications`, vinculada mediante una clave foránea con `user_profiles`.
+**Diagrama de base de datos (ERD)**
 
-**Diagrama de base de datos (ERD):**
+![Database Notifications](assets/refactor/notifications-db.png)
 
-![Database Notifications](assets/chapter2/basededatos_notifications.png)
+**Tablas y atributos**
 
-###### Tablas y atributos
+Tabla `notifications`
+- `id`
+- `title`
+- `message`
+- `type`
+- `is_read`
+- `related_entity_type`
+- `related_entity_id`
+- `user_id`
+- `created_at`
 
-###### Tabla `notifications`
+**Constraints**
+- primary key en `id`;
+- foreign key `user_id -> user_profiles.id`;
+- `title`, `message`, `type`, `is_read`, `user_id` y `created_at` son obligatorios.
 
-- `id`: identificador único de la notificación (PK)
-- `title`: título de la notificación
-- `message`: contenido de la notificación
-- `type`: tipo o categoría de la notificación
-- `is_read`: estado de lectura
-- `user_id`: referencia al perfil de usuario destinatario
-- `created_at`: fecha de creación
+**Relaciones entre tablas**
+- `user_profiles (1) ---- (*) notifications`
 
-###### Tabla `user_profiles`
-
-- `id`: identificador único del perfil de usuario
-- `name`: nombre del usuario
-- `email`: correo electrónico
-- `phone`: teléfono
-
-###### Constraints
-
-- `PRIMARY KEY (id)` en `notifications`
-- `FOREIGN KEY (user_id)` → `user_profiles(id)`
-- restricción de `NOT NULL` en `title`
-- restricción de `NOT NULL` en `message`
-- restricción de `NOT NULL` en `type`
-- restricción de `NOT NULL` en `is_read`
-- restricción de `NOT NULL` en `user_id`
-- restricción de `NOT NULL` en `created_at`
-
-###### Relaciones entre tablas
-
-- `user_profiles (1) ──── (*) notifications`
-
-###### Observaciones
-
-El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente notificaciones con su respectivo estado, tipo, fecha de creación y destinatario. La tabla `notifications` resume bien el alcance del contexto y deja preparada la base para futuras extensiones como prioridad, expiración o canales de entrega.
+**Observaciones**
+- `related_entity_type` y `related_entity_id` permiten enlazar la notificacion con una operacion del negocio.
 
 ---
 
 ### 2.6.11. Bounded Context: IAM
 
-El bounded context **IAM** representa la capacidad del sistema encargada de gestionar la identidad autenticada y el control de acceso dentro de Courtly. Su propósito es permitir el registro de usuarios, la autenticación mediante credenciales y la asignación de roles para autorizar el acceso a las funcionalidades del sistema.
+El bounded context **IAM** representa la capa de identidad y control de acceso del sistema. Su proposito es gestionar usuarios autenticables, roles, login, registro, generacion de JWT y resolucion del contexto autenticado. La entidad principal es `User`, acompanada de `Role` y del enum `Roles`.
 
-Dentro de este contexto, la entidad principal es `User`, ya que concentra la información esencial de la cuenta autenticable, incluyendo nombre de usuario, contraseña cifrada y roles asignados. En consecuencia, IAM constituye un contexto transversal del sistema, pues provee los mecanismos de seguridad necesarios para el acceso a los demás bounded contexts.
-
-Este contexto se relaciona conceptualmente con **Users**, debido a que ambos representan identidades distintas del mismo actor. Sin embargo, mientras IAM administra la identidad autenticada del sistema, **Users** administra la identidad funcional utilizada por el negocio. En el diseño actual no existe una relación JPA directa entre `iam.User` y `users.UserProfile`, lo que genera una separación entre el proceso de autenticación y la operación de negocio. Como resultado, el login devuelve el identificador de `User`, pero los procesos operativos como reservas, partidos, pagos, reseñas y notificaciones esperan el identificador de `UserProfile`.
-
----
+Este contexto se relaciona con **Users** y **Coaches**, ya que ambos vinculan su identidad de negocio con una cuenta `User`.
 
 #### 2.6.11.1. Domain Layer
 
-La Domain Layer del bounded context **IAM** contiene las clases que modelan el núcleo de la autenticación y autorización del sistema, así como las reglas de negocio asociadas a la gestión de usuarios autenticados y roles. A partir del análisis del código, se identifica que el agregado principal del contexto es `User`, acompañado por la entidad `Role`, comandos, consultas, un enum de roles y servicios de dominio que estructuran la lógica del acceso al sistema.
-
 ##### a) Entity / Aggregate Root: `User`
 
-**Nombre de la clase:** `User`  
-**Paquete:** `com.upc.matchpoint.iam.domain.model.aggregates`
-
-**Propósito:**  
-Representa la entidad principal del bounded context IAM. Modela la cuenta autenticable del sistema y constituye el agregado raíz del contexto.
-
-**Atributos:**
-- `id: Long` → identificador único del usuario autenticado.
-- `username: String` → nombre único de usuario.
-- `password: String` → contraseña almacenada en forma cifrada o hasheada.
-- `roles: Set<Role>` → conjunto de roles asignados al usuario.
-
-**Métodos identificados:**
-- `User()` → constructor vacío.
-- `User(String username, String password)` → constructor básico.
-- `User(String username, String password, List<Role> roles)` → constructor con roles.
-- `addRole(Role role)` → agrega un rol a la cuenta.
-- `addRoles(List<Role> roles)` → agrega múltiples roles con validación.
-
-**Relaciones:**
-- Un `User` puede tener uno o varios `Role`.
-- Un `Role` puede pertenecer a uno o varios `User`.
-- La relación entre `User` y `Role` es de tipo **Many-to-Many**.
-
-##### b) Entity: `Role`
-
-**Nombre de la clase:** `Role`  
-**Paquete:** `com.upc.matchpoint.iam.domain.model.entities`
-
-**Propósito:**  
-Representa los roles del sistema que determinan el nivel general de acceso de un usuario autenticado.
-
-**Atributos:**
-- `id: Long` → identificador único del rol.
-- `name: Roles` → nombre lógico del rol.
-
-**Métodos relevantes:**
-- `getStringName()` → retorna el nombre del rol como texto.
-- `getDefaultRole()` → retorna el rol por defecto del sistema.
-- `toRoleFromName(String name)` → construye un rol a partir de un nombre.
-- `validateRoleSet(List<Role> roles)` → valida el conjunto de roles y asigna un rol por defecto si corresponde.
-
-##### c) Value Objects
-
-###### `Roles`
-**Paquete:** `com.upc.matchpoint.iam.domain.model.valueobjects`
-
-**Propósito:**  
-Representa el conjunto acotado de roles válidos del sistema mediante una enumeración.
-
-**Valores definidos:**
-- `ROLE_USER`
-- `ROLE_ADMIN`
-- `ROLE_INSTRUCTOR`
-
-**Rol dentro del dominio:**  
-Actúa como un value object del dominio, ya que encapsula un conjunto limitado y válido de roles permitidos para la autenticación y autorización.
-
-##### d) Referencias externas del dominio
-
-Dentro del bounded context IAM no se identifican referencias JPA directas hacia otros bounded contexts del negocio. Sin embargo, existe una relación conceptual importante con el bounded context **Users**, dado que ambos representan identidades del mismo actor.
-
-###### `UserProfile`
-**Bounded context de origen:** `Users`
-
-**Relación conceptual con IAM:**  
-Representa la identidad funcional utilizada por el negocio, distinta de la identidad autenticada de IAM.
-
-**Observación importante:**  
-Actualmente no existe una relación JPA ni una vinculación automática entre `User` y `UserProfile`. Esta separación provoca una fricción arquitectónica, ya que luego del proceso de autenticación el frontend obtiene un `userId`, mientras que los procesos operativos requieren un `userProfileId`.
-
-##### e) Commands del dominio
-
-Los comandos del contexto IAM encapsulan la intención de ejecutar operaciones relacionadas con autenticación y administración de cuentas.
-
-###### `SignUpCommand`
-**Paquete:** `com.upc.matchpoint.iam.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de registrar una nueva cuenta autenticable en el sistema.
-
-**Atributos:**
-- `username: String`
-- `password: String`
-- `roles: List<Role>`
-
-###### `SignInCommand`
-**Paquete:** `com.upc.matchpoint.iam.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de autenticar un usuario existente mediante credenciales.
-
-**Atributos:**
-- `username: String`
-- `password: String`
-
-###### `SeedRolesCommand`
-**Paquete:** `com.upc.matchpoint.iam.domain.model.commands`
-
-**Propósito:**  
-Representa la intención de inicializar los roles base del sistema en la base de datos.
-
-##### f) Queries del dominio
-
-El contexto IAM también define consultas para recuperar información relacionada con usuarios y roles.
-
-###### `GetAllUsersQuery`
-**Propósito:**  
-Representa la intención de obtener todos los usuarios autenticados del sistema.
-
-###### `GetUserByIdQuery`
-**Propósito:**  
-Representa la intención de obtener un usuario autenticado por identificador.
-
-**Atributos:**
-- `userId: Long`
-
-###### `GetUserByUsernameQuery`
-**Propósito:**  
-Representa la intención de obtener un usuario autenticado por nombre de usuario.
-
-**Atributos:**
-- `username: String`
-
-###### `GetAllRolesQuery`
-**Propósito:**  
-Representa la intención de obtener todos los roles disponibles del sistema.
-
-###### `GetRoleByNameQuery`
-**Propósito:**  
-Representa la intención de obtener un rol específico por su nombre lógico.
-
-**Atributos:**
-- `name: Roles`
-
-##### g) Domain Services
-
-El dominio define servicios que abstraen los casos de uso principales del contexto IAM.
-
-###### `UserCommandService`
-**Propósito:**  
-Define el contrato para ejecutar operaciones de registro e inicio de sesión.
-
-**Métodos identificados:**
-- `handle(SignUpCommand command)`
-- `handle(SignInCommand command)`
-
-###### `UserQueryService`
-**Propósito:**  
-Define el contrato para recuperar información de usuarios autenticados.
-
-**Métodos identificados:**
-- `handle(GetAllUsersQuery query)`
-- `handle(GetUserByIdQuery query)`
-- `handle(GetUserByUsernameQuery query)`
-
-###### `RoleCommandService`
-**Propósito:**  
-Define el contrato para ejecutar operaciones de inicialización de roles.
-
-**Métodos identificados:**
-- `handle(SeedRolesCommand command)`
-
-###### `RoleQueryService`
-**Propósito:**  
-Define el contrato para recuperar información de roles del sistema.
-
-**Métodos identificados:**
-- `handle(GetAllRolesQuery query)`
-- `handle(GetRoleByNameQuery query)`
-
-##### h) Repository
-
-###### `UserRepository`
-**Paquete:** `com.upc.matchpoint.iam.infrastructure.persistence.jpa.repositories`
-
-**Propósito dentro del dominio:**  
-Abstraer la persistencia y recuperación de usuarios autenticados.
-
-**Operaciones identificadas:**
-- `save(User)`
-- `findById(Long)`
-- `findAll()`
-- `findByUsername(String)`
-- `existsByUsername(String)`
-
-###### `RoleRepository`
-**Paquete:** `com.upc.matchpoint.iam.infrastructure.persistence.jpa.repositories`
-
-**Propósito dentro del dominio:**  
-Abstraer la persistencia y recuperación de roles del sistema.
-
-**Operaciones identificadas:**
-- `save(Role)`
-- `findByName(Roles)`
-- `findAll()`
-- `existsByName(Roles)`
-
-##### i) Reglas de negocio identificadas
-
-**Reglas implementadas actualmente:**
-- El `username` debe ser único al momento del registro.
-- La contraseña se almacena hasheada.
-- Si no se especifican roles, se asigna `ROLE_USER` por defecto.
-- El inicio de sesión genera un token JWT cuando las credenciales son válidas.
-- El sistema puede listar usuarios existentes.
-- El sistema puede listar los roles disponibles.
-- La inicialización de roles crea los roles base solo si estos no existen previamente.
-
-**Reglas no implementadas o incompletas:**
-- No existe un enlace automático entre `User` y `UserProfile`.
-- No existe sincronización nativa entre el registro de autenticación y la creación del perfil funcional.
-- No se resuelve automáticamente el `userProfileId` a partir del login.
-- No existe recuperación de contraseña.
-- No existe cambio de contraseña.
-- No existe bloqueo por intentos fallidos.
-- No existe 2FA ni verificación de correo.
-
-En conjunto, la Domain Layer de IAM está bien definida para autenticación y autorización, aunque presenta una limitación importante en su integración con la identidad funcional del negocio.
-
----
-
-#### 2.6.11.2. Interface Layer
-
-La Interface Layer del bounded context **IAM** contiene las clases responsables de exponer las funcionalidades del contexto mediante endpoints REST y de transformar la información entre las estructuras internas del sistema y los recursos consumidos por el frontend.
-
-##### a) `AuthenticationController`
-
-**Paquete:** `com.upc.matchpoint.iam.interfaces.rest`
-
-**Propósito:**  
-Exponer los endpoints HTTP relacionados con autenticación y registro de usuarios.
-
-**Endpoints expuestos:**
-- `POST /api/v1/authentication/sign-up` → registrar usuario.
-- `POST /api/v1/authentication/sign-in` → iniciar sesión.
-
-##### b) `UsersController`
-
-**Paquete:** `com.upc.matchpoint.iam.interfaces.rest`
-
-**Propósito:**  
-Exponer endpoints HTTP para consultas administrativas sobre usuarios autenticados.
-
-**Endpoints expuestos:**
-- `GET /api/v1/users` → obtener todos los usuarios.
-- `GET /api/v1/users/{id}` → obtener usuario por id.
-
-##### c) `RolesController`
-
-**Paquete:** `com.upc.matchpoint.iam.interfaces.rest`
-
-**Propósito:**  
-Exponer endpoints HTTP para consulta de roles del sistema.
-
-**Endpoints expuestos:**
-- `GET /api/v1/roles` → obtener todos los roles.
-
-##### d) Resources / DTOs
-
-###### `SignUpResource`
-**Propósito:**  
-Representar los datos de entrada requeridos para registrar una nueva cuenta.
-
-**Atributos:**
-- `username`
-- `password`
-- `roles`
-
-###### `SignInResource`
-**Propósito:**  
-Representar las credenciales de entrada para autenticación.
-
-**Atributos:**
-- `username`
-- `password`
-
-###### `UserResource`
-**Propósito:**  
-Representar la información de usuarios autenticados para consultas administrativas.
+**Paquete:** `com.upc.courtly.iam.domain.model.aggregates`
 
 **Atributos:**
 - `id`
 - `username`
+- `password`
 - `roles`
 
-###### `AuthenticatedUserResource`
-**Propósito:**  
-Representar la respuesta de autenticación enviada al frontend.
+**Metodos identificados:**
+- constructores;
+- `addRole(...)`
+- `addRoles(...)`
 
-**Atributos:**
+##### b) Referencias externas del dominio
+
+No se identifican referencias externas directas dentro del agregado `User`.
+
+##### c) Value Objects
+
+**`Roles`**
+- `ROLE_USER`
+- `ROLE_INSTRUCTOR`
+- `ROLE_ADMIN`
+
+##### d) Commands del dominio
+
+**`SignUpCommand`**
+- `username`
+- `password`
+- `roles`
+
+**`SignInCommand`**
+- `username`
+- `password`
+
+**`SeedRolesCommand`**
+
+##### e) Queries del dominio
+
+**`GetAllUsersQuery`**
+
+**`GetUserByIdQuery`**
+- `userId`
+
+**`GetUserByUsernameQuery`**
+- `username`
+
+**`GetAllRolesQuery`**
+
+**`GetRoleByNameQuery`**
+- `roleName`
+
+##### f) Domain Services
+
+**`UserCommandService`**
+- sign up
+- sign in
+
+**`UserQueryService`**
+- get all users
+- get user by id
+- get user by username
+
+**`RoleCommandService`**
+- seed roles
+
+**`RoleQueryService`**
+- get all roles
+- get role by name
+
+##### g) Repository
+
+**`UserRepository`**
+- `save(...)`
+- `findById(...)`
+- `findAll()`
+- `findByUsername(...)`
+- `existsByUsername(...)`
+
+**`RoleRepository`**
+- `save(...)`
+- `findAll()`
+- `findByName(...)`
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- el username debe ser unico;
+- si no se indican roles en el registro, se asigna `ROLE_USER`;
+- el password se almacena hasheado;
+- el login valida credenciales y devuelve token JWT;
+- los roles del enum se siembran si faltan;
+- el contexto autenticado se resuelve transversalmente para otros bounded contexts.
+
+**Observaciones de mejora:**
+- no se identifica refresh token;
+- no se identifica recuperacion de cuenta o rotacion de credenciales;
+- la identidad de negocio del usuario vive fuera de IAM, en `Users` y `Coaches`.
+
+#### 2.6.11.2. Interface Layer
+
+##### a) Controllers principales
+
+**`AuthenticationController`**
+- `POST /api/v1/authentication/sign-in`
+- `POST /api/v1/authentication/sign-up`
+
+**`UsersController`**
+- `GET /api/v1/users`
+- `GET /api/v1/users/{userId}`
+
+**`RolesController`**
+- `GET /api/v1/roles`
+
+##### b) Resources / DTOs
+
+**`SignUpResource`**
+- `username`
+- `password`
+- `roles`
+
+**`SignInResource`**
+- `username`
+- `password`
+
+**`AuthenticatedUserResource`**
 - `id`
 - `username`
 - `token`
 
-###### `RoleResource`
-**Propósito:**  
-Representar los roles del sistema hacia el frontend.
+**`UserResource`**
+- `id`
+- `username`
+- `roles`
 
-**Atributos:**
+**`RoleResource`**
 - `id`
 - `name`
 
-##### e) Assemblers
+##### c) Assemblers
 
-La capa de interfaz del contexto IAM incluye assemblers encargados de transformar datos entre resources, commands y entidades.
+**`SignUpCommandFromResourceAssembler`**
 
-**Assemblers identificados:**
-- `SignUpCommandFromResourceAssembler`
-- `SignInCommandFromResourceAssembler`
-- `UserResourceFromEntityAssembler`
-- `AuthenticatedUserResourceFromEntityAssembler`
-- `RoleResourceFromEntityAssembler`
+**`SignInCommandFromResourceAssembler`**
 
-##### f) Responsabilidad de la capa de interfaz
+**`AuthenticatedUserResourceFromEntityAssembler`**
 
-La responsabilidad principal de esta capa es:
-- recibir solicitudes del cliente,
-- convertir resources de entrada en commands o queries,
-- delegar la ejecución a la capa de aplicación,
-- y transformar los resultados en resources de salida adecuados para el frontend.
+**`UserResourceFromEntityAssembler`**
 
-En el caso de IAM, esta capa es especialmente importante porque constituye la puerta de entrada del sistema. Sin embargo, aunque resuelve correctamente la autenticación, no proporciona todavía un mecanismo nativo para traducir la identidad autenticada (`User`) hacia la identidad funcional (`UserProfile`) requerida por el resto del negocio.
+**`RoleResourceFromEntityAssembler`**
 
----
+##### d) Responsabilidad de la capa de interfaz
+
+Exponer autenticacion, registro y consultas administrativas de usuarios y roles.
 
 #### 2.6.11.3. Application Layer
 
-La Application Layer del bounded context **IAM** coordina los flujos de proceso relacionados con registro, autenticación y consulta de información de acceso. En esta capa se orquestan los comandos y consultas del sistema, conectando la Interface Layer con el Domain Layer y con la infraestructura de persistencia y seguridad.
+##### a) Command Services / Command Handlers
 
-Las capacidades principales del contexto son:
-- registrar usuario,
-- iniciar sesión,
-- listar usuarios,
-- obtener usuario por id,
-- listar roles,
-- inicializar roles del sistema al arranque.
-
-##### a) Command Handlers / Command Services
-
-###### `UserCommandServiceImpl`
-
-**Paquete:** `com.upc.matchpoint.iam.application.internal.commandservices`
-
-**Propósito:**  
-Implementar los casos de uso de registro e inicio de sesión.
+**`UserCommandServiceImpl`**
 
 **Dependencias:**
 - `UserRepository`
@@ -10008,413 +7651,609 @@ Implementar los casos de uso de registro e inicio de sesión.
 - `HashingService`
 - `TokenService`
 
-**Operaciones que maneja:**
+**Operaciones:**
+- registro;
+- inicio de sesion.
 
-**`handle(SignUpCommand command)`**
-- valida que el `username` no exista,
-- resuelve los roles o asigna `ROLE_USER` por defecto,
-- hashea la contraseña,
-- crea una nueva entidad `User`,
-- persiste el usuario,
-- retorna el usuario creado.
+**`RoleCommandServiceImpl`**
+- seeding de roles.
 
-**`handle(SignInCommand command)`**
-- busca el usuario por `username`,
-- valida la contraseña contra el hash,
-- genera un token JWT,
-- retorna el usuario autenticado junto con el token.
+##### b) Query Services / Query Handlers
 
-###### `RoleCommandServiceImpl`
+**`UserQueryServiceImpl`**
+- usuarios por id, username o lista.
 
-**Paquete:** `com.upc.matchpoint.iam.application.internal.commandservices`
+**`RoleQueryServiceImpl`**
+- roles por nombre o lista.
 
-**Propósito:**  
-Implementar el caso de uso de inicialización de roles.
+##### c) Flujos principales del negocio
 
-**Dependencias:**
-- `RoleRepository`
+**Flujo de registro**
+1. Se recibe `SignUpResource`.
+2. Se valida unicidad de username.
+3. Se resuelven roles o se asigna `ROLE_USER`.
+4. Se hashea el password.
+5. Se persiste el usuario.
 
-**Operaciones que maneja:**
+**Flujo de login**
+1. Se recibe `SignInResource`.
+2. Se valida username y password.
+3. Se genera token JWT.
+4. Se devuelve `AuthenticatedUserResource`.
 
-**`handle(SeedRolesCommand command)`**
-- recorre los valores del enum `Roles`,
-- verifica si cada rol existe,
-- crea y persiste los roles faltantes.
+##### d) Observaciones de la capa de aplicacion
 
-##### b) Query Handlers / Query Services
-
-###### `UserQueryServiceImpl`
-
-**Paquete:** `com.upc.matchpoint.iam.application.internal.queryservices`
-
-**Propósito:**  
-Implementar los casos de uso de consulta sobre usuarios autenticados.
-
-**Dependencias:**
-- `UserRepository`
-
-**Operaciones que maneja:**
-- `handle(GetAllUsersQuery query)`
-- `handle(GetUserByIdQuery query)`
-- `handle(GetUserByUsernameQuery query)`
-
-###### `RoleQueryServiceImpl`
-
-**Paquete:** `com.upc.matchpoint.iam.application.internal.queryservices`
-
-**Propósito:**  
-Implementar los casos de uso de consulta sobre roles.
-
-**Dependencias:**
-- `RoleRepository`
-
-**Operaciones que maneja:**
-- `handle(GetAllRolesQuery query)`
-- `handle(GetRoleByNameQuery query)`
-
-##### c) Event Handlers
-
-###### `ApplicationReadyEventHandler`
-
-**Paquete:** `com.upc.matchpoint.iam.application.internal.eventhandlers`
-
-**Propósito:**  
-Escuchar el evento de arranque de la aplicación e inicializar los roles del sistema.
-
-**Evento escuchado:**
-- `ApplicationReadyEvent`
-
-**Comportamiento:**
-- crea un `SeedRolesCommand`,
-- invoca a `RoleCommandService`,
-- asegura la existencia de `ROLE_USER`, `ROLE_ADMIN` y `ROLE_INSTRUCTOR`.
-
-##### d) Flujos principales del negocio
-
-###### Flujo de registro
-1. El frontend envía un `SignUpResource`.
-2. La capa de interfaz lo transforma a `SignUpCommand`.
-3. `UserCommandServiceImpl` valida que el `username` sea único.
-4. Se resuelven roles o se asigna `ROLE_USER` por defecto.
-5. Se hashea la contraseña.
-6. Se construye una instancia de `User`.
-7. El usuario se persiste mediante `UserRepository`.
-8. Se transforma el resultado en `UserResource`.
-9. Se retorna la respuesta al cliente.
-
-###### Flujo de autenticación
-1. El frontend envía un `SignInResource`.
-2. La capa de interfaz lo transforma a `SignInCommand`.
-3. `UserCommandServiceImpl` busca el usuario por `username`.
-4. Valida la contraseña hasheada.
-5. Genera un token JWT.
-6. Se transforma el resultado en `AuthenticatedUserResource`.
-7. Se retorna la respuesta al cliente.
-
-###### Flujo de consulta de usuarios
-1. El cliente solicita la lista o detalle de usuarios.
-2. El controlador construye la query correspondiente.
-3. `UserQueryServiceImpl` recupera la información desde `UserRepository`.
-4. Los resultados se transforman a resources.
-5. Se retorna la respuesta.
-
-###### Flujo de consulta de roles
-1. El cliente solicita la lista de roles.
-2. El controlador construye la query correspondiente.
-3. `RoleQueryServiceImpl` recupera la información desde `RoleRepository`.
-4. Los resultados se transforman a `RoleResource`.
-5. Se retorna la respuesta.
-
-###### Flujo de inicialización de roles
-1. La aplicación inicia.
-2. `ApplicationReadyEventHandler` escucha `ApplicationReadyEvent`.
-3. Se crea un `SeedRolesCommand`.
-4. `RoleCommandServiceImpl` inicializa los roles faltantes.
-
-##### e) Observaciones de la capa de aplicación
-
-La capa de aplicación implementa de forma coherente los flujos principales del contexto IAM: registro, inicio de sesión, consulta de usuarios, consulta de roles e inicialización de catálogos base. Su diseño concentra las decisiones de acceso y validación en un conjunto reducido de servicios, lo que facilita mantener reglas de autenticación y autorización bien delimitadas dentro del propio contexto.
-
----
+IAM concentra la seguridad basica del sistema y provee el soporte de autenticacion para el resto de bounded contexts.
 
 #### 2.6.11.4. Infrastructure Layer
 
-La Infrastructure Layer del bounded context **IAM** contiene los componentes encargados del acceso a base de datos, persistencia de usuarios y roles, cifrado de contraseñas y generación de tokens de autenticación. En esta capa se materializa el soporte técnico para la identidad autenticada del sistema.
-
 ##### a) Repositorios de persistencia
 
-###### `UserRepository`
+`UserRepository` y `RoleRepository` gestionan usuarios y roles.
 
-**Paquete:** `com.upc.matchpoint.iam.infrastructure.persistence.jpa.repositories`
+##### b) Persistencia de entidades
 
-**Propósito:**  
-Gestionar la persistencia y recuperación de usuarios autenticados utilizando Spring Data JPA.
+`User` se persiste en `users`, `Role` en `roles` y la asociacion many-to-many en `user_roles`.
 
-**Operaciones disponibles:**
-- `save`
-- `findById`
-- `findAll`
-- `findByUsername`
-- `existsByUsername`
-
-###### `RoleRepository`
-
-**Paquete:** `com.upc.matchpoint.iam.infrastructure.persistence.jpa.repositories`
-
-**Propósito:**  
-Gestionar la persistencia y recuperación de roles del sistema utilizando Spring Data JPA.
-
-**Operaciones disponibles:**
-- `save`
-- `findAll`
-- `findByName`
-- `existsByName`
-
-##### b) Persistencia de la entidad `User`
-
-La entidad `User` está mapeada como una entidad JPA con las siguientes características:
-- `@Entity`
-- `@ManyToMany(fetch = FetchType.EAGER)` con `Role`
-- `@JoinTable` para la tabla intermedia de roles
-- restricción de unicidad para `username`
-
-##### c) Persistencia de la entidad `Role`
-
-La entidad `Role` está mapeada como una entidad JPA con:
-- `@Entity`
-- atributo `name` basado en el enum `Roles`
-
-##### d) Servicios técnicos de infraestructura
-
-###### `HashingService`
-**Propósito:**  
-Abstraer el hashing y validación de contraseñas.
-
-###### `BCryptHashingService`
-**Propósito:**  
-Implementar el hashing de contraseñas utilizando BCrypt y Spring Security.
-
-###### `TokenService`
-**Propósito:**  
-Abstraer la generación y validación de tokens.
-
-###### `BearerTokenService`
-**Propósito:**  
-Extender el servicio de tokens para soporte específico de tokens Bearer.
-
-###### `TokenServiceImpl`
-**Propósito:**  
-Implementar la generación y validación de JWT.
-
-###### `DataSeeder`
-**Propósito:**  
-Inicializar datos base del sistema, incluyendo roles y el usuario administrador.
-
-##### e) Diseño de persistencia
+##### c) Diseno de persistencia
 
 **Tablas principales:**
 - `users`
 - `roles`
 - `user_roles`
 
-**Columnas identificadas en `users`:**
-- `id`
-- `username`
-- `password`
-- `created_at`
-- `updated_at`
+##### d) Integracion con otros bounded contexts
 
-**Columnas identificadas en `roles`:**
-- `id`
-- `name`
+El contexto se integra con `Users` y `Coaches` mediante `iam_user_id`, y transversalmente mediante `AuthenticatedContextFacade`.
 
-**Tabla intermedia `user_roles`:**
-- `user_id`
-- `role_id`
+##### e) Configuracion tecnica relevante
 
-##### f) Integración con otros bounded contexts
+Se identifican componentes de seguridad como:
+- `BCryptHashingService`
+- `TokenServiceImpl`
+- `BearerAuthorizationRequestFilter`
+- `UserDetailsServiceImpl`
+- `WebSecurityConfiguration`
 
-La infraestructura del contexto IAM no depende estructuralmente de los bounded contexts operativos del negocio. Sin embargo, existe una ACL representada por `IamContextFacade`, cuya finalidad es exponer operaciones seguras hacia otros contexts.
+##### f) Limitaciones de infraestructura
 
-**Observación importante:**  
-Aunque esta fachada existe, actualmente no está siendo utilizada como parte efectiva del flujo principal del sistema para resolver la integración con `UserProfile`.
-
-##### g) Limitaciones de la capa de infraestructura
-
-La infraestructura actual cumple con la autenticación y autorización básicas del sistema, pero todavía presenta limitaciones relevantes:
-- no persiste una relación directa con `UserProfile`;
-- no automatiza la creación o vinculación del perfil de negocio al registrarse;
-- no expone una infraestructura integrada para resolver identidad autenticada e identidad funcional en una sola operación.
-
-En consecuencia, la Infrastructure Layer del bounded context IAM es funcional para seguridad, pero aún no resuelve de manera completa la integración con la identidad utilizada por los bounded contexts operativos.
-
----
+No se identifica soporte nativo de refresh token ni revocacion persistida de sesiones.
 
 #### 2.6.11.5. Bounded Context Software Architecture Component Level Diagrams
 
-**Descripción:**
-
-El Component Diagram del bounded context **IAM** representa la descomposición del contenedor backend encargado de gestionar autenticación, autorización y administración básica de usuarios autenticados. A nivel arquitectónico, este container está conformado por componentes con responsabilidades bien delimitadas: recepción de solicitudes REST, transformación de datos entre capas, ejecución de comandos y consultas, acceso a persistencia, generación de tokens y manejo de credenciales.
-
-A partir del análisis del contexto, se identifican los siguientes componentes principales:
+**Descripcion:**  
+El diagrama de componentes de **IAM** muestra el conjunto de controladores, servicios de dominio y componentes de infraestructura de seguridad que sostienen autenticacion y autorizacion.
 
 **Componentes principales:**
-
-- **Authentication REST API Component**  
-  Expone los endpoints HTTP relacionados con sign-up y sign-in.
-
-- **IAM Query REST API Component**  
-  Expone endpoints para listar usuarios, obtener usuario por id y listar roles.
-
-- **IAM Transformation Component**  
-  Agrupa los assemblers y resources que permiten transformar datos entre la capa de interfaz y la capa de aplicación.
-
-- **Authentication Command Processing Component**  
-  Implementado por los servicios de comandos, coordina los casos de uso de registro e inicio de sesión.
-
-- **IAM Query Processing Component**  
-  Implementado por los servicios de consulta de usuarios y roles.
-
-- **IAM Domain Component**  
-  Representa el núcleo del dominio mediante las entidades `User` y `Role`, junto con comandos, queries y enum de roles.
-
-- **IAM Persistence Component**  
-  Encapsula el acceso a persistencia mediante `UserRepository` y `RoleRepository`, usando Spring Data JPA.
-
-- **Security Infrastructure Component**  
-  Agrupa servicios técnicos como hashing, autenticación y generación de JWT.
-
-- **IAM ACL / Integration Component**  
-  Representa la fachada `IamContextFacade` pensada para exponer funciones del contexto a otros bounded contexts.
-
----
+- REST API Component
+- REST Resources and Assemblers Component
+- Domain Services Component
+- Application Command Component
+- Application Query Component
+- Domain Model Component
+- Persistence Component
+- Security Infrastructure Component
 
 **Diagrama de componentes propuesto:**
 
-![Component Diagram IAM](assets/chapter2/componentes_iam.png)
+![Component Diagram IAM](assets/refactor/IAM-componentes.png)
 
-##### Relaciones entre componentes
-
-- **Authentication REST API Component → IAM Transformation Component**  
-  Transforma datos de entrada y salida entre resources, commands y entidades.
-
-- **Authentication REST API Component → Authentication Command Processing Component**  
-  Delega operaciones de registro e inicio de sesión.
-
-- **IAM Query REST API Component → IAM Query Processing Component**  
-  Delega operaciones de lectura sobre usuarios y roles.
-
-- **Authentication Command Processing Component → IAM Domain Component**  
-  Construye la entidad `User` y resuelve roles dentro del dominio.
-
-- **Authentication Command Processing Component → IAM Persistence Component**  
-  Persiste usuarios y consulta roles.
-
-- **Authentication Command Processing Component → Security Infrastructure Component**  
-  Utiliza servicios de hashing, autenticación y generación de token.
-
-- **IAM Query Processing Component → IAM Persistence Component**  
-  Recupera usuarios y roles desde base de datos.
-
-- **IAM ACL / Integration Component → Users BC**  
-  Representa la integración conceptual con el contexto `Users` para resolver identidad funcional, aunque actualmente no participa activamente del flujo principal.
-
----
+**Relaciones entre componentes:**
+- `AuthenticationController` usa assemblers y command services;
+- el command service usa hashing y token service;
+- usuarios y roles se persisten por repositorio JPA;
+- la seguridad transversal se resuelve mediante el filtro bearer y el facade autenticado.
 
 #### 2.6.11.6. Bounded Context Software Architecture Code Level Diagrams
 
-En esta sección se presentan los diagramas a nivel de código del bounded context **IAM**, los cuales permiten comprender con mayor detalle cómo se implementan los componentes identificados previamente. Este nivel de análisis muestra la estructura interna del dominio y su persistencia, evidenciando las clases, interfaces, atributos, métodos y relaciones que conforman el contexto.
-
-Se incluyen dos representaciones principales:
-
-- el **Class Diagram del Domain Layer**, que describe la estructura del modelo de dominio;
-- y el **Database Design Diagram**, que representa la persistencia de datos en la base de datos relacional.
-
----
-
 ##### 2.6.11.6.1. Bounded Context Domain Layer Class Diagrams
 
-**Descripción:**
-
-El diagrama de clases del Domain Layer del bounded context **IAM** presenta el agregado principal `User`, junto con la entidad `Role`, el enum `Roles`, las interfaces de servicios del dominio y los objetos que representan comandos y consultas. El diseño evidencia que `User` es el núcleo del contexto y que las operaciones del sistema se organizan alrededor de comandos de autenticación y consultas de usuarios y roles.
+**Descripcion:**  
+El diagrama UML de **IAM** muestra `User`, `Role` y el enum `Roles`, junto con los comandos y queries de autenticacion y administracion.
 
 **Diagrama UML de clases (Domain Layer):**
 
-![Domain Layer IAM](assets/chapter2/domainlayer_iam.png)
+![Domain Layer IAM](assets/refactor/IAM-clases.png)
 
-##### Relaciones principales del modelo
+**Relaciones principales del modelo**
+- `User` es el aggregate root;
+- `User` mantiene una relacion many-to-many con `Role`;
+- `Role` utiliza el enum `Roles`.
 
-- `User` es el **Aggregate Root** del bounded context.
-- `User` mantiene una relación **Many-to-Many** con `Role`.
-- `Role` utiliza el enum `Roles` como value object.
-- `UserCommandService` define las operaciones de registro e inicio de sesión.
-- `UserQueryService` define las operaciones de lectura de usuarios.
-- `RoleCommandService` define la inicialización de roles.
-- `RoleQueryService` define las operaciones de lectura de roles.
-- Los comandos encapsulan acciones de autenticación y administración inicial.
-- Las queries encapsulan solicitudes de consulta.
-
-##### Observaciones
-
-El modelo de dominio presenta una estructura clara y centrada en el agregado `User`. La separación entre `User`, `Role` y el enum `Roles` mantiene acotado el espacio de autorización del contexto y permite representar de forma consistente las capacidades de autenticación y asignación de permisos.
-
----
+**Observaciones**
+- IAM resuelve identidad tecnica y control de acceso, no la identidad funcional del negocio.
 
 ##### 2.6.11.6.2. Bounded Context Database Design Diagram
 
-**Descripción:**
+**Descripcion**  
+El ERD de **IAM** representa `users`, `roles` y `user_roles`.
 
-El diagrama de base de datos del bounded context **IAM** representa la estructura relacional utilizada para persistir la información de usuarios autenticados y roles. Las tablas principales son `users` y `roles`, vinculadas mediante una tabla intermedia `user_roles`.
+**Diagrama de base de datos (ERD)**
 
-**Diagrama de base de datos (ERD):**
+![Database IAM](assets/refactor/IAM-db.png)
 
-![Database IAM](assets/chapter2/basededatos_iam.png)
-##### Tablas y atributos
+**Tablas y atributos**
 
-###### Tabla `users`
+Tabla `users`
+- `id`
+- `username`
+- `password`
 
-- `id`: identificador único del usuario autenticado (PK)
-- `username`: nombre único de usuario
-- `password`: contraseña cifrada
-- `created_at`: fecha de creación
-- `updated_at`: fecha de actualización
+Tabla `roles`
+- `id`
+- `name`
 
-###### Tabla `roles`
+Tabla `user_roles`
+- `user_id`
+- `role_id`
 
-- `id`: identificador único del rol
-- `name`: nombre lógico del rol
+**Constraints**
+- primary key en `users.id` y `roles.id`;
+- unicidad de `username`;
+- foreign keys en `user_roles`.
 
-###### Tabla `user_roles`
+**Relaciones entre tablas**
+- `users (*) ---- (*) roles` mediante `user_roles`
 
-- `user_id`: referencia al usuario autenticado
-- `role_id`: referencia al rol asignado
-
----
-
-##### Constraints
-
-- `PRIMARY KEY (id)` en `users`
-- `PRIMARY KEY (id)` en `roles`
-- `FOREIGN KEY (user_id)` → `users(id)`
-- `FOREIGN KEY (role_id)` → `roles(id)`
-- restricción de unicidad en `username`
-- restricción de unicidad esperada en `roles.name`
+**Observaciones**
+- el modelo relacional soporta correctamente la asignacion multiple de roles.
 
 ---
 
-##### Relaciones entre tablas
+### 2.6.12. Bounded Context: TrainingSessions
 
-- `users (*) ──── (*) roles` mediante `user_roles`
+El bounded context **TrainingSessions** representa la capacidad principal del sistema para gestionar sesiones con entrenador. Su proposito es coordinar una operacion mas rica que una reserva simple, integrando jugador, coach, cancha, disponibilidad, horario, precio y estado de negocio. La entidad principal y agregado raiz del contexto es `TrainingSession`.
 
----
+Este contexto se relaciona de forma directa con **Users**, **Coaches**, **Courts**, **Availabilities**, **Bookings**, **Payments**, **Notifications** y **Reviews**. Por ello, constituye uno de los bounded contexts mas importantes del sistema, ya que articula el flujo mas completo de Courtly.
 
-##### Observaciones
+#### 2.6.12.1. Domain Layer
 
-El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente cuentas, roles y la tabla intermedia `user_roles`. La estructura de datos refleja un bounded context de seguridad bien normalizado, con una relación clara entre usuarios y privilegios.
+La Domain Layer del bounded context **TrainingSessions** contiene las clases que modelan el nucleo de la sesion con entrenador y las reglas de negocio asociadas a su ciclo de vida.
 
----
+##### a) Entity / Aggregate Root: `TrainingSession`
 
-# Conclusiones
+**Nombre de la clase:** `TrainingSession`  
+**Paquete:** `com.upc.courtly.trainingsessions.domain.model.aggregates`
+
+**Proposito:**  
+Representa la sesion completa entre un jugador y un entrenador, asociada a una cancha y a una disponibilidad concreta.
+
+**Atributos:**
+- `id: Long`
+- `player: UserProfile`
+- `coach: Coach`
+- `court: Court`
+- `availability: Availability`
+- `startTime: LocalDateTime`
+- `endTime: LocalDateTime`
+- `status: TrainingSessionStatus`
+- `price: BigDecimal`
+- `rejectionReason: String`
+- `cancellationReason: String`
+- `createdAt: LocalDateTime`
+- `acceptedAt: LocalDateTime`
+- `cancelledAt: LocalDateTime`
+- `completedAt: LocalDateTime`
+
+**Metodos:**
+- `TrainingSession(UserProfile player, Coach coach, Court court, Availability availability, LocalDateTime startTime, LocalDateTime endTime, BigDecimal price)`
+- `accept()`
+- `reject(String rejectionReason)`
+- `cancel(String cancellationReason)`
+- `complete()`
+- `onCreate()`
+
+**Relaciones:**
+- una sesion pertenece a un solo jugador;
+- una sesion pertenece a un solo coach;
+- una sesion utiliza una sola cancha;
+- una sesion consume una sola disponibilidad.
+
+##### b) Referencias externas del dominio
+
+###### `UserProfile`
+**Bounded context de origen:** `Users`  
+Representa al jugador que solicita la sesion.
+
+###### `Coach`
+**Bounded context de origen:** `Coaches`  
+Representa al entrenador que recibe, acepta o rechaza la solicitud.
+
+###### `Court`
+**Bounded context de origen:** `Courts`  
+Representa la cancha donde se desarrolla la sesion.
+
+###### `Availability`
+**Bounded context de origen:** `Availabilities`  
+Representa el slot horario del entrenador.
+
+##### c) Value Objects
+
+**`TrainingSessionStatus`**
+- `PENDING`
+- `ACCEPTED`
+- `REJECTED`
+- `CANCELLED`
+- `COMPLETED`
+
+No se identifica un value object adicional para el rango horario.
+
+##### d) Commands del dominio
+
+**`CreateTrainingSessionCommand`**
+- `playerId`
+- `coachId`
+- `courtId`
+- `availabilityId`
+- `startTime`
+- `endTime`
+- `price`
+
+**`AcceptTrainingSessionCommand`**
+- `trainingSessionId`
+
+**`RejectTrainingSessionCommand`**
+- `trainingSessionId`
+- `reason`
+
+**`CancelTrainingSessionCommand`**
+- `trainingSessionId`
+- `reason`
+
+**`CompleteTrainingSessionCommand`**
+- `trainingSessionId`
+
+**`DeleteTrainingSessionCommand`**
+- `trainingSessionId`
+
+##### e) Queries del dominio
+
+**`GetAllTrainingSessionsQuery`**  
+No contiene atributos.
+
+**`GetTrainingSessionByIdQuery`**
+- `trainingSessionId`
+
+##### f) Domain Services
+
+**`TrainingSessionCommandService`**
+- create
+- accept
+- reject
+- cancel
+- complete
+- delete
+
+**`TrainingSessionQueryService`**
+- get all
+- get by id
+
+##### g) Repository
+
+**`TrainingSessionRepository`**
+- `save(...)`
+- `findById(...)`
+- `findAll()`
+- `deleteById(...)`
+- `existsOverlappingCourtAssignment(...)`
+
+##### h) Reglas de negocio identificadas
+
+**Reglas implementadas actualmente:**
+- el jugador, coach, cancha y disponibilidad deben existir;
+- la disponibilidad debe pertenecer al coach indicado;
+- la disponibilidad debe estar en estado `AVAILABLE`;
+- no se permite crear una sesion si existe un booking solapado en la misma cancha con estados `PENDING_PAYMENT` o `CONFIRMED`;
+- no se permite crear o aceptar una sesion si existe otra training session solapada con estados `ACCEPTED` o `COMPLETED`;
+- la sesion se crea inicialmente en estado `PENDING`;
+- solo una sesion `PENDING` puede ser aceptada o rechazada;
+- al aceptar la sesion, la disponibilidad pasa a `RESERVED`;
+- al cancelar una sesion con disponibilidad reservada, la disponibilidad vuelve a `AVAILABLE`;
+- solo una sesion `ACCEPTED` puede completarse;
+- al completarse, se habilita la reseña mediante notificacion `REVIEW_ENABLED`.
+
+**Observaciones de mejora:**
+- no se identifica una politica de reprogramacion formal;
+- no se identifica una politica automatica de expiracion para solicitudes pendientes.
+
+#### 2.6.12.2. Interface Layer
+
+La Interface Layer del bounded context **TrainingSessions** expone los endpoints REST del flujo de sesiones con entrenador.
+
+##### a) `TrainingSessionsController`
+
+**Paquete:** `com.upc.courtly.trainingsessions.interfaces.rest`
+
+**Endpoints expuestos:**
+- `POST /api/v1/training-sessions`
+- `GET /api/v1/training-sessions`
+- `GET /api/v1/training-sessions/{id}`
+- `POST /api/v1/training-sessions/{id}/accept`
+- `POST /api/v1/training-sessions/{id}/reject`
+- `POST /api/v1/training-sessions/{id}/cancel`
+- `POST /api/v1/training-sessions/{id}/complete`
+- `DELETE /api/v1/training-sessions/{id}`
+
+##### b) Resources / DTOs
+
+**`TrainingSessionResource`**
+- `id`
+- `startTime`
+- `endTime`
+- `status`
+- `price`
+- `player`
+- `coach`
+- `court`
+- `availabilityId`
+
+**`CreateTrainingSessionResource`**
+- `playerId`
+- `coachId`
+- `courtId`
+- `availabilityId`
+- `startTime`
+- `endTime`
+- `price`
+
+**`TrainingSessionActionResource`**
+- `reason`
+
+##### c) Assemblers
+
+**`TrainingSessionResourceFromEntityAssembler`**  
+Convierte la entidad `TrainingSession` a `TrainingSessionResource`.
+
+**`CreateTrainingSessionCommandFromResourceAssembler`**  
+Convierte el resource de creacion al comando correspondiente.
+
+##### d) Responsabilidad de la capa de interfaz
+
+La interfaz recibe la solicitud inicial del jugador, expone el detalle de la sesion y canaliza las acciones del entrenador o del sistema sobre la sesion.
+
+#### 2.6.12.3. Application Layer
+
+La Application Layer coordina el ciclo de vida completo de la sesion y sus integraciones con otros bounded contexts.
+
+##### a) Command Services / Command Handlers
+
+**`TrainingSessionCommandServiceImpl`**
+
+**Dependencias:**
+- `TrainingSessionRepository`
+- `UserProfileRepository`
+- `CoachRepository`
+- `CourtRepository`
+- `AvailabilityRepository`
+- `BookingRepository`
+- `NotificationRepository`
+
+**Operaciones que maneja:**
+- crear una nueva sesion;
+- aceptar una sesion pendiente;
+- rechazar una sesion pendiente;
+- cancelar una sesion;
+- completar una sesion aceptada;
+- eliminar una sesion.
+
+##### b) Query Services / Query Handlers
+
+**`TrainingSessionQueryServiceImpl`**
+
+**Dependencias:**
+- `TrainingSessionRepository`
+
+**Operaciones:**
+- obtener todas las sesiones;
+- obtener una sesion por id.
+
+##### c) Flujos principales del negocio
+
+**Flujo de creacion**
+1. El jugador envia `CreateTrainingSessionResource`.
+2. Se valida existencia de jugador, coach, cancha y disponibilidad.
+3. Se valida que la disponibilidad pertenezca al coach y este disponible.
+4. Se validan conflictos contra bookings y training sessions existentes.
+5. Se crea la sesion en estado `PENDING`.
+6. Se emiten notificaciones al coach y al jugador.
+
+**Flujo de aceptacion**
+1. El coach acepta una sesion pendiente.
+2. Se vuelven a validar conflictos de cancha.
+3. La sesion pasa a `ACCEPTED`.
+4. La disponibilidad cambia a `RESERVED`.
+5. Se notifica al jugador.
+
+**Flujo de rechazo**
+1. El coach rechaza una sesion `PENDING`.
+2. Se registra la razon.
+3. La sesion pasa a `REJECTED`.
+4. Se notifica al jugador.
+
+**Flujo de cancelacion**
+1. Se cancela la sesion.
+2. Si la disponibilidad estaba reservada, vuelve a `AVAILABLE`.
+3. Se registra la razon de cancelacion.
+4. Se notifica al jugador.
+
+**Flujo de completado**
+1. Solo una sesion `ACCEPTED` puede completarse.
+2. La sesion pasa a `COMPLETED`.
+3. Se emite `REVIEW_ENABLED`.
+
+##### d) Observaciones de la capa de aplicacion
+
+La capa de aplicacion contiene la mayor riqueza de negocio del sistema y articula coherentemente otros bounded contexts. Aun asi, no se identifica una orquestacion basada en eventos asincronos.
+
+#### 2.6.12.4. Infrastructure Layer
+
+La Infrastructure Layer del bounded context **TrainingSessions** contiene la persistencia de la sesion y las consultas auxiliares para detectar conflictos operativos.
+
+##### a) Repositorios de persistencia
+
+**`TrainingSessionRepository`**
+- `save(...)`
+- `findById(...)`
+- `findAll()`
+- `deleteById(...)`
+- `existsOverlappingCourtAssignment(...)`
+
+##### b) Persistencia de entidades
+
+La entidad `TrainingSession` se persiste con relaciones hacia `UserProfile`, `Coach`, `Court` y `Availability`, y con columnas de auditoria temporal asociadas a aceptacion, cancelacion y completado.
+
+##### c) Diseno de persistencia
+
+**Tabla principal:** `training_sessions`
+
+**Columnas identificadas:**
+- `id`
+- `player_user_id`
+- `coach_id`
+- `court_id`
+- `availability_id`
+- `start_time`
+- `end_time`
+- `status`
+- `price`
+- `rejection_reason`
+- `cancellation_reason`
+- `created_at`
+- `accepted_at`
+- `cancelled_at`
+- `completed_at`
+
+##### d) Integracion con otros bounded contexts
+
+La infraestructura del contexto depende de:
+- `Users`, para el jugador;
+- `Coaches`, para el entrenador;
+- `Courts`, para la cancha;
+- `Availabilities`, para el slot reservado;
+- `Bookings`, para validar conflictos de cancha;
+- `Notifications`, para persistir eventos al usuario.
+
+##### e) Configuracion tecnica relevante
+
+No se identifica configuracion tecnica propia del contexto.
+
+##### f) Limitaciones de infraestructura
+
+No se identifican mecanismos de locking pesimista u optimista explicitos para aceptacion concurrente de sesiones sobre la misma disponibilidad.
+
+#### 2.6.12.5. Bounded Context Software Architecture Component Level Diagrams
+
+**Descripcion:**  
+El Component Diagram del bounded context **TrainingSessions** representa la descomposicion del contenedor backend responsable de gestionar sesiones con entrenador. Arquitectonicamente, el contexto esta compuesto por un controller REST, transformadores de recursos, servicios de aplicacion para comandos y consultas, el agregado de dominio `TrainingSession`, la persistencia JPA y un conjunto de accesos a bounded contexts externos que permiten validar actores, disponibilidad, conflictos de cancha y eventos operativos.
+
+**Componentes principales:**
+
+- **TrainingSessions REST API Component**  
+  Expone los endpoints HTTP del flujo de sesion con entrenador mediante `TrainingSessionsController`.
+
+- **TrainingSession Transformation Component**  
+  Agrupa los assemblers y resources utilizados para transformar datos entre la capa REST y la capa de aplicacion.
+
+- **TrainingSession Command Processing Component**  
+  Implementado por `TrainingSessionCommandServiceImpl`, coordina las operaciones de creacion, aceptacion, rechazo, cancelacion, completado y eliminacion.
+
+- **TrainingSession Query Processing Component**  
+  Implementado por `TrainingSessionQueryServiceImpl`, gestiona las operaciones de lectura.
+
+- **TrainingSession Domain Component**  
+  Reune el agregado `TrainingSession`, sus comandos, queries y el enum `TrainingSessionStatus`.
+
+- **TrainingSession Persistence Component**  
+  Encapsula la persistencia mediante `TrainingSessionRepository`.
+
+- **External Context Access Component**  
+  Representa la dependencia hacia `Users`, `Coaches`, `Courts`, `Availabilities`, `Bookings` y `Notifications`.
+
+**Diagrama de componentes propuesto:**
+
+![Component Diagram TrainingSessions](assets/refactor/trainingsessions-componentes.png)
+
+**Relaciones entre componentes:**
+- el controller invoca command y query services;
+- los assemblers construyen los comandos del dominio;
+- el command service valida entidades externas y conflictos operativos;
+- el repository persiste el agregado `TrainingSession`;
+- el acceso externo materializa la coordinacion transversal del flujo.
+
+#### 2.6.12.6. Bounded Context Software Architecture Code Level Diagrams
+
+En esta subseccion se presentan los diagramas a nivel de codigo del bounded context **TrainingSessions**, enfocados en la estructura interna del dominio y en la persistencia relacional que soporta la sesion con entrenador.
+
+##### 2.6.12.6.1. Bounded Context Domain Layer Class Diagrams
+
+**Descripcion:**  
+El diagrama de clases del Domain Layer muestra a `TrainingSession` como agregado principal, su relacion con `UserProfile`, `Coach`, `Court` y `Availability`, asi como los comandos y el enum `TrainingSessionStatus`.
+
+**Diagrama UML de clases (Domain Layer):**
+
+![Domain Layer TrainingSessions](assets/refactor/trainingsessions-clases.png)
+
+**Relaciones principales del modelo**
+- `TrainingSession` es el aggregate root del contexto.
+- `TrainingSession` referencia a `UserProfile` como jugador.
+- `TrainingSession` referencia a `Coach`.
+- `TrainingSession` referencia a `Court`.
+- `TrainingSession` referencia a `Availability`.
+- `TrainingSessionCommandService` define las operaciones de escritura.
+- `TrainingSessionQueryService` define las operaciones de lectura.
+
+**Observaciones**
+
+El modelo del dominio es el mas rico del backend actual, ya que integra actores, recursos y estados de negocio en una sola operacion. Constituye el principal diferenciador funcional del sistema frente a una reserva simple.
+
+##### 2.6.12.6.2. Bounded Context Database Design Diagram
+
+**Descripcion**  
+El diagrama de base de datos del bounded context **TrainingSessions** representa la estructura relacional de la tabla `training_sessions` y sus referencias hacia jugadores, coaches, canchas y disponibilidades.
+
+**Diagrama de base de datos (ERD)**
+
+![Database TrainingSessions](assets/refactor/trainingsessions-db.png)
+
+**Tablas y atributos**
+
+Tabla `training_sessions`
+
+- `id`: identificador unico de la sesion
+- `player_user_id`: referencia al jugador
+- `coach_id`: referencia al entrenador
+- `court_id`: referencia a la cancha
+- `availability_id`: referencia a la disponibilidad usada
+- `start_time`: fecha y hora de inicio
+- `end_time`: fecha y hora de fin
+- `status`: estado de la sesion
+- `price`: precio pactado de la sesion
+- `rejection_reason`: motivo de rechazo, si aplica
+- `cancellation_reason`: motivo de cancelacion, si aplica
+- `created_at`: fecha de creacion
+- `accepted_at`: fecha de aceptacion
+- `cancelled_at`: fecha de cancelacion
+- `completed_at`: fecha de finalizacion
+
+**Constraints esperados**
+
+- primary key en `id`
+- foreign key `player_user_id -> user_profiles.id`
+- foreign key `coach_id -> coaches.id`
+- foreign key `court_id -> courts.id`
+- foreign key `availability_id -> availabilities.id`
+- `player_user_id`, `coach_id`, `court_id`, `availability_id`, `start_time`, `end_time`, `status`, `price` y `created_at` son obligatorios
+
+**Relaciones entre tablas**
+
+- `user_profiles (1) ---- (*) training_sessions`
+- `coaches (1) ---- (*) training_sessions`
+- `courts (1) ---- (*) training_sessions`
+- `availabilities (1) ---- (0..1) training_sessions` desde la perspectiva operativa del slot consumido
+
+**Observaciones**
+
+El modelo relacional es consistente con el flujo de negocio del backend. No obstante, la prevencion de conflictos de horario y la gestion del estado de la disponibilidad se realiza principalmente desde la capa de aplicacion.
 
 ## Conclusiones y recomendaciones.
 
