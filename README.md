@@ -8523,6 +8523,207 @@ Eliminar perfil.
 **Captura:** Aqui va la captura de pantalla de eliminacion de perfil
 
 ---
+
+## 4.2.1.7. Software Deployment Evidence for Sprint Review
+
+En este Sprint se realizaron actividades de despliegue orientadas al producto **Web Services** del proyecto Courtly. El proceso de deployment incluyó la preparación del repositorio del backend, la integración de cambios mediante pull requests, la configuración del entorno de ejecución en la plataforma cloud **Render**, la definición de variables de entorno necesarias para producción y la validación del servicio desplegado mediante una URL pública y la documentación OpenAPI disponible en Swagger UI.
+
+Para este Sprint, el despliegue del backend permitió contar con una versión accesible del servicio en la nube, facilitando la validación de endpoints, la revisión funcional del sistema y la verificación del correcto funcionamiento de la API fuera del entorno local. Asimismo, se dejó configurada la base necesaria para la automatización y continuidad del deployment en siguientes iteraciones del proyecto.
+
+### Backend / Web Services Deployment
+
+El backend del proyecto fue desplegado utilizando **Render** como proveedor cloud. Para ello, se trabajó sobre el repositorio remoto del backend en GitHub, donde se preparó la estructura necesaria para el despliegue, incluyendo archivos de configuración como `Dockerfile` y `render.yaml`, así como ajustes orientados a la ejecución en entorno productivo.
+
+Repositorio del backend: [https://github.com/Aplicaciones-Moviles-3248/backend](https://github.com/Aplicaciones-Moviles-3248/backend)  
+Servicio desplegado: `courtly-backend.onrender.com`  
+Swagger UI desplegado: [https://courtly-backend.onrender.com/swagger-ui/index.html](https://courtly-backend.onrender.com/swagger-ui/index.html)
+
+### Evidencia del proceso realizado
+
+#### 1. Preparación e integración del backend en GitHub
+
+Como parte del proceso de deployment, se gestionó el backend desde el repositorio remoto en GitHub. En esta etapa se consolidaron cambios relacionados con la estabilización del backend, la seguridad y la configuración necesaria para el despliegue en producción. También se observa el uso de pull requests como mecanismo de integración de cambios antes de reflejarlos en la rama principal.
+
+**Explicación:**  
+Esta etapa fue importante porque permitió centralizar el código fuente del backend y dejar trazabilidad de los cambios asociados a la preparación del despliegue. Además, la integración mediante pull requests ayudó a ordenar el flujo de trabajo antes de publicar el servicio en la nube.
+
+**Captura sugerida:** Pull requests del backend mostrando la integración de cambios previos al deployment.  
+`[Aquí va la captura de pantalla de los pull requests relacionados con la preparación del backend]`
+
+#### 2. Configuración del repositorio para deployment
+
+En el repositorio del backend se prepararon los archivos necesarios para facilitar el despliegue en Render. Entre ellos destacan `Dockerfile`, `render.yaml`, scripts auxiliares y ajustes en archivos de configuración del proyecto. Esto permitió que el servicio pudiera compilarse y ejecutarse correctamente en el entorno cloud.
+
+**Explicación:**  
+La inclusión de estos archivos permitió definir cómo debía construirse y ejecutarse el backend en el proveedor cloud. Esta configuración fue clave para adaptar el proyecto desde un entorno local hacia un entorno de producción accesible en línea.
+
+**Captura sugerida:** Vista principal del repositorio backend donde se evidencian archivos como `Dockerfile`, `render.yaml`, `pom.xml` y carpetas fuente.  
+`[Aquí va la captura de pantalla del repositorio backend con los archivos de deployment configurados]`
+
+#### 3. Configuración del servicio en Render
+
+El backend fue configurado en Render como servicio desplegable en la nube. Para ello, se registró la aplicación, se enlazó con el repositorio del backend y se definieron los parámetros necesarios para la ejecución del servicio en producción. Esta configuración permitió publicar una URL accesible externamente para consumir la API.
+
+**Explicación:**  
+La configuración en Render fue el paso que permitió pasar del repositorio fuente a un servicio ejecutándose en internet. Esto representa la evidencia principal del deployment del backend durante el Sprint.
+
+**Captura sugerida:** Vista del servicio backend configurado en Render.  
+`[Aquí va la captura de pantalla del servicio backend configurado en Render]`
+
+#### 4. Definición de variables de entorno
+
+Como parte del deployment, se configuraron variables de entorno necesarias para el correcto funcionamiento del backend en producción. Entre ellas se incluyeron la clave JWT para autenticación, la URL de base de datos y el perfil activo de Spring para producción.
+
+Variables configuradas en Render:
+- `AUTHORIZATION_JWT_SECRET`
+- `DATABASE_URL`
+- `SPRING_PROFILES_ACTIVE=prod`
+
+**Explicación:**  
+Estas variables permitieron desacoplar información sensible del código fuente y asegurar que el backend se ejecutara con la configuración adecuada en el entorno cloud. Esto es especialmente importante para seguridad, conexión a base de datos y activación del perfil de producción.
+
+**Captura sugerida:** Panel de variables de entorno configuradas en Render.  
+`[Aquí va la captura de pantalla de las variables de entorno del backend en Render]`
+
+> **Nota:** En la versión final del informe o README convertido a PDF, las credenciales sensibles deben mostrarse ocultas, recortadas o difuminadas para no exponer información de seguridad.
+
+#### 5. Validación del servicio desplegado mediante URL pública
+
+Una vez configurado el deployment, se verificó que el backend estuviera accesible mediante una URL pública en Render. Esta validación permitió confirmar que el servicio ya no dependía del entorno local y podía ser consumido desde internet.
+
+URL pública del backend:  
+`https://courtly-backend.onrender.com`
+
+**Explicación:**  
+La disponibilidad de una URL pública constituye evidencia directa de que el backend fue desplegado satisfactoriamente en la nube y quedó disponible para pruebas y consumo externo.
+
+**Captura sugerida:** Evidencia de la URL pública compartida y validada por el equipo.  
+`[Aquí va la captura de pantalla donde se muestra la URL pública del backend desplegado]`
+
+#### 6. Validación funcional mediante Swagger UI
+
+Como parte de la evidencia de deployment, se verificó que la documentación OpenAPI del backend estuviera disponible en línea mediante Swagger UI. Esto permitió comprobar que los endpoints del sistema quedaron publicados correctamente y podían ser inspeccionados desde el entorno desplegado.
+
+URL de Swagger UI:  
+`https://courtly-backend.onrender.com/swagger-ui/index.html`
+
+**Explicación:**  
+La disponibilidad de Swagger UI en el entorno desplegado valida no solo que la aplicación está activa, sino también que sus endpoints pueden ser consultados y probados desde una interfaz web de documentación, lo cual resulta muy útil para Sprint Review y validación técnica.
+
+**Captura sugerida:** Swagger UI abierto mostrando los endpoints del backend desplegado.  
+`[Aquí va la captura de pantalla de Swagger UI del backend desplegado]`
+
+### Resultado del deployment del backend
+
+Como resultado del trabajo realizado durante este Sprint, el backend de Courtly quedó desplegado exitosamente en Render, con acceso mediante URL pública y documentación Swagger disponible en línea. Además, se configuraron correctamente los recursos básicos de producción, incluyendo variables de entorno y archivos de deployment, dejando una base sólida para la continuidad del proyecto y futuras iteraciones del proceso de despliegue.
+
+---
+
+## 4.2.1.8. Team Collaboration Insights during Sprint
+
+En esta sección se presentan los principales hallazgos sobre la colaboración del equipo durante el Sprint, tomando como base la evidencia observable en GitHub, la distribución funcional de responsabilidades y la integración de entregables del proyecto. Durante este periodo, el equipo trabajó sobre tres repositorios principales: `backend`, `landing-page` y `REPORT`. La colaboración del Sprint no solo se reflejó en commits y actividad técnica visible en GitHub, sino también en la validación funcional, organización del contenido, revisión de avances y consolidación de evidencias para Sprint Review.
+
+La interpretación de la colaboración debe considerar una característica importante de este Sprint: tanto el backend como la landing page partieron de artefactos previamente construidos y reutilizados, por lo que la actividad visible de subida y consolidación en GitHub quedó concentrada en un integrante. En cambio, el trabajo colectivo del equipo se reflejó con mayor claridad en la organización del repositorio del informe, en la asignación distribuida de bounded contexts y en la preparación conjunta de la documentación, despliegue y validación del producto.
+
+### Integrantes del equipo
+
+- **U202317692 – Angulo Abud, Juan Carlos**
+- **U202324129 – Chacaliza Minaya, Eduardo Fabian**
+- **U202214572 – Espinoza Vivas, Camilla Leonor**
+- **U202215462 – Nanfuñay Liza, Pedro Jesús**
+- **U202320442 – Quispe Barzola, Fabricio Fabian**
+
+### Distribución funcional del trabajo durante el Sprint
+
+La colaboración del equipo se organizó tanto por productos como por bounded contexts y secciones del informe. En el trabajo técnico de Web Services, la distribución funcional fue la siguiente:
+
+- **Fabricio Fabian Quispe Barzola:** Bookings y Analytics.
+- **Juan Carlos Angulo Abud:** Courts y Availabilities.
+- **Eduardo Fabian Chacaliza Minaya:** Users, Notifications e IAM.
+- **Camilla Leonor Espinoza Vivas:** Reviews y Coaches.
+- **Pedro Jesús Nanfuñay Liza:** Matches y Payments. :contentReference[oaicite:2]{index=2}
+
+Adicionalmente, la organización del informe y del avance del proyecto muestra que los capítulos y subcapítulos fueron repartidos entre todos los integrantes, lo que evidencia participación distribuida en la construcción del entregable global del Sprint :contentReference[oaicite:3]{index=3}.
+
+### Evidencia general de repositorios del Sprint
+
+Durante el Sprint se trabajó con tres repositorios dentro de la organización del proyecto:
+
+- **backend**
+- **landing-page**
+- **REPORT**
+
+**Interpretación:**  
+La existencia de estos tres repositorios evidencia la separación del trabajo por producto digital. El repositorio `backend` concentró el trabajo relacionado con Web Services, `landing-page` agrupó la implementación del sitio de presentación del producto, y `REPORT` reunió la elaboración colaborativa del documento e integración de evidencias del Sprint. Esta organización permitió diferenciar claramente los espacios de trabajo técnico y documental.
+
+**Captura sugerida:** Vista general de la organización en GitHub mostrando los tres repositorios principales.  
+`[Aquí va la captura de pantalla de la organización en GitHub con los repositorios backend, landing-page y REPORT]`
+
+### Colaboración en el repositorio backend
+
+En el caso del repositorio `backend`, la evidencia visible en GitHub muestra una participación técnica centralizada, principalmente porque el backend reutilizado fue consolidado y publicado por un solo integrante. Esto explica por qué la actividad de commits, branches y merges no aparece distribuida de forma homogénea entre los cinco miembros.
+
+Sin embargo, esto no implica ausencia de colaboración del resto del equipo. La participación colectiva en backend se expresó en la definición y validación de bounded contexts, revisión de endpoints, documentación de servicios, análisis funcional del despliegue y preparación de evidencias para Sprint Review. La división funcional de bounded contexts muestra que el trabajo del backend sí estuvo conceptualmente repartido entre todos los integrantes, aunque la publicación técnica del repositorio haya sido centralizada :contentReference[oaicite:4]{index=4}.
+
+**Interpretación:**  
+Los analíticos del repositorio backend deben interpretarse considerando el contexto del Sprint. La centralización de commits responde al proceso de reutilización y subida del backend, no necesariamente a una falta de apoyo del resto del equipo. En este caso, GitHub evidencia con claridad la consolidación técnica, mientras que la colaboración funcional se observa mejor en la distribución de módulos y en la documentación generada a partir del backend.
+
+**Capturas sugeridas:**
+- `[Aquí va la captura de pantalla del repositorio backend mostrando su actividad principal]`
+- `[Aquí va la captura de pantalla de commits, branches o pull requests del backend]`
+
+### Colaboración en el repositorio landing-page
+
+En el repositorio `landing-page` ocurre una situación similar. La subida del trabajo fue realizada por un integrante, por lo que la evidencia de commits visibles en GitHub no muestra una distribución uniforme del trabajo entre todos los miembros del equipo. Esto debe explicarse de forma transparente en la interpretación del Sprint.
+
+Aun así, el producto Landing Page forma parte del trabajo colectivo porque fue revisado, validado y articulado con el resto de entregables del proyecto. Además, las decisiones sobre estilo, arquitectura de información, contenido y consistencia con la propuesta general del producto fueron parte de un trabajo coordinado entre los miembros del equipo, aunque la consolidación final en el repositorio haya sido realizada por una sola persona.
+
+**Interpretación:**  
+La actividad de GitHub en landing page representa la consolidación del producto en el repositorio, pero no refleja por sí sola toda la participación del equipo en diseño, validación y adaptación del contenido. Por ello, los analíticos de este repositorio deben leerse junto con la evidencia del informe y del resto de decisiones del Sprint.
+
+**Capturas sugeridas:**
+- `[Aquí va la captura de pantalla del repositorio landing-page mostrando su actividad principal]`
+- `[Aquí va la captura de pantalla de commits o insights del landing-page]`
+
+### Colaboración en el repositorio REPORT
+
+El repositorio `REPORT` constituye la evidencia más clara de trabajo colaborativo distribuido durante este Sprint. A diferencia de backend y landing page, este repositorio concentró la elaboración directa del informe, la organización de capítulos, la integración de capturas, la redacción de análisis y la consolidación de la evidencia necesaria para Sprint Review.
+
+La distribución de capítulos y subcapítulos muestra participación de todos los miembros del equipo en distintas partes del entregable, incluyendo componentes de diseño, desarrollo, documentación, validación y colaboración. Esta repartición permite sustentar que el trabajo colectivo del Sprint no estuvo limitado a la codificación, sino que también abarcó la preparación integral del producto académico y técnico :contentReference[oaicite:5]{index=5}.
+
+**Interpretación:**  
+Los analíticos del repositorio REPORT son especialmente relevantes porque reflejan la integración real del trabajo del equipo durante el Sprint. Aquí es donde puede observarse con mayor claridad la colaboración transversal entre miembros, ya que el informe reúne la evidencia de landing page, backend, despliegue, testing, ejecución y documentación del proyecto.
+
+**Capturas sugeridas:**
+- `[Aquí va la captura de pantalla de contributors o insights del repositorio REPORT]`
+- `[Aquí va la captura de pantalla del historial de commits del repositorio REPORT]`
+
+### Pull requests, ramas y consolidación del trabajo
+
+La evidencia de pull requests y ramas en GitHub ayuda a interpretar la forma en que el equipo integró cambios antes de consolidarlos en la rama principal. En backend, por ejemplo, se observa el uso de ramas y pull requests para integrar cambios relacionados con refactorización, endurecimiento de seguridad, estabilización del entorno local y preparación del despliegue. Este patrón sugiere que el repositorio no solo fue usado como almacenamiento final, sino también como espacio de integración técnica del trabajo realizado.
+
+**Interpretación:**  
+La presencia de ramas y pull requests refuerza la idea de que el equipo siguió una dinámica de colaboración organizada, aun cuando algunos repositorios presenten centralización en la publicación técnica. La integración mediante PRs permite evidenciar revisión y control de cambios como parte del proceso del Sprint.
+
+**Captura sugerida:**  
+`[Aquí va la captura de pantalla de pull requests o branches relevantes del backend]`
+
+### Análisis general de la colaboración del Sprint
+
+A partir de la evidencia disponible, el equipo interpreta la colaboración del Sprint de la siguiente manera:
+
+- La implementación visible en GitHub no se distribuyó de forma idéntica en todos los repositorios.
+- En `backend` y `landing-page`, la actividad técnica observable quedó más concentrada por tratarse de artefactos reutilizados y posteriormente consolidados en sus respectivos repositorios.
+- En `REPORT`, la participación fue más ampliamente distribuida y muestra con mayor claridad la colaboración real del equipo.
+- La distribución funcional del trabajo por bounded contexts y capítulos confirma que todos los integrantes asumieron responsabilidades concretas durante el Sprint. :contentReference[oaicite:6]{index=6} :contentReference[oaicite:7]{index=7}
+
+En consecuencia, el equipo concluye que la colaboración del Sprint debe entenderse desde una perspectiva integral: no únicamente desde el número de commits por repositorio, sino también desde la asignación de responsabilidades, la validación cruzada de entregables, la integración de evidencias y la consolidación del producto para Sprint Review.
+
+### Conclusión
+
+Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en la implementación técnica como en la organización del entregable final. Aunque la evidencia visible de commits en `backend` y `landing-page` estuvo centralizada por la naturaleza de reutilización y consolidación de esos productos, la participación del equipo sí se reflejó en la distribución funcional de bounded contexts, en la construcción del informe, en la revisión de evidencias y en la preparación conjunta del Sprint Review. Por ello, los analíticos de GitHub fueron interpretados considerando el contexto real del trabajo realizado, permitiendo una lectura más precisa y honesta de la colaboración del equipo.
+
+---
 # Conclusiones
 
 ## Conclusiones y recomendaciones.
