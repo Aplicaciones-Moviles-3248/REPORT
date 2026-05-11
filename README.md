@@ -657,6 +657,7 @@ INGENIERÍA DE SOFTWARE
 [Anexos](#Anexos)
 
 <!--STUDENT OUTCOME-->
+
 # Student Outcome
 <div style="text-align:center;">
     <table align="center" border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
@@ -3742,9 +3743,9 @@ Se siguió un proceso iterativo para cada canvas que incluyó:
 - El vocabulario ubicuo de cada contexto ha sido validado con stakeholders (deportistas, entrenadores, propietarios de canchas).
 - Los canvases servirán de base para el diseño táctico de la arquitectura en las secciones posteriores (2.6.x).
 
-# 2.5.2 Context Mapping
+### 2.5.2. Context Mapping
 
-## Proceso de elaboración del Context Mapping
+#### Proceso de elaboración del Context Mapping
 
 Para elaborar el Context Mapping de Courtly, el equipo partió de los bounded contexts identificados en el análisis del backend actual: **IAM, Users, Coaches, Courts, Availabilities, Bookings, Matches, Payments, Reviews, Notifications y Analytics**. A partir de estos contextos, se revisó la información recolectada previamente sobre entidades, agregados, relaciones funcionales, endpoints expuestos y flujos esperados del frontend, con el objetivo de entender cómo se distribuyen las responsabilidades del dominio.
 
@@ -3756,9 +3757,9 @@ Estas preguntas permitieron generar distintos diseños candidatos, evaluados en 
 
 ---
 
-## Diseños candidatos evaluados
+#### Diseños candidatos evaluados
 
-### Alternativa 1: Unificar IAM y Users
+##### Alternativa 1: Unificar IAM y Users
 
 ![alt1](assets/chapter2/context-map-alt1.png)
 
@@ -3768,7 +3769,7 @@ Sin embargo, esta unificación mezclaba responsabilidades distintas dentro de un
 
 ---
 
-### Alternativa 2: IAM y Users separados con ACL
+##### Alternativa 2: IAM y Users separados con ACL
 
 ![alt2](assets/chapter2/context-map-alt2.png)
 
@@ -3778,7 +3779,7 @@ La principal ventaja de esta propuesta es que mantiene un modelo más limpio y a
 
 ---
 
-### Alternativa 3: Integrar Availabilities en Coaches
+##### Alternativa 3: Integrar Availabilities en Coaches
 
 ![alt3](assets/chapter2/context-map-alt3.png)
 
@@ -3788,7 +3789,7 @@ No obstante, el análisis mostró que **Availabilities** posee reglas propias, e
 
 ---
 
-### Alternativa 4: Fusionar Bookings y Matches
+##### Alternativa 4: Fusionar Bookings y Matches
 
 ![alt4](assets/chapter2/context-map-alt4.png)
 
@@ -3798,7 +3799,7 @@ Sin embargo, al revisar las reglas del dominio se observó que representan proce
 
 ---
 
-### Alternativa 5: Agrupar contextos de soporte
+##### Alternativa 5: Agrupar contextos de soporte
 
 ![alt5](assets/chapter2/context-map-alt5.png)
 
@@ -3808,7 +3809,7 @@ A pesar de ello, el equipo identificó que estos contextos responden a subdomini
 
 ---
 
-### Alternativa 6: Shared Kernel para Users
+##### Alternativa 6: Shared Kernel para Users
 
 ![alt6](assets/chapter2/context-map-alt6.png)
 
@@ -3818,7 +3819,7 @@ Sin embargo, un Shared Kernel implica coordinación constante entre los contexto
 
 ---
 
-## Discusión y selección de la mejor aproximación
+#### Discusión y selección de la mejor aproximación
 
 La mejor solución fue mantener bounded contexts cohesionados y conectados mediante relaciones explícitas, evitando fusiones innecesarias.
 
@@ -3830,11 +3831,11 @@ Se definieron tres capas:
 
 ---
 
-## Context Map Final
+#### Context Map Final
 
 ![contextM](assets/chapter2/context-map-courtly.png)
 
-## Context Map — Leyenda rápida
+#### Context Map — Leyenda rápida
 
 - **Core**: valor principal del negocio  
 - **Supporting**: capacidades de apoyo  
@@ -3847,28 +3848,28 @@ Se definieron tres capas:
 - **Shared Kernel**: artefactos compartidos entre contextos.
 ---
 
-## Descripción de cada Bounded Context
+#### Descripción de cada Bounded Context
 
-### Core
+#### Core
 - **Bookings** – reservas de canchas  
 - **Matches** – organización de partidos  
 - **Courts** – catálogo de canchas  
 - **Coaches** – catálogo de entrenadores  
 
-### Supporting
+#### Supporting
 - **Availabilities** – disponibilidad de entrenadores  
 - **Payments** – pagos  
 - **Reviews** – reseñas  
 - **Notifications** – notificaciones  
 - **Analytics** – métricas  
 
-### Generic
+#### Generic
 - **IAM** – autenticación  
 - **Users** – perfil de usuario  
 
 ---
 
-## Relaciones entre Contextos (con patrón DDD)
+#### Relaciones entre Contextos (con patrón DDD)
 
 | # | Upstream (provee) | Downstream (consume) | Patrón | ¿Qué fluye? |
 |---|---|---|---|---|
@@ -3887,7 +3888,7 @@ Se definieron tres capas:
 
 ---
 
-## Contratos de Mensajes (mini-catálogo)
+#### Contratos de Mensajes (mini-catálogo)
 
 El siguiente catálogo resume de forma conceptual los principales comandos, queries y eventos asociados a cada contexto, con fines de modelado del Context Map. Estos contratos reflejan tanto las capacidades actuales del sistema como su comportamiento esperado a nivel de dominio.
 
@@ -3895,7 +3896,7 @@ El siguiente catálogo resume de forma conceptual los principales comandos, quer
 
 ---
 
-### IAM
+#### IAM
 - → SignUp(username, password, roles?)
 - → SignIn(username, password)
 - ¿ GetUserById(id)
@@ -3904,7 +3905,7 @@ El siguiente catálogo resume de forma conceptual los principales comandos, quer
 
 ---
 
-### Users
+#### Users
 - → CreateUserProfile(name, email, phone)
 - → UpdateUserProfile(id, data)
 - → DeleteUserProfile(id)
@@ -3914,7 +3915,7 @@ El siguiente catálogo resume de forma conceptual los principales comandos, quer
 
 ---
 
-### Coaches
+#### Coaches
 - → CreateCoach(name, expertise, phone)
 - → UpdateCoach(id, data)
 - → DeleteCoach(id)
@@ -3923,7 +3924,7 @@ El siguiente catálogo resume de forma conceptual los principales comandos, quer
 
 ---
 
-### Courts
+#### Courts
 - → CreateCourt(name, location, type)
 - → UpdateCourt(id, data)
 - → DeleteCourt(id)
@@ -3932,7 +3933,7 @@ El siguiente catálogo resume de forma conceptual los principales comandos, quer
 
 ---
 
-### Availabilities
+#### Availabilities
 - → CreateAvailability(date, startTime, endTime, status, coachId)
 - → UpdateAvailability(id, data)
 - → DeleteAvailability(id)
@@ -3941,7 +3942,7 @@ El siguiente catálogo resume de forma conceptual los principales comandos, quer
 
 ---
 
-### Bookings
+#### Bookings
 - → CreateBooking(startTime, endTime, userProfileId, courtId)
 - → UpdateBooking(id, data)
 - → DeleteBooking(id)
@@ -3951,7 +3952,7 @@ El siguiente catálogo resume de forma conceptual los principales comandos, quer
 
 ---
 
-### Matches
+#### Matches
 - → CreateMatch(title, description, dateTime, courtId, createdById)
 - → UpdateMatch(id, data)
 - → DeleteMatch(id)
@@ -3961,14 +3962,14 @@ El siguiente catálogo resume de forma conceptual los principales comandos, quer
 
 ---
 
-### Payments
+#### Payments
 - → CreatePayment(amount, userProfileId)
 - ¿ GetPaymentById(id)
 - ¡ PaymentCreated
 
 ---
 
-### Reviews
+#### Reviews
 - → CreateReview(score, comment, targetId, targetType, userProfileId)
 - → UpdateReview(id, data)
 - → DeleteReview(id)
@@ -3977,7 +3978,7 @@ El siguiente catálogo resume de forma conceptual los principales comandos, quer
 
 ---
 
-### Notifications
+#### Notifications
 - → CreateNotification(title, message, userProfileId)
 - → UpdateNotification(id, data)
 - → DeleteNotification(id)
@@ -3986,7 +3987,7 @@ El siguiente catálogo resume de forma conceptual los principales comandos, quer
 
 ---
 
-### Analytics
+#### Analytics
 - → CreateMetric(metricType, value, period, coachId)
 - → UpdateMetric(id, data)
 - → DeleteMetric(id)
@@ -3995,7 +3996,7 @@ El siguiente catálogo resume de forma conceptual los principales comandos, quer
 
 ---
 
-## Justificación del Context Map final
+#### Justificación del Context Map final
 
 El diseño final mantiene separadas las responsabilidades de seguridad, identidad funcional, operación principal y soporte.
 
@@ -4005,7 +4006,7 @@ Esta estructura logra un equilibrio entre cohesión y bajo acoplamiento, alinead
 
 ---
 
-### Capability Layering Map
+#### Capability Layering Map
 
 ![capabilityM](assets/chapter2/capability-map-courtly.png)
 
@@ -10413,6 +10414,302 @@ El diagrama de base de datos del bounded context **IAM** representa la estructur
 El diseño de persistencia es consistente con el modelo de dominio y permite almacenar correctamente cuentas, roles y la tabla intermedia `user_roles`. La estructura de datos refleja un bounded context de seguridad bien normalizado, con una relación clara entre usuarios y privilegios.
 
 ---
+
+# Capítulo III: Solution UI/UX Design
+
+### 3.1.1. Style Guidelines
+
+Con el objetivo de asegurar coherencia visual y comunicacional en todos los puntos de contacto con los usuarios, el equipo define una guía de estilo centralizada como base para organizar y reutilizar recursos comunes como assets, tipografías, colores y componentes visuales. Esta guía permite mantener una presentación consistente, enfocada y alineada con la identidad deportiva, moderna y tecnológica de Courtly, facilitando el trabajo colaborativo del equipo de diseño y desarrollo.
+
+#### 3.1.1.1. General Style Guidelines
+
+Courtly emplea un diseño moderno orientado a la accesibilidad, simplicidad visual y facilidad de uso. La identidad visual del proyecto busca transmitir dinamismo, organización y confianza, manteniendo una estética tecnológica relacionada con el entorno deportivo y la gestión digital de reservas.
+
+**Paleta de colores:**  
+La selección de colores fue definida considerando el público objetivo de Courtly y la necesidad de generar una experiencia visual moderna, clara y deportiva.
+
+- Azul marino - `#0F172A`. Utilizado como color principal de fondos, navbar y secciones destacadas. Representa estabilidad, confianza y profesionalismo.
+- Verde lima - `#A3E635`. Empleado para botones principales, llamados a la acción y elementos interactivos importantes. Este color transmite energía, actividad y dinamismo.
+- Verde azulado (Teal) - `#14B8A6`. Utilizado en tarjetas, detalles visuales y elementos secundarios para aportar equilibrio visual y modernidad.
+- Blanco - `#F8FAFC`. Color principal para textos sobre fondos oscuros y áreas limpias de contenido, priorizando legibilidad.
+- Gris claro - `#CBD5E1`. Utilizado para textos secundarios, descripciones y separadores visuales.
+- Gris oscuro - `#1E293B`. Aplicado en bloques de contenido, cards y secciones con contraste suave.
+
+**Tipografía:**  
+La tipografía principal utilizada en Courtly es **Inter**, seleccionada por su alta legibilidad en interfaces digitales y su apariencia moderna y minimalista. Esta fuente permite mantener claridad visual tanto en dispositivos móviles como web, facilitando la lectura de información relacionada con reservas, entrenadores y partidos.
+
+**Escala tipográfica**
+- Base: 16px
+- Ratio: 1.25
+- Interlineado: 1.5
+- Pesos:
+  - Regular (400)
+  - Medium (500)
+  - SemiBold (600)
+  - Bold (700)
+  - ExtraBold (800)
+
+**Nomenclatura**
+- H1 / 48px / Inter ExtraBold
+- H2 / 36px / Inter Bold
+- H3 / 28px / Inter SemiBold
+- Subtitle / 20px / Inter Medium
+- Body / 16px / Inter Regular
+- Caption / 14px / Inter Regular
+
+**Spacing y composición:**  
+La interfaz utiliza espaciados amplios y consistentes para mantener una lectura clara y una distribución visual ordenada. Se prioriza el uso de layouts limpios, tarjetas modulares y separación visual entre bloques de contenido para mejorar la experiencia del usuario.
+
+**Tono de comunicación:**  
+Courtly utiliza un tono moderno, cercano y profesional. La comunicación busca ser clara y accesible para deportistas, entrenadores y usuarios generales, manteniendo un equilibrio entre un lenguaje casual y confiable.
+
+**Branding e identidad visual:**  
+La identidad visual de Courtly representa organización deportiva, conexión entre usuarios y tecnología aplicada al deporte. El branding utiliza elementos modernos, colores vibrantes y componentes minimalistas para transmitir una experiencia digital dinámica y profesional.
+
+#### 3.1.1.2. Web Style Guidelines
+
+La versión web de Courtly está diseñada para ofrecer una experiencia clara, fluida y responsiva, orientada a usuarios que desean conocer la propuesta de valor de la plataforma, reservar canchas deportivas o conectar con entrenadores independientes. Su diseño prioriza una navegación simple, una lectura rápida del contenido y una interacción visual coherente con la identidad moderna y deportiva del producto.
+
+- **Diseño responsivo:** La interfaz web se adapta a pantallas de escritorio, tabletas y dispositivos móviles, manteniendo una experiencia consistente en diferentes tamaños de pantalla.
+
+- **Barra de navegación superior:** La navegación principal se ubica en la parte superior e incluye accesos directos a las secciones más importantes, permitiendo que el usuario recorra el contenido de forma ordenada.
+
+- **Llamados a la acción visibles:** Los botones principales se destacan mediante colores de alto contraste para guiar al usuario hacia acciones relevantes, como conocer la plataforma, reservar una cancha o registrarse.
+
+- **Hover effects:** Los elementos interactivos, como botones, enlaces y tarjetas, presentan cambios visuales sutiles al pasar el cursor, reforzando la sensación de respuesta e interacción.
+
+- **Animaciones sutiles:** Se emplean transiciones suaves en componentes visuales para mejorar la experiencia sin sobrecargar la interfaz.
+
+- **Tarjetas modulares:** El contenido se organiza en cards y bloques visuales para facilitar la lectura, comparación y escaneo de información relevante.
+
+- **Consistencia visual:** Se mantiene el uso uniforme de colores, tipografía, espaciado, bordes redondeados e íconos para reforzar la identidad de Courtly en toda la experiencia web.
+
+#### 3.1.1.3. Mobile Style Guidelines
+
+La experiencia móvil de Courtly está diseñada para priorizar rapidez, accesibilidad y facilidad de uso en pantallas reducidas. La interfaz mantiene la identidad visual de la plataforma web, adaptando los componentes y la distribución del contenido para ofrecer una navegación cómoda e intuitiva desde dispositivos móviles.
+
+- **Diseño mobile-first:** La estructura visual prioriza la correcta visualización e interacción en smartphones, asegurando una experiencia fluida y optimizada.
+
+- **Navegación simplificada:** Los elementos de navegación se adaptan mediante menús compactos y accesos rápidos para facilitar el recorrido del usuario en pantallas pequeñas.
+
+- **Botones y áreas táctiles amplias:** Los componentes interactivos están diseñados con tamaños adecuados para mejorar la precisión táctil y la accesibilidad.
+
+- **Contenido jerarquizado:** La información se organiza verticalmente, priorizando los elementos más importantes para evitar saturación visual.
+
+- **Optimización visual:** Se reducen elementos innecesarios y se utilizan espacios consistentes para mejorar legibilidad y rendimiento visual en dispositivos móviles.
+
+- **Consistencia entre plataformas:** La aplicación móvil mantiene los mismos colores, tipografías y estilos visuales utilizados en la experiencia web, garantizando coherencia en toda la identidad de Courtly.
+
+### 3.1.2. Information Architecture
+
+En esta sección se definen las decisiones de arquitectura de información que orientan la organización del contenido en las experiencias web y móviles de Courtly. El objetivo es que los visitantes y usuarios comprendan la plataforma con facilidad, encuentren la información que necesitan sin esfuerzo y recorran sus funcionalidades de manera clara, ordenada e intuitiva.
+
+#### 3.1.2.1. Organization Systems
+
+Se establecen las siguientes decisiones para organizar el contenido de Courtly de manera clara y fácil de recorrer para los usuarios.
+
+##### Visual Hierarchy
+
+Se aplicará una jerarquía visual clara en las principales vistas de la plataforma, priorizando las acciones más relevantes:
+
+- Reservar cancha
+- Buscar entrenador
+- Organizar partido
+- Ver reservas
+
+El tamaño de los títulos, el contraste de color, los botones principales y la distribución de las tarjetas permitirán guiar la atención del usuario hacia las acciones de mayor importancia.
+
+##### Sequential Organization
+
+En procesos clave se utilizará una organización secuencial, permitiendo que el usuario complete acciones paso a paso de manera ordenada. Esto se aplicará en:
+
+- Registro de usuario
+- Registro de entrenador
+- Reserva de cancha
+- Confirmación de pago
+
+Ejemplo del proceso de reserva de cancha:
+
+1. Seleccionar deporte.
+2. Elegir ubicación o cancha disponible.
+3. Seleccionar fecha y horario.
+4. Revisar detalles de la reserva.
+5. Confirmar la reserva.
+
+##### Matrix Organization
+
+Para la visualización de canchas y entrenadores disponibles se aplicará una organización matricial mediante tarjetas comparables entre sí. Este modelo permitirá al usuario comparar opciones según:
+
+- Ubicación
+- Precio
+- Disponibilidad
+- Valoración
+- Tipo de deporte
+- Nivel del entrenador
+
+De esta manera, el usuario podrá evaluar distintas alternativas antes de tomar una decisión.
+
+##### Esquemas de categorización
+
+Según el tipo de contenido, Courtly utilizará diferentes esquemas de categorización:
+
+- Por tópicos: deportes, canchas, entrenadores, reservas y partidos.
+- Por audiencia: jugadores y entrenadores independientes.
+- Cronológico: reservas próximas, horarios disponibles y partidos programados.
+- Alfabético: listados extensos de entrenadores, canchas o distritos.
+
+Estos esquemas permiten organizar la información de acuerdo con las distintas formas en que los usuarios buscan y consumen contenido dentro de la plataforma.
+
+
+
+#### 3.1.2.2. Labelling Systems
+
+La representación de los datos en Courtly busca ser clara, breve e intuitiva, evitando términos ambiguos que puedan generar confusión en los visitantes y usuarios. Para ello, se emplearán etiquetas simples, orientadas a acciones concretas y relacionadas directamente con el contexto deportivo de la plataforma.
+
+##### Principios de etiquetado
+
+- Utilizar el mínimo número de palabras posible.
+- Priorizar términos comunes dentro del ámbito deportivo.
+- Mantener consistencia en nombres de secciones, botones y filtros.
+- Usar etiquetas orientadas a la acción cuando el usuario deba realizar una tarea.
+- Evitar términos técnicos que no sean necesarios para el usuario final.
+
+##### Etiquetas principales propuestas
+
+| Área | Etiqueta asignada | Propósito |
+|---|---|---|
+| Inicio | "Inicio" | Presentar la propuesta principal de Courtly. |
+| Canchas | "Canchas" | Acceder al catálogo de canchas deportivas. |
+| Entrenadores | "Entrenadores" | Buscar entrenadores independientes. |
+| Reservas | "Mis reservas" | Consultar reservas realizadas o próximas. |
+| Partidos | "Partidos" | Organizar o visualizar partidos deportivos. |
+| Planes | "Planes" | Consultar opciones de suscripción. |
+| Perfil | "Mi perfil" | Gestionar información personal del usuario. |
+| Búsqueda | "Buscar" | Localizar canchas, entrenadores o partidos. |
+| Registro | "Registrarse" | Crear una cuenta en la plataforma. |
+| Acceso | "Iniciar sesión" | Entrar a una cuenta existente. |
+
+##### Etiquetas para filtros
+
+Las etiquetas de filtros utilizarán palabras simples para facilitar la búsqueda y comparación de resultados:
+
+- "Deporte" para clasificar canchas, entrenadores o partidos.
+- "Ubicación" para filtrar por distrito o zona.
+- "Fecha" para seleccionar el día de la reserva.
+- "Horario" para elegir disponibilidad.
+- "Precio" para comparar costos.
+- "Valoración" para ordenar por reseñas o calificaciones.
+- "Nivel" para clasificar entrenadores según experiencia.
+
+Estas etiquetas permiten que los usuarios identifiquen rápidamente el contenido disponible y comprendan la relación entre las secciones principales, las acciones que pueden realizar y los datos que se muestran dentro de la plataforma.
+
+#### 3.1.2.3. SEO Tags and Meta Tags
+
+Para optimizar la visibilidad y accesibilidad de Courtly en motores de búsqueda, se establecen los siguientes SEO Tags y Meta Tags para la experiencia web. Además, se consideran elementos ASO para una futura publicación de la aplicación móvil en tiendas digitales.
+
+##### SEO Tags y Meta Tags
+
+| Página | Title | Meta Description | Meta Keywords | Author |
+|---|---|---|---|---|
+| Landing Page | Courtly \| Reserva. Juega. Disfruta. | Courtly te permite buscar y reservar canchas deportivas, conectar con entrenadores independientes y organizar tus partidos desde una sola plataforma. | Courtly, reserva de canchas, entrenadores deportivos, partidos deportivos, app deportiva, deporte amateur | Equipo Courtly |
+| Mobile Application - Home | Courtly \| Inicio | Accede a tus reservas, partidos, canchas y entrenadores desde la pantalla principal de Courtly. | Courtly, inicio, reservas deportivas, canchas deportivas, entrenadores, partidos | Equipo Courtly |
+| Mobile Application - Perfil Usuario | Courtly \| Mi perfil | Gestiona tus datos personales, historial de reservas y preferencias dentro de la aplicación móvil. | Courtly, perfil usuario, historial de reservas, preferencias deportivas | Equipo Courtly |
+| Mobile Application - Reservas | Courtly \| Mis reservas | Consulta y administra tus reservas deportivas activas, próximas o finalizadas desde Courtly. | Courtly, mis reservas, reserva de canchas, gestión de reservas deportivas | Equipo Courtly |
+
+
+| Elemento ASO | Valor |
+|---|---|
+| App Title | Courtly |
+| App Subtitle | Reserva canchas y conecta con entrenadores |
+| App Keywords | canchas deportivas, reservas, entrenadores, partidos, deporte, Courtly |
+| App Description | Courtly es una aplicación móvil que permite reservar canchas deportivas, conectar con entrenadores independientes y organizar partidos de manera rápida, simple y segura. |
+
+#### 3.1.2.4. Searching Systems
+
+Para mejorar la capacidad de búsqueda dentro de Courtly, se implementarán sistemas de búsqueda claros, rápidos e intuitivos que permitan a los usuarios encontrar canchas deportivas, entrenadores y reservas de manera eficiente. Estas decisiones buscan evitar que los usuarios se sientan desorientados frente al volumen de información disponible y facilitar una experiencia de navegación más organizada.
+
+##### Tipos de búsqueda ofrecidos
+
+- **Búsqueda global:**
+
+  - Disponible en las principales vistas de la plataforma.
+  - Permite buscar canchas, entrenadores y partidos deportivos desde un único punto de acceso.
+  - Incluye sugerencias automáticas relacionadas con deportes, ubicaciones o nombres registrados dentro de la plataforma.
+
+- **Filtros de búsqueda:**
+
+  - **Deporte** (fútbol, vóley, básquet, tenis, entre otros).
+  - **Ubicación** (distrito o zona).
+  - **Disponibilidad horaria**.
+  - **Precio**.
+  - **Valoración**.
+  - **Nivel del entrenador**.
+
+- **Búsqueda específica:**
+  - Por nombre de cancha.
+  - Por nombre de entrenador.
+  - Por ubicación deportiva.
+
+##### Presentación de resultados
+
+- **Resultados dinámicos:** el contenido se actualizará automáticamente al aplicar filtros o realizar búsquedas.
+
+- **Visualización mediante tarjetas:** cada resultado se mostrará en cards organizadas que incluirán:
+  - Imagen principal.
+  - Nombre.
+  - Categoría o deporte.
+  - Ubicación.
+  - Valoración promedio.
+  - Acción principal (reservar o visualizar).
+
+- **Resultados ordenables:** los usuarios podrán ordenar resultados según:
+  - relevancia
+  - precio
+  - valoración
+  - disponibilidad
+
+Con este sistema, Courtly busca ofrecer búsquedas rápidas, comparaciones claras y filtros relevantes que permitan a los usuarios encontrar fácilmente la información o experiencia deportiva que necesitan.
+
+#### 3.1.2.5. Navigation Systems
+
+El sistema de navegación de Courtly está diseñado para guiar a los usuarios de manera clara, rápida e intuitiva a través de la plataforma, permitiéndoles acceder fácilmente a las principales funcionalidades relacionadas con reservas deportivas, entrenadores y organización de partidos.
+
+##### Principios de navegación
+
+- **Navegación principal fija:** la barra de navegación superior permanecerá visible durante el recorrido del usuario para facilitar el acceso constante a las secciones más importantes.
+
+- **Accesos rápidos:** las principales funcionalidades estarán disponibles mediante accesos visibles y directos, como canchas, entrenadores, reservas y planes.
+
+- **Navegación progresiva:** los procesos importantes, como reservar una cancha o registrarse como entrenador, se presentarán paso a paso para reducir complejidad y mejorar la experiencia del usuario.
+
+- **Pistas visuales:** se utilizarán colores, botones destacados, estados activos e íconos para indicar ubicación, interacción y acciones disponibles dentro de la plataforma.
+
+- **Jerarquía visual clara:** las secciones principales y llamadas a la acción tendrán mayor prioridad visual para orientar la atención del usuario hacia las tareas más relevantes.
+
+##### Flujo de navegación en la Landing Page
+
+1. El visitante accede a la Landing Page.
+2. Puede recorrer rápidamente las principales secciones informativas de Courtly.
+3. Se presentan llamados a la acción orientados al registro, exploración de canchas y búsqueda de entrenadores.
+4. El usuario puede acceder a información sobre funcionalidades, beneficios y planes disponibles.
+5. Finalmente, puede registrarse o iniciar sesión para acceder a la plataforma.
+
+##### Flujo de navegación en la Mobile Application
+
+- Menú principal con acceso a Inicio, Canchas, Entrenadores, Partidos, Reservas y Perfil.
+- En la sección de canchas, el usuario puede buscar, filtrar y reservar espacios deportivos disponibles.
+- En entrenadores, el usuario puede explorar perfiles, visualizar información relevante y contactar entrenadores independientes.
+- Desde reservas, se podrán visualizar reservas activas, próximas o finalizadas.
+- En partidos, los usuarios podrán organizar encuentros deportivos o unirse a partidos existentes.
+- En perfil, el usuario podrá gestionar información personal, historial de reservas y preferencias de cuenta.
+
+La navegación móvil prioriza accesos rápidos, organización clara del contenido y una experiencia intuitiva adaptada a dispositivos táctiles.
+
+### 3.1.3. Landing Page UI Design
+
+#### 3.1.3.1. Landing Page Wireframe
+
+#### 3.1.3.2. Landing Page Mock-up
 
 # Conclusiones
 
