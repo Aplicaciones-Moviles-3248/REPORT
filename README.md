@@ -10582,7 +10582,6 @@ La representación de los datos en Courtly busca ser clara, breve e intuitiva, e
 | Características | "Características" | Mostrar las funcionalidades principales de la plataforma. |
 | Beneficios | "Beneficios" | Explicar el valor que Courtly ofrece a sus usuarios. |
 | Funcionamiento | "Cómo funciona" | Explicar el proceso de uso de la aplicación. |
-| Planes | "Planes" | Consultar opciones de suscripción o beneficios disponibles. |
 | Equipo | "Equipo" | Presentar a los integrantes responsables del proyecto. |
 | Testimonios | "Testimonios" | Mostrar opiniones o validaciones de usuarios. |
 | Descarga | "Descargar" | Dirigir al usuario hacia la descarga o futura disponibilidad de la aplicación móvil. |
@@ -10676,7 +10675,7 @@ El sistema de navegación de Courtly está diseñado para guiar a los usuarios d
 
 - **Navegación principal fija:** la barra de navegación superior permanecerá visible durante el recorrido del usuario para facilitar el acceso constante a las secciones más importantes.
 
-- **Accesos rápidos:** las principales secciones estarán disponibles mediante accesos visibles y directos, como características, beneficios, funcionamiento, planes y descarga.
+- **Accesos rápidos:** las principales secciones estarán disponibles mediante accesos visibles y directos, como características, beneficios, funcionamiento, equipo, testimonios y descarga.
 
 - **Navegación progresiva:** las acciones principales se presentarán de manera ordenada y progresiva para facilitar el recorrido del usuario a través de la información y funcionalidades de Courtly.
 
@@ -10689,7 +10688,7 @@ El sistema de navegación de Courtly está diseñado para guiar a los usuarios d
 1. El visitante accede a la Landing Page.
 2. Puede recorrer rápidamente las principales secciones informativas de Courtly.
 3. Se presentan llamados a la acción orientados a conocer la propuesta de valor y descargar la aplicación móvil.
-4. El usuario puede acceder a información sobre características, beneficios, funcionamiento, planes, equipo y testimonios.
+4. El usuario puede acceder a información sobre características, beneficios, funcionamiento, equipo y testimonios.
 5. Finalmente, puede seleccionar la opción de descarga, la cual lo dirigirá a la sección correspondiente o a las tiendas digitales cuando la aplicación esté publicada.
 
 ##### Flujo de navegación en la Mobile Application
