@@ -674,9 +674,7 @@ En esta sección, cada miembro del equipo de trabajo formulará al menos dos obj
 
 #### 2.6.x.6. Bounded Context Software Architecture Code Level Diagrams
 
-<<<<<<< Updated upstream
 ##### 2.6.x.6.1. Bounded Context Domain Layer Class Diagrams
-=======
 **Nombre de la clase:** `Booking`  
 **Paquete:** `com.upc.matchpoint.bookings.domain.model.aggregates`  
 
@@ -7009,24 +7007,74 @@ El diseño de persistencia es consistente con el modelo de dominio y permite alm
 
 ## 4.2.1.6. Services Documentation Evidence for Sprint Review
 
-En esta seccion se documentan todos los endpoints del backend de Courtly implementados durante este Sprint. Se incluyen los metodos HTTP, parametros, ejemplos de request/response, commit real del backend, repositorio y placeholders para capturas de pantalla.
+En esta seccion se presenta la evidencia de documentacion de Web Services elaborada para el Sprint mediante OpenAPI/Swagger. El trabajo realizado permitio registrar los endpoints principales del backend de Courtly/MatchPoint, validar su sintaxis de llamada, identificar los parametros requeridos y documentar ejemplos de request y response utilizando datos de muestra.
 
-Se cubren los **11 bounded contexts**: Bookings, Payments, Coaches, Courts, Availabilities, Matches, Reviews, Notifications, Analytics, IAM y Users.
+Como resultado del Sprint, la documentacion de servicios facilita que el equipo pueda inspeccionar, probar y validar las operaciones del backend desde Swagger UI. Esta evidencia tambien permite mantener trazabilidad entre los bounded contexts implementados, los endpoints expuestos y las capturas de interaccion utilizadas para sustentar la revision del Sprint.
 
-- **Repositorio del backend:** [https://github.com/Aplicaciones-Moviles-3248/backend](https://github.com/Aplicaciones-Moviles-3248/backend)
+- **Repositorio de Web Services:** [https://github.com/Aplicaciones-Moviles-3248/backend](https://github.com/Aplicaciones-Moviles-3248/backend)
+- **Documentacion OpenAPI desplegada:** [https://courtly-backend.onrender.com/swagger-ui/index.html](https://courtly-backend.onrender.com/swagger-ui/index.html)
 - **Commit del backend utilizado:** `6fe60a4`
 
+### Resumen de endpoints documentados
+
+| Bounded Context | Verbo HTTP | Sintaxis de llamada | Accion implementada | Documentacion |
+|---|---:|---|---|---|
+| Bookings | POST | `/api/v1/bookings` | Crear reserva | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Bookings | GET | `/api/v1/bookings` | Listar reservas | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Bookings | GET | `/api/v1/bookings/{id}` | Obtener reserva por identificador | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Bookings | PUT | `/api/v1/bookings/{id}` | Actualizar reserva | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Bookings | DELETE | `/api/v1/bookings/{id}` | Eliminar reserva | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Payments | POST | `/api/v1/payments` | Registrar pago | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Payments | GET | `/api/v1/payments/{id}` | Obtener pago por identificador | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Coaches | POST | `/api/v1/coaches` | Crear coach | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Coaches | GET | `/api/v1/coaches` | Listar coaches | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Coaches | GET | `/api/v1/coaches/{id}` | Obtener coach por identificador | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Coaches | PUT | `/api/v1/coaches/{id}` | Actualizar coach | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Coaches | DELETE | `/api/v1/coaches/{id}` | Eliminar coach | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Courts | POST | `/api/v1/courts` | Registrar cancha | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Courts | GET | `/api/v1/courts` | Listar canchas | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Courts | GET | `/api/v1/courts/{id}` | Obtener cancha por identificador | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Courts | PUT | `/api/v1/courts/{id}` | Actualizar cancha | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Courts | DELETE | `/api/v1/courts/{id}` | Eliminar cancha | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Availabilities | POST | `/api/v1/availabilities` | Crear disponibilidad | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Availabilities | GET | `/api/v1/availabilities` | Listar disponibilidades | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Availabilities | GET | `/api/v1/availabilities/{id}` | Obtener disponibilidad por identificador | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Availabilities | PUT | `/api/v1/availabilities/{id}` | Actualizar disponibilidad | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Availabilities | DELETE | `/api/v1/availabilities/{id}` | Eliminar disponibilidad | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Matches | POST | `/api/v1/matches` | Crear partido | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Matches | GET | `/api/v1/matches` | Listar partidos | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Matches | GET | `/api/v1/matches/{id}` | Obtener partido por identificador | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Matches | PUT | `/api/v1/matches/{id}` | Actualizar partido | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Matches | DELETE | `/api/v1/matches/{id}` | Eliminar partido | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Notifications | POST | `/api/v1/notifications` | Crear notificacion | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Notifications | GET | `/api/v1/notifications` | Listar notificaciones | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Notifications | GET | `/api/v1/notifications/{id}` | Obtener notificacion por identificador | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Notifications | PUT | `/api/v1/notifications/{id}` | Actualizar notificacion | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Notifications | DELETE | `/api/v1/notifications/{id}` | Eliminar notificacion | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Analytics | POST | `/api/v1/analytics` | Crear metrica | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Analytics | GET | `/api/v1/analytics` | Listar metricas | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Analytics | GET | `/api/v1/analytics/{id}` | Obtener metrica por identificador | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Analytics | PUT | `/api/v1/analytics/{id}` | Actualizar metrica | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| Analytics | DELETE | `/api/v1/analytics/{id}` | Eliminar metrica | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| IAM / Authentication | POST | `/api/v1/auth/sign-up` | Registrar usuario | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| IAM / Authentication | POST | `/api/v1/auth/sign-in` | Iniciar sesion | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| IAM / Users | GET | `/api/v1/users` | Listar usuarios registrados | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| IAM / Roles | GET | `/api/v1/roles` | Listar roles disponibles | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| User Profiles | POST | `/api/v1/user-profiles` | Crear perfil de usuario | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| User Profiles | GET | `/api/v1/user-profiles` | Listar perfiles de usuario | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| User Profiles | GET | `/api/v1/user-profiles/{id}` | Obtener perfil por identificador | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| User Profiles | PUT | `/api/v1/user-profiles/{id}` | Actualizar perfil de usuario | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+| User Profiles | DELETE | `/api/v1/user-profiles/{id}` | Eliminar perfil de usuario | [Swagger UI](https://courtly-backend.onrender.com/swagger-ui/index.html) |
+
 ---
 
-### Bookings (Fabricio)
+### Bookings
 
-#### `POST /api/v1/bookings`
+#### Endpoint: POST /api/v1/bookings
 
-Crear una reserva.
+**Accion implementada:** crear una reserva asociando un usuario con una cancha durante un intervalo de tiempo.
 
-**Parameters:** `startTime` (body, LocalDateTime, si), `endTime` (body, LocalDateTime, si), `userId` (body, Long, si), `courtId` (body, Long, si)
-
-**Commit ID:** `6fe60a4`
+**Parametros:** body con `startTime` (`LocalDateTime`), `endTime` (`LocalDateTime`), `userId` (`Long`) y `courtId` (`Long`).
 
 **Example Request:**
 
@@ -7034,8 +7082,8 @@ Crear una reserva.
 {
   "startTime": "2026-05-10T10:00:00",
   "endTime": "2026-05-10T11:00:00",
-  "userId": 12,
-  "courtId": 3
+  "userId": 9,
+  "courtId": 2
 }
 ```
 
@@ -7043,1322 +7091,29 @@ Crear una reserva.
 
 ```json
 {
-  "id": 101,
+  "id": 1,
   "startTime": "2026-05-10T10:00:00",
   "endTime": "2026-05-10T11:00:00",
   "user": {
-    "id": 12,
+    "id": 9,
     "name": "Juan Perez"
   },
   "court": {
-    "id": 3,
+    "id": 2,
     "name": "Cancha Central"
   }
 }
 ```
 
-**Captura:** Aqui va la captura de pantalla de creacion de reserva
+**Explicacion del response:** el servicio retorna la reserva creada con su identificador, horario registrado y las relaciones principales embebidas: usuario y cancha.
 
-#### `GET /api/v1/bookings`
+**Captura:** ![Creacion de reserva](assets/chapter4/POSTbookings.png)
 
-Obtener todas las reservas.
+#### Endpoint: GET /api/v1/bookings
 
-**Parameters:** none
+**Accion implementada:** obtener el listado de reservas registradas.
 
-**Commit ID:** `6fe60a4`
-
-**Example Request:** `null`
-
-**Example Response:**
-
-```json
-[
-  {
-    "id": 101,
-    "startTime": "2026-05-10T10:00:00",
-    "endTime": "2026-05-10T11:00:00",
-    "user": {
-      "id": 12,
-      "name": "Juan Perez"
-    },
-    "court": {
-      "id": 3,
-      "name": "Cancha Central"
-    }
-  }
-]
-```
-
-**Captura:** Aqui va la captura de pantalla de listado de reservas
-
-#### `GET /api/v1/bookings/{id}`
-
-Obtener reserva por id.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 101
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 101,
-  "startTime": "2026-05-10T10:00:00",
-  "endTime": "2026-05-10T11:00:00",
-  "user": {
-    "id": 12,
-    "name": "Juan Perez"
-  },
-  "court": {
-    "id": 3,
-    "name": "Cancha Central"
-  }
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de reserva por id
-
-#### `PUT /api/v1/bookings/{id}`
-
-Actualizar una reserva.
-
-**Parameters:** `id` (path, Long, si), `startTime` (body, LocalDateTime, si), `endTime` (body, LocalDateTime, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "startTime": "2026-05-10T12:00:00",
-  "endTime": "2026-05-10T13:00:00"
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 101,
-  "startTime": "2026-05-10T12:00:00",
-  "endTime": "2026-05-10T13:00:00",
-  "user": {
-    "id": 12,
-    "name": "Juan Perez"
-  },
-  "court": {
-    "id": 3,
-    "name": "Cancha Central"
-  }
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de actualizacion de reserva
-
-#### `DELETE /api/v1/bookings/{id}`
-
-Eliminar una reserva.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 101
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "message": "Booking deleted successfully."
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de eliminacion de reserva
-
----
-
-### Payments (Pedro)
-
-#### `POST /api/v1/payments`
-
-Registrar un pago.
-
-**Parameters:** `amount` (body, BigDecimal, si), `userId` (body, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "amount": 35.5,
-  "userId": 12
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 5001,
-  "amount": 35.5,
-  "paymentDate": "2026-05-10T10:05:00",
-  "status": "PAID",
-  "user": {
-    "id": 12,
-    "name": "Juan Perez"
-  }
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de creacion de pago
-
-#### `GET /api/v1/payments/{id}`
-
-Obtener un pago por id.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 5001
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 5001,
-  "amount": 35.5,
-  "paymentDate": "2026-05-10T10:05:00",
-  "status": "PAID",
-  "user": {
-    "id": 12,
-    "name": "Juan Perez"
-  }
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de pago por id
-
----
-
-### Coaches (Camila)
-
-#### `POST /api/v1/coaches`
-
-Crear un coach.
-
-**Parameters:** `name`, `expertise`, `phone` (body, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "name": "Ana Torres",
-  "expertise": "Tenis",
-  "phone": "+51 999 123 456"
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 21,
-  "name": "Ana Torres",
-  "expertise": "Tenis",
-  "phone": "+51 999 123 456"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de creacion de coach
-
-#### `GET /api/v1/coaches`
-
-Listar coaches.
-
-**Parameters:** none
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:** `null`
-
-**Example Response:**
-
-```json
-[
-  {
-    "id": 21,
-    "name": "Ana Torres",
-    "expertise": "Tenis",
-    "phone": "+51 999 123 456"
-  }
-]
-```
-
-**Captura:** Aqui va la captura de pantalla de listado de coaches
-
----
-
-### Courts (Juan)
-
-#### `POST /api/v1/courts`
-
-Registrar cancha.
-
-**Parameters:** `name`, `location`, `type`
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "name": "Cancha Central",
-  "location": "Lima",
-  "type": "Padel"
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 3,
-  "name": "Cancha Central",
-  "location": "Lima",
-  "type": "Padel"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de creacion de cancha
-
-#### `GET /api/v1/courts`
-
-Listar canchas.
-
-**Parameters:** none
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:** `null`
-
-**Example Response:**
-
-```json
-[
-  {
-    "id": 3,
-    "name": "Cancha Central",
-    "location": "Lima",
-    "type": "Padel"
-  }
-]
-```
-
-**Captura:** Aqui va la captura de pantalla de listado de canchas
-
-#### `GET /api/v1/courts/{id}`
-
-Obtener cancha por id.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 3
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 3,
-  "name": "Cancha Central",
-  "location": "Lima",
-  "type": "Padel"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de cancha por id
-
-#### `PUT /api/v1/courts/{id}`
-
-Actualizar cancha.
-
-**Parameters:** `id` (path, Long, si), `name`, `location`, `type`
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "name": "Cancha Norte",
-  "location": "Lima",
-  "type": "Tenis"
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 3,
-  "name": "Cancha Norte",
-  "location": "Lima",
-  "type": "Tenis"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de actualizacion de cancha
-
-#### `DELETE /api/v1/courts/{id}`
-
-Eliminar cancha.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 3
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "message": "Court deleted successfully."
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de eliminacion de cancha
-
----
-
-### Availabilities (Juan)
-
-#### `POST /api/v1/availabilities`
-
-Crear disponibilidad.
-
-**Parameters:** `coachId` (body, Long, si), `courtId` (body, Long, si), `start` (body, LocalDateTime, si), `end` (body, LocalDateTime, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "coachId": 21,
-  "courtId": 3,
-  "start": "2026-05-10T14:00:00",
-  "end": "2026-05-10T15:00:00"
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 301,
-  "coach": {
-    "id": 21,
-    "name": "Ana Torres"
-  },
-  "court": {
-    "id": 3,
-    "name": "Cancha Central"
-  },
-  "start": "2026-05-10T14:00:00",
-  "end": "2026-05-10T15:00:00",
-  "status": "AVAILABLE"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de creacion de disponibilidad
-
-#### `GET /api/v1/availabilities`
-
-Listar disponibilidades.
-
-**Parameters:** none
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:** `null`
-
-**Example Response:**
-
-```json
-[
-  {
-    "id": 301,
-    "coach": {
-      "id": 21,
-      "name": "Ana Torres"
-    },
-    "court": {
-      "id": 3,
-      "name": "Cancha Central"
-    },
-    "start": "2026-05-10T14:00:00",
-    "end": "2026-05-10T15:00:00",
-    "status": "AVAILABLE"
-  }
-]
-```
-
-**Captura:** Aqui va la captura de pantalla de listado de disponibilidades
-
-#### `GET /api/v1/availabilities/{id}`
-
-Obtener disponibilidad por id.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 301
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 301,
-  "coach": {
-    "id": 21,
-    "name": "Ana Torres"
-  },
-  "court": {
-    "id": 3,
-    "name": "Cancha Central"
-  },
-  "start": "2026-05-10T14:00:00",
-  "end": "2026-05-10T15:00:00",
-  "status": "AVAILABLE"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de disponibilidad por id
-
-#### `PUT /api/v1/availabilities/{id}`
-
-Actualizar disponibilidad.
-
-**Parameters:** `id` (path, Long, si), `start`, `end`, `status` (body, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "start": "2026-05-10T15:00:00",
-  "end": "2026-05-10T16:00:00",
-  "status": "BOOKED"
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 301,
-  "coach": {
-    "id": 21,
-    "name": "Ana Torres"
-  },
-  "court": {
-    "id": 3,
-    "name": "Cancha Central"
-  },
-  "start": "2026-05-10T15:00:00",
-  "end": "2026-05-10T16:00:00",
-  "status": "BOOKED"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de actualizacion de disponibilidad
-
-#### `DELETE /api/v1/availabilities/{id}`
-
-Eliminar disponibilidad.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 301
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "message": "Availability deleted successfully."
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de eliminacion de disponibilidad
-
----
-
-### Matches (Pedro)
-
-#### `POST /api/v1/matches`
-
-Crear partido.
-
-**Parameters:** `bookingId` (body, Long, si), `players` (body, array[Long], si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "bookingId": 101,
-  "players": [
-    12,
-    13
-  ]
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 401,
-  "booking": {
-    "id": 101
-  },
-  "players": [
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    }
-  ],
-  "status": "SCHEDULED"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de creacion de partido
-
-#### `GET /api/v1/matches`
-
-Listar partidos.
-
-**Parameters:** none
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:** `null`
-
-**Example Response:**
-
-```json
-[
-  {
-    "id": 401,
-    "booking": {
-      "id": 101
-    },
-    "players": [
-      {
-        "id": 12
-      },
-      {
-        "id": 13
-      }
-    ],
-    "status": "SCHEDULED"
-  }
-]
-```
-
-**Captura:** Aqui va la captura de pantalla de listado de partidos
-
-#### `GET /api/v1/matches/{id}`
-
-Obtener partido por id.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 401
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 401,
-  "booking": {
-    "id": 101
-  },
-  "players": [
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    }
-  ],
-  "status": "SCHEDULED"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de partido por id
-
-#### `PUT /api/v1/matches/{id}`
-
-Actualizar partido.
-
-**Parameters:** `id` (path, Long, si), `status` (body, String, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "status": "COMPLETED"
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 401,
-  "booking": {
-    "id": 101
-  },
-  "players": [
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    }
-  ],
-  "status": "COMPLETED"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de actualizacion de partido
-
-#### `DELETE /api/v1/matches/{id}`
-
-Eliminar partido.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 401
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "message": "Match deleted successfully."
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de eliminacion de partido
-
----
-
-### Reviews (Camila)
-
-#### `POST /api/v1/reviews`
-
-Crear resena.
-
-**Parameters:** `matchId` (body, Long, si), `rating` (body, int, si), `comment` (body, String, opcional)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "matchId": 401,
-  "rating": 5,
-  "comment": "Excelente partido"
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 601,
-  "matchId": 401,
-  "rating": 5,
-  "comment": "Excelente partido"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de creacion de resena
-
-#### `GET /api/v1/reviews`
-
-Listar resenas.
-
-**Parameters:** none
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:** `null`
-
-**Example Response:**
-
-```json
-[
-  {
-    "id": 601,
-    "matchId": 401,
-    "rating": 5,
-    "comment": "Excelente partido"
-  }
-]
-```
-
-**Captura:** Aqui va la captura de pantalla de listado de resenas
-
-#### `GET /api/v1/reviews/{id}`
-
-Obtener resena por id.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 601
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 601,
-  "matchId": 401,
-  "rating": 5,
-  "comment": "Excelente partido"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de resena por id
-
-#### `PUT /api/v1/reviews/{id}`
-
-Actualizar resena.
-
-**Parameters:** `id` (path, Long, si), `rating`, `comment` (body, opcional)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "rating": 4,
-  "comment": "Buen partido"
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 601,
-  "matchId": 401,
-  "rating": 4,
-  "comment": "Buen partido"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de actualizacion de resena
-
-#### `DELETE /api/v1/reviews/{id}`
-
-Eliminar resena.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 601
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "message": "Review deleted successfully."
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de eliminacion de resena
-
----
-
-### Notifications (Eduardo)
-
-#### `POST /api/v1/notifications`
-
-Crear notificacion.
-
-**Parameters:** `userId` (body, Long, si), `message` (body, String, si), `type` (body, String, opcional)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "userId": 12,
-  "message": "Recuerda tu partido",
-  "type": "EMAIL"
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 701,
-  "userId": 12,
-  "message": "Recuerda tu partido",
-  "type": "EMAIL",
-  "status": "SENT"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de creacion de notificacion
-
-#### `GET /api/v1/notifications`
-
-Listar notificaciones.
-
-**Parameters:** none
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:** `null`
-
-**Example Response:**
-
-```json
-[
-  {
-    "id": 701,
-    "userId": 12,
-    "message": "Recuerda tu partido",
-    "type": "EMAIL",
-    "status": "SENT"
-  }
-]
-```
-
-**Captura:** Aqui va la captura de pantalla de listado de notificaciones
-
-#### `GET /api/v1/notifications/{id}`
-
-Obtener notificacion por id.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 701
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 701,
-  "userId": 12,
-  "message": "Recuerda tu partido",
-  "type": "EMAIL",
-  "status": "SENT"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de notificacion por id
-
-#### `PUT /api/v1/notifications/{id}`
-
-Actualizar notificacion.
-
-**Parameters:** `id` (path, Long, si), `message` (body, String, opcional), `status` (body, String, opcional)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "message": "Partido cancelado",
-  "status": "CANCELLED"
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 701,
-  "userId": 12,
-  "message": "Partido cancelado",
-  "type": "EMAIL",
-  "status": "CANCELLED"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de actualizacion de notificacion
-
-#### `DELETE /api/v1/notifications/{id}`
-
-Eliminar notificacion.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 701
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "message": "Notification deleted successfully."
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de eliminacion de notificacion
-
----
-
-### Analytics (Fabricio)
-
-#### `POST /api/v1/analytics`
-
-Crear metrica.
-
-**Parameters:** `type` (body, String, si), `value` (body, Number, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "type": "booking",
-  "value": 1
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 801,
-  "type": "booking",
-  "value": 1,
-  "timestamp": "2026-05-10T10:00:00"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de creacion de metrica
-
-#### `GET /api/v1/analytics`
-
-Listar metricas.
-
-**Parameters:** none
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:** `null`
-
-**Example Response:**
-
-```json
-[
-  {
-    "id": 801,
-    "type": "booking",
-    "value": 1,
-    "timestamp": "2026-05-10T10:00:00"
-  }
-]
-```
-
-**Captura:** Aqui va la captura de pantalla de listado de metricas
-
-#### `GET /api/v1/analytics/{id}`
-
-Obtener metrica por id.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 801
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 801,
-  "type": "booking",
-  "value": 1,
-  "timestamp": "2026-05-10T10:00:00"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de metrica por id
-
-#### `PUT /api/v1/analytics/{id}`
-
-Actualizar metrica.
-
-**Parameters:** `id` (path, Long, si), `value` (body, Number, opcional)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "value": 2
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 801,
-  "type": "booking",
-  "value": 2,
-  "timestamp": "2026-05-10T10:00:00"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de actualizacion de metrica
-
-#### `DELETE /api/v1/analytics/{id}`
-
-Eliminar metrica.
-
-**Parameters:** `id` (path, Long, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 801
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "message": "Metric deleted successfully."
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de eliminacion de metrica
-
----
-
-### IAM (Eduardo)
-
-#### `POST /api/v1/auth/sign-up`
-
-Registrar usuario.
-
-**Parameters:** `username`, `email`, `password` (body, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "username": "juan123",
-  "email": "juan@example.com",
-  "password": "Pass123!"
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "id": 901,
-  "username": "juan123",
-  "email": "juan@example.com"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de registro de usuario
-
-#### `POST /api/v1/auth/sign-in`
-
-Iniciar sesion.
-
-**Parameters:** `username`, `password` (body, si)
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "username": "juan123",
-  "password": "Pass123!"
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "token": "jwt-token-value"
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de inicio de sesion
-
-#### `GET /api/v1/users`
-
-Listar todos los usuarios.
-
-**Parameters:** none
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:** `null`
-
-**Example Response:**
-
-```json
-[
-  {
-    "id": 12,
-    "username": "juan123",
-    "email": "juan@example.com"
-  }
-]
-```
-
-**Captura:** Aqui va la captura de pantalla de listado de usuarios
-
-#### `GET /api/v1/roles`
-
-Listar roles.
-
-**Parameters:** none
-
-**Commit ID:** `6fe60a4`
-
-**Example Request:** `null`
+**Parametros:** no requiere parametros.
 
 **Example Response:**
 
@@ -8366,36 +7121,64 @@ Listar roles.
 [
   {
     "id": 1,
-    "name": "USER"
-  },
-  {
-    "id": 2,
-    "name": "ADMIN"
+    "startTime": "2026-05-10T10:00:00",
+    "endTime": "2026-05-10T11:00:00",
+    "user": {
+      "id": 9,
+      "name": "Juan Perez"
+    },
+    "court": {
+      "id": 2,
+      "name": "Cancha Central"
+    }
   }
 ]
 ```
 
-**Captura:** Aqui va la captura de pantalla de listado de roles
+**Explicacion del response:** el servicio retorna un arreglo de reservas. Cada elemento contiene el identificador de la reserva, el rango horario y los objetos resumidos de usuario y cancha.
 
----
+**Captura:** ![Listado de reservas](assets/chapter4/GETbookings.png)
 
-### Users (Eduardo)
+#### Endpoint: GET /api/v1/bookings/{id}
 
-#### `POST /api/v1/user-profiles`
+**Accion implementada:** consultar una reserva especifica por identificador.
 
-Crear perfil de usuario.
+**Parametros:** `id` en path (`Long`).
 
-**Parameters:** `userId` (body, Long, si), `name` (body, String, si), `phone` (body, String, opcional)
+**Example Response:**
 
-**Commit ID:** `6fe60a4`
+```json
+{
+  "id": 1,
+  "startTime": "2026-05-10T10:00:00",
+  "endTime": "2026-05-10T11:00:00",
+  "user": {
+    "id": 9,
+    "name": "Juan Perez"
+  },
+  "court": {
+    "id": 2,
+    "name": "Cancha Central"
+  }
+}
+```
+
+**Explicacion del response:** el servicio retorna la informacion de una reserva individual, incluyendo los datos resumidos de las entidades relacionadas.
+
+**Captura:** ![Reserva por id](assets/chapter4/GETIDbookings.png)
+
+#### Endpoint: PUT /api/v1/bookings/{id}
+
+**Accion implementada:** actualizar los datos de una reserva existente.
+
+**Parametros:** `id` en path (`Long`) y body con los campos actualizables de la reserva.
 
 **Example Request:**
 
 ```json
 {
-  "userId": 12,
-  "name": "Juan Perez",
-  "phone": "+51999123456"
+  "startTime": "2026-05-10T10:00:00",
+  "endTime": "2026-05-10T11:00:00"
 }
 ```
 
@@ -8403,83 +7186,966 @@ Crear perfil de usuario.
 
 ```json
 {
-  "id": 1001,
-  "userId": 12,
-  "name": "Juan Perez",
-  "phone": "+51999123456"
+  "id": 1,
+  "startTime": "2026-05-10T10:00:00",
+  "endTime": "2026-05-10T11:00:00",
+  "user": {
+    "id": 9,
+    "name": "Juan Perez"
+  },
+  "court": {
+    "id": 2,
+    "name": "Cancha Central"
+  }
 }
 ```
 
-**Captura:** Aqui va la captura de pantalla de creacion de perfil
+**Explicacion del response:** el servicio retorna la reserva luego de aplicar la actualizacion.
 
-#### `GET /api/v1/user-profiles`
+**Captura:** ![Actualizacion de reserva](assets/chapter4/PUTbookings.png)
 
-Listar perfiles.
+#### Endpoint: DELETE /api/v1/bookings/{id}
 
-**Parameters:** none
+**Accion implementada:** eliminar una reserva por identificador.
 
-**Commit ID:** `6fe60a4`
+**Parametros:** `id` en path (`Long`).
 
-**Example Request:** `null`
+**Example Response:** no se documenta cuerpo de respuesta porque la evidencia disponible corresponde a la operacion ejecutada desde Swagger.
+
+**Captura:** ![Eliminacion de reserva](assets/chapter4/DELETEbookings.png)
+
+---
+
+### Payments
+
+#### Endpoint: POST /api/v1/payments
+
+**Accion implementada:** registrar un pago asociado a un usuario.
+
+**Parametros:** body con `amount` (`Number`) y `userId` (`Long`).
+
+**Example Request:**
+
+```json
+{
+  "amount": 35.5,
+  "userId": 9
+}
+```
+
+**Example Response:**
+
+```json
+{
+  "id": 1,
+  "amount": 35.5,
+  "paymentDate": "2026-05-12T02:07:07.621294452",
+  "status": "PENDING",
+  "user": {
+    "id": 9,
+    "name": "Juan Perez"
+  }
+}
+```
+
+**Explicacion del response:** el servicio retorna el pago creado, el monto registrado, la fecha de pago, el estado inicial y el usuario asociado.
+
+**Captura:** ![Creacion de pago](assets/chapter4/POSTpayments.png)
+
+#### Endpoint: GET /api/v1/payments/{id}
+
+**Accion implementada:** obtener un pago especifico por identificador.
+
+**Parametros:** `id` en path (`Long`).
+
+**Example Response:**
+
+```json
+{
+  "id": 1,
+  "amount": 35.5,
+  "paymentDate": "2026-05-12T02:07:07.621294452",
+  "status": "PENDING",
+  "user": {
+    "id": 9,
+    "name": "Juan Perez"
+  }
+}
+```
+
+**Explicacion del response:** el servicio retorna el detalle del pago y el usuario relacionado.
+
+**Captura:** ![Pago por id](assets/chapter4/GETIDpayments.png)
+
+---
+
+### Coaches
+
+#### Endpoint: POST /api/v1/coaches
+
+**Accion implementada:** crear un entrenador dentro del sistema.
+
+**Parametros:** body con `name` (`String`), `expertise` (`String`) y `phone` (`String`).
+
+**Example Request:**
+
+```json
+{
+  "name": "Ana Torres",
+  "expertise": "Tenis",
+  "phone": "+51 999 123 456"
+}
+```
+
+**Example Response:**
+
+```json
+{
+  "id": 2,
+  "name": "Ana Torres",
+  "expertise": "Tenis",
+  "phone": "+51 999 123 456"
+}
+```
+
+**Explicacion del response:** el servicio retorna el coach creado con su identificador, nombre, especialidad y telefono.
+
+**Captura:** ![Creacion de coach](assets/chapter4/POSTcoaches.png)
+
+#### Endpoint: GET /api/v1/coaches
+
+**Accion implementada:** listar los entrenadores registrados.
+
+**Parametros:** no requiere parametros.
 
 **Example Response:**
 
 ```json
 [
   {
-    "id": 1001,
-    "userId": 12,
+    "id": 1,
+    "name": "beto",
+    "expertise": "beto",
+    "phone": "123456789"
+  },
+  {
+    "id": 2,
+    "name": "Ana Torres",
+    "expertise": "Tenis",
+    "phone": "+51 999 123 456"
+  }
+]
+```
+
+**Explicacion del response:** el servicio retorna un arreglo de coaches con sus datos principales.
+
+**Captura:** ![Listado de coaches](assets/chapter4/GETcoaches.png)
+
+#### Endpoint: GET /api/v1/coaches/{id}
+
+**Accion implementada:** obtener un coach especifico por identificador.
+
+**Parametros:** `id` en path (`Long`).
+
+**Example Response:**
+
+```json
+{
+  "id": 2,
+  "name": "Ana Torres",
+  "expertise": "Tenis",
+  "phone": "+51 999 123 456"
+}
+```
+
+**Explicacion del response:** el servicio retorna el detalle del coach solicitado.
+
+**Captura:** ![Coach por id](assets/chapter4/GETIDcoaches.png)
+
+#### Endpoint: PUT /api/v1/coaches/{id}
+
+**Accion implementada:** actualizar los datos de un coach existente.
+
+**Parametros:** `id` en path (`Long`) y body con `name`, `expertise` y `phone`.
+
+**Example Request:**
+
+```json
+{
+  "name": "Ana Torres",
+  "expertise": "Tenis",
+  "phone": "+51 999 123 456"
+}
+```
+
+**Example Response:**
+
+```json
+{
+  "id": 2,
+  "name": "Ana Torres",
+  "expertise": "Tenis",
+  "phone": "+51 999 123 456"
+}
+```
+
+**Explicacion del response:** el servicio retorna el coach luego de aplicar la actualizacion.
+
+**Captura:** ![Actualizacion de coach](assets/chapter4/PUTcoaches.png)
+
+#### Endpoint: DELETE /api/v1/coaches/{id}
+
+**Accion implementada:** eliminar un coach por identificador.
+
+**Parametros:** `id` en path (`Long`).
+
+**Example Response:** no se documenta cuerpo de respuesta porque la evidencia disponible corresponde a la operacion ejecutada desde Swagger.
+
+**Captura:** ![Eliminacion de coach](assets/chapter4/DELETEcoaches.png)
+
+---
+
+### Courts
+
+#### Endpoint: POST /api/v1/courts
+
+**Accion implementada:** registrar una cancha disponible en la plataforma.
+
+**Parametros:** body con `name` (`String`), `location` (`String`) y `type` (`String`).
+
+**Example Request:**
+
+```json
+{
+  "name": "Cancha Central",
+  "location": "Lima",
+  "type": "Padel"
+}
+```
+
+**Example Response:**
+
+```json
+{
+  "id": 1,
+  "name": "Cancha Central",
+  "location": "Lima",
+  "type": "Padel"
+}
+```
+
+**Explicacion del response:** el servicio retorna la cancha creada con su identificador, nombre, ubicacion y tipo.
+
+**Captura:** ![Creacion de cancha](assets/chapter4/POSTcourts.png)
+
+#### Endpoint: GET /api/v1/courts
+
+**Accion implementada:** listar las canchas registradas.
+
+**Parametros:** no requiere parametros.
+
+**Example Response:**
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Cancha Central",
+    "location": "Lima",
+    "type": "Padel"
+  }
+]
+```
+
+**Explicacion del response:** el servicio retorna un arreglo de canchas con sus datos principales.
+
+**Captura:** ![Listado de canchas](assets/chapter4/GETcourts.png)
+
+#### Endpoint: GET /api/v1/courts/{id}
+
+**Accion implementada:** obtener una cancha por identificador.
+
+**Parametros:** `id` en path (`Long`).
+
+**Example Response:**
+
+```json
+{
+  "id": 1,
+  "name": "Cancha Central",
+  "location": "Lima",
+  "type": "Padel"
+}
+```
+
+**Explicacion del response:** el servicio retorna la cancha solicitada con sus atributos principales.
+
+**Captura:** ![Cancha por id](assets/chapter4/GETIDcourts.png)
+
+#### Endpoint: PUT /api/v1/courts/{id}
+
+**Accion implementada:** actualizar los datos de una cancha.
+
+**Parametros:** `id` en path (`Long`) y body con `name`, `location` y `type`.
+
+**Example Request:**
+
+```json
+{
+  "name": "Cancha Central",
+  "location": "Lima",
+  "type": "Padel"
+}
+```
+
+**Example Response:**
+
+```json
+{
+  "id": 1,
+  "name": "Cancha Central",
+  "location": "Lima",
+  "type": "Padel"
+}
+```
+
+**Explicacion del response:** el servicio retorna la cancha actualizada.
+
+**Captura:** ![Actualizacion de cancha](assets/chapter4/PUTcourts.png)
+
+#### Endpoint: DELETE /api/v1/courts/{id}
+
+**Accion implementada:** eliminar una cancha por identificador.
+
+**Parametros:** `id` en path (`Long`).
+
+**Example Response:** no se documenta cuerpo de respuesta porque la evidencia disponible corresponde a la operacion ejecutada desde Swagger.
+
+**Captura:** ![Eliminacion de cancha](assets/chapter4/DELETEcourts.png)
+
+---
+
+### Availabilities
+
+#### Endpoint: POST /api/v1/availabilities
+
+**Accion implementada:** crear una disponibilidad horaria para un coach.
+
+**Parametros:** body con `date` (`LocalDate`), `startTime` (`LocalTime`), `endTime` (`LocalTime`), `status` (`String`) y `coachId` (`Long`).
+
+**Example Request:**
+
+```json
+{
+  "date": "2026-05-12",
+  "startTime": "14:00:00",
+  "endTime": "15:00:00",
+  "status": "AVAILABLE",
+  "coachId": 3
+}
+```
+
+**Example Response:**
+
+```json
+{
+  "id": 1,
+  "date": "2026-05-12",
+  "startTime": "14:00:00",
+  "endTime": "15:00:00",
+  "status": "AVAILABLE",
+  "createdAt": "2026-05-12T02:29:41.770962",
+  "coach": {
+    "id": 3,
+    "name": "Ana Torres"
+  }
+}
+```
+
+**Explicacion del response:** el servicio retorna la disponibilidad creada, su estado, fecha de creacion y el coach asociado como objeto resumido.
+
+**Captura:** ![Creacion de disponibilidad](assets/chapter4/POSTavailabilities.png)
+
+#### Endpoint: GET /api/v1/availabilities
+
+**Accion implementada:** listar las disponibilidades registradas.
+
+**Parametros:** no requiere parametros.
+
+**Example Response:**
+
+```json
+[
+  {
+    "id": 1,
+    "date": "2026-05-12",
+    "startTime": "14:00:00",
+    "endTime": "15:00:00",
+    "status": "AVAILABLE",
+    "createdAt": "2026-05-12T02:29:41.770962",
+    "coach": {
+      "id": 3,
+      "name": "Ana Torres"
+    }
+  }
+]
+```
+
+**Explicacion del response:** el servicio retorna un arreglo de disponibilidades con fecha, rango horario, estado y coach asociado.
+
+**Captura:** ![Listado de disponibilidades](assets/chapter4/GETavailabilities.png)
+
+#### Endpoint: GET /api/v1/availabilities/{id}
+
+**Accion implementada:** obtener una disponibilidad especifica por identificador.
+
+**Parametros:** `id` en path (`Long`).
+
+**Example Response:**
+
+```json
+{
+  "id": 1,
+  "date": "2026-05-12",
+  "startTime": "14:00:00",
+  "endTime": "15:00:00",
+  "status": "AVAILABLE",
+  "createdAt": "2026-05-12T02:29:41.770962",
+  "coach": {
+    "id": 3,
+    "name": "Ana Torres"
+  }
+}
+```
+
+**Explicacion del response:** el servicio retorna el detalle de una disponibilidad y la informacion resumida del coach.
+
+**Captura:** ![Disponibilidad por id](assets/chapter4/GETIDavailabilities.png)
+
+#### Endpoint: PUT /api/v1/availabilities/{id}
+
+**Accion implementada:** actualizar una disponibilidad existente.
+
+**Parametros:** `id` en path (`Long`) y body con `date`, `startTime`, `endTime`, `status` y `coachId`.
+
+**Example Request:**
+
+```json
+{
+  "date": "2026-05-12",
+  "startTime": "14:00:00",
+  "endTime": "15:00:00",
+  "status": "AVAILABLE",
+  "coachId": 3
+}
+```
+
+**Example Response:**
+
+```json
+{
+  "id": 1,
+  "date": "2026-05-12",
+  "startTime": "14:00:00",
+  "endTime": "15:00:00",
+  "status": "AVAILABLE",
+  "createdAt": "2026-05-12T02:29:41.770962",
+  "coach": {
+    "id": 3,
+    "name": "Ana Torres"
+  }
+}
+```
+
+**Explicacion del response:** el servicio retorna la disponibilidad luego de aplicar la actualizacion.
+
+**Captura:** ![Actualizacion de disponibilidad](assets/chapter4/PUTavailabilities.png)
+
+#### Endpoint: DELETE /api/v1/availabilities/{id}
+
+**Accion implementada:** eliminar una disponibilidad por identificador.
+
+**Parametros:** `id` en path (`Long`).
+
+**Example Response:** no se documenta cuerpo de respuesta porque la evidencia disponible corresponde a la operacion ejecutada desde Swagger.
+
+**Captura:** ![Eliminacion de disponibilidad](assets/chapter4/DELETEavailabilities.png)
+
+---
+
+### Matches
+
+#### Endpoint: POST /api/v1/matches
+
+**Accion implementada:** crear un partido programado dentro de una cancha y asociado a un usuario creador.
+
+**Parametros:** body con `title` (`String`), `description` (`String`), `dateTime` (`OffsetDateTime`), `status` (`String`), `maxPlayers` (`Integer`), `currentPlayers` (`Integer`), `courtId` (`Long`) y `createdById` (`Long`).
+
+**Example Request:**
+
+```json
+{
+  "title": "Partido amistoso",
+  "description": "Partido de practica con amigos",
+  "dateTime": "2026-05-12T14:00:00Z",
+  "status": "SCHEDULED",
+  "maxPlayers": 10,
+  "currentPlayers": 0,
+  "courtId": 2,
+  "createdById": 3
+}
+```
+
+**Explicacion del request:** el payload registra los datos funcionales del partido y relaciona la cancha y el usuario creador mediante identificadores.
+
+**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+
+#### Endpoint: GET /api/v1/matches
+
+**Accion implementada:** listar los partidos registrados.
+
+**Parametros:** no requiere parametros.
+
+**Example Response:** no se proporciono JSON real de response para esta operacion en la evidencia disponible.
+
+**Explicacion del response:** esta operacion permite consultar los partidos disponibles desde la documentacion OpenAPI.
+
+**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+
+#### Endpoint: GET /api/v1/matches/{id}
+
+**Accion implementada:** obtener un partido especifico por identificador.
+
+**Parametros:** `id` en path (`Long`).
+
+**Example Response:** no se proporciono JSON real de response para esta operacion en la evidencia disponible.
+
+**Explicacion del response:** esta operacion permite consultar el detalle de un partido registrado.
+
+**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+
+#### Endpoint: PUT /api/v1/matches/{id}
+
+**Accion implementada:** actualizar un partido existente.
+
+**Parametros:** `id` en path (`Long`). No se proporciono payload real de actualizacion en la evidencia disponible.
+
+**Example Response:** no se proporciono JSON real de response para esta operacion en la evidencia disponible.
+
+**Explicacion del response:** esta operacion permite modificar los datos de un partido desde Swagger UI.
+
+**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+
+#### Endpoint: DELETE /api/v1/matches/{id}
+
+**Accion implementada:** eliminar un partido por identificador.
+
+**Parametros:** `id` en path (`Long`).
+
+**Example Response:** no se documenta cuerpo de respuesta porque no se proporciono payload real para esta operacion.
+
+**Explicacion del response:** esta operacion permite retirar un partido registrado.
+
+**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+
+---
+
+### Notifications
+
+#### Endpoint: POST /api/v1/notifications
+
+**Accion implementada:** crear una notificacion para un usuario.
+
+**Parametros:** body con `title` (`String`), `message` (`String`), `type` (`String`), `isRead` (`Boolean`) y `userId` (`Long`).
+
+**Example Request:**
+
+```json
+{
+  "title": "Nuevo partido disponible",
+  "message": "Se ha programado un nuevo partido en tu cancha favorita",
+  "type": "INFO",
+  "isRead": false,
+  "userId": 9
+}
+```
+
+**Example Response:**
+
+```json
+{
+  "id": 1,
+  "title": "Nuevo partido disponible",
+  "message": "Se ha programado un nuevo partido en tu cancha favorita",
+  "type": "INFO",
+  "isRead": false,
+  "createdAt": "2026-05-12T03:09:40.277684842",
+  "user": {
+    "id": 9,
+    "name": "Juan Perez"
+  }
+}
+```
+
+**Explicacion del response:** el servicio retorna la notificacion creada, su estado de lectura, fecha de creacion y el usuario asociado.
+
+**Captura:** ![Creacion de notificacion](assets/chapter4/POSTnotifications.png)
+
+#### Endpoint: GET /api/v1/notifications
+
+**Accion implementada:** listar las notificaciones registradas.
+
+**Parametros:** no requiere parametros.
+
+**Example Response:**
+
+```json
+[
+  {
+    "id": 1,
+    "title": "Nuevo partido disponible",
+    "message": "Se ha programado un nuevo partido en tu cancha favorita",
+    "type": "INFO",
+    "isRead": false,
+    "createdAt": "2026-05-12T03:09:40.277684842",
+    "user": {
+      "id": 9,
+      "name": "Juan Perez"
+    }
+  }
+]
+```
+
+**Explicacion del response:** el servicio retorna un arreglo de notificaciones con los datos de mensaje, estado de lectura y usuario asociado.
+
+**Captura:** ![Listado de notificaciones](assets/chapter4/GETnotifications.png)
+
+#### Endpoint: GET /api/v1/notifications/{id}
+
+**Accion implementada:** obtener una notificacion por identificador.
+
+**Parametros:** `id` en path (`Long`).
+
+**Example Response:**
+
+```json
+{
+  "id": 1,
+  "title": "Nuevo partido disponible",
+  "message": "Se ha programado un nuevo partido en tu cancha favorita",
+  "type": "INFO",
+  "isRead": false,
+  "createdAt": "2026-05-12T03:09:40.277684842",
+  "user": {
+    "id": 9,
+    "name": "Juan Perez"
+  }
+}
+```
+
+**Explicacion del response:** el servicio retorna el detalle de una notificacion y el usuario destinatario.
+
+**Captura:** ![Notificacion por id](assets/chapter4/GETIDnotifications.png)
+
+#### Endpoint: PUT /api/v1/notifications/{id}
+
+**Accion implementada:** actualizar una notificacion existente.
+
+**Parametros:** `id` en path (`Long`) y body con los campos de notificacion.
+
+**Example Request:**
+
+```json
+{
+  "title": "Nuevo partido disponible",
+  "message": "Se ha programado un nuevo partido en tu cancha favorita",
+  "type": "INFO",
+  "isRead": false,
+  "userId": 9
+}
+```
+
+**Example Response:**
+
+```json
+{
+  "id": 1,
+  "title": "Nuevo partido disponible",
+  "message": "Se ha programado un nuevo partido en tu cancha favorita",
+  "type": "INFO",
+  "isRead": false,
+  "createdAt": "2026-05-12T03:09:40.277684842",
+  "user": {
+    "id": 9,
+    "name": "Juan Perez"
+  }
+}
+```
+
+**Explicacion del response:** el servicio retorna la notificacion luego de aplicar la actualizacion.
+
+**Captura:** ![Actualizacion de notificacion](assets/chapter4/PUTnotifications.png)
+
+#### Endpoint: DELETE /api/v1/notifications/{id}
+
+**Accion implementada:** eliminar una notificacion por identificador.
+
+**Parametros:** `id` en path (`Long`).
+
+**Example Response:** no se documenta cuerpo de respuesta porque la evidencia disponible corresponde a la operacion ejecutada desde Swagger.
+
+**Captura:** ![Eliminacion de notificacion](assets/chapter4/DELETEnotifications.png)
+
+---
+
+### Analytics
+
+#### Endpoint: POST /api/v1/analytics
+
+**Accion implementada:** crear una metrica asociada a un coach.
+
+**Parametros:** body con `metricType` (`String`), `value` (`Number`), `period` (`String`) y `coachId` (`Long`).
+
+**Example Request:**
+
+```json
+{
+  "metricType": "PARTICIPATION",
+  "value": 5,
+  "period": "2026-05",
+  "coachId": 5
+}
+```
+
+**Explicacion del request:** el payload registra el tipo de metrica, su valor, el periodo evaluado y el identificador del coach relacionado.
+
+**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+
+#### Endpoint: GET /api/v1/analytics
+
+**Accion implementada:** listar las metricas registradas.
+
+**Parametros:** no requiere parametros.
+
+**Example Response:** no se proporciono JSON real de response para esta operacion en la evidencia disponible.
+
+**Explicacion del response:** esta operacion permite consultar el conjunto de metricas disponibles para analisis.
+
+**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+
+#### Endpoint: GET /api/v1/analytics/{id}
+
+**Accion implementada:** obtener una metrica especifica por identificador.
+
+**Parametros:** `id` en path (`Long`).
+
+**Example Response:** no se proporciono JSON real de response para esta operacion en la evidencia disponible.
+
+**Explicacion del response:** esta operacion permite revisar el detalle de una metrica registrada.
+
+**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+
+#### Endpoint: PUT /api/v1/analytics/{id}
+
+**Accion implementada:** actualizar una metrica existente.
+
+**Parametros:** `id` en path (`Long`). No se proporciono payload real de actualizacion en la evidencia disponible.
+
+**Example Response:** no se proporciono JSON real de response para esta operacion en la evidencia disponible.
+
+**Explicacion del response:** esta operacion permite modificar la informacion de una metrica documentada en Swagger UI.
+
+**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+
+#### Endpoint: DELETE /api/v1/analytics/{id}
+
+**Accion implementada:** eliminar una metrica por identificador.
+
+**Parametros:** `id` en path (`Long`).
+
+**Example Response:** no se documenta cuerpo de respuesta porque no se proporciono payload real para esta operacion.
+
+**Explicacion del response:** esta operacion permite retirar una metrica registrada.
+
+**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+
+---
+
+### IAM / Authentication / Users
+
+#### Endpoint: POST /api/v1/auth/sign-up
+
+**Accion implementada:** registrar una nueva cuenta de usuario.
+
+**Parametros:** no se proporciono JSON real de request para esta operacion en la evidencia disponible.
+
+**Example Response:** no se proporciono JSON real de response para esta operacion en la evidencia disponible.
+
+**Explicacion del response:** esta operacion forma parte del flujo de autenticacion y permite crear credenciales de acceso para un usuario.
+
+**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+
+#### Endpoint: POST /api/v1/auth/sign-in
+
+**Accion implementada:** iniciar sesion con credenciales de usuario.
+
+**Parametros:** no se proporciono JSON real de request para esta operacion en la evidencia disponible.
+
+**Example Response:** no se proporciono JSON real de response para esta operacion en la evidencia disponible.
+
+**Explicacion del response:** esta operacion permite autenticar al usuario y habilitar el acceso a recursos protegidos del backend.
+
+**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+
+#### Endpoint: GET /api/v1/users
+
+**Accion implementada:** listar los usuarios registrados y sus roles asignados.
+
+**Parametros:** no requiere parametros.
+
+**Example Response:**
+
+```json
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "roles": [
+      "ROLE_ADMIN"
+    ]
+  },
+  {
+    "id": 2,
+    "username": "pedro",
+    "roles": [
+      "ROLE_USER"
+    ]
+  },
+  {
+    "id": 3,
+    "username": "pocho",
+    "roles": [
+      "ROLE_ADMIN"
+    ]
+  },
+  {
+    "id": 4,
+    "username": "pocho1",
+    "roles": [
+      "ROLE_ADMIN"
+    ]
+  }
+]
+```
+
+**Explicacion del response:** el servicio retorna un arreglo de usuarios. Cada usuario incluye su identificador, nombre de usuario y roles asignados como arreglo de strings.
+
+**Captura:** ![Listado de usuarios IAM](assets/chapter4/GETIam.png)
+
+#### Endpoint: GET /api/v1/roles
+
+**Accion implementada:** listar los roles disponibles para la gestion de autorizacion.
+
+**Parametros:** no requiere parametros.
+
+**Example Response:** no se proporciono JSON real de response para esta operacion en la evidencia disponible.
+
+**Explicacion del response:** esta operacion permite consultar los roles que pueden asociarse a usuarios dentro del sistema.
+
+**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+
+---
+
+### User Profiles
+
+#### Endpoint: POST /api/v1/user-profiles
+
+**Accion implementada:** crear un perfil de usuario con informacion de contacto.
+
+**Parametros:** body con `name` (`String`), `email` (`String`) y `phone` (`String`).
+
+**Example Request:**
+
+```json
+{
+  "name": "Juan Perez",
+  "email": "juan@gmail.com",
+  "phone": "+51999123456"
+}
+```
+
+**Example Response:**
+
+```json
+{
+  "id": 8,
+  "name": "Juan Perez",
+  "email": "juan@gmail.com",
+  "phone": "+51999123456"
+}
+```
+
+**Explicacion del response:** el servicio retorna el perfil creado con identificador, nombre, correo y telefono.
+
+**Captura:** ![Creacion de perfil](assets/chapter4/POSTuserprofile.png)
+
+#### Endpoint: GET /api/v1/user-profiles
+
+**Accion implementada:** listar los perfiles de usuario registrados.
+
+**Parametros:** no requiere parametros.
+
+**Example Response:**
+
+```json
+[
+  {
+    "id": 8,
     "name": "Juan Perez",
+    "email": "juan@gmail.com",
     "phone": "+51999123456"
   }
 ]
 ```
 
-**Captura:** Aqui va la captura de pantalla de listado de perfiles
+**Explicacion del response:** el servicio retorna un arreglo de perfiles con datos de contacto.
 
-#### `GET /api/v1/user-profiles/{id}`
+**Captura:** ![Listado de perfiles](assets/chapter4/GETuserprofile.png)
 
-Obtener perfil por id.
+#### Endpoint: GET /api/v1/user-profiles/{id}
 
-**Parameters:** `id` (path, Long, si)
+**Accion implementada:** obtener un perfil de usuario por identificador.
 
-**Commit ID:** `6fe60a4`
-
-**Example Request:**
-
-```json
-{
-  "id": 1001
-}
-```
+**Parametros:** `id` en path (`Long`).
 
 **Example Response:**
 
 ```json
 {
-  "id": 1001,
-  "userId": 12,
+  "id": 8,
   "name": "Juan Perez",
+  "email": "juan@gmail.com",
   "phone": "+51999123456"
 }
 ```
 
-**Captura:** Aqui va la captura de pantalla de perfil por id
+**Explicacion del response:** el servicio retorna el perfil solicitado con sus datos de contacto.
 
-#### `PUT /api/v1/user-profiles/{id}`
+**Captura:** ![Perfil por id](assets/chapter4/GETIDuserprofile.png)
 
-Actualizar perfil.
+#### Endpoint: PUT /api/v1/user-profiles/{id}
 
-**Parameters:** `id` (path, Long, si), `name`, `phone` (body, opcional)
+**Accion implementada:** actualizar los datos de un perfil de usuario.
 
-**Commit ID:** `6fe60a4`
+**Parametros:** `id` en path (`Long`) y body con `name`, `email` y `phone`.
 
 **Example Request:**
 
 ```json
 {
-  "name": "Juan P.",
-  "phone": "+51999887766"
+  "name": "Juan Perez",
+  "email": "juan@gmail.com",
+  "phone": "+51999123456"
 }
 ```
 
@@ -8487,42 +8153,26 @@ Actualizar perfil.
 
 ```json
 {
-  "id": 1001,
-  "userId": 12,
-  "name": "Juan P.",
-  "phone": "+51999887766"
+  "id": 8,
+  "name": "Juan Perez",
+  "email": "juan@gmail.com",
+  "phone": "+51999123456"
 }
 ```
 
-**Captura:** Aqui va la captura de pantalla de actualizacion de perfil
+**Explicacion del response:** el servicio retorna el perfil actualizado.
 
-#### `DELETE /api/v1/user-profiles/{id}`
+**Captura:** ![Actualizacion de perfil](assets/chapter4/PUTuserprofile.png)
 
-Eliminar perfil.
+#### Endpoint: DELETE /api/v1/user-profiles/{id}
 
-**Parameters:** `id` (path, Long, si)
+**Accion implementada:** eliminar un perfil de usuario por identificador.
 
-**Commit ID:** `6fe60a4`
+**Parametros:** `id` en path (`Long`).
 
-**Example Request:**
+**Example Response:** no se documenta cuerpo de respuesta porque la evidencia disponible corresponde a la operacion ejecutada desde Swagger.
 
-```json
-{
-  "id": 1001
-}
-```
-
-**Example Response:**
-
-```json
-{
-  "message": "User profile deleted successfully."
-}
-```
-
-**Captura:** Aqui va la captura de pantalla de eliminacion de perfil
-
----
+**Captura:** ![Eliminacion de perfil](assets/chapter4/DELETEuserprofile.png)
 
 ## 4.2.1.7. Software Deployment Evidence for Sprint Review
 
@@ -8547,8 +8197,8 @@ Como parte del proceso de deployment, se gestionó el backend desde el repositor
 **Explicación:**  
 Esta etapa fue importante porque permitió centralizar el código fuente del backend y dejar trazabilidad de los cambios asociados a la preparación del despliegue. Además, la integración mediante pull requests ayudó a ordenar el flujo de trabajo antes de publicar el servicio en la nube.
 
-**Captura sugerida:** Pull requests del backend mostrando la integración de cambios previos al deployment.  
-`[Aquí va la captura de pantalla de los pull requests relacionados con la preparación del backend]`
+**Captura:** 
+![Pull requests del backend para deployment](assets/chapter4/deployment-backend-pull-requests.png)
 
 #### 2. Configuración del repositorio para deployment
 
@@ -8557,8 +8207,9 @@ En el repositorio del backend se prepararon los archivos necesarios para facilit
 **Explicación:**  
 La inclusión de estos archivos permitió definir cómo debía construirse y ejecutarse el backend en el proveedor cloud. Esta configuración fue clave para adaptar el proyecto desde un entorno local hacia un entorno de producción accesible en línea.
 
-**Captura sugerida:** Vista principal del repositorio backend donde se evidencian archivos como `Dockerfile`, `render.yaml`, `pom.xml` y carpetas fuente.  
-`[Aquí va la captura de pantalla del repositorio backend con los archivos de deployment configurados]`
+**Captura:** 
+`Dockerfile`, `render.yaml`, `pom.xml` y carpetas fuente.  
+![Repositorio backend con archivos de deployment](assets/chapter4/deployment-backend-repository.png)
 
 #### 3. Configuración del servicio en Render
 
@@ -8567,8 +8218,8 @@ El backend fue configurado en Render como servicio desplegable en la nube. Para 
 **Explicación:**  
 La configuración en Render fue el paso que permitió pasar del repositorio fuente a un servicio ejecutándose en internet. Esto representa la evidencia principal del deployment del backend durante el Sprint.
 
-**Captura sugerida:** Vista del servicio backend configurado en Render.  
-`[Aquí va la captura de pantalla del servicio backend configurado en Render]`
+**Captura:** 
+![Servicio backend configurado en Render](assets/chapter4/deployment-render-service.png)
 
 #### 4. Definición de variables de entorno
 
@@ -8582,10 +8233,9 @@ Variables configuradas en Render:
 **Explicación:**  
 Estas variables permitieron desacoplar información sensible del código fuente y asegurar que el backend se ejecutara con la configuración adecuada en el entorno cloud. Esto es especialmente importante para seguridad, conexión a base de datos y activación del perfil de producción.
 
-**Captura sugerida:** Panel de variables de entorno configuradas en Render.  
-`[Aquí va la captura de pantalla de las variables de entorno del backend en Render]`
+**Captura:**  
+![Variables de entorno del backend en Render](assets/chapter4/deployment-render-environment-variables.png)
 
-> **Nota:** En la versión final del informe o README convertido a PDF, las credenciales sensibles deben mostrarse ocultas, recortadas o difuminadas para no exponer información de seguridad.
 
 #### 5. Validación del servicio desplegado mediante URL pública
 
@@ -8597,8 +8247,8 @@ URL pública del backend:
 **Explicación:**  
 La disponibilidad de una URL pública constituye evidencia directa de que el backend fue desplegado satisfactoriamente en la nube y quedó disponible para pruebas y consumo externo.
 
-**Captura sugerida:** Evidencia de la URL pública compartida y validada por el equipo.  
-`[Aquí va la captura de pantalla donde se muestra la URL pública del backend desplegado]`
+**Captura:** 
+![URL publica del backend desplegado](assets/chapter4/deployment-backend-public-url.png)
 
 #### 6. Validación funcional mediante Swagger UI
 
@@ -8610,12 +8260,106 @@ URL de Swagger UI:
 **Explicación:**  
 La disponibilidad de Swagger UI en el entorno desplegado valida no solo que la aplicación está activa, sino también que sus endpoints pueden ser consultados y probados desde una interfaz web de documentación, lo cual resulta muy útil para Sprint Review y validación técnica.
 
-**Captura sugerida:** Swagger UI abierto mostrando los endpoints del backend desplegado.  
-`[Aquí va la captura de pantalla de Swagger UI del backend desplegado]`
+**Captura:**
+![Swagger UI del backend desplegado](assets/chapter4/deployment-backend-swagger-ui.png)
 
 ### Resultado del deployment del backend
 
 Como resultado del trabajo realizado durante este Sprint, el backend de Courtly quedó desplegado exitosamente en Render, con acceso mediante URL pública y documentación Swagger disponible en línea. Además, se configuraron correctamente los recursos básicos de producción, incluyendo variables de entorno y archivos de deployment, dejando una base sólida para la continuidad del proyecto y futuras iteraciones del proceso de despliegue.
+
+### Landing Page Deployment
+
+En este Sprint también se realizaron actividades de despliegue orientadas al producto **Landing Page** del proyecto Courtly. El proceso de deployment incluyó la gestión del repositorio en GitHub, la integración de cambios mediante ramas de trabajo y pull requests, y la publicación final del sitio utilizando **GitHub Pages** como plataforma de hosting estático.
+
+A diferencia del backend, el despliegue del Landing Page no requirió servicios cloud de ejecución, variables de entorno, contenedores ni configuración de build avanzada, debido a que se trata de una aplicación estática desarrollada con HTML, CSS y JavaScript. La publicación mediante GitHub Pages permitió contar con una versión accesible públicamente desde una URL estable, facilitando la validación visual, funcional y responsive del sitio web en un entorno real.
+
+Repositorio del Landing Page: [https://github.com/Aplicaciones-Moviles-3248/landing-page](https://github.com/Aplicaciones-Moviles-3248/landing-page)  
+URL pública del Landing Page: [https://aplicaciones-moviles-3248.github.io/landing-page/](https://aplicaciones-moviles-3248.github.io/landing-page/)
+
+### Evidencia del proceso realizado para Landing Page
+
+#### 1. Creación y gestión del repositorio en GitHub
+
+Como parte del proceso de deployment, se trabajó con un repositorio remoto en GitHub destinado al Landing Page del proyecto. En esta etapa se centralizó el código fuente del sitio, así como los recursos visuales y archivos necesarios para su publicación.
+
+**Explicación:**  
+La creación y organización del repositorio permitió mantener trazabilidad sobre el desarrollo del Landing Page y asegurar una base estructurada para su publicación posterior mediante GitHub Pages.
+
+**Captura:** ![Repositorio del Landing Page en GitHub](assets/chapter4/deployment-landing-repository.png)
+
+#### 2. Desarrollo e integración mediante ramas de trabajo
+
+El desarrollo del Landing Page se realizó siguiendo un flujo de trabajo basado en ramas `feature/*`. En particular, se evidencia el uso de una rama específica para la implementación del capítulo correspondiente, seguida de su integración mediante pull request hacia la rama principal.
+
+**Explicación:**  
+El uso de ramas y pull requests permitió mantener un flujo de trabajo ordenado, facilitar la revisión de cambios y asegurar que la publicación final del sitio se realice a partir de una versión consolidada del proyecto.
+
+**Captura:** ![Rama feature y pull request del Landing Page](assets/chapter4/deployment-landing-feature-branch-pr.png)
+
+#### 3. Commits realizados durante la implementación
+
+Durante el Sprint se registraron commits asociados al desarrollo y ajuste del Landing Page, reflejando la evolución del trabajo realizado antes del despliegue final.
+
+**Explicación:**  
+Los commits constituyen evidencia de avance incremental y permiten identificar las contribuciones realizadas sobre el Landing Page antes de su publicación.
+
+**Captura:** ![Historial de commits del Landing Page](assets/chapter4/deployment-landing-commits.png)
+
+#### 4. Configuración de GitHub Pages
+
+Una vez integrado el trabajo a la rama `main`, se configuró GitHub Pages para publicar automáticamente el contenido del proyecto desde la carpeta raíz del repositorio.
+
+**Explicación:**  
+La configuración de GitHub Pages permitió transformar el repositorio en un sitio web accesible públicamente, sin necesidad de utilizar plataformas externas como Render, Vercel o Netlify.
+
+**Captura:** ![Configuración de GitHub Pages del Landing Page](assets/chapter4/deployment-landing-github-pages-config.png)
+
+#### 5. Validación del despliegue mediante URL pública
+
+Como parte de la evidencia de deployment, se verificó que el Landing Page estuviera accesible correctamente mediante una URL pública generada por GitHub Pages.
+
+URL pública del Landing Page:  
+`https://aplicaciones-moviles-3248.github.io/landing-page/`
+
+**Explicación:**  
+La disponibilidad de una URL pública confirma que el sitio fue desplegado exitosamente y que puede ser visualizado desde un entorno externo al desarrollo local.
+
+**Captura:** ![URL pública del Landing Page funcionando en navegador](assets/chapter4/deployment-landing-public-url.png)
+
+#### 6. Validación funcional y visual del Landing Page desplegado
+
+Finalmente, se comprobó que el Landing Page desplegado mostrara correctamente su estructura, contenido visual, diseño responsive y propósito informativo orientado a la presentación de la aplicación móvil Courtly.
+
+**Explicación:**  
+Esta validación permitió confirmar que el despliegue no solo fue exitoso a nivel técnico, sino también funcional y visual, garantizando que la landing page cumpla su propósito de presentación del producto.
+
+**Captura:** ![Landing Page desplegada correctamente en navegador](assets/chapter4/deployment-landing-page-browser.png)
+
+### Tecnologías y herramientas utilizadas en el deployment del Landing Page
+
+Para el despliegue del Landing Page se utilizaron las siguientes herramientas:
+
+- GitHub
+- GitHub Desktop
+- GitHub Pages
+
+No fue necesario utilizar:
+
+- Render
+- Vercel
+- Netlify
+- Firebase
+- Railway
+- Docker
+- `render.yaml`
+- Workflows CI/CD
+- Variables de entorno
+- Start command
+- Build command
+
+### Resultado del deployment del Landing Page
+
+Como resultado del trabajo realizado durante este Sprint, el Landing Page de Courtly quedó desplegado exitosamente mediante GitHub Pages, con acceso a través de una URL pública y funcionamiento estable en navegador. Asimismo, se evidenció un flujo de trabajo ordenado basado en ramas de funcionalidad, pull requests y merge hacia `main`, permitiendo que el despliegue se realizara automáticamente tras la integración final de cambios.
 
 ---
 
@@ -8641,9 +8385,9 @@ La colaboración del equipo se organizó tanto por productos como por bounded co
 - **Juan Carlos Angulo Abud:** Courts y Availabilities.
 - **Eduardo Fabian Chacaliza Minaya:** Users, Notifications e IAM.
 - **Camilla Leonor Espinoza Vivas:** Reviews y Coaches.
-- **Pedro Jesús Nanfuñay Liza:** Matches y Payments. :contentReference[oaicite:2]{index=2}
+- **Pedro Jesús Nanfuñay Liza:** Matches y Payments.
 
-Adicionalmente, la organización del informe y del avance del proyecto muestra que los capítulos y subcapítulos fueron repartidos entre todos los integrantes, lo que evidencia participación distribuida en la construcción del entregable global del Sprint :contentReference[oaicite:3]{index=3}.
+Adicionalmente, la organización del informe y del avance del proyecto muestra que los capítulos y subcapítulos fueron repartidos entre todos los integrantes, lo que evidencia participación distribuida en la construcción del entregable global del Sprint.
 
 ### Evidencia general de repositorios del Sprint
 
@@ -8657,20 +8401,20 @@ Durante el Sprint se trabajó con tres repositorios dentro de la organización d
 La existencia de estos tres repositorios evidencia la separación del trabajo por producto digital. El repositorio `backend` concentró el trabajo relacionado con Web Services, `landing-page` agrupó la implementación del sitio de presentación del producto, y `REPORT` reunió la elaboración colaborativa del documento e integración de evidencias del Sprint. Esta organización permitió diferenciar claramente los espacios de trabajo técnico y documental.
 
 **Captura sugerida:** Vista general de la organización en GitHub mostrando los tres repositorios principales.  
-`[Aquí va la captura de pantalla de la organización en GitHub con los repositorios backend, landing-page y REPORT]`
+No se proporciono captura disponible para esta evidencia.
 
 ### Colaboración en el repositorio backend
 
 En el caso del repositorio `backend`, la evidencia visible en GitHub muestra una participación técnica centralizada, principalmente porque el backend reutilizado fue consolidado y publicado por un solo integrante. Esto explica por qué la actividad de commits, branches y merges no aparece distribuida de forma homogénea entre los cinco miembros.
 
-Sin embargo, esto no implica ausencia de colaboración del resto del equipo. La participación colectiva en backend se expresó en la definición y validación de bounded contexts, revisión de endpoints, documentación de servicios, análisis funcional del despliegue y preparación de evidencias para Sprint Review. La división funcional de bounded contexts muestra que el trabajo del backend sí estuvo conceptualmente repartido entre todos los integrantes, aunque la publicación técnica del repositorio haya sido centralizada :contentReference[oaicite:4]{index=4}.
+Sin embargo, esto no implica ausencia de colaboración del resto del equipo. La participación colectiva en backend se expresó en la definición y validación de bounded contexts, revisión de endpoints, documentación de servicios, análisis funcional del despliegue y preparación de evidencias para Sprint Review. La división funcional de bounded contexts muestra que el trabajo del backend sí estuvo conceptualmente repartido entre todos los integrantes, aunque la publicación técnica del repositorio haya sido centralizada.
 
 **Interpretación:**  
 Los analíticos del repositorio backend deben interpretarse considerando el contexto del Sprint. La centralización de commits responde al proceso de reutilización y subida del backend, no necesariamente a una falta de apoyo del resto del equipo. En este caso, GitHub evidencia con claridad la consolidación técnica, mientras que la colaboración funcional se observa mejor en la distribución de módulos y en la documentación generada a partir del backend.
 
 **Capturas sugeridas:**
-- `[Aquí va la captura de pantalla del repositorio backend mostrando su actividad principal]`
-- `[Aquí va la captura de pantalla de commits, branches o pull requests del backend]`
+- No se proporciono captura disponible del repositorio backend mostrando su actividad principal.
+- No se proporciono captura disponible de commits, branches o pull requests del backend.
 
 ### Colaboración en el repositorio landing-page
 
@@ -8682,21 +8426,21 @@ Aun así, el producto Landing Page forma parte del trabajo colectivo porque fue 
 La actividad de GitHub en landing page representa la consolidación del producto en el repositorio, pero no refleja por sí sola toda la participación del equipo en diseño, validación y adaptación del contenido. Por ello, los analíticos de este repositorio deben leerse junto con la evidencia del informe y del resto de decisiones del Sprint.
 
 **Capturas sugeridas:**
-- `[Aquí va la captura de pantalla del repositorio landing-page mostrando su actividad principal]`
-- `[Aquí va la captura de pantalla de commits o insights del landing-page]`
+- No se proporciono captura disponible del repositorio landing-page mostrando su actividad principal.
+- No se proporciono captura disponible de commits o insights del landing-page.
 
 ### Colaboración en el repositorio REPORT
 
 El repositorio `REPORT` constituye la evidencia más clara de trabajo colaborativo distribuido durante este Sprint. A diferencia de backend y landing page, este repositorio concentró la elaboración directa del informe, la organización de capítulos, la integración de capturas, la redacción de análisis y la consolidación de la evidencia necesaria para Sprint Review.
 
-La distribución de capítulos y subcapítulos muestra participación de todos los miembros del equipo en distintas partes del entregable, incluyendo componentes de diseño, desarrollo, documentación, validación y colaboración. Esta repartición permite sustentar que el trabajo colectivo del Sprint no estuvo limitado a la codificación, sino que también abarcó la preparación integral del producto académico y técnico :contentReference[oaicite:5]{index=5}.
+La distribución de capítulos y subcapítulos muestra participación de todos los miembros del equipo en distintas partes del entregable, incluyendo componentes de diseño, desarrollo, documentación, validación y colaboración. Esta repartición permite sustentar que el trabajo colectivo del Sprint no estuvo limitado a la codificación, sino que también abarcó la preparación integral del producto académico y técnico.
 
 **Interpretación:**  
 Los analíticos del repositorio REPORT son especialmente relevantes porque reflejan la integración real del trabajo del equipo durante el Sprint. Aquí es donde puede observarse con mayor claridad la colaboración transversal entre miembros, ya que el informe reúne la evidencia de landing page, backend, despliegue, testing, ejecución y documentación del proyecto.
 
 **Capturas sugeridas:**
-- `[Aquí va la captura de pantalla de contributors o insights del repositorio REPORT]`
-- `[Aquí va la captura de pantalla del historial de commits del repositorio REPORT]`
+- No se proporciono captura disponible de contributors o insights del repositorio REPORT.
+- No se proporciono captura disponible del historial de commits del repositorio REPORT.
 
 ### Pull requests, ramas y consolidación del trabajo
 
@@ -8706,7 +8450,7 @@ La evidencia de pull requests y ramas en GitHub ayuda a interpretar la forma en 
 La presencia de ramas y pull requests refuerza la idea de que el equipo siguió una dinámica de colaboración organizada, aun cuando algunos repositorios presenten centralización en la publicación técnica. La integración mediante PRs permite evidenciar revisión y control de cambios como parte del proceso del Sprint.
 
 **Captura sugerida:**  
-`[Aquí va la captura de pantalla de pull requests o branches relevantes del backend]`
+No se proporciono captura disponible para esta evidencia.
 
 ### Análisis general de la colaboración del Sprint
 
@@ -8715,7 +8459,7 @@ A partir de la evidencia disponible, el equipo interpreta la colaboración del S
 - La implementación visible en GitHub no se distribuyó de forma idéntica en todos los repositorios.
 - En `backend` y `landing-page`, la actividad técnica observable quedó más concentrada por tratarse de artefactos reutilizados y posteriormente consolidados en sus respectivos repositorios.
 - En `REPORT`, la participación fue más ampliamente distribuida y muestra con mayor claridad la colaboración real del equipo.
-- La distribución funcional del trabajo por bounded contexts y capítulos confirma que todos los integrantes asumieron responsabilidades concretas durante el Sprint. :contentReference[oaicite:6]{index=6} :contentReference[oaicite:7]{index=7}
+- La distribución funcional del trabajo por bounded contexts y capítulos confirma que todos los integrantes asumieron responsabilidades concretas durante el Sprint.
 
 En consecuencia, el equipo concluye que la colaboración del Sprint debe entenderse desde una perspectiva integral: no únicamente desde el número de commits por repositorio, sino también desde la asignación de responsabilidades, la validación cruzada de entregables, la integración de evidencias y la consolidación del producto para Sprint Review.
 
@@ -8815,6 +8559,5 @@ Anexo02. Entrevistas [**link**](https://upcedupe-my.sharepoint.com/:v:/g/persona
 Anexo03. Video about the team [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQBp0Rku3Jm_QLhcTDAqpiiGAQ84dUBWLXi-aELkb3xl5Po?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=EX2vg6)
 
 Anexo04. Video de exposición AV1 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDEKrJ83AmmRoxrv_PohGrNAfSM3oeYNJlUie_GujuVnSU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ugyTnh)
->>>>>>> Stashed changes
 
 ##### 2.6.x.6.2. Bounded Context Database Design Diagram
