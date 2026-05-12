@@ -8429,8 +8429,7 @@ Durante el Sprint se trabajó con tres repositorios dentro de la organización d
 **Interpretación:**  
 La existencia de estos tres repositorios evidencia la separación del trabajo por producto digital. El repositorio `backend` concentró el trabajo relacionado con Web Services, `landing-page` agrupó la implementación del sitio de presentación del producto, y `REPORT` reunió la elaboración colaborativa del documento e integración de evidencias del Sprint. Esta organización permitió diferenciar claramente los espacios de trabajo técnico y documental.
 
-**Captura sugerida:** Vista general de la organización en GitHub mostrando los tres repositorios principales.  
-No se proporciono captura disponible para esta evidencia.
+![Landing Page desplegada correctamente en navegador](assets/chapter4/Repos.png)
 
 ### Colaboración en el repositorio backend
 
@@ -8441,9 +8440,11 @@ Sin embargo, esto no implica ausencia de colaboración del resto del equipo. La 
 **Interpretación:**  
 Los analíticos del repositorio backend deben interpretarse considerando el contexto del Sprint. La centralización de commits responde al proceso de reutilización y subida del backend, no necesariamente a una falta de apoyo del resto del equipo. En este caso, GitHub evidencia con claridad la consolidación técnica, mientras que la colaboración funcional se observa mejor en la distribución de módulos y en la documentación generada a partir del backend.
 
-**Capturas sugeridas:**
-- No se proporciono captura disponible del repositorio backend mostrando su actividad principal.
-- No se proporciono captura disponible de commits, branches o pull requests del backend.
+**Capturas :**
+
+![Landing Page desplegada correctamente en navegador](assets/chapter4/deployment-backend-repository.png)
+
+![Landing Page desplegada correctamente en navegador](assets/chapter4/comitsback.png)
 
 ### Colaboración en el repositorio landing-page
 
@@ -8454,9 +8455,10 @@ Aun así, el producto Landing Page forma parte del trabajo colectivo porque fue 
 **Interpretación:**  
 La actividad de GitHub en landing page representa la consolidación del producto en el repositorio, pero no refleja por sí sola toda la participación del equipo en diseño, validación y adaptación del contenido. Por ello, los analíticos de este repositorio deben leerse junto con la evidencia del informe y del resto de decisiones del Sprint.
 
-**Capturas sugeridas:**
-- No se proporciono captura disponible del repositorio landing-page mostrando su actividad principal.
-- No se proporciono captura disponible de commits o insights del landing-page.
+**Capturas :**
+![Landing Page desplegada correctamente en navegador](assets/chapter4/deployment-landing-repository.png)
+
+![Landing Page desplegada correctamente en navegador](assets/chapter4/comitsland.png)
 
 ### Colaboración en el repositorio REPORT
 
@@ -8467,9 +8469,9 @@ La distribución de capítulos y subcapítulos muestra participación de todos l
 **Interpretación:**  
 Los analíticos del repositorio REPORT son especialmente relevantes porque reflejan la integración real del trabajo del equipo durante el Sprint. Aquí es donde puede observarse con mayor claridad la colaboración transversal entre miembros, ya que el informe reúne la evidencia de landing page, backend, despliegue, testing, ejecución y documentación del proyecto.
 
-**Capturas sugeridas:**
-- No se proporciono captura disponible de contributors o insights del repositorio REPORT.
-- No se proporciono captura disponible del historial de commits del repositorio REPORT.
+**Capturas :**
+![Landing Page desplegada correctamente en navegador](assets/chapter4/innsights.png)
+![Landing Page desplegada correctamente en navegador](assets/chapter4/commitsreport.png)
 
 ### Pull requests, ramas y consolidación del trabajo
 
@@ -8478,8 +8480,8 @@ La evidencia de pull requests y ramas en GitHub ayuda a interpretar la forma en 
 **Interpretación:**  
 La presencia de ramas y pull requests refuerza la idea de que el equipo siguió una dinámica de colaboración organizada, aun cuando algunos repositorios presenten centralización en la publicación técnica. La integración mediante PRs permite evidenciar revisión y control de cambios como parte del proceso del Sprint.
 
-**Captura sugerida:**  
-No se proporciono captura disponible para esta evidencia.
+**Captura :**  
+![Landing Page desplegada correctamente en navegador](assets/chapter4/Pullrequesthechos.png)
 
 ### Análisis general de la colaboración del Sprint
 
