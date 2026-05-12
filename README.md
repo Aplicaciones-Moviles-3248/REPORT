@@ -10468,25 +10468,25 @@ La identidad visual de Courtly representa organización deportiva, conexión ent
 
 #### 3.1.1.2. Web Style Guidelines
 
-La versión web de Courtly está diseñada para ofrecer una experiencia clara, fluida y responsiva, orientada a usuarios que desean conocer la propuesta de valor de la plataforma, reservar canchas deportivas o conectar con entrenadores independientes. Su diseño prioriza una navegación simple, una lectura rápida del contenido y una interacción visual coherente con la identidad moderna y deportiva del producto.
+La experiencia web de Courtly está diseñada para presentar la propuesta de valor de la plataforma de manera clara, moderna y visualmente atractiva. La Landing Page prioriza una navegación sencilla, una correcta jerarquía visual y una adaptación responsiva para distintos tamaños de pantalla.
 
-- **Diseño responsivo:** La interfaz web se adapta a pantallas de escritorio, tabletas y dispositivos móviles, manteniendo una experiencia consistente en diferentes tamaños de pantalla.
+- **Diseño responsivo:** La interfaz se adapta correctamente a pantallas de escritorio, tabletas y dispositivos móviles, manteniendo una experiencia consistente.
 
-- **Barra de navegación superior:** La navegación principal se ubica en la parte superior e incluye accesos directos a las secciones más importantes, permitiendo que el usuario recorra el contenido de forma ordenada.
+- **Navegación clara:** La barra de navegación superior permite acceder rápidamente a las principales secciones informativas de la Landing Page.
 
-- **Llamados a la acción visibles:** Los botones principales se destacan mediante colores de alto contraste para guiar al usuario hacia acciones relevantes, como conocer la plataforma, reservar una cancha o registrarse.
+- **Llamados a la acción visibles:** Los botones principales utilizan colores de alto contraste para dirigir al usuario hacia acciones importantes como conocer funcionalidades o descargar la aplicación móvil.
 
-- **Hover effects:** Los elementos interactivos, como botones, enlaces y tarjetas, presentan cambios visuales sutiles al pasar el cursor, reforzando la sensación de respuesta e interacción.
+- **Hover effects:** Los elementos interactivos presentan cambios visuales sutiles al pasar el cursor para reforzar la sensación de interacción.
 
-- **Animaciones sutiles:** Se emplean transiciones suaves en componentes visuales para mejorar la experiencia sin sobrecargar la interfaz.
+- **Animaciones suaves:** Se emplean transiciones ligeras para mejorar la experiencia visual sin sobrecargar la interfaz.
 
-- **Tarjetas modulares:** El contenido se organiza en cards y bloques visuales para facilitar la lectura, comparación y escaneo de información relevante.
+- **Organización modular:** El contenido se distribuye en secciones y tarjetas visuales que facilitan la lectura y comprensión de la información.
 
-- **Consistencia visual:** Se mantiene el uso uniforme de colores, tipografía, espaciado, bordes redondeados e íconos para reforzar la identidad de Courtly en toda la experiencia web.
+- **Consistencia visual:** Se mantiene el uso uniforme de colores, tipografías, espaciados y componentes gráficos para reforzar la identidad visual de Courtly.
 
 #### 3.1.1.3. Mobile Style Guidelines
 
-La experiencia móvil de Courtly está diseñada para priorizar rapidez, accesibilidad y facilidad de uso en pantallas reducidas. La interfaz mantiene la identidad visual de la plataforma web, adaptando los componentes y la distribución del contenido para ofrecer una navegación cómoda e intuitiva desde dispositivos móviles.
+La experiencia móvil de Courtly está diseñada para priorizar rapidez, accesibilidad y facilidad de uso en pantallas reducidas. La interfaz mantiene la identidad visual definida para Courtly, adaptando los componentes y la distribución del contenido para ofrecer una navegación cómoda e intuitiva desde dispositivos móviles.
 
 - **Diseño mobile-first:** La estructura visual prioriza la correcta visualización e interacción en smartphones, asegurando una experiencia fluida y optimizada.
 
@@ -10579,15 +10579,13 @@ La representación de los datos en Courtly busca ser clara, breve e intuitiva, e
 | Área | Etiqueta asignada | Propósito |
 |---|---|---|
 | Inicio | "Inicio" | Presentar la propuesta principal de Courtly. |
-| Canchas | "Canchas" | Acceder al catálogo de canchas deportivas. |
-| Entrenadores | "Entrenadores" | Buscar entrenadores independientes. |
-| Reservas | "Mis reservas" | Consultar reservas realizadas o próximas. |
-| Partidos | "Partidos" | Organizar o visualizar partidos deportivos. |
-| Planes | "Planes" | Consultar opciones de suscripción. |
-| Perfil | "Mi perfil" | Gestionar información personal del usuario. |
-| Búsqueda | "Buscar" | Localizar canchas, entrenadores o partidos. |
-| Registro | "Registrarse" | Crear una cuenta en la plataforma. |
-| Acceso | "Iniciar sesión" | Entrar a una cuenta existente. |
+| Características | "Características" | Mostrar las funcionalidades principales de la plataforma. |
+| Beneficios | "Beneficios" | Explicar el valor que Courtly ofrece a sus usuarios. |
+| Funcionamiento | "Cómo funciona" | Explicar el proceso de uso de la aplicación. |
+| Planes | "Planes" | Consultar opciones de suscripción o beneficios disponibles. |
+| Equipo | "Equipo" | Presentar a los integrantes responsables del proyecto. |
+| Testimonios | "Testimonios" | Mostrar opiniones o validaciones de usuarios. |
+| Descarga | "Descargar" | Dirigir al usuario hacia la descarga o futura disponibilidad de la aplicación móvil. |
 
 ##### Etiquetas para filtros
 
@@ -10678,9 +10676,9 @@ El sistema de navegación de Courtly está diseñado para guiar a los usuarios d
 
 - **Navegación principal fija:** la barra de navegación superior permanecerá visible durante el recorrido del usuario para facilitar el acceso constante a las secciones más importantes.
 
-- **Accesos rápidos:** las principales funcionalidades estarán disponibles mediante accesos visibles y directos, como canchas, entrenadores, reservas y planes.
+- **Accesos rápidos:** las principales secciones estarán disponibles mediante accesos visibles y directos, como características, beneficios, funcionamiento, planes y descarga.
 
-- **Navegación progresiva:** los procesos importantes, como reservar una cancha o registrarse como entrenador, se presentarán paso a paso para reducir complejidad y mejorar la experiencia del usuario.
+- **Navegación progresiva:** las acciones principales se presentarán de manera ordenada y progresiva para facilitar el recorrido del usuario a través de la información y funcionalidades de Courtly.
 
 - **Pistas visuales:** se utilizarán colores, botones destacados, estados activos e íconos para indicar ubicación, interacción y acciones disponibles dentro de la plataforma.
 
@@ -10690,18 +10688,19 @@ El sistema de navegación de Courtly está diseñado para guiar a los usuarios d
 
 1. El visitante accede a la Landing Page.
 2. Puede recorrer rápidamente las principales secciones informativas de Courtly.
-3. Se presentan llamados a la acción orientados al registro, exploración de canchas y búsqueda de entrenadores.
-4. El usuario puede acceder a información sobre funcionalidades, beneficios y planes disponibles.
-5. Finalmente, puede registrarse o iniciar sesión para acceder a la plataforma.
+3. Se presentan llamados a la acción orientados a conocer la propuesta de valor y descargar la aplicación móvil.
+4. El usuario puede acceder a información sobre características, beneficios, funcionamiento, planes, equipo y testimonios.
+5. Finalmente, puede seleccionar la opción de descarga, la cual lo dirigirá a la sección correspondiente o a las tiendas digitales cuando la aplicación esté publicada.
 
 ##### Flujo de navegación en la Mobile Application
 
-- Menú principal con acceso a Inicio, Canchas, Entrenadores, Partidos, Reservas y Perfil.
-- En la sección de canchas, el usuario puede buscar, filtrar y reservar espacios deportivos disponibles.
-- En entrenadores, el usuario puede explorar perfiles, visualizar información relevante y contactar entrenadores independientes.
-- Desde reservas, se podrán visualizar reservas activas, próximas o finalizadas.
-- En partidos, los usuarios podrán organizar encuentros deportivos o unirse a partidos existentes.
-- En perfil, el usuario podrá gestionar información personal, historial de reservas y preferencias de cuenta.
+1. El usuario accede a la aplicación móvil.
+2. Desde el menú principal puede ingresar a Inicio, Canchas, Entrenadores, Partidos, Reservas y Perfil.
+3. En la sección de canchas, puede buscar, filtrar y reservar espacios deportivos disponibles.
+4. En entrenadores, puede explorar perfiles, visualizar información relevante y contactar entrenadores independientes.
+5. Desde reservas, puede visualizar reservas activas, próximas o finalizadas.
+6. En partidos, puede organizar encuentros deportivos o unirse a partidos existentes.
+7. En perfil, puede gestionar información personal, historial de reservas y preferencias de cuenta.
 
 La navegación móvil prioriza accesos rápidos, organización clara del contenido y una experiencia intuitiva adaptada a dispositivos táctiles.
 
