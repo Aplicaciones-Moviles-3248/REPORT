@@ -7698,7 +7698,7 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Explicacion del request:** el payload registra los datos funcionales del partido y relaciona la cancha y el usuario creador mediante identificadores.
 
-**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+**Captura:** ![Ingresar de partidos](assets/chapter4/POSTmatches.png)
 
 #### Endpoint: GET /api/v1/matches
 
@@ -7710,7 +7710,7 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Explicacion del response:** esta operacion permite consultar los partidos disponibles desde la documentacion OpenAPI.
 
-**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+**Captura:** ![listar de partidos](assets/chapter4/GETmatches.png).
 
 #### Endpoint: GET /api/v1/matches/{id}
 
@@ -7722,7 +7722,7 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Explicacion del response:** esta operacion permite consultar el detalle de un partido registrado.
 
-**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+**Captura:** ![listar de partidos](assets/chapter4/GETIDmatches.png).
 
 #### Endpoint: PUT /api/v1/matches/{id}
 
@@ -7730,11 +7730,23 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Parametros:** `id` en path (`Long`). No se proporciono payload real de actualizacion en la evidencia disponible.
 
-**Example Response:** no se proporciono JSON real de response para esta operacion en la evidencia disponible.
+**Example Response:** 
+```json
+{
+  "title": "Partido amistoso",
+  "description": "Partido de práctica con amigos - horario actualizado",
+  "dateTime": "2026-05-12T14:00:00Z",
+  "status": "SCHEDULED",
+  "maxPlayers": 10,
+  "currentPlayers": 0,
+  "courtId": 2,
+  "createdById": 3
+}
+```
 
 **Explicacion del response:** esta operacion permite modificar los datos de un partido desde Swagger UI.
 
-**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+**Captura:** ![modificar de partidos](assets/chapter4/PUTmatches.png).
 
 #### Endpoint: DELETE /api/v1/matches/{id}
 
@@ -7746,7 +7758,7 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Explicacion del response:** esta operacion permite retirar un partido registrado.
 
-**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+**Captura:** ![modificar de partidos](assets/chapter4/DELETEmatches.png).
 
 ---
 
@@ -7919,7 +7931,7 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Explicacion del request:** el payload registra el tipo de metrica, su valor, el periodo evaluado y el identificador del coach relacionado.
 
-**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+**Captura:** ![Ingresar una metrica](assets/chapter4/POSTanalytics.png)
 
 #### Endpoint: GET /api/v1/analytics
 
@@ -7931,7 +7943,7 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Explicacion del response:** esta operacion permite consultar el conjunto de metricas disponibles para analisis.
 
-**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+**Captura:** ![Listar una metrica](assets/chapter4/GETanalytics.png)
 
 #### Endpoint: GET /api/v1/analytics/{id}
 
@@ -7943,7 +7955,7 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Explicacion del response:** esta operacion permite revisar el detalle de una metrica registrada.
 
-**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+**Captura:** ![Listar por id una metrica](assets/chapter4/GETIDanalytics.png)
 
 #### Endpoint: PUT /api/v1/analytics/{id}
 
@@ -7951,11 +7963,18 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Parametros:** `id` en path (`Long`). No se proporciono payload real de actualizacion en la evidencia disponible.
 
-**Example Response:** no se proporciono JSON real de response para esta operacion en la evidencia disponible.
-
+**Example Response:** 
+```json
+{
+  "metricType": "PARTICIPATION",
+  "value": 8,
+  "period": "2026-05",
+  "coachId": 5
+}
+```
 **Explicacion del response:** esta operacion permite modificar la informacion de una metrica documentada en Swagger UI.
 
-**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+**Captura:** ![Modificar una metrica](assets/chapter4/PUTanalytics.png)
 
 #### Endpoint: DELETE /api/v1/analytics/{id}
 
@@ -7967,7 +7986,7 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Explicacion del response:** esta operacion permite retirar una metrica registrada.
 
-**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+**Captura:** ![Eliminar una metrica](assets/chapter4/DELETEanalytics.png)
 
 ---
 
@@ -7979,11 +7998,17 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Parametros:** no se proporciono JSON real de request para esta operacion en la evidencia disponible.
 
-**Example Response:** no se proporciono JSON real de response para esta operacion en la evidencia disponible.
-
+**Example Response:** 
+```json
+{
+  "username": "pedro",
+  "password": "pedro",
+  "roles": ["ROLE_USER"]
+}
+```
 **Explicacion del response:** esta operacion forma parte del flujo de autenticacion y permite crear credenciales de acceso para un usuario.
 
-**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+**Captura:** ![Ingresar un usuario con rol](assets/chapter4/GETauthentication.png).
 
 #### Endpoint: POST /api/v1/auth/sign-in
 
@@ -7991,11 +8016,16 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Parametros:** no se proporciono JSON real de request para esta operacion en la evidencia disponible.
 
-**Example Response:** no se proporciono JSON real de response para esta operacion en la evidencia disponible.
-
+**Example Response:** 
+```json
+{
+  "username": "pocho1",
+  "password": "pocho1"
+}
+```
 **Explicacion del response:** esta operacion permite autenticar al usuario y habilitar el acceso a recursos protegidos del backend.
 
-**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
+**Captura:** ![Iniciar sesion un usuario con rol](assets/chapter4/POSTauthentication2.png).
 
 #### Endpoint: GET /api/v1/users
 
@@ -8200,15 +8230,14 @@ Esta etapa fue importante porque permitió centralizar el código fuente del bac
 **Captura:** 
 ![Pull requests del backend para deployment](assets/chapter4/deployment-backend-pull-requests.png)
 
-#### 2. Configuración del repositorio para deployment
+#### 2. Preparación del repositorio para deployment
 
-En el repositorio del backend se prepararon los archivos necesarios para facilitar el despliegue en Render. Entre ellos destacan `Dockerfile`, `render.yaml`, scripts auxiliares y ajustes en archivos de configuración del proyecto. Esto permitió que el servicio pudiera compilarse y ejecutarse correctamente en el entorno cloud.
+Para el despliegue del backend en Render, se utilizó directamente el repositorio remoto en GitHub. Todos los archivos fuente y dependencias necesarias ya estaban presentes en el repositorio, lo que permitió que Render compilara y ejecutara el backend automáticamente.
 
 **Explicación:**  
-La inclusión de estos archivos permitió definir cómo debía construirse y ejecutarse el backend en el proveedor cloud. Esta configuración fue clave para adaptar el proyecto desde un entorno local hacia un entorno de producción accesible en línea.
+La preparación del repositorio consistió en mantener el código limpio, actualizado y con la estructura necesaria para que Render pudiera reconocer y desplegar la aplicación sin necesidad de configuraciones adicionales. Esto facilitó el paso del proyecto desde el entorno local al entorno de producción en la nube.
 
-**Captura:** 
-`Dockerfile`, `render.yaml`, `pom.xml` y carpetas fuente.  
+**Captura:**  
 ![Repositorio backend con archivos de deployment](assets/chapter4/deployment-backend-repository.png)
 
 #### 3. Configuración del servicio en Render
@@ -8287,12 +8316,12 @@ La creación y organización del repositorio permitió mantener trazabilidad sob
 
 **Captura:** ![Repositorio del Landing Page en GitHub](assets/chapter4/deployment-landing-repository.png)
 
-#### 2. Desarrollo e integración mediante ramas de trabajo
+#### 2. Desarrollo e integración del Landing Page
 
-El desarrollo del Landing Page se realizó siguiendo un flujo de trabajo basado en ramas `feature/*`. En particular, se evidencia el uso de una rama específica para la implementación del capítulo correspondiente, seguida de su integración mediante pull request hacia la rama principal.
+El desarrollo del Landing Page se realizó directamente en la rama principal (main) del repositorio. Todos los cambios se consolidaron en esta rama, lo que permitió que el sitio estuviera listo para ser desplegado sin necesidad de flujos de trabajo basados en ramas adicionales.
 
 **Explicación:**  
-El uso de ramas y pull requests permitió mantener un flujo de trabajo ordenado, facilitar la revisión de cambios y asegurar que la publicación final del sitio se realice a partir de una versión consolidada del proyecto.
+Trabajar directamente sobre la rama principal simplificó el proceso de integración y publicación del Landing Page, asegurando que la versión final del sitio reflejara todos los cambios implementados por el equipo de forma inmediata y coherente.
 
 **Captura:** ![Rama feature y pull request del Landing Page](assets/chapter4/deployment-landing-feature-branch-pr.png)
 
