@@ -10705,9 +10705,107 @@ La navegación móvil prioriza accesos rápidos, organización clara del conteni
 
 ### 3.1.3. Landing Page UI Design
 
+En esta sección se presenta la propuesta visual del Landing Page de Courtly. El diseño organiza las secciones principales de la página, como inicio, características, beneficios, funcionamiento, equipo, testimonios y descarga, siguiendo los lineamientos de color, tipografía, espaciado y navegación definidos previamente. La propuesta busca que el visitante comprenda rápidamente el valor de Courtly y pueda identificar la acción principal: descargar la aplicación móvil.
+
 #### 3.1.3.1. Landing Page Wireframe
 
+Los wireframes muestran la estructura inicial del Landing Page en Desktop Web Browser y Mobile Web Browser. En estas vistas se representa la distribución de los bloques de contenido, la ubicación del menú, los botones principales, las tarjetas informativas y el footer, sin aplicar todavía imágenes ni estilos visuales finales. Esto permite evidenciar la organización del contenido y la adaptación responsiva de la página.
+
+##### Desktop Web Browser
+
+###### Home
+<img src="assets/chapter3/1-desktop-home-wireframe.jpg"/>
+
+###### Features
+<img src="assets/chapter3/2-desktop-features-wireframe.jpg"/>
+
+###### Benefits
+<img src="assets/chapter3/3-desktop-benefits-wireframe.jpg"/>
+
+###### How it works
+<img src="assets/chapter3/4-desktop-how-it-works-wireframe.jpg"/>
+
+###### Team
+<img src="assets/chapter3/5-desktop-team-wireframe.jpg"/>
+
+###### Testimonials
+<img src="assets/chapter3/6-desktop-testimonials-wireframe.jpg"/>
+
+###### CTA and Footer
+<img src="assets/chapter3/7-desktop-cta-footer-wireframe.jpg"/>
+
+##### Mobile Web Browser
+
+###### Home
+<img src="assets/chapter3/1-mobile-home-wireframe.jpg"/>
+
+###### Features
+<img src="assets/chapter3/2-mobile-features-wireframe.jpg"/>
+
+###### Benefits
+<img src="assets/chapter3/3-mobile-benefits-wireframe.jpg"/>
+
+###### How it works
+<img src="assets/chapter3/4-mobile-how-it-works-wireframe.jpg"/>
+
+###### Team
+<img src="assets/chapter3/5-mobile-team-wireframe.jpg"/>
+
+###### Testimonials
+<img src="assets/chapter3/6-mobile-testimonials-wireframe.jpg"/>
+
+###### CTA and Footer
+<img src="assets/chapter3/7-mobile-cta-footer-wireframe.jpg"/>
+
 #### 3.1.3.2. Landing Page Mock-up
+
+Los mock-ups muestran la versión visual final del Landing Page en Desktop Web Browser y Mobile Web Browser. En estas vistas se aplican los colores, tipografía, imágenes, botones, tarjetas y componentes definidos para Courtly, manteniendo una presentación coherente con la identidad deportiva y tecnológica de la marca.
+
+##### Desktop Web Browser
+
+###### Home
+<img src="assets/chapter3/1-desktop-home-mockup.jpg"/>
+
+###### Features
+<img src="assets/chapter3/2-desktop-features-mockup.jpg"/>
+
+###### Benefits
+<img src="assets/chapter3/3-desktop-benefits-mockup.jpg"/>
+
+###### How it works
+<img src="assets/chapter3/4-desktop-how-it-works-mockup.jpg"/>
+
+###### Team
+<img src="assets/chapter3/5-desktop-team-mockup.jpg"/>
+
+###### Testimonials
+<img src="assets/chapter3/6-desktop-testimonials-mockup.jpg"/>
+
+###### CTA and Footer
+<img src="assets/chapter3/7-desktop-cta-footer-mockup.jpg"/>
+
+##### Mobile Web Browser
+
+###### Home
+<img src="assets/chapter3/1-mobile-home-mockup.jpg"/>
+
+###### Features
+<img src="assets/chapter3/2-mobile-features-mockup.jpg"/>
+
+###### Benefits
+<img src="assets/chapter3/3-mobile-benefits-mockup.jpg"/>
+
+###### How it works
+<img src="assets/chapter3/4-mobile-how-it-works-mockup.jpg"/>
+
+###### Team
+<img src="assets/chapter3/5-mobile-team-mockup.jpg"/>
+
+###### Testimonials
+<img src="assets/chapter3/6-mobile-testimonials-mockup.jpg"/>
+
+###### CTA and Footer
+<img src="assets/chapter3/7-mobile-cta-footer-mockup.jpg"/>
 
 # Conclusiones
 
