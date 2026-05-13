@@ -11364,18 +11364,6 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Captura:** ![Listado de usuarios IAM](assets/chapter4/GETIam.png)
 
-#### Endpoint: GET /api/v1/roles
-
-**Accion implementada:** listar los roles disponibles para la gestion de autorizacion.
-
-**Parametros:** no requiere parametros.
-
-**Example Response:** no se proporciono JSON real de response para esta operacion en la evidencia disponible.
-
-**Explicacion del response:** esta operacion permite consultar los roles que pueden asociarse a usuarios dentro del sistema.
-
-**Captura:** No se proporciono captura disponible para esta operacion en `assets/chapter4`.
-
 ---
 
 ### User Profiles
