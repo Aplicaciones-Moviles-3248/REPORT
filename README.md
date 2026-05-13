@@ -9475,7 +9475,7 @@ Enlace al prototipo interactivo: https://aplicaciones-moviles-3248.github.io/moc
 
 **Captura del prototipo**
 
-![](assets/chapter2/movil-prototyping.png)
+![](assets/refactor/image.png)
 
 **Video demostrativo del prototipo**
 
