@@ -8716,44 +8716,57 @@ La elaboración de estos wireframes toma como referencia los principios de dise�
 **Wireframes del segmento Deportistas Aficionados**
 
 Login / Registro
+
 ![](assets/mock-up/image%20copy%2018.png)
 
 Dashboard del deportista (Notificaciones)
+
 ![](assets/mock-up/image%20copy%2019.png)
 
 Busqueda de Canchas (Detalle, reserva y pago)
+
 ![](assets/mock-up/image%20copy%2020.png)
 
 Busqueda de entrenadores (Reseñas y Reserva)
+
 ![](assets/mock-up/image%20copy%2021.png)
 
 Busqueda y creacion de partidos
+
 ![](assets/mock-up/image%20copy%2022.png)
 
 **Wireframes del segmento Entrenadores Independientes**
 
 Login / Registro
+
 ![](assets/mock-up/image%20copy%2023.png)
 
 Dashboard del entrenador
+
 ![](assets/mock-up/image%20copy%2024.png)
 
 Disponibilidad del entrenador
+
 ![](assets/mock-up/image%20copy%2025.png)
 
 Solicitudes de entrenamiento
+
 ![](assets/mock-up/image%20copy%2026.png)
 
 Pagos recibidos
+
 ![](assets/mock-up/image%20copy%2028.png)
 
 Métricas del entrenador
+
 ![](assets/mock-up/image%20copy%2027.png)
 
 Reseñas recibidas
+
 ![](assets/mock-up/image%20copy%2028.png)
 
 Perfil profesional
+
 ![](assets/mock-up/image%20copy%2029.png)
 
 #### 3.1.4.2. Mobile Applications Wireflow Diagrams
@@ -8810,44 +8823,57 @@ En el caso del segmento de deportistas aficionados, los mock-ups permiten visual
 **Mock-ups del segmento Deportistas Aficionados**
 
 Login / Registro
-![](assets/mock-up/image%20copy.png)
+
+![](assets/mock-up/image%20copy%2036.png)
 
 Dashboard del deportista (Notificaciones)
+
 ![](assets/mock-up/image%20copy%202.png)
 
 Busqueda de Canchas (Detalle, reserva y pago)
+
 ![](assets/mock-up/image%20copy%203.png)
 
 Busqueda de entrenadores (Reseñas y Reserva)
+
 ![](assets/mock-up/image%20copy%204.png)
 
 Busqueda y creacion de partidos
+
 ![](assets/mock-up/image%20copy%205.png)
 
 **Mock-ups del segmento Entrenadores Independientes**
 
 Login / Registro
-![](assets/mock-up/image%20copy%206.png)
+
+![](assets/mock-up/image%20copy%2035.png)
 
 Dashboard del entrenador
+
 ![](assets/mock-up/image%20copy%207.png)
 
 Disponibilidad del entrenador
+
 ![](assets/mock-up/image%20copy%208.png)
 
 Solicitudes de entrenamiento
+
 ![](assets/mock-up/image%20copy%209.png)
 
 Pagos recibidos
+
 ![](assets/mock-up/image%20copy%2011.png)
 
 Métricas del entrenador
+
 ![](assets/mock-up/image%20copy%2010.png)
 
 Reseñas recibidas
+
 ![](assets/mock-up/image%20copy%2012.png)
 
 Perfil profesional
+
 ![](assets/mock-up/image%20copy%2013.png)
 
 Los mock-ups evidencian la aplicación de principios de diseño inclusivo, ya que presentan una navegación clara, etiquetas comprensibles, botones visibles, agrupación lógica de información y retroalimentación visual para acciones importantes como reservar, pagar, publicar disponibilidad o aceptar una solicitud.
@@ -8947,9 +8973,10 @@ Enlace al prototipo interactivo: https://aplicaciones-moviles-3248.github.io/moc
 
 Como evidencia de la interacción y navegación, se incluye un video demostrativo donde se recorren los principales flujos de la aplicación. Este video muestra cómo un deportista puede buscar y reservar una cancha, realizar un pago y participar en actividades deportivas, así como la forma en que un entrenador puede publicar disponibilidad y gestionar solicitudes de entrenamiento.
 
-Enlace del video en Microsoft Stream: 
+Enlace del video en Microsoft Stream: [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQB08wqDX5MbS7iv8QfPZnw6AW7t4J4xc51MRgK7qStfUsE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=a5AUI4)
 
 Screenshot del video demostrativo: 
+![](assets/mock-up/image%20copy%2037.png)
 
 Flujos demostrados en el video:
 
