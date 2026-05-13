@@ -11383,7 +11383,9 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Explicacion del response:** el servicio retorna un arreglo de usuarios. Cada usuario incluye su identificador, nombre de usuario y roles asignados como arreglo de strings.
 
-**Captura:** ![Listado de usuarios IAM](assets/chapter4/GETIam.png)
+**Captura:** 
+
+![Listado de usuarios IAM](assets/chapter4/GETIam.png)
 
 ---
 
