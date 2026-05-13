@@ -151,6 +151,23 @@ INGENIERÍA DE SOFTWARE
     </ul>
   </td>
 </tr>
+
+<tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">TB1</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">13/05/2026</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <ul>
+        <li>Pedro Jesús Nanfuñay Liza</li>
+      </ul>
+    </td>
+    <td style="border: 1px solid #ddd; padding: 8px;">            
+      <ul>
+        <li>Capítulo IV: Punto 4.2.1.3</li>
+        <li>Capítulo IV: Punto 4.2.1.4</li>
+        <li>Capítulo IV: Punto 4.2.1.5</li>
+        </ul>
+    </td>
+  </tr>
 </table><br>
 
 
@@ -700,6 +717,8 @@ INGENIERÍA DE SOFTWARE
                 <br><strong>Pedro Jesús Nanfuñay Liza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, apliqué y actualicé mis conocimientos en el proceso de creación de elementos needfinding, tales como los User Persona, User Journey Mapping, Empathy Mapping, entre otros. Así como en el proceso de Big Picture EventStorming, e identificación y desarrollo de bounded context relacionados al negocio como payments y matches, a partir de sus respectivas capas, junto con sus diagramas de arquitectura y diagramas de código.<br>
+                TB1:<br>
+                Durante el desarrollo del TB1, apliqué y actualicé mis conocimientos relacionados con el desarrollo del backend e implementación de pruebas de software para la automatización y validación de servicios REST. Pude reforzar conceptos vinculados al diseño e implementación de Unit Tests, Integration Tests y Acceptance Tests bajo el enfoque BDD, así como el uso de herramientas como JUnit, Mockito y Cucumber; asegurando una mejor comprensión de la calidad del software y de las prácticas necesarias para construir soluciones más confiables y mantenibles.<br>
                 <br><strong>Eduardo Fabian Chacaliaza Minaya</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó sus conocimientos en arquitectura de software y diseño centrado en el usuario mediante la aplicación de Lean UX, realizando entrevistas, definición de hipótesis y validación de necesidades. Asimismo, participó en la construcción del Context Mapping bajo el enfoque de Domain-Driven Design y en el modelado de los bounded contexts de IAM, Users y Notifications, desarrollando sus capas principales y los diagramas de soporte (componentes, clases y base de datos), lo que permitió una mejor comprensión de la organización y estructura del sistema.<br>
@@ -724,6 +743,8 @@ INGENIERÍA DE SOFTWARE
                 <br><strong>Pedro Jesús Nanfuñay Liza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, comprendí la importancia del constante aprendizaje autodidacta para mi desarrollo profesional en el desarrollo de proyectos de software, tomando en cuenta temas esenciales como Domain Driven Design (DDD) y modelado arquitectónico de diagramas de componentes, clases y bases de datos. Ello me incentivó a seguir expandiendo mis conocimientos para mejorar mi capacidad de estructurar bounded context, su respectiva documentación técnica, entre otras áreas de este tipo de proyectos.<br>
+                TB1:<br>
+                Durante el desarrollo del TB1, comprendí la importancia de mantener un aprendizaje constante en relación al desarrollo, despliegue e implementación de pruebas para el backend. Donde fue necesario investigar nuevas herramientas y entender diferentes enfoques de pruebas. Demostrando, la importancia de aprender continuamente para mejorar mis habilidades profesionales con el objetivo de desarrollar soluciones de software más sólidas, confiables y alineadas con buenas prácticas.<br>
                 <br><strong>Eduardo Fabian Chacaliaza Minaya</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, exploró y utilizó herramientas orientadas al modelado y diseño de software como Structurizr, PlantUML y Miro, integrándolas en la elaboración de diagramas C4, modelos de clases y actividades de Impact Mapping. Este proceso le permitió no solo mejorar la representación visual de la arquitectura del sistema, sino también afianzar su capacidad de organizar ideas, estructurar soluciones y documentar de manera más clara los distintos componentes del proyecto.<br>
