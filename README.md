@@ -11385,7 +11385,7 @@ Como resultado del Sprint, la documentacion de servicios facilita que el equipo 
 
 **Captura:** 
 
-![Listado de usuarios IAM](assets/chapter4/GETIam.png)
+![Listado de usuarios IAM](assets/chapter4/GETiam.png)
 
 ---
 
