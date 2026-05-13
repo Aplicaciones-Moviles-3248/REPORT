@@ -10414,6 +10414,31 @@ El diseño de persistencia es consistente con el modelo de dominio y permite alm
 
 ---
 
+#### 4.2.1.3. Development Evidence for Sprint Review
+
+En este primer Sprint se ha desarrollado la implementación de la Landing Page y del Backend, donde se han aplicado commits que evidencian el proceso de desarrollo de ambos artefactos:
+
+**Landing Page:**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+| Aplicaciones-Moviles-3248/landing-page | main | 2292580 | Initial commit | add initial commit | 11/05/2026 |
+| Aplicaciones-Moviles-3248/landing-page | main | e8edf91 | feat(landing-page): add Courtly landing page | add initial structure of landing page | 11/05/2026 |
+| Aplicaciones-Moviles-3248/landing-page | main | 70e556a | docs(readme): add landing page documentation | add documentation of landing page | 11/05/2026 |
+| Aplicaciones-Moviles-3248/landing-page | main | 97dfd30 | refactor(landing-page): remove pricing plans section | remove the princing plans section | 11/05/2026 |
+| Aplicaciones-Moviles-3248/landing-page | main | 5de0ebe | refactor(landing-page): replace plans links with app download cta | replace the links with app download cta | 11/05/2026 |
+
+
+**Backend:**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+| Aplicaciones-Moviles-3248/backend | main | 6fe60a4 | prepare render deploy | prepare the repository for deploy in render | 10/05/2026 |
+| Aplicaciones-Moviles-3248/backend | main | a5c26b3 | fix lombok build | fix plugins of lombok | 10/05/2026 |
+| Aplicaciones-Moviles-3248/backend | main | 55db9f4 | fix postgres render config | fix the postgres database config for render | 10/05/2026 |
+| Aplicaciones-Moviles-3248/backend | feature/reglas-negocio | 48d2373 | Refactor backend business flows, harden security, and stabilize local/test setup | refactor the business flows in backend | 10/05/2026 |
+
+
 # Conclusiones
 
 ## Conclusiones y recomendaciones.
