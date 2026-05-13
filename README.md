@@ -10478,6 +10478,35 @@ A continuación, se presentan los commits relacionados al desarrollo de los test
 | Aplicaciones-Moviles-3248/backend | feature/acceptance-tests | 50df461 | feat(acceptance-tests): add acceptance tests for notifications bounded context. | Implemented acceptance tests for notifications bounded context | 12/05/2026 |
 
 
+#### 4.2.1.4. Execution Evidence for Sprint Review
+
+En el Sprint 1 se desplegó la primera versión de la Landing Page de Courtly, implementando vistas que permitan exponer la información más relevante para captar la atención de nuestros usuarios. A continuación, se presentan las evidencias:
+
+**Inicio:** Muestra el logo de la marca, una navegación clara y un botón de "Descargar" en un color llamativo para guiar al usuario. Presenta la propuesta de valor principal con una imagen atractiva y un texto impactante, capturando la atención del visitante de inmediato.
+
+![LandingPage_Inicio_Sprint1](./assets/chapter4/LandingPage_Inicio_Sprint1.png)
+
+**Características:** Se detallan las principales características y funciones que obtendrán los usuarios al utilizar la plataforma.
+
+![LandingPage_Caracteristicas_Sprint1](./assets/chapter4/LandingPage_Caracteristicas_Sprint1.png)
+
+**Beneficios:** Se detallan los beneficios para cada segmento objetivo con el fin de resolver sus problemas de forma efectiva.
+
+![LandingPage_Beneficios_Sprint1](./assets/chapter4/LandingPage_Beneficios_Sprint1.png)
+
+**Cómo funciona:** Se detalla el flujo que sigue la aplicación para ambos tipos de público, describiendo los pasos de manera simple y fácil de entender para los usuarios.
+
+![LandingPage_ComoFunciona_Sprint1](./assets/chapter4/LandingPage_ComoFunciona_Sprint1.png)
+
+**Equipo:** Se presentan los perfiles de los miembros del equipo de desarrollo. Así como, nuestra misión y visión como startup.
+
+![LandingPage_Equipo_Sprint1](./assets/chapter4/LandingPage_Equipo_Sprint1.png)
+
+**Testimonios:** Se muestran las opiniones positivas realizadas por usuarios que ya hayan utilizado la aplicación, actuando como prueba social para validar la calidad del producto o servicio.
+
+![LandingPage_Testimonios_Sprint1](./assets/chapter4/LandingPage_Testimonios_Sprint1.png)
+
+
 # Conclusiones
 
 ## Conclusiones y recomendaciones.
