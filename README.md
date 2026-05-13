@@ -4727,54 +4727,59 @@ Esta estructura logra un equilibrio entre cohesión y bajo acoplamiento, alinead
 
 #### 2.5.3.2. Software Architecture Container Level Diagrams
 
-<img src="assets/chapter2/diagrama-contenedores.png" alt="Descripción de la imagen" width="700">
+<img src="assets/diagramas/structurizr-82845-Container-001 (1).png" alt="Descripción de la imagen" width="700">
 
 #### 2.5.3.3. Software Architecture Deployment Diagrams
 
 Diagrama de componentes IAM
 
-<img src="assets/chapter2/diagrama-componentes-iam.png" alt="Descripción de la imagen" width="700">
+<img src="assets/diagramas/structurizr-82845-Component-002 (1).png" alt="Descripción de la imagen" width="700">
 
 Diagrama de componentes Users
 
-<img src="assets/chapter2/diagrama-componentes-users.png" alt="Descripción de la imagen" width="700">
+<img src="assets/diagramas/structurizr-82845-Component-003 (1).png" alt="Descripción de la imagen" width="700">
+
 
 Diagrama de componentes Courts
 
-<img src="assets/chapter2/diagrama-componentes-courts.png" alt="Descripción de la imagen" width="700">
+<img src="assets/diagramas/structurizr-82845-Component-005 (1).png" alt="Descripción de la imagen" width="700">
+
 
 Diagrama de componentes Booking
 
-<img src="assets/chapter2/diagrama-componentes-bookings.png" alt="Descripción de la imagen" width="700">
+<img src="assets/diagramas/structurizr-82845-Component-006 (1).png" alt="Descripción de la imagen" width="700">
 
 Diagrama de componentes Payments
 
-<img src="assets/chapter2/diagrama-componentes-payments.png" alt="Descripción de la imagen" width="700">
+<img src="assets/diagramas/structurizr-82845-Component-007 (1).png" alt="Descripción de la imagen" width="700">
 
 Diagrama de componentes Coaches
 
-<img src="assets/chapter2/diagrama-componentes-coaches.png" alt="Descripción de la imagen" width="700">
+<img src="assets/diagramas/structurizr-82845-Component-004 (1).png" alt="Descripción de la imagen" width="700">
 
 Diagrama de componentes Reviews
 
-<img src="assets/chapter2/diagrama-componentes-reviews.png" alt="Descripción de la imagen" width="700">
+<img src="assets/diagramas/structurizr-82845-Component-008 (1).png" alt="Descripción de la imagen" width="700">
 
 Diagrama de componentes Notificacions
 
-<img src="assets/chapter2/diagrama-componentes-notificacions.png" alt="Descripción de la imagen" width="700">
+<img src="assets/diagramas/structurizr-82845-Component-011 (1).png" alt="Descripción de la imagen" width="700">
 
 Diagrama de componentes Matches
 
-<img src="assets/chapter2/diagrama-componentes-matches.png" alt="Descripción de la imagen" width="700">
+<img src="assets/diagramas/structurizr-82845-Component-010 (1).png" alt="Descripción de la imagen" width="700">
 
 Diagrama de componentes Availabilities
 
-<img src="assets/chapter2/diagrama-componentes-availabilities.png" alt="Descripción de la imagen" width="700">
+<img src="assets/diagramas/structurizr-82845-Component-012 (1).png" alt="Descripción de la imagen" width="700">
 
 Diagrama de componentes Analytics
 
-<img src="assets/chapter2/diagrama-componentes-analytics.png" alt="Descripción de la imagen" width="700">
+<img src="assets/diagramas/structurizr-82845-Component-009 (1).png" alt="Descripción de la imagen" width="700">
 
+Diagrama de componentes Training Sessions 
+
+<img src="assets/diagramas/structurizr-82845-Component-013.png" alt="Descripción de la imagen" width="700">
 
 ---
 
