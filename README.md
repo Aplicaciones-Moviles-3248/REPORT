@@ -11937,6 +11937,9 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
 **AV1**
 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQBp0Rku3Jm_QLhcTDAqpiiGAQ84dUBWLXi-aELkb3xl5Po?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=EX2vg6)
 
+**TP**
+[**link**]()
+
 # Glosario
 
 - **Bounded Context**
@@ -11981,3 +11984,16 @@ Anexo03. Video about the team [**link**](https://upcedupe-my.sharepoint.com/:v:/
 
 Anexo04. Video de exposición AV1 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQDEKrJ83AmmRoxrv_PohGrNAfSM3oeYNJlUie_GujuVnSU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ugyTnh)
 
+Anexo05. Repositorio de Landing-page [**link**](https://github.com/Aplicaciones-Moviles-3248/landing-page)
+
+Anexo06. Landing-page desplegado [**link**](https://aplicaciones-moviles-3248.github.io/landing-page/)
+
+Anexo07. Mock-up movil publicado [**link**](https://aplicaciones-moviles-3248.github.io/mock-up/)
+
+Anexo08. Video del prototipo del mock-up movil [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQB08wqDX5MbS7iv8QfPZnw6AW7t4J4xc51MRgK7qStfUsE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=a5AUI4)
+
+Anexo09. Repositorio del backend [**link**](https://github.com/Aplicaciones-Moviles-3248/backend)
+
+Anexo10. Backend desplegado [**link**](https://courtly-backend.onrender.com/swagger-ui/index.html)
+
+Anexo11. Video About the team [**link**]()
