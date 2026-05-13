@@ -8996,11 +8996,572 @@ Flujos demostrados en el video:
 
 # Capítulo IV: Product Implementation & Validation
 
+
+---
+
+# Capítulo IV: Product Implementation & Validation
+
 ## 4.1. Software Configuration Management
+
 ### 4.1.1. Software Development Environment Configuration
+
+El backend de Courtly se desarrolla utilizando un entorno completamente configurado basado en **Java 21** y **Spring Boot 3.5.7**, lo que garantiza acceso a las características más modernas del lenguaje y del framework. La configuración del entorno de desarrollo está optimizada para permitir tanto desarrollo local como deploy en producción de manera eficiente y consistente.
+
+#### Tecnologías Base
+
+- **Lenguaje de Programación:** Java 21 LTS (Long-Term Support), proporcionando mejoras significativas en performance, nueva sintaxis y características de seguridad.
+- **Framework Web:** Spring Boot 3.5.7 con Spring Web, permitiendo construcción rápida de APIs REST escalables.
+- **Build Tool:** Maven 3.9.5 con Maven Wrapper, facilitando que cualquier miembro del equipo compile el proyecto sin necesidad de Maven global instalado.
+- **IDE Recomendada:** IntelliJ IDEA Community o Eclipse, ambas con soporte completo para Spring Boot y Java 21.
+
+#### Configuración de Base de Datos
+
+El proyecto soporta dos bases de datos relacional:
+
+**Desarrollo Local:**
+- **Motor:** MySQL 5.7+
+- **Ubicación:** `jdbc:mysql://localhost:3306/courtly`
+- **Credenciales por defecto:** usuario `root`, contraseña configurada en `application-local.properties`
+- **DDL:** Hibernate genera automáticamente las tablas (modo `update`)
+
+**Producción (Render):**
+- **Motor:** PostgreSQL 12+
+- **Ubicación:** Proporcionada por Render mediante variable `DATABASE_URL`
+- **DDL:** Hibernate genera automáticamente las tablas (modo `update`)
+
+#### Estrategia de Configuración
+
+El proyecto utiliza perfiles de Spring Boot (`spring.profiles.active`) para gestionar configuraciones por entorno:
+
+**Perfil `local` (desarrollo):**
+- Archivo: `application-local.properties`
+- BD: MySQL local
+- Logs: `show_sql=true` habilitado
+- JWT: Secret en claro (solo para desarrollo)
+
+**Perfil `production` (Render):**
+- Archivo: `application.properties` (por defecto)
+- BD: PostgreSQL desde variable `DATABASE_URL`
+- Logs: `show_sql=false`
+- JWT: Secret generado automáticamente
+
+#### Dependencias Principales
+
+- **Spring Data JPA:** Para acceso a datos y persistencia.
+- **Spring Security:** Para autenticación y autorización con JWT.
+- **Spring Validation:** Para validación de entidades.
+- **Lombok:** Para reducir boilerplate (getters, setters, constructores).
+- **PostgreSQL Driver:** Para conexión a BD en producción.
+- **MySQL Connector:** Para conexión a BD en desarrollo local.
+- **SpringDoc OpenAPI (Swagger):** Para documentación automática de APIs (`/api/v1/swagger-ui.html`).
+
+#### Herramientas de Desarrollo
+
+- **Maven Wrapper:** Incluido en el repositorio, elimina la necesidad de instalar Maven globalmente (`./mvnw clean package`).
+- **Spring Boot DevTools:** Activa reinicio automático durante desarrollo.
+- **Java Extensions (VSCode):** Pack de extensiones para desarrollo en VS Code.
+
+#### Archivo de Configuración Principal (`application.properties`)
+
+```properties
+spring.application.name=courtly
+spring.profiles.active=${SPRING_PROFILES_ACTIVE:prod}
+server.port=${PORT:8080}
+
+# Datasource
+spring.datasource.url=${DATABASE_URL}
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# JPA Configuration
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.open-in-view=true
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+
+# Naming Strategy
+spring.jpa.hibernate.naming.physical-strategy=com.upc.courtly.shared.infrastructure.persistence.jpa.configuration.strategy.SnakeCaseWithPluralizedTablePhysicalNamingStrategy
+```
+
+---
+
 ### 4.1.2. Source Code Management
+
+El equipo de Courtly utiliza **GitHub** como plataforma centralizada de control de versiones, implementando una estructura de ramas clara que facilita la colaboración, el código review y la integración continua.
+
+#### Estrategia de Ramas
+
+El proyecto sigue el modelo **Git Flow** simplificado:
+
+**Rama Principal:**
+- **`master`:** Rama de producción. Solo recibe cambios estables y testeados. Todos los deploys a Render se realizan desde esta rama.
+
+**Rama de Integración:**
+- **`develop`:** Rama de integración donde convergen las features completadas. Representa el estado siguiente al master.
+
+**Ramas de Características:**
+- **`feature/bounded-context-name`:** Cada feature o bounded context se desarrolla en su propia rama.
+  - Ejemplo: `feature/courts-management`, `feature/bookings-reservation`, `feature/user-authentication`
+  - Se ramifica desde `develop`
+  - Se merge a `develop` tras completar y pasar validación
+
+**Ramas de Correcciones:**
+- **`bugfix/description`:** Para correcciones de bugs identificados en `develop`.
+
+#### Convenciones de Commits
+
+Todos los commits siguen la siguiente estructura:
+
+```
+<tipo>(<scope>): <descripción>
+
+<cuerpo detallado si aplica>
+```
+
+**Tipos de Commit:**
+- `feat:` Nueva funcionalidad
+- `fix:` Corrección de bug
+- `refactor:` Cambio de código que no añade funcionalidad ni corrige bugs
+- `docs:` Cambios en documentación
+- `test:` Adición o modificación de pruebas
+- `chore:` Cambios en build, dependencias o configuración
+
+**Ejemplos:**
+```
+feat(courts): agregar validación de disponibilidad de canchas
+fix(auth): corregir token JWT expirado en endpoints
+refactor(payments): simplificar lógica de cálculo de tarifas
+```
+
+#### Estructura del Repositorio
+
+```
+backend/
+├── .git/              # Historial de Git
+├── .github/workflows/ # GitHub Actions para CI/CD
+├── pom.xml            # Configuración de Maven
+├── mvnw               # Maven Wrapper (Unix)
+├── mvnw.cmd           # Maven Wrapper (Windows)
+├── Dockerfile         # Configuración multi-stage para build
+├── render.yaml        # Configuración de deploy en Render
+└── src/
+    ├── main/
+    │   ├── java/com/upc/courtly/
+    │   │   ├── analytics/        # Bounded Context
+    │   │   ├── availabilities/
+    │   │   ├── bookings/
+    │   │   ├── coaches/
+    │   │   ├── courts/
+    │   │   ├── iam/
+    │   │   ├── matches/
+    │   │   ├── notifications/
+    │   │   ├── payments/
+    │   │   ├── reviews/
+    │   │   ├── shared/           # Código compartido
+    │   │   ├── trainingsessions/
+    │   │   ├── users/
+    │   │   └── CourtlyApplication.java
+    │   └── resources/
+    │       ├── application.properties
+    │       ├── application-local.properties
+    │       └── sql/
+    └── test/              # Pruebas unitarias e integración
+```
+
+#### Archivo `.gitignore`
+
+El proyecto excluye automáticamente:
+- `/target/` - Artefactos compilados
+- `.idea/` - Configuración IDE IntelliJ
+- `*.iml` - Proyecto IntelliJ
+- `.vscode/` - Configuración VS Code
+- `/.mvn/wrapper/maven-wrapper.jar` - JAR del wrapper
+- Archivos de sistema y temporales
+
+#### Políticas de Colaboración
+
+- **Code Review:** Todo cambio en `develop` requiere al menos 1 approval antes del merge.
+- **Branch Protection:** `master` está protegida y no permite pushes directos; requiere PR desde `develop`.
+- **Commits:** Se utilizan meaningful commit messages para facilitar trazabilidad y auditoría.
+- **Pull Requests:** Descripción clara del cambio, referencias a issues y justificación técnica.
+
+#### Herramientas Complementarias
+
+- **GitHub Issues:** Seguimiento de bugs, features y tareas.
+- **GitHub Projects:** Gestión de sprint y backlog visual.
+- **GitHub Actions:** CI/CD automático (compilación, tests, deploy).
+
+---
+
 ### 4.1.3. Source Code Style Guide & Conventions
+
+Para mantener consistencia, calidad y legibilidad del código, el proyecto Courtly implementa un conjunto de convenciones de estilo enfocadas en la arquitectura de capas, la nambración clara y la separación de responsabilidades inherentes a Domain-Driven Design.
+
+#### Estructura de Paquetes
+
+Cada bounded context sigue la misma estructura de capas:
+
+```
+com.upc.courtly.{bounded-context}/
+├── domain/
+│   ├── model/
+│   │   ├── aggregates/      # Root aggregates (ej: Court, Booking, User)
+│   │   ├── commands/        # Objetos de comando
+│   │   ├── queries/         # Objetos de consulta
+│   │   ├── entities/        # Entidades (no raíces)
+│   │   ├── valueobjects/    # Value Objects (enums, structs lógicos)
+│   │   └── events/          # Eventos de dominio
+│   └── services/            # Domain Services (interfaces)
+├── application/
+│   ├── internal/
+│   │   ├── commandservices/ # Implementación de command handlers
+│   │   ├── queryservices/   # Implementación de query handlers
+│   │   └── eventhandlers/   # Manejo de eventos (si aplica)
+│   └── dto/                 # DTOs de aplicación (si aplica)
+├── infrastructure/
+│   ├── persistence/
+│   │   └── jpa/
+│   │       ├── repositories/    # Implementación de repos (Spring Data JPA)
+│   │       ├── entities/        # Mapeo JPA de agregados
+│   │       └── configuration/   # Config de JPA/Hibernate
+│   └── messaging/           # Adaptadores de mensajería (eventos, queues)
+└── interfaces/
+    └── rest/
+        ├── {BoundedContextNameController}.java
+        ├── resources/           # DTOs de REST (request/response)
+        └── transform/           # Assemblers (Entity ↔ Resource)
+```
+
+#### Convenciones de Nombrado
+
+##### Clases
+
+- **Aggregates:** `{NounPhrase}` (ej: `Court`, `Booking`, `User`)
+- **Value Objects:** `{Description}` (ej: `CourtStatus`, `PaymentMethod`, `BookingState`)
+- **Commands:** `{VerbPhrase}Command` (ej: `CreateCourtCommand`, `UpdatePricingCommand`, `CancelBookingCommand`)
+- **Queries:** `{VerbPhrase}Query` (ej: `GetAllCourtsQuery`, `GetCourtByIdQuery`, `FindAvailableSlotsQuery`)
+- **Services:** `{Domain}{VerbPhrase}Service` (ej: `CourtCommandService`, `BookingQueryService`)
+- **Repositories:** `{EntityName}Repository` (ej: `CourtRepository`, `BookingRepository`)
+- **Controllers:** `{BoundedContextName}Controller` (ej: `CourtsController`, `BookingsController`)
+- **DTOs:** `{Purpose}Resource` o `{Purpose}DTO` (ej: `CreateCourtResource`, `CourtResponseDTO`)
+- **Assemblers:** `{Entity}From{Resource}Assembler` (ej: `CourtResourceFromEntityAssembler`, `CreateCourtCommandFromResourceAssembler`)
+
+##### Métodos
+
+- Usar nombres descriptivos en inglés, con verbo + sustantivo
+- `get{Property}()`, `set{Property}()` para getters/setters
+- `create{Entity}()`, `update{Entity}()`, `delete{Entity}()` para CRUD
+- `handle(Command)` o `handle(Query)` para handlers
+- `validate{Constraint}()` para validaciones
+
+#### Código Fuente
+
+##### Espaciado y Formato
+
+- **Indentación:** 4 espacios (NO tabs)
+- **Longitud máxima de línea:** 120 caracteres
+- **Llaves:** Estilo Java estándar (apertura en la misma línea)
+
+```java
+public class CourtController {
+    @PostMapping
+    public ResponseEntity<CourtResource> createCourt(@RequestBody CreateCourtResource resource) {
+        // ...
+    }
+}
+```
+
+##### Importes
+
+- Usar importes explícitos (no usar `import com.example.*;`)
+- Ordenar alfabéticamente: java.* → javax.* → org.* → com.upc.*
+
+##### Anotaciones
+
+- Una anotación por línea (excepto anotaciones simples como `@Override`)
+- Spring: `@RestController`, `@Service`, `@Repository`, `@Component`
+- Validation: `@NotNull`, `@NotBlank`, `@Valid`, `@Size`
+- JPA: `@Entity`, `@Table`, `@Column`, `@Id`, `@GeneratedValue`
+
+```java
+@Entity
+@Table(name = "courts")
+@Builder
+@Data
+public class Court {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(nullable = false)
+    private String name;
+}
+```
+
+##### Comentarios y Documentación
+
+- Usar **JavaDoc** para métodos públicos de APIs
+- Comentarios en línea solo para lógica compleja
+- Comentarios sobre el **qué**, no sobre el **cómo** obvio
+
+```java
+/**
+ * Crea una nueva cancha y la publica en el sistema.
+ * 
+ * @param command contiene los datos de la cancha a crear
+ * @return la cancha creada si la validación es exitosa
+ */
+public Optional<Court> handle(CreateCourtCommand command) {
+    // ...
+}
+```
+
+##### Validación y Errores
+
+- Usar **Spring Validation** con anotaciones en DTOs
+- Lanzar excepciones significativas con mensajes claros
+- No devolver `null`; preferir `Optional<T>`
+
+```java
+@NotNull(message = "El nombre de la cancha es obligatorio")
+@NotBlank(message = "El nombre no puede estar vacío")
+private String name;
+```
+
+#### DTOs y Resources
+
+- **CreateXyzResource:** Para crear nuevas entidades (solo propiedades editables)
+- **UpdateXyzResource:** Para actualizar entidades
+- **XyzResponseDTO o XyzResource:** Para devolver entidades
+
+```java
+public class CreateCourtResource {
+    @NotBlank
+    private String name;
+    
+    @NotNull
+    private String location;
+    
+    @NotNull
+    @DecimalMin("10.0")
+    private BigDecimal pricePerHour;
+}
+```
+
+#### Patrones de Arquitectura
+
+##### Command/Query Separation (CQRS)
+
+- **Commands:** Operaciones que cambian estado (Create, Update, Delete)
+- **Queries:** Operaciones de lectura (Get, List, Search)
+
+```java
+// Command
+public class CreateCourtCommand {
+    public String name;
+    public Location location;
+    // ...
+}
+
+// Query
+public class GetAllCourtsQuery {
+    public String sportType;
+    public String city;
+    // ...
+}
+```
+
+##### Assemblers para Transformación
+
+```java
+public class CourtResourceFromEntityAssembler {
+    public static CourtResource toResourceFromEntity(Court entity) {
+        return CourtResource.builder()
+            .id(entity.getId())
+            .name(entity.getName())
+            // ...
+            .build();
+    }
+}
+```
+
+##### Inyección de Dependencias
+
+Usar constructor injection (preferido sobre field injection):
+
+```java
+@RestController
+public class CourtController {
+    private final CourtCommandService courtCommandService;
+    private final CourtQueryService courtQueryService;
+    
+    public CourtController(CourtCommandService courtCommandService, 
+                          CourtQueryService courtQueryService) {
+        this.courtCommandService = courtCommandService;
+        this.courtQueryService = courtQueryService;
+    }
+}
+```
+
+#### Herramientas de Linting y Formato
+
+Se recomienda usar:
+- **Checkstyle:** Validar consistencia de estilo
+- **SonarQube:** Análisis de calidad de código
+- **Prettier:** Formateo automático (si aplica en plugins IDE)
+
+#### Versionado de API
+
+- Usar versionado explícito en URLs: `/api/v1/courts`
+- Mantener compatibilidad hacia atrás en versiones antiguas
+- Deprecar versiones siguiendo HTTP standards
+
+---
+
 ### 4.1.4. Software Deployment Configuration
+
+La estrategia de deployment de Courtly utiliza **Render** como plataforma PaaS (Platform as a Service), aprovechando Docker para containerización reproducible y deployments consistentes entre ambientes.
+
+#### Estrategia de Containerización
+
+El proyecto utiliza un **Dockerfile multi-stage** que optimiza el tamaño final de la imagen:
+
+**Stage 1 - Build:**
+```dockerfile
+FROM maven:3.9.5-eclipse-temurin-21 AS build
+WORKDIR /workspace
+COPY mvnw .
+COPY .mvn .mvn
+COPY pom.xml .
+COPY src ./src
+RUN chmod +x mvnw && ./mvnw -B -DskipTests clean package
+```
+
+- Maven compila el proyecto
+- Se saltan tests para acelerar el build
+- Genera JAR en `target/`
+
+**Stage 2 - Runtime:**
+```dockerfile
+FROM eclipse-temurin:21-jre
+WORKDIR /app
+COPY --from=build /workspace/target/*.jar /app/app.jar
+EXPOSE 8080
+ENTRYPOINT ["sh","-c","java -Dserver.port=$PORT -jar /app/app.jar"]
+```
+
+- Imagen base: Eclipse Temurin JRE 21 (más pequeña que JDK)
+- Copia solo el JAR compilado (arquitectura limpia)
+- Expone puerto 8080
+- Acepta variable `$PORT` de Render en tiempo de ejecución
+
+#### Configuración en Render (`render.yaml`)
+
+```yaml
+databases:
+  - name: courtly-db
+    databaseName: courtly
+    user: courtly
+    plan: free
+    region: oregon
+
+services:
+  - type: web
+    name: courtly-api
+    runtime: docker
+    plan: free
+    region: oregon
+    branch: master
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: JAVA_VERSION
+        value: 21
+      - key: SPRING_PROFILES_ACTIVE
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: courtly-db
+          property: connectionString
+      - key: AUTHORIZATION_JWT_SECRET
+        generateValue: true
+      - key: AUTHORIZATION_JWT_EXPIRATION_DAYS
+        value: 7
+```
+
+**Componentes:**
+
+- **Base de datos:** PostgreSQL gratuita en Oregon
+- **Servicio web:** Rama `master`, Dockerfile en raíz, plan free
+- **Variables de entorno:**
+  - `SPRING_PROFILES_ACTIVE=production`: Activa perfil de producción
+  - `DATABASE_URL`: Inyectada automáticamente por Render
+  - `AUTHORIZATION_JWT_SECRET`: Generada automáticamente
+  - `AUTHORIZATION_JWT_EXPIRATION_DAYS`: 7 días de validez
+
+#### Flujo de Deployment
+
+1. **Commit a master:** El código se pushea a la rama `master` en GitHub
+2. **Render detecta cambio:** Webhook de GitHub notifica a Render
+3. **Build Docker:** Render ejecuta el Dockerfile multi-stage
+4. **Compilación Maven:** Se compila el proyecto en el Stage 1
+5. **Creación de imagen:** Se genera la imagen Docker optimizada
+6. **Push a registry:** Imagen se almacena en registro de Render
+7. **Deploy:** Nueva versión se despliega en el contenedor
+8. **Health check:** Render verifica que la aplicación responde en `/actuator/health`
+
+#### Variables de Entorno en Producción
+
+| Variable | Valor | Origen |
+|----------|-------|--------|
+| `SPRING_PROFILES_ACTIVE` | `production` | render.yaml |
+| `DATABASE_URL` | `jdbc:postgresql://...` | Render (PostgreSQL) |
+| `SERVER_PORT` | `PORT` (variable Render) | Render |
+| `AUTHORIZATION_JWT_SECRET` | Generado automáticamente | Render |
+| `AUTHORIZATION_JWT_EXPIRATION_DAYS` | `7` | render.yaml |
+
+#### Monitoreo y Logs
+
+Render proporciona:
+- **Logs en tiempo real:** Accesibles desde dashboard de Render
+- **Métricas:** CPU, memoria, requests
+- **Health checks:** Validación automática `/actuator/health`
+- **Alertas:** Notificaciones de caídas o errores
+
+#### Estrategia de Rollback
+
+Si el deploy falla:
+1. Render mantiene la versión anterior activa
+2. Permite redeployar desde cualquier commit anterior
+3. Base de datos persiste (no se afecta)
+
+#### Base de Datos en Producción
+
+- **Motor:** PostgreSQL (12+)
+- **Plan:** Free (Render)
+- **Ubicación:** Oregon, USA
+- **Backup:** Render maneja automáticamente backups diarios
+- **Scalability:** Si el plan free se agota, es fácil migrar a tier pagado
+
+#### Consideraciones de Seguridad
+
+- **HTTPS:** Render proporciona certificado SSL automáticamente
+- **JWT:** Token con expiración de 7 días
+- **CORS:** Configurado en Spring (si es necesario ampliar a múltiples orígenes)
+- **Variables sensibles:** Nunca en código; siempre via variables de entorno
+
+#### Proceso de Actualización de Dependencias
+
+Cuando se actualiza una dependencia:
+1. Cambiar versión en `pom.xml`
+2. Commit con mensaje descriptivo
+3. Push a rama `feature/*` → PR a `develop`
+4. En PR: ejecutar compilación local para validar
+5. Merge a `develop` tras review
+6. Merge a `master` cuando se lista para producción
+7. Render detecta cambio y redeploya automáticamente
+
+---
+
 ## 4.2. Landing Page & Mobile Application Implementation
 ### 4.2.1. Sprint 1
 #### 4.2.1.1. Sprint Planning 1
