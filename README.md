@@ -3462,6 +3462,384 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
   </tr>
 </table>
 
+<br>
+
+<!-- Landing Page User Stories -->
+
+<h2>LP01</h2>
+<table border="1" cellspacing="0" cellpadding="8" width="100%">
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>LP01</td>
+    <td>Visitante potencial</td>
+    <td>Alta</td>
+    <td>Presentación del producto</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Navegar por la landing page mediante el menú de navegación</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero navegar fácilmente por la landing page usando el menú principal, para acceder a las diferentes secciones de información sobre Courtly sin complicaciones.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Escenario 1: Navegación en escritorio</b><br>
+      Given que el visitante se encuentra en la landing page,<br>
+      When hace clic en un elemento del menú de navegación (Inicio, Características, Beneficios, Cómo funciona, Equipo, Testimonios),<br>
+      Then la página desplaza suavemente a la sección correspondiente.<br><br>
+      <b>Escenario 2: Menú responsivo en dispositivos móviles</b><br>
+      Given que el visitante accede desde un dispositivo móvil,<br>
+      When hace clic en el botón de menú hamburguesa,<br>
+      Then se despliega un menú lateral con todas las opciones de navegación disponibles.<br><br>
+      <b>Escenario 3: Indicador de sección activa</b><br>
+      Given que el visitante navega entre secciones,<br>
+      When se encuentra en una sección específica,<br>
+      Then el menú indica visualmente cuál es la sección activa actual.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<h2>LP02</h2>
+<table border="1" cellspacing="0" cellpadding="8" width="100%">
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>LP02</td>
+    <td>Visitante potencial</td>
+    <td>Alta</td>
+    <td>Presentación del producto</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Visualizar carousel de héroe con diferentes propuestas de valor</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero ver un carousel en la sección héroe que muestre diferentes propuestas de valor de Courtly (para jugadores y para entrenadores), para entender rápidamente los beneficios principales según mi rol.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Escenario 1: Visualización del carousel</b><br>
+      Given que el visitante accede a la landing page,<br>
+      When ve la sección héroe,<br>
+      Then se muestra un carousel con al menos dos slides (uno para jugadores y otro para entrenadores).<br><br>
+      <b>Escenario 2: Navegación entre slides</b><br>
+      Given que el carousel contiene múltiples slides,<br>
+      When el visitante hace clic en los botones de navegación (anterior/siguiente),<br>
+      Then el carousel cambia al slide siguiente o anterior con una transición suave.<br><br>
+      <b>Escenario 3: Contenido relevante por slide</b><br>
+      Given que cada slide representa un persona (jugador o entrenador),<br>
+      When se visualiza cada slide,<br>
+      Then se muestra un título, descripción, imagen y botón de llamada a acción específico para ese persona.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<h2>LP03</h2>
+<table border="1" cellspacing="0" cellpadding="8" width="100%">
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>LP03</td>
+    <td>Visitante potencial</td>
+    <td>Media</td>
+    <td>Soporte multiidioma</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Cambiar el idioma de la landing page</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero cambiar el idioma de la landing page, para visualizar el contenido en mi idioma preferido (español o inglés).</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Escenario 1: Acceso al selector de idioma</b><br>
+      Given que el visitante se encuentra en la landing page,<br>
+      When identifica el botón de cambio de idioma en el header,<br>
+      Then puede ver un selector con opciones de idioma disponibles.<br><br>
+      <b>Escenario 2: Cambio de idioma exitoso</b><br>
+      Given que el visitante selecciona un idioma diferente,<br>
+      When confirma su selección,<br>
+      Then toda la página se actualiza al idioma elegido (textos, etiquetas, botones).<br><br>
+      <b>Escenario 3: Persistencia de preferencia</b><br>
+      Given que el visitante cambió el idioma,<br>
+      When recarga la página o regresa más tarde,<br>
+      Then el idioma seleccionado se mantiene en su preferencia.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<h2>LP04</h2>
+<table border="1" cellspacing="0" cellpadding="8" width="100%">
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>LP04</td>
+    <td>Visitante potencial</td>
+    <td>Alta</td>
+    <td>Llamada a la acción</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Descargar la aplicación móvil desde la landing page</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante interesado, quiero encontrar un botón de descarga en la landing page para descargar la aplicación móvil de Courtly desde App Store o Google Play.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Escenario 1: Botón de descarga visible</b><br>
+      Given que el visitante navega por la landing page,<br>
+      When busca la opción de descargar la aplicación,<br>
+      Then encuentra botones de descarga accesibles en el header y en la sección héroe.<br><br>
+      <b>Escenario 2: Enlaces funcionales a tiendas</b><br>
+      Given que el visitante hace clic en un botón de descarga,<br>
+      When selecciona su plataforma (iOS o Android),<br>
+      Then es redirigido a la tienda de aplicaciones correspondiente (App Store o Google Play).<br><br>
+      <b>Escenario 3: Redirección correcta según dispositivo</b><br>
+      Given que el visitante accede desde un dispositivo específico,<br>
+      When detecta la plataforma del dispositivo,<br>
+      Then sugiere la descarga desde la tienda correspondiente.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<h2>LP05</h2>
+<table border="1" cellspacing="0" cellpadding="8" width="100%">
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>LP05</td>
+    <td>Visitante potencial</td>
+    <td>Media</td>
+    <td>Confianza y credibilidad</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Ver testimonios de usuarios en la landing page</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero ver testimonios de usuarios reales que utilizan Courtly, para aumentar mi confianza sobre la calidad y utilidad de la aplicación.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Escenario 1: Sección de testimonios visible</b><br>
+      Given que el visitante navega a la sección de testimonios,<br>
+      When carga la página,<br>
+      Then se muestran al menos 3 testimonios con información del usuario (nombre, foto, experiencia).<br><br>
+      <b>Escenario 2: Contenido auténtico</b><br>
+      Given que se visualizan los testimonios,<br>
+      When el visitante lee cada uno,<br>
+      Then ve contenido específico sobre cómo Courtly ayudó al usuario en sus actividades deportivas.<br><br>
+      <b>Escenario 3: Navegación de testimonios</b><br>
+      Given que existen múltiples testimonios,<br>
+      When el visitante desea ver más,<br>
+      Then puede navegar entre testimonios usando botones de navegación o swipe en dispositivos móviles.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<h2>LP06</h2>
+<table border="1" cellspacing="0" cellpadding="8" width="100%">
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>LP06</td>
+    <td>Visitante potencial</td>
+    <td>Media</td>
+    <td>Transparencia corporativa</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Ver información del equipo de Courtly</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero conocer al equipo detrás de Courtly mediante la sección de equipo, para sentir confianza en los profesionales que desarrollan y mantienen la plataforma.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Escenario 1: Sección del equipo accesible</b><br>
+      Given que el visitante navega a la sección de equipo,<br>
+      When carga la información,<br>
+      Then se muestra una presentación clara del equipo con perfiles de miembros.<br><br>
+      <b>Escenario 2: Información de miembros del equipo</b><br>
+      Given que se visualiza la sección del equipo,<br>
+      When el visitante ve cada miembro,<br>
+      Then se muestra foto, nombre, rol/posición y una breve descripción de su experiencia.<br><br>
+      <b>Escenario 3: Perfil profesional</b><br>
+      Given que existen perfiles de equipo,<br>
+      When el visitante quiere conocer más sobre un miembro,<br>
+      Then puede acceder a enlaces a redes profesionales o conexiones relacionadas (si están disponibles).
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<h2>LP07</h2>
+<table border="1" cellspacing="0" cellpadding="8" width="100%">
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>LP07</td>
+    <td>Usuario/Visitante</td>
+    <td>Media</td>
+    <td>Cumplimiento legal</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Acceder a la política de privacidad desde la landing page</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario, quiero acceder a la política de privacidad de Courtly desde la landing page, para entender cómo se protege mi información personal.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Escenario 1: Enlace visible en el footer</b><br>
+      Given que el visitante se encuentra en cualquier parte de la landing page,<br>
+      When desplaza hacia el footer,<br>
+      Then encuentra un enlace claramente visible a la política de privacidad.<br><br>
+      <b>Escenario 2: Acceso al documento</b><br>
+      Given que el visitante hace clic en el enlace de política de privacidad,<br>
+      When confirma su selección,<br>
+      Then accede a una página con el contenido completo de la política de privacidad.<br><br>
+      <b>Escenario 3: Contenido actualizado</b><br>
+      Given que el visitante accede al documento,<br>
+      When lee la política,<br>
+      Then ve información clara y actualizada sobre privacidad, protección de datos y derechos del usuario.
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<h2>LP08</h2>
+<table border="1" cellspacing="0" cellpadding="8" width="100%">
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>LP08</td>
+    <td>Usuario/Visitante</td>
+    <td>Media</td>
+    <td>Cumplimiento legal</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Acceder a los términos de servicio desde la landing page</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario, quiero acceder a los términos de servicio de Courtly desde la landing page, para conocer las condiciones y obligaciones de usar la aplicación.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <b>Escenario 1: Enlace visible en el footer</b><br>
+      Given que el visitante se encuentra en cualquier parte de la landing page,<br>
+      When desplaza hacia el footer,<br>
+      Then encuentra un enlace claramente visible a los términos de servicio.<br><br>
+      <b>Escenario 2: Acceso al documento</b><br>
+      Given que el visitante hace clic en el enlace de términos de servicio,<br>
+      When confirma su selección,<br>
+      Then accede a una página con el contenido completo de los términos de servicio.<br><br>
+      <b>Escenario 3: Contenido completo y legible</b><br>
+      Given que el visitante accede al documento,<br>
+      When lee los términos,<br>
+      Then ve información clara sobre condiciones de uso, responsabilidades, limitaciones de liability y políticas de cancelación.
+    </td>
+  </tr>
+</table>
+
 ### 2.4.2. Impact Mapping
 
 <img src="assets/chapter2/Impact-Mapping.jpg" alt="Impact Mapping" width="700">
@@ -3626,6 +4004,54 @@ Para este proceso se siguieron los siguientes Steps (Pasos):
       <td>USM25</td>
       <td>Valorar a un entrenador después de una sesión completada</td>
       <td>2</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>LP01</td>
+      <td>Navegar por la landing page mediante el menú de navegación</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>LP02</td>
+      <td>Visualizar carousel de héroe con diferentes propuestas de valor</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>LP03</td>
+      <td>Cambiar el idioma de la landing page</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>LP04</td>
+      <td>Descargar la aplicación móvil desde la landing page</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>LP05</td>
+      <td>Ver testimonios de usuarios en la landing page</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>LP06</td>
+      <td>Ver información del equipo de Courtly</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>LP07</td>
+      <td>Acceder a la política de privacidad desde la landing page</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>LP08</td>
+      <td>Acceder a los términos de servicio desde la landing page</td>
+      <td>1</td>
     </tr>
   </table>
 </div>
@@ -8254,6 +8680,552 @@ Tabla `training_sessions`
 **Observaciones**
 
 El modelo relacional es consistente con el flujo de negocio del backend. No obstante, la prevencion de conflictos de horario y la gestion del estado de la disponibilidad se realiza principalmente desde la capa de aplicacion.
+
+# Capítulo III: Solution UI/UX Design
+
+## 3.1. Product design
+### 3.1.1. Style Guidelines
+#### 3.1.1.1. General Style Guidelines
+### 3.1.2. Information Architecture
+#### 3.1.2.1. Organization Systems
+#### 3.1.2.2. Labelling Systems
+#### 3.1.2.3. SEO Tags and Meta Tags
+#### 3.1.2.4. Searching Systems
+#### 3.1.2.5. Navigation Systems
+### 3.1.3. Landing Page UI Design
+#### 3.1.3.1. Landing Page Wireframe
+#### 3.1.3.2. Landing Page Mock-up
+
+### 3.1.4. Mobile Applications UX/UI Design
+
+En esta sección se presenta la propuesta de diseño UX/UI para la aplicación móvil Courtly, producto desarrollado por la startup Mova. La aplicación está orientada a facilitar la búsqueda y reserva de canchas deportivas, la contratación de entrenadores independientes, la organización de partidos y la gestión de pagos, reseñas y notificaciones desde un entorno móvil.
+
+La propuesta visual y de interacción se desarrolla considerando los dos segmentos objetivo definidos para el proyecto: deportistas aficionados y entrenadores independientes. Para los deportistas, la aplicación busca reducir la dificultad de encontrar canchas disponibles, realizar reservas confiables y organizar actividades deportivas de forma rápida. Para los entrenadores, la solución permite publicar disponibilidad, gestionar solicitudes de entrenamiento, revisar pagos y fortalecer su reputación profesional dentro de la plataforma.
+
+El diseño de la aplicación se encuentra alineado con los User Goals identificados en el Impact Mapping, tales como buscar canchas fácilmente, reservar y pagar rápidamente, participar en experiencias deportivas sociales, publicar disponibilidad, gestionar solicitudes y visualizar métricas. A partir de estos objetivos, se construyen los wireframes, wireflows, mock-ups, user flow diagrams y prototipos interactivos que permiten representar la experiencia completa del usuario en Courtly.
+
+#### 3.1.4.1. Mobile Applications Wireframes
+
+Los wireframes de Courtly representan la estructura inicial de las pantallas de la aplicación móvil. En esta etapa se prioriza la organización de la información, la ubicación de componentes, la jerarquía visual y la navegación básica entre pantallas, sin enfocarse todavía en colores, imágenes finales o detalles gráficos avanzados.
+
+Estos wireframes permiten validar que cada pantalla responda a los objetivos principales de los usuarios. Para el segmento de deportistas aficionados, se consideran pantallas relacionadas con el registro, inicio de sesión, búsqueda de canchas, detalle de cancha, creación de reserva, pago, partidos, reseñas, notificaciones y perfil. Para el segmento de entrenadores independientes, se incluyen pantallas orientadas a la publicación de disponibilidad, gestión de solicitudes, revisión de pagos, visualización de métricas, reseñas recibidas y edición del perfil profesional.
+
+La elaboración de estos wireframes toma como referencia los principios de diseño inclusivo, arquitectura de información y navegación simple, permitiendo que los usuarios puedan completar sus tareas principales con la menor fricción posible.
+
+**Wireframes del segmento Deportistas Aficionados**
+
+Login / Registro
+![](assets/mock-up/image%20copy%2018.png)
+
+Dashboard del deportista (Notificaciones)
+![](assets/mock-up/image%20copy%2019.png)
+
+Busqueda de Canchas (Detalle, reserva y pago)
+![](assets/mock-up/image%20copy%2020.png)
+
+Busqueda de entrenadores (Reseñas y Reserva)
+![](assets/mock-up/image%20copy%2021.png)
+
+Busqueda y creacion de partidos
+![](assets/mock-up/image%20copy%2022.png)
+
+**Wireframes del segmento Entrenadores Independientes**
+
+Login / Registro
+![](assets/mock-up/image%20copy%2023.png)
+
+Dashboard del entrenador
+![](assets/mock-up/image%20copy%2024.png)
+
+Disponibilidad del entrenador
+![](assets/mock-up/image%20copy%2025.png)
+
+Solicitudes de entrenamiento
+![](assets/mock-up/image%20copy%2026.png)
+
+Pagos recibidos
+![](assets/mock-up/image%20copy%2028.png)
+
+Métricas del entrenador
+![](assets/mock-up/image%20copy%2027.png)
+
+Reseñas recibidas
+![](assets/mock-up/image%20copy%2028.png)
+
+Perfil profesional
+![](assets/mock-up/image%20copy%2029.png)
+
+#### 3.1.4.2. Mobile Applications Wireflow Diagrams
+
+Los wireflow diagrams representan la conexión entre los wireframes de la aplicación móvil. A diferencia de los wireframes individuales, los wireflows permiten visualizar cómo el usuario avanza de una pantalla a otra para cumplir un objetivo específico dentro de Courtly.
+
+Cada wireflow fue desarrollado a partir de los User Goals definidos en el Impact Mapping. Esto permite asegurar que los flujos respondan a necesidades reales de los segmentos objetivo y que exista coherencia entre las pantallas, las acciones del usuario y los módulos funcionales de la aplicación.
+
+Para el segmento de deportistas aficionados, se consideran flujos como búsqueda y reserva de cancha, pago de reserva, creación o unión a partidos, valoración de servicios y gestión del perfil. Para el segmento de entrenadores independientes, se consideran flujos como publicación de disponibilidad, gestión de solicitudes de entrenamiento, visualización de pagos, revisión de métricas y fortalecimiento de reputación mediante reseñas.
+
+**Wireflow 1: Registro e inicio de sesión**
+
+Este wireflow muestra el proceso mediante el cual un usuario accede a Courtly, ya sea registrando una nueva cuenta o iniciando sesión con una cuenta existente. Este flujo es necesario para permitir el acceso a funcionalidades personalizadas como reservas, pagos, perfil, notificaciones y gestión de sesiones.
+
+![](assets/mock-up/image%20copy%2030.png)
+
+**Wireflow 2: Búsqueda y reserva de cancha**
+
+Este wireflow representa el recorrido del deportista aficionado para buscar una cancha disponible, aplicar filtros, revisar el detalle del servicio, seleccionar fecha y horario, crear la reserva y continuar con el proceso de pago. Este flujo responde al User Goal de buscar canchas fácilmente y reservar de manera rápida.
+
+![](assets/mock-up/image%20copy%2032.png)
+
+**Wireflow 3: Pago de reserva**
+
+Este wireflow muestra el proceso de pago dentro de la aplicación. El usuario revisa el resumen de la reserva, selecciona un método de pago, confirma la operación y recibe la confirmación correspondiente. 
+
+![](assets/mock-up/image%20copy%2033.png)
+
+**Wireflow 4: Crear o unirse a un partido**
+
+Este wireflow representa el flujo social de la aplicación, donde el deportista puede crear un partido, definir cancha, fecha, hora e invitar a otros jugadores. Asimismo, contempla la posibilidad de unirse a un partido disponible creado por otro usuario.
+
+![](assets/mock-up/image%20copy%2034.png)
+
+**Wireflow 5: Publicar disponibilidad del entrenador**
+
+Este wireflow muestra cómo el entrenador independiente publica sus horarios disponibles dentro de la plataforma. El flujo inicia desde el dashboard del entrenador, continúa con la selección de días y horarios, y finaliza con la disponibilidad publicada para que los deportistas puedan solicitar sesiones.
+
+![](assets/mock-up/image%20copy%2025.png)
+
+**Wireflow 6: Gestionar solicitudes de entrenamiento**
+
+Este wireflow representa el proceso mediante el cual el entrenador revisa solicitudes recibidas, acepta o rechaza una sesión, y actualiza el estado de la reserva. Este flujo es importante porque permite organizar la relación entre deportista y entrenador dentro de Courtly.
+
+
+#### 3.1.4.3. Mobile Applications Mock-ups
+
+Los mock-ups de Courtly representan la versión visual de alta fidelidad de la aplicación móvil. A diferencia de los wireframes, en esta etapa se incorporan los elementos gráficos finales, como colores, tipografía, botones, cards, imágenes, formularios, iconografía, espaciado y estilos visuales definidos para la identidad del producto.
+
+La propuesta visual busca transmitir una experiencia moderna, clara y confiable. Para ello, se utilizan componentes visuales orientados a facilitar la toma de decisiones del usuario, como tarjetas de canchas, filtros de búsqueda, botones de acción principal, estados de reserva, confirmaciones de pago, reseñas y paneles informativos para entrenadores.
+
+En el caso del segmento de deportistas aficionados, los mock-ups permiten visualizar el proceso completo de búsqueda, reserva, pago y participación en actividades deportivas. En el caso de los entrenadores independientes, los mock-ups muestran herramientas para gestionar disponibilidad, solicitudes, pagos, métricas y reputación profesional.
+
+**Mock-ups del segmento Deportistas Aficionados**
+
+Login / Registro
+![](assets/mock-up/image%20copy.png)
+
+Dashboard del deportista (Notificaciones)
+![](assets/mock-up/image%20copy%202.png)
+
+Busqueda de Canchas (Detalle, reserva y pago)
+![](assets/mock-up/image%20copy%203.png)
+
+Busqueda de entrenadores (Reseñas y Reserva)
+![](assets/mock-up/image%20copy%204.png)
+
+Busqueda y creacion de partidos
+![](assets/mock-up/image%20copy%205.png)
+
+**Mock-ups del segmento Entrenadores Independientes**
+
+Login / Registro
+![](assets/mock-up/image%20copy%206.png)
+
+Dashboard del entrenador
+![](assets/mock-up/image%20copy%207.png)
+
+Disponibilidad del entrenador
+![](assets/mock-up/image%20copy%208.png)
+
+Solicitudes de entrenamiento
+![](assets/mock-up/image%20copy%209.png)
+
+Pagos recibidos
+![](assets/mock-up/image%20copy%2011.png)
+
+Métricas del entrenador
+![](assets/mock-up/image%20copy%2010.png)
+
+Reseñas recibidas
+![](assets/mock-up/image%20copy%2012.png)
+
+Perfil profesional
+![](assets/mock-up/image%20copy%2013.png)
+
+Los mock-ups evidencian la aplicación de principios de diseño inclusivo, ya que presentan una navegación clara, etiquetas comprensibles, botones visibles, agrupación lógica de información y retroalimentación visual para acciones importantes como reservar, pagar, publicar disponibilidad o aceptar una solicitud.
+
+#### 3.1.4.4. Mobile Applications User Flow Diagrams
+
+Los User Flow Diagrams presentan la secuencia lógica de acciones y decisiones que realiza el usuario para completar un objetivo dentro de Courtly. Estos diagramas se desarrollan a partir de los User Goals del Impact Mapping y son consistentes con los wireflows y mock-ups previamente presentados.
+
+Cada User Flow considera la ruta esperada o happy path, así como rutas alternativas o unhappy paths, relacionadas con situaciones como falta de disponibilidad, errores de validación, pago rechazado, usuario no autenticado o solicitudes rechazadas. Esto permite representar de forma más completa la experiencia real del usuario dentro de la aplicación.
+
+**User Flow 1: Reservar una cancha**
+
+Este flujo representa el proceso que sigue un deportista aficionado para encontrar una cancha disponible y realizar una reserva. El usuario inicia sesión, accede al módulo de búsqueda, aplica filtros, revisa el detalle de la cancha, selecciona fecha y horario, confirma la reserva y realiza el pago.
+
+**Happy path**:
+Inicio → Iniciar sesión → Buscar cancha → Aplicar filtros → Ver detalle de cancha → Seleccionar horario → Crear reserva → Pagar → Reserva confirmada.
+
+**Unhappy paths**:
+Si no hay disponibilidad, el usuario modifica los filtros.
+Si el pago es rechazado, el usuario selecciona otro método de pago.
+Si faltan datos, el sistema solicita completar la información requerida.
+
+![](assets/mock-up/image%20copy%214.png)
+
+**User Flow 2**: Crear o unirse a un partido
+
+Este flujo representa la experiencia social del deportista dentro de Courtly. El usuario puede crear un partido, definir los datos principales e invitar jugadores, o también unirse a un partido disponible creado por otro usuario.
+
+**Happy path**:
+Inicio → Acceder a partidos → Crear partido → Completar datos → Invitar jugadores → Confirmar partido creado.
+
+**Unhappy paths**:
+Si faltan datos obligatorios, el sistema muestra una validación.
+Si no se invitan jugadores, el usuario puede guardar el partido sin invitaciones.
+Si el partido ya no tiene cupos, el sistema informa que no es posible unirse.
+
+![](assets/mock-up/image%20copy%215.png)
+
+**User Flow 3**: Solicitar una sesión con entrenador
+
+Este flujo muestra cómo el deportista puede revisar entrenadores disponibles, consultar su perfil, seleccionar un horario y enviar una solicitud de entrenamiento.
+
+**Happy path**:
+Inicio → Ver entrenadores → Seleccionar entrenador → Revisar perfil y disponibilidad → Elegir horario → Enviar solicitud → Solicitud registrada.
+
+**Unhappy paths**:
+Si el entrenador no tiene disponibilidad, el usuario vuelve a la lista de entrenadores.
+Si la cancha seleccionada no está disponible, el sistema solicita elegir otra opción.
+Si ocurre un error en la solicitud, el usuario puede reintentar.
+
+![](assets/mock-up/image%20copy%216.png)
+
+**User Flow 4: Publicar disponibilidad como entrenador**
+
+Este flujo representa el proceso mediante el cual el entrenador independiente publica sus horarios disponibles en la plataforma para recibir solicitudes de entrenamiento.
+
+**Happy path**:
+Inicio → Iniciar sesión como entrenador → Ir a disponibilidad → Seleccionar día y horario → Guardar disponibilidad → Disponibilidad publicada.
+
+**Unhappy paths**:
+Si faltan datos, el sistema solicita completar la información.
+Si el entrenador cancela la acción, vuelve al dashboard.
+
+![](assets/mock-up/image%20copy%208.png)
+
+**User Flow 5: Gestionar solicitud de entrenamiento**
+
+Este flujo muestra cómo el entrenador revisa y gestiona solicitudes recibidas. El entrenador puede aceptar, rechazar o completar una sesión, actualizando el estado correspondiente dentro de la aplicación.
+
+**Happy path**:
+Inicio → Dashboard entrenador → Ver solicitudes → Seleccionar solicitud → Aceptar sesión → Sesión confirmada → Completar sesión.
+
+**Unhappy paths**:
+Si el entrenador rechaza la solicitud, el sistema notifica al deportista.
+Si la sesión es cancelada, el estado se actualiza en la aplicación.
+Si ocurre un error al actualizar, el sistema permite reintentar la acción.
+
+![](assets/mock-up/image%20copy%217.png)
+
+#### 3.1.4.5. Mobile Applications Prototyping
+
+En esta sección se presenta el prototipo interactivo de Courtly, desarrollado con el objetivo de simular la navegación y la interacción del usuario dentro de la aplicación móvil. El prototipo permite validar que las pantallas diseñadas respondan correctamente a los User Goals definidos y que los principales flujos puedan completarse de manera clara y ordenada.
+
+El prototipo incluye funcionalidades representativas para los dos segmentos objetivo. En el caso de los deportistas aficionados, se simulan flujos como registro, inicio de sesión, búsqueda de canchas, reserva, pago, creación de partidos, solicitud de entrenadores, reseñas y notificaciones. En el caso de los entrenadores independientes, se simulan flujos como publicación de disponibilidad, gestión de solicitudes, revisión de pagos, consulta de métricas y visualización de reseñas.
+
+Las decisiones de interacción se basan en criterios de simplicidad, navegación directa, reducción de pasos innecesarios, claridad en las acciones principales y consistencia entre pantallas. Además, se busca que cada flujo entregue retroalimentación al usuario, especialmente en acciones críticas como confirmar una reserva, realizar un pago, aceptar una solicitud o publicar disponibilidad.
+
+Herramienta utilizada para el prototipo: HTML, CSS y JavaScript 
+
+Enlace al prototipo interactivo: https://aplicaciones-moviles-3248.github.io/mock-up/
+
+**Captura del prototipo**
+
+![](assets/chapter2/movil-prototyping.png)
+
+**Video demostrativo del prototipo**
+
+Como evidencia de la interacción y navegación, se incluye un video demostrativo donde se recorren los principales flujos de la aplicación. Este video muestra cómo un deportista puede buscar y reservar una cancha, realizar un pago y participar en actividades deportivas, así como la forma en que un entrenador puede publicar disponibilidad y gestionar solicitudes de entrenamiento.
+
+Enlace del video en Microsoft Stream: 
+
+Screenshot del video demostrativo: 
+
+Flujos demostrados en el video:
+
+- Registro e inicio de sesión.
+- Búsqueda y reserva de cancha.
+- Pago de reserva.
+- Creación o unión a partido.
+- Solicitud de sesión con entrenador.
+- Publicación de disponibilidad del entrenador.
+- Gestión de solicitudes de entrenamiento.
+- Visualización de pagos, métricas y reseñas.
+
+# Capítulo IV: Product Implementation & Validation
+
+## 4.1. Software Configuration Management
+### 4.1.1. Software Development Environment Configuration
+### 4.1.2. Source Code Management
+### 4.1.3. Source Code Style Guide & Conventions
+### 4.1.4. Software Deployment Configuration
+## 4.2. Landing Page & Mobile Application Implementation
+### 4.2.1. Sprint 1
+#### 4.2.1.1. Sprint Planning 1
+
+<div>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <td align="left" "><strong>Sprint #</strong></td>
+      <td align="left">Sprint 1</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint Planning Background</strong></td>
+      <td align="left">Despliegue e implementación de Landing Page de Courtly</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Date</strong></td>
+      <td align="left">2026-05-13</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Time</strong></td>
+      <td align="left">10:00 AM - 12:00 PM</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Location</strong></td>
+      <td align="left">Sala de reuniones virtual - Discord</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Prepared By</strong></td>
+      <td align="left">Camilla Espinoza, Équipo de Producto</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Attendees (to planning meeting)</strong></td>
+      <td align="left">Camilla Espinoza, Juan Carlos Angulo, Eduardo Chacaliaza, Fabricio Quispe, Pedro Nanfuñay</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint 0 - 1 Review Summary</strong></td>
+      <td align="left">Análisis completo de requerimientos de landing page finalizado. Definición de 8 user stories con criterios de aceptación. Product Backlog priorizado y validado. Preparación técnica completada con stack definido (HTML5, CSS3, JavaScript).</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>Sprint 0 - 1 Retrospective Summary</strong></td>
+      <td align="left">Fortalezas: Colaboración efectiva, alineación de objetivos. Oportunidades: Automatizar testing responsive, crear componentes reutilizables. Acciones: Implementar testing suite, establecer guía de estilo, mejorar documentación técnica.</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint Goal & User Stories</strong></td>
+      <td align="left"></td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint 1 Goal</strong></td>
+      <td align="left">Desplegar Landing Page de Courtly con navegación responsiva, soporte multiidioma, carousel interactivo y CTA optimizadas. Garantizar experiencia fluida en desktop/móviles, documentación legal completa y accesibilidad WCAG 2.1 AA.</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint 1 Velocity</strong></td>
+      <td align="left">20 Story Points (capacidad del sprint basada en histórico del equipo y disponibilidad de recursos)</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>Sum of Story Points</strong></td>
+      <td align="left">16 Story Points (LP01: 2 + LP02: 3 + LP03: 2 + LP04: 2 + LP05: 3 + LP06: 2 + LP07: 1 + LP08: 1)</td>
+    </tr>
+  </table>
+</div>
+
+#### 4.2.1.2. Sprint Backlog 1
+
+<div>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <td align="center" colspan="8" ><strong>Sprint #</strong></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="8" >Sprint 1</td>
+    </tr>
+    <tr>
+      <td align="center" colspan="4" ><strong>User Story</strong></td>
+      <td align="center" colspan="4" <strong>Work-Item / Task</strong></td>
+    </tr>
+    <tr>
+      <th  text-align: center;">Id</th>
+      <th >Title</th>
+      <th  text-align: center;">Id</th>
+      <th >Title</th>
+      <th >Description</th>
+      <th  text-align: center;">Estimation (Hours)</th>
+      <th ">Assigned To</th>
+      <th  text-align: center;">Status</th>
+    </tr>
+    <tr>
+      <td align="center">LP01</td>
+      <td>Navegar por la landing page mediante el menú de navegación</td>
+      <td align="center">T-01</td>
+      <td>Implementar componente de navegación responsiva</td>
+      <td>Desarrollar barra de navegación con soporte para dispositivos móviles y escritorio, incluyendo menú hamburguesa y transiciones suaves.</td>
+      <td align="center">6</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">LP01</td>
+      <td>Navegar por la landing page mediante el menú de navegación</td>
+      <td align="center">T-02</td>
+      <td>Integrar smooth scrolling entre secciones</td>
+      <td>Agregar funcionalidad de desplazamiento suave a las secciones principales (Inicio, Características, Beneficios, Equipo, Testimonios).</td>
+      <td align="center">4</td>
+      <td>Pedro Nanfuñay</td>
+      <td align="center">To-Review</td>
+    </tr>
+    <tr>
+      <td align="center">LP02</td>
+      <td>Visualizar carousel de héroe con diferentes propuestas de valor</td>
+      <td align="center">T-03</td>
+      <td>Crear carousel de secciones héroe</td>
+      <td>Implementar carousel con múltiples slides (jugadores/entrenadores) con controles de navegación y transiciones automáticas.</td>
+      <td align="center">8</td>
+      <td>Camilla Espinoza</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">LP02</td>
+      <td>Visualizar carousel de héroe con diferentes propuestas de valor</td>
+      <td align="center">T-04</td>
+      <td>Agregar imágenes y contenido a slides</td>
+      <td>Integrar imágenes, títulos, descripciones y botones CTA específicos para cada persona (jugador/entrenador).</td>
+      <td align="center">4</td>
+      <td>Fabricio Quispe</td>
+      <td align="center">To-Review</td>
+    </tr>
+    <tr>
+      <td align="center">LP03</td>
+      <td>Cambiar el idioma de la landing page</td>
+      <td align="center">T-05</td>
+      <td>Implementar sistema de cambio de idioma</td>
+      <td>Desarrollar selector de idioma (ES/EN) en header con soporte para enrutamiento dinámico de contenido según idioma seleccionado.</td>
+      <td align="center">6</td>
+      <td>Eduardo Chacaliaza</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">LP03</td>
+      <td>Cambiar el idioma de la landing page</td>
+      <td align="center">T-06</td>
+      <td>Persistir preferencia de idioma</td>
+      <td>Guardar selección de idioma en localStorage para mantener preferencia en futuras visitas del usuario.</td>
+      <td align="center">3</td>
+      <td>Pedro Nanfuñay</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">LP04</td>
+      <td>Descargar la aplicación móvil desde la landing page</td>
+      <td align="center">T-07</td>
+      <td>Crear botones de descarga en header y sección héroe</td>
+      <td>Integrar botones "Descargar" en header y sección héroe con enlaces a App Store y Google Play según SO detectado.</td>
+      <td align="center">4</td>
+      <td>Camilla Espinoza</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">LP04</td>
+      <td>Descargar la aplicación móvil desde la landing page</td>
+      <td align="center">T-08</td>
+      <td>Validar redirecciones a tiendas de apps</td>
+      <td>Probar y validar que los enlaces redirigen correctamente a App Store y Google Play según el dispositivo detectado.</td>
+      <td align="center">2</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">LP05</td>
+      <td>Ver testimonios de usuarios en la landing page</td>
+      <td align="center">T-09</td>
+      <td>Crear sección de testimonios con carousel</td>
+      <td>Implementar sección de testimonios con carousel responsive mostrando foto, nombre, rol y testimonial de usuarios.</td>
+      <td align="center">8</td>
+      <td>Fabricio Quispe</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">LP05</td>
+      <td>Ver testimonios de usuarios en la landing page</td>
+      <td align="center">T-10</td>
+      <td>Agregar contenido de testimonios</td>
+      <td>Integrar datos de testimonios (mínimo 3) con información auténtica de usuarios y experiencias con Courtly.</td>
+      <td align="center">3</td>
+      <td>Eduardo Chacaliaza</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">LP06</td>
+      <td>Ver información del equipo de Courtly</td>
+      <td align="center">T-11</td>
+      <td>Diseñar sección de equipo con perfiles</td>
+      <td>Crear sección de equipo mostrando foto, nombre, rol y descripción profesional de cada miembro del equipo Mova.</td>
+      <td align="center">6</td>
+      <td>Pedro Nanfuñay</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">LP06</td>
+      <td>Ver información del equipo de Courtly</td>
+      <td align="center">T-12</td>
+      <td>Integrar links a redes profesionales</td>
+      <td>Agregar enlaces a LinkedIn u otros perfiles profesionales de miembros del equipo si están disponibles.</td>
+      <td align="center">2</td>
+      <td>Camilla Espinoza</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">LP07</td>
+      <td>Acceder a la política de privacidad desde la landing page</td>
+      <td align="center">T-13</td>
+      <td>Crear enlace a página de privacidad en footer</td>
+      <td>Agregar link en footer a página de política de privacidad con redirección a documento completo.</td>
+      <td align="center">2</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">LP07</td>
+      <td>Acceder a la política de privacidad desde la landing page</td>
+      <td align="center">T-14</td>
+      <td>Validar contenido y estructura de documento</td>
+      <td>Revisar que la página de privacidad contenga información clara y actualizada sobre protección de datos.</td>
+      <td align="center">1</td>
+      <td>Eduardo Chacaliaza</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">LP08</td>
+      <td>Acceder a los términos de servicio desde la landing page</td>
+      <td align="center">T-15</td>
+      <td>Crear enlace a página de términos en footer</td>
+      <td>Agregar link en footer a página de términos de servicio con redirección a documento completo.</td>
+      <td align="center">2</td>
+      <td>Fabricio Quispe</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">LP08</td>
+      <td>Acceder a los términos de servicio desde la landing page</td>
+      <td align="center">T-16</td>
+      <td>Validar contenido y estructura de documento</td>
+      <td>Revisar que la página de términos contenga información completa sobre condiciones de uso y limitaciones.</td>
+      <td align="center">1</td>
+      <td>Pedro Nanfuñay</td>
+      <td align="center">Todo</td>
+    </tr>
+  </table>
+</div>
+
+#### 4.2.1.3. Development Evidence for Sprint Review
+#### 4.2.1.4. Testing Suite Evidence for Sprint Review
+#### 4.2.1.5. Execution Evidence for Sprint Review
+#### 4.2.1.6. Services Documentation Evidence for Sprint Review
+#### 4.2.1.7. Software Deployment Evidence for Sprint Review
+#### 4.2.1.8. Team Collaboration Insights during Sprint
+## 4.3. Validation Interviews
+### 4.3.1. Diseño de Entrevistas
+### 4.3.2. Registro de Entrevistas
+### 4.3.3. Evaluaciones según heurísticas
 
 ## Conclusiones y recomendaciones.
 
