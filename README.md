@@ -10439,6 +10439,45 @@ En este primer Sprint se ha desarrollado la implementación de la Landing Page y
 | Aplicaciones-Moviles-3248/backend | feature/reglas-negocio | 48d2373 | Refactor backend business flows, harden security, and stabilize local/test setup | refactor the business flows in backend | 10/05/2026 |
 
 
+#### 4.2.1.4. Testing Suite Evidence for Sprint Review
+
+En esta sección se presenta el conjunto de pruebas automatizadas desarrolladas para validar el Web Services de Courtly. Estas pruebas fueron organizadas en tres niveles: Unit Tests, Integration Tests y Acceptance Tests bajo enfoque BDD. El objetivo fue asegurar la correcta implementación de comportamientos clave relacionados con autenticación, gestión de canchas, reservas y notificaciones, acorde a los User Stories definidos para el sprint.
+
+**Unit Test:** <br>
+Los **Unit Test** validan el comportamiento interno de clases de dominio y servicios aislados. Para ello se emplearon JUnit 5 y Mockito, permitiendo verificar reglas de negocio, creación de objetos, actualizaciones de estado y resolución de dependencias sin necesidad de levantar el contexto completo de la aplicación.
+
+Se implementaron pruebas para la clase `Metric`, verificando la correcta creación y actualización de métricas del sistema; pruebas para la clase `Booking`, validando los cambios de estado de una reserva (confirmada, cancelada y completada); y pruebas para `UserDetailsServiceImpl`, asegurando la correcta carga de usuarios autenticados y el manejo de excepciones cuando el usuario no existe. Estas pruebas se relacionan principalmente con las User Stories de autenticación y gestión de reservas, permitiendo validar la lógica de negocio de forma aislada.
+
+
+**Integration Test:** <br>
+Los **Integration Tests** validan el funcionamiento de los controladores REST y su interacción con los servicios del dominio, asegurando respuestas correctas para los principales endpoints expuestos por el backend.
+
+Se implementaron pruebas de integración para `AuthenticationController`, validando los endpoints de registro e inicio de sesión; para `CourtsController`, comprobando operaciones CRUD relacionadas con las canchas; para `BookingsController`, validando la creación, consulta y cancelación de reservas; y para `NotificationsController`, verificando la recuperación de notificaciones y el conteo de mensajes no leídos. Estas pruebas permitieron asegurar el correcto funcionamiento de los Web Services expuestos por la API y su integración con las diferentes capas del sistema.
+
+
+**Acceptance Test:** <br>
+Finalmente, los **Acceptance Tests** se implementaron bajo BDD utilizando Cucumber y el lenguaje Gherkin. En cada archivo .feature se presentan escenarios de negocio asociados a User Stories específicas del sprint. Los archivos Steps contienen la lógica de automatización y la ejecución de las peticiones sobre la API. Con ello se logra una validación funcional del sistema desde la perspectiva del usuario final.
+
+En el archivo `authentication.feature` se valida los procesos de registro e inicio de sesión de usuarios (USM01, USM02); `courts.feature` verifica la creación y consulta de canchas (USM03, USM04); `bookings.feature` valida la creación, consulta y cancelación de reservas (USM06, USM20); mientras que `notifications.feature` comprueba la recuperación de notificaciones y el conteo de notificaciones no leídas (USM18, USM19).
+
+
+A continuación, se presentan los commits relacionados al desarrollo de los tests del sprint:
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+| Aplicaciones-Moviles-3248/backend | feature/unit-tests | 0a61358 | feat(unit-tests): add unit tests for metric aggregate. | Implemented unit tests for metric aggregate of analytics bounded context | 12/05/2026 |
+| Aplicaciones-Moviles-3248/backend | feature/unit-tests | 8378d14 | feat(unit-tests): add unit tests for user details service implement. | Implemented unit tests for user details service implement of iam bounded context | 12/05/2026 |
+| Aplicaciones-Moviles-3248/backend | feature/unit-tests | 33edd2a | feat(unit-tests): add unit tests for booking. | Implemented unit tests for boooking of bookings bounded context | 12/05/2026 |
+| Aplicaciones-Moviles-3248/backend | feature/integration-tests | f60d193 | feat(integration-tests): add integration tests for authentication service. | Implemented integration tests for authentication service of iam bounded context | 12/05/2026 |
+| Aplicaciones-Moviles-3248/backend | feature/integration-tests | b01f080 | feat(integration-tests): add integration tests for court service. | Implemented integration tests for court service of courts bounded context | 12/05/2026 |
+| Aplicaciones-Moviles-3248/backend | feature/integration-tests | 4535952 | feat(integration-tests): add integration tests for booking service. | Implemented integration tests for booking service of bookings bounded context | 12/05/2026 |
+| Aplicaciones-Moviles-3248/backend | feature/integration-tests | 87788d3 | feat(integration-tests): add integration tests for notification service. | Implemented integration tests for notification service of notifications bounded context | 12/05/2026 |
+| Aplicaciones-Moviles-3248/backend | feature/acceptance-tests | b11724a | feat(acceptance-tests): add acceptance tests for iam bounded context. | Implemented acceptance tests for iam bounded context | 12/05/2026 |
+| Aplicaciones-Moviles-3248/backend | feature/acceptance-tests | 1cef226 | feat(acceptance-tests): add acceptance tests for courts bounded context. | Implemented acceptance tests for courts bounded context | 12/05/2026 |
+| Aplicaciones-Moviles-3248/backend | feature/acceptance-tests | 14662d0 | feat(acceptance-tests): add acceptance tests for bookings bounded context. | Implemented acceptance tests for bookings bounded context | 12/05/2026 |
+| Aplicaciones-Moviles-3248/backend | feature/acceptance-tests | 50df461 | feat(acceptance-tests): add acceptance tests for notifications bounded context. | Implemented acceptance tests for notifications bounded context | 12/05/2026 |
+
+
 # Conclusiones
 
 ## Conclusiones y recomendaciones.
