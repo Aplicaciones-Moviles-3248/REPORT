@@ -9380,10 +9380,6 @@ Este wireflow muestra cómo el entrenador independiente publica sus horarios dis
 
 ![](assets/mock-up/image%20copy%2025.png)
 
-**Wireflow 6: Gestionar solicitudes de entrenamiento**
-
-Este wireflow representa el proceso mediante el cual el entrenador revisa solicitudes recibidas, acepta o rechaza una sesión, y actualiza el estado de la reserva. Este flujo es importante porque permite organizar la relación entre deportista y entrenador dentro de Courtly.
-
 
 #### 3.1.4.3. Mobile Applications Mock-ups
 
@@ -12086,3 +12082,5 @@ Anexo09. Repositorio del backend [**link**](https://github.com/Aplicaciones-Movi
 Anexo10. Backend desplegado [**link**](https://courtly-backend.onrender.com/swagger-ui/index.html)
 
 Anexo11. Video About the team [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCehaxPFdq9Tr-SZ-dhRXu_Ab0iCW2NektCLVhA-cATWJ4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dgp9us)
+
+Anexo12. Video de exposición TB1 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCjxmBE5rnfRpADFcymHqkcAc0T7Rfc3Hh1zZOrVR57EJw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=U74yWE)
