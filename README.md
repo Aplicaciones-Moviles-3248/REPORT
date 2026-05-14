@@ -11938,6 +11938,21 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
 13. La documentación generada durante el proyecto contribuye a la trazabilidad del desarrollo, facilitando futuras mejoras y mantenimiento del sistema.
 14. El trabajo en equipo evidenció la importancia de la comunicación constante y la distribución adecuada de responsabilidades para lograr resultados eficientes.
 15. En conjunto, el proyecto demuestra la aplicación práctica de conocimientos académicos en un contexto real, fortaleciendo competencias técnicas y profesionales en el desarrollo de soluciones de software.
+16. El desarrollo del proyecto COURTLY permitió integrar conceptos clave de ingeniería de software, combinando enfoques ágiles y prácticas de diseño orientado a dominios (DDD), lo que facilitó la organización del sistema en bounded contexts bien definidos.
+17. La aplicación del Impact Mapping evidenció una correcta alineación entre los objetivos del negocio, las necesidades de los usuarios y las funcionalidades del sistema.
+18. La definición estructurada de User Stories permitió capturar de manera efectiva los requerimientos funcionales, facilitando la priorización del Product Backlog.
+19. La arquitectura basada en capas (domain, application, infrastructure e interface) contribuyó a mantener una separación clara de responsabilidades, mejorando la mantenibilidad y escalabilidad.
+20. La implementación de múltiples bounded contexts permitió desacoplar las responsabilidades del sistema, reduciendo la complejidad.
+21. El uso de diagramas C4 facilitó la visualización de la arquitectura del sistema.
+22. La incorporación de prácticas de modelado como UML y ERD fortaleció la definición técnica del sistema.
+23. El enfoque en la experiencia del usuario, mediante entrevistas, empatía y journey mapping, permitió diseñar una solución centrada en necesidades reales.
+24. La separación entre autenticación (IAM) y perfil de usuario (Users) demostró una buena práctica de diseño.
+25. La estructuración del backend como un conjunto de módulos homogéneos facilita la extensibilidad del sistema.
+26. El uso de herramientas colaborativas como Jira y Teams permitió una adecuada gestión de tareas.
+27. La definición de un MVP claro permitió enfocar los esfuerzos del equipo en funcionalidades clave.
+28. La documentación generada durante el proyecto contribuye a la trazabilidad del desarrollo.
+29. El trabajo en equipo evidenció la importancia de la comunicación constante y la distribución adecuada de responsabilidades.
+30. El proyecto demuestra la aplicación práctica de conocimientos académicos en un contexto real.
 
 ### Recomendaciones
 
@@ -11956,7 +11971,21 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
 13. Se recomienda mantener una estandarización en la estructura de los bounded contexts para facilitar el desarrollo futuro por parte de nuevos integrantes.
 14. Es importante continuar fortaleciendo las habilidades técnicas del equipo en áreas como arquitectura de software, cloud computing y desarrollo móvil.
 15. Finalmente, se recomienda realizar iteraciones continuas del producto, incorporando nuevas funcionalidades basadas en métricas de uso y necesidades del mercado.
-
+16. Continuar con la evolución hacia una arquitectura más desacoplada, considerando microservicios en futuras iteraciones.
+17. Implementar mecanismos de seguridad más robustos, como control de acceso basado en roles (RBAC).
+18. Mejorar la integración entre bounded contexts mediante eventos de dominio o APIs bien definidas.
+19. Incorporar pruebas automatizadas (unitarias e integradas).
+20. Optimizar el modelo de datos, especialmente en payments y bookings.
+21. Implementar monitoreo y logging centralizado.
+22. Mejorar la experiencia del usuario mediante pruebas de usabilidad.
+23. Documentar de manera más detallada las APIs mediante Swagger/OpenAPI.
+24. Evaluar el uso de servicios en la nube para el despliegue.
+25. Fortalecer la gestión del backlog, priorizando funcionalidades por valor de negocio.
+26. Mejorar la gestión de estados en procesos clave como reservas y pagos.
+27. Implementar mecanismos de cache para mejorar rendimiento.
+28. Mantener una estandarización en la estructura de los bounded contexts.
+29. Continuar fortaleciendo las habilidades técnicas del equipo.
+30. Realizar iteraciones continuas del producto, incorporando nuevas funcionalidades basadas en métricas de uso.
 
 ## Video App Validation
 ## Video About the product
