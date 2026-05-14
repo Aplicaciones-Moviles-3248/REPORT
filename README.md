@@ -153,7 +153,7 @@ INGENIERÍA DE SOFTWARE
 </tr>
 
 <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;">TP</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">TB1</td>
     <td style="border: 1px solid #ddd; padding: 8px;">13/05/2026</td>
     <td style="border: 1px solid #ddd; padding: 8px;">
       <ul>
@@ -169,7 +169,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
   <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;">TP</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">TB1</td>
     <td style="border: 1px solid #ddd; padding: 8px;">13/05/2026</td>
     <td style="border: 1px solid #ddd; padding: 8px;">
       <ul>
@@ -506,9 +506,9 @@ INGENIERÍA DE SOFTWARE
 
 </table>
 
-<h2>TP</h2>
+<h2>TB1</h2>
 
-<p>Para el desarrollo del informe perteneciente a la entrega TP, se dividió la implementación de secciones del Capítulo III y IV en bloques de trabajo, asignando cada conjunto de secciones a un integrante del equipo.</p>
+<p>Para el desarrollo del informe perteneciente a la entrega TB1, se dividió la implementación de secciones del Capítulo III y IV en bloques de trabajo, asignando cada conjunto de secciones a un integrante del equipo.</p>
 
 <p align="center">
   <img src="assets/chapter4/image.png" alt="Logo UPC" width="500">
@@ -834,8 +834,8 @@ INGENIERÍA DE SOFTWARE
                 <br><strong>Pedro Jesús Nanfuñay Liza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, apliqué y actualicé mis conocimientos en el proceso de creación de elementos needfinding, tales como los User Persona, User Journey Mapping, Empathy Mapping, entre otros. Así como en el proceso de Big Picture EventStorming, e identificación y desarrollo de bounded context relacionados al negocio como payments y matches, a partir de sus respectivas capas, junto con sus diagramas de arquitectura y diagramas de código.<br>
-                TP:<br>
-                Durante el desarrollo del TP, apliqué y actualicé mis conocimientos relacionados con el desarrollo del backend e implementación de pruebas de software para la automatización y validación de servicios REST. Pude reforzar conceptos vinculados al diseño e implementación de Unit Tests, Integration Tests y Acceptance Tests bajo el enfoque BDD, así como el uso de herramientas como JUnit, Mockito y Cucumber; asegurando una mejor comprensión de la calidad del software y de las prácticas necesarias para construir soluciones más confiables y mantenibles.<br>
+                TB1:<br>
+                Durante el desarrollo del Tb1, apliqué y actualicé mis conocimientos relacionados con el desarrollo del backend e implementación de pruebas de software para la automatización y validación de servicios REST. Pude reforzar conceptos vinculados al diseño e implementación de Unit Tests, Integration Tests y Acceptance Tests bajo el enfoque BDD, así como el uso de herramientas como JUnit, Mockito y Cucumber; asegurando una mejor comprensión de la calidad del software y de las prácticas necesarias para construir soluciones más confiables y mantenibles.<br>
                 <br><strong>Eduardo Fabian Chacaliaza Minaya</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó sus conocimientos en arquitectura de software y diseño centrado en el usuario mediante la aplicación de Lean UX, realizando entrevistas, definición de hipótesis y validación de necesidades. Asimismo, participó en la construcción del Context Mapping bajo el enfoque de Domain-Driven Design y en el modelado de los bounded contexts de IAM, Users y Notifications, desarrollando sus capas principales y los diagramas de soporte (componentes, clases y base de datos), lo que permitió una mejor comprensión de la organización y estructura del sistema.<br>
@@ -844,7 +844,10 @@ INGENIERÍA DE SOFTWARE
                 <br>
            </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
-                El equipo demostró un efectivo liderazgo conjunto durante el AV1, donde cada miembro asumió responsabilidades compartidas de coordinación y toma de decisiones. Se evidenció una colaboración fluida que abarcó desde aspectos estratégicos y técnicos del proyecto hasta la planificación operativa y distribución de tareas. La comunicación continua, las reuniones regulares y el trabajo colaborativo. El compromiso colectivo por mantener una sana relación de equipo y la capacidad para resolver conflictos de manera conjunta permitieron lograr consensos efectivos y entregar un trabajo cohesivo y de calidad, demostrando que el liderazgo fue verdaderamente compartido y distribuido entre todos los integrantes.
+                AV1<br>
+                El equipo demostró un efectivo liderazgo conjunto durante el AV1, donde cada miembro asumió responsabilidades compartidas de coordinación y toma de decisiones. Se evidenció una colaboración fluida que abarcó desde aspectos estratégicos y técnicos del proyecto hasta la planificación operativa y distribución de tareas. La comunicación continua, las reuniones regulares y el trabajo colaborativo. El compromiso colectivo por mantener una sana relación de equipo y la capacidad para resolver conflictos de manera conjunta permitieron lograr consensos efectivos y entregar un trabajo cohesivo y de calidad, demostrando que el liderazgo fue verdaderamente compartido y distribuido entre todos los integrantes.<br>
+                TB1<br>
+                El equipo profundizó su modelo de liderazgo conjunto, evolucionando desde la coordinación estratégica hacia la ejecución operativa de soluciones concretas. Durante el TB1, se evidenció no solo el mantenimiento de responsabilidades compartidas y colaboración fluida, sino una mayor especialización donde cada miembro asumió roles técnicos específicos (UI/UX, backend, frontend, infraestructura) sin perder la visión integral del proyecto. La comunicación continua y las reuniones regulares se complementaron con nuevas prácticas como Sprint Planning, validación de entregables y coordinación cross-funcional entre disciplinas. El equipo demostró capacidad para resolver conflictos técnicos y de integración de manera conjunta, permitiendo la armonización entre diseño, implementación y despliegue. La entrega de artefactos tangibles desplegados en producción (landing page y backend en Render y GitHub Pages) refleja un liderazgo compartido que trascendió de la planificación a la materialización de resultados, consolidando un equipo que no solo trabaja de manera cohesiva, sino que genera valor medible para el producto Courtly.<br>
             </td>
         </tr>
         <tr>
@@ -854,7 +857,7 @@ INGENIERÍA DE SOFTWARE
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 <strong>Juan Carlos Angulo</strong><br>
                 AV1: Durante el AV1, investigué y apliqué metodologías avanzadas de Domain-Driven Design, incluyendo técnicas de EventStorming para descubrimiento de contextos acotados y modelado de flujos de dominio. Investigué patrones de arquitectura de software (C4 Model, patrones tácticos de DDD) y utilicé herramientas para la elaboración de diagramas UML complejos, diagramas de componentes y diseño de bases de datos relacionales. Esto fortaleció significativamente mis habilidades en modelado de sistemas complejos, separación de responsabilidades y arquitectura orientada al dominio.<br>
-                TP1: Durante el desarrollo del TP1, reconocí la importancia del aprendizaje permanente en configuración y gestión de infraestructura de software. Investigué y apliqué mejores prácticas en **configuración de entornos de desarrollo** basados en Java 21 LTS y Spring Boot, documentando estándares de ambiente y perfiles de configuración para múltiples ambientes. Además, profundicé en **estrategias de control de versiones** con Git Flow, convenciones de commits semantificados y políticas de code review. Investigué y documenté **estándares de código** incluyendo convenciones de nombrado, estructura de paquetes y patrones arquitectónicos (CQRS, assemblers) aplicables a 13 bounded contexts. Finalmente, aprendí y configuré **pipelines de deployment** automatizados con Docker multi-stage y Render, incluyendo variables de entorno seguras, health checks y estrategias de rollback. Este aprendizaje continuo en infraestructura y DevOps fortalece mi capacidad para diseñar sistemas mantenibles, escalables y seguros en producción.<br><br>
+                TB1: Durante el desarrollo del TB1, reconocí la importancia del aprendizaje permanente en configuración y gestión de infraestructura de software. Investigué y apliqué mejores prácticas en **configuración de entornos de desarrollo** basados en Java 21 LTS y Spring Boot, documentando estándares de ambiente y perfiles de configuración para múltiples ambientes. Además, profundicé en **estrategias de control de versiones** con Git Flow, convenciones de commits semantificados y políticas de code review. Investigué y documenté **estándares de código** incluyendo convenciones de nombrado, estructura de paquetes y patrones arquitectónicos (CQRS, assemblers) aplicables a 13 bounded contexts. Finalmente, aprendí y configuré **pipelines de deployment** automatizados con Docker multi-stage y Render, incluyendo variables de entorno seguras, health checks y estrategias de rollback. Este aprendizaje continuo en infraestructura y DevOps fortalece mi capacidad para diseñar sistemas mantenibles, escalables y seguros en producción.<br><br>
                 <strong>Camilla Espinoza</strong><br>
                 AV1:<br>
                 Durante el AV1, investigó y aplicó nuevas herramientas y metodologías como Structurizr para diagramas C4, PlantUML para modelado de clases y Miro para Impact Mapping. Esto permitió mejorar la calidad del diseño arquitectónico y fortalecer sus habilidades en modelado de sistemas y documentación técnica.<br>
@@ -870,7 +873,7 @@ INGENIERÍA DE SOFTWARE
                 <br><strong>Pedro Jesús Nanfuñay Liza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, comprendí la importancia del constante aprendizaje autodidacta para mi desarrollo profesional en el desarrollo de proyectos de software, tomando en cuenta temas esenciales como Domain Driven Design (DDD) y modelado arquitectónico de diagramas de componentes, clases y bases de datos. Ello me incentivó a seguir expandiendo mis conocimientos para mejorar mi capacidad de estructurar bounded context, su respectiva documentación técnica, entre otras áreas de este tipo de proyectos.<br>
-                TP:<br>
+                TB1:<br>
                 Durante el desarrollo del TB1, comprendí la importancia de mantener un aprendizaje constante en relación al desarrollo, despliegue e implementación de pruebas para el backend. Donde fue necesario investigar nuevas herramientas y entender diferentes enfoques de pruebas. Demostrando, la importancia de aprender continuamente para mejorar mis habilidades profesionales con el objetivo de desarrollar soluciones de software más sólidas, confiables y alineadas con buenas prácticas.<br>
                 <br><strong>Eduardo Fabian Chacaliaza Minaya</strong><br>
                 AV1:<br>
@@ -879,7 +882,10 @@ INGENIERÍA DE SOFTWARE
                 Durante el desarrollo del TB1, reconoció la importancia del aprendizaje permanente al reforzar conocimientos en diseño UI/UX, desarrollo frontend, landing page y backend. Para cumplir con sus responsabilidades, tuvo que investigar y aplicar criterios de diseño visual, organización de interfaces, lineamientos de estilo y estructura de páginas web. Además, al colaborar en el desarrollo de código, fortaleció su capacidad para adaptarse a distintas áreas del proyecto, comprendiendo que una solución de software requiere aprendizaje continuo tanto en diseño como en implementación técnica, integración y validación del producto.<br>
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
-                El equipo logró mantener un entorno colaborativo e inclusivo mediante la distribución clara de responsabilidades, la coordinación constante y la planificación progresiva de actividades durante las entregas. Cada integrante aportó desde su área de trabajo, lo que permitió avanzar de manera ordenada y alineada con los objetivos del proyecto. La organización de tareas, el seguimiento de avances y la comunicación permanente favorecieron el cumplimiento de metas parciales y la construcción de un proceso de trabajo más estructurado y cooperativo.
+                AV1<br>
+                El equipo logró mantener un entorno colaborativo e inclusivo mediante la distribución clara de responsabilidades, la coordinación constante y la planificación progresiva de actividades durante las entregas. Cada integrante aportó desde su área de trabajo, lo que permitió avanzar de manera ordenada y alineada con los objetivos del proyecto. La organización de tareas, el seguimiento de avances y la comunicación permanente favorecieron el cumplimiento de metas parciales y la construcción de un proceso de trabajo más estructurado y cooperativo.<br>
+                TB1<br>
+                El equipo consolidó y evolucionó su modelo de colaboración desde el AV1, logrando integrar exitosamente el diseño UI/UX con la implementación técnica del backend y frontend. Más allá del mantenimiento de un entorno colaborativo e inclusivo, se evidenció una mayor madurez en la gestión de entregas, donde cada integrante asumió responsabilidades tanto en su área especializada como en actividades transversales de validación e integración.
             </td>
         </tr>
     </table>
