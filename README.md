@@ -510,7 +510,7 @@ INGENIERÍA DE SOFTWARE
 
   <!-- BLOQUE 1 -->
   <tr>
-    <td>nombre</td>
+    <td>Eduardo Fabian Chacaliaza Minaya</td>
     <td>
       <ul>
         <li><strong>Capítulo III: Solution UI/UX Design</strong></li>
@@ -568,7 +568,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
   <tr>
-    <td>nombre</td>
+    <td>Fabricio Fabian Quispe Barzola</td>
     <td>
       <ul>
         <li><strong>4.2.1.6. Services Documentation Evidence for Sprint Review</strong></li>
@@ -812,6 +812,9 @@ INGENIERÍA DE SOFTWARE
                 <br><strong>Fabricio Fabian Quispe Barzola</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó conocimientos en análisis de dominio y arquitectura de software mediante la elaboración del análisis competitivo, estrategias y tácticas frente a competidores, así como el diseño del Context Mapping utilizando Domain-Driven Design. Además, desarrolló los bounded contexts de Bookings y Analytics, incluyendo sus respectivas capas (Domain, Application, Interface e Infrastructure), junto con diagramas de arquitectura (Component Level) y diagramas de código (Class Diagram y Database Design).<br>
+                TB1:<br>
+                Durante el desarrollo del TB1, actualicé y apliqué conocimientos relacionados con el desarrollo e integración de soluciones de software en diferentes frentes del proyecto Courtly. Participé en actividades vinculadas al backend, landing page y frontend, apoyando en la revisión funcional, documentación técnica y validación de evidencias del Sprint. Además, desarrollé la documentación de Web Services mediante OpenAPI/Swagger, registrando endpoints, métodos HTTP, parámetros, ejemplos de request y response, así como capturas de evidencia para el Sprint Review. También participé en la documentación del deployment del backend en Render y de la landing page en GitHub Pages, fortaleciendo mis conocimientos en despliegue, integración de repositorios, validación de servicios y presentación técnica del producto.
+                <br>
                 <br><strong>Pedro Jesús Nanfuñay Liza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, apliqué y actualicé mis conocimientos en el proceso de creación de elementos needfinding, tales como los User Persona, User Journey Mapping, Empathy Mapping, entre otros. Así como en el proceso de Big Picture EventStorming, e identificación y desarrollo de bounded context relacionados al negocio como payments y matches, a partir de sus respectivas capas, junto con sus diagramas de arquitectura y diagramas de código.<br>
@@ -841,6 +844,9 @@ INGENIERÍA DE SOFTWARE
                 <br><strong>Fabricio Fabian Quispe Barzola</strong><br>
                 AV1:<br>
                 Durante el AV1, investigó y aplicó conceptos de Domain-Driven Design y modelado arquitectónico, utilizando herramientas para la elaboración de diagramas UML, diagramas de componentes y diseño de bases de datos. Esto le permitió mejorar su capacidad de estructurar bounded contexts, comprender mejor la separación de responsabilidades y fortalecer sus habilidades en documentación técnica y diseño de soluciones de software.<br>
+                TB1:<br>
+                Durante el desarrollo del TP, reconocí la importancia del aprendizaje permanente al tener que reforzar conocimientos en backend, frontend, documentación técnica y despliegue de aplicaciones. Fue necesario comprender mejor el uso de Swagger para documentar y validar endpoints, así como el proceso de publicación del backend en Render y de la landing page mediante GitHub Pages. También reforcé mi aprendizaje sobre la organización del trabajo en repositorios, el uso de evidencias para Sprint Review y la integración de aportes del equipo en el reporte. Esto me permitió mejorar mi capacidad para adaptarme a distintas áreas del proyecto y entender que el desarrollo de software requiere aprendizaje continuo, tanto en implementación como en documentación, validación y deployment.
+                <br>
                 <br><strong>Pedro Jesús Nanfuñay Liza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, comprendí la importancia del constante aprendizaje autodidacta para mi desarrollo profesional en el desarrollo de proyectos de software, tomando en cuenta temas esenciales como Domain Driven Design (DDD) y modelado arquitectónico de diagramas de componentes, clases y bases de datos. Ello me incentivó a seguir expandiendo mis conocimientos para mejorar mi capacidad de estructurar bounded context, su respectiva documentación técnica, entre otras áreas de este tipo de proyectos.<br>
