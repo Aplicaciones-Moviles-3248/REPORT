@@ -550,7 +550,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
   <tr>
-    <td>nombre</td>
+    <td>Juan Carlos Angulo Abud</td>
     <td>
       <ul>
         <li><strong>Capítulo IV: Product Implementation & Validation</strong></li>
@@ -574,7 +574,7 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
   <tr>
-    <td>nombre</td>
+    <td>Pedro Jesús Nanfuñay Liza</td>
     <td>
       <ul>
         <li><strong>4.2.1.3. Development Evidence for Sprint Review</strong></li>
