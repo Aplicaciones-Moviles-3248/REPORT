@@ -184,6 +184,22 @@ INGENIERÍA DE SOFTWARE
         </ul>
     </td>
   </tr>
+  <tr>
+  <td style="border: 1px solid #ddd; padding: 8px;">TB1</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">13/05/2026</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">
+    <ul>
+      <li>Eduardo Fabian Chacaliaza Minaya</li>
+    </ul>
+  </td>
+  <td style="border: 1px solid #ddd; padding: 8px;">            
+    <ul>
+      <li>Capítulo III: Punto 3.1.1</li>
+      <li>Capítulo III: Punto 3.1.2</li>
+      <li>Capítulo III: Punto 3.1.3</li>
+    </ul>
+  </td>
+</tr>
 </table><br>
 
 
