@@ -11914,11 +11914,6 @@ En consecuencia, el equipo concluye que la colaboración del Sprint debe entende
 
 Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en la implementación técnica como en la organización del entregable final. Aunque la evidencia visible de commits en `backend` y `landing-page` estuvo centralizada por la naturaleza de reutilización y consolidación de esos productos, la participación del equipo sí se reflejó en la distribución funcional de bounded contexts, en la construcción del informe, en la revisión de evidencias y en la preparación conjunta del Sprint Review. Por ello, los analíticos de GitHub fueron interpretados considerando el contexto real del trabajo realizado, permitiendo una lectura más precisa y honesta de la colaboración del equipo.
 
----
-
-
-# Conclusiones
-
 ## Conclusiones y recomendaciones.
 
 ### Conclusiones
