@@ -153,7 +153,7 @@ INGENIERÍA DE SOFTWARE
 </tr>
 
 <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;">TB1</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">TP</td>
     <td style="border: 1px solid #ddd; padding: 8px;">13/05/2026</td>
     <td style="border: 1px solid #ddd; padding: 8px;">
       <ul>
@@ -165,6 +165,22 @@ INGENIERÍA DE SOFTWARE
         <li>Capítulo IV: Punto 4.2.1.3</li>
         <li>Capítulo IV: Punto 4.2.1.4</li>
         <li>Capítulo IV: Punto 4.2.1.5</li>
+        </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 8px;">TP</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">13/05/2026</td>
+    <td style="border: 1px solid #ddd; padding: 8px;">
+      <ul>
+        <li>Camilla Leonor Espinoza Vivas</li>
+      </ul>
+    </td>
+    <td style="border: 1px solid #ddd; padding: 8px;">            
+      <ul>
+        <li>Capítulo III: Punto 3.1.4</li>
+        <li>Capítulo IV: Punto 4.2.1.1</li>
+        <li>Capítulo IV: Punto 4.2.1.2</li>
         </ul>
     </td>
   </tr>
