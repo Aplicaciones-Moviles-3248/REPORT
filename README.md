@@ -200,6 +200,22 @@ INGENIERÍA DE SOFTWARE
     </ul>
   </td>
 </tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;">TB1</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">13/05/2026</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">
+    <ul>
+      <li>Fabricio Fabian Quispe Barzola</li>
+    </ul>
+  </td>
+  <td style="border: 1px solid #ddd; padding: 8px;">            
+    <ul>
+      <li>Capítulo IV: Punto 4.2.1.6</li>
+      <li>Capítulo IV: Punto 4.2.1.7</li>
+      <li>Capítulo IV: Punto 4.2.1.8</li>
+    </ul>
+  </td>
+</tr>
 </table><br>
 
 
