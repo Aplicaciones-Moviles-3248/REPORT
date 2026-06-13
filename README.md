@@ -11947,6 +11947,353 @@ En consecuencia, el equipo concluye que la colaboración del Sprint debe entende
 
 Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en la implementación técnica como en la organización del entregable final. Aunque la evidencia visible de commits en `backend` y `landing-page` estuvo centralizada por la naturaleza de reutilización y consolidación de esos productos, la participación del equipo sí se reflejó en la distribución funcional de bounded contexts, en la construcción del informe, en la revisión de evidencias y en la preparación conjunta del Sprint Review. Por ello, los analíticos de GitHub fueron interpretados considerando el contexto real del trabajo realizado, permitiendo una lectura más precisa y honesta de la colaboración del equipo.
 
+### 4.2.2. Sprint 2
+#### 4.2.2.1. Sprint Planning 2
+
+<div>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <td align="left" "><strong>Sprint #</strong></td>
+      <td align="left">Sprint 2</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint Planning Background</strong></td>
+      <td align="left">Implementación del flujo principal móvil de reservas y gestión inicial de usuarios en Courtly.</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Date</strong></td>
+      <td align="left">2026-06-13</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Time</strong></td>
+      <td align="left">10:00 AM - 12:00 PM</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Location</strong></td>
+      <td align="left">Sala de reuniones virtual - Discord</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Prepared By</strong></td>
+      <td align="left">Fabricio Quispe, Equipo de Producto</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Attendees (to planning meeting)</strong></td>
+      <td align="left">Camilla Espinoza, Juan Carlos Angulo, Eduardo Chacaliaza, Fabricio Quispe, Pedro Nanfuñay</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint 1 - 2 Review Summary</strong></td>
+      <td align="left">Landing Page implementada y desplegada con navegación responsiva, carousel principal, soporte multiidioma, botones de descarga, testimonios, sección de equipo y enlaces legales. Se validó la base visual y técnica del producto para continuar con la aplicación móvil.</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>Sprint 1 - 2 Retrospective Summary</strong></td>
+      <td align="left">Fortalezas: mejor organización del equipo, avance visible en la presentación del producto y mayor claridad en el backlog. Oportunidades: mejorar la división por bounded contexts, documentar mejor las evidencias técnicas y distribuir tareas según dependencias funcionales. Acciones: priorizar el flujo principal móvil, asignar historias por contexto y mantener evidencias por user story.</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint Goal & User Stories</strong></td>
+      <td align="left"></td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint 2 Goal</strong></td>
+      <td align="left">Implementar el flujo principal móvil de Courtly, permitiendo a jugadores y entrenadores acceder a la plataforma, gestionar información básica, consultar canchas disponibles, realizar reservas, procesar pagos iniciales y cancelar operaciones según las reglas del sistema.</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint 2 Velocity</strong></td>
+      <td align="left">54 Story Points</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>Sum of Story Points</strong></td>
+      <td align="left">54 Story Points (USM01: 3 + USM02: 3 + USM11: 3 + USM21: 3 + USM19: 2 + USM12: 3 + USM03: 5 + USM04: 5 + USM05: 3 + USM13: 5 + USM06: 8 + USM07: 8 + USM20: 3)</td>
+    </tr>
+  </table>
+</div>
+
+#### 4.2.2.2. Sprint Backlog 2
+
+<div>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <td align="center" colspan="8" ><strong>Sprint #</strong></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="8" >Sprint 2</td>
+    </tr>
+    <tr>
+      <td align="center" colspan="4" ><strong>User Story</strong></td>
+      <td align="center" colspan="4" <strong>Work-Item / Task</strong></td>
+    </tr>
+    <tr>
+      <th  text-align: center;">Id</th>
+      <th >Title</th>
+      <th  text-align: center;">Id</th>
+      <th >Title</th>
+      <th >Description</th>
+      <th  text-align: center;">Estimation (Hours)</th>
+      <th ">Assigned To</th>
+      <th  text-align: center;">Status</th>
+    </tr>
+    <tr>
+      <td align="center">USM01</td>
+      <td>Registrar cuenta de jugador en Courtly</td>
+      <td align="center">T-17</td>
+      <td>Implementar formulario móvil de registro de jugador</td>
+      <td>Construir la pantalla de registro para jugadores con campos obligatorios, validaciones de formato y mensajes de error asociados.</td>
+      <td align="center">5</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">USM01</td>
+      <td>Registrar cuenta de jugador en Courtly</td>
+      <td align="center">T-18</td>
+      <td>Integrar registro de jugador con backend IAM</td>
+      <td>Conectar el formulario con el endpoint de registro, manejar correo duplicado, respuesta exitosa y evidencia de pruebas funcionales.</td>
+      <td align="center">4</td>
+      <td>Pedro Nanfuñay</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM02</td>
+      <td>Iniciar sesión como jugador</td>
+      <td align="center">T-19</td>
+      <td>Desarrollar pantalla móvil de inicio de sesión para jugador</td>
+      <td>Implementar la interfaz de acceso con validación de credenciales, estados de carga y mensajes para credenciales inválidas.</td>
+      <td align="center">4</td>
+      <td>Eduardo Chacaliaza</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">USM02</td>
+      <td>Iniciar sesión como jugador</td>
+      <td align="center">T-20</td>
+      <td>Persistir sesión del jugador en la aplicación</td>
+      <td>Gestionar token de autenticación, almacenamiento seguro y redirección a la pantalla principal cuando la sesión se mantiene vigente.</td>
+      <td align="center">5</td>
+      <td>Eduardo Chacaliaza</td>
+      <td align="center">To-Review</td>
+    </tr>
+    <tr>
+      <td align="center">USM11</td>
+      <td>Registrar cuenta de entrenador</td>
+      <td align="center">T-21</td>
+      <td>Crear formulario de registro profesional de entrenador</td>
+      <td>Implementar campos personales y profesionales requeridos para el registro de entrenador, incluyendo validaciones de datos obligatorios.</td>
+      <td align="center">5</td>
+      <td>Camilla Espinoza</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">USM11</td>
+      <td>Registrar cuenta de entrenador</td>
+      <td align="center">T-22</td>
+      <td>Conectar registro de entrenador con servicios IAM y Coaches</td>
+      <td>Integrar la creación de cuenta con el backend, controlar correo existente y habilitar el perfil profesional al finalizar el registro.</td>
+      <td align="center">5</td>
+      <td>Pedro Nanfuñay</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM21</td>
+      <td>Iniciar sesión como entrenador</td>
+      <td align="center">T-23</td>
+      <td>Implementar acceso móvil para entrenador</td>
+      <td>Construir el flujo de inicio de sesión para entrenadores y dirigir al panel profesional según el rol autenticado.</td>
+      <td align="center">4</td>
+      <td>Eduardo Chacaliaza</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">USM21</td>
+      <td>Iniciar sesión como entrenador</td>
+      <td align="center">T-24</td>
+      <td>Validar sesión persistente por rol</td>
+      <td>Verificar que la sesión de entrenador se conserve correctamente y que los errores de autenticación mantengan al usuario en la pantalla de acceso.</td>
+      <td align="center">4</td>
+      <td>Eduardo Chacaliaza</td>
+      <td align="center">To-Review</td>
+    </tr>
+    <tr>
+      <td align="center">USM19</td>
+      <td>Editar perfil personal</td>
+      <td align="center">T-25</td>
+      <td>Implementar edición de perfil personal</td>
+      <td>Crear pantalla de edición de datos personales con carga de información actual, validaciones y estados de actualización.</td>
+      <td align="center">4</td>
+      <td>Fabricio Quispe</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM19</td>
+      <td>Editar perfil personal</td>
+      <td align="center">T-26</td>
+      <td>Integrar persistencia de cambios de perfil</td>
+      <td>Conectar la edición con el contexto Users del backend y validar que los datos modificados permanezcan al volver a ingresar.</td>
+      <td align="center">3</td>
+      <td>Fabricio Quispe</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">USM12</td>
+      <td>Actualizar perfil profesional</td>
+      <td align="center">T-27</td>
+      <td>Construir pantalla de perfil profesional de entrenador</td>
+      <td>Implementar edición de especialidad, descripción, experiencia y datos visibles para los jugadores dentro del perfil profesional.</td>
+      <td align="center">5</td>
+      <td>Camilla Espinoza</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">USM12</td>
+      <td>Actualizar perfil profesional</td>
+      <td align="center">T-28</td>
+      <td>Validar publicación de perfil actualizado</td>
+      <td>Integrar la actualización con el bounded context Coaches y registrar evidencias de visualización pública con los datos recientes.</td>
+      <td align="center">4</td>
+      <td>Eduardo Chacaliaza</td>
+      <td align="center">To-Review</td>
+    </tr>
+    <tr>
+      <td align="center">USM03</td>
+      <td>Buscar canchas por ubicación</td>
+      <td align="center">T-29</td>
+      <td>Implementar búsqueda móvil por ubicación</td>
+      <td>Crear la vista de búsqueda de canchas con ingreso o selección de ubicación y estados para resultados disponibles o inexistentes.</td>
+      <td align="center">6</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">USM03</td>
+      <td>Buscar canchas por ubicación</td>
+      <td align="center">T-30</td>
+      <td>Conectar catálogo de canchas con backend Courts</td>
+      <td>Consumir servicios de canchas por ubicación y mostrar nombre, ubicación, precio y disponibilidad en el listado de resultados.</td>
+      <td align="center">6</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM04</td>
+      <td>Filtrar canchas por deporte, precio y horario</td>
+      <td align="center">T-31</td>
+      <td>Desarrollar filtros de deporte, precio y horario</td>
+      <td>Implementar controles de filtrado en la app móvil para actualizar la búsqueda según deporte, rango de precio y horario disponible.</td>
+      <td align="center">6</td>
+      <td>Pedro Nanfuñay</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">USM04</td>
+      <td>Filtrar canchas por deporte, precio y horario</td>
+      <td align="center">T-32</td>
+      <td>Validar filtrado combinado con disponibilidad</td>
+      <td>Integrar filtros con Courts y Availabilities, verificando resultados consistentes cuando se aplican múltiples condiciones simultáneas.</td>
+      <td align="center">6</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">To-Review</td>
+    </tr>
+    <tr>
+      <td align="center">USM05</td>
+      <td>Ver detalle de cancha</td>
+      <td align="center">T-33</td>
+      <td>Crear vista móvil de detalle de cancha</td>
+      <td>Diseñar e implementar la pantalla de detalle con información ampliada, precio, ubicación, características y disponibilidad.</td>
+      <td align="center">5</td>
+      <td>Fabricio Quispe</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">USM05</td>
+      <td>Ver detalle de cancha</td>
+      <td align="center">T-34</td>
+      <td>Manejar estados de horarios disponibles y no disponibles</td>
+      <td>Mostrar horarios configurados, informar ausencia de disponibilidad y registrar evidencias visuales de ambos estados.</td>
+      <td align="center">4</td>
+      <td>Fabricio Quispe</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM13</td>
+      <td>Publicar disponibilidad de horarios</td>
+      <td align="center">T-35</td>
+      <td>Implementar gestión de disponibilidad del entrenador</td>
+      <td>Crear interfaz para que el entrenador registre, edite y guarde horarios disponibles desde su panel móvil.</td>
+      <td align="center">7</td>
+      <td>Camilla Espinoza</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">USM13</td>
+      <td>Publicar disponibilidad de horarios</td>
+      <td align="center">T-36</td>
+      <td>Publicar disponibilidad para consulta de jugadores</td>
+      <td>Integrar Availabilities con Coaches para que los horarios guardados se visualicen correctamente en el perfil consultado por jugadores.</td>
+      <td align="center">6</td>
+      <td>Eduardo Chacaliaza</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM06</td>
+      <td>Reservar cancha desde Courtly</td>
+      <td align="center">T-37</td>
+      <td>Construir flujo móvil de reserva de cancha</td>
+      <td>Implementar selección de cancha, fecha, horario y resumen previo a la confirmación de la reserva.</td>
+      <td align="center">8</td>
+      <td>Camila Espinoza</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">USM06</td>
+      <td>Reservar cancha desde Courtly</td>
+      <td align="center">T-38</td>
+      <td>Integrar creación de reserva y control de horario ocupado</td>
+      <td>Conectar el flujo con Bookings, validar disponibilidad antes de confirmar y manejar errores cuando el horario ya fue tomado.</td>
+      <td align="center">8</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">To-Review</td>
+    </tr>
+    <tr>
+      <td align="center">USM07</td>
+      <td>Pagar reserva desde la aplicación</td>
+      <td align="center">T-39</td>
+      <td>Implementar flujo inicial de pago de reserva</td>
+      <td>Crear pantalla de pago para reservas pendientes, incluyendo método de pago, monto, confirmación y estado de procesamiento.</td>
+      <td align="center">8</td>
+      <td>Pedro Nanfuñay</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">USM07</td>
+      <td>Pagar reserva desde la aplicación</td>
+      <td align="center">T-40</td>
+      <td>Registrar estados de pago y comprobante</td>
+      <td>Integrar Payments para actualizar estados PENDING, COMPLETED y FAILED, y mostrar confirmación o rechazo de la operación.</td>
+      <td align="center">8</td>
+      <td>Camila Espinoza</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM20</td>
+      <td>Cancelar una reserva o sesión registrada</td>
+      <td align="center">T-41</td>
+      <td>Implementar acción móvil de cancelación</td>
+      <td>Agregar opción de cancelar reservas o sesiones activas, con confirmación previa y mensajes de resultado para el usuario.</td>
+      <td align="center">5</td>
+      <td>Eduardo Chacaliaza</td>
+      <td align="center">In Progress</td>
+    </tr>
+    <tr>
+      <td align="center">USM20</td>
+      <td>Cancelar una reserva o sesión registrada</td>
+      <td align="center">T-42</td>
+      <td>Validar reglas de cancelación y liberación de disponibilidad</td>
+      <td>Integrar Bookings con reglas de cancelación, actualizar estado cancelado y verificar que el horario vuelva a quedar disponible cuando corresponda.</td>
+      <td align="center">5</td>
+      <td>Pedro Nanfuñay</td>
+      <td align="center">To-Review</td>
+    </tr>
+  </table>
+</div>
+
 ## Conclusiones y recomendaciones.
 
 ### Conclusiones
