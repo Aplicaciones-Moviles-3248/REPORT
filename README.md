@@ -12294,6 +12294,244 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
   </table>
 </div>
 
+
+#### 4.2.2.3. Development Evidence for Sprint Review
+
+En el Sprint 2 se desarrolló la implementación y despliegue de la primera versión del Mobile Application para Deportistas y Coaches, donde se han aplicado commits que evidencian el proceso de desarrollo en ambos artefactos:
+
+**Mobile Application - Deportistas:**
+
+<div>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <td align="left" "><strong>Repository</strong></td>
+      <td align="left"><strong>Branch</strong></td>
+      <td align="left"><strong>Commit Id</strong></td>
+      <td align="left"><strong>Commit Message</strong></td>
+      <td align="left"><strong>Commit Message Body</strong></td>
+      <td align="left"><strong>Commited on (Date)</strong></td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">main</td>
+      <td align="left">b92dad2e9e0bf7da59ced3c1877f7834e6cd15d2</td>
+      <td align="left">feat: add Courtly mobile app initial implementation</td>
+      <td align="left">Implement the initial structure of Courtly mobile app</td>
+      <td align="left">14/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/iam</td>
+      <td align="left">ea69c1cf69cb91096b3f35a3e934cb89bf48979f</td>
+      <td align="left">feat(iam): apuntar ApiClient al backend desplegado con override por dart-define</td>
+      <td align="left">Connect the backend url to api client in mobile app</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/iam</td>
+      <td align="left">9dfc32e801cefde0bebd0040147ff93e962a927b</td>
+      <td align="left">feat(iam): persistir la sesion completa y exponer su estado</td>
+      <td align="left">Allows the authentication for users</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/iam</td>
+      <td align="left">716efeda1f59789d100dc38283a3d382e7a83e61</td>
+      <td align="left">feat(iam): agregar bootstrap de sesion al iniciar la app</td>
+      <td align="left">Allows a user's session to persist</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/iam</td>
+      <td align="left">8fca19a0d2fc0358186f3358cf7ce423f395087c</td>
+      <td align="left">test(iam): agregar pruebas unitarias y de widget para IAM</td>
+      <td align="left">Implement unit and widget tests for IAM bounded context</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/payments</td>
+      <td align="left">6bff24e89d8f936fafd26c47b686eee80bc59235</td>
+      <td align="left">feat(payments): agregar capas de dominio y aplicacion de pagos</td>
+      <td align="left">Implement the domain and application layer for payments bounded context</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/payments</td>
+      <td align="left">5c5e3a88b0e6aa9163eb1a726acd159ce22408ba</td>
+      <td align="left">feat(payments): agregar capa de infraestructura de pagos</td>
+      <td align="left">Implement the infrastructure layer for payments bounded context</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/payments</td>
+      <td align="left">cb8ed8895c1d8c25b1558bf9fdd6218daa03cf3d</td>
+      <td align="left">feat(payments): agregar pantalla Mis pagos y registro de pago</td>
+      <td align="left">Implement screens for register and view payments</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/payments</td>
+      <td align="left">87b7c3e2fe5cc60f3be47d4c653983af6e0abe22</td>
+      <td align="left">test(payments): agregar pruebas unitarias y de widget de pagos</td>
+      <td align="left">Implement unit and widget tests for payments bounded context</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">main</td>
+      <td align="left">5fea75fecbad22529dd137e5e550efcb11526e36</td>
+      <td align="left">feat(mobile): implement player users and courts flows</td>
+      <td align="left">Implement the main mobile flows for the amateur athletes segment</td>
+      <td align="left">23/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/bookings</td>
+      <td align="left">dacc918980b3748ff3eaa04a96721c2456ddf83c</td>
+      <td align="left">feat(bookings): add domain layer for bookings bounded context.</td>
+      <td align="left">Implement the domain layer for bookings bounded context</td>
+      <td align="left">23/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/bookings</td>
+      <td align="left">73396987cec12e9a81eac5dc7d0679654363b2c9</td>
+      <td align="left">feat(bookings): add application layer for bookings bounded context.</td>
+      <td align="left">Implement the application layer for bookings bounded context</td>
+      <td align="left">23/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/bookings</td>
+      <td align="left">91a6c03432dd3eac012e6693b8e088a4f84259bd</td>
+      <td align="left">feat(bookings): add infrastructure layer for bookings bounded context.</td>
+      <td align="left">Implement the infrastructure layer for bookings bounded context</td>
+      <td align="left">23/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/bookings</td>
+      <td align="left">0140e5db0371260880eb6618a417200d4976f747</td>
+      <td align="left">feat(bookings): add application layer for bookings bounded context.</td>
+      <td align="left">Implement the application layer for bookings bounded context</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/bookings</td>
+      <td align="left">17bc25d7a7326b280e188f9fbeded15b81dd3172</td>
+      <td align="left">feat(bookings): add unit and widget tests for bookings bounded context.</td>
+      <td align="left">Implement unit and widget tests for bookings bounded context</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">7b01cfa9abad1e697bf421b794d784a39373b269</td>
+      <td align="left">merge(iam): integrar bounded context IAM en develop</td>
+      <td align="left">Integrate IAM bounded context to develop branch</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">5205a7e08607b11b4952746b8076c1ba5a97a224</td>
+      <td align="left">merge(payments): integrar bounded context Payments en develop</td>
+      <td align="left">Integrate Payments bounded context to develop branch</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">1fb918dd15c3af55291e0fde688d5c6bcba2ad09</td>
+      <td align="left">merge(main): integrar courts/sign-in actualizados de main en develop</td>
+      <td align="left">Integrate courts and sign-in update functions to develop branch</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">7f49633b478416d022cb0d9a140edacb31e45200</td>
+      <td align="left">feat(http): ApiClient resiliente con timeout y reintentos ante cold start</td>
+      <td align="left">Resilience toward timeout and cold start</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">4c9679c7f38d0bb9f46fba0176d961633eb00bba</td>
+      <td align="left">fix(iam): mensajes de error que distinguen conectividad de credenciales</td>
+      <td align="left">Write error messages for app connection</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">9c291bdd6ecfaf7a3992b81ebfd9c2d4a8181afc</td>
+      <td align="left">test(http): pruebas de resiliencia del ApiClient</td>
+      <td align="left">Implement test for api client resilience</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">35a026586bc243352922809ed1fb92a4243bfed6</td>
+      <td align="left">ci: agregar workflow de CI (analyze, test y build) para Flutter</td>
+      <td align="left">Add CI workflow for Flutter</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">fd9da81f76dc0fa671261c8db67c0afa518c1ac7</td>
+      <td align="left">merge(http): resiliencia de cold start, mensajes y CI en develop</td>
+      <td align="left">Implement changes about cold start, messages and CI in develop branch</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+  </table>
+</div>
+
+<br>
+
+**Mobile Application - Coaches:**
+
+<div>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <td align="left" "><strong>Repository</strong></td>
+      <td align="left"><strong>Branch</strong></td>
+      <td align="left"><strong>Commit Id</strong></td>
+      <td align="left"><strong>Commit Message</strong></td>
+      <td align="left"><strong>Commit Message Body</strong></td>
+      <td align="left"><strong>Commited on (Date)</strong></td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_coaches_app</td>
+      <td align="left">main</td>
+      <td align="left">e54ff0e798eaba26be719cdb92a4a5a0f48426ec</td>
+      <td align="left">feat: implement Courtly coaches Android app</td>
+      <td align="left">Implement coaches android app for coaches</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/availabilities</td>
+      <td align="left">dd86dba47d8c61b614faddcf26d59fbdc1fa864f</td>
+      <td align="left">feat(coaches): add availabilities bounded context and coach agenda UI</td>
+      <td align="left">Implement coache's planner and availabilities bounded context</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+  </table>
+</div>
+
+
 ## Conclusiones y recomendaciones.
 
 ### Conclusiones
