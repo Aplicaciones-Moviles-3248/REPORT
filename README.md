@@ -12294,23 +12294,50 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
   </table>
 </div>
 
-#### 4.2.2.3. Development Evidence for Sprint Review
-
-| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
-| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
-
-#### 4.2.2.4. Testing Suite Evidence for Sprint Review
-
-| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
-| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
-
-#### 4.2.2.5. Execution Evidence for Sprint Review
-
-
-
-#### 4.2.2.6. Services Documentation Evidence for Sprint Review
-#### 4.2.2.7. Software Deployment Evidence for Sprint Review
 #### 4.2.2.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 2, el equipo trabajó de forma coordinada en la implementación del frontend móvil para ambos segmentos del sistema: deportistas aficionados en Flutter y entrenadores en Android. La colaboración se organizó por responsabilidades específicas, con validaciones cruzadas entre integrantes para asegurar consistencia funcional, visual y técnica entre ambos repositorios.
+
+**Integrantes del equipo**
+- Juan Carlos Angulo Abud
+- Eduardo Fabian Chacaliaza Minaya
+- Camilla Leonor Espinoza Vivas
+- Pedro Jesús Nanfuñay Liza
+- Fabricio Fabian Quispe Barzola
+
+**Distribución general del trabajo**
+- Desarrollo del frontend para deportistas aficionados.
+- Desarrollo del frontend para entrenadores.
+- Ajustes de navegación, autenticación y flujos principales.
+- Revisión de interfaz y consistencia entre ambos segmentos.
+- Validación de integración con el backend existente.
+
+**Repositorio 1: Deportistas Aficionados - Flutter**
+- Repositorio: `https://github.com/Aplicaciones-Moviles-3248/courtly_mobile_app`
+- Estadísticas de actividad:
+  - Commits: `18`
+  - Branches: `6`
+
+**Imagen de actividad del repositorio de deportistas**
+![Actividad repositorio deportistas](./assets/chapter4/sp2-repo1.png)
+
+**Imagen adicional del repositorio de deportistas**
+![Detalle repositorio deportistas](./assets/chapter4/sp2-repo1-app.png)
+
+**Repositorio 2: Entrenadores - Android**
+- Repositorio: `https://github.com/Aplicaciones-Moviles-3248/courtly_coaches_app`
+- Estadísticas de actividad:
+  - Commits: `1`
+  - Branches: `2`
+  - Pull Requests: `1`
+
+**Imagen de actividad del repositorio de entrenadores**
+![Actividad repositorio entrenadores](./assets/chapter4/sp2-repo2.png)
+
+**Imagen adicional del repositorio de entrenadores**
+![Detalle repositorio entrenadores](./assets/chapter4/sp2-repo2-app.png)
+
+La evidencia de actividad en ambos repositorios refleja una colaboración constante, con participación distribuida y seguimiento del avance durante el sprint. Esto permitió avanzar de manera ordenada en la construcción de las interfaces móviles y en la validación de los flujos principales de cada segmento.
 
 
 
