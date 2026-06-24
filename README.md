@@ -12294,125 +12294,6 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
   </table>
 </div>
 
-
-#### 4.2.2.7. Software Deployment Evidence for Sprint Review
-
-En este Sprint se realizaron actividades de despliegue y preparación de entornos orientadas principalmente a la **aplicación móvil de Courtly** y a su integración con los servicios backend previamente desplegados. A diferencia del Sprint 1, donde el esfuerzo de deployment estuvo centrado en la publicación inicial del backend en Render y del Landing Page mediante GitHub Pages, en este Sprint el trabajo se enfocó en preparar el entorno móvil, validar la ejecución de la aplicación en Android Studio, configurar las dependencias necesarias para el consumo de servicios externos y comprobar que la aplicación pueda conectarse con los Web Services del proyecto.
-
-El proceso de deployment del Sprint 2 no consistió únicamente en publicar una nueva URL pública, sino en asegurar que el producto móvil pueda ejecutarse correctamente en un entorno de desarrollo controlado, preparado para pruebas funcionales y futuras integraciones. Para ello, se configuró el proyecto Android/Kotlin, se validó la ejecución desde Android Studio, se prepararon los recursos necesarios para la conexión con el backend y se comprobó el flujo inicial de ejecución de la aplicación Courtly.
-
-Asimismo, se mantuvo como base el backend desplegado en Render, utilizado como punto de integración para los módulos móviles implementados durante este Sprint, especialmente aquellos relacionados con autenticación, gestión de usuarios, entrenadores, canchas, disponibilidad, reservas, pagos y cancelaciones.
-
-### Mobile Application Deployment Preparation
-
-Durante el Sprint 2, el equipo preparó el proyecto móvil de Courtly para su ejecución en Android Studio. Esta preparación permitió validar que la aplicación pueda compilarse, instalarse y ejecutarse en un entorno Android, lo cual representa un paso necesario para la revisión funcional del producto móvil durante el Sprint Review.
-
-El proyecto móvil fue trabajado utilizando Android Studio como entorno principal de desarrollo, Kotlin como lenguaje de programación y Gradle como sistema de construcción. A nivel funcional, este Sprint permitió avanzar sobre el flujo principal de la aplicación, incluyendo la gestión de acceso de jugadores y entrenadores, edición de perfiles, búsqueda y detalle de canchas, gestión de disponibilidad, reservas, pagos y cancelaciones.
-
-### Evidencia del proceso realizado
-
-#### 1. Configuración del proyecto móvil en Android Studio
-
-Como primer paso, se abrió y configuró el proyecto móvil de Courtly dentro de Android Studio. Esta actividad permitió validar que la estructura del proyecto, los archivos Gradle, los paquetes principales y los recursos de la aplicación estuvieran correctamente reconocidos por el entorno de desarrollo.
-
-**Explicación:**
-Esta configuración fue necesaria para asegurar que el equipo pudiera trabajar sobre una base estable del producto móvil. Al contar con el proyecto correctamente cargado en Android Studio, fue posible continuar con la implementación de pantallas, navegación e integración con servicios backend.
-
-**Captura:**
-![Proyecto móvil Courtly abierto en Android Studio](assets/chapter4/sprint2-deployment-android-studio-project.png)
-
-#### 2. Sincronización de dependencias y configuración Gradle
-
-Luego de abrir el proyecto en Android Studio, se realizó la sincronización de dependencias mediante Gradle. Esta etapa permitió validar que las librerías, plugins y configuraciones necesarias para compilar la aplicación estuvieran correctamente instaladas.
-
-**Explicación:**
-La sincronización Gradle es una actividad importante dentro del deployment móvil, ya que permite preparar la aplicación para su construcción y ejecución. En este Sprint, esta configuración permitió asegurar que el proyecto pueda compilar sin errores relacionados con dependencias o configuración del entorno.
-
-**Captura:**
-![Sincronización Gradle del proyecto móvil](assets/chapter4/sprint2-deployment-gradle-sync.png)
-
-#### 3. Configuración del dispositivo de ejecución Android
-
-Para validar la ejecución de la aplicación móvil, se configuró un dispositivo Android desde Android Studio. Esta validación pudo realizarse mediante un emulador Android o un dispositivo físico conectado al entorno de desarrollo.
-
-**Explicación:**
-La configuración del dispositivo de ejecución permitió comprobar que la aplicación podía instalarse y ejecutarse en un entorno Android realista. Este paso es importante porque el producto principal del Sprint 2 corresponde a la aplicación móvil, por lo que era necesario validar su comportamiento fuera del editor de código.
-
-**Captura:**
-![Dispositivo Android configurado para ejecutar Courtly](assets/chapter4/sprint2-deployment-android-device.png)
-
-#### 4. Compilación de la aplicación móvil
-
-Una vez configurado el entorno, se realizó la compilación del proyecto móvil. Esta actividad permitió verificar que el código implementado durante el Sprint 2 podía ser construido correctamente y que no existían errores críticos que impidieran la generación de la aplicación.
-
-**Explicación:**
-La compilación exitosa representa una evidencia técnica de que el proyecto móvil se encuentra preparado para ejecución y pruebas. Además, permite detectar errores de configuración, dependencias faltantes o problemas de compatibilidad antes de realizar la validación funcional.
-
-**Captura:**
-![Compilación exitosa de la aplicación móvil Courtly](assets/chapter4/sprint2-deployment-mobile-build.png)
-
-#### 5. Ejecución de la aplicación móvil Courtly
-
-Después de compilar el proyecto, se ejecutó la aplicación móvil Courtly desde Android Studio. Esta ejecución permitió validar que la aplicación iniciara correctamente y mostrara las pantallas principales correspondientes al avance del Sprint 2.
-
-**Explicación:**
-La ejecución de la aplicación representa una evidencia directa del deployment local del producto móvil. En esta etapa se comprobó que el flujo inicial de la app estuviera disponible para pruebas y revisión, incluyendo las pantallas asociadas al acceso, navegación principal y funcionalidades implementadas durante el Sprint.
-
-**Captura:**
-![Aplicación Courtly ejecutándose en Android](assets/chapter4/sprint2-deployment-app-running.png)
-
-#### 6. Configuración de conexión con Web Services
-
-Como parte del despliegue móvil, se configuró la aplicación para consumir los servicios backend del proyecto Courtly. Para ello, se utilizó como base el backend desplegado previamente en Render, permitiendo que la aplicación móvil pueda comunicarse con los endpoints necesarios para los flujos implementados.
-
-Backend desplegado:
-`https://courtly-backend.onrender.com`
-
-Swagger UI del backend:
-`https://courtly-backend.onrender.com/swagger-ui/index.html`
-
-**Explicación:**
-Esta configuración permitió conectar el producto móvil con los Web Services del sistema. De esta manera, la aplicación dejó de depender únicamente de datos locales o simulados y quedó preparada para interactuar con el backend en funcionalidades como autenticación, perfiles, canchas, reservas y disponibilidad.
-
-**Captura:**
-![Configuración de URL base del backend en la aplicación móvil](assets/chapter4/sprint2-deployment-backend-base-url.png)
-
-#### 7. Validación de servicios backend desde Swagger UI
-
-Para asegurar que los servicios utilizados por la aplicación móvil estuvieran disponibles, se revisó la documentación Swagger UI del backend desplegado. Esto permitió validar que los endpoints requeridos para los flujos del Sprint 2 pudieran ser consultados desde un entorno público.
-
-**Explicación:**
-La validación mediante Swagger UI permitió confirmar que la aplicación móvil cuenta con un backend accesible para la integración. Esta revisión fue importante para verificar la disponibilidad de servicios relacionados con usuarios, entrenadores, canchas, disponibilidad, reservas y pagos.
-
-**Captura:**
-![Swagger UI del backend utilizado por la aplicación móvil](assets/chapter4/sprint2-deployment-swagger-validation.png)
-
-#### 8. Validación del flujo móvil integrado
-
-Finalmente, se validó el flujo principal de la aplicación móvil en el entorno Android configurado. Esta validación incluyó la revisión de pantallas y navegación relacionadas con el Sprint 2, tales como acceso de usuarios, registro, perfil, búsqueda de canchas, detalle de cancha, disponibilidad, reservas, pagos y cancelaciones.
-
-**Explicación:**
-Esta validación permitió comprobar que los avances funcionales del Sprint 2 podían ejecutarse desde la aplicación móvil. Además, permitió identificar posibles ajustes de integración, navegación o respuesta visual antes de presentar el incremento en el Sprint Review.
-
-**Captura:**
-![Flujo móvil Courtly validado en Android](assets/chapter4/sprint2-deployment-mobile-flow-validation.png)
-
-### Deployment de productos digitales considerados en Sprint 2
-
-Durante este Sprint se consideraron los siguientes productos digitales dentro del proceso de deployment:
-
-| Producto digital | Estado en Sprint 2                                   | Evidencia considerada                                      |
-| ---------------- | ---------------------------------------------------- | ---------------------------------------------------------- |
-| Landing Page     | Se mantiene desplegada desde Sprint 1                | URL pública mediante GitHub Pages                          |
-| Web Services     | Se mantiene desplegado y disponible para integración | URL pública en Render y Swagger UI                         |
-| Aplicación móvil | Preparada, compilada y ejecutada en entorno Android  | Android Studio, Gradle y ejecución en dispositivo/emulador |
-
-### Resultado del deployment durante el Sprint 2
-
-Como resultado de las actividades realizadas durante el Sprint 2, la aplicación móvil Courtly quedó preparada para ejecución en Android Studio, con dependencias sincronizadas, compilación validada y ejecución funcional en un entorno Android. Asimismo, se mantuvo la integración con el backend desplegado en Render, permitiendo que los flujos móviles desarrollados durante el Sprint puedan ser conectados progresivamente con los servicios del sistema.
-
-Este proceso permitió consolidar la base técnica para la revisión del incremento móvil en el Sprint Review y dejó preparado el entorno para continuar con integraciones más completas en el siguiente Sprint, especialmente en funcionalidades relacionadas con entrenadores, reservas, pagos, disponibilidad y gestión de sesiones.
-
 ---
 
 #### 4.2.2.3. Development Evidence for Sprint Review
@@ -12685,6 +12566,125 @@ En el Sprint 2 se ejecutó la primera versión funcional de la Mobile Applicatio
 
 ![Execution_MobileEditarPerfil_Sprint2](./assets/chapter4/execution-mobile-editar-perfil-sprint2.png)
 
+---
+
+#### 4.2.2.7. Software Deployment Evidence for Sprint Review
+
+En este Sprint se realizaron actividades de despliegue y preparación de entornos orientadas principalmente a la **aplicación móvil de Courtly** y a su integración con los servicios backend previamente desplegados. A diferencia del Sprint 1, donde el esfuerzo de deployment estuvo centrado en la publicación inicial del backend en Render y del Landing Page mediante GitHub Pages, en este Sprint el trabajo se enfocó en preparar el entorno móvil, validar la ejecución de la aplicación en Android Studio, configurar las dependencias necesarias para el consumo de servicios externos y comprobar que la aplicación pueda conectarse con los Web Services del proyecto.
+
+El proceso de deployment del Sprint 2 no consistió únicamente en publicar una nueva URL pública, sino en asegurar que el producto móvil pueda ejecutarse correctamente en un entorno de desarrollo controlado, preparado para pruebas funcionales y futuras integraciones. Para ello, se configuró el proyecto Android/Kotlin, se validó la ejecución desde Android Studio, se prepararon los recursos necesarios para la conexión con el backend y se comprobó el flujo inicial de ejecución de la aplicación Courtly.
+
+Asimismo, se mantuvo como base el backend desplegado en Render, utilizado como punto de integración para los módulos móviles implementados durante este Sprint, especialmente aquellos relacionados con autenticación, gestión de usuarios, entrenadores, canchas, disponibilidad, reservas, pagos y cancelaciones.
+
+### Mobile Application Deployment Preparation
+
+Durante el Sprint 2, el equipo preparó el proyecto móvil de Courtly para su ejecución en Android Studio. Esta preparación permitió validar que la aplicación pueda compilarse, instalarse y ejecutarse en un entorno Android, lo cual representa un paso necesario para la revisión funcional del producto móvil durante el Sprint Review.
+
+El proyecto móvil fue trabajado utilizando Android Studio como entorno principal de desarrollo, Kotlin como lenguaje de programación y Gradle como sistema de construcción. A nivel funcional, este Sprint permitió avanzar sobre el flujo principal de la aplicación, incluyendo la gestión de acceso de jugadores y entrenadores, edición de perfiles, búsqueda y detalle de canchas, gestión de disponibilidad, reservas, pagos y cancelaciones.
+
+### Evidencia del proceso realizado
+
+#### 1. Configuración del proyecto móvil en Android Studio
+
+Como primer paso, se abrió y configuró el proyecto móvil de Courtly dentro de Android Studio. Esta actividad permitió validar que la estructura del proyecto, los archivos Gradle, los paquetes principales y los recursos de la aplicación estuvieran correctamente reconocidos por el entorno de desarrollo.
+
+**Explicación:**
+Esta configuración fue necesaria para asegurar que el equipo pudiera trabajar sobre una base estable del producto móvil. Al contar con el proyecto correctamente cargado en Android Studio, fue posible continuar con la implementación de pantallas, navegación e integración con servicios backend.
+
+**Captura:**
+![Proyecto móvil Courtly abierto en Android Studio](assets/chapter4/sprint2-deployment-android-studio-project.png)
+
+#### 2. Sincronización de dependencias y configuración Gradle
+
+Luego de abrir el proyecto en Android Studio, se realizó la sincronización de dependencias mediante Gradle. Esta etapa permitió validar que las librerías, plugins y configuraciones necesarias para compilar la aplicación estuvieran correctamente instaladas.
+
+**Explicación:**
+La sincronización Gradle es una actividad importante dentro del deployment móvil, ya que permite preparar la aplicación para su construcción y ejecución. En este Sprint, esta configuración permitió asegurar que el proyecto pueda compilar sin errores relacionados con dependencias o configuración del entorno.
+
+**Captura:**
+![Sincronización Gradle del proyecto móvil](assets/chapter4/sprint2-deployment-gradle-sync.png)
+
+#### 3. Configuración del dispositivo de ejecución Android
+
+Para validar la ejecución de la aplicación móvil, se configuró un dispositivo Android desde Android Studio. Esta validación pudo realizarse mediante un emulador Android o un dispositivo físico conectado al entorno de desarrollo.
+
+**Explicación:**
+La configuración del dispositivo de ejecución permitió comprobar que la aplicación podía instalarse y ejecutarse en un entorno Android realista. Este paso es importante porque el producto principal del Sprint 2 corresponde a la aplicación móvil, por lo que era necesario validar su comportamiento fuera del editor de código.
+
+**Captura:**
+![Dispositivo Android configurado para ejecutar Courtly](assets/chapter4/sprint2-deployment-android-device.png)
+
+#### 4. Compilación de la aplicación móvil
+
+Una vez configurado el entorno, se realizó la compilación del proyecto móvil. Esta actividad permitió verificar que el código implementado durante el Sprint 2 podía ser construido correctamente y que no existían errores críticos que impidieran la generación de la aplicación.
+
+**Explicación:**
+La compilación exitosa representa una evidencia técnica de que el proyecto móvil se encuentra preparado para ejecución y pruebas. Además, permite detectar errores de configuración, dependencias faltantes o problemas de compatibilidad antes de realizar la validación funcional.
+
+**Captura:**
+![Compilación exitosa de la aplicación móvil Courtly](assets/chapter4/sprint2-deployment-mobile-build.png)
+
+#### 5. Ejecución de la aplicación móvil Courtly
+
+Después de compilar el proyecto, se ejecutó la aplicación móvil Courtly desde Android Studio. Esta ejecución permitió validar que la aplicación iniciara correctamente y mostrara las pantallas principales correspondientes al avance del Sprint 2.
+
+**Explicación:**
+La ejecución de la aplicación representa una evidencia directa del deployment local del producto móvil. En esta etapa se comprobó que el flujo inicial de la app estuviera disponible para pruebas y revisión, incluyendo las pantallas asociadas al acceso, navegación principal y funcionalidades implementadas durante el Sprint.
+
+**Captura:**
+![Aplicación Courtly ejecutándose en Android](assets/chapter4/sprint2-deployment-app-running.png)
+
+#### 6. Configuración de conexión con Web Services
+
+Como parte del despliegue móvil, se configuró la aplicación para consumir los servicios backend del proyecto Courtly. Para ello, se utilizó como base el backend desplegado previamente en Render, permitiendo que la aplicación móvil pueda comunicarse con los endpoints necesarios para los flujos implementados.
+
+Backend desplegado:
+`https://courtly-backend.onrender.com`
+
+Swagger UI del backend:
+`https://courtly-backend.onrender.com/swagger-ui/index.html`
+
+**Explicación:**
+Esta configuración permitió conectar el producto móvil con los Web Services del sistema. De esta manera, la aplicación dejó de depender únicamente de datos locales o simulados y quedó preparada para interactuar con el backend en funcionalidades como autenticación, perfiles, canchas, reservas y disponibilidad.
+
+**Captura:**
+![Configuración de URL base del backend en la aplicación móvil](assets/chapter4/sprint2-deployment-backend-base-url.png)
+
+#### 7. Validación de servicios backend desde Swagger UI
+
+Para asegurar que los servicios utilizados por la aplicación móvil estuvieran disponibles, se revisó la documentación Swagger UI del backend desplegado. Esto permitió validar que los endpoints requeridos para los flujos del Sprint 2 pudieran ser consultados desde un entorno público.
+
+**Explicación:**
+La validación mediante Swagger UI permitió confirmar que la aplicación móvil cuenta con un backend accesible para la integración. Esta revisión fue importante para verificar la disponibilidad de servicios relacionados con usuarios, entrenadores, canchas, disponibilidad, reservas y pagos.
+
+**Captura:**
+![Swagger UI del backend utilizado por la aplicación móvil](assets/chapter4/sprint2-deployment-swagger-validation.png)
+
+#### 8. Validación del flujo móvil integrado
+
+Finalmente, se validó el flujo principal de la aplicación móvil en el entorno Android configurado. Esta validación incluyó la revisión de pantallas y navegación relacionadas con el Sprint 2, tales como acceso de usuarios, registro, perfil, búsqueda de canchas, detalle de cancha, disponibilidad, reservas, pagos y cancelaciones.
+
+**Explicación:**
+Esta validación permitió comprobar que los avances funcionales del Sprint 2 podían ejecutarse desde la aplicación móvil. Además, permitió identificar posibles ajustes de integración, navegación o respuesta visual antes de presentar el incremento en el Sprint Review.
+
+**Captura:**
+![Flujo móvil Courtly validado en Android](assets/chapter4/sprint2-deployment-mobile-flow-validation.png)
+
+### Deployment de productos digitales considerados en Sprint 2
+
+Durante este Sprint se consideraron los siguientes productos digitales dentro del proceso de deployment:
+
+| Producto digital | Estado en Sprint 2                                   | Evidencia considerada                                      |
+| ---------------- | ---------------------------------------------------- | ---------------------------------------------------------- |
+| Landing Page     | Se mantiene desplegada desde Sprint 1                | URL pública mediante GitHub Pages                          |
+| Web Services     | Se mantiene desplegado y disponible para integración | URL pública en Render y Swagger UI                         |
+| Aplicación móvil | Preparada, compilada y ejecutada en entorno Android  | Android Studio, Gradle y ejecución en dispositivo/emulador |
+
+### Resultado del deployment durante el Sprint 2
+
+Como resultado de las actividades realizadas durante el Sprint 2, la aplicación móvil Courtly quedó preparada para ejecución en Android Studio, con dependencias sincronizadas, compilación validada y ejecución funcional en un entorno Android. Asimismo, se mantuvo la integración con el backend desplegado en Render, permitiendo que los flujos móviles desarrollados durante el Sprint puedan ser conectados progresivamente con los servicios del sistema.
+
+Este proceso permitió consolidar la base técnica para la revisión del incremento móvil en el Sprint Review y dejó preparado el entorno para continuar con integraciones más completas en el siguiente Sprint, especialmente en funcionalidades relacionadas con entrenadores, reservas, pagos, disponibilidad y gestión de sesiones.
 
 ---
 
