@@ -12294,6 +12294,33 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
   </table>
 </div>
 
+
+#### 4.2.2.3. Development Evidence for Sprint Review
+
+En el Sprint 2 se desarrolló la implementación y despliegue de la primera versión del Mobile Application, donde se han aplicado commits que evidencian el proceso de desarrollo en este artefacto:
+
+**Mobile Application - Deportistas:**
+
+| Repository | Branch | Commit ID | Commit Message | Commit Message Body | Commited on (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | main | ea69c1cf69cb91096b3f35a3e934cb89bf48979f | feat: add Courtly mobile app initial implementation | Implement the initial structure of Courtly mobile app | 14/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | feature/iam | b92dad2e9e0bf7da59ced3c1877f7834e6cd15d2 | feat(iam): apuntar ApiClient al backend desplegado con override por dart-define | Connect the backend url to api client in mobile app | 22/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | feature/iam | 9dfc32e801cefde0bebd0040147ff93e962a927b | feat(iam): persistir la sesion completa y exponer su estado | Allows the authentication for users | 22/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | feature/iam | 716efeda1f59789d100dc38283a3d382e7a83e61 | feat(iam): agregar bootstrap de sesion al iniciar la app | Allows a user's session to persist | 22/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | feature/iam | 716efeda1f59789d100dc38283a3d382e7a83e61 | feat(iam): agregar bootstrap de sesion al iniciar la app | Allows a user's session to persist | 22/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | feature/iam | 8fca19a0d2fc0358186f3358cf7ce423f395087c | test(iam): agregar pruebas unitarias y de widget para IAM | Implement unit and widget tests for IAM bounded context | 22/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | feature/payments | 6bff24e89d8f936fafd26c47b686eee80bc59235 | feat(payments): agregar capas de dominio y aplicacion de pagos | Implement the domain and application layer for payments bounded context | 22/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | feature/payments | 5c5e3a88b0e6aa9163eb1a726acd159ce22408ba | feat(payments): agregar capa de infraestructura de pagos | Implement the infrastructure layer for payments bounded context | 22/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | feature/payments | cb8ed8895c1d8c25b1558bf9fdd6218daa03cf3d | feat(payments): agregar pantalla Mis pagos y registro de pago | Implement screens for register and view payments | 22/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | feature/payments | 87b7c3e2fe5cc60f3be47d4c653983af6e0abe22 | test(payments): agregar pruebas unitarias y de widget de pagos | Implement unit and widget tests for payments bounded context | 22/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | main | 5fea75fecbad22529dd137e5e550efcb11526e36 | feat(mobile): implement player users and courts flows | Implement the main mobile flows for the amateur athletes segment | 23/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | feature/bookings | dacc918980b3748ff3eaa04a96721c2456ddf83c | feat(bookings): add domain layer for bookings bounded context. | Implement the domain layer for bookings bounded context | 23/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | feature/bookings | 73396987cec12e9a81eac5dc7d0679654363b2c9 | feat(bookings): add application layer for bookings bounded context. | Implement the application layer for bookings bounded context | 23/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | feature/bookings | 91a6c03432dd3eac012e6693b8e088a4f84259bd | feat(bookings): add infrastructure layer for bookings bounded context. | Implement the infrastructure layer for bookings bounded context | 23/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | feature/bookings | 0140e5db0371260880eb6618a417200d4976f747 | feat(bookings): add application layer for bookings bounded context. | Implement the application layer for bookings bounded context | 24/06/2026 |
+| Aplicaciones-Moviles-3248/courtly_mobile_app | feature/bookings | 17bc25d7a7326b280e188f9fbeded15b81dd3172 | feat(bookings): add unit and widget tests for bookings bounded context. | Implement unit and widget tests for bookings bounded context | 24/06/2026 |
+
+
 ## Conclusiones y recomendaciones.
 
 ### Conclusiones
