@@ -12534,6 +12534,40 @@ En el Sprint 2 se desarrolló la implementación y despliegue de la primera vers
 
 ---
 
+#### 4.2.2.5. Execution Evidence for Sprint Review
+
+En el Sprint 2 se ejecutó la primera versión funcional de la Mobile Application de Courtly conectada al backend desplegado, validando los flujos del segmento de entrenadores: autenticación, gestión de disponibilidad, estados de las sesiones de entrenamiento, partidos y perfil. A continuación, se presentan las evidencias capturadas sobre la aplicación en ejecución:
+
+**Inicio de sesión:** Pantalla de autenticación de Courtly para jugadores y entrenadores, alineada al backend actual y con soporte para iniciar sesión y crear cuenta. La captura evidencia además el manejo de errores de conectividad: ante un cold start del backend, la aplicación no se detiene, sino que informa al usuario con un mensaje claro, demostrando la resiliencia del cliente HTTP frente a reintentos y timeouts.
+
+![Execution_MobileLogin_Sprint2](./assets/chapter4/execution-mobile-login-sprint2.png)
+
+**Agenda del entrenador (estado inicial):** Vista de la Agenda del entrenador sin bloques cargados. El encabezado resume las métricas en cero (Total, Disponibles y Reservados) y se muestra el estado vacío, que invita al entrenador a crear su primer bloque para que los jugadores puedan visualizar su disponibilidad en Courtly.
+
+![Execution_MobileAgendaVacia_Sprint2](./assets/chapter4/execution-mobile-agenda-vacia-sprint2.png)
+
+**Agenda del entrenador (bloque creado):** Resultado de la operación de creación de un bloque de disponibilidad. Tras registrar el horario, las métricas se actualizan y aparece la sección de horarios con el detalle del bloque (fecha, rango horario, estado Disponible y entrenador asociado). Cada bloque expone las acciones Editar y Eliminar, completando el ciclo CRUD de la disponibilidad.
+
+![Execution_MobileAgendaHorario_Sprint2](./assets/chapter4/execution-mobile-agenda-horario-sprint2.png)
+
+**Estados de la sesión de entrenamiento:** Gestión del ciclo de vida de una sesión de entrenamiento. La pantalla lista las solicitudes con su contexto (jugador, especialidad, club, fecha y descripción) y refleja sus distintos estados: Completada para sesiones finalizadas, Pendiente para solicitudes que el entrenador puede Aceptar o Rechazar, y Aceptada para las solicitudes confirmadas.
+
+![Execution_MobileTrainingSessionStates_Sprint2](./assets/chapter4/execution-mobile-training-session-states-sprint2.png)
+
+**Partidos:** Vista de Partidos, donde el usuario consulta sus próximos partidos y actividades. Se muestra el estado vacío con su mensaje guía, integrado en la navegación inferior de la aplicación.
+
+![Execution_MobilePartidos_Sprint2](./assets/chapter4/execution-mobile-partidos-sprint2.png)
+
+**Perfil del entrenador:** Pantalla Mi perfil del entrenador, que muestra los datos profesionales recuperados desde el backend (rol, nombre, especialidad, teléfono y usuario). Desde la sección Gestionar perfil se accede a la edición de los datos del entrenador.
+
+![Execution_MobilePerfilCoach_Sprint2](./assets/chapter4/execution-mobile-perfil-coach-sprint2.png)
+
+**Edición de perfil:** Formulario Editar perfil que permite actualizar los datos profesionales del entrenador (nombre completo, especialidad y teléfono) y persistir los cambios. La captura muestra la edición del campo Teléfono con validación de entrada numérica.
+
+![Execution_MobileEditarPerfil_Sprint2](./assets/chapter4/execution-mobile-editar-perfil-sprint2.png)
+
+---
+
 #### 4.2.2.7. Software Deployment Evidence for Sprint Review
 
 En este Sprint se realizaron actividades de despliegue y preparación de entornos orientadas principalmente a la **aplicación móvil de Courtly** y a su integración con los servicios backend previamente desplegados. A diferencia del Sprint 1, donde el esfuerzo de deployment estuvo centrado en la publicación inicial del backend en Render y del Landing Page mediante GitHub Pages, en este Sprint el trabajo se enfocó en preparar el entorno móvil, validar la ejecución de la aplicación en Android Studio, configurar las dependencias necesarias para el consumo de servicios externos y comprobar que la aplicación pueda conectarse con los Web Services del proyecto.
