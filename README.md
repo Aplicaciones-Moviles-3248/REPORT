@@ -12319,9 +12319,11 @@ Durante el Sprint 2, el equipo trabajó de forma coordinada en la implementació
   - Branches: `6`
 
 **Imagen de actividad del repositorio de deportistas**
+
 ![Actividad repositorio deportistas](./assets/chapter4/sp2-repo1.png)
 
 **Imagen adicional del repositorio de deportistas**
+
 ![Detalle repositorio deportistas](./assets/chapter4/sp2-repo1-app.png)
 
 **Repositorio 2: Entrenadores - Android**
@@ -12332,9 +12334,11 @@ Durante el Sprint 2, el equipo trabajó de forma coordinada en la implementació
   - Pull Requests: `1`
 
 **Imagen de actividad del repositorio de entrenadores**
+
 ![Actividad repositorio entrenadores](./assets/chapter4/sp2-repo2.png)
 
 **Imagen adicional del repositorio de entrenadores**
+
 ![Detalle repositorio entrenadores](./assets/chapter4/sp2-repo2-app.png)
 
 La evidencia de actividad en ambos repositorios refleja una colaboración constante, con participación distribuida y seguimiento del avance durante el sprint. Esto permitió avanzar de manera ordenada en la construcción de las interfaces móviles y en la validación de los flujos principales de cada segmento.
