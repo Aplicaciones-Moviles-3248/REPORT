@@ -12038,7 +12038,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Implementar formulario móvil de registro de jugador</td>
       <td>Construir la pantalla de registro para jugadores con campos obligatorios, validaciones de formato y mensajes de error asociados.</td>
       <td align="center">5</td>
-      <td>Juan Carlos Angulo</td>
+      <td>Eduardo Chacaliaza</td>
       <td align="center">In Progress</td>
     </tr>
     <tr>
@@ -12048,7 +12048,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Integrar registro de jugador con backend IAM</td>
       <td>Conectar el formulario con el endpoint de registro, manejar correo duplicado, respuesta exitosa y evidencia de pruebas funcionales.</td>
       <td align="center">4</td>
-      <td>Pedro Nanfuñay</td>
+      <td>Eduardo Chacaliaza</td>
       <td align="center">Todo</td>
     </tr>
     <tr>
@@ -12078,7 +12078,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Crear formulario de registro profesional de entrenador</td>
       <td>Implementar campos personales y profesionales requeridos para el registro de entrenador, incluyendo validaciones de datos obligatorios.</td>
       <td align="center">5</td>
-      <td>Camilla Espinoza</td>
+      <td>Eduardo Chacaliaza</td>
       <td align="center">In Progress</td>
     </tr>
     <tr>
@@ -12088,7 +12088,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Conectar registro de entrenador con servicios IAM y Coaches</td>
       <td>Integrar la creación de cuenta con el backend, controlar correo existente y habilitar el perfil profesional al finalizar el registro.</td>
       <td align="center">5</td>
-      <td>Pedro Nanfuñay</td>
+      <td>Eduardo Chacaliaza</td>
       <td align="center">Todo</td>
     </tr>
     <tr>
@@ -12138,7 +12138,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Construir pantalla de perfil profesional de entrenador</td>
       <td>Implementar edición de especialidad, descripción, experiencia y datos visibles para los jugadores dentro del perfil profesional.</td>
       <td align="center">5</td>
-      <td>Camilla Espinoza</td>
+      <td>Eduardo Chacaliaza</td>
       <td align="center">In Progress</td>
     </tr>
     <tr>
@@ -12158,7 +12158,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Implementar búsqueda móvil por ubicación</td>
       <td>Crear la vista de búsqueda de canchas con ingreso o selección de ubicación y estados para resultados disponibles o inexistentes.</td>
       <td align="center">6</td>
-      <td>Juan Carlos Angulo</td>
+      <td>Fabricio Quispe</td>
       <td align="center">In Progress</td>
     </tr>
     <tr>
@@ -12168,7 +12168,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Conectar catálogo de canchas con backend Courts</td>
       <td>Consumir servicios de canchas por ubicación y mostrar nombre, ubicación, precio y disponibilidad en el listado de resultados.</td>
       <td align="center">6</td>
-      <td>Juan Carlos Angulo</td>
+      <td>Fabricio Quispe</td>
       <td align="center">Todo</td>
     </tr>
     <tr>
@@ -12178,7 +12178,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Desarrollar filtros de deporte, precio y horario</td>
       <td>Implementar controles de filtrado en la app móvil para actualizar la búsqueda según deporte, rango de precio y horario disponible.</td>
       <td align="center">6</td>
-      <td>Pedro Nanfuñay</td>
+      <td>Fabricio Quispe</td>
       <td align="center">In Progress</td>
     </tr>
     <tr>
@@ -12188,7 +12188,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Validar filtrado combinado con disponibilidad</td>
       <td>Integrar filtros con Courts y Availabilities, verificando resultados consistentes cuando se aplican múltiples condiciones simultáneas.</td>
       <td align="center">6</td>
-      <td>Juan Carlos Angulo</td>
+      <td>Fabricio Quispe</td>
       <td align="center">To-Review</td>
     </tr>
     <tr>
@@ -12228,7 +12228,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Publicar disponibilidad para consulta de jugadores</td>
       <td>Integrar Availabilities con Coaches para que los horarios guardados se visualicen correctamente en el perfil consultado por jugadores.</td>
       <td align="center">6</td>
-      <td>Eduardo Chacaliaza</td>
+      <td>Camilla Espinoza</td>
       <td align="center">Todo</td>
     </tr>
     <tr>
@@ -12238,7 +12238,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Construir flujo móvil de reserva de cancha</td>
       <td>Implementar selección de cancha, fecha, horario y resumen previo a la confirmación de la reserva.</td>
       <td align="center">8</td>
-      <td>Camila Espinoza</td>
+      <td>Pedro Nanfuñay</td>
       <td align="center">In Progress</td>
     </tr>
     <tr>
@@ -12248,7 +12248,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Integrar creación de reserva y control de horario ocupado</td>
       <td>Conectar el flujo con Bookings, validar disponibilidad antes de confirmar y manejar errores cuando el horario ya fue tomado.</td>
       <td align="center">8</td>
-      <td>Juan Carlos Angulo</td>
+      <td>Pedro Nanfuñay</td>
       <td align="center">To-Review</td>
     </tr>
     <tr>
@@ -12258,7 +12258,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Implementar flujo inicial de pago de reserva</td>
       <td>Crear pantalla de pago para reservas pendientes, incluyendo método de pago, monto, confirmación y estado de procesamiento.</td>
       <td align="center">8</td>
-      <td>Pedro Nanfuñay</td>
+      <td>Juan Carlos Angulo</td>
       <td align="center">In Progress</td>
     </tr>
     <tr>
@@ -12268,7 +12268,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Registrar estados de pago y comprobante</td>
       <td>Integrar Payments para actualizar estados PENDING, COMPLETED y FAILED, y mostrar confirmación o rechazo de la operación.</td>
       <td align="center">8</td>
-      <td>Camila Espinoza</td>
+      <td>Juan Carlos Angulo</td>
       <td align="center">Todo</td>
     </tr>
     <tr>
@@ -12278,7 +12278,7 @@ Durante este Sprint, el trabajo colaborativo del equipo se manifestó tanto en l
       <td>Implementar acción móvil de cancelación</td>
       <td>Agregar opción de cancelar reservas o sesiones activas, con confirmación previa y mensajes de resultado para el usuario.</td>
       <td align="center">5</td>
-      <td>Eduardo Chacaliaza</td>
+      <td>Pedro Nanfuñay</td>
       <td align="center">In Progress</td>
     </tr>
     <tr>
@@ -12413,6 +12413,294 @@ Como resultado de las actividades realizadas durante el Sprint 2, la aplicación
 
 Este proceso permitió consolidar la base técnica para la revisión del incremento móvil en el Sprint Review y dejó preparado el entorno para continuar con integraciones más completas en el siguiente Sprint, especialmente en funcionalidades relacionadas con entrenadores, reservas, pagos, disponibilidad y gestión de sesiones.
 
+---
+
+#### 4.2.2.3. Development Evidence for Sprint Review
+
+En el Sprint 2 se desarrolló la implementación y despliegue de la primera versión del Mobile Application para Deportistas y Coaches, donde se han aplicado commits que evidencian el proceso de desarrollo en ambos artefactos:
+
+**Mobile Application - Deportistas:**
+
+<div>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <td align="left" "><strong>Repository</strong></td>
+      <td align="left"><strong>Branch</strong></td>
+      <td align="left"><strong>Commit Id</strong></td>
+      <td align="left"><strong>Commit Message</strong></td>
+      <td align="left"><strong>Commit Message Body</strong></td>
+      <td align="left"><strong>Commited on (Date)</strong></td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">main</td>
+      <td align="left">b92dad2e9e0bf7da59ced3c1877f7834e6cd15d2</td>
+      <td align="left">feat: add Courtly mobile app initial implementation</td>
+      <td align="left">Implement the initial structure of Courtly mobile app</td>
+      <td align="left">14/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/iam</td>
+      <td align="left">ea69c1cf69cb91096b3f35a3e934cb89bf48979f</td>
+      <td align="left">feat(iam): apuntar ApiClient al backend desplegado con override por dart-define</td>
+      <td align="left">Connect the backend url to api client in mobile app</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/iam</td>
+      <td align="left">9dfc32e801cefde0bebd0040147ff93e962a927b</td>
+      <td align="left">feat(iam): persistir la sesion completa y exponer su estado</td>
+      <td align="left">Allows the authentication for users</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/iam</td>
+      <td align="left">716efeda1f59789d100dc38283a3d382e7a83e61</td>
+      <td align="left">feat(iam): agregar bootstrap de sesion al iniciar la app</td>
+      <td align="left">Allows a user's session to persist</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/iam</td>
+      <td align="left">8fca19a0d2fc0358186f3358cf7ce423f395087c</td>
+      <td align="left">test(iam): agregar pruebas unitarias y de widget para IAM</td>
+      <td align="left">Implement unit and widget tests for IAM bounded context</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/payments</td>
+      <td align="left">6bff24e89d8f936fafd26c47b686eee80bc59235</td>
+      <td align="left">feat(payments): agregar capas de dominio y aplicacion de pagos</td>
+      <td align="left">Implement the domain and application layer for payments bounded context</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/payments</td>
+      <td align="left">5c5e3a88b0e6aa9163eb1a726acd159ce22408ba</td>
+      <td align="left">feat(payments): agregar capa de infraestructura de pagos</td>
+      <td align="left">Implement the infrastructure layer for payments bounded context</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/payments</td>
+      <td align="left">cb8ed8895c1d8c25b1558bf9fdd6218daa03cf3d</td>
+      <td align="left">feat(payments): agregar pantalla Mis pagos y registro de pago</td>
+      <td align="left">Implement screens for register and view payments</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/payments</td>
+      <td align="left">87b7c3e2fe5cc60f3be47d4c653983af6e0abe22</td>
+      <td align="left">test(payments): agregar pruebas unitarias y de widget de pagos</td>
+      <td align="left">Implement unit and widget tests for payments bounded context</td>
+      <td align="left">22/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">main</td>
+      <td align="left">5fea75fecbad22529dd137e5e550efcb11526e36</td>
+      <td align="left">feat(mobile): implement player users and courts flows</td>
+      <td align="left">Implement the main mobile flows for the amateur athletes segment</td>
+      <td align="left">23/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/bookings</td>
+      <td align="left">dacc918980b3748ff3eaa04a96721c2456ddf83c</td>
+      <td align="left">feat(bookings): add domain layer for bookings bounded context.</td>
+      <td align="left">Implement the domain layer for bookings bounded context</td>
+      <td align="left">23/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/bookings</td>
+      <td align="left">73396987cec12e9a81eac5dc7d0679654363b2c9</td>
+      <td align="left">feat(bookings): add application layer for bookings bounded context.</td>
+      <td align="left">Implement the application layer for bookings bounded context</td>
+      <td align="left">23/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/bookings</td>
+      <td align="left">91a6c03432dd3eac012e6693b8e088a4f84259bd</td>
+      <td align="left">feat(bookings): add infrastructure layer for bookings bounded context.</td>
+      <td align="left">Implement the infrastructure layer for bookings bounded context</td>
+      <td align="left">23/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/bookings</td>
+      <td align="left">0140e5db0371260880eb6618a417200d4976f747</td>
+      <td align="left">feat(bookings): add application layer for bookings bounded context.</td>
+      <td align="left">Implement the application layer for bookings bounded context</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/bookings</td>
+      <td align="left">17bc25d7a7326b280e188f9fbeded15b81dd3172</td>
+      <td align="left">feat(bookings): add unit and widget tests for bookings bounded context.</td>
+      <td align="left">Implement unit and widget tests for bookings bounded context</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">7b01cfa9abad1e697bf421b794d784a39373b269</td>
+      <td align="left">merge(iam): integrar bounded context IAM en develop</td>
+      <td align="left">Integrate IAM bounded context to develop branch</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">5205a7e08607b11b4952746b8076c1ba5a97a224</td>
+      <td align="left">merge(payments): integrar bounded context Payments en develop</td>
+      <td align="left">Integrate Payments bounded context to develop branch</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">1fb918dd15c3af55291e0fde688d5c6bcba2ad09</td>
+      <td align="left">merge(main): integrar courts/sign-in actualizados de main en develop</td>
+      <td align="left">Integrate courts and sign-in update functions to develop branch</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">7f49633b478416d022cb0d9a140edacb31e45200</td>
+      <td align="left">feat(http): ApiClient resiliente con timeout y reintentos ante cold start</td>
+      <td align="left">Resilience toward timeout and cold start</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">4c9679c7f38d0bb9f46fba0176d961633eb00bba</td>
+      <td align="left">fix(iam): mensajes de error que distinguen conectividad de credenciales</td>
+      <td align="left">Write error messages for app connection</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">9c291bdd6ecfaf7a3992b81ebfd9c2d4a8181afc</td>
+      <td align="left">test(http): pruebas de resiliencia del ApiClient</td>
+      <td align="left">Implement test for api client resilience</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">35a026586bc243352922809ed1fb92a4243bfed6</td>
+      <td align="left">ci: agregar workflow de CI (analyze, test y build) para Flutter</td>
+      <td align="left">Add CI workflow for Flutter</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">develop</td>
+      <td align="left">fd9da81f76dc0fa671261c8db67c0afa518c1ac7</td>
+      <td align="left">merge(http): resiliencia de cold start, mensajes y CI en develop</td>
+      <td align="left">Implement changes about cold start, messages and CI in develop branch</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+  </table>
+</div>
+
+<br>
+
+**Mobile Application - Coaches:**
+
+<div>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <td align="left" "><strong>Repository</strong></td>
+      <td align="left"><strong>Branch</strong></td>
+      <td align="left"><strong>Commit Id</strong></td>
+      <td align="left"><strong>Commit Message</strong></td>
+      <td align="left"><strong>Commit Message Body</strong></td>
+      <td align="left"><strong>Commited on (Date)</strong></td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_coaches_app</td>
+      <td align="left">main</td>
+      <td align="left">e54ff0e798eaba26be719cdb92a4a5a0f48426ec</td>
+      <td align="left">feat: implement Courtly coaches Android app</td>
+      <td align="left">Implement coaches android app for coaches</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+    <tr>
+      <td align="left">Aplicaciones-Moviles-3248/courtly_mobile_app</td>
+      <td align="left">feature/availabilities</td>
+      <td align="left">dd86dba47d8c61b614faddcf26d59fbdc1fa864f</td>
+      <td align="left">feat(coaches): add availabilities bounded context and coach agenda UI</td>
+      <td align="left">Implement coache's planner and availabilities bounded context</td>
+      <td align="left">24/06/2026</td>
+    </tr>
+  </table>
+</div>
+
+---
+
+#### 4.2.2.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 2, el equipo trabajó de forma coordinada en la implementación del frontend móvil para ambos segmentos del sistema: deportistas aficionados en Flutter y entrenadores en Android. La colaboración se organizó por responsabilidades específicas, con validaciones cruzadas entre integrantes para asegurar consistencia funcional, visual y técnica entre ambos repositorios.
+
+**Integrantes del equipo**
+- Juan Carlos Angulo Abud
+- Eduardo Fabian Chacaliaza Minaya
+- Camilla Leonor Espinoza Vivas
+- Pedro Jesús Nanfuñay Liza
+- Fabricio Fabian Quispe Barzola
+
+**Distribución general del trabajo**
+- Desarrollo del frontend para deportistas aficionados.
+- Desarrollo del frontend para entrenadores.
+- Ajustes de navegación, autenticación y flujos principales.
+- Revisión de interfaz y consistencia entre ambos segmentos.
+- Validación de integración con el backend existente.
+
+**Repositorio 1: Deportistas Aficionados - Flutter**
+- Repositorio: `https://github.com/Aplicaciones-Moviles-3248/courtly_mobile_app`
+- Estadísticas de actividad:
+  - Commits: `18`
+  - Branches: `6`
+
+**Imagen de actividad del repositorio de deportistas**
+
+![Actividad repositorio deportistas](./assets/chapter4/sp2-repo1.png)
+
+**Imagen adicional del repositorio de deportistas**
+
+![Detalle repositorio deportistas](./assets/chapter4/sp2-repo1-app.png)
+
+**Repositorio 2: Entrenadores - Android**
+- Repositorio: `https://github.com/Aplicaciones-Moviles-3248/courtly_coaches_app`
+- Estadísticas de actividad:
+  - Commits: `1`
+  - Branches: `2`
+  - Pull Requests: `1`
+
+**Imagen de actividad del repositorio de entrenadores**
+
+![Actividad repositorio entrenadores](./assets/chapter4/sp2-repo2.png)
+
+**Imagen adicional del repositorio de entrenadores**
+
+![Detalle repositorio entrenadores](./assets/chapter4/sp2-repo2-app.png)
+
+La evidencia de actividad en ambos repositorios refleja una colaboración constante, con participación distribuida y seguimiento del avance durante el sprint. Esto permitió avanzar de manera ordenada en la construcción de las interfaces móviles y en la validación de los flujos principales de cada segmento.
 
 ## Conclusiones y recomendaciones.
 
