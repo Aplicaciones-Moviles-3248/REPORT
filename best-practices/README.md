@@ -1,52 +1,56 @@
-# Buenas Prácticas Móviles — Courtly
+# Buenas prácticas móviles de Courtly
 
-Revisión de las aplicaciones móviles de Courtly frente a las buenas prácticas de
-Android (Material Design / Core App Quality) y iOS (Human Interface Guidelines),
-tomando como referencia el formato del entregable **CubiPool Best Practices**.
+El uso cotidiano de una aplicación depende tanto de sus funcionalidades como de la
+forma en que respeta las convenciones de cada plataforma. Por ese motivo, se revisaron
+las aplicaciones móviles de Courtly frente a las guías oficiales de Android (Material
+Design y Core App Quality) y de iOS (Human Interface Guidelines). El análisis toma como
+referencia el formato del entregable **CubiPool Best Practices**, que organiza cada
+práctica con un código corto, una descripción y la evidencia correspondiente.
 
-El análisis cubre las dos apps de la organización que tienen interfaz móvil:
+La revisión abarca las dos aplicaciones de la organización que cuentan con interfaz
+móvil. Los repositorios `backend`, `landing-page` y `mock-up` quedaron fuera del
+alcance por no corresponder a interfaces de usuario móviles.
 
-| App | Repositorio | Stack | Plataformas |
-|-----|-------------|-------|-------------|
-| Courtly (usuarios) | `courtly_mobile_app` | Flutter | iOS + Android |
-| Courtly Coaches | `courtly_coaches_app` | Kotlin + Jetpack Compose (Material 3) | Android |
+| Aplicación | Repositorio | Tecnología | Plataformas |
+|-----------|-------------|-----------|-------------|
+| Courtly (usuarios) | `courtly_mobile_app` | Flutter | iOS y Android |
+| Courtly Coaches | `courtly_coaches_app` | Kotlin con Jetpack Compose (Material 3) | Android |
 
-Los repos `backend`, `landing-page` y `mock-up` quedan fuera de alcance por no ser
-interfaces móviles.
+Los documentos de este análisis son los siguientes:
 
-Documentos:
-
-- [Courtly (Flutter) — Cumplimiento y puntos a mejorar](./courtly_mobile_app.md)
-- [Courtly Coaches (Android) — Cumplimiento y puntos a mejorar](./courtly_coaches_app.md)
+- [Courtly (Flutter): cumplimiento y puntos a mejorar](./courtly_mobile_app.md)
+- [Courtly Coaches (Android): cumplimiento y puntos a mejorar](./courtly_coaches_app.md)
 - [Cambios aplicados en el código](./cambios-aplicados.md)
 
-## Cómo leer los códigos
+## Lectura de los códigos
 
-Cada práctica lleva un código corto, igual que en el entregable de referencia.
-La letra indica la categoría y el sufijo si es fortaleza (`B`/`V`, cumple) o mejora
-(`N`, por corregir).
+Cada práctica se identifica con un código corto, igual que en el entregable de
+referencia. La letra inicial señala la categoría y el sufijo indica si se trata de una
+fortaleza (`B` o `V`, se cumple) o de una mejora pendiente (`N`, por corregir).
 
 | Prefijo | Categoría |
 |---------|-----------|
 | `UX` | Usabilidad y navegación |
-| `PS` / `TH` | Presentación visual, contraste y theming |
+| `PS` y `TH` | Presentación visual, contraste y theming |
 | `SC` | Seguridad |
-| `AC` / `A11Y` | Accesibilidad |
-| `ER` / `ERR` | Manejo de errores y validación |
-| `RS` / `RES` | Responsive y safe areas |
-| `PF` / `PERF` | Rendimiento |
-| `PM` / `PERM` | Permisos |
-| `LC` / `L10N` | Localización |
+| `AC` y `A11Y` | Accesibilidad |
+| `ER` y `ERR` | Manejo de errores y validación |
+| `RS` y `RES` | Responsive y safe areas |
+| `PF` y `PERF` | Rendimiento |
+| `PM` y `PERM` | Permisos |
+| `LC` y `L10N` | Localización |
 
 ## Resumen general
 
-Ambas apps comparten una base sólida: estados de feedback completos (loading, error,
-vacío, éxito), validación de formularios, manejo de errores de red traducidos a
-mensajes de usuario, y backend sobre HTTPS.
+Las dos aplicaciones parten de una base sólida. Ambas manejan de forma consistente los
+estados de carga, error, vacío y éxito, validan sus formularios antes de enviar datos,
+traducen los errores de red a mensajes comprensibles y se comunican con el backend
+sobre HTTPS.
 
-Los focos de mejora también son comunes a las dos: el token de sesión se guarda sin
-cifrar, no hay modo oscuro, la localización está hardcodeada y faltan detalles de
-accesibilidad. En la app Flutter se detectó además un bloqueante de release: el
-permiso de INTERNET no estaba en el manifest principal.
+Los puntos por mejorar también coinciden en buena medida. En las dos apps el token de
+sesión se guarda sin cifrar, no existe modo oscuro, los textos están escritos
+directamente en el código sin soporte de localización y quedan detalles de
+accesibilidad por cubrir. En la aplicación Flutter, además, se detectó un problema que
+habría roto la app en producción: el permiso de INTERNET no estaba declarado en el
+manifest principal.
 </content>
-</invoke>

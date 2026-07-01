@@ -1,120 +1,139 @@
-# Courtly Coaches (Android) — Cumplimiento y puntos a mejorar
+# Courtly Coaches (Android): cumplimiento y puntos a mejorar
 
-App de coaches, nativa en Kotlin con Jetpack Compose y Material 3. Arquitectura
-limpia por contextos (iam, coaches, availabilities) con MVVM (`StateFlow` +
-`ViewModel`). minSdk 24, targetSdk 36. Se revisó `build.gradle.kts`, el manifest,
-todo el código Kotlin y los recursos.
+Courtly Coaches es la aplicación para entrenadores, desarrollada de forma nativa en
+Kotlin con Jetpack Compose y Material 3. Sigue una arquitectura limpia por contextos
+(iam, coaches y availabilities) con el patrón MVVM sobre `StateFlow` y `ViewModel`, y
+apunta a minSdk 24 y targetSdk 36. La revisión cubrió la configuración Gradle, el
+manifest, todo el código Kotlin y los recursos.
 
 ## Cumplimiento
 
-### Feedback de acciones — `PS-V1`
-Cobertura de estados muy completa: spinner dentro de los botones, estado de error con
-reintento, estado vacío real y éxito consumido vía flag con `LaunchedEffect`.
-Evidencia: `SignInScreen.kt:285`, `CoachProfileScreen.kt:81`, `AvailabilityScreen.kt:201`.
+### Feedback de acciones (`PS-V1`)
 
-### Manejo de errores y validación — `ERR-V1`
-`SignInViewModel` traduce cada excepción de red (`UnknownHostException`,
-`SocketTimeoutException`, `SSLHandshakeException`, `HttpException` por código) a un
-mensaje de usuario. Validación previa a la llamada en los ViewModels.
-Evidencia: `SignInViewModel.kt:272`, `CoachViewModel.kt:217`.
+La cobertura de estados es amplia y consistente en todo el flujo. Los botones muestran
+un spinner mientras trabajan, el error tiene una vista dedicada con opción de reintentar,
+el estado vacío es real y el éxito se consume mediante una bandera con `LaunchedEffect`.
+La evidencia está en `SignInScreen.kt:285`, `CoachProfileScreen.kt:81` y
+`AvailabilityScreen.kt:201`.
 
-### Tráfico encriptado — `SC-N1`
-Base URL HTTPS, sin `usesCleartextTraffic="true"`, y con `targetSdk 36` el cleartext
-está deshabilitado por defecto. El token se adjunta por interceptor con exclusión de
-endpoints públicos.
-Evidencia: `RetrofitClient.kt:11`, `AuthInterceptor.kt:15`.
+### Manejo de errores y validación (`ERR-V1`)
 
-### Permisos — `PERM-V1`
+El `SignInViewModel` traduce cada excepción de red a un mensaje comprensible, ya sea
+`UnknownHostException`, `SocketTimeoutException`, `SSLHandshakeException` o un
+`HttpException` según su código. La validación se ejecuta antes de la llamada en los
+ViewModels. La evidencia está en `SignInViewModel.kt:272` y en `CoachViewModel.kt:217`.
+
+### Tráfico encriptado (`SC-N1`)
+
+La URL base usa HTTPS y el manifest no habilita `usesCleartextTraffic`. Con targetSdk 36
+el tráfico en texto plano queda deshabilitado por defecto. El token se adjunta mediante
+un interceptor que excluye los endpoints públicos. La evidencia está en
+`RetrofitClient.kt:11` y en `AuthInterceptor.kt:15`.
+
+### Permisos (`PERM-V1`)
+
 El único permiso declarado es `INTERNET`, el estrictamente necesario, sin permisos
-peligrosos.
-Evidencia: `AndroidManifest.xml:5`.
+peligrosos de por medio. La evidencia está en `AndroidManifest.xml:5`.
 
-### Navegación — `UX-N1` (parcial)
-`NavHost` único con back-stack manejado, bottom bar con `saveState` / `restoreState` /
-`launchSingleTop`, y botones de volver con `popBackStack()`.
-Evidencia: `CoachNavigation.kt:129,258`.
+### Navegación (`UX-N1`, parcial)
 
-### Hit targets — `UX-B1` (parcial)
-Botones primarios con `.height(52.dp)` e ítems de bottom bar de 64x62 dp.
-Evidencia: `SignInScreen.kt:280`, `CourtlyCoachBottomBar.kt:140`.
+La app usa un único `NavHost` con el back-stack gestionado, una barra inferior con
+`saveState`, `restoreState` y `launchSingleTop`, y botones de retorno que llaman a
+`popBackStack()`. La evidencia está en `CoachNavigation.kt:129,258`.
+
+### Hit targets (`UX-B1`, parcial)
+
+Los botones primarios usan `.height(52.dp)` y los elementos de la barra inferior miden
+64 por 62 dp. La evidencia está en `SignInScreen.kt:280` y en
+`CourtlyCoachBottomBar.kt:140`.
 
 ## Puntos a mejorar
 
-### Token en SharedPreferences sin cifrar — `SC-N2` (alta prioridad)
-El token JWT y los datos de usuario se guardan en `SharedPreferences` en texto plano,
-pese a que la dependencia de cifrado (`androidx.security:security-crypto`) ya estaba
-declarada en el proyecto sin usarse.
-Evidencia: `SessionStorage.kt:8`, `build.gradle.kts:79`.
-Corrección: usar `EncryptedSharedPreferences` con `MasterKey` AES256-GCM.
+### Token en SharedPreferences sin cifrar (`SC-N2`, alta prioridad)
 
-### Sin network security config explícito — `SC-N3`
-No existía `res/xml/network_security_config.xml` ni `android:networkSecurityConfig`.
-Hoy funciona por el default de targetSdk, pero no hay defensa en profundidad.
-Evidencia: `AndroidManifest.xml:7`.
-Corrección: crear el config con `cleartextTrafficPermitted="false"` y referenciarlo
-en el manifest.
+El token JWT y los datos de usuario se guardaban en `SharedPreferences` en texto plano,
+a pesar de que la dependencia de cifrado (`androidx.security:security-crypto`) ya estaba
+declarada en el proyecto sin usarse. La evidencia está en `SessionStorage.kt:8` y en
+`build.gradle.kts:79`. La corrección usa `EncryptedSharedPreferences` con una `MasterKey`
+AES256-GCM.
 
-### Strings hardcodeados — `L10N-V1`
-Casi todo el texto visible está en código; `strings.xml` solo tiene `app_name`, y su
-valor era el nombre técnico sin marca.
-Evidencia: `strings.xml:2`, `SignInScreen.kt:103`, `CourtlyCoachBottomBar.kt:85`.
-Corrección aplicada parcial: `app_name` pasa a "Courtly Coaches". La extracción total
-a `strings.xml` queda como fase aparte por su volumen.
+### Sin configuración explícita de seguridad de red (`SC-N3`)
 
-### Sin modo oscuro — `THEME-V1`
-Solo se define `lightColorScheme`; no hay `darkColorScheme`, `values-night/` ni
-dynamic color, y el theme XML fuerza `Light`.
-Evidencia: `Theme.kt:11`, `themes.xml:4`.
-Recomendación: agregar `darkColorScheme` según `isSystemInDarkTheme()`.
+No existía el archivo `res/xml/network_security_config.xml` ni el atributo
+`android:networkSecurityConfig`. Aunque hoy la app funciona por el comportamiento por
+defecto de targetSdk, no había una defensa explícita. La evidencia está en
+`AndroidManifest.xml:7`. La corrección creó la configuración con
+`cleartextTrafficPermitted="false"` y la enlazó desde el manifest.
 
-### Lista sin virtualizar — `PERF-N1`
-Las disponibilidades se renderizan con `forEach` dentro de un `Column` scrollable, sin
-`LazyColumn` ni `key`.
-Evidencia: `AvailabilityScreen.kt:146,218`.
-Corrección: usar `LazyColumn { items(..., key = { it.id }) }`.
+### Textos escritos en el código (`L10N-V1`)
 
-### Dependencias recreadas por recomposición — `PERF-N2`
-`CoachAvailabilityScreen` construye el `ApiService`, el repositorio y seis use-cases en
-el cuerpo del composable, rehaciéndolos en cada recomposición.
-Evidencia: `CoachAvailabilityScreen.kt:21`.
-Corrección: envolver la construcción en `remember { }`.
+Casi todo el texto visible está incrustado en el código. El archivo `strings.xml` solo
+contenía `app_name`, y su valor era el nombre técnico sin marca. La evidencia está en
+`strings.xml:2`, `SignInScreen.kt:103` y `CourtlyCoachBottomBar.kt:85`. Como corrección
+parcial, `app_name` pasó a "Courtly Coaches". La extracción completa de los textos a
+`strings.xml` queda como una fase aparte por su volumen.
 
-### Accesibilidad: estado por color y iconos sin descripción — `A11Y-V1`
-El `StatusDot` comunica el estado solo por color, sin `semantics`, y varios iconos
-informativos tienen `contentDescription = null`.
-Evidencia: `AvailabilityScreen.kt:443`, `CoachNavigation.kt:283`.
-Corrección: agregar `contentDescription` / `semantics` al punto de estado y a los
-iconos con significado.
+### Sin modo oscuro (`THEME-V1`)
 
-### Targets clickables por debajo de 48 dp — `A11Y-B1`
-Los tabs de auth (`.height(44.dp)`) y algunos ítems del bottom bar usan `clickable`
-sobre `Box`/`Column` sin garantizar el mínimo interactivo de 48 dp.
-Evidencia: `SignInScreen.kt:176`, `CourtlyCoachBottomBar.kt:143`.
-Corrección: aplicar `Modifier.minimumInteractiveComponentSize()` o subir la altura.
+El tema define únicamente `lightColorScheme`, sin `darkColorScheme`, sin `values-night/` y
+sin dynamic color, y el tema XML fuerza el modo claro. La evidencia está en `Theme.kt:11`
+y en `themes.xml:4`. La recomendación es añadir un `darkColorScheme` que responda a
+`isSystemInDarkTheme()`.
 
-### Contraste y tamaños de texto al límite — `PS-V2`
-Textos secundarios de 10 a 11 sp con opacidad baja sobre fondos claros o navy quedan
-en el borde de WCAG AA.
-Evidencia: `SignInScreen.kt:104`, `CoachProfileScreen.kt:253`.
-Corrección: subir labels a 12 sp o más y evitar opacidades menores a 0.7 para texto.
+### Lista sin virtualizar (`PERF-N1`)
 
-### Sin TopAppBar ni back handling explícito — `UX-N2`
-No hay `TopAppBar` / up-navigation; los títulos son `Text` sueltos y no hay
-`BackHandler` en formularios con cambios sin guardar.
-Evidencia: navegación por botones "Volver" y back del sistema.
-Recomendación: `Scaffold` + `TopAppBar` con `navigationIcon` y `BackHandler` en
+Las disponibilidades se dibujaban con `forEach` dentro de un `Column` con scroll, sin
+`LazyColumn` ni `key`. La evidencia está en `AvailabilityScreen.kt:146,218`. La
+corrección usa `LazyColumn` con `items(..., key = { it.id })`.
+
+### Dependencias recreadas en cada recomposición (`PERF-N2`)
+
+La pantalla `CoachAvailabilityScreen` construía el `ApiService`, el repositorio y seis
+casos de uso dentro del cuerpo del composable, por lo que se rehacían en cada
+recomposición. La evidencia está en `CoachAvailabilityScreen.kt:21`. La corrección
+envuelve esa construcción en `remember`.
+
+### Estado comunicado solo por color e iconos sin descripción (`A11Y-V1`)
+
+El componente `StatusDot` transmitía el estado únicamente mediante el color, sin
+`semantics`, y varios iconos informativos tenían `contentDescription = null`. La
+evidencia está en `AvailabilityScreen.kt:443` y en `CoachNavigation.kt:283`. La
+corrección agregó `contentDescription` y semántica al punto de estado y a los iconos con
+significado.
+
+### Elementos clickables por debajo de 48 dp (`A11Y-B1`)
+
+Los tabs de autenticación (`.height(44.dp)`) y algunos elementos de la barra inferior
+usaban `clickable` sobre un `Box` o `Column` sin garantizar el mínimo interactivo de 48
+dp. La evidencia está en `SignInScreen.kt:176` y en `CourtlyCoachBottomBar.kt:143`. La
+corrección aplica `Modifier.minimumInteractiveComponentSize()`.
+
+### Contraste y tamaños de texto en el límite (`PS-V2`)
+
+Varios textos secundarios de 10 a 11 sp, con opacidad baja sobre fondos claros o navy,
+quedaban en el borde del ratio WCAG AA. La evidencia está en `SignInScreen.kt:104` y en
+`CoachProfileScreen.kt:253`. La recomendación es subir los textos a 12 sp o más y evitar
+opacidades por debajo de 0.7.
+
+### Sin TopAppBar ni manejo explícito del botón atrás (`UX-N2`)
+
+No hay `TopAppBar` ni navegación superior. Los títulos son `Text` sueltos y falta un
+`BackHandler` en los formularios con cambios sin guardar. La navegación hacia atrás
+depende de los botones de retorno y del gesto del sistema. La recomendación es adoptar
+`Scaffold` con `TopAppBar` y su `navigationIcon`, y agregar `BackHandler` en los
 formularios.
 
-### Insets incompletos fuera del Scaffold — `RES-V1`
-Se llama `enableEdgeToEdge()` pero `SignInScreen` está fuera del `Scaffold` y solo
-aplica `imePadding()`, sin `statusBarsPadding()`, por lo que el contenido superior
-puede dibujarse bajo la barra de estado.
-Evidencia: `MainActivity.kt:151`, `SignInScreen.kt:74`.
-Corrección: aplicar `Modifier.statusBarsPadding()` al contenedor raíz.
+### Insets incompletos fuera del Scaffold (`RES-V1`)
 
-### Editor de disponibilidad sin validación de formato — `ERR-V2`
-El diálogo acepta fecha y hora como texto libre (`YYYY-MM-DD`, `HH:mm`) y no valida
-formato antes de enviar al backend.
-Evidencia: `AvailabilityScreen.kt:588`, `AvailabilityViewModel.kt:99`.
-Corrección: validar formato con regex antes de enviar, mostrando error inline.
+La app llama a `enableEdgeToEdge()`, pero `SignInScreen` queda fuera del `Scaffold` y
+solo aplica `imePadding()`, sin `statusBarsPadding()`. Por eso el contenido superior
+puede dibujarse debajo de la barra de estado. La evidencia está en `MainActivity.kt:151`
+y en `SignInScreen.kt:74`. La corrección aplica `statusBarsPadding()` al contenedor raíz.
+
+### Editor de disponibilidad sin validación de formato (`ERR-V2`)
+
+El diálogo aceptaba la fecha y la hora como texto libre (`YYYY-MM-DD` y `HH:mm`) y no
+validaba el formato antes de enviarlo al backend. La evidencia está en
+`AvailabilityScreen.kt:588` y en `AvailabilityViewModel.kt:99`. La corrección valida el
+formato con expresiones regulares antes de enviar y muestra el error en línea.
 </content>
