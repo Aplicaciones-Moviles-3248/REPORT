@@ -12869,6 +12869,16 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
 28. La documentación generada durante el proyecto contribuye a la trazabilidad del desarrollo.
 29. El trabajo en equipo evidenció la importancia de la comunicación constante y la distribución adecuada de responsabilidades.
 30. El proyecto demuestra la aplicación práctica de conocimientos académicos en un contexto real.
+31. El AV2 permitió materializar la primera versión funcional del frontend móvil de Courtly para dos segmentos distintos: deportistas aficionados en Flutter y entrenadores en Android.
+32. La división del sistema por bounded contexts facilitó organizar mejor el trabajo, reducir acoplamientos y avanzar de forma más clara en cada flujo funcional.
+33. La integración con el backend desplegado permitió validar escenarios reales de autenticación, consulta de datos y gestión de información desde las aplicaciones móviles.
+34. La implementación de IAM consolidó el flujo de inicio de sesión, persistencia de sesión y control de acceso como base operativa de ambas aplicaciones.
+35. El desarrollo de Courts, Users, Bookings y Payments en la app de deportistas permitió construir una experiencia más cercana al flujo principal del producto.
+36. La implementación de Coaches y Availabilities en la app Android permitió cubrir la necesidad del entrenador de gestionar su perfil y su agenda de disponibilidad.
+37. El trabajo en ambos repositorios evidenció la importancia de adaptar la arquitectura y la interfaz a las particularidades de cada plataforma sin perder consistencia funcional.
+38. La entrega fortaleció competencias en consumo de APIs REST, navegación móvil, manejo de estado, persistencia local y organización modular del código.
+39. La colaboración del equipo permitió avanzar en paralelo sobre dos artefactos distintos, manteniendo alineación con los objetivos funcionales del sprint.
+40. Esta entrega demostró que el proyecto evolucionó de la definición conceptual del dominio hacia la implementación de soluciones móviles concretas y ejecutables.
 
 ### Recomendaciones
 
@@ -12902,6 +12912,16 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
 28. Mantener una estandarización en la estructura de los bounded contexts.
 29. Continuar fortaleciendo las habilidades técnicas del equipo.
 30. Realizar iteraciones continuas del producto, incorporando nuevas funcionalidades basadas en métricas de uso.
+31. Completar la cobertura funcional de todos los bounded contexts pendientes para evitar que algunos flujos queden solo parcialmente integrados.
+32. Unificar criterios de diseño visual y experiencia de usuario entre ambas aplicaciones para reforzar la identidad del producto.
+33. Incrementar la cantidad de pruebas unitarias, de integración y de interfaz para reducir riesgos de regresión.
+34. Mejorar el manejo de errores de red, timeouts y respuestas vacías para hacer las aplicaciones más robustas en escenarios reales.
+35. Estandarizar la estructura interna de los bounded contexts en ambos repositorios para facilitar mantenimiento y escalabilidad.
+36. Documentar con más detalle los flujos implementados, las rutas consumidas y las dependencias entre frontend y backend.
+37. Incorporar validaciones más estrictas en formularios y entradas de usuario para prevenir inconsistencias en los datos enviados al backend.
+38. Fortalecer la estrategia de ramas, merges y evidencia de commits para que la colaboración técnica quede mejor reflejada en GitHub.
+39. Validar tempranamente la compatibilidad de cada funcionalidad con el entorno de ejecución objetivo, especialmente entre web, Flutter y Android nativo.
+40. Continuar iterando sobre la integración entre bounded contexts para asegurar una experiencia completa, coherente y lista para siguientes entregas
 
 ## Video App Validation
 ## Video About the product
@@ -12972,3 +12992,11 @@ Anexo10. Backend desplegado [**link**](https://courtly-backend.onrender.com/swag
 Anexo11. Video About the team [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCehaxPFdq9Tr-SZ-dhRXu_Ab0iCW2NektCLVhA-cATWJ4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dgp9us)
 
 Anexo12. Video de exposición TB1 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCjxmBE5rnfRpADFcymHqkcAc0T7Rfc3Hh1zZOrVR57EJw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=U74yWE)
+
+Anexo13. Video About the team [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQARjTmK1aD_RpMMN2eFMBlnAXfr9Pap9gSqnjXlAYMSl6Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=XSD6YK)
+
+Anexo14. Repositorio del app-movil flutter [**link**](https://github.com/Aplicaciones-Moviles-3248/courtly_mobile_app)
+
+Anexo15. Repositorio del app-movil android [**link**](https://github.com/Aplicaciones-Moviles-3248/courtly_coaches_app)
+
+Anexo12. Video de exposición AV2 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCDqplZWT49Ro3-8iLcTekjAVMtQHa_UoW-HmcS9oCFIDk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=vVvXyS)
