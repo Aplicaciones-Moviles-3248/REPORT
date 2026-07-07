@@ -216,6 +216,20 @@ INGENIERÍA DE SOFTWARE
     </ul>
   </td>
 </tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;">AV2</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">24/06/2026</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">
+    <ul>
+      <li>Todos</li>
+    </ul>
+  </td>
+  <td style="border: 1px solid #ddd; padding: 8px;">            
+    <ul>
+      <li>Capítulo IV: Punto 4.2.2</li>
+    </ul>
+  </td>
+</tr>
 </table><br>
 
 
@@ -626,6 +640,65 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
 </table>
+
+<h2>AV2</h2>
+
+<p>Para el desarrollo del informe perteneciente a la entrega AV1, se dividió la implementación de secciones del Capítulo IV en bloques de trabajo, asignando cada conjunto de secciones a un integrante del equipo.</p>
+
+<p align="center">
+  <img src="assets/chapter4/av2.png" alt="Logo UPC" width="500">
+</p>
+
+<table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <td align="center"><strong>Integrante</strong></td>
+    <td align="center"><strong>Tareas Asignadas</strong></td>
+  </tr>
+
+  <!-- BLOQUE 1 -->
+  <tr>
+    <td>Fabricio Fabian Quispe Barzola</td>
+    <td>
+      <ul>
+        <li>4.2.2. Sprint 2</li>
+        <li>4.2.2.1. Sprint Planning 2</li>
+        <li>4.2.2.2. Sprint Backlog 2</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Pedro Jesús Nanfuñay Liza</td>
+    <td>
+      <ul>
+        <li>4.2.2.3. Development Evidence for Sprint Review</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Juan Carlos Angulo Abud</td>
+    <td>
+      <ul>
+        <li>4.2.2.5. Execution Evidence for Sprint Review</li>       
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Fabricio Fabian Quispe Barzola</td>
+    <td>
+      <ul>        
+        <li>4.2.2.7. Software Deployment Evidence for Sprint Review</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Camilla Leonor Espinoza Vivas</td>
+    <td>
+      <ul>
+        <li>4.2.2.8. Team Collaboration Insights during Sprint</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 <!--ÍNDICE-->
 # Contenido
 [Student Outcome](#student-outcome)
@@ -808,15 +881,22 @@ INGENIERÍA DE SOFTWARE
   - [4.1.3. Source Code Style Guide & Conventions](#413-source-code-style-guide--conventions)
   - [4.1.4. Software Deployment Configuration](#414-software-deployment-configuration)
 - [4.2. Landing Page & Mobile Application Implementation](#42-landing-page--mobile-application-implementation)
-  - [4.2.1. Sprint n](#421-sprint-n)
-    - [4.2.1.1. Sprint Planning n](#4211-sprint-planning-n)
-    - [4.2.1.2. Sprint Backlog n](#4212-sprint-backlog-n)
+  - [4.2.1. Sprint 1](#421-sprint-n)
+    - [4.2.1.1. Sprint Planning 1](#4211-sprint-planning-n)
+    - [4.2.1.2. Sprint Backlog 1](#4212-sprint-backlog-n)
     - [4.2.1.3. Development Evidence for Sprint Review](#4213-development-evidence-for-sprint-review)
     - [4.2.1.4. Testing Suite Evidence for Sprint Review](#4214-testing-suite-evidence-for-sprint-review)
     - [4.2.1.5. Execution Evidence for Sprint Review](#4215-execution-evidence-for-sprint-review)
     - [4.2.1.6. Services Documentation Evidence for Sprint Review](#4216-services-documentation-evidence-for-sprint-review)
     - [4.2.1.7. Software Deployment Evidence for Sprint Review](#4217-software-deployment-evidence-for-sprint-review)
     - [4.2.1.8. Team Collaboration Insights during Sprint](#4218-team-collaboration-insights-during-sprint)
+  - [4.2.2. Sprint 2](#421-sprint-n)
+    - [4.2.2.1. Sprint Planning 2](#4211-sprint-planning-n)
+    - [4.2.2.2. Sprint Backlog 2](#4212-sprint-backlog-n)
+    - [4.2.2.3. Development Evidence for Sprint Review](#4213-development-evidence-for-sprint-review)
+    - [4.2.2.4. Execution Evidence for Sprint Review](#4215-execution-evidence-for-sprint-review)
+    - [4.2.2.5. Software Deployment Evidence for Sprint Review](#4217-software-deployment-evidence-for-sprint-review)
+    - [4.2.2.6. Team Collaboration Insights during Sprint](#4218-team-collaboration-insights-during-sprint)
 - [4.3. Validation Interviews](#43-validation-interviews)
   - [4.3.1. Diseño de Entrevistas](#431-diseño-de-entrevistas)
   - [4.3.2. Registro de Entrevistas](#432-registro-de-entrevistas)
@@ -851,28 +931,36 @@ INGENIERÍA DE SOFTWARE
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 <strong>Juan Carlos Angulo</strong><br>
                 AV1:<br>Durante el desarrollo del AV1, actualizó y aplicó conocimientos avanzados en Domain-Driven Design mediante la elaboración completa del EventStorming, incluyendo Candidate Context Discovery y Domain Message Flows Modeling. Además, diseñó e implementó dos bounded contexts completos (Courts y Availabilities) con todas sus capas (Domain, Interface, Application e Infrastructure), así como diagramas de arquitectura a nivel de componentes y código (Class Diagrams y Database Design Diagrams).<br>
+                AV2: <br>Durante el desarrollo del AV2, apliqué y actualicé mis conocimientos en el proceso de desarrollo e implementación de funciones en el frontend móvil, específicamente en el bounded context Availabilities para permitir la gestión de la agenda del entrenador, incluyendo la creación, edición y eliminación de bloques de disponibilidad, así como el manejo de los estados de las sesiones de entrenamiento y la edición del perfil del entrenador, aplicando buenas prácticas de desarrollo de software y documentación de evidencias de ejecución.<br>
                 <strong>Camilla Espinoza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó conocimientos en arquitectura de software y Domain-Driven Design mediante la elaboración de User Stories, Impact Mapping y Product Backlog. Además, diseñó los bounded contexts de Coaches y Reviews, así como diagramas de arquitectura (contexto, contenedores y componentes) y diagramas UML del dominio.<br>
                 TB1:<br>
-                Actualicé y mejoré los User Stories del proyecto móvil Courtly, apoyé en la planificación del Sprint Planning y Sprint Backlog, participé en la mejora del reporte del proyecto y colaboré en el diseño del prototipo móvil mediante mockups y wireframes desarrollados en HTML, CSS y JavaScript. Además, apoyé en la definición de reglas de negocio para el backend, fortaleciendo mis conocimientos en metodologías ágiles, diseño UI/UX, desarrollo frontend y lógica funcional para aplicaciones móviles.
-                <br>
-                <br><strong>Fabricio Fabian Quispe Barzola</strong><br>
+                Actualicé y mejoré los User Stories del proyecto móvil Courtly, apoyé en la planificación del Sprint Planning y Sprint Backlog, participé en la mejora del reporte del proyecto y colaboré en el diseño del prototipo móvil mediante mockups y wireframes desarrollados en HTML, CSS y JavaScript. Además, apoyé en la definición de reglas de negocio para el backend, fortaleciendo mis conocimientos en metodologías ágiles, diseño UI/UX, desarrollo frontend y lógica funcional para aplicaciones móviles.<br>
+                AV2: <br>
+                Durante el desarrollo del AV2, actualicé y apliqué conocimientos en diseño de agendas y administración de horarios para implementar de manera funcional la creación, edición, listado y eliminación de disponibilidades del entrenador. Esto implicó organizar la representación de bloques horarios en la interfaz, validar rangos de tiempo consistentes y conectar cada operación con los servicios del backend, asegurando que la gestión de disponibilidades respondiera adecuadamente a las necesidades del segmento de entrenadores dentro de Courtly.<br>
+                <strong>Fabricio Fabian Quispe Barzola</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó conocimientos en análisis de dominio y arquitectura de software mediante la elaboración del análisis competitivo, estrategias y tácticas frente a competidores, así como el diseño del Context Mapping utilizando Domain-Driven Design. Además, desarrolló los bounded contexts de Bookings y Analytics, incluyendo sus respectivas capas (Domain, Application, Interface e Infrastructure), junto con diagramas de arquitectura (Component Level) y diagramas de código (Class Diagram y Database Design).<br>
                 TB1:<br>
-                Durante el desarrollo del TB1, actualicé y apliqué conocimientos relacionados con el desarrollo e integración de soluciones de software en diferentes frentes del proyecto Courtly. Participé en actividades vinculadas al backend, landing page y frontend, apoyando en la revisión funcional, documentación técnica y validación de evidencias del Sprint. Además, desarrollé la documentación de Web Services mediante OpenAPI/Swagger, registrando endpoints, métodos HTTP, parámetros, ejemplos de request y response, así como capturas de evidencia para el Sprint Review. También participé en la documentación del deployment del backend en Render y de la landing page en GitHub Pages, fortaleciendo mis conocimientos en despliegue, integración de repositorios, validación de servicios y presentación técnica del producto.
-                <br>
+                Durante el desarrollo del TB1, actualicé y apliqué conocimientos relacionados con el desarrollo e integración de soluciones de software en diferentes frentes del proyecto Courtly. Participé en actividades vinculadas al backend, landing page y frontend, apoyando en la revisión funcional, documentación técnica y validación de evidencias del Sprint. Además, desarrollé la documentación de Web Services mediante OpenAPI/Swagger, registrando endpoints, métodos HTTP, parámetros, ejemplos de request y response, así como capturas de evidencia para el Sprint Review. También participé en la documentación del deployment del backend en Render y de la landing page en GitHub Pages, fortaleciendo mis conocimientos en despliegue, integración de repositorios, validación de servicios y presentación técnica del producto.<br>
+                AV2: <br>
+                Durante el desarrollo del AV2, actualicé y apliqué conocimientos relacionados con la implementación y validación de aplicaciones móviles orientadas a un segmento específico de usuario. Mi trabajo se enfocó en el segmento de deportista aficionado dentro del proyecto Courtly, considerando principalmente los bounded contexts Users y Courts. Desde Users, participé en la documentación y avance de funcionalidades relacionadas con la edición del perfil personal del jugador. Desde Courts, apoyé el avance de funcionalidades como búsqueda de canchas por ubicación, filtrado y visualización del detalle de cancha. Asimismo, participé en la documentación del Sprint 2, incluyendo Sprint Planning, Sprint Backlog y Software Deployment Evidence, registrando evidencias de sincronización de dependencias, compilación, ejecución en Android y validación del backend mediante Swagger UI. Este trabajo fortaleció mis conocimientos en desarrollo móvil con Flutter, integración con servicios backend, organización de evidencias técnicas y documentación para Sprint Review.
                 <br><strong>Pedro Jesús Nanfuñay Liza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, apliqué y actualicé mis conocimientos en el proceso de creación de elementos needfinding, tales como los User Persona, User Journey Mapping, Empathy Mapping, entre otros. Así como en el proceso de Big Picture EventStorming, e identificación y desarrollo de bounded context relacionados al negocio como payments y matches, a partir de sus respectivas capas, junto con sus diagramas de arquitectura y diagramas de código.<br>
                 TB1:<br>
                 Durante el desarrollo del Tb1, apliqué y actualicé mis conocimientos relacionados con el desarrollo del backend e implementación de pruebas de software para la automatización y validación de servicios REST. Pude reforzar conceptos vinculados al diseño e implementación de Unit Tests, Integration Tests y Acceptance Tests bajo el enfoque BDD, así como el uso de herramientas como JUnit, Mockito y Cucumber; asegurando una mejor comprensión de la calidad del software y de las prácticas necesarias para construir soluciones más confiables y mantenibles.<br>
+                AV2:<br>
+                Durante el desarrollo del AV2, apliqué y actualicé mis conocimientos en el proceso de desarrollo e implementación de funciones en el frontend, específicamente en el bounded context Bookings para permitir la reserva de canchas deportivas, así como, la cancelación de la misma, aplicando buenas prácticas de desarrollo de software y documentación.<br>
                 <br><strong>Eduardo Fabian Chacaliaza Minaya</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó sus conocimientos en arquitectura de software y diseño centrado en el usuario mediante la aplicación de Lean UX, realizando entrevistas, definición de hipótesis y validación de necesidades. Asimismo, participó en la construcción del Context Mapping bajo el enfoque de Domain-Driven Design y en el modelado de los bounded contexts de IAM, Users y Notifications, desarrollando sus capas principales y los diagramas de soporte (componentes, clases y base de datos), lo que permitió una mejor comprensión de la organización y estructura del sistema.<br>
                 TB1:<br>
                 Durante el desarrollo del TB1, actualizó y aplicó conocimientos relacionados con el diseño UI/UX y el desarrollo de soluciones de software para el proyecto Courtly. Participó en la elaboración del Capítulo III: Solution UI/UX Design, desarrollando secciones como Product Design, Style Guidelines y Landing Page UI Design. Además, aportó en el desarrollo de código del proyecto, colaborando en la landing page, frontend y backend. Esto le permitió reforzar conocimientos en diseño de interfaces, lineamientos visuales, estructura de páginas web, integración de funcionalidades y desarrollo técnico orientado a la construcción de una solución de software más completa y coherente.
+                <br>
+                AV2:<br>
+                Durante el desarrollo del AV2, actualicé y apliqué conocimientos en autenticación móvil, consumo de APIs y persistencia de sesión para implementar correctamente los flujos de inicio de sesión, registro y recuperación del estado autenticado dentro de la aplicación. Asimismo, reforcé mis conocimientos en la construcción de perfiles profesionales y en la gestión de datos del entrenador, lo que permitió soportar la visualización y edición de su información en Android de forma coherente con la arquitectura del proyecto. Este proceso contribuyó a consolidar mis competencias en integración móvil con servicios backend y en el diseño de funcionalidades orientadas a usuarios con roles específicos dentro de Courtly.
                 <br>
            </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
@@ -880,6 +968,8 @@ INGENIERÍA DE SOFTWARE
                 El equipo demostró un efectivo liderazgo conjunto durante el AV1, donde cada miembro asumió responsabilidades compartidas de coordinación y toma de decisiones. Se evidenció una colaboración fluida que abarcó desde aspectos estratégicos y técnicos del proyecto hasta la planificación operativa y distribución de tareas. La comunicación continua, las reuniones regulares y el trabajo colaborativo. El compromiso colectivo por mantener una sana relación de equipo y la capacidad para resolver conflictos de manera conjunta permitieron lograr consensos efectivos y entregar un trabajo cohesivo y de calidad, demostrando que el liderazgo fue verdaderamente compartido y distribuido entre todos los integrantes.<br>
                 TB1<br>
                 El equipo profundizó su modelo de liderazgo conjunto, evolucionando desde la coordinación estratégica hacia la ejecución operativa de soluciones concretas. Durante el TB1, se evidenció no solo el mantenimiento de responsabilidades compartidas y colaboración fluida, sino una mayor especialización donde cada miembro asumió roles técnicos específicos (UI/UX, backend, frontend, infraestructura) sin perder la visión integral del proyecto. La comunicación continua y las reuniones regulares se complementaron con nuevas prácticas como Sprint Planning, validación de entregables y coordinación cross-funcional entre disciplinas. El equipo demostró capacidad para resolver conflictos técnicos y de integración de manera conjunta, permitiendo la armonización entre diseño, implementación y despliegue. La entrega de artefactos tangibles desplegados en producción (landing page y backend en Render y GitHub Pages) refleja un liderazgo compartido que trascendió de la planificación a la materialización de resultados, consolidando un equipo que no solo trabaja de manera cohesiva, sino que genera valor medible para el producto Courtly.<br>
+                AV2<br>
+                Durante el AV2, el equipo consolidó sus conocimientos en desarrollo móvil aplicado a soluciones de software, pasando de la definición del dominio a la implementación de experiencias funcionales para dos segmentos distintos del producto Courtly: deportistas aficionados en Flutter y entrenadores en Android. Esta etapa evidenció una mayor madurez técnica, ya que el trabajo no solo se centró en construir pantallas, sino en integrar flujos completos de autenticación, navegación, gestión de canchas y administración de disponibilidades, manteniendo coherencia con el backend existente. Asimismo, se reforzaron habilidades en consumo de servicios REST, organización por bounded contexts, persistencia de sesión, diseño de interfaces intuitivas y adaptación de la arquitectura a cada plataforma. La colaboración entre los miembros permitió avanzar de forma coordinada en ambos repositorios, validando entregables reales y consolidando una solución móvil más sólida, alineada con las necesidades funcionales del proyecto y con un enfoque más profesional en la construcción de software.
             </td>
         </tr>
         <tr>
@@ -888,13 +978,16 @@ INGENIERÍA DE SOFTWARE
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 <strong>Juan Carlos Angulo</strong><br>
-                AV1: Durante el AV1, investigué y apliqué metodologías avanzadas de Domain-Driven Design, incluyendo técnicas de EventStorming para descubrimiento de contextos acotados y modelado de flujos de dominio. Investigué patrones de arquitectura de software (C4 Model, patrones tácticos de DDD) y utilicé herramientas para la elaboración de diagramas UML complejos, diagramas de componentes y diseño de bases de datos relacionales. Esto fortaleció significativamente mis habilidades en modelado de sistemas complejos, separación de responsabilidades y arquitectura orientada al dominio.<br>
-                TB1: Durante el desarrollo del TB1, reconocí la importancia del aprendizaje permanente en configuración y gestión de infraestructura de software. Investigué y apliqué mejores prácticas en **configuración de entornos de desarrollo** basados en Java 21 LTS y Spring Boot, documentando estándares de ambiente y perfiles de configuración para múltiples ambientes. Además, profundicé en **estrategias de control de versiones** con Git Flow, convenciones de commits semantificados y políticas de code review. Investigué y documenté **estándares de código** incluyendo convenciones de nombrado, estructura de paquetes y patrones arquitectónicos (CQRS, assemblers) aplicables a 13 bounded contexts. Finalmente, aprendí y configuré **pipelines de deployment** automatizados con Docker multi-stage y Render, incluyendo variables de entorno seguras, health checks y estrategias de rollback. Este aprendizaje continuo en infraestructura y DevOps fortalece mi capacidad para diseñar sistemas mantenibles, escalables y seguros en producción.<br><br>
+                AV1: <br>Durante el AV1, investigué y apliqué metodologías avanzadas de Domain-Driven Design, incluyendo técnicas de EventStorming para descubrimiento de contextos acotados y modelado de flujos de dominio. Investigué patrones de arquitectura de software (C4 Model, patrones tácticos de DDD) y utilicé herramientas para la elaboración de diagramas UML complejos, diagramas de componentes y diseño de bases de datos relacionales. Esto fortaleció significativamente mis habilidades en modelado de sistemas complejos, separación de responsabilidades y arquitectura orientada al dominio.<br>
+                TB1:<br> Durante el desarrollo del TB1, reconocí la importancia del aprendizaje permanente en configuración y gestión de infraestructura de software. Investigué y apliqué mejores prácticas en **configuración de entornos de desarrollo** basados en Java 21 LTS y Spring Boot, documentando estándares de ambiente y perfiles de configuración para múltiples ambientes. Además, profundicé en **estrategias de control de versiones** con Git Flow, convenciones de commits semantificados y políticas de code review. Investigué y documenté **estándares de código** incluyendo convenciones de nombrado, estructura de paquetes y patrones arquitectónicos (CQRS, assemblers) aplicables a 13 bounded contexts. Finalmente, aprendí y configuré **pipelines de deployment** automatizados con Docker multi-stage y Render, incluyendo variables de entorno seguras, health checks y estrategias de rollback. Este aprendizaje continuo en infraestructura y DevOps fortalece mi capacidad para diseñar sistemas mantenibles, escalables y seguros en producción.<br><br>
+                AV2: <br>Durante el AV2, reconocí la importancia del aprendizaje constante en el desarrollo frontend móvil con Flutter, que permita a los usuarios acceder de manera satisfactoria a las funciones de la aplicación, aplicando y reforzando mis conocimientos de desarrollo de software y de pruebas apropiadas que validen la disponibilidad y eficiencia de las funciones implementadas.<br>
                 <strong>Camilla Espinoza</strong><br>
                 AV1:<br>
                 Durante el AV1, investigó y aplicó nuevas herramientas y metodologías como Structurizr para diagramas C4, PlantUML para modelado de clases y Miro para Impact Mapping. Esto permitió mejorar la calidad del diseño arquitectónico y fortalecer sus habilidades en modelado de sistemas y documentación técnica.<br>
                 TB1:<br>
-                Reconocí la importancia del aprendizaje permanente mediante la actualización y mejora continua de los User Stories, la participación en actividades ágiles como Sprint Planning y Sprint Backlog, y el apoyo en el diseño del prototipo móvil utilizando HTML, CSS y JavaScript. Asimismo, colaboré en la definición de reglas de negocio para el backend, fortaleciendo constantemente mis conocimientos en desarrollo de aplicaciones móviles, metodologías ágiles y diseño de soluciones de software orientadas a las necesidades del proyecto Courtly.
+                Reconocí la importancia del aprendizaje permanente mediante la actualización y mejora continua de los User Stories, la participación en actividades ágiles como Sprint Planning y Sprint Backlog, y el apoyo en el diseño del prototipo móvil utilizando HTML, CSS y JavaScript. Asimismo, colaboré en la definición de reglas de negocio para el backend, fortaleciendo constantemente mis conocimientos en desarrollo de aplicaciones móviles, metodologías ágiles y diseño de soluciones de software orientadas a las necesidades del proyecto Courtly.<br>
+                AV2: <br>
+                Durante el desarrollo del AV2, reconocí la necesidad de actualizar mis conocimientos en diseño de agendas, administración de horarios y consumo de servicios backend para implementar adecuadamente la gestión de disponibilidades del entrenador. Fue necesario comprender con mayor profundidad la forma de representar bloques horarios en la interfaz, registrar información consistente, validar rangos de tiempo y sincronizar las operaciones de creación, edición, consulta y eliminación con los endpoints del sistema. Este proceso me permitió fortalecer mis capacidades para construir flujos móviles más intuitivos, funcionales y alineados con las necesidades reales del proyecto Courtly.
                 </br>
                 <br><strong>Fabricio Fabian Quispe Barzola</strong><br>
                 AV1:<br>
@@ -902,22 +995,27 @@ INGENIERÍA DE SOFTWARE
                 TB1:<br>
                 Durante el desarrollo del TB1, reconocí la importancia del aprendizaje permanente al tener que reforzar conocimientos en backend, frontend, documentación técnica y despliegue de aplicaciones. Fue necesario comprender mejor el uso de Swagger para documentar y validar endpoints, así como el proceso de publicación del backend en Render y de la landing page mediante GitHub Pages. También reforcé mi aprendizaje sobre la organización del trabajo en repositorios, el uso de evidencias para Sprint Review y la integración de aportes del equipo en el reporte. Esto me permitió mejorar mi capacidad para adaptarme a distintas áreas del proyecto y entender que el desarrollo de software requiere aprendizaje continuo, tanto en implementación como en documentación, validación y deployment.
                 <br>
+                AV2: <br>Durante el desarrollo del AV2, reconocí la importancia del aprendizaje permanente al trabajar en la preparación y validación del flujo móvil del Sprint 2. Fue necesario reforzar conocimientos sobre Flutter, ejecución de aplicaciones móviles desde Android Studio, sincronización de dependencias mediante Flutter Pub, generación de APK en modo debug y validación de servicios backend desplegados. Además, al documentar el Software Deployment Evidence, comprendí mejor la relación entre la aplicación móvil, el backend en la nube y las evidencias necesarias para sustentar un Sprint Review. Este proceso me permitió mejorar mi capacidad para organizar entregables técnicos, validar funcionalidades implementadas y comunicar de forma clara el avance del producto Courtly dentro de un entorno de trabajo colaborativo.<br>
                 <br><strong>Pedro Jesús Nanfuñay Liza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, comprendí la importancia del constante aprendizaje autodidacta para mi desarrollo profesional en el desarrollo de proyectos de software, tomando en cuenta temas esenciales como Domain Driven Design (DDD) y modelado arquitectónico de diagramas de componentes, clases y bases de datos. Ello me incentivó a seguir expandiendo mis conocimientos para mejorar mi capacidad de estructurar bounded context, su respectiva documentación técnica, entre otras áreas de este tipo de proyectos.<br>
                 TB1:<br>
                 Durante el desarrollo del TB1, comprendí la importancia de mantener un aprendizaje constante en relación al desarrollo, despliegue e implementación de pruebas para el backend. Donde fue necesario investigar nuevas herramientas y entender diferentes enfoques de pruebas. Demostrando, la importancia de aprender continuamente para mejorar mis habilidades profesionales con el objetivo de desarrollar soluciones de software más sólidas, confiables y alineadas con buenas prácticas.<br>
+                AV2:<br>Durante el AV2, reconocí la importancia del aprendizaje constante de desarrollo en la parte frontend que permita a los usuarios acceder de manera satisfactoria a funciones de una aplicación, aplicando y reforzando mis conocimientos de desarrollo de software y testings apropiados que validen la disponibilidad y eficiencia de las funciones.<br>
                 <br><strong>Eduardo Fabian Chacaliaza Minaya</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, exploró y utilizó herramientas orientadas al modelado y diseño de software como Structurizr, PlantUML y Miro, integrándolas en la elaboración de diagramas C4, modelos de clases y actividades de Impact Mapping. Este proceso le permitió no solo mejorar la representación visual de la arquitectura del sistema, sino también afianzar su capacidad de organizar ideas, estructurar soluciones y documentar de manera más clara los distintos componentes del proyecto.<br>
                 TB1:<br>
                 Durante el desarrollo del TB1, reconoció la importancia del aprendizaje permanente al reforzar conocimientos en diseño UI/UX, desarrollo frontend, landing page y backend. Para cumplir con sus responsabilidades, tuvo que investigar y aplicar criterios de diseño visual, organización de interfaces, lineamientos de estilo y estructura de páginas web. Además, al colaborar en el desarrollo de código, fortaleció su capacidad para adaptarse a distintas áreas del proyecto, comprendiendo que una solución de software requiere aprendizaje continuo tanto en diseño como en implementación técnica, integración y validación del producto.<br>
+                AV2: <br>Durante el desarrollo del AV2, reconocí la importancia del aprendizaje permanente al profundizar en la integración de autenticación móvil, manejo de sesiones y consumo de servicios backend dentro de la aplicación. Fue necesario reforzar conocimientos sobre persistencia de sesión, validación de credenciales, gestión de estados autenticados y conexión con APIs REST para asegurar que el inicio de sesión funcionara correctamente y que la experiencia del usuario se mantuviera estable entre ejecuciones. Asimismo, en la implementación de la vista del entrenador, comprendí la necesidad de seguir fortaleciendo mis conocimientos en desarrollo Android, modelado de perfiles y organización de pantallas, lo que me permitió estructurar mejor la edición de datos, la navegación interna y la representación funcional de los flujos asociados al entrenador. Este proceso contribuyó a mejorar mi capacidad para adaptar soluciones móviles a requerimientos reales del proyecto y consolidó mi formación técnica dentro de un entorno de desarrollo colaborativo.<br>
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 AV1<br>
                 El equipo logró mantener un entorno colaborativo e inclusivo mediante la distribución clara de responsabilidades, la coordinación constante y la planificación progresiva de actividades durante las entregas. Cada integrante aportó desde su área de trabajo, lo que permitió avanzar de manera ordenada y alineada con los objetivos del proyecto. La organización de tareas, el seguimiento de avances y la comunicación permanente favorecieron el cumplimiento de metas parciales y la construcción de un proceso de trabajo más estructurado y cooperativo.<br>
                 TB1<br>
-                El equipo consolidó y evolucionó su modelo de colaboración desde el AV1, logrando integrar exitosamente el diseño UI/UX con la implementación técnica del backend y frontend. Más allá del mantenimiento de un entorno colaborativo e inclusivo, se evidenció una mayor madurez en la gestión de entregas, donde cada integrante asumió responsabilidades tanto en su área especializada como en actividades transversales de validación e integración.
+                El equipo consolidó y evolucionó su modelo de colaboración desde el AV1, logrando integrar exitosamente el diseño UI/UX con la implementación técnica del backend y frontend. Más allá del mantenimiento de un entorno colaborativo e inclusivo, se evidenció una mayor madurez en la gestión de entregas, donde cada integrante asumió responsabilidades tanto en su área especializada como en actividades transversales de validación e integración.<br>
+                AV2<br>
+                Durante el AV2, el equipo consolidó un trabajo colaborativo más especializado, orientado al desarrollo del frontend móvil para los dos segmentos del proyecto. La distribución de responsabilidades permitió avanzar de forma paralela en Flutter para deportistas aficionados y en Android para entrenadores, manteniendo coordinación constante para asegurar coherencia entre ambos repositorios. La comunicación continua, la validación cruzada de avances y la integración de los flujos principales facilitaron una ejecución más madura y ordenada, evidenciando una colaboración efectiva enfocada en la construcción de soluciones de software funcionales y alineadas con los objetivos del proyecto.<br>
             </td>
         </tr>
     </table>
@@ -12534,7 +12632,7 @@ En el Sprint 2 se desarrolló la implementación y despliegue de la primera vers
 
 ---
 
-#### 4.2.2.5. Execution Evidence for Sprint Review
+#### 4.2.2.4. Execution Evidence for Sprint Review
 
 En el Sprint 2 se ejecutó la primera versión funcional de la Mobile Application de Courtly conectada al backend desplegado, validando los flujos del segmento de entrenadores: autenticación, gestión de disponibilidad, estados de las sesiones de entrenamiento, partidos y perfil. A continuación, se presentan las evidencias capturadas sobre la aplicación en ejecución:
 
@@ -12568,7 +12666,7 @@ En el Sprint 2 se ejecutó la primera versión funcional de la Mobile Applicatio
 
 ---
 
-#### 4.2.2.7. Software Deployment Evidence for Sprint Review
+#### 4.2.2.5. Software Deployment Evidence for Sprint Review
 
 En este Sprint se realizaron actividades de despliegue y preparación de entornos orientadas principalmente a la **aplicación móvil de Courtly** y a su integración con los servicios backend previamente desplegados. A diferencia del Sprint 1, donde el esfuerzo de deployment estuvo centrado en la publicación inicial del backend en Render y del Landing Page mediante GitHub Pages, en este Sprint el trabajo se enfocó en preparar el entorno móvil, validar la ejecución de la aplicación en Android Studio, configurar las dependencias necesarias para el consumo de servicios externos y comprobar que la aplicación pueda conectarse con los Web Services del proyecto.
 
@@ -12688,7 +12786,7 @@ Este proceso permitió consolidar la base técnica para la revisión del increme
 
 ---
 
-#### 4.2.2.8. Team Collaboration Insights during Sprint
+#### 4.2.2.6. Team Collaboration Insights during Sprint
 
 Durante el Sprint 2, el equipo trabajó de forma coordinada en la implementación del frontend móvil para ambos segmentos del sistema: deportistas aficionados en Flutter y entrenadores en Android. La colaboración se organizó por responsabilidades específicas, con validaciones cruzadas entre integrantes para asegurar consistencia funcional, visual y técnica entre ambos repositorios.
 
@@ -12771,6 +12869,16 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
 28. La documentación generada durante el proyecto contribuye a la trazabilidad del desarrollo.
 29. El trabajo en equipo evidenció la importancia de la comunicación constante y la distribución adecuada de responsabilidades.
 30. El proyecto demuestra la aplicación práctica de conocimientos académicos en un contexto real.
+31. El AV2 permitió materializar la primera versión funcional del frontend móvil de Courtly para dos segmentos distintos: deportistas aficionados en Flutter y entrenadores en Android.
+32. La división del sistema por bounded contexts facilitó organizar mejor el trabajo, reducir acoplamientos y avanzar de forma más clara en cada flujo funcional.
+33. La integración con el backend desplegado permitió validar escenarios reales de autenticación, consulta de datos y gestión de información desde las aplicaciones móviles.
+34. La implementación de IAM consolidó el flujo de inicio de sesión, persistencia de sesión y control de acceso como base operativa de ambas aplicaciones.
+35. El desarrollo de Courts, Users, Bookings y Payments en la app de deportistas permitió construir una experiencia más cercana al flujo principal del producto.
+36. La implementación de Coaches y Availabilities en la app Android permitió cubrir la necesidad del entrenador de gestionar su perfil y su agenda de disponibilidad.
+37. El trabajo en ambos repositorios evidenció la importancia de adaptar la arquitectura y la interfaz a las particularidades de cada plataforma sin perder consistencia funcional.
+38. La entrega fortaleció competencias en consumo de APIs REST, navegación móvil, manejo de estado, persistencia local y organización modular del código.
+39. La colaboración del equipo permitió avanzar en paralelo sobre dos artefactos distintos, manteniendo alineación con los objetivos funcionales del sprint.
+40. Esta entrega demostró que el proyecto evolucionó de la definición conceptual del dominio hacia la implementación de soluciones móviles concretas y ejecutables.
 
 ### Recomendaciones
 
@@ -12804,6 +12912,16 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
 28. Mantener una estandarización en la estructura de los bounded contexts.
 29. Continuar fortaleciendo las habilidades técnicas del equipo.
 30. Realizar iteraciones continuas del producto, incorporando nuevas funcionalidades basadas en métricas de uso.
+31. Completar la cobertura funcional de todos los bounded contexts pendientes para evitar que algunos flujos queden solo parcialmente integrados.
+32. Unificar criterios de diseño visual y experiencia de usuario entre ambas aplicaciones para reforzar la identidad del producto.
+33. Incrementar la cantidad de pruebas unitarias, de integración y de interfaz para reducir riesgos de regresión.
+34. Mejorar el manejo de errores de red, timeouts y respuestas vacías para hacer las aplicaciones más robustas en escenarios reales.
+35. Estandarizar la estructura interna de los bounded contexts en ambos repositorios para facilitar mantenimiento y escalabilidad.
+36. Documentar con más detalle los flujos implementados, las rutas consumidas y las dependencias entre frontend y backend.
+37. Incorporar validaciones más estrictas en formularios y entradas de usuario para prevenir inconsistencias en los datos enviados al backend.
+38. Fortalecer la estrategia de ramas, merges y evidencia de commits para que la colaboración técnica quede mejor reflejada en GitHub.
+39. Validar tempranamente la compatibilidad de cada funcionalidad con el entorno de ejecución objetivo, especialmente entre web, Flutter y Android nativo.
+40. Continuar iterando sobre la integración entre bounded contexts para asegurar una experiencia completa, coherente y lista para siguientes entregas
 
 ## Video App Validation
 ## Video About the product
@@ -12874,3 +12992,11 @@ Anexo10. Backend desplegado [**link**](https://courtly-backend.onrender.com/swag
 Anexo11. Video About the team [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCehaxPFdq9Tr-SZ-dhRXu_Ab0iCW2NektCLVhA-cATWJ4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dgp9us)
 
 Anexo12. Video de exposición TB1 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCjxmBE5rnfRpADFcymHqkcAc0T7Rfc3Hh1zZOrVR57EJw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=U74yWE)
+
+Anexo13. Video About the team [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQARjTmK1aD_RpMMN2eFMBlnAXfr9Pap9gSqnjXlAYMSl6Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=XSD6YK)
+
+Anexo14. Repositorio del app-movil flutter [**link**](https://github.com/Aplicaciones-Moviles-3248/courtly_mobile_app)
+
+Anexo15. Repositorio del app-movil android [**link**](https://github.com/Aplicaciones-Moviles-3248/courtly_coaches_app)
+
+Anexo12. Video de exposición AV2 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCDqplZWT49Ro3-8iLcTekjAVMtQHa_UoW-HmcS9oCFIDk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=vVvXyS)
