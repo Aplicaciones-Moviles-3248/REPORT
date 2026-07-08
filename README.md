@@ -13653,6 +13653,135 @@ A partir de la entrevista se identifica que José Luis representa a un entrenado
 
 ### 4.3.3. Evaluaciones según heurísticas
 
+# Evaluación Heurística de Usabilidad y Diseño Inclusivo para la Aplicación: "Courtly"
+### UX Heuristics & Principles Evaluation
+#### Usability - Inclusive Design - Information Architecture
+
+**CARRERA:** Ingeniería de Software <br>
+**CURSO:** 1acc0238 Aplicaciones para dispositivos móviles <br>
+**SECCIÓN:** 3248 <br>
+**PROFESORES:** Todos <br>
+**AUDITOR:** Mova <br>
+**CLIENTES:** Angulo Abud, Juan Carlos; Chacaliaza Minaya, Eduardo Fabian; Espinoza Vivas, Camilla Leonor; Nanfuñay Liza, Pedro Jesús; Quispe Barzola, Fabricio Fabian
+
+**SITE o APP A EVALUAR:** Courtly
+
+**TAREAS A EVALUAR:** <br>
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+1. Autenticación, registro e inicio de sesión de usuarios (Entrenadores y Deportistas).
+2. Navegación e interpretación de las métricas en el panel principal de inicio (Dashboard).
+3. Configuración, creación y publicación de bloques de disponibilidad horaria por parte de los entrenadores.
+4. Búsqueda y filtrado de canchas deportivas.
+5. Gestión de reservas de espacios deportivos basándose en los horarios disponibles.
+6. Flujo de pago y confirmación de la reserva de espacios.
+7. Organización y creación de partidos o convocatorias deportivas con amigos.
+8. Calificación y envío de reseñas (feedback) sobre las canchas deportivas utilizadas.
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+1. Sincronización automatizada con calendarios externos (como Google Calendar o Apple Calendar).
+2. Procesamiento real y liquidación bancaria en la pasarela de pagos integrada en producción.
+3. Configuración avanzada de perfiles técnicos, subida de certificaciones académicas y validación de antecedentes del Coach.
+
+<br>
+
+**ESCALA DE SEVERIDAD:** <br>
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad.
+
+| Nivel | Descripción |
+| ----- | ----------- |
+| 1 | **Problema superficial:** Puede ser fácilmente superado por el usuario y ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| 2 | **Problema menor:** Puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente release. |
+| 3 | **Problema mayor:** Ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| 4 | **Problema muy grave:** Un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+<br>
+
+**TABLA RESUMEN:**
+
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+| - | -------- | ------------------- | ------------------------------- |
+| 1 | El formulario de registro de disponibilidad horaria no cuenta con validaciones que impidan guardar bloques con horas inconsistentes (ej. hora de fin menor a la de inicio). | 3 | Error Prevention |
+| 2 | Ausencia de alertas comprensibles cuando expira la sesión del usuario (token JWT); el sistema muestra un mensaje genérico de error de red en lugar de guiar al re-login. | 3 | Help Users Recognize, Diagnose, and Recover from Errors |
+| 3 | La pantalla de búsqueda de complejos deportivos pierde todos los filtros seleccionados (distrito, tipo de losa, precio) si el usuario cambia de pestaña momentáneamente. | 2 | Flexibility and Efficiency of Use / Recognition Rather Than Recall |
+| 4 | Falta de un paso de confirmación explícito o resumen de datos antes de proceder con el botón final de pago ficticio para la reserva de la cancha. | 3 | User Control and Freedom |
+| 5 | La sección para armar partidos y convocatorias con amigos utiliza íconos genéricos que confunden al usuario entre lo que es un evento privado y un torneo abierto. | 2 | Match Between System and the Real World / Aesthetic and Minimalist Design |
+| 6 | El sistema de calificación de canchas no ofrece retroalimentación visual inmediata tras enviar una reseña, obligando al usuario a navegar a cambiar de pestaña | 3 | Visibility of System Status / Error Prevention |
+
+<br>
+
+**DESCRIPCIÓN DE PROBLEMAS:** <br>
+
+**PROBLEMA #1: El formulario de registro de disponibilidad horaria no cuenta con validaciones que impidan guardar bloques con horas inconsistentes (ej. hora de fin menor a la de inicio)**
+
+**Severidad:** 3
+
+**Heurística violada:** Error Prevention
+
+**Problema:** Al momento de rellenar el formulario para abrir nuevos bloques de horarios en la agenda del entrenador (Availability), la interfaz permite seleccionar y enviar al servidor cualquier combinación de horas. Si un usuario introduce accidentalmente un rango inválido, como una hora de fin cronológicamente anterior a la de inicio (ej. de 10:00 AM a 08:00 AM del mismo día), el sistema procesa la petición de almacenamiento sin alertar del error, guardando datos corruptos que quiebran la lógica del calendario.
+
+**Recomendaciones:** Implementar una regla de validación de negocio reactiva directamente en la UI del formulario antes de habilitar el botón de envío. Se debe condicionar el estado `enabled` del botón mediante lógica booleana que compruebe que la hora de término sea estrictamente posterior a la de inicio. Adicionalmente, se recomienda desplegar un texto de asistencia (supporting text) dinámico en color rojo debajo de los selectores de tiempo advirtiendo de la incongruencia horaria.
+
+<br>
+
+**PROBLEMA #2: Ausencia de alertas comprensibles cuando expira la sesión del usuario (token JWT); el sistema muestra un mensaje genérico de error de red en lugar de guiar al re-login**
+
+**Severidad:** 3
+
+**Heurística violada:** Help Users Recognize, Diagnose, and Recover from Errors
+
+**Problema:** Cuando el token de autenticación JWT almacenado en el dispositivo caduca tras cumplirse el tiempo límite establecido por el backend, las peticiones HTTP posteriores a endpoints protegidos (como el centro de notificaciones `/me`) rebotan con un estado `401 Unauthorized`. La aplicación en el dispositivo móvil no captura ni traduce este código de estado específico, atrapando la respuesta en un bloque `catch` genérico que muestra al usuario un cuadro de diálogo confuso de "No se pudo conectar al servidor", impidiéndole diagnosticar que el problema real radica en la expiración de su sesión.
+
+**Recomendaciones:** Agregar un interceptor personalizado a nivel de red (`OkHttpClient Interceptor`) que evalúe de manera centralizada los códigos de respuesta del servidor. Si el interceptor detecta un error `401`, debe disparar automáticamente un evento global para limpiar el almacenamiento de sesión local (`SharedPreferences` o `DataStore`) y redirigir de forma inmediata y transparente al usuario hacia la pantalla de inicio de sesión (Login), adjuntando un mensaje en pantalla indicando que "Su sesión ha expirado por seguridad".
+
+<br>
+
+**PROBLEMA #3: La pantalla de búsqueda de complejos deportivos pierde todos los filtros seleccionados (distrito, tipo de losa, precio) si el usuario cambia de pestaña momentáneamente**
+
+**Severidad:** 2
+
+**Heurística violada:** Flexibility and Efficiency of Use / Recognition Rather Than Recall
+
+**Problema:** Al interactuar con los filtros avanzados en la vista de búsqueda de canchas, el usuario invierte tiempo seleccionando preferencias específicas. No obstante, si cambia temporalmente a otra pestaña del menú inferior de la aplicación (como revisar una notificación) y regresa de inmediato, el estado de los componentes visuales de filtrado se destruye por completo. Esto fuerza al usuario a recordar y reconfigurar manualmente todos los parámetros desde cero, reduciendo drásticamente la eficiencia de uso.
+
+**Recomendaciones:** Elevar el estado de los filtros (State Hoisting) de la vista hacia un ciclo de vida más persistente, como el de un `ViewModel` compartido o de ámbito de flujo, en lugar de mantener los estados de selección limitados a variables internas y volátiles del composable. De esta manera, al reconstruirse la vista por la navegación, los campos se precargarán reteniendo los valores almacenados previamente en memoria.
+
+<br>
+
+**PROBLEMA #4: Falta de un paso de confirmación explícito o resumen de datos antes de proceder con el botón final de pago ficticio para la reserva de la cancha**
+
+**Severidad:** 3
+
+**Heurística violada:** User Control and Freedom
+
+**Problema:** En la sección de checkout para la separación de espacios deportivos, el flujo avanza de manera directa hacia la ejecución de la reserva al presionar el botón de pago. Al no existir un paso intermedio que actúe como pasarela o modal de confirmación resumiendo el precio total, la cancha y la hora seleccionada, el usuario carece de una "salida de emergencia" para rectificar errores en la selección, facilitando ejecuciones accidentales o cobros erróneos por pulsaciones involuntarias.
+
+**Recomendaciones:** Diseñar e integrar una vista previa o un componente de diálogo flotante (`AlertDialog`) que se gatille al presionar el botón de pago preliminar. Esta ventana emergente debe consolidar un resumen claro de la transacción (Nombre del complejo, fecha, bloque de horas e importe total) y requerir una confirmación explícita mediante un botón de deslizamiento (`Swipe to confirm`) o doble verificación antes de interactuar con el endpoint final del backend.
+
+<br>
+
+**PROBLEMA #5: La sección para armar partidos y convocatorias con amigos utiliza íconos genéricos que confunden al usuario entre lo que es un evento privado y un torneo abierto**
+
+**Severidad:** 2
+
+**Heurística violada:** Match Between System and the Real World / Aesthetic and Minimalist Design
+
+**Problema:** La interfaz de creación de partidos asigna la misma iconografía estándar de una pelota de fútbol para todas las modalidades de organización disponibles. Esta carencia de diferenciación gráfica confunde visualmente al usuario, ya que es incapaz de discernir intuitivamente a simple vista si está organizando un encuentro estrictamente amistoso y privado con sus contactos o si está inscribiendo un equipo a una convocatoria de torneo competitiva de carácter abierto.
+
+**Recomendaciones:** Sustituir los íconos genéricos por un set iconográfico que use conceptos claros del entorno real deportivo. Por ejemplo, utilizar un icono de candado acompañado de un grupo de personas para indicar un "Partido Privado", y un icono de trofeo o medalla para etiquetar los "Torneos Abiertos". Esto dotará de un lenguaje e identidad visual coherente al ecosistema de la aplicación.
+
+<br>
+
+**PROBLEMA #6: El sistema de calificación de canchas no ofrece retroalimentación visual inmediata tras enviar una reseña, obligando al usuario a cambiar de pestaña**
+
+**Severidad:** 3
+
+**Heurística violada:** Visibility of System Status / Error Prevention
+
+**Problema:** Una vez que el usuario asigna la puntuación por estrellas, escribe su comentario y pulsa el botón de envío en el sistema de calificación, la pantalla permanece totalmente estática durante el procesamiento de la petición de red. Al no mostrarse un spinner de carga, un cambio de estado en el botón o una confirmación inmediata de éxito, el usuario experimenta incertidumbre, asume que la acción no se registró y presiona el botón repetidas veces, lo que ocasiona llamadas redundantes al servidor. Para verificar si se guardó, se ve forzado a cambiar de pantalla y regresar.
+
+**Recomendaciones:** Introducir un estado de carga explícito en la UI (`isLoading`) durante el transcurso de la petición asíncrona que deshabilite el botón temporalmente y muestre un indicador circular de progreso (`CircularProgressIndicator`). Tras recibir la confirmación exitosa con código `200` o `201` desde el backend, desplegar un componente de notificación breve en la base de la pantalla (`Snackbar`) que confirme que la reseña fue publicada, limpiando los campos del formulario de forma automática.
+
 ## Conclusiones y recomendaciones.
 
 ### Conclusiones
