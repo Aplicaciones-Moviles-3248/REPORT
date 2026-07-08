@@ -13430,6 +13430,34 @@ Cada entrevista tendrá una duración aproximada de 15 a 25 minutos y será apli
 La información recolectada será utilizada para registrar hallazgos por segmento, identificar oportunidades de mejora en la experiencia de usuario y evaluar si la solución implementada responde adecuadamente a las necesidades de deportistas aficionados y entrenadores independientes.
 
 ### 4.3.2. Registro de Entrevistas
+
+#### Segmento 1: Deportistas aficionados
+ 
+#### Segmento 2: Entrenadores independientes
+
+#### Entrevista N.° 1
+
+**Nombres y apellidos:** José Luis Quispe Huaman  
+**Edad:** 29 años  
+**Distrito de residencia:** San Juan de Lurigancho  
+**Ocupación:** Entrenador independiente  
+**Estado civil:** Soltero  
+**Inicio de la entrevista:**   
+**Fin de la entrevista:** 
+
+#### Registro visual de la entrevista
+
+[imagen]
+
+#### Resumen descriptivo de la entrevista
+
+Durante la entrevista, José Luis Quispe Huaman comentó que trabaja como entrenador independiente y que actualmente consigue la mayoría de sus alumnos mediante recomendaciones, contactos directos y redes sociales. Explicó que suele coordinar sus sesiones por WhatsApp, organizando horarios de acuerdo con su disponibilidad y con los espacios deportivos disponibles. Señaló que este proceso puede volverse desordenado cuando recibe varios mensajes al mismo tiempo, cuando un alumno cancela a último momento o cuando debe recordar manualmente quién confirmó una sesión o realizó un pago. Al revisar la propuesta de Courtly, indicó que le parece útil contar con una plataforma donde pueda mostrar su perfil profesional, publicar horarios disponibles, recibir solicitudes de entrenamiento y generar mayor confianza mediante reseñas de alumnos.
+
+#### Características identificadas a partir de la entrevista
+
+A partir de la entrevista se identifica que José Luis representa a un entrenador independiente que depende principalmente de canales informales para captar clientes y organizar su trabajo. Su principal necesidad es contar con una herramienta que le permita ordenar sus horarios, reducir cruces de agenda y centralizar la comunicación con sus alumnos. También valora la posibilidad de aumentar su visibilidad profesional mediante un perfil público con información clara, disponibilidad actualizada y reseñas. Asimismo, muestra interés en funcionalidades relacionadas con pagos, confirmación de sesiones y gestión de solicitudes, ya que estas podrían ayudarle a reducir la carga manual de coordinación y mejorar la confianza con nuevos clientes.
+
+
 ### 4.3.3. Evaluaciones según heurísticas
 
 ## Conclusiones y recomendaciones.
