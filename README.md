@@ -13682,6 +13682,32 @@ Durante la entrevista, José Luis Quispe Huaman comentó que trabaja como entren
 
 A partir de la entrevista se identifica que José Luis representa a un entrenador independiente que depende principalmente de canales informales para captar clientes y organizar su trabajo. Su principal necesidad es contar con una herramienta que le permita ordenar sus horarios, reducir cruces de agenda y centralizar la comunicación con sus alumnos. También valora la posibilidad de aumentar su visibilidad profesional mediante un perfil público con información clara, disponibilidad actualizada y reseñas. Asimismo, muestra interés en funcionalidades relacionadas con pagos, confirmación de sesiones y gestión de solicitudes, ya que estas podrían ayudarle a reducir la carga manual de coordinación y mejorar la confianza con nuevos clientes.
 
+#### Entrevista N.° 2
+
+**Nombres y apellidos:** Juan José Mesa Huanacune  
+**Edad:** 22 años  
+**Distrito de residencia o trabajo:** San Juan de Lurigancho, Lima  
+**Ocupación:** Entrenador en gimnasio / entrenador independiente  
+**Estado civil:** Soltero 
+**Inicio de la entrevista:** 00:00 
+**Fin de la entrevista:** 10:34
+
+#### Registro visual de la entrevista
+
+<p align="center">
+  <img src="assets/chapter4/sg2-entrevista2.png" alt="Registro visual entrevista entrenador" width="500">
+</p>
+
+#### Resumen descriptivo de la entrevista
+
+Durante la entrevista, Juan José Mesa Huanacune comentó que trabaja como entrenador desde hace aproximadamente dos años y que realiza entrenamiento físico en gimnasio. Explicó que actualmente organiza sus sesiones principalmente mediante WhatsApp, llamadas e Instagram, coordinando horarios y disponibilidad según cada alumno. Señaló que este proceso puede volverse complicado cuando los alumnos cancelan a último momento, cambian la hora, olvidan confirmar o cuando debe revisar varias conversaciones para recordar quién reservó un espacio o quién realizó un pago. También mencionó que consigue nuevos clientes principalmente por recomendaciones y redes sociales, aunque considera que generar confianza sigue siendo un reto importante para captar alumnos nuevos.
+
+Al revisar la propuesta de Courtly Coaches, indicó que la aplicación le parece útil porque permitiría mostrar un perfil profesional, registrar horarios disponibles, recibir solicitudes de sesiones, visualizar pagos recibidos y organizar mejor su trabajo. Destacó como funciones más importantes el perfil profesional, la agenda de disponibilidad, las reseñas de alumnos y la posibilidad de recibir solicitudes desde la aplicación. También mencionó como preocupación que la app no llegue a suficientes usuarios o que no garantice seguridad en los pagos y datos personales. Finalmente, afirmó que usaría la aplicación si es fácil de utilizar, ya que podría ayudarle a conseguir más alumnos, reducir la coordinación manual y proyectar una imagen más profesional.
+
+#### Características identificadas a partir de la entrevista
+
+A partir de la entrevista se identifica que Juan José representa a un entrenador joven que combina el trabajo en gimnasio con la captación de alumnos mediante recomendaciones y redes sociales. Su principal necesidad es ordenar la coordinación de horarios, reducir cancelaciones o confusiones y centralizar la información de sus sesiones en una sola herramienta. También valora la posibilidad de contar con un perfil profesional donde pueda mostrar su experiencia, especialidad, precios, ubicación, horarios, fotos y reseñas de alumnos. Asimismo, muestra interés en funcionalidades como disponibilidad visible, solicitudes de entrenamiento, pagos recibidos y recordatorios automáticos, ya que estas podrían ayudarle a mejorar su organización, aumentar la confianza de nuevos clientes y reducir la carga manual de comunicación por WhatsApp.
+
 
 ### 4.3.3. Evaluaciones según heurísticas
 
