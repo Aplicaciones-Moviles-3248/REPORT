@@ -12836,6 +12836,97 @@ Durante el Sprint 2, el equipo trabajó de forma coordinada en la implementació
 La evidencia de actividad en ambos repositorios refleja una colaboración constante, con participación distribuida y seguimiento del avance durante el sprint. Esto permitió avanzar de manera ordenada en la construcción de las interfaces móviles y en la validación de los flujos principales de cada segmento.
 
 
+### 4.2.3.3. Development Evidence for Sprint Review
+
+En el Sprint 3 se desarrolló la implementación y despliegue de la última versión del Mobile Application para Deportistas y Coaches, y del Backend; donde se han aplicado commits que evidencian el proceso de desarrollo en los artefactos respectivos:
+
+**Mobile Application - Deportistas:**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+| courtly_mobile_app | feature/USM09 | 911e1528ce44eef1f3e42e5379d76e65545e4973 | feat(matches): implement USM09 match creation with friends | Implement function for create matches with friends | 06/07/2026 |
+| courtly_mobile_app | feature/USM10 | ea7bc7c58bf88c91f7e3235e32bc3017c949f3a0 | feat(matches): implement USM10 join available match | Implement function for join on friend's matches | 06/07/2026 |
+| courtly_mobile_app | develop | 4958f911ed8234509404407ec5c3ee2299b09bf3 | fix(matches): fix syntax error in matches_screen.dart | Fix syntax error in matches screen | 06/07/2026 |
+| courtly_mobile_app | develop | 81957d43050f8738230eeda9318178dba556d926 | feat(theme): establish shared design tokens and apply to key screens | Add shared design for the app | 06/07/2026 |
+| courtly_mobile_app | develop | d23c1df0e424cb136d50c50da6b6a93f026294e7 | refactor(ui): collapsible search filters, image loaders, clock time pickers, stats and empty views | Optimize search filters, image loaders, clock time pickers, stats and empty views | 06/07/2026 |
+| courtly_mobile_app | develop | 31b1280fde083d3f112e5bf1a04e2290985028e7 | refactor(ui): update search filter transition animation | Update transition animation for search filters | 06/07/2026 |
+| courtly_mobile_app | develop | 91060d0f9acf56320de922aa2c95ea19d6bb4e68 | feat(milestone6): robust payments, home feed, consensus joining approval, split payments and coaches list | Optimize relevant functions for the app | 06/07/2026 |
+| courtly_mobile_app | feat/notifications | 0fe4aa68a397ed94aad78107abd49494c171c573 | feat(notifications): implement notifications function. | Implement notifications bounded context | 07/07/2026 |
+| courtly_mobile_app | feat/usm08-court-reviews | f8803d495a8c3336307f6a1fdc72e8d3f6d3f093 | feat(reviews): implement court review flow for completed bookings | Add court review's flow for bookings | 07/07/2026 |
+| courtly_mobile_app | feat/usm08-court-reviews | dbc9ee876654f81322acd678f7f41f262d9bbc68 | Merge pull request #2 from Aplicaciones-Moviles-3248/feat/usm08-court-reviews | Merge changes in court reviews to main branch | 07/07/2026 |
+| courtly_mobile_app | feat/mam76-terms-dialog | a8211b6a05525e0a242d035f2bbd20f6562209af | feat(iam): add terms and conditions acceptance dialog | Add terms and conditions acceptance dialog in the app | 07/07/2026 |
+| courtly_mobile_app | feat/mam76-terms-dialog | 7d48acb04d681b7bcb503ddeb85407a123c5f0b3 | Merge pull request #3 from Aplicaciones-Moviles-3248/feat/mam76-terms-dialog | Merge terms and conditions acceptance changes to main branch | 07/07/2026 |
+| courtly_mobile_app | feat/notifications | c5d5d05b340d6d3a5fb14ac75503c23ea5a80603 | feat(notifications): update notifications cases for reviews and matches. | Update notifications cases for reviews and matches functions | 07/07/2026 |
+| courtly_mobile_app | develop | 7d3ec87976436c0bc7b4153293c38f5410825319 | fix(payments,coaches,matches): remove mock fallbacks, surface real backend errors | Remove errors in payments, coaches and matches bounded context | 07/07/2026 |
+| courtly_mobile_app | develop | 33b40b684698488909cd055e39101247e8d95b3e | feat(matches,notifications): real consensus join flow and notifications feed | Optimize the join match and notifications flow | 07/07/2026 |
+| courtly_mobile_app | develop | baa5876917ebb7ec24a6f257e6aee45dc4410712 | merge(develop): ui-ux consistency, robustness fixes, consensus + notifications | Optimize consistency between ui-ux | 07/07/2026 |
+| courtly_mobile_app | develop | bd80c6c877ba2c69151e2e276e3f80573ef10c99 | fix(test): mock flutter_secure_storage platform channel globally | Fix secure flutter storage in test | 07/07/2026 |
+| courtly_mobile_app | develop | 6f5a9341055bb704a48f370cc4dcc63f00d1394d | merge(main): ui-ux consistency, robustness fixes, consensus + notifications | Merge changes for optimize consistency between ui-ux | 07/07/2026 |
+| courtly_mobile_app | main | 26acc450f2c4ef35b5f1c31c3be78835b92161fa | chore: regenerate desktop plugin registrants after merge | Restore desktop plugin | 07/07/2026 |
+| courtly_mobile_app | main | 3cfc21f29f745c2f1c6282026ddf37b1af991ddb | feat: implement available coaches flow | Implement available coaches flow in the app | 07/07/2026 |
+| courtly_mobile_app | main | 4e8765d5f7bf34666fc666c507c31691c666ea22 | fix: resolve merge conflicts with main branch. | Fix merge conflicts with the main branch | 07/07/2026 |
+| courtly_mobile_app | main | d5a4cc8f7c99543d6b17261104e12682ef162434 | fix: notification bounded context. | Fix problems in notification bounded context | 07/07/2026 |
+| courtly_mobile_app | main | 381d00d941eaaf9a46841bbb2dbefbc5be5dfd56 | fix: align notification test with team NotificationEntity interface | Align notification test with team NotificationEntity interface | 07/07/2026 |
+| courtly_mobile_app | main | b778372f739c7a40e8107e7dfd45906b4b2b762f | fix: add MATCH_JOIN_APPROVED type and safe default in NotificationTypeMapper | Fix appropiate type variable in NotificationTypeMapper | 07/07/2026 |
+| courtly_mobile_app | main | 83a7268e8b7cde766b0ba2accddabd5375bc857e | fix: correct notification model test to compare NotificationType enum instead of String | Correct notification model test to compare NotificationType enum instead of String | 07/07/2026 |
+| courtly_mobile_app | feat/mam72-search-available-trainers | 78ca42ecbd5831d98ba9131cf2785c02fb9287ef | Merge branch 'main' into feat/mam72-search-available-trainers | Merge changes of search available trainers to main branch | 07/07/2026 |
+| courtly_mobile_app | main | c2fefc10a6b42b40542d2896bf5abc36b466311f | feat(branding): rename app to Courtly, apply Courtly logo as launcher icon | Replace default icon to courtly icon | 07/07/2026 |
+| courtly_mobile_app | main | fa58ac9b232cecba84e5a18bcc39ebd401513e98 | merge: teammates notifications work + Courtly branding | Merge changes about teammates notifications work and Courtly branding | 07/07/2026 |
+| courtly_mobile_app | main | 410e725f334368a687d4a26aac8970b4b76a46fc | fix(http): force logout on invalid/expired session (401) | Fix error about to invalid/expired session (401) | 07/07/2026 |
+| courtly_mobile_app | main | 9419b4a66b1119617d04e19a24af7333d0bf3580 | update | Update training sessions bounded context | 07/07/2026 |
+| courtly_mobile_app | feature/USM25 | 72893db539ecf98a57ec90e0f7e8a9f88409e974 | Merge remote-tracking branch 'origin/feature/USM25' into main | Merge changes of feature/USM25 to main branch | 07/07/2026 |
+| courtly_mobile_app | feat/mam72-search-available-trainers | 061e499f7d1e09a92640fe7ba19408f9a0ca620a | Merge remote-tracking branch 'origin/feat/mam72-search-available-trainers' into main | Merge changes of feat/mam72-search-available-trainers to main branch | 07/07/2026 |
+
+<br>
+
+**Mobile Application - Entrenadores:**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+| courtly_coaches_app | feature/USM14 | 2da6a8a24e5bca13c9536410ef606d8a3aca7862 | feat(coaches): implement USM14 accept or reject training requests | Implement USM14 for accept or reject training requests | 06/07/2026 |
+| courtly_coaches_app | feature/USM16 | b2381becbdf7a6398f14e21637e7be4e50dc703d | feat(reviews): implement USM16 coach reviews and ratings view | Implement USM16 for coach reviews and ratings view | 06/07/2026 |
+| courtly_coaches_app | develop | 1c3b6f5cb23ca9cf0929165a46205e706f61540f | fix(coaches): fix Jetpack Compose compilation issues in CoachProfileScreen and TrainingSessionsScreen | Fix Jetpack Compose compilation issues in CoachProfileScreen and TrainingSessionsScreen | 06/07/2026 |
+| courtly_coaches_app | develop | 157f7d98be3afeefc4ccc2091b9d7ec2d6f6965c | feat(theme): establish shared design tokens and shapes, apply to screens | Optimize shared design in the screens | 06/07/2026 |
+| courtly_coaches_app | develop | 3a06bb391ddac5df10c0c8f020ebb3208537f620 | refactor(ui): update SignInScreen with placeholders, add dashboard CoachHomeScreen | Update SignInScreen with placeholder and add dashboard CoachHomeScreen | 06/07/2026 |
+| courtly_coaches_app | develop | e04d75d7c04f187353558ab13bba15c9d9a289ef | refactor(ui): update CoachProfileScreen with stats, add Date/Time Pickers to AvailabilityScreen | Update CoachProfileScreen with stats and add Date/Time Pickers to AvailabilityScreen | 06/07/2026 |
+| courtly_coaches_app | feat/notifications | deda732bc534406b9715db6898774da8881af20b | feat(notifications): implement notifications bounded context. | Implement notifications bounded context | 07/07/2026 |
+| courtly_coaches_app | feat/notifications | 7d9765e6d8600727fcc512e0dce0adefd5bb5e9a | feat(notifications): changes in navigation for notifications function. | Update navigation flow for notifications function | 07/07/2026 |
+| courtly_coaches_app | develop | 056fc76655aca351535a3848500332ad5a703fcb | test(coaches): add real unit tests and CI workflow | Add real unit tests and CI workflow | 07/07/2026 |
+| courtly_coaches_app | develop | f00a7c792ef830dca0afbf0f02ff5e64bb65475a | merge(develop): ui-ux consistency, real unit tests, CI workflow | Merge changes about ui-ux consistency, real unit tests and CI workflow | 07/07/2026 |
+| courtly_coaches_app | feat/analytics | 0e382cd6f137d6c60f8a266e19e36be082ca187f | feat(analytics): implement analytics bounded context. | Implement analytics bounded context | 07/07/2026 |
+| courtly_coaches_app | feat/analytics | 0dda114c9cf2262b23cfde82537be1b4e7b491ab | merge: resolve CoachNavigation import conflicts between develop and feature/analytics. | Resolve problems for merge in CoachNavigation | 07/07/2026 |
+| courtly_coaches_app | feat/analytics | 783e772de90e30a2ae11b50f5f8fd1ccec1902d5 | Merge branch 'develop' into feature/notifications | Merge feature/notifications branch to develop | 07/07/2026 |
+| courtly_coaches_app | develop | 3044c1726e3c06bd0c2d3bc6d6a1039b09d63db8 | Merge pull request #3 from Aplicaciones-Moviles-3248/feature/notifications | Merge feature/notifications branch to develop | 07/07/2026 |
+| courtly_coaches_app | develop | 3044c1726e3c06bd0c2d3bc6d6a1039b09d63db8 | Merge pull request #3 from Aplicaciones-Moviles-3248/feature/notifications | Merge feature/notifications branch to develop | 07/07/2026 |
+| courtly_coaches_app | develop | e49cfff3a46dbe6ef3318774ef0b2fcef491f11e | merge: integrar feature/notifications a develop. | Implement feature/notifications to develop branch | 07/07/2026 |
+| courtly_coaches_app | main | 1a8d29ae6ddaa7f5e6c224435ddef674971248a1 | Merge pull request #5 from Aplicaciones-Moviles-3248/develop | Merge changes of develop branch to main branch | 07/07/2026 |
+| courtly_coaches_app | main | 526feb058c54a728798d846e3d807da77f2d3ec0 | feat(branding): apply Courtly logo as launcher icon | Change default to Courtly icon | 07/07/2026 |
+| courtly_coaches_app | main | 98d7447bc32c2b40f2688655cbb54238ca94223b | merge: teammates notifications/analytics work + branding | Merge teammates notifications/analytics work and branding | 07/07/2026 |
+| courtly_coaches_app | main | 21e44104e83e40de9e5f5550935721fed3a9ebdf | fix(network): force logout on invalid/expired session (401) | Force logout on invalid/expired session (401) | 07/07/2026 |
+| courtly_coaches_app | main | c40eeb79b59a39adb2923ccb5aaf5030a02ce1a2 | Merge remote-tracking branch 'origin/feature/analytics' into _test_analytics_into_main | Merge remote-tracking branch into _test_analytics_into_main | 07/07/2026 |
+
+<br>
+
+**Backend:**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+| backend | main | 73843925b88e33440c810c6777cfa814913f31ef | feat(main): add changes for notifications function. | Update files for allow notifications flow | 07/07/2026 |
+| backend | main | 9ef17f6b69ae0875b4965a03f5b4f5a7500c86c2 | fix(users): return 404 instead of 500 when /me has no linked profile | Fix error return 404 instead of 500 when /me has no linked profile | 07/07/2026 |
+| backend | main | ff8da4bb58d4bacf9cbe37a332a387ae35e90930 | feat(matches): add consensus-based join requests with real notifications | Add consensus-based join requests with real notifications | 07/07/2026 |
+| backend | develop | ab95bb3722f8e022282bc05ba342027974c70e9a | merge(develop): consensus join requests + notifications fixes | Merge consensus join requests and notifications fixes in develop branch | 07/07/2026 |
+| backend | main | af064fc5d95fd75686930a6cc9108153b01f7f7c | merge(main): consensus join requests + notifications fixes | Merge consensus join requests and notifications fixes in main branch | 07/07/2026 |
+| backend | main | c07bac309e2ce8a8aeaed877d094ea2bc071d59a | fix(security): stop masking real errors as 401 via /error dispatch | Fix error security that stop masking real errors as 401 via /error dispatch | 07/07/2026 |
+| backend | develop | 21539b81c008098a70125b73cb460f38efba38a2 | merge(develop): fix 401 masking via /error dispatch | fix 401 masking via /error dispatch in develop branch | 07/07/2026 |
+| backend | main | 32062145fa504dd0693c500dce4908aea2fbd36a | merge(main): fix 401 masking via /error dispatch | fix 401 masking via /error dispatch in main branch | 07/07/2026 |
+| backend | main | 0c078a5922f5231e3f7c1ecc364caec480e738a6 | feat(seed): add demo data seeder for players, coaches, matches, bookings | Add demo data seeder for players, coaches, matches and bookings | 07/07/2026 |
+| backend | develop | d1090c6d3241c6fd1fafc859c9d2991bb7f8b150 | merge(develop): demo data seeder | Merge demo data seeder in develop branch | 07/07/2026 |
+| backend | main | 2fcf257602108901a4ac7a967ad886357b86124e | merge(main): demo data seeder | Merge demo data seeder in main branch | 07/07/2026 |
+| backend | main | 157f5331c393fc093fd6852d892c9744d26df378 | fix(seed): stop DemoDataSeeder crash-looping on duplicate coach/email | Fix stop DemoDataSeeder crash-looping on duplicate coach/email | 07/07/2026 |
+| backend | main | fc0e100bbaca7396b1c98ed0a23bc8a854043ed7 | fix(trainingsessions): stop 409ing coach-only accounts on GET endpoints | Fix stop 409ing coach-only accounts on GET endpoints | 07/07/2026 |
+| backend | main | 9c001432c3406d3c3ff2d4285696116f630f4bd8 | feat(seed): spread demo sessions, matches, bookings and payments across current week | Spread demo sessions, matches, bookings and payments across current week | 07/07/2026 |
+
+
 ### 4.3.3. Evaluaciones según heurísticas
 
 # Evaluación Heurística de Usabilidad y Diseño Inclusivo para la Aplicación: "Courtly"
