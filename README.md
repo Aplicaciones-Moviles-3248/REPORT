@@ -230,6 +230,21 @@ INGENIERÍA DE SOFTWARE
     </ul>
   </td>
 </tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;">TB2</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">24/06/2026</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">
+    <ul>
+      <li>Todos</li>
+    </ul>
+  </td>
+  <td style="border: 1px solid #ddd; padding: 8px;">            
+    <ul>
+      <li>Capítulo IV: Punto 4.2.3</li>
+      <li>Capítulo IV: Punto 4.3</li>
+    </ul>
+  </td>
+</tr>
 </table><br>
 
 
