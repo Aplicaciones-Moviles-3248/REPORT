@@ -12836,9 +12836,8 @@ Durante el Sprint 2, el equipo trabajó de forma coordinada en la implementació
 La evidencia de actividad en ambos repositorios refleja una colaboración constante, con participación distribuida y seguimiento del avance durante el sprint. Esto permitió avanzar de manera ordenada en la construcción de las interfaces móviles y en la validación de los flujos principales de cada segmento.
 
 ### 4.2.3. Sprint 3
-##### 4.2.3.1. Sprint Planning 3
 
-#### 4.2.2.2. Sprint Planning 3
+#### 4.2.3.1. Sprint Planning 3
 
 <div>
   <table border="1" cellspacing="0" cellpadding="8" width="100%">
@@ -12897,9 +12896,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
   </table>
 </div>
 
-##### 4.2.3.2. Sprint Backlog 3
-
-#### 4.2.2.3. Sprint Backlog 3
+#### 4.2.3.2. Sprint Backlog 3
 
 <div>
   <table border="1" cellspacing="0" cellpadding="8" width="100%">
@@ -13056,11 +13053,15 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
   </table>
 </div>
 
-##### 4.2.3.3. Development Evidence for Sprint Review
-##### 4.2.3.4. Testing Suite Evidence for Sprint Review
-##### 4.2.3.5. Execution Evidence for Sprint Review
-##### 4.2.3.6. Services Documentation Evidence for Sprint Review
-##### 4.2.3.7. Software Deployment Evidence for Sprint Review
+#### 4.2.3.3. Development Evidence for Sprint Review
+
+#### 4.2.3.4. Testing Suite Evidence for Sprint Review
+
+#### 4.2.3.5. Execution Evidence for Sprint Review
+
+#### 4.2.3.6. Services Documentation Evidence for Sprint Review
+
+#### 4.2.3.7. Software Deployment Evidence for Sprint Review
 
 Durante el Sprint 3 se consolidó la evidencia de despliegue del producto Courtly, desarrollado por la startup Mova, considerando la validación de la aplicación móvil, el backend desplegado en un entorno público y la landing page informativa. El objetivo principal fue asegurar que los productos digitales puedan ejecutarse, integrarse y presentarse correctamente durante el Sprint Review, evidenciando el estado final de la solución para deportistas aficionados y entrenadores independientes.
 
@@ -13128,7 +13129,7 @@ A diferencia de Sprints anteriores, en esta etapa el trabajo se concentró en co
 
 Las estadísticas presentadas corresponden a la actividad visible en GitHub al cierre del Sprint 3. Estos valores permiten observar la evolución de cada repositorio hasta esta iteración, por lo que se interpretan junto con las funcionalidades, ramas, pull requests y evidencias desarrolladas durante el Sprint.
 
-### Integrantes del equipo
+##### Integrantes del equipo
 
 - **U202317692 – Angulo Abud, Juan Carlos**
 - **U202324129 – Chacaliza Minaya, Eduardo Fabian**
@@ -13136,7 +13137,7 @@ Las estadísticas presentadas corresponden a la actividad visible en GitHub al c
 - **U202215462 – Nanfuñay Liza, Pedro Jesús**
 - **U202320442 – Quispe Barzola, Fabricio Fabian**
 
-### Distribución general del trabajo
+##### Distribución general del trabajo
 
 Durante el Sprint 3, el trabajo se organizó de acuerdo con los productos móviles y los bounded contexts priorizados en el backlog. La distribución general permitió que el equipo avance en paralelo sobre distintos flujos de la aplicación, manteniendo la integración con los servicios del backend.
 
@@ -13153,7 +13154,7 @@ Las principales líneas de trabajo fueron:
 **Interpretación:**  
 La distribución del trabajo muestra que la colaboración del Sprint no se limitó a una sola funcionalidad, sino que abarcó distintos aspectos del producto móvil. Cada integrante participó desde su responsabilidad asignada, ya sea en implementación, revisión, validación o documentación del avance realizado.
 
-### Repositorios trabajados durante el Sprint
+##### Repositorios trabajados durante el Sprint
 
 Durante el Sprint 3, la colaboración del equipo se evidenció principalmente en los siguientes repositorios:
 
@@ -13167,7 +13168,7 @@ El repositorio `courtly_mobile_app` concentró el desarrollo de funcionalidades 
 **Captura:**  
 ![Repositorios trabajados durante el Sprint 3](assets/chapter4/sp3-repositories.png)
 
-### Repositorio 1: Deportistas Aficionados - Flutter
+##### Repositorio 1: Deportistas Aficionados - Flutter
 
 - **Repositorio:** `https://github.com/Aplicaciones-Moviles-3248/courtly_mobile_app`
 - **Producto:** Aplicación móvil para deportistas aficionados.
@@ -13198,7 +13199,7 @@ La actividad registrada en `courtly_mobile_app` evidencia el avance del equipo e
 
 ![Pull Requests courtly_mobile_app Sprint 3](assets/chapter4/sp3-mobile-app-prs.png)
 
-### Repositorio 2: Entrenadores - Android
+##### Repositorio 2: Entrenadores - Android
 
 - **Repositorio:** `https://github.com/Aplicaciones-Moviles-3248/courtly_coaches_app`
 - **Producto:** Aplicación móvil para entrenadores.
@@ -13229,7 +13230,7 @@ La existencia de un repositorio independiente para entrenadores permite que las 
 
 ![Pull Requests courtly_coaches_app Sprint 3](assets/chapter4/sp3-coaches-app-prs.png)
 
-### Repositorio 3: Reporte del Proyecto
+##### Repositorio 3: Reporte del Proyecto
 
 - **Repositorio:** `https://github.com/Aplicaciones-Moviles-3248/REPORT`
 - **Producto:** Documentación del proyecto.
@@ -13259,7 +13260,7 @@ La actividad en `REPORT` evidencia la colaboración documental del equipo. Aunqu
 
 ![Pull Requests REPORT Sprint 3](assets/chapter4/sp3-report-prs.png)
 
-### Pull requests, ramas e integración de cambios
+##### Pull requests, ramas e integración de cambios
 
 Durante el Sprint 3, el equipo utilizó ramas y pull requests para organizar la integración de funcionalidades. Esta dinámica permitió trabajar cambios de forma separada antes de incorporarlos a la rama principal, reduciendo el riesgo de afectar funcionalidades ya existentes.
 
@@ -13268,7 +13269,7 @@ Además, durante la integración se presentaron conflictos en archivos compartid
 **Interpretación:**  
 La presencia de ramas, pull requests y conflictos de integración evidencia un trabajo paralelo real dentro del equipo. La resolución de conflictos permitió conservar avances de distintos integrantes y consolidar una versión integrada del producto. Esto refleja una dinámica colaborativa más cercana a un entorno profesional de desarrollo, donde la integración y revisión de cambios es parte del proceso normal del Sprint.
 
-### Análisis general de la colaboración del Sprint
+##### Análisis general de la colaboración del Sprint
 
 A partir de la evidencia disponible, el equipo interpreta la colaboración del Sprint 3 de la siguiente manera:
 
@@ -13281,12 +13282,11 @@ A partir de la evidencia disponible, el equipo interpreta la colaboración del S
 
 En consecuencia, la colaboración del Sprint debe entenderse desde una perspectiva integral. GitHub evidencia la actividad técnica mediante commits, branches y pull requests, mientras que el repositorio del reporte evidencia la integración documental, el análisis del avance y la preparación de evidencias para Sprint Review.
 
-### Conclusión
+##### Conclusión
 
 Durante el Sprint 3, el equipo fortaleció su dinámica de colaboración mediante el uso de repositorios separados, ramas por funcionalidad, integración de cambios y documentación de evidencias. El trabajo realizado permitió avanzar en la consolidación de las aplicaciones móviles de Courtly, manteniendo la separación entre deportistas aficionados y entrenadores. Aunque la actividad visible en GitHub puede variar entre repositorios e integrantes, la colaboración se reflejó en la implementación, validación, resolución de conflictos y consolidación del entregable final para Sprint Review.
 
 ## 4.3. Validation Interviews
-### 4.3.1. Diseño de Entrevistas
 
 ### 4.3.1. Diseño de Entrevistas
 
