@@ -12977,7 +12977,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
     </tr>
     <tr>
       <td align="left" ><strong>Date</strong></td>
-      <td align="left">2026-06-27</td>
+      <td align="left">2026-07-06</td>
     </tr>
     <tr>
       <td align="left" ><strong>Time</strong></td>
@@ -12989,7 +12989,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
     </tr>
     <tr>
       <td align="left" ><strong>Prepared By</strong></td>
-      <td align="left">Fabricio Quispe, Equipo de Producto</td>
+      <td align="left">Camilla Espinoza</td>
     </tr>
     <tr>
       <td align="left" ><strong>Attendees (to planning meeting)</strong></td>
@@ -13054,7 +13054,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Crear la interfaz para que el jugador pueda calificar una cancha después de haber completado una reserva, incluyendo puntuación y comentario.</td>
       <td align="center">4</td>
       <td>Fabricio Quispe</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM09</td>
@@ -13064,7 +13064,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Implementar la pantalla para crear un partido, seleccionando deporte, cancha, fecha, horario y cantidad de participantes.</td>
       <td align="center">8</td>
       <td>Juan Carlos Angulo</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM10</td>
@@ -13074,7 +13074,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Permitir que el jugador visualice partidos abiertos y pueda unirse a uno disponible, validando cupos y estado del partido.</td>
       <td align="center">5</td>
       <td>Juan Carlos Angulo</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM14</td>
@@ -13084,7 +13084,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Implementar la vista para que el entrenador revise solicitudes recibidas y pueda aceptarlas o rechazarlas desde la aplicación móvil.</td>
       <td align="center">8</td>
       <td>Juan Carlos Angulo</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM15</td>
@@ -13094,7 +13094,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Desarrollar una pantalla para que el entrenador pueda consultar los pagos recibidos por sesiones aceptadas o completadas.</td>
       <td align="center">5</td>
       <td>Fabricio Quispe</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM16</td>
@@ -13104,7 +13104,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Implementar la visualización de reseñas y comentarios realizados por jugadores luego de una sesión completada con el entrenador.</td>
       <td align="center">4</td>
       <td>Juan Carlos Angulo</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM17</td>
@@ -13114,7 +13114,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Crear una sección móvil para consultar métricas de rendimiento del usuario, como sesiones, partidos, valoraciones o actividad registrada.</td>
       <td align="center">8</td>
       <td>Pedro Nanfuñay</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM18</td>
@@ -13124,7 +13124,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Configurar alertas dentro de la aplicación para informar sobre reservas, solicitudes, pagos, partidos y cambios importantes del usuario.</td>
       <td align="center">8</td>
       <td>Pedro Nanfuñay</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM22</td>
@@ -13134,7 +13134,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Crear la vista para que el jugador pueda buscar entrenadores disponibles, visualizando información básica, especialidad y disponibilidad.</td>
       <td align="center">8</td>
       <td>Eduardo Chacaliaza</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM23</td>
@@ -13144,7 +13144,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Permitir que el jugador solicite una sesión con un entrenador, seleccionando fecha, horario y detalle de la solicitud.</td>
       <td align="center">10</td>
       <td>Camilla Espinoza</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM24</td>
@@ -13154,7 +13154,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Desarrollar el flujo para que el jugador pueda pagar una sesión previamente aceptada por el entrenador, mostrando monto, confirmación y estado del pago.</td>
       <td align="center">8</td>
       <td>Eduardo Chacaliaza</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM25</td>
@@ -13164,7 +13164,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Agregar la opción para que el jugador califique al entrenador después de una sesión completada, incluyendo puntuación y comentario.</td>
       <td align="center">4</td>
       <td>Camilla Espinoza</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">MAM-76</td>
@@ -13174,7 +13174,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Implementar un diálogo informativo de términos y condiciones dentro de la aplicación móvil, solicitando aceptación del usuario cuando corresponda.</td>
       <td align="center">3</td>
       <td>Fabricio Quispe</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
   </table>
 </div>
@@ -13670,7 +13670,9 @@ La información recolectada será utilizada para registrar hallazgos por segment
 
 #### Registro visual de la entrevista
 
-[imagen]
+<p align="center">
+  <img src="assets/chapter4/sg2-entrevista1.png" alt="Logo UPC" width="500">
+</p>
 
 #### Resumen descriptivo de la entrevista
 
