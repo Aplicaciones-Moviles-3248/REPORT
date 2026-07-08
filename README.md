@@ -992,6 +992,7 @@ INGENIERÍA DE SOFTWARE
     - [4.2.2.4. Execution Evidence for Sprint Review](#4215-execution-evidence-for-sprint-review)
     - [4.2.2.5. Software Deployment Evidence for Sprint Review](#4217-software-deployment-evidence-for-sprint-review)
     - [4.2.2.6. Team Collaboration Insights during Sprint](#4218-team-collaboration-insights-during-sprint)
+  - [4.2.3.7. Software Deployment Evidence for Sprint Review](#4237-software-deployment-evidence-for-sprint-review)
 - [4.3. Validation Interviews](#43-validation-interviews)
   - [4.3.1. Diseño de Entrevistas](#431-diseño-de-entrevistas)
   - [4.3.2. Registro de Entrevistas](#432-registro-de-entrevistas)
@@ -13169,6 +13170,30 @@ Durante el Sprint 3 se consolidó la evidencia de despliegue del producto Courtl
 | Mobile Application - Flutter Player App | Android Studio / Android Emulator / APK debug | Validar ejecución de flujos del deportista aficionado | ![Swagger UI documentation](assets/chapter4/sprint3/appejecutandose.png) |
 | Mobile Application - Android Coach App | Android Studio / Android Emulator / APK debug | Validar ejecución de flujos del entrenador | ![Swagger UI documentation](assets/chapter4/sprint3/coachesejec.png) |
 
+###### Firebase App Distribution Evidence
+
+Durante Sprint 3, las aplicaciones móviles Courtly Players y Courtly Coaches fueron registradas y distribuidas mediante Firebase App Distribution. Este proceso permitió subir los APK generados, invitar verificadores y registrar el estado de aceptación y descarga de las versiones previas antes de la presentación final.
+
+| Mobile Application | Technology | Package name | Release | Invited | Accepted | Downloaded | Status |
+|---|---|---|---|---:|---:|---:|---|
+| Courtly Mobile App - Players | Flutter | pe.edu.upc.courtly_mobile_app | 1.0.0 (1) | 5 | 1 | 1 | Validated |
+| Courtly Mobile App - Coaches | Android/Kotlin | com.courtly.coaches | 1.0 (1) | 5 | 1 | 1 | alidated |
+
+<p align="center">
+  <img src="assets/chapter4/sprint3/firebase-players-distribution.png" alt="Firebase App Distribution Players" width="750">
+</p>
+
+<p align="center">
+  <img src="assets/chapter4/sprint3/firebase-coaches-distribution.png" alt="Firebase App Distribution Coaches" width="750">
+</p>
+
+| Application | Build command | APK output path |
+|---|---|---|
+| Courtly Mobile App - Players | `flutter build apk --debug` | `build/app/outputs/flutter-apk/app-debug.apk` |
+| Courtly Mobile App - Coaches | `.\gradlew assembleDebug` | `app/build/outputs/apk/debug/app-debug.apk` |
+
+The Players mobile application was validated with one accepted invitation and one download registered in Firebase App Distribution. The Coaches mobile application was successfully uploaded and distributed to the selected testers, remaining pending for external acceptance and download. This evidence complements the Sprint 3 deployment evidence for the mobile applications required for the final delivery.
+
 ###### Mobile Application Deployment Evidence
 
 La aplicación móvil fue ejecutada en Android Studio mediante un emulador Android o un dispositivo físico, según la disponibilidad del equipo. Para esta validación se realizó la sincronización de dependencias, la compilación del proyecto y la ejecución en modo debug. En el caso de la aplicación Flutter, se consideraron comandos como `flutter pub get`, `flutter run` y `flutter build apk --debug`, con el propósito de comprobar que el proyecto compile correctamente y pueda ser utilizado durante la presentación del Sprint Review.
@@ -13209,8 +13234,8 @@ La landing page se mantuvo desplegada como producto web informativo de Courtly y
 |---|---|---|---|
 | Landing Page | Access through public URL | Successful | The site loads correctly and presents Courtly’s value proposition. |
 | RESTful API | Swagger UI and endpoint validation | Successful | The backend is publicly available and supports mobile integration. |
-| Flutter Player App | Debug execution on Android | Successful | The app runs and connects to backend services. |
-| Android Coach App | Debug execution on Android | Successful | The trainer flow can be executed for Sprint Review. |
+| Flutter Player App | Deployed through Firebase App Distribution | Successful | 5 invited testers, 1 accepted invitation, 1 download. |
+| Android Coach App | Deployed through Firebase App Distribution | Partially validated | 5 invited testers, pending acceptance and download. |
 
 ###### Sprint 3 Deployment Conclusions
 
