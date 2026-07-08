@@ -216,6 +216,35 @@ INGENIERÍA DE SOFTWARE
     </ul>
   </td>
 </tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;">AV2</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">24/06/2026</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">
+    <ul>
+      <li>Todos</li>
+    </ul>
+  </td>
+  <td style="border: 1px solid #ddd; padding: 8px;">            
+    <ul>
+      <li>Capítulo IV: Punto 4.2.2</li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;">TB2</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">24/06/2026</td>
+  <td style="border: 1px solid #ddd; padding: 8px;">
+    <ul>
+      <li>Todos</li>
+    </ul>
+  </td>
+  <td style="border: 1px solid #ddd; padding: 8px;">            
+    <ul>
+      <li>Capítulo IV: Punto 4.2.3</li>
+      <li>Capítulo IV: Punto 4.3</li>
+    </ul>
+  </td>
+</tr>
 </table><br>
 
 
@@ -626,6 +655,145 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
 </table>
+
+<h2>AV2</h2>
+
+<p>Para el desarrollo del informe perteneciente a la entrega AV1, se dividió la implementación de secciones del Capítulo IV en bloques de trabajo, asignando cada conjunto de secciones a un integrante del equipo.</p>
+
+<p align="center">
+  <img src="assets/chapter4/av2.png" alt="Logo UPC" width="500">
+</p>
+
+<table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <td align="center"><strong>Integrante</strong></td>
+    <td align="center"><strong>Tareas Asignadas</strong></td>
+  </tr>
+
+  <!-- BLOQUE 1 -->
+  <tr>
+    <td>Fabricio Fabian Quispe Barzola</td>
+    <td>
+      <ul>
+        <li>4.2.2. Sprint 2</li>
+        <li>4.2.2.1. Sprint Planning 2</li>
+        <li>4.2.2.2. Sprint Backlog 2</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Pedro Jesús Nanfuñay Liza</td>
+    <td>
+      <ul>
+        <li>4.2.2.3. Development Evidence for Sprint Review</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Juan Carlos Angulo Abud</td>
+    <td>
+      <ul>
+        <li>4.2.2.5. Execution Evidence for Sprint Review</li>       
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Fabricio Fabian Quispe Barzola</td>
+    <td>
+      <ul>        
+        <li>4.2.2.7. Software Deployment Evidence for Sprint Review</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Camilla Leonor Espinoza Vivas</td>
+    <td>
+      <ul>
+        <li>4.2.2.8. Team Collaboration Insights during Sprint</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+<h2>TB2</h2>
+
+<p>Para el desarrollo del informe perteneciente a la entrega TB2, se dividió la implementación de secciones del Capítulo IV en bloques de trabajo, asignando cada conjunto de secciones a un integrante del equipo.</p>
+
+<p align="center">
+  <img src="assets/chapter4/tb2.png" alt="Logo UPC" width="500">
+</p>
+
+<table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <td align="center"><strong>Integrante</strong></td>
+    <td align="center"><strong>Tareas Asignadas</strong></td>
+  </tr>
+
+  <!-- BLOQUE 1 -->
+  <tr>
+    <td>Camilla Leonor Espinoza Vivas</td>
+    <td>
+      <ul>
+        <li>4.2.3. Sprint 3</li>
+        <li>4.2.3.1. Sprint Planning 3</li>
+        <li>4.2.3.2. Sprint Backlog 3</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Pedro Jesús Nanfuñay Liza</td>
+    <td>
+      <ul>
+        <li>4.2.2.3. Development Evidence for Sprint Review</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Camilla Leonor Espinoza Vivas</td>
+    <td>
+      <ul>
+        <li>4.2.2.4. Testing Suite Evidence for Sprint Review</li> 
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Juan Carlos Angulo Abud</td>
+    <td>
+      <ul>        
+        <li>4.2.2.5. Execution Evidence for Sprint Review</li>  
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Fabricio Fabian Quispe Barzola</td>
+    <td>
+      <ul>
+        <li>4.2.2.6. Software Deployment Evidence for Sprint Review</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Camilla Leonor Espinoza Vivas</td>
+    <td>
+      <ul>
+        <li>4.2.2.7. Team Collaboration Insights during Sprint</li>  
+        <li>4.3. Validation Interviews</li>  
+        <li>4.3.1. Diseño de Entrevistas</li>  
+        <li>4.3.2. Registro de Entrevistas</li>  
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Fabricio Fabian Quispe Barzola</td>
+    <td>
+      <ul>
+        <li>4.3.3. Evaluaciones según heurísticas</li> 
+      </ul>
+    </td>
+  </tr>
+</table>
+
 <!--ÍNDICE-->
 # Contenido
 [Student Outcome](#student-outcome)
@@ -808,15 +976,32 @@ INGENIERÍA DE SOFTWARE
   - [4.1.3. Source Code Style Guide & Conventions](#413-source-code-style-guide--conventions)
   - [4.1.4. Software Deployment Configuration](#414-software-deployment-configuration)
 - [4.2. Landing Page & Mobile Application Implementation](#42-landing-page--mobile-application-implementation)
-  - [4.2.1. Sprint n](#421-sprint-n)
-    - [4.2.1.1. Sprint Planning n](#4211-sprint-planning-n)
-    - [4.2.1.2. Sprint Backlog n](#4212-sprint-backlog-n)
+  - [4.2.1. Sprint 1](#421-sprint-n)
+    - [4.2.1.1. Sprint Planning 1](#4211-sprint-planning-n)
+    - [4.2.1.2. Sprint Backlog 1](#4212-sprint-backlog-n)
     - [4.2.1.3. Development Evidence for Sprint Review](#4213-development-evidence-for-sprint-review)
     - [4.2.1.4. Testing Suite Evidence for Sprint Review](#4214-testing-suite-evidence-for-sprint-review)
     - [4.2.1.5. Execution Evidence for Sprint Review](#4215-execution-evidence-for-sprint-review)
     - [4.2.1.6. Services Documentation Evidence for Sprint Review](#4216-services-documentation-evidence-for-sprint-review)
     - [4.2.1.7. Software Deployment Evidence for Sprint Review](#4217-software-deployment-evidence-for-sprint-review)
     - [4.2.1.8. Team Collaboration Insights during Sprint](#4218-team-collaboration-insights-during-sprint)
+  - [4.2.2. Sprint 2](#421-sprint-n)
+    - [4.2.2.1. Sprint Planning 2](#4211-sprint-planning-n)
+    - [4.2.2.2. Sprint Backlog 2](#4212-sprint-backlog-n)
+    - [4.2.2.3. Development Evidence for Sprint Review](#4213-development-evidence-for-sprint-review)
+    - [4.2.2.4. Execution Evidence for Sprint Review](#4215-execution-evidence-for-sprint-review)
+    - [4.2.2.5. Software Deployment Evidence for Sprint Review](#4217-software-deployment-evidence-for-sprint-review)
+    - [4.2.2.6. Team Collaboration Insights during Sprint](#4218-team-collaboration-insights-during-sprint)
+  - [4.2.3.7. Software Deployment Evidence for Sprint Review](#4237-software-deployment-evidence-for-sprint-review)
+  - [4.2.1. Sprint 3](#421-sprint-n)
+    - [4.2.3.1. Sprint Planning 3](#4211-sprint-planning-n)
+    - [4.2.3.2. Sprint Backlog 3](#4212-sprint-backlog-n)
+    - [4.2.3.3. Development Evidence for Sprint Review](#4213-development-evidence-for-sprint-review)
+    - [4.2.3.4. Testing Suite Evidence for Sprint Review](#4214-testing-suite-evidence-for-sprint-review)
+    - [4.2.3.5. Execution Evidence for Sprint Review](#4215-execution-evidence-for-sprint-review)
+    - [4.2.3.6. Services Documentation Evidence for Sprint Review](#4216-services-documentation-evidence-for-sprint-review)
+    - [4.2.3.7. Software Deployment Evidence for Sprint Review](#4217-software-deployment-evidence-for-sprint-review)
+    - [4.2.3.8. Team Collaboration Insights during Sprint](#4218-team-collaboration-insights-during-sprint)
 - [4.3. Validation Interviews](#43-validation-interviews)
   - [4.3.1. Diseño de Entrevistas](#431-diseño-de-entrevistas)
   - [4.3.2. Registro de Entrevistas](#432-registro-de-entrevistas)
@@ -851,29 +1036,39 @@ INGENIERÍA DE SOFTWARE
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 <strong>Juan Carlos Angulo</strong><br>
                 AV1:<br>Durante el desarrollo del AV1, actualizó y aplicó conocimientos avanzados en Domain-Driven Design mediante la elaboración completa del EventStorming, incluyendo Candidate Context Discovery y Domain Message Flows Modeling. Además, diseñó e implementó dos bounded contexts completos (Courts y Availabilities) con todas sus capas (Domain, Interface, Application e Infrastructure), así como diagramas de arquitectura a nivel de componentes y código (Class Diagrams y Database Design Diagrams).<br>
-                AV2:<br>Durante el desarrollo del AV2, apliqué y actualicé mis conocimientos en el proceso de desarrollo e implementación de funciones en el frontend móvil, específicamente en el bounded context Availabilities para permitir la gestión de la agenda del entrenador, incluyendo la creación, edición y eliminación de bloques de disponibilidad, así como el manejo de los estados de las sesiones de entrenamiento y la edición del perfil del entrenador, aplicando buenas prácticas de desarrollo de software y documentación de evidencias de ejecución.<br>
+                AV2: <br>Durante el desarrollo del AV2, apliqué y actualicé mis conocimientos en el proceso de desarrollo e implementación de funciones en el frontend móvil, específicamente en el bounded context Availabilities para permitir la gestión de la agenda del entrenador, incluyendo la creación, edición y eliminación de bloques de disponibilidad, así como el manejo de los estados de las sesiones de entrenamiento y la edición del perfil del entrenador, aplicando buenas prácticas de desarrollo de software y documentación de evidencias de ejecución.<br>
                 <strong>Camilla Espinoza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó conocimientos en arquitectura de software y Domain-Driven Design mediante la elaboración de User Stories, Impact Mapping y Product Backlog. Además, diseñó los bounded contexts de Coaches y Reviews, así como diagramas de arquitectura (contexto, contenedores y componentes) y diagramas UML del dominio.<br>
                 TB1:<br>
-                Actualicé y mejoré los User Stories del proyecto móvil Courtly, apoyé en la planificación del Sprint Planning y Sprint Backlog, participé en la mejora del reporte del proyecto y colaboré en el diseño del prototipo móvil mediante mockups y wireframes desarrollados en HTML, CSS y JavaScript. Además, apoyé en la definición de reglas de negocio para el backend, fortaleciendo mis conocimientos en metodologías ágiles, diseño UI/UX, desarrollo frontend y lógica funcional para aplicaciones móviles.
-                <br>
-                <br><strong>Fabricio Fabian Quispe Barzola</strong><br>
+                Actualicé y mejoré los User Stories del proyecto móvil Courtly, apoyé en la planificación del Sprint Planning y Sprint Backlog, participé en la mejora del reporte del proyecto y colaboré en el diseño del prototipo móvil mediante mockups y wireframes desarrollados en HTML, CSS y JavaScript. Además, apoyé en la definición de reglas de negocio para el backend, fortaleciendo mis conocimientos en metodologías ágiles, diseño UI/UX, desarrollo frontend y lógica funcional para aplicaciones móviles.<br>
+                AV2: <br>
+                Durante el desarrollo del AV2, actualicé y apliqué conocimientos en diseño de agendas y administración de horarios para implementar de manera funcional la creación, edición, listado y eliminación de disponibilidades del entrenador. Esto implicó organizar la representación de bloques horarios en la interfaz, validar rangos de tiempo consistentes y conectar cada operación con los servicios del backend, asegurando que la gestión de disponibilidades respondiera adecuadamente a las necesidades del segmento de entrenadores dentro de Courtly.<br>
+                TB2: <br>Durante el desarrollo del TB2, actualicé y apliqué conocimientos relacionados con la gestión de proyectos móviles, validación de usuarios y documentación de entregables de software. Participé como líder del equipo organizando las tareas del Sprint 3, coordinando el avance de los integrantes y asegurando la coherencia general del reporte. Asimismo, desarrollé la sección de Validation Interviews, incluyendo el diseño de entrevistas y el registro de entrevistas para los segmentos objetivo de Courtly. Además, trabajé en la aplicación móvil Flutter orientada a deportistas, implementando el flujo de creación de sesiones con entrenadores. Esta funcionalidad permite que el usuario pueda revisar entrenadores disponibles, consultar horarios y registrar una solicitud de entrenamiento desde la aplicación. También contribuí a la organización del reporte, revisión de contenidos, documentación de evidencias y alineación entre lo implementado en la app móvil, la app de entrenadores y la propuesta de valor del producto.<br>
+                <strong>Fabricio Fabian Quispe Barzola</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó conocimientos en análisis de dominio y arquitectura de software mediante la elaboración del análisis competitivo, estrategias y tácticas frente a competidores, así como el diseño del Context Mapping utilizando Domain-Driven Design. Además, desarrolló los bounded contexts de Bookings y Analytics, incluyendo sus respectivas capas (Domain, Application, Interface e Infrastructure), junto con diagramas de arquitectura (Component Level) y diagramas de código (Class Diagram y Database Design).<br>
                 TB1:<br>
-                Durante el desarrollo del TB1, actualicé y apliqué conocimientos relacionados con el desarrollo e integración de soluciones de software en diferentes frentes del proyecto Courtly. Participé en actividades vinculadas al backend, landing page y frontend, apoyando en la revisión funcional, documentación técnica y validación de evidencias del Sprint. Además, desarrollé la documentación de Web Services mediante OpenAPI/Swagger, registrando endpoints, métodos HTTP, parámetros, ejemplos de request y response, así como capturas de evidencia para el Sprint Review. También participé en la documentación del deployment del backend en Render y de la landing page en GitHub Pages, fortaleciendo mis conocimientos en despliegue, integración de repositorios, validación de servicios y presentación técnica del producto.
-                <br>
+                Durante el desarrollo del TB1, actualicé y apliqué conocimientos relacionados con el desarrollo e integración de soluciones de software en diferentes frentes del proyecto Courtly. Participé en actividades vinculadas al backend, landing page y frontend, apoyando en la revisión funcional, documentación técnica y validación de evidencias del Sprint. Además, desarrollé la documentación de Web Services mediante OpenAPI/Swagger, registrando endpoints, métodos HTTP, parámetros, ejemplos de request y response, así como capturas de evidencia para el Sprint Review. También participé en la documentación del deployment del backend en Render y de la landing page en GitHub Pages, fortaleciendo mis conocimientos en despliegue, integración de repositorios, validación de servicios y presentación técnica del producto.<br>
+                AV2: <br>
+                Durante el desarrollo del AV2, actualicé y apliqué conocimientos relacionados con la implementación y validación de aplicaciones móviles orientadas a un segmento específico de usuario. Mi trabajo se enfocó en el segmento de deportista aficionado dentro del proyecto Courtly, considerando principalmente los bounded contexts Users y Courts. Desde Users, participé en la documentación y avance de funcionalidades relacionadas con la edición del perfil personal del jugador. Desde Courts, apoyé el avance de funcionalidades como búsqueda de canchas por ubicación, filtrado y visualización del detalle de cancha. Asimismo, participé en la documentación del Sprint 2, incluyendo Sprint Planning, Sprint Backlog y Software Deployment Evidence, registrando evidencias de sincronización de dependencias, compilación, ejecución en Android y validación del backend mediante Swagger UI. Este trabajo fortaleció mis conocimientos en desarrollo móvil con Flutter, integración con servicios backend, organización de evidencias técnicas y documentación para Sprint Review.
+                <br>TB2:<br>
+                Durante el desarrollo del TB2, actualicé y apliqué conocimientos relacionados con la implementación, mejora, validación y despliegue de aplicaciones móviles dentro del proyecto Courtly. Mi participación no se limitó al despliegue en Firebase, sino que también incluyó el avance de funcionalidades vinculadas al flujo del jugador y del entrenador. En la aplicación Flutter para jugadores, trabajé con funcionalidades asociadas a la búsqueda de canchas por ubicación, filtrado por deporte, precio y horario, visualización del detalle de cancha, edición del perfil personal y valoración de una cancha utilizada. En la aplicación Android/Kotlin para entrenadores, participé en la funcionalidad de visualización de pagos recibidos y en la mejora del diálogo de Términos y Condiciones, buscando mantener coherencia funcional entre ambas aplicaciones. Además, colaboré en la validación del producto mediante el registro de una entrevista a un entrenador y completé la evidencia de despliegue móvil del Sprint 3 mediante Firebase App Distribution para Courtly Players y Courtly Coaches. Para ello, registré ambas aplicaciones Android en Firebase, integré los archivos google-services.json, generé los APK debug correspondientes, distribuí los builds a verificadores y documenté las evidencias en el README. Este trabajo fortaleció mis conocimientos en desarrollo móvil con Flutter y Android/Kotlin, integración de funcionalidades, validación de usuarios, configuración de distribución móvil y documentación técnica para una entrega final.
                 <br><strong>Pedro Jesús Nanfuñay Liza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, apliqué y actualicé mis conocimientos en el proceso de creación de elementos needfinding, tales como los User Persona, User Journey Mapping, Empathy Mapping, entre otros. Así como en el proceso de Big Picture EventStorming, e identificación y desarrollo de bounded context relacionados al negocio como payments y matches, a partir de sus respectivas capas, junto con sus diagramas de arquitectura y diagramas de código.<br>
                 TB1:<br>
                 Durante el desarrollo del Tb1, apliqué y actualicé mis conocimientos relacionados con el desarrollo del backend e implementación de pruebas de software para la automatización y validación de servicios REST. Pude reforzar conceptos vinculados al diseño e implementación de Unit Tests, Integration Tests y Acceptance Tests bajo el enfoque BDD, así como el uso de herramientas como JUnit, Mockito y Cucumber; asegurando una mejor comprensión de la calidad del software y de las prácticas necesarias para construir soluciones más confiables y mantenibles.<br>
+                AV2:<br>
+                Durante el desarrollo del AV2, apliqué y actualicé mis conocimientos en el proceso de desarrollo e implementación de funciones en el frontend, específicamente en el bounded context Bookings para permitir la reserva de canchas deportivas, así como, la cancelación de la misma, aplicando buenas prácticas de desarrollo de software y documentación.<br>
                 <br><strong>Eduardo Fabian Chacaliaza Minaya</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó sus conocimientos en arquitectura de software y diseño centrado en el usuario mediante la aplicación de Lean UX, realizando entrevistas, definición de hipótesis y validación de necesidades. Asimismo, participó en la construcción del Context Mapping bajo el enfoque de Domain-Driven Design y en el modelado de los bounded contexts de IAM, Users y Notifications, desarrollando sus capas principales y los diagramas de soporte (componentes, clases y base de datos), lo que permitió una mejor comprensión de la organización y estructura del sistema.<br>
                 TB1:<br>
                 Durante el desarrollo del TB1, actualizó y aplicó conocimientos relacionados con el diseño UI/UX y el desarrollo de soluciones de software para el proyecto Courtly. Participó en la elaboración del Capítulo III: Solution UI/UX Design, desarrollando secciones como Product Design, Style Guidelines y Landing Page UI Design. Además, aportó en el desarrollo de código del proyecto, colaborando en la landing page, frontend y backend. Esto le permitió reforzar conocimientos en diseño de interfaces, lineamientos visuales, estructura de páginas web, integración de funcionalidades y desarrollo técnico orientado a la construcción de una solución de software más completa y coherente.
+                <br>
+                AV2:<br>
+                Durante el desarrollo del AV2, actualicé y apliqué conocimientos en autenticación móvil, consumo de APIs y persistencia de sesión para implementar correctamente los flujos de inicio de sesión, registro y recuperación del estado autenticado dentro de la aplicación. Asimismo, reforcé mis conocimientos en la construcción de perfiles profesionales y en la gestión de datos del entrenador, lo que permitió soportar la visualización y edición de su información en Android de forma coherente con la arquitectura del proyecto. Este proceso contribuyó a consolidar mis competencias en integración móvil con servicios backend y en el diseño de funcionalidades orientadas a usuarios con roles específicos dentro de Courtly.
                 <br>
            </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
@@ -881,6 +1076,10 @@ INGENIERÍA DE SOFTWARE
                 El equipo demostró un efectivo liderazgo conjunto durante el AV1, donde cada miembro asumió responsabilidades compartidas de coordinación y toma de decisiones. Se evidenció una colaboración fluida que abarcó desde aspectos estratégicos y técnicos del proyecto hasta la planificación operativa y distribución de tareas. La comunicación continua, las reuniones regulares y el trabajo colaborativo. El compromiso colectivo por mantener una sana relación de equipo y la capacidad para resolver conflictos de manera conjunta permitieron lograr consensos efectivos y entregar un trabajo cohesivo y de calidad, demostrando que el liderazgo fue verdaderamente compartido y distribuido entre todos los integrantes.<br>
                 TB1<br>
                 El equipo profundizó su modelo de liderazgo conjunto, evolucionando desde la coordinación estratégica hacia la ejecución operativa de soluciones concretas. Durante el TB1, se evidenció no solo el mantenimiento de responsabilidades compartidas y colaboración fluida, sino una mayor especialización donde cada miembro asumió roles técnicos específicos (UI/UX, backend, frontend, infraestructura) sin perder la visión integral del proyecto. La comunicación continua y las reuniones regulares se complementaron con nuevas prácticas como Sprint Planning, validación de entregables y coordinación cross-funcional entre disciplinas. El equipo demostró capacidad para resolver conflictos técnicos y de integración de manera conjunta, permitiendo la armonización entre diseño, implementación y despliegue. La entrega de artefactos tangibles desplegados en producción (landing page y backend en Render y GitHub Pages) refleja un liderazgo compartido que trascendió de la planificación a la materialización de resultados, consolidando un equipo que no solo trabaja de manera cohesiva, sino que genera valor medible para el producto Courtly.<br>
+                AV2<br>
+                Durante el AV2, el equipo consolidó sus conocimientos en desarrollo móvil aplicado a soluciones de software, pasando de la definición del dominio a la implementación de experiencias funcionales para dos segmentos distintos del producto Courtly: deportistas aficionados en Flutter y entrenadores en Android. Esta etapa evidenció una mayor madurez técnica, ya que el trabajo no solo se centró en construir pantallas, sino en integrar flujos completos de autenticación, navegación, gestión de canchas y administración de disponibilidades, manteniendo coherencia con el backend existente. Asimismo, se reforzaron habilidades en consumo de servicios REST, organización por bounded contexts, persistencia de sesión, diseño de interfaces intuitivas y adaptación de la arquitectura a cada plataforma. La colaboración entre los miembros permitió avanzar de forma coordinada en ambos repositorios, validando entregables reales y consolidando una solución móvil más sólida, alineada con las necesidades funcionales del proyecto y con un enfoque más profesional en la construcción de software.<br>
+                TB2<br>
+                Durante el TB2, el equipo consolidó el cierre del proyecto Courtly integrando funcionalidades móviles, validación de usuarios, documentación técnica y despliegue de las aplicaciones en un entorno de distribución previo al lanzamiento. El trabajo realizado permitió fortalecer la solución para los segmentos de jugadores y entrenadores, evidenciando avances tanto en Flutter como en Android/Kotlin. Asimismo, la distribución de las aplicaciones mediante Firebase App Distribution permitió acercar el producto a un escenario real de validación, donde los builds pudieron ser compartidos con verificadores externos para su aceptación, descarga y prueba. Esta etapa reforzó la importancia del aprendizaje continuo en desarrollo móvil, control de versiones, documentación de evidencias y despliegue de aplicaciones, permitiendo sustentar de forma más completa el logro del Student Outcome 7.
             </td>
         </tr>
         <tr>
@@ -889,37 +1088,49 @@ INGENIERÍA DE SOFTWARE
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 <strong>Juan Carlos Angulo</strong><br>
-                AV1: Durante el AV1, investigué y apliqué metodologías avanzadas de Domain-Driven Design, incluyendo técnicas de EventStorming para descubrimiento de contextos acotados y modelado de flujos de dominio. Investigué patrones de arquitectura de software (C4 Model, patrones tácticos de DDD) y utilicé herramientas para la elaboración de diagramas UML complejos, diagramas de componentes y diseño de bases de datos relacionales. Esto fortaleció significativamente mis habilidades en modelado de sistemas complejos, separación de responsabilidades y arquitectura orientada al dominio.<br>
-                TB1: Durante el desarrollo del TB1, reconocí la importancia del aprendizaje permanente en configuración y gestión de infraestructura de software. Investigué y apliqué mejores prácticas en **configuración de entornos de desarrollo** basados en Java 21 LTS y Spring Boot, documentando estándares de ambiente y perfiles de configuración para múltiples ambientes. Además, profundicé en **estrategias de control de versiones** con Git Flow, convenciones de commits semantificados y políticas de code review. Investigué y documenté **estándares de código** incluyendo convenciones de nombrado, estructura de paquetes y patrones arquitectónicos (CQRS, assemblers) aplicables a 13 bounded contexts. Finalmente, aprendí y configuré **pipelines de deployment** automatizados con Docker multi-stage y Render, incluyendo variables de entorno seguras, health checks y estrategias de rollback. Este aprendizaje continuo en infraestructura y DevOps fortalece mi capacidad para diseñar sistemas mantenibles, escalables y seguros en producción.<br>
-                AV2: Durante el AV2, reconocí la importancia del aprendizaje constante en el desarrollo frontend móvil con Flutter, que permita a los usuarios acceder de manera satisfactoria a las funciones de la aplicación, aplicando y reforzando mis conocimientos de desarrollo de software y de pruebas apropiadas que validen la disponibilidad y eficiencia de las funciones implementadas.<br><br>
+                AV1: <br>Durante el AV1, investigué y apliqué metodologías avanzadas de Domain-Driven Design, incluyendo técnicas de EventStorming para descubrimiento de contextos acotados y modelado de flujos de dominio. Investigué patrones de arquitectura de software (C4 Model, patrones tácticos de DDD) y utilicé herramientas para la elaboración de diagramas UML complejos, diagramas de componentes y diseño de bases de datos relacionales. Esto fortaleció significativamente mis habilidades en modelado de sistemas complejos, separación de responsabilidades y arquitectura orientada al dominio.<br>
+                TB1:<br> Durante el desarrollo del TB1, reconocí la importancia del aprendizaje permanente en configuración y gestión de infraestructura de software. Investigué y apliqué mejores prácticas en **configuración de entornos de desarrollo** basados en Java 21 LTS y Spring Boot, documentando estándares de ambiente y perfiles de configuración para múltiples ambientes. Además, profundicé en **estrategias de control de versiones** con Git Flow, convenciones de commits semantificados y políticas de code review. Investigué y documenté **estándares de código** incluyendo convenciones de nombrado, estructura de paquetes y patrones arquitectónicos (CQRS, assemblers) aplicables a 13 bounded contexts. Finalmente, aprendí y configuré **pipelines de deployment** automatizados con Docker multi-stage y Render, incluyendo variables de entorno seguras, health checks y estrategias de rollback. Este aprendizaje continuo en infraestructura y DevOps fortalece mi capacidad para diseñar sistemas mantenibles, escalables y seguros en producción.<br><br>
+                AV2: <br>Durante el AV2, reconocí la importancia del aprendizaje constante en el desarrollo frontend móvil con Flutter, que permita a los usuarios acceder de manera satisfactoria a las funciones de la aplicación, aplicando y reforzando mis conocimientos de desarrollo de software y de pruebas apropiadas que validen la disponibilidad y eficiencia de las funciones implementadas.<br>
                 <strong>Camilla Espinoza</strong><br>
                 AV1:<br>
                 Durante el AV1, investigó y aplicó nuevas herramientas y metodologías como Structurizr para diagramas C4, PlantUML para modelado de clases y Miro para Impact Mapping. Esto permitió mejorar la calidad del diseño arquitectónico y fortalecer sus habilidades en modelado de sistemas y documentación técnica.<br>
                 TB1:<br>
-                Reconocí la importancia del aprendizaje permanente mediante la actualización y mejora continua de los User Stories, la participación en actividades ágiles como Sprint Planning y Sprint Backlog, y el apoyo en el diseño del prototipo móvil utilizando HTML, CSS y JavaScript. Asimismo, colaboré en la definición de reglas de negocio para el backend, fortaleciendo constantemente mis conocimientos en desarrollo de aplicaciones móviles, metodologías ágiles y diseño de soluciones de software orientadas a las necesidades del proyecto Courtly.
+                Reconocí la importancia del aprendizaje permanente mediante la actualización y mejora continua de los User Stories, la participación en actividades ágiles como Sprint Planning y Sprint Backlog, y el apoyo en el diseño del prototipo móvil utilizando HTML, CSS y JavaScript. Asimismo, colaboré en la definición de reglas de negocio para el backend, fortaleciendo constantemente mis conocimientos en desarrollo de aplicaciones móviles, metodologías ágiles y diseño de soluciones de software orientadas a las necesidades del proyecto Courtly.<br>
+                AV2: <br>
+                Durante el desarrollo del AV2, reconocí la necesidad de actualizar mis conocimientos en diseño de agendas, administración de horarios y consumo de servicios backend para implementar adecuadamente la gestión de disponibilidades del entrenador. Fue necesario comprender con mayor profundidad la forma de representar bloques horarios en la interfaz, registrar información consistente, validar rangos de tiempo y sincronizar las operaciones de creación, edición, consulta y eliminación con los endpoints del sistema. Este proceso me permitió fortalecer mis capacidades para construir flujos móviles más intuitivos, funcionales y alineados con las necesidades reales del proyecto Courtly.
                 </br>
+                TB2: <br>Durante el desarrollo del TB2, reconocí la necesidad del aprendizaje permanente al asumir actividades relacionadas con liderazgo, validación de usuarios, documentación del reporte y desarrollo móvil en Flutter. Fue necesario reforzar mis conocimientos sobre planificación de Sprint, organización de entregables, redacción de evidencias y diseño de entrevistas de validación para asegurar que el reporte reflejara correctamente el avance real del producto Courtly. Asimismo, al implementar el flujo de creación de sesiones con entrenadores en la aplicación Flutter, profundicé en la integración entre funcionalidades móviles, necesidades del segmento de deportistas y conexión con el segmento de entrenadores. Este proceso me permitió comprender mejor cómo una funcionalidad debe responder tanto a los requerimientos técnicos como a la experiencia del usuario. También fortalecí mis habilidades para coordinar el trabajo del equipo, revisar la coherencia del contenido documentado y mantener alineados los avances de desarrollo, validación UX y propuesta de valor del proyecto.<br>
                 <br><strong>Fabricio Fabian Quispe Barzola</strong><br>
                 AV1:<br>
                 Durante el AV1, investigó y aplicó conceptos de Domain-Driven Design y modelado arquitectónico, utilizando herramientas para la elaboración de diagramas UML, diagramas de componentes y diseño de bases de datos. Esto le permitió mejorar su capacidad de estructurar bounded contexts, comprender mejor la separación de responsabilidades y fortalecer sus habilidades en documentación técnica y diseño de soluciones de software.<br>
                 TB1:<br>
                 Durante el desarrollo del TB1, reconocí la importancia del aprendizaje permanente al tener que reforzar conocimientos en backend, frontend, documentación técnica y despliegue de aplicaciones. Fue necesario comprender mejor el uso de Swagger para documentar y validar endpoints, así como el proceso de publicación del backend en Render y de la landing page mediante GitHub Pages. También reforcé mi aprendizaje sobre la organización del trabajo en repositorios, el uso de evidencias para Sprint Review y la integración de aportes del equipo en el reporte. Esto me permitió mejorar mi capacidad para adaptarme a distintas áreas del proyecto y entender que el desarrollo de software requiere aprendizaje continuo, tanto en implementación como en documentación, validación y deployment.
                 <br>
+                AV2: <br>Durante el desarrollo del AV2, reconocí la importancia del aprendizaje permanente al trabajar en la preparación y validación del flujo móvil del Sprint 2. Fue necesario reforzar conocimientos sobre Flutter, ejecución de aplicaciones móviles desde Android Studio, sincronización de dependencias mediante Flutter Pub, generación de APK en modo debug y validación de servicios backend desplegados. Además, al documentar el Software Deployment Evidence, comprendí mejor la relación entre la aplicación móvil, el backend en la nube y las evidencias necesarias para sustentar un Sprint Review. Este proceso me permitió mejorar mi capacidad para organizar entregables técnicos, validar funcionalidades implementadas y comunicar de forma clara el avance del producto Courtly dentro de un entorno de trabajo colaborativo.<br>
+                TB2:<br>
+                Durante el desarrollo del TB2, reconocí la importancia del aprendizaje permanente al tener que integrar distintos frentes del ciclo de vida del producto móvil Courtly. Fue necesario reforzar conocimientos no solo sobre Firebase App Distribution y generación de APKs, sino también sobre desarrollo móvil en Flutter, Android/Kotlin, manejo de estados, navegación, consumo de servicios, evidencias de ejecución y validación con usuarios. Al participar en funcionalidades como búsqueda, filtros, detalle de cancha, edición de perfil, valoración de canchas, visualización de pagos y diálogo de Términos y Condiciones, comprendí que el desarrollo de una aplicación móvil requiere aprender continuamente para adaptar soluciones a distintos segmentos de usuario. Asimismo, el despliegue mediante Firebase App Distribution me permitió entender que una aplicación no está lista solo porque compila correctamente, sino porque puede ser distribuida, instalada, probada y sustentada con evidencias. Este proceso fortaleció mi capacidad para aprender herramientas nuevas, resolver problemas técnicos, documentar avances reales y comunicar mi contribución dentro de un entorno de trabajo colaborativo.<br>
                 <br><strong>Pedro Jesús Nanfuñay Liza</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, comprendí la importancia del constante aprendizaje autodidacta para mi desarrollo profesional en el desarrollo de proyectos de software, tomando en cuenta temas esenciales como Domain Driven Design (DDD) y modelado arquitectónico de diagramas de componentes, clases y bases de datos. Ello me incentivó a seguir expandiendo mis conocimientos para mejorar mi capacidad de estructurar bounded context, su respectiva documentación técnica, entre otras áreas de este tipo de proyectos.<br>
                 TB1:<br>
                 Durante el desarrollo del TB1, comprendí la importancia de mantener un aprendizaje constante en relación al desarrollo, despliegue e implementación de pruebas para el backend. Donde fue necesario investigar nuevas herramientas y entender diferentes enfoques de pruebas. Demostrando, la importancia de aprender continuamente para mejorar mis habilidades profesionales con el objetivo de desarrollar soluciones de software más sólidas, confiables y alineadas con buenas prácticas.<br>
+                AV2:<br>Durante el AV2, reconocí la importancia del aprendizaje constante de desarrollo en la parte frontend que permita a los usuarios acceder de manera satisfactoria a funciones de una aplicación, aplicando y reforzando mis conocimientos de desarrollo de software y testings apropiados que validen la disponibilidad y eficiencia de las funciones.<br>
                 <br><strong>Eduardo Fabian Chacaliaza Minaya</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, exploró y utilizó herramientas orientadas al modelado y diseño de software como Structurizr, PlantUML y Miro, integrándolas en la elaboración de diagramas C4, modelos de clases y actividades de Impact Mapping. Este proceso le permitió no solo mejorar la representación visual de la arquitectura del sistema, sino también afianzar su capacidad de organizar ideas, estructurar soluciones y documentar de manera más clara los distintos componentes del proyecto.<br>
                 TB1:<br>
                 Durante el desarrollo del TB1, reconoció la importancia del aprendizaje permanente al reforzar conocimientos en diseño UI/UX, desarrollo frontend, landing page y backend. Para cumplir con sus responsabilidades, tuvo que investigar y aplicar criterios de diseño visual, organización de interfaces, lineamientos de estilo y estructura de páginas web. Además, al colaborar en el desarrollo de código, fortaleció su capacidad para adaptarse a distintas áreas del proyecto, comprendiendo que una solución de software requiere aprendizaje continuo tanto en diseño como en implementación técnica, integración y validación del producto.<br>
+                AV2: <br>Durante el desarrollo del AV2, reconocí la importancia del aprendizaje permanente al profundizar en la integración de autenticación móvil, manejo de sesiones y consumo de servicios backend dentro de la aplicación. Fue necesario reforzar conocimientos sobre persistencia de sesión, validación de credenciales, gestión de estados autenticados y conexión con APIs REST para asegurar que el inicio de sesión funcionara correctamente y que la experiencia del usuario se mantuviera estable entre ejecuciones. Asimismo, en la implementación de la vista del entrenador, comprendí la necesidad de seguir fortaleciendo mis conocimientos en desarrollo Android, modelado de perfiles y organización de pantallas, lo que me permitió estructurar mejor la edición de datos, la navegación interna y la representación funcional de los flujos asociados al entrenador. Este proceso contribuyó a mejorar mi capacidad para adaptar soluciones móviles a requerimientos reales del proyecto y consolidó mi formación técnica dentro de un entorno de desarrollo colaborativo.<br>
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 AV1<br>
                 El equipo logró mantener un entorno colaborativo e inclusivo mediante la distribución clara de responsabilidades, la coordinación constante y la planificación progresiva de actividades durante las entregas. Cada integrante aportó desde su área de trabajo, lo que permitió avanzar de manera ordenada y alineada con los objetivos del proyecto. La organización de tareas, el seguimiento de avances y la comunicación permanente favorecieron el cumplimiento de metas parciales y la construcción de un proceso de trabajo más estructurado y cooperativo.<br>
                 TB1<br>
-                El equipo consolidó y evolucionó su modelo de colaboración desde el AV1, logrando integrar exitosamente el diseño UI/UX con la implementación técnica del backend y frontend. Más allá del mantenimiento de un entorno colaborativo e inclusivo, se evidenció una mayor madurez en la gestión de entregas, donde cada integrante asumió responsabilidades tanto en su área especializada como en actividades transversales de validación e integración.
+                El equipo consolidó y evolucionó su modelo de colaboración desde el AV1, logrando integrar exitosamente el diseño UI/UX con la implementación técnica del backend y frontend. Más allá del mantenimiento de un entorno colaborativo e inclusivo, se evidenció una mayor madurez en la gestión de entregas, donde cada integrante asumió responsabilidades tanto en su área especializada como en actividades transversales de validación e integración.<br>
+                AV2<br>
+                Durante el AV2, el equipo consolidó un trabajo colaborativo más especializado, orientado al desarrollo del frontend móvil para los dos segmentos del proyecto. La distribución de responsabilidades permitió avanzar de forma paralela en Flutter para deportistas aficionados y en Android para entrenadores, manteniendo coordinación constante para asegurar coherencia entre ambos repositorios. La comunicación continua, la validación cruzada de avances y la integración de los flujos principales facilitaron una ejecución más madura y ordenada, evidenciando una colaboración efectiva enfocada en la construcción de soluciones de software funcionales y alineadas con los objetivos del proyecto.<br>
+                TB2<br>
+                Durante el TB2, el equipo consolidó el cierre del proyecto Courtly integrando funcionalidades móviles, validación de usuarios, documentación técnica y despliegue de las aplicaciones en un entorno de distribución previo al lanzamiento. El trabajo realizado permitió fortalecer la solución para los segmentos de jugadores y entrenadores, evidenciando avances tanto en Flutter como en Android/Kotlin. Asimismo, la distribución de las aplicaciones mediante Firebase App Distribution permitió acercar el producto a un escenario real de validación, donde los builds pudieron ser compartidos con verificadores externos para su aceptación, descarga y prueba. Esta etapa reforzó la importancia del aprendizaje continuo en desarrollo móvil, control de versiones, documentación de evidencias y despliegue de aplicaciones, permitiendo sustentar de forma más completa el logro del Student Outcome 7.<br>
             </td>
         </tr>
     </table>
@@ -12536,7 +12747,7 @@ En el Sprint 2 se desarrolló la implementación y despliegue de la primera vers
 
 ---
 
-#### 4.2.2.5. Execution Evidence for Sprint Review
+#### 4.2.2.4. Execution Evidence for Sprint Review
 
 En el Sprint 2 se ejecutó la primera versión funcional de la Mobile Application de Courtly conectada al backend desplegado, validando los flujos del segmento de entrenadores: autenticación, gestión de disponibilidad, estados de las sesiones de entrenamiento, partidos y perfil. A continuación, se presentan las evidencias capturadas sobre la aplicación en ejecución:
 
@@ -12570,7 +12781,7 @@ En el Sprint 2 se ejecutó la primera versión funcional de la Mobile Applicatio
 
 ---
 
-#### 4.2.2.7. Software Deployment Evidence for Sprint Review
+#### 4.2.2.5. Software Deployment Evidence for Sprint Review
 
 En este Sprint se realizaron actividades de despliegue y preparación de entornos orientadas principalmente a la **aplicación móvil de Courtly** y a su integración con los servicios backend previamente desplegados. A diferencia del Sprint 1, donde el esfuerzo de deployment estuvo centrado en la publicación inicial del backend en Render y del Landing Page mediante GitHub Pages, en este Sprint el trabajo se enfocó en preparar el entorno móvil, validar la ejecución de la aplicación en Android Studio, configurar las dependencias necesarias para el consumo de servicios externos y comprobar que la aplicación pueda conectarse con los Web Services del proyecto.
 
@@ -12690,7 +12901,7 @@ Este proceso permitió consolidar la base técnica para la revisión del increme
 
 ---
 
-#### 4.2.2.8. Team Collaboration Insights during Sprint
+#### 4.2.2.6. Team Collaboration Insights during Sprint
 
 Durante el Sprint 2, el equipo trabajó de forma coordinada en la implementación del frontend móvil para ambos segmentos del sistema: deportistas aficionados en Flutter y entrenadores en Android. La colaboración se organizó por responsabilidades específicas, con validaciones cruzadas entre integrantes para asegurar consistencia funcional, visual y técnica entre ambos repositorios.
 
@@ -12739,6 +12950,857 @@ Durante el Sprint 2, el equipo trabajó de forma coordinada en la implementació
 
 La evidencia de actividad en ambos repositorios refleja una colaboración constante, con participación distribuida y seguimiento del avance durante el sprint. Esto permitió avanzar de manera ordenada en la construcción de las interfaces móviles y en la validación de los flujos principales de cada segmento.
 
+### 4.2.3. Sprint 3
+
+#### 4.2.3.1. Sprint Planning 3
+
+<div>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <td align="left" "><strong>Sprint #</strong></td>
+      <td align="left">Sprint 3</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint Planning Background</strong></td>
+      <td align="left">Implementación de funcionalidades complementarias de la aplicación móvil de Courtly, enfocadas en la gestión de entrenadores, creación de partidos, pagos, valoraciones, reseñas, notificaciones y estadísticas de rendimiento.</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Date</strong></td>
+      <td align="left">2026-06-27</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Time</strong></td>
+      <td align="left">10:00 AM - 12:00 PM</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Location</strong></td>
+      <td align="left">Sala de reuniones virtual - Discord</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Prepared By</strong></td>
+      <td align="left">Fabricio Quispe, Equipo de Producto</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Attendees (to planning meeting)</strong></td>
+      <td align="left">Camilla Espinoza, Juan Carlos Angulo, Eduardo Chacaliaza, Fabricio Quispe, Pedro Nanfuñay</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint 2 - 3 Review Summary</strong></td>
+      <td align="left">En el Sprint 2 se implementó el flujo principal móvil de Courtly, permitiendo a jugadores y entrenadores registrarse, iniciar sesión, gestionar sus perfiles, buscar canchas, revisar detalles, reservar, pagar y cancelar operaciones dentro de la aplicación. Con ello, se dejó una base funcional para continuar con características más avanzadas de interacción entre usuarios y entrenadores.</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>Sprint 2 - 3 Retrospective Summary</strong></td>
+      <td align="left">Fortalezas: se logró consolidar el flujo principal de la aplicación móvil y se avanzó con una mejor asignación de tareas por responsable. Oportunidades: mejorar la integración entre pantallas desarrolladas en Flutter y Android, reforzar las pruebas funcionales y documentar con mayor detalle las evidencias por user story. Acciones: priorizar las funcionalidades de entrenadores, partidos, pagos, notificaciones y valoraciones para completar la experiencia móvil de Courtly.</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint Goal & User Stories</strong></td>
+      <td align="left">USM08 Valorar una cancha utilizada; USM09 Crear partido con amigos; USM10 Unirse a un partido disponible; USM14 Aceptar o rechazar solicitudes de entrenamiento; USM15 Visualizar pagos recibidos; USM16 Recibir reseñas de jugadores; USM17 Ver estadísticas de rendimiento; USM18 Recibir notificaciones relevantes en la app; USM22 Buscar entrenadores disponibles; USM23 Solicitar una sesión con entrenador; USM24 Pagar una sesión con entrenador aceptada; USM25 Valorar a un entrenador después de una sesión completada; Mejora: Añadir diálogo de Términos y Condiciones.</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint 3 Goal</strong></td>
+      <td align="left">Implementar funcionalidades avanzadas de la aplicación móvil de Courtly, permitiendo a los usuarios buscar entrenadores, solicitar sesiones, gestionar pagos, crear y unirse a partidos, recibir notificaciones, consultar estadísticas y realizar valoraciones sobre canchas y entrenadores.</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint 3 Velocity</strong></td>
+      <td align="left">50 Story Points</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>Sum of Story Points</strong></td>
+      <td align="left">50 Story Points (USM22: 5 + USM23: 8 + USM14: 5 + USM24: 5 + USM09: 5 + USM10: 3 + USM18: 5 + USM08: 2 + USM25: 2 + USM16: 2 + USM15: 3 + USM17: 5)</td>
+    </tr>
+  </table>
+</div>
+
+#### 4.2.3.2. Sprint Backlog 3
+
+<div>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <td align="center" colspan="8" ><strong>Sprint #</strong></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="8" >Sprint 3</td>
+    </tr>
+    <tr>
+      <td align="center" colspan="4" ><strong>User Story</strong></td>
+      <td align="center" colspan="4" <strong>Work-Item / Task</strong></td>
+    </tr>
+    <tr>
+      <th  text-align: center;">Id</th>
+      <th >Title</th>
+      <th  text-align: center;">Id</th>
+      <th >Title</th>
+      <th >Description</th>
+      <th  text-align: center;">Estimation (Hours)</th>
+      <th ">Assigned To</th>
+      <th  text-align: center;">Status</th>
+    </tr>
+    <tr>
+      <td align="center">USM08</td>
+      <td>Valorar una cancha utilizada</td>
+      <td align="center">T-43</td>
+      <td>Implementar valoración de cancha utilizada</td>
+      <td>Crear la interfaz para que el jugador pueda calificar una cancha después de haber completado una reserva, incluyendo puntuación y comentario.</td>
+      <td align="center">4</td>
+      <td>Fabricio Quispe</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM09</td>
+      <td>Crear partido con amigos</td>
+      <td align="center">T-44</td>
+      <td>Construir flujo móvil de creación de partido</td>
+      <td>Implementar la pantalla para crear un partido, seleccionando deporte, cancha, fecha, horario y cantidad de participantes.</td>
+      <td align="center">8</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM10</td>
+      <td>Unirse a un partido disponible</td>
+      <td align="center">T-45</td>
+      <td>Implementar unión a partidos disponibles</td>
+      <td>Permitir que el jugador visualice partidos abiertos y pueda unirse a uno disponible, validando cupos y estado del partido.</td>
+      <td align="center">5</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM14</td>
+      <td>Aceptar o rechazar solicitudes de entrenamiento</td>
+      <td align="center">T-46</td>
+      <td>Gestionar solicitudes de entrenamiento</td>
+      <td>Implementar la vista para que el entrenador revise solicitudes recibidas y pueda aceptarlas o rechazarlas desde la aplicación móvil.</td>
+      <td align="center">8</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM15</td>
+      <td>Visualizar pagos recibidos</td>
+      <td align="center">T-47</td>
+      <td>Crear vista de pagos recibidos</td>
+      <td>Desarrollar una pantalla para que el entrenador pueda consultar los pagos recibidos por sesiones aceptadas o completadas.</td>
+      <td align="center">5</td>
+      <td>Fabricio Quispe</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM16</td>
+      <td>Recibir reseñas de jugadores</td>
+      <td align="center">T-48</td>
+      <td>Mostrar reseñas recibidas por el entrenador</td>
+      <td>Implementar la visualización de reseñas y comentarios realizados por jugadores luego de una sesión completada con el entrenador.</td>
+      <td align="center">4</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM17</td>
+      <td>Ver estadísticas de rendimiento</td>
+      <td align="center">T-49</td>
+      <td>Implementar estadísticas de rendimiento</td>
+      <td>Crear una sección móvil para consultar métricas de rendimiento del usuario, como sesiones, partidos, valoraciones o actividad registrada.</td>
+      <td align="center">8</td>
+      <td>Pedro Nanfuñay</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM18</td>
+      <td>Recibir notificaciones relevantes en la app</td>
+      <td align="center">T-50</td>
+      <td>Implementar notificaciones relevantes</td>
+      <td>Configurar alertas dentro de la aplicación para informar sobre reservas, solicitudes, pagos, partidos y cambios importantes del usuario.</td>
+      <td align="center">8</td>
+      <td>Pedro Nanfuñay</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM22</td>
+      <td>Buscar entrenadores disponibles</td>
+      <td align="center">T-51</td>
+      <td>Implementar búsqueda de entrenadores</td>
+      <td>Crear la vista para que el jugador pueda buscar entrenadores disponibles, visualizando información básica, especialidad y disponibilidad.</td>
+      <td align="center">8</td>
+      <td>Eduardo Chacaliaza</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM23</td>
+      <td>Solicitar una sesión con entrenador</td>
+      <td align="center">T-52</td>
+      <td>Construir flujo de solicitud de sesión</td>
+      <td>Permitir que el jugador solicite una sesión con un entrenador, seleccionando fecha, horario y detalle de la solicitud.</td>
+      <td align="center">10</td>
+      <td>Camilla Espinoza</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM24</td>
+      <td>Pagar una sesión con entrenador aceptada</td>
+      <td align="center">T-53</td>
+      <td>Implementar pago de sesión aceptada</td>
+      <td>Desarrollar el flujo para que el jugador pueda pagar una sesión previamente aceptada por el entrenador, mostrando monto, confirmación y estado del pago.</td>
+      <td align="center">8</td>
+      <td>Eduardo Chacaliaza</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM25</td>
+      <td>Valorar a un entrenador después de una sesión completada</td>
+      <td align="center">T-54</td>
+      <td>Implementar valoración de entrenador</td>
+      <td>Agregar la opción para que el jugador califique al entrenador después de una sesión completada, incluyendo puntuación y comentario.</td>
+      <td align="center">4</td>
+      <td>Camilla Espinoza</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">MAM-76</td>
+      <td>Mejora: Añadir diálogo de Términos y Condiciones</td>
+      <td align="center">T-55</td>
+      <td>Agregar diálogo de términos y condiciones</td>
+      <td>Implementar un diálogo informativo de términos y condiciones dentro de la aplicación móvil, solicitando aceptación del usuario cuando corresponda.</td>
+      <td align="center">3</td>
+      <td>Fabricio Quispe</td>
+      <td align="center">Todo</td>
+    </tr>
+  </table>
+</div>
+
+#### 4.2.3.3. Development Evidence for Sprint Review
+
+En el Sprint 3 se desarrolló la implementación y despliegue de la última versión del Mobile Application para Deportistas y Coaches, y del Backend; donde se han aplicado commits que evidencian el proceso de desarrollo en los artefactos respectivos:
+
+**Mobile Application - Deportistas:**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+| courtly_mobile_app | feature/USM09 | 911e1528ce44eef1f3e42e5379d76e65545e4973 | feat(matches): implement USM09 match creation with friends | Implement function for create matches with friends | 06/07/2026 |
+| courtly_mobile_app | feature/USM10 | ea7bc7c58bf88c91f7e3235e32bc3017c949f3a0 | feat(matches): implement USM10 join available match | Implement function for join on friend's matches | 06/07/2026 |
+| courtly_mobile_app | develop | 4958f911ed8234509404407ec5c3ee2299b09bf3 | fix(matches): fix syntax error in matches_screen.dart | Fix syntax error in matches screen | 06/07/2026 |
+| courtly_mobile_app | develop | 81957d43050f8738230eeda9318178dba556d926 | feat(theme): establish shared design tokens and apply to key screens | Add shared design for the app | 06/07/2026 |
+| courtly_mobile_app | develop | d23c1df0e424cb136d50c50da6b6a93f026294e7 | refactor(ui): collapsible search filters, image loaders, clock time pickers, stats and empty views | Optimize search filters, image loaders, clock time pickers, stats and empty views | 06/07/2026 |
+| courtly_mobile_app | develop | 31b1280fde083d3f112e5bf1a04e2290985028e7 | refactor(ui): update search filter transition animation | Update transition animation for search filters | 06/07/2026 |
+| courtly_mobile_app | develop | 91060d0f9acf56320de922aa2c95ea19d6bb4e68 | feat(milestone6): robust payments, home feed, consensus joining approval, split payments and coaches list | Optimize relevant functions for the app | 06/07/2026 |
+| courtly_mobile_app | feat/notifications | 0fe4aa68a397ed94aad78107abd49494c171c573 | feat(notifications): implement notifications function. | Implement notifications bounded context | 07/07/2026 |
+| courtly_mobile_app | feat/usm08-court-reviews | f8803d495a8c3336307f6a1fdc72e8d3f6d3f093 | feat(reviews): implement court review flow for completed bookings | Add court review's flow for bookings | 07/07/2026 |
+| courtly_mobile_app | feat/usm08-court-reviews | dbc9ee876654f81322acd678f7f41f262d9bbc68 | Merge pull request #2 from Aplicaciones-Moviles-3248/feat/usm08-court-reviews | Merge changes in court reviews to main branch | 07/07/2026 |
+| courtly_mobile_app | feat/mam76-terms-dialog | a8211b6a05525e0a242d035f2bbd20f6562209af | feat(iam): add terms and conditions acceptance dialog | Add terms and conditions acceptance dialog in the app | 07/07/2026 |
+| courtly_mobile_app | feat/mam76-terms-dialog | 7d48acb04d681b7bcb503ddeb85407a123c5f0b3 | Merge pull request #3 from Aplicaciones-Moviles-3248/feat/mam76-terms-dialog | Merge terms and conditions acceptance changes to main branch | 07/07/2026 |
+| courtly_mobile_app | feat/notifications | c5d5d05b340d6d3a5fb14ac75503c23ea5a80603 | feat(notifications): update notifications cases for reviews and matches. | Update notifications cases for reviews and matches functions | 07/07/2026 |
+| courtly_mobile_app | develop | 7d3ec87976436c0bc7b4153293c38f5410825319 | fix(payments,coaches,matches): remove mock fallbacks, surface real backend errors | Remove errors in payments, coaches and matches bounded context | 07/07/2026 |
+| courtly_mobile_app | develop | 33b40b684698488909cd055e39101247e8d95b3e | feat(matches,notifications): real consensus join flow and notifications feed | Optimize the join match and notifications flow | 07/07/2026 |
+| courtly_mobile_app | develop | baa5876917ebb7ec24a6f257e6aee45dc4410712 | merge(develop): ui-ux consistency, robustness fixes, consensus + notifications | Optimize consistency between ui-ux | 07/07/2026 |
+| courtly_mobile_app | develop | bd80c6c877ba2c69151e2e276e3f80573ef10c99 | fix(test): mock flutter_secure_storage platform channel globally | Fix secure flutter storage in test | 07/07/2026 |
+| courtly_mobile_app | develop | 6f5a9341055bb704a48f370cc4dcc63f00d1394d | merge(main): ui-ux consistency, robustness fixes, consensus + notifications | Merge changes for optimize consistency between ui-ux | 07/07/2026 |
+| courtly_mobile_app | main | 26acc450f2c4ef35b5f1c31c3be78835b92161fa | chore: regenerate desktop plugin registrants after merge | Restore desktop plugin | 07/07/2026 |
+| courtly_mobile_app | main | 3cfc21f29f745c2f1c6282026ddf37b1af991ddb | feat: implement available coaches flow | Implement available coaches flow in the app | 07/07/2026 |
+| courtly_mobile_app | main | 4e8765d5f7bf34666fc666c507c31691c666ea22 | fix: resolve merge conflicts with main branch. | Fix merge conflicts with the main branch | 07/07/2026 |
+| courtly_mobile_app | main | d5a4cc8f7c99543d6b17261104e12682ef162434 | fix: notification bounded context. | Fix problems in notification bounded context | 07/07/2026 |
+| courtly_mobile_app | main | 381d00d941eaaf9a46841bbb2dbefbc5be5dfd56 | fix: align notification test with team NotificationEntity interface | Align notification test with team NotificationEntity interface | 07/07/2026 |
+| courtly_mobile_app | main | b778372f739c7a40e8107e7dfd45906b4b2b762f | fix: add MATCH_JOIN_APPROVED type and safe default in NotificationTypeMapper | Fix appropiate type variable in NotificationTypeMapper | 07/07/2026 |
+| courtly_mobile_app | main | 83a7268e8b7cde766b0ba2accddabd5375bc857e | fix: correct notification model test to compare NotificationType enum instead of String | Correct notification model test to compare NotificationType enum instead of String | 07/07/2026 |
+| courtly_mobile_app | feat/mam72-search-available-trainers | 78ca42ecbd5831d98ba9131cf2785c02fb9287ef | Merge branch 'main' into feat/mam72-search-available-trainers | Merge changes of search available trainers to main branch | 07/07/2026 |
+| courtly_mobile_app | main | c2fefc10a6b42b40542d2896bf5abc36b466311f | feat(branding): rename app to Courtly, apply Courtly logo as launcher icon | Replace default icon to courtly icon | 07/07/2026 |
+| courtly_mobile_app | main | fa58ac9b232cecba84e5a18bcc39ebd401513e98 | merge: teammates notifications work + Courtly branding | Merge changes about teammates notifications work and Courtly branding | 07/07/2026 |
+| courtly_mobile_app | main | 410e725f334368a687d4a26aac8970b4b76a46fc | fix(http): force logout on invalid/expired session (401) | Fix error about to invalid/expired session (401) | 07/07/2026 |
+| courtly_mobile_app | main | 9419b4a66b1119617d04e19a24af7333d0bf3580 | update | Update training sessions bounded context | 07/07/2026 |
+| courtly_mobile_app | feature/USM25 | 72893db539ecf98a57ec90e0f7e8a9f88409e974 | Merge remote-tracking branch 'origin/feature/USM25' into main | Merge changes of feature/USM25 to main branch | 07/07/2026 |
+| courtly_mobile_app | feat/mam72-search-available-trainers | 061e499f7d1e09a92640fe7ba19408f9a0ca620a | Merge remote-tracking branch 'origin/feat/mam72-search-available-trainers' into main | Merge changes of feat/mam72-search-available-trainers to main branch | 07/07/2026 |
+
+<br>
+
+**Mobile Application - Entrenadores:**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+| courtly_coaches_app | feature/USM14 | 2da6a8a24e5bca13c9536410ef606d8a3aca7862 | feat(coaches): implement USM14 accept or reject training requests | Implement USM14 for accept or reject training requests | 06/07/2026 |
+| courtly_coaches_app | feature/USM16 | b2381becbdf7a6398f14e21637e7be4e50dc703d | feat(reviews): implement USM16 coach reviews and ratings view | Implement USM16 for coach reviews and ratings view | 06/07/2026 |
+| courtly_coaches_app | develop | 1c3b6f5cb23ca9cf0929165a46205e706f61540f | fix(coaches): fix Jetpack Compose compilation issues in CoachProfileScreen and TrainingSessionsScreen | Fix Jetpack Compose compilation issues in CoachProfileScreen and TrainingSessionsScreen | 06/07/2026 |
+| courtly_coaches_app | develop | 157f7d98be3afeefc4ccc2091b9d7ec2d6f6965c | feat(theme): establish shared design tokens and shapes, apply to screens | Optimize shared design in the screens | 06/07/2026 |
+| courtly_coaches_app | develop | 3a06bb391ddac5df10c0c8f020ebb3208537f620 | refactor(ui): update SignInScreen with placeholders, add dashboard CoachHomeScreen | Update SignInScreen with placeholder and add dashboard CoachHomeScreen | 06/07/2026 |
+| courtly_coaches_app | develop | e04d75d7c04f187353558ab13bba15c9d9a289ef | refactor(ui): update CoachProfileScreen with stats, add Date/Time Pickers to AvailabilityScreen | Update CoachProfileScreen with stats and add Date/Time Pickers to AvailabilityScreen | 06/07/2026 |
+| courtly_coaches_app | feat/notifications | deda732bc534406b9715db6898774da8881af20b | feat(notifications): implement notifications bounded context. | Implement notifications bounded context | 07/07/2026 |
+| courtly_coaches_app | feat/notifications | 7d9765e6d8600727fcc512e0dce0adefd5bb5e9a | feat(notifications): changes in navigation for notifications function. | Update navigation flow for notifications function | 07/07/2026 |
+| courtly_coaches_app | develop | 056fc76655aca351535a3848500332ad5a703fcb | test(coaches): add real unit tests and CI workflow | Add real unit tests and CI workflow | 07/07/2026 |
+| courtly_coaches_app | develop | f00a7c792ef830dca0afbf0f02ff5e64bb65475a | merge(develop): ui-ux consistency, real unit tests, CI workflow | Merge changes about ui-ux consistency, real unit tests and CI workflow | 07/07/2026 |
+| courtly_coaches_app | feat/analytics | 0e382cd6f137d6c60f8a266e19e36be082ca187f | feat(analytics): implement analytics bounded context. | Implement analytics bounded context | 07/07/2026 |
+| courtly_coaches_app | feat/analytics | 0dda114c9cf2262b23cfde82537be1b4e7b491ab | merge: resolve CoachNavigation import conflicts between develop and feature/analytics. | Resolve problems for merge in CoachNavigation | 07/07/2026 |
+| courtly_coaches_app | feat/analytics | 783e772de90e30a2ae11b50f5f8fd1ccec1902d5 | Merge branch 'develop' into feature/notifications | Merge feature/notifications branch to develop | 07/07/2026 |
+| courtly_coaches_app | develop | 3044c1726e3c06bd0c2d3bc6d6a1039b09d63db8 | Merge pull request #3 from Aplicaciones-Moviles-3248/feature/notifications | Merge feature/notifications branch to develop | 07/07/2026 |
+| courtly_coaches_app | develop | 3044c1726e3c06bd0c2d3bc6d6a1039b09d63db8 | Merge pull request #3 from Aplicaciones-Moviles-3248/feature/notifications | Merge feature/notifications branch to develop | 07/07/2026 |
+| courtly_coaches_app | develop | e49cfff3a46dbe6ef3318774ef0b2fcef491f11e | merge: integrar feature/notifications a develop. | Implement feature/notifications to develop branch | 07/07/2026 |
+| courtly_coaches_app | main | 1a8d29ae6ddaa7f5e6c224435ddef674971248a1 | Merge pull request #5 from Aplicaciones-Moviles-3248/develop | Merge changes of develop branch to main branch | 07/07/2026 |
+| courtly_coaches_app | main | 526feb058c54a728798d846e3d807da77f2d3ec0 | feat(branding): apply Courtly logo as launcher icon | Change default to Courtly icon | 07/07/2026 |
+| courtly_coaches_app | main | 98d7447bc32c2b40f2688655cbb54238ca94223b | merge: teammates notifications/analytics work + branding | Merge teammates notifications/analytics work and branding | 07/07/2026 |
+| courtly_coaches_app | main | 21e44104e83e40de9e5f5550935721fed3a9ebdf | fix(network): force logout on invalid/expired session (401) | Force logout on invalid/expired session (401) | 07/07/2026 |
+| courtly_coaches_app | main | c40eeb79b59a39adb2923ccb5aaf5030a02ce1a2 | Merge remote-tracking branch 'origin/feature/analytics' into _test_analytics_into_main | Merge remote-tracking branch into _test_analytics_into_main | 07/07/2026 |
+
+<br>
+
+**Backend:**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+| backend | main | 73843925b88e33440c810c6777cfa814913f31ef | feat(main): add changes for notifications function. | Update files for allow notifications flow | 07/07/2026 |
+| backend | main | 9ef17f6b69ae0875b4965a03f5b4f5a7500c86c2 | fix(users): return 404 instead of 500 when /me has no linked profile | Fix error return 404 instead of 500 when /me has no linked profile | 07/07/2026 |
+| backend | main | ff8da4bb58d4bacf9cbe37a332a387ae35e90930 | feat(matches): add consensus-based join requests with real notifications | Add consensus-based join requests with real notifications | 07/07/2026 |
+| backend | develop | ab95bb3722f8e022282bc05ba342027974c70e9a | merge(develop): consensus join requests + notifications fixes | Merge consensus join requests and notifications fixes in develop branch | 07/07/2026 |
+| backend | main | af064fc5d95fd75686930a6cc9108153b01f7f7c | merge(main): consensus join requests + notifications fixes | Merge consensus join requests and notifications fixes in main branch | 07/07/2026 |
+| backend | main | c07bac309e2ce8a8aeaed877d094ea2bc071d59a | fix(security): stop masking real errors as 401 via /error dispatch | Fix error security that stop masking real errors as 401 via /error dispatch | 07/07/2026 |
+| backend | develop | 21539b81c008098a70125b73cb460f38efba38a2 | merge(develop): fix 401 masking via /error dispatch | fix 401 masking via /error dispatch in develop branch | 07/07/2026 |
+| backend | main | 32062145fa504dd0693c500dce4908aea2fbd36a | merge(main): fix 401 masking via /error dispatch | fix 401 masking via /error dispatch in main branch | 07/07/2026 |
+| backend | main | 0c078a5922f5231e3f7c1ecc364caec480e738a6 | feat(seed): add demo data seeder for players, coaches, matches, bookings | Add demo data seeder for players, coaches, matches and bookings | 07/07/2026 |
+| backend | develop | d1090c6d3241c6fd1fafc859c9d2991bb7f8b150 | merge(develop): demo data seeder | Merge demo data seeder in develop branch | 07/07/2026 |
+| backend | main | 2fcf257602108901a4ac7a967ad886357b86124e | merge(main): demo data seeder | Merge demo data seeder in main branch | 07/07/2026 |
+| backend | main | 157f5331c393fc093fd6852d892c9744d26df378 | fix(seed): stop DemoDataSeeder crash-looping on duplicate coach/email | Fix stop DemoDataSeeder crash-looping on duplicate coach/email | 07/07/2026 |
+| backend | main | fc0e100bbaca7396b1c98ed0a23bc8a854043ed7 | fix(trainingsessions): stop 409ing coach-only accounts on GET endpoints | Fix stop 409ing coach-only accounts on GET endpoints | 07/07/2026 |
+| backend | main | 9c001432c3406d3c3ff2d4285696116f630f4bd8 | feat(seed): spread demo sessions, matches, bookings and payments across current week | Spread demo sessions, matches, bookings and payments across current week | 07/07/2026 |
+
+#### 4.2.3.4. Testing Suite Evidence for Sprint Review
+
+#### 4.2.3.5. Execution Evidence for Sprint Review
+
+#### 4.2.3.6. Services Documentation Evidence for Sprint Review
+
+#### 4.2.3.7. Software Deployment Evidence for Sprint Review
+
+Durante el Sprint 3 se consolidó la evidencia de despliegue del producto Courtly, desarrollado por la startup Mova, considerando la validación de la aplicación móvil, el backend desplegado en un entorno público y la landing page informativa. El objetivo principal fue asegurar que los productos digitales puedan ejecutarse, integrarse y presentarse correctamente durante el Sprint Review, evidenciando el estado final de la solución para deportistas aficionados y entrenadores independientes.
+
+###### Deployment scope during Sprint 3
+
+| Product | Deployment / Execution Environment | Purpose | Evidence |
+|---|---|---|---|
+| Landing Page | GitHub Pages / Vercel / entorno usado por el equipo | Validar acceso público al sitio informativo de Courtly | ![Landing page deployed](assets/chapter4/sprint3/landing-page-deployed.png) |
+| Web Services RESTful API | Railway / Render / backend público usado por el equipo | Validar disponibilidad de endpoints y documentación Swagger/OpenAPI | ![Swagger UI documentation](assets/chapter4/sprint3/swagger-ui.png) | |
+| Mobile Application - Flutter Player App | Android Studio / Android Emulator / APK debug | Validar ejecución de flujos del deportista aficionado | ![Swagger UI documentation](assets/chapter4/sprint3/appejecutandose.png) |
+| Mobile Application - Android Coach App | Android Studio / Android Emulator / APK debug | Validar ejecución de flujos del entrenador | ![Swagger UI documentation](assets/chapter4/sprint3/coachesejec.png) |
+
+###### Firebase App Distribution Evidence
+
+Durante Sprint 3, las aplicaciones móviles Courtly Players y Courtly Coaches fueron registradas y distribuidas mediante Firebase App Distribution. Este proceso permitió subir los APK generados, invitar verificadores y registrar el estado de aceptación y descarga de las versiones previas antes de la presentación final.
+
+| Mobile Application | Technology | Package name | Release | Invited | Accepted | Downloaded | Status |
+|---|---|---|---|---:|---:|---:|---|
+| Courtly Mobile App - Players | Flutter | pe.edu.upc.courtly_mobile_app | 1.0.0 (1) | 5 | 1 | 1 | Validated |
+| Courtly Mobile App - Coaches | Android/Kotlin | com.courtly.coaches | 1.0 (1) | 5 | 1 | 1 | alidated |
+
+<p align="center">
+  <img src="assets/chapter4/sprint3/firebase-players-distribution.png" alt="Firebase App Distribution Players" width="750">
+</p>
+
+<p align="center">
+  <img src="assets/chapter4/sprint3/firebase-coaches-distribution.png" alt="Firebase App Distribution Coaches" width="750">
+</p>
+
+| Application | Build command | APK output path |
+|---|---|---|
+| Courtly Mobile App - Players | `flutter build apk --debug` | `build/app/outputs/flutter-apk/app-debug.apk` |
+| Courtly Mobile App - Coaches | `.\gradlew assembleDebug` | `app/build/outputs/apk/debug/app-debug.apk` |
+
+The Players mobile application was validated with one accepted invitation and one download registered in Firebase App Distribution. The Coaches mobile application was successfully uploaded and distributed to the selected testers, remaining pending for external acceptance and download. This evidence complements the Sprint 3 deployment evidence for the mobile applications required for the final delivery.
+
+###### Mobile Application Deployment Evidence
+
+La aplicación móvil fue ejecutada en Android Studio mediante un emulador Android o un dispositivo físico, según la disponibilidad del equipo. Para esta validación se realizó la sincronización de dependencias, la compilación del proyecto y la ejecución en modo debug. En el caso de la aplicación Flutter, se consideraron comandos como `flutter pub get`, `flutter run` y `flutter build apk --debug`, con el propósito de comprobar que el proyecto compile correctamente y pueda ser utilizado durante la presentación del Sprint Review.
+
+| Step | Description | Evidence image |
+|---|---|---|
+| 1. Dependency synchronization | Se verificaron las dependencias del proyecto móvil antes de la ejecución para asegurar que el entorno de desarrollo estuviera correctamente configurado. | ![Flutter dependencies synchronization](assets/chapter4/sprint3/flutter-pub-get.png) |
+| 2. Debug build generation | Se generó una versión debug de la aplicación para validar que el proyecto compile sin errores relevantes. | ![Flutter debug build](assets/chapter4/sprint3/flutter-build-debug.png) |
+| 3. Android execution | Se ejecutó la aplicación en Android Emulator o en un dispositivo físico para comprobar la navegación y los flujos principales. | ![Mobile app execution](assets/chapter4/sprint3/mobile-app-execution.png) |
+| 4. Backend connection validation | Se verificó que la aplicación consuma correctamente los servicios del backend desplegado durante el Sprint 3. | ![Backend connection validation](assets/chapter4/sprint3/mobile-backend-validation.png) |
+
+###### Web Services Deployment Evidence
+
+El backend RESTful API fue validado en un entorno público accesible por internet, permitiendo comprobar su disponibilidad para la integración con las aplicaciones móviles. Para el Sprint 3, el servicio backend se encontró disponible mediante la siguiente URL pública:
+
+https://backend-production-d772.up.railway.app/api/v1/
+
+La documentación Swagger/OpenAPI permitió revisar los endpoints disponibles, métodos HTTP, parámetros requeridos y respuestas generadas por el servidor. Esta API fue utilizada como fuente de datos para las funcionalidades móviles desarrolladas y validadas durante el Sprint 3.
+
+| Evidence | Description | Screenshot |
+|---|---|---|
+| Backend public URL available | Se verificó que la URL pública del backend responda correctamente desde un navegador o herramienta de pruebas. | ![Backend public service](assets/chapter4/sprint3/backend-public-url.png) |
+| Swagger UI loaded successfully | Se comprobó que la documentación Swagger/OpenAPI cargue correctamente y muestre los endpoints del sistema. | ![Swagger UI documentation](assets/chapter4/sprint3/swagger-ui.png) |
+| Endpoint validation from Swagger/Postman/browser | Se validaron endpoints principales mediante Swagger, Postman o navegador para verificar respuestas del servicio. | ![Endpoint validation](assets/chapter4/sprint3/endpoint-validation.png) |
+| Mobile app consuming deployed backend | Se comprobó que la aplicación móvil pueda comunicarse con el backend desplegado para obtener o enviar información. | ![Mobile backend consumption](assets/chapter4/sprint3/mobile-backend-consumption.png) |
+
+###### Landing Page Deployment Evidence
+
+La landing page se mantuvo desplegada como producto web informativo de Courtly y sirvió para presentar la propuesta de valor, los segmentos objetivo, los beneficios principales y el acceso a información general del producto. Durante el Sprint 3, se verificó su disponibilidad pública y su coherencia visual con el resto de la solución. En caso de no haberse realizado nuevos cambios funcionales sobre la landing page, la validación se centró en confirmar que el sitio continúe accesible y preparado para ser presentado durante el Sprint Review.
+
+![Landing page deployed](assets/chapter4/sprint3/landing-page-deployed.png)
+
+![Landing page responsive validation](assets/chapter4/sprint3/landing-page-responsive.png)
+
+###### Deployment Validation Summary
+
+| Product | Validation performed | Result | Observation |
+|---|---|---|---|
+| Landing Page | Access through public URL | Successful | The site loads correctly and presents Courtly’s value proposition. |
+| RESTful API | Swagger UI and endpoint validation | Successful | The backend is publicly available and supports mobile integration. |
+| Flutter Player App | Deployed through Firebase App Distribution | Successful | 5 invited testers, 1 accepted invitation, 1 download. |
+| Android Coach App | Deployed through Firebase App Distribution | Partially validated | 5 invited testers, pending acceptance and download. |
+
+###### Sprint 3 Deployment Conclusions
+
+El Sprint 3 permitió consolidar el despliegue y la validación técnica de Courtly, asegurando que los productos digitales estén listos para ser demostrados durante el Sprint Review. El backend público, la ejecución de las aplicaciones móviles y la disponibilidad de la landing page evidencian una solución integrada y coherente, alineada con la entrega final del producto desarrollado por Mova.
+
+#### 4.2.3.8. Team Collaboration Insights during Sprint
+
+Durante el Sprint 3, el equipo continuó trabajando en la evolución de las aplicaciones móviles de Courtly, enfocándose en la integración de funcionalidades pendientes, la mejora de flujos existentes y la validación de la comunicación con el backend. La colaboración se desarrolló principalmente sobre los repositorios `courtly_mobile_app`, `courtly_coaches_app` y `REPORT`, manteniendo una organización basada en responsabilidades funcionales y evidencias de avance en GitHub.
+
+A diferencia de Sprints anteriores, en esta etapa el trabajo se concentró en completar y ajustar funcionalidades móviles ya iniciadas, por lo que la colaboración no solo se refleja en la cantidad de commits, sino también en la revisión de flujos, integración de cambios, resolución de conflictos, validación con backend y consolidación de evidencias para la entrega.
+
+Las estadísticas presentadas corresponden a la actividad visible en GitHub al cierre del Sprint 3. Estos valores permiten observar la evolución de cada repositorio hasta esta iteración, por lo que se interpretan junto con las funcionalidades, ramas, pull requests y evidencias desarrolladas durante el Sprint.
+
+##### Integrantes del equipo
+
+- **U202317692 – Angulo Abud, Juan Carlos**
+- **U202324129 – Chacaliza Minaya, Eduardo Fabian**
+- **U202214572 – Espinoza Vivas, Camilla Leonor**
+- **U202215462 – Nanfuñay Liza, Pedro Jesús**
+- **U202320442 – Quispe Barzola, Fabricio Fabian**
+
+##### Distribución general del trabajo
+
+Durante el Sprint 3, el trabajo se organizó de acuerdo con los productos móviles y los bounded contexts priorizados en el backlog. La distribución general permitió que el equipo avance en paralelo sobre distintos flujos de la aplicación, manteniendo la integración con los servicios del backend.
+
+Las principales líneas de trabajo fueron:
+
+- Desarrollo y mejora del frontend móvil para deportistas aficionados en Flutter.
+- Desarrollo y mantenimiento del frontend móvil para entrenadores en Android.
+- Integración de pantallas móviles con endpoints reales del backend.
+- Ajustes en navegación, flujos de usuario y validaciones funcionales.
+- Revisión de consistencia visual entre pantallas.
+- Preparación de evidencias, capturas y documentación en el repositorio `REPORT`.
+- Integración de cambios mediante ramas, commits y pull requests.
+
+**Interpretación:**  
+La distribución del trabajo muestra que la colaboración del Sprint no se limitó a una sola funcionalidad, sino que abarcó distintos aspectos del producto móvil. Cada integrante participó desde su responsabilidad asignada, ya sea en implementación, revisión, validación o documentación del avance realizado.
+
+##### Repositorios trabajados durante el Sprint
+
+Durante el Sprint 3, la colaboración del equipo se evidenció principalmente en los siguientes repositorios:
+
+- `courtly_mobile_app`
+- `courtly_coaches_app`
+- `REPORT`
+
+**Interpretación:**  
+El repositorio `courtly_mobile_app` concentró el desarrollo de funcionalidades para la aplicación móvil de deportistas aficionados en Flutter. El repositorio `courtly_coaches_app` mantuvo el trabajo correspondiente a la aplicación orientada a entrenadores. Finalmente, el repositorio `REPORT` permitió consolidar la documentación, capturas, evidencias técnicas e interpretación del avance realizado durante el Sprint.
+
+**Captura:**  
+![Repositorios trabajados durante el Sprint 3](assets/chapter4/sp3-repositories.png)
+
+##### Repositorio 1: Deportistas Aficionados - Flutter
+
+- **Repositorio:** `https://github.com/Aplicaciones-Moviles-3248/courtly_mobile_app`
+- **Producto:** Aplicación móvil para deportistas aficionados.
+- **Tecnología principal:** Flutter.
+- **Estadísticas de actividad visible al cierre del Sprint 3:**
+  - Commits: `67`
+  - Branches: `14`
+  - Pull Requests: `6`
+
+En este repositorio se concentró una parte importante del trabajo técnico del Sprint. Se realizaron ajustes e implementaciones relacionadas con funcionalidades móviles para deportistas, incluyendo navegación, consulta de información desde el backend, visualización de datos reales y mejora de flujos asociados a reservas, entrenadores, reseñas y pagos.
+
+**Interpretación:**  
+La actividad registrada en `courtly_mobile_app` evidencia el avance del equipo en la consolidación de la aplicación Flutter. Las ramas y commits muestran un trabajo incremental, mientras que los pull requests reflejan el proceso de integración y revisión de cambios antes de consolidarlos en la rama principal. Asimismo, la conexión con endpoints reales permitió reducir el uso de datos simulados y acercar la aplicación a un flujo funcional más completo.
+
+**Imagen principal del repositorio de deportistas**
+
+![Repositorio courtly_mobile_app Sprint 3](assets/chapter4/sp3-mobile-app-repo.png)
+
+**Imagen de commits del repositorio de deportistas**
+
+![Commits courtly_mobile_app Sprint 3](assets/chapter4/sp3-mobile-app-commits.png)
+
+**Imagen de branches del repositorio de deportistas**
+
+![Branches courtly_mobile_app Sprint 3](assets/chapter4/sp3-mobile-app-branches.png)
+
+**Imagen de pull requests del repositorio de deportistas**
+
+![Pull Requests courtly_mobile_app Sprint 3](assets/chapter4/sp3-mobile-app-prs.png)
+
+##### Repositorio 2: Entrenadores - Android
+
+- **Repositorio:** `https://github.com/Aplicaciones-Moviles-3248/courtly_coaches_app`
+- **Producto:** Aplicación móvil para entrenadores.
+- **Tecnología principal:** Android/Kotlin.
+- **Estadísticas de actividad visible al cierre del Sprint 3:**
+  - Commits: `39`
+  - Branches: `10`
+  - Pull Requests: `6`
+
+El repositorio `courtly_coaches_app` continuó representando el segmento de entrenadores dentro del ecosistema Courtly. Durante el Sprint, este repositorio permitió mantener separadas las responsabilidades de los usuarios entrenadores respecto a los deportistas aficionados, siguiendo la división funcional definida para el producto.
+
+**Interpretación:**  
+La existencia de un repositorio independiente para entrenadores permite que las funcionalidades de este segmento evolucionen de manera separada. Aunque la cantidad de actividad visible puede variar respecto al repositorio Flutter, su rol dentro del Sprint sigue siendo relevante porque sostiene la separación entre ambos tipos de usuarios y permite validar el producto desde dos perspectivas móviles.
+
+**Imagen principal del repositorio de entrenadores**
+
+![Repositorio courtly_coaches_app Sprint 3](assets/chapter4/sp3-coaches-app-repo.png)
+
+**Imagen de commits del repositorio de entrenadores**
+
+![Commits courtly_coaches_app Sprint 3](assets/chapter4/sp3-coaches-app-commits.png)
+
+**Imagen de branches del repositorio de entrenadores**
+
+![Branches courtly_coaches_app Sprint 3](assets/chapter4/sp3-coaches-app-branches.png)
+
+**Imagen de pull requests del repositorio de entrenadores**
+
+![Pull Requests courtly_coaches_app Sprint 3](assets/chapter4/sp3-coaches-app-prs.png)
+
+##### Repositorio 3: Reporte del Proyecto
+
+- **Repositorio:** `https://github.com/Aplicaciones-Moviles-3248/REPORT`
+- **Producto:** Documentación del proyecto.
+- **Estadísticas de actividad visible al cierre del Sprint 3:**
+  - Commits: `207`
+  - Branches: `18`
+  - Pull Requests: `26`
+
+El repositorio `REPORT` fue utilizado para consolidar la documentación del Sprint, integrar capturas, evidencias de ejecución, pruebas, despliegue, colaboración y análisis de los resultados obtenidos. Este repositorio permitió relacionar el trabajo técnico con los entregables requeridos para Sprint Review.
+
+**Interpretación:**  
+La actividad en `REPORT` evidencia la colaboración documental del equipo. Aunque los repositorios técnicos muestran la implementación, el reporte permite explicar el contexto de los cambios, registrar evidencias y sustentar el avance del Sprint. Por ello, este repositorio complementa la interpretación de la colaboración más allá del número de commits en código.
+
+**Imagen principal del repositorio REPORT**
+
+![Repositorio REPORT Sprint 3](assets/chapter4/sp3-report.png)
+
+**Imagen de commits del repositorio REPORT**
+
+![Commits REPORT Sprint 3](assets/chapter4/sp3-report-commits.png)
+
+**Imagen de branches del repositorio REPORT**
+
+![Branches REPORT Sprint 3](assets/chapter4/sp3-report-branches.png)
+
+**Imagen de pull requests del repositorio REPORT**
+
+![Pull Requests REPORT Sprint 3](assets/chapter4/sp3-report-prs.png)
+
+##### Pull requests, ramas e integración de cambios
+
+Durante el Sprint 3, el equipo utilizó ramas y pull requests para organizar la integración de funcionalidades. Esta dinámica permitió trabajar cambios de forma separada antes de incorporarlos a la rama principal, reduciendo el riesgo de afectar funcionalidades ya existentes.
+
+Además, durante la integración se presentaron conflictos en archivos compartidos, lo cual fue resuelto revisando manualmente las diferencias entre ramas. Estos conflictos se dieron principalmente porque varios integrantes realizaron cambios sobre zonas relacionadas del proyecto, como navegación, modelos o servicios compartidos.
+
+**Interpretación:**  
+La presencia de ramas, pull requests y conflictos de integración evidencia un trabajo paralelo real dentro del equipo. La resolución de conflictos permitió conservar avances de distintos integrantes y consolidar una versión integrada del producto. Esto refleja una dinámica colaborativa más cercana a un entorno profesional de desarrollo, donde la integración y revisión de cambios es parte del proceso normal del Sprint.
+
+##### Análisis general de la colaboración del Sprint
+
+A partir de la evidencia disponible, el equipo interpreta la colaboración del Sprint 3 de la siguiente manera:
+
+- La mayor actividad técnica se concentró en los repositorios móviles, especialmente en la aplicación Flutter para deportistas aficionados.
+- La colaboración se organizó mediante ramas, commits y pull requests, permitiendo integrar cambios de forma progresiva.
+- La documentación en `REPORT` permitió consolidar evidencias y dar trazabilidad al avance del Sprint.
+- La participación del equipo no debe interpretarse únicamente por la cantidad de commits, sino también por la revisión funcional, validación de flujos, integración con backend y preparación del entregable.
+- La resolución de conflictos permitió integrar cambios realizados en paralelo sin perder funcionalidades previas.
+- La separación entre `courtly_mobile_app` y `courtly_coaches_app` ayudó a mantener diferenciados los segmentos de deportistas y entrenadores.
+
+En consecuencia, la colaboración del Sprint debe entenderse desde una perspectiva integral. GitHub evidencia la actividad técnica mediante commits, branches y pull requests, mientras que el repositorio del reporte evidencia la integración documental, el análisis del avance y la preparación de evidencias para Sprint Review.
+
+##### Conclusión
+
+Durante el Sprint 3, el equipo fortaleció su dinámica de colaboración mediante el uso de repositorios separados, ramas por funcionalidad, integración de cambios y documentación de evidencias. El trabajo realizado permitió avanzar en la consolidación de las aplicaciones móviles de Courtly, manteniendo la separación entre deportistas aficionados y entrenadores. Aunque la actividad visible en GitHub puede variar entre repositorios e integrantes, la colaboración se reflejó en la implementación, validación, resolución de conflictos y consolidación del entregable final para Sprint Review.
+
+## 4.3. Validation Interviews
+
+### 4.3.1. Diseño de Entrevistas
+
+Las entrevistas de validación fueron diseñadas con el objetivo de evaluar la comprensión, utilidad percibida y facilidad de uso de los productos digitales desarrollados para Courtly: la Landing Page y las aplicaciones móviles. A diferencia de las entrevistas exploratorias realizadas en etapas anteriores, esta validación se enfoca en comprobar si los usuarios de cada segmento pueden entender la propuesta de valor, reconocer las funcionalidades principales y completar los flujos representativos de la solución.
+
+Para esta etapa se consideran los dos segmentos objetivo definidos para Courtly: deportistas aficionados y entrenadores independientes. Cada entrevista se desarrollará de forma semiestructurada, combinando preguntas abiertas con tareas de navegación sobre el prototipo o aplicación, permitiendo observar tanto la opinión del usuario como su comportamiento real frente a la solución.
+
+#### Diseño de entrevista para el Segmento 1: Deportistas aficionados
+
+**Objetivo de validación:**  
+Validar si los deportistas aficionados comprenden la propuesta de Courtly, encuentran atractiva la Landing Page y pueden utilizar la aplicación móvil para buscar canchas, revisar entrenadores, realizar reservas, efectuar pagos y gestionar actividades deportivas.
+
+**Perfil del entrevistado:**  
+Personas entre 18 y 40 años que practican deporte de forma recreativa, organizan partidos con amigos, buscan canchas deportivas o tienen interés en contratar entrenadores para mejorar su rendimiento.
+
+**Producto a validar:**  
+Landing Page de Courtly y aplicación móvil orientada a jugadores.
+
+**Flujos a validar:**  
+Registro e inicio de sesión, búsqueda de canchas, visualización de detalle de cancha, reserva, pago, búsqueda de entrenadores, solicitud de sesión, creación o participación en partidos y revisión del perfil.
+
+**Preguntas de introducción**
+1. ¿Con qué frecuencia practicas deporte actualmente?
+2. ¿Cómo sueles organizar tus partidos o reservas de cancha?
+3. ¿Qué problemas has tenido al buscar o reservar una cancha?
+4. ¿Has usado alguna aplicación para reservar espacios deportivos o coordinar partidos?
+5. ¿Qué esperas encontrar en una aplicación como Courtly?
+
+**Validación de la Landing Page**
+1. Al ver la página principal, ¿entiendes rápidamente qué ofrece Courtly?
+2. ¿Qué sección de la Landing Page te pareció más clara o útil?
+3. ¿La información sobre beneficios y funcionamiento te genera confianza?
+4. ¿El diseño visual te parece adecuado para una aplicación deportiva?
+5. ¿Qué información agregarías antes de decidir usar o descargar la aplicación?
+
+**Validación de la aplicación móvil**
+1. ¿El proceso de registro e inicio de sesión te parece claro?
+2. ¿Puedes identificar fácilmente dónde buscar canchas?
+3. ¿La información mostrada en el detalle de una cancha es suficiente para decidir reservar?
+4. ¿El flujo para seleccionar horario, reservar y pagar te parece ordenado?
+5. ¿Qué tan seguro te sentirías pagando desde la aplicación?
+6. ¿La sección de entrenadores te permite comparar opciones con facilidad?
+7. ¿El proceso para solicitar una sesión con un entrenador te parece comprensible?
+8. ¿La opción de crear o unirse a partidos te resulta útil?
+9. ¿Qué parte del flujo te generó mayor duda o fricción?
+10. ¿Usarías Courtly en una situación real? ¿Por qué?
+
+**Tareas para el entrevistado**
+1. Recorre la Landing Page e identifica qué problema resuelve Courtly.
+2. Busca una cancha disponible según ubicación, precio u horario.
+3. Revisa el detalle de una cancha y decide si la reservarías.
+4. Simula el proceso de reserva y pago.
+5. Busca un entrenador y revisa su perfil.
+6. Simula la solicitud de una sesión de entrenamiento.
+7. Revisa la sección de partidos y explica si la usarías.
+
+**Criterios de observación**
+1. Comprensión de la propuesta de valor.
+2. Facilidad para ubicar acciones principales.
+3. Claridad de etiquetas, botones y navegación.
+4. Confianza en la reserva y el pago.
+5. Interés real en usar la solución.
+6. Dificultades o pasos confusos durante el recorrido.
+
+#### Diseño de entrevista para el Segmento 2: Entrenadores independientes
+
+**Objetivo de validación:**  
+Validar si los entrenadores independientes comprenden el valor de Courtly como canal para promocionar sus servicios, gestionar su perfil profesional, publicar disponibilidad, recibir solicitudes, revisar pagos, consultar métricas y fortalecer su reputación mediante reseñas.
+
+**Perfil del entrevistado:**  
+Entrenadores personales o profesionales deportivos entre 22 y 45 años que ofrecen servicios de manera independiente, gestionan clientes por redes sociales, WhatsApp o contactos directos, y buscan mejorar su visibilidad y organización.
+
+**Producto a validar:**  
+Landing Page de Courtly y aplicación móvil orientada a entrenadores.
+
+**Flujos a validar:**  
+Registro e inicio de sesión como entrenador, creación o edición del perfil profesional, publicación de disponibilidad, gestión de solicitudes de entrenamiento, revisión de pagos, visualización de métricas, notificaciones y reseñas.
+
+**Preguntas de introducción**
+1. ¿Qué deporte o disciplina enseñas actualmente?
+2. ¿Cómo consigues nuevos alumnos o clientes?
+3. ¿Cómo organizas tus horarios y sesiones de entrenamiento?
+4. ¿Qué problemas tienes al coordinar pagos, horarios o cancelaciones?
+5. ¿Qué herramientas digitales utilizas para promocionarte o comunicarte con clientes?
+
+**Validación de la Landing Page**
+1. Al ver la Landing Page, ¿queda claro que Courtly también está dirigida a entrenadores?
+2. ¿La propuesta de valor para entrenadores te parece atractiva?
+3. ¿Qué beneficio te llamó más la atención?
+4. ¿La página transmite confianza para registrar tus servicios profesionales?
+5. ¿Qué información necesitarías ver antes de crear una cuenta como entrenador?
+
+**Validación de la aplicación móvil**
+1. ¿El registro como entrenador solicita información adecuada para crear tu perfil?
+2. ¿La pantalla de perfil profesional muestra datos relevantes para que un jugador te elija?
+3. ¿El flujo para publicar disponibilidad te parece fácil de entender?
+4. ¿La gestión de horarios disponibles responde a tu forma real de trabajar?
+5. ¿La pantalla de solicitudes de entrenamiento permite tomar decisiones rápidamente?
+6. ¿Aceptar o rechazar una solicitud te parece claro?
+7. ¿La información sobre pagos recibidos sería útil para tu gestión diaria?
+8. ¿Las métricas presentadas te ayudarían a entender tu rendimiento como entrenador?
+9. ¿Las reseñas de alumnos aportarían confianza a tu perfil?
+10. ¿Qué funcionalidad consideras indispensable para usar Courtly como herramienta de trabajo?
+
+**Tareas para el entrevistado**
+1. Recorre la Landing Page e identifica qué ofrece Courtly a los entrenadores.
+2. Simula el registro o inicio de sesión como entrenador.
+3. Revisa el perfil profesional y menciona qué información cambiarías o agregarías.
+4. Publica un bloque de disponibilidad.
+5. Revisa una solicitud de entrenamiento y decide si la aceptarías o rechazarías.
+6. Consulta la sección de pagos, métricas o reseñas.
+7. Explica si usarías Courtly para gestionar tu actividad profesional.
+
+**Criterios de observación**
+1. Comprensión del valor de Courtly para entrenadores.
+2. Claridad del proceso de registro profesional.
+3. Facilidad para publicar y administrar disponibilidad.
+4. Utilidad percibida de solicitudes, pagos, métricas y reseñas.
+5. Confianza en la plataforma como canal de captación de clientes.
+6. Barreras o preocupaciones para adoptar la aplicación.
+
+#### Estructura general de aplicación de las entrevistas
+
+Cada entrevista tendrá una duración aproximada de 15 a 25 minutos y será aplicada de forma remota o presencial. Primero se realizarán preguntas de contexto para conocer el perfil del entrevistado. Luego se presentará la Landing Page para validar comprensión, confianza y claridad de la propuesta. Finalmente, el usuario recorrerá los flujos principales de la aplicación móvil según su segmento, mientras el equipo observa su comportamiento, dudas, comentarios y dificultades.
+
+La información recolectada será utilizada para registrar hallazgos por segmento, identificar oportunidades de mejora en la experiencia de usuario y evaluar si la solución implementada responde adecuadamente a las necesidades de deportistas aficionados y entrenadores independientes.
+
+### 4.3.2. Registro de Entrevistas
+
+#### Segmento 1: Deportistas aficionados
+ 
+#### Segmento 2: Entrenadores independientes
+
+#### Entrevista N.° 1
+
+**Nombres y apellidos:** José Luis Quispe Huaman  
+**Edad:** 29 años  
+**Distrito de residencia:** San Juan de Lurigancho  
+**Ocupación:** Entrenador independiente  
+**Estado civil:** Soltero  
+**Inicio de la entrevista:**   
+**Fin de la entrevista:** 
+
+#### Registro visual de la entrevista
+
+[imagen]
+
+#### Resumen descriptivo de la entrevista
+
+Durante la entrevista, José Luis Quispe Huaman comentó que trabaja como entrenador independiente y que actualmente consigue la mayoría de sus alumnos mediante recomendaciones, contactos directos y redes sociales. Explicó que suele coordinar sus sesiones por WhatsApp, organizando horarios de acuerdo con su disponibilidad y con los espacios deportivos disponibles. Señaló que este proceso puede volverse desordenado cuando recibe varios mensajes al mismo tiempo, cuando un alumno cancela a último momento o cuando debe recordar manualmente quién confirmó una sesión o realizó un pago. Al revisar la propuesta de Courtly, indicó que le parece útil contar con una plataforma donde pueda mostrar su perfil profesional, publicar horarios disponibles, recibir solicitudes de entrenamiento y generar mayor confianza mediante reseñas de alumnos.
+
+#### Características identificadas a partir de la entrevista
+
+A partir de la entrevista se identifica que José Luis representa a un entrenador independiente que depende principalmente de canales informales para captar clientes y organizar su trabajo. Su principal necesidad es contar con una herramienta que le permita ordenar sus horarios, reducir cruces de agenda y centralizar la comunicación con sus alumnos. También valora la posibilidad de aumentar su visibilidad profesional mediante un perfil público con información clara, disponibilidad actualizada y reseñas. Asimismo, muestra interés en funcionalidades relacionadas con pagos, confirmación de sesiones y gestión de solicitudes, ya que estas podrían ayudarle a reducir la carga manual de coordinación y mejorar la confianza con nuevos clientes.
+
+
+### 4.3.3. Evaluaciones según heurísticas
+
+# Evaluación Heurística de Usabilidad y Diseño Inclusivo para la Aplicación: "Courtly"
+### UX Heuristics & Principles Evaluation
+#### Usability - Inclusive Design - Information Architecture
+
+**CARRERA:** Ingeniería de Software <br>
+**CURSO:** 1acc0238 Aplicaciones para dispositivos móviles <br>
+**SECCIÓN:** 3248 <br>
+**PROFESORES:** Todos <br>
+**AUDITOR:** Mova <br>
+**CLIENTES:** Angulo Abud, Juan Carlos; Chacaliaza Minaya, Eduardo Fabian; Espinoza Vivas, Camilla Leonor; Nanfuñay Liza, Pedro Jesús; Quispe Barzola, Fabricio Fabian
+
+**SITE o APP A EVALUAR:** Courtly
+
+**TAREAS A EVALUAR:** <br>
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+1. Autenticación, registro e inicio de sesión de usuarios (Entrenadores y Deportistas).
+2. Navegación e interpretación de las métricas en el panel principal de inicio (Dashboard).
+3. Configuración, creación y publicación de bloques de disponibilidad horaria por parte de los entrenadores.
+4. Búsqueda y filtrado de canchas deportivas.
+5. Gestión de reservas de espacios deportivos basándose en los horarios disponibles.
+6. Flujo de pago y confirmación de la reserva de espacios.
+7. Organización y creación de partidos o convocatorias deportivas con amigos.
+8. Calificación y envío de reseñas (feedback) sobre las canchas deportivas utilizadas.
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+1. Sincronización automatizada con calendarios externos (como Google Calendar o Apple Calendar).
+2. Procesamiento real y liquidación bancaria en la pasarela de pagos integrada en producción.
+3. Configuración avanzada de perfiles técnicos, subida de certificaciones académicas y validación de antecedentes del Coach.
+
+<br>
+
+**ESCALA DE SEVERIDAD:** <br>
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad.
+
+| Nivel | Descripción |
+| ----- | ----------- |
+| 1 | **Problema superficial:** Puede ser fácilmente superado por el usuario y ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| 2 | **Problema menor:** Puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente release. |
+| 3 | **Problema mayor:** Ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| 4 | **Problema muy grave:** Un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+<br>
+
+**TABLA RESUMEN:**
+
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+| - | -------- | ------------------- | ------------------------------- |
+| 1 | El formulario de registro de disponibilidad horaria no cuenta con validaciones que impidan guardar bloques con horas inconsistentes (ej. hora de fin menor a la de inicio). | 3 | Error Prevention |
+| 2 | Ausencia de alertas comprensibles cuando expira la sesión del usuario (token JWT); el sistema muestra un mensaje genérico de error de red en lugar de guiar al re-login. | 3 | Help Users Recognize, Diagnose, and Recover from Errors |
+| 3 | La pantalla de búsqueda de complejos deportivos pierde todos los filtros seleccionados (distrito, tipo de losa, precio) si el usuario cambia de pestaña momentáneamente. | 2 | Flexibility and Efficiency of Use / Recognition Rather Than Recall |
+| 4 | Falta de un paso de confirmación explícito o resumen de datos antes de proceder con el botón final de pago ficticio para la reserva de la cancha. | 3 | User Control and Freedom |
+| 5 | La sección para armar partidos y convocatorias con amigos utiliza íconos genéricos que confunden al usuario entre lo que es un evento privado y un torneo abierto. | 2 | Match Between System and the Real World / Aesthetic and Minimalist Design |
+| 6 | El sistema de calificación de canchas no ofrece retroalimentación visual inmediata tras enviar una reseña, obligando al usuario a navegar a cambiar de pestaña | 3 | Visibility of System Status / Error Prevention |
+
+<br>
+
+**DESCRIPCIÓN DE PROBLEMAS:** <br>
+
+**PROBLEMA #1: El formulario de registro de disponibilidad horaria no cuenta con validaciones que impidan guardar bloques con horas inconsistentes (ej. hora de fin menor a la de inicio)**
+
+**Severidad:** 3
+
+**Heurística violada:** Error Prevention
+
+**Problema:** Al momento de rellenar el formulario para abrir nuevos bloques de horarios en la agenda del entrenador (Availability), la interfaz permite seleccionar y enviar al servidor cualquier combinación de horas. Si un usuario introduce accidentalmente un rango inválido, como una hora de fin cronológicamente anterior a la de inicio (ej. de 10:00 AM a 08:00 AM del mismo día), el sistema procesa la petición de almacenamiento sin alertar del error, guardando datos corruptos que quiebran la lógica del calendario.
+
+**Recomendaciones:** Implementar una regla de validación de negocio reactiva directamente en la UI del formulario antes de habilitar el botón de envío. Se debe condicionar el estado `enabled` del botón mediante lógica booleana que compruebe que la hora de término sea estrictamente posterior a la de inicio. Adicionalmente, se recomienda desplegar un texto de asistencia (supporting text) dinámico en color rojo debajo de los selectores de tiempo advirtiendo de la incongruencia horaria.
+
+<br>
+
+**PROBLEMA #2: Ausencia de alertas comprensibles cuando expira la sesión del usuario (token JWT); el sistema muestra un mensaje genérico de error de red en lugar de guiar al re-login**
+
+**Severidad:** 3
+
+**Heurística violada:** Help Users Recognize, Diagnose, and Recover from Errors
+
+**Problema:** Cuando el token de autenticación JWT almacenado en el dispositivo caduca tras cumplirse el tiempo límite establecido por el backend, las peticiones HTTP posteriores a endpoints protegidos (como el centro de notificaciones `/me`) rebotan con un estado `401 Unauthorized`. La aplicación en el dispositivo móvil no captura ni traduce este código de estado específico, atrapando la respuesta en un bloque `catch` genérico que muestra al usuario un cuadro de diálogo confuso de "No se pudo conectar al servidor", impidiéndole diagnosticar que el problema real radica en la expiración de su sesión.
+
+**Recomendaciones:** Agregar un interceptor personalizado a nivel de red (`OkHttpClient Interceptor`) que evalúe de manera centralizada los códigos de respuesta del servidor. Si el interceptor detecta un error `401`, debe disparar automáticamente un evento global para limpiar el almacenamiento de sesión local (`SharedPreferences` o `DataStore`) y redirigir de forma inmediata y transparente al usuario hacia la pantalla de inicio de sesión (Login), adjuntando un mensaje en pantalla indicando que "Su sesión ha expirado por seguridad".
+
+<br>
+
+**PROBLEMA #3: La pantalla de búsqueda de complejos deportivos pierde todos los filtros seleccionados (distrito, tipo de losa, precio) si el usuario cambia de pestaña momentáneamente**
+
+**Severidad:** 2
+
+**Heurística violada:** Flexibility and Efficiency of Use / Recognition Rather Than Recall
+
+**Problema:** Al interactuar con los filtros avanzados en la vista de búsqueda de canchas, el usuario invierte tiempo seleccionando preferencias específicas. No obstante, si cambia temporalmente a otra pestaña del menú inferior de la aplicación (como revisar una notificación) y regresa de inmediato, el estado de los componentes visuales de filtrado se destruye por completo. Esto fuerza al usuario a recordar y reconfigurar manualmente todos los parámetros desde cero, reduciendo drásticamente la eficiencia de uso.
+
+**Recomendaciones:** Elevar el estado de los filtros (State Hoisting) de la vista hacia un ciclo de vida más persistente, como el de un `ViewModel` compartido o de ámbito de flujo, en lugar de mantener los estados de selección limitados a variables internas y volátiles del composable. De esta manera, al reconstruirse la vista por la navegación, los campos se precargarán reteniendo los valores almacenados previamente en memoria.
+
+<br>
+
+**PROBLEMA #4: Falta de un paso de confirmación explícito o resumen de datos antes de proceder con el botón final de pago ficticio para la reserva de la cancha**
+
+**Severidad:** 3
+
+**Heurística violada:** User Control and Freedom
+
+**Problema:** En la sección de checkout para la separación de espacios deportivos, el flujo avanza de manera directa hacia la ejecución de la reserva al presionar el botón de pago. Al no existir un paso intermedio que actúe como pasarela o modal de confirmación resumiendo el precio total, la cancha y la hora seleccionada, el usuario carece de una "salida de emergencia" para rectificar errores en la selección, facilitando ejecuciones accidentales o cobros erróneos por pulsaciones involuntarias.
+
+**Recomendaciones:** Diseñar e integrar una vista previa o un componente de diálogo flotante (`AlertDialog`) que se gatille al presionar el botón de pago preliminar. Esta ventana emergente debe consolidar un resumen claro de la transacción (Nombre del complejo, fecha, bloque de horas e importe total) y requerir una confirmación explícita mediante un botón de deslizamiento (`Swipe to confirm`) o doble verificación antes de interactuar con el endpoint final del backend.
+
+<br>
+
+**PROBLEMA #5: La sección para armar partidos y convocatorias con amigos utiliza íconos genéricos que confunden al usuario entre lo que es un evento privado y un torneo abierto**
+
+**Severidad:** 2
+
+**Heurística violada:** Match Between System and the Real World / Aesthetic and Minimalist Design
+
+**Problema:** La interfaz de creación de partidos asigna la misma iconografía estándar de una pelota de fútbol para todas las modalidades de organización disponibles. Esta carencia de diferenciación gráfica confunde visualmente al usuario, ya que es incapaz de discernir intuitivamente a simple vista si está organizando un encuentro estrictamente amistoso y privado con sus contactos o si está inscribiendo un equipo a una convocatoria de torneo competitiva de carácter abierto.
+
+**Recomendaciones:** Sustituir los íconos genéricos por un set iconográfico que use conceptos claros del entorno real deportivo. Por ejemplo, utilizar un icono de candado acompañado de un grupo de personas para indicar un "Partido Privado", y un icono de trofeo o medalla para etiquetar los "Torneos Abiertos". Esto dotará de un lenguaje e identidad visual coherente al ecosistema de la aplicación.
+
+<br>
+
+**PROBLEMA #6: El sistema de calificación de canchas no ofrece retroalimentación visual inmediata tras enviar una reseña, obligando al usuario a cambiar de pestaña**
+
+**Severidad:** 3
+
+**Heurística violada:** Visibility of System Status / Error Prevention
+
+**Problema:** Una vez que el usuario asigna la puntuación por estrellas, escribe su comentario y pulsa el botón de envío en el sistema de calificación, la pantalla permanece totalmente estática durante el procesamiento de la petición de red. Al no mostrarse un spinner de carga, un cambio de estado en el botón o una confirmación inmediata de éxito, el usuario experimenta incertidumbre, asume que la acción no se registró y presiona el botón repetidas veces, lo que ocasiona llamadas redundantes al servidor. Para verificar si se guardó, se ve forzado a cambiar de pantalla y regresar.
+
+**Recomendaciones:** Introducir un estado de carga explícito en la UI (`isLoading`) durante el transcurso de la petición asíncrona que deshabilite el botón temporalmente y muestre un indicador circular de progreso (`CircularProgressIndicator`). Tras recibir la confirmación exitosa con código `200` o `201` desde el backend, desplegar un componente de notificación breve en la base de la pantalla (`Snackbar`) que confirme que la reseña fue publicada, limpiando los campos del formulario de forma automática.
+
 ## Conclusiones y recomendaciones.
 
 ### Conclusiones
@@ -12773,6 +13835,16 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
 28. La documentación generada durante el proyecto contribuye a la trazabilidad del desarrollo.
 29. El trabajo en equipo evidenció la importancia de la comunicación constante y la distribución adecuada de responsabilidades.
 30. El proyecto demuestra la aplicación práctica de conocimientos académicos en un contexto real.
+31. El AV2 permitió materializar la primera versión funcional del frontend móvil de Courtly para dos segmentos distintos: deportistas aficionados en Flutter y entrenadores en Android.
+32. La división del sistema por bounded contexts facilitó organizar mejor el trabajo, reducir acoplamientos y avanzar de forma más clara en cada flujo funcional.
+33. La integración con el backend desplegado permitió validar escenarios reales de autenticación, consulta de datos y gestión de información desde las aplicaciones móviles.
+34. La implementación de IAM consolidó el flujo de inicio de sesión, persistencia de sesión y control de acceso como base operativa de ambas aplicaciones.
+35. El desarrollo de Courts, Users, Bookings y Payments en la app de deportistas permitió construir una experiencia más cercana al flujo principal del producto.
+36. La implementación de Coaches y Availabilities en la app Android permitió cubrir la necesidad del entrenador de gestionar su perfil y su agenda de disponibilidad.
+37. El trabajo en ambos repositorios evidenció la importancia de adaptar la arquitectura y la interfaz a las particularidades de cada plataforma sin perder consistencia funcional.
+38. La entrega fortaleció competencias en consumo de APIs REST, navegación móvil, manejo de estado, persistencia local y organización modular del código.
+39. La colaboración del equipo permitió avanzar en paralelo sobre dos artefactos distintos, manteniendo alineación con los objetivos funcionales del sprint.
+40. Esta entrega demostró que el proyecto evolucionó de la definición conceptual del dominio hacia la implementación de soluciones móviles concretas y ejecutables.
 
 ### Recomendaciones
 
@@ -12806,6 +13878,16 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
 28. Mantener una estandarización en la estructura de los bounded contexts.
 29. Continuar fortaleciendo las habilidades técnicas del equipo.
 30. Realizar iteraciones continuas del producto, incorporando nuevas funcionalidades basadas en métricas de uso.
+31. Completar la cobertura funcional de todos los bounded contexts pendientes para evitar que algunos flujos queden solo parcialmente integrados.
+32. Unificar criterios de diseño visual y experiencia de usuario entre ambas aplicaciones para reforzar la identidad del producto.
+33. Incrementar la cantidad de pruebas unitarias, de integración y de interfaz para reducir riesgos de regresión.
+34. Mejorar el manejo de errores de red, timeouts y respuestas vacías para hacer las aplicaciones más robustas en escenarios reales.
+35. Estandarizar la estructura interna de los bounded contexts en ambos repositorios para facilitar mantenimiento y escalabilidad.
+36. Documentar con más detalle los flujos implementados, las rutas consumidas y las dependencias entre frontend y backend.
+37. Incorporar validaciones más estrictas en formularios y entradas de usuario para prevenir inconsistencias en los datos enviados al backend.
+38. Fortalecer la estrategia de ramas, merges y evidencia de commits para que la colaboración técnica quede mejor reflejada en GitHub.
+39. Validar tempranamente la compatibilidad de cada funcionalidad con el entorno de ejecución objetivo, especialmente entre web, Flutter y Android nativo.
+40. Continuar iterando sobre la integración entre bounded contexts para asegurar una experiencia completa, coherente y lista para siguientes entregas
 
 ## Video App Validation
 ## Video About the product
@@ -12876,3 +13958,11 @@ Anexo10. Backend desplegado [**link**](https://courtly-backend.onrender.com/swag
 Anexo11. Video About the team [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCehaxPFdq9Tr-SZ-dhRXu_Ab0iCW2NektCLVhA-cATWJ4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dgp9us)
 
 Anexo12. Video de exposición TB1 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCjxmBE5rnfRpADFcymHqkcAc0T7Rfc3Hh1zZOrVR57EJw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=U74yWE)
+
+Anexo13. Video About the team [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQARjTmK1aD_RpMMN2eFMBlnAXfr9Pap9gSqnjXlAYMSl6Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=XSD6YK)
+
+Anexo14. Repositorio del app-movil flutter [**link**](https://github.com/Aplicaciones-Moviles-3248/courtly_mobile_app)
+
+Anexo15. Repositorio del app-movil android [**link**](https://github.com/Aplicaciones-Moviles-3248/courtly_coaches_app)
+
+Anexo12. Video de exposición AV2 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCDqplZWT49Ro3-8iLcTekjAVMtQHa_UoW-HmcS9oCFIDk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=vVvXyS)
