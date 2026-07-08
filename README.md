@@ -13061,6 +13061,64 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
 ##### 4.2.3.5. Execution Evidence for Sprint Review
 ##### 4.2.3.6. Services Documentation Evidence for Sprint Review
 ##### 4.2.3.7. Software Deployment Evidence for Sprint Review
+
+Durante el Sprint 3 se consolidó la evidencia de despliegue del producto Courtly, desarrollado por la startup Mova, considerando la validación de la aplicación móvil, el backend desplegado en un entorno público y la landing page informativa. El objetivo principal fue asegurar que los productos digitales puedan ejecutarse, integrarse y presentarse correctamente durante el Sprint Review, evidenciando el estado final de la solución para deportistas aficionados y entrenadores independientes.
+
+###### Deployment scope during Sprint 3
+
+| Product | Deployment / Execution Environment | Purpose | Evidence |
+|---|---|---|---|
+| Landing Page | GitHub Pages / Vercel / entorno usado por el equipo | Validar acceso público al sitio informativo de Courtly | ![Landing page deployed](assets/chapter4/sprint3/landing-page-deployed.png) |
+| Web Services RESTful API | Railway / Render / backend público usado por el equipo | Validar disponibilidad de endpoints y documentación Swagger/OpenAPI | ![Swagger UI documentation](assets/chapter4/sprint3/swagger-ui.png) | |
+| Mobile Application - Flutter Player App | Android Studio / Android Emulator / APK debug | Validar ejecución de flujos del deportista aficionado | ![Swagger UI documentation](assets/chapter4/sprint3/appejecutandose.png) |
+| Mobile Application - Android Coach App | Android Studio / Android Emulator / APK debug | Validar ejecución de flujos del entrenador | ![Swagger UI documentation](assets/chapter4/sprint3/coachesejec.png) |
+
+###### Mobile Application Deployment Evidence
+
+La aplicación móvil fue ejecutada en Android Studio mediante un emulador Android o un dispositivo físico, según la disponibilidad del equipo. Para esta validación se realizó la sincronización de dependencias, la compilación del proyecto y la ejecución en modo debug. En el caso de la aplicación Flutter, se consideraron comandos como `flutter pub get`, `flutter run` y `flutter build apk --debug`, con el propósito de comprobar que el proyecto compile correctamente y pueda ser utilizado durante la presentación del Sprint Review.
+
+| Step | Description | Evidence image |
+|---|---|---|
+| 1. Dependency synchronization | Se verificaron las dependencias del proyecto móvil antes de la ejecución para asegurar que el entorno de desarrollo estuviera correctamente configurado. | ![Flutter dependencies synchronization](assets/chapter4/sprint3/flutter-pub-get.png) |
+| 2. Debug build generation | Se generó una versión debug de la aplicación para validar que el proyecto compile sin errores relevantes. | ![Flutter debug build](assets/chapter4/sprint3/flutter-build-debug.png) |
+| 3. Android execution | Se ejecutó la aplicación en Android Emulator o en un dispositivo físico para comprobar la navegación y los flujos principales. | ![Mobile app execution](assets/chapter4/sprint3/mobile-app-execution.png) |
+| 4. Backend connection validation | Se verificó que la aplicación consuma correctamente los servicios del backend desplegado durante el Sprint 3. | ![Backend connection validation](assets/chapter4/sprint3/mobile-backend-validation.png) |
+
+###### Web Services Deployment Evidence
+
+El backend RESTful API fue validado en un entorno público accesible por internet, permitiendo comprobar su disponibilidad para la integración con las aplicaciones móviles. Para el Sprint 3, el servicio backend se encontró disponible mediante la siguiente URL pública:
+
+https://backend-production-d772.up.railway.app/api/v1/
+
+La documentación Swagger/OpenAPI permitió revisar los endpoints disponibles, métodos HTTP, parámetros requeridos y respuestas generadas por el servidor. Esta API fue utilizada como fuente de datos para las funcionalidades móviles desarrolladas y validadas durante el Sprint 3.
+
+| Evidence | Description | Screenshot |
+|---|---|---|
+| Backend public URL available | Se verificó que la URL pública del backend responda correctamente desde un navegador o herramienta de pruebas. | ![Backend public service](assets/chapter4/sprint3/backend-public-url.png) |
+| Swagger UI loaded successfully | Se comprobó que la documentación Swagger/OpenAPI cargue correctamente y muestre los endpoints del sistema. | ![Swagger UI documentation](assets/chapter4/sprint3/swagger-ui.png) |
+| Endpoint validation from Swagger/Postman/browser | Se validaron endpoints principales mediante Swagger, Postman o navegador para verificar respuestas del servicio. | ![Endpoint validation](assets/chapter4/sprint3/endpoint-validation.png) |
+| Mobile app consuming deployed backend | Se comprobó que la aplicación móvil pueda comunicarse con el backend desplegado para obtener o enviar información. | ![Mobile backend consumption](assets/chapter4/sprint3/mobile-backend-consumption.png) |
+
+###### Landing Page Deployment Evidence
+
+La landing page se mantuvo desplegada como producto web informativo de Courtly y sirvió para presentar la propuesta de valor, los segmentos objetivo, los beneficios principales y el acceso a información general del producto. Durante el Sprint 3, se verificó su disponibilidad pública y su coherencia visual con el resto de la solución. En caso de no haberse realizado nuevos cambios funcionales sobre la landing page, la validación se centró en confirmar que el sitio continúe accesible y preparado para ser presentado durante el Sprint Review.
+
+![Landing page deployed](assets/chapter4/sprint3/landing-page-deployed.png)
+
+![Landing page responsive validation](assets/chapter4/sprint3/landing-page-responsive.png)
+
+###### Deployment Validation Summary
+
+| Product | Validation performed | Result | Observation |
+|---|---|---|---|
+| Landing Page | Access through public URL | Successful | The site loads correctly and presents Courtly’s value proposition. |
+| RESTful API | Swagger UI and endpoint validation | Successful | The backend is publicly available and supports mobile integration. |
+| Flutter Player App | Debug execution on Android | Successful | The app runs and connects to backend services. |
+| Android Coach App | Debug execution on Android | Successful | The trainer flow can be executed for Sprint Review. |
+
+###### Sprint 3 Deployment Conclusions
+
+El Sprint 3 permitió consolidar el despliegue y la validación técnica de Courtly, asegurando que los productos digitales estén listos para ser demostrados durante el Sprint Review. El backend público, la ejecución de las aplicaciones móviles y la disponibilidad de la landing page evidencian una solución integrada y coherente, alineada con la entrega final del producto desarrollado por Mova.
 ##### 4.2.3.8. Team Collaboration Insights during Sprint
 ## 4.3. Validation Interviews
 ### 4.3.1. Diseño de Entrevistas
