@@ -13929,6 +13929,10 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad.
 40. Continuar iterando sobre la integración entre bounded contexts para asegurar una experiencia completa, coherente y lista para siguientes entregas
 
 ## Video App Validation
+
+**TB2** 
+[**link**]([https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQBoAB9uK1KyR7uBgw4e8C1gAaNrnXgelygJxs0lHW_qDsU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=0zSvd0](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAnXM1vC7Q-QYPygFnVMc1FAUwueWDUI8UUJ6Yqx5CzyA0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ev7E0v))
+
 ## Video About the product
 
 **TB2**
@@ -14019,4 +14023,6 @@ Anexo16. Video de exposición AV2 [**link**](https://upcedupe-my.sharepoint.com/
 Anexo17. Video about the product [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQArVxH6gDP2Sq-34s2woLr0AYJP0d13ZqJ4XzHEV6FyGS8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4pUgLH)
 
 Anexo17. Video about the team [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQBoAB9uK1KyR7uBgw4e8C1gAaNrnXgelygJxs0lHW_qDsU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=0zSvd0)
+
+Anexo17. Video Validation [**link**]([https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQBoAB9uK1KyR7uBgw4e8C1gAaNrnXgelygJxs0lHW_qDsU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=0zSvd0](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQAnXM1vC7Q-QYPygFnVMc1FAUwueWDUI8UUJ6Yqx5CzyA0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ev7E0v))
 
