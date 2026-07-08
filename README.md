@@ -12835,6 +12835,365 @@ Durante el Sprint 2, el equipo trabajó de forma coordinada en la implementació
 
 La evidencia de actividad en ambos repositorios refleja una colaboración constante, con participación distribuida y seguimiento del avance durante el sprint. Esto permitió avanzar de manera ordenada en la construcción de las interfaces móviles y en la validación de los flujos principales de cada segmento.
 
+### 4.2.3. Sprint 3
+##### 4.2.3.1. Sprint Planning 3
+
+#### 4.2.2.2. Sprint Planning 3
+
+<div>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <td align="left" "><strong>Sprint #</strong></td>
+      <td align="left">Sprint 3</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint Planning Background</strong></td>
+      <td align="left">Implementación de funcionalidades complementarias de la aplicación móvil de Courtly, enfocadas en la gestión de entrenadores, creación de partidos, pagos, valoraciones, reseñas, notificaciones y estadísticas de rendimiento.</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Date</strong></td>
+      <td align="left">2026-06-27</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Time</strong></td>
+      <td align="left">10:00 AM - 12:00 PM</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Location</strong></td>
+      <td align="left">Sala de reuniones virtual - Discord</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Prepared By</strong></td>
+      <td align="left">Fabricio Quispe, Equipo de Producto</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Attendees (to planning meeting)</strong></td>
+      <td align="left">Camilla Espinoza, Juan Carlos Angulo, Eduardo Chacaliaza, Fabricio Quispe, Pedro Nanfuñay</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint 2 - 3 Review Summary</strong></td>
+      <td align="left">En el Sprint 2 se implementó el flujo principal móvil de Courtly, permitiendo a jugadores y entrenadores registrarse, iniciar sesión, gestionar sus perfiles, buscar canchas, revisar detalles, reservar, pagar y cancelar operaciones dentro de la aplicación. Con ello, se dejó una base funcional para continuar con características más avanzadas de interacción entre usuarios y entrenadores.</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>Sprint 2 - 3 Retrospective Summary</strong></td>
+      <td align="left">Fortalezas: se logró consolidar el flujo principal de la aplicación móvil y se avanzó con una mejor asignación de tareas por responsable. Oportunidades: mejorar la integración entre pantallas desarrolladas en Flutter y Android, reforzar las pruebas funcionales y documentar con mayor detalle las evidencias por user story. Acciones: priorizar las funcionalidades de entrenadores, partidos, pagos, notificaciones y valoraciones para completar la experiencia móvil de Courtly.</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint Goal & User Stories</strong></td>
+      <td align="left">USM08 Valorar una cancha utilizada; USM09 Crear partido con amigos; USM10 Unirse a un partido disponible; USM14 Aceptar o rechazar solicitudes de entrenamiento; USM15 Visualizar pagos recibidos; USM16 Recibir reseñas de jugadores; USM17 Ver estadísticas de rendimiento; USM18 Recibir notificaciones relevantes en la app; USM22 Buscar entrenadores disponibles; USM23 Solicitar una sesión con entrenador; USM24 Pagar una sesión con entrenador aceptada; USM25 Valorar a un entrenador después de una sesión completada; Mejora: Añadir diálogo de Términos y Condiciones.</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint 3 Goal</strong></td>
+      <td align="left">Implementar funcionalidades avanzadas de la aplicación móvil de Courtly, permitiendo a los usuarios buscar entrenadores, solicitar sesiones, gestionar pagos, crear y unirse a partidos, recibir notificaciones, consultar estadísticas y realizar valoraciones sobre canchas y entrenadores.</td>
+    </tr>
+    <tr>
+      <td align="left" ><strong>Sprint 3 Velocity</strong></td>
+      <td align="left">50 Story Points</td>
+    </tr>
+    <tr>
+      <td align="left"><strong>Sum of Story Points</strong></td>
+      <td align="left">50 Story Points (USM22: 5 + USM23: 8 + USM14: 5 + USM24: 5 + USM09: 5 + USM10: 3 + USM18: 5 + USM08: 2 + USM25: 2 + USM16: 2 + USM15: 3 + USM17: 5)</td>
+    </tr>
+  </table>
+</div>
+
+##### 4.2.3.2. Sprint Backlog 3
+
+#### 4.2.2.3. Sprint Backlog 3
+
+<div>
+  <table border="1" cellspacing="0" cellpadding="8" width="100%">
+    <tr>
+      <td align="center" colspan="8" ><strong>Sprint #</strong></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="8" >Sprint 3</td>
+    </tr>
+    <tr>
+      <td align="center" colspan="4" ><strong>User Story</strong></td>
+      <td align="center" colspan="4" <strong>Work-Item / Task</strong></td>
+    </tr>
+    <tr>
+      <th  text-align: center;">Id</th>
+      <th >Title</th>
+      <th  text-align: center;">Id</th>
+      <th >Title</th>
+      <th >Description</th>
+      <th  text-align: center;">Estimation (Hours)</th>
+      <th ">Assigned To</th>
+      <th  text-align: center;">Status</th>
+    </tr>
+    <tr>
+      <td align="center">USM08</td>
+      <td>Valorar una cancha utilizada</td>
+      <td align="center">T-43</td>
+      <td>Implementar valoración de cancha utilizada</td>
+      <td>Crear la interfaz para que el jugador pueda calificar una cancha después de haber completado una reserva, incluyendo puntuación y comentario.</td>
+      <td align="center">4</td>
+      <td>Fabricio Quispe</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM09</td>
+      <td>Crear partido con amigos</td>
+      <td align="center">T-44</td>
+      <td>Construir flujo móvil de creación de partido</td>
+      <td>Implementar la pantalla para crear un partido, seleccionando deporte, cancha, fecha, horario y cantidad de participantes.</td>
+      <td align="center">8</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM10</td>
+      <td>Unirse a un partido disponible</td>
+      <td align="center">T-45</td>
+      <td>Implementar unión a partidos disponibles</td>
+      <td>Permitir que el jugador visualice partidos abiertos y pueda unirse a uno disponible, validando cupos y estado del partido.</td>
+      <td align="center">5</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM14</td>
+      <td>Aceptar o rechazar solicitudes de entrenamiento</td>
+      <td align="center">T-46</td>
+      <td>Gestionar solicitudes de entrenamiento</td>
+      <td>Implementar la vista para que el entrenador revise solicitudes recibidas y pueda aceptarlas o rechazarlas desde la aplicación móvil.</td>
+      <td align="center">8</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM15</td>
+      <td>Visualizar pagos recibidos</td>
+      <td align="center">T-47</td>
+      <td>Crear vista de pagos recibidos</td>
+      <td>Desarrollar una pantalla para que el entrenador pueda consultar los pagos recibidos por sesiones aceptadas o completadas.</td>
+      <td align="center">5</td>
+      <td>Fabricio Quispe</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM16</td>
+      <td>Recibir reseñas de jugadores</td>
+      <td align="center">T-48</td>
+      <td>Mostrar reseñas recibidas por el entrenador</td>
+      <td>Implementar la visualización de reseñas y comentarios realizados por jugadores luego de una sesión completada con el entrenador.</td>
+      <td align="center">4</td>
+      <td>Juan Carlos Angulo</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM17</td>
+      <td>Ver estadísticas de rendimiento</td>
+      <td align="center">T-49</td>
+      <td>Implementar estadísticas de rendimiento</td>
+      <td>Crear una sección móvil para consultar métricas de rendimiento del usuario, como sesiones, partidos, valoraciones o actividad registrada.</td>
+      <td align="center">8</td>
+      <td>Pedro Nanfuñay</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM18</td>
+      <td>Recibir notificaciones relevantes en la app</td>
+      <td align="center">T-50</td>
+      <td>Implementar notificaciones relevantes</td>
+      <td>Configurar alertas dentro de la aplicación para informar sobre reservas, solicitudes, pagos, partidos y cambios importantes del usuario.</td>
+      <td align="center">8</td>
+      <td>Pedro Nanfuñay</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM22</td>
+      <td>Buscar entrenadores disponibles</td>
+      <td align="center">T-51</td>
+      <td>Implementar búsqueda de entrenadores</td>
+      <td>Crear la vista para que el jugador pueda buscar entrenadores disponibles, visualizando información básica, especialidad y disponibilidad.</td>
+      <td align="center">8</td>
+      <td>Eduardo Chacaliaza</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM23</td>
+      <td>Solicitar una sesión con entrenador</td>
+      <td align="center">T-52</td>
+      <td>Construir flujo de solicitud de sesión</td>
+      <td>Permitir que el jugador solicite una sesión con un entrenador, seleccionando fecha, horario y detalle de la solicitud.</td>
+      <td align="center">10</td>
+      <td>Camilla Espinoza</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM24</td>
+      <td>Pagar una sesión con entrenador aceptada</td>
+      <td align="center">T-53</td>
+      <td>Implementar pago de sesión aceptada</td>
+      <td>Desarrollar el flujo para que el jugador pueda pagar una sesión previamente aceptada por el entrenador, mostrando monto, confirmación y estado del pago.</td>
+      <td align="center">8</td>
+      <td>Eduardo Chacaliaza</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">USM25</td>
+      <td>Valorar a un entrenador después de una sesión completada</td>
+      <td align="center">T-54</td>
+      <td>Implementar valoración de entrenador</td>
+      <td>Agregar la opción para que el jugador califique al entrenador después de una sesión completada, incluyendo puntuación y comentario.</td>
+      <td align="center">4</td>
+      <td>Camilla Espinoza</td>
+      <td align="center">Todo</td>
+    </tr>
+    <tr>
+      <td align="center">MAM-76</td>
+      <td>Mejora: Añadir diálogo de Términos y Condiciones</td>
+      <td align="center">T-55</td>
+      <td>Agregar diálogo de términos y condiciones</td>
+      <td>Implementar un diálogo informativo de términos y condiciones dentro de la aplicación móvil, solicitando aceptación del usuario cuando corresponda.</td>
+      <td align="center">3</td>
+      <td>Fabricio Quispe</td>
+      <td align="center">Todo</td>
+    </tr>
+  </table>
+</div>
+
+##### 4.2.3.3. Development Evidence for Sprint Review
+##### 4.2.3.4. Testing Suite Evidence for Sprint Review
+##### 4.2.3.5. Execution Evidence for Sprint Review
+##### 4.2.3.6. Services Documentation Evidence for Sprint Review
+##### 4.2.3.7. Software Deployment Evidence for Sprint Review
+##### 4.2.3.8. Team Collaboration Insights during Sprint
+## 4.3. Validation Interviews
+### 4.3.1. Diseño de Entrevistas
+
+### 4.3.1. Diseño de Entrevistas
+
+Las entrevistas de validación fueron diseñadas con el objetivo de evaluar la comprensión, utilidad percibida y facilidad de uso de los productos digitales desarrollados para Courtly: la Landing Page y las aplicaciones móviles. A diferencia de las entrevistas exploratorias realizadas en etapas anteriores, esta validación se enfoca en comprobar si los usuarios de cada segmento pueden entender la propuesta de valor, reconocer las funcionalidades principales y completar los flujos representativos de la solución.
+
+Para esta etapa se consideran los dos segmentos objetivo definidos para Courtly: deportistas aficionados y entrenadores independientes. Cada entrevista se desarrollará de forma semiestructurada, combinando preguntas abiertas con tareas de navegación sobre el prototipo o aplicación, permitiendo observar tanto la opinión del usuario como su comportamiento real frente a la solución.
+
+#### Diseño de entrevista para el Segmento 1: Deportistas aficionados
+
+**Objetivo de validación:**  
+Validar si los deportistas aficionados comprenden la propuesta de Courtly, encuentran atractiva la Landing Page y pueden utilizar la aplicación móvil para buscar canchas, revisar entrenadores, realizar reservas, efectuar pagos y gestionar actividades deportivas.
+
+**Perfil del entrevistado:**  
+Personas entre 18 y 40 años que practican deporte de forma recreativa, organizan partidos con amigos, buscan canchas deportivas o tienen interés en contratar entrenadores para mejorar su rendimiento.
+
+**Producto a validar:**  
+Landing Page de Courtly y aplicación móvil orientada a jugadores.
+
+**Flujos a validar:**  
+Registro e inicio de sesión, búsqueda de canchas, visualización de detalle de cancha, reserva, pago, búsqueda de entrenadores, solicitud de sesión, creación o participación en partidos y revisión del perfil.
+
+**Preguntas de introducción**
+1. ¿Con qué frecuencia practicas deporte actualmente?
+2. ¿Cómo sueles organizar tus partidos o reservas de cancha?
+3. ¿Qué problemas has tenido al buscar o reservar una cancha?
+4. ¿Has usado alguna aplicación para reservar espacios deportivos o coordinar partidos?
+5. ¿Qué esperas encontrar en una aplicación como Courtly?
+
+**Validación de la Landing Page**
+1. Al ver la página principal, ¿entiendes rápidamente qué ofrece Courtly?
+2. ¿Qué sección de la Landing Page te pareció más clara o útil?
+3. ¿La información sobre beneficios y funcionamiento te genera confianza?
+4. ¿El diseño visual te parece adecuado para una aplicación deportiva?
+5. ¿Qué información agregarías antes de decidir usar o descargar la aplicación?
+
+**Validación de la aplicación móvil**
+1. ¿El proceso de registro e inicio de sesión te parece claro?
+2. ¿Puedes identificar fácilmente dónde buscar canchas?
+3. ¿La información mostrada en el detalle de una cancha es suficiente para decidir reservar?
+4. ¿El flujo para seleccionar horario, reservar y pagar te parece ordenado?
+5. ¿Qué tan seguro te sentirías pagando desde la aplicación?
+6. ¿La sección de entrenadores te permite comparar opciones con facilidad?
+7. ¿El proceso para solicitar una sesión con un entrenador te parece comprensible?
+8. ¿La opción de crear o unirse a partidos te resulta útil?
+9. ¿Qué parte del flujo te generó mayor duda o fricción?
+10. ¿Usarías Courtly en una situación real? ¿Por qué?
+
+**Tareas para el entrevistado**
+1. Recorre la Landing Page e identifica qué problema resuelve Courtly.
+2. Busca una cancha disponible según ubicación, precio u horario.
+3. Revisa el detalle de una cancha y decide si la reservarías.
+4. Simula el proceso de reserva y pago.
+5. Busca un entrenador y revisa su perfil.
+6. Simula la solicitud de una sesión de entrenamiento.
+7. Revisa la sección de partidos y explica si la usarías.
+
+**Criterios de observación**
+1. Comprensión de la propuesta de valor.
+2. Facilidad para ubicar acciones principales.
+3. Claridad de etiquetas, botones y navegación.
+4. Confianza en la reserva y el pago.
+5. Interés real en usar la solución.
+6. Dificultades o pasos confusos durante el recorrido.
+
+#### Diseño de entrevista para el Segmento 2: Entrenadores independientes
+
+**Objetivo de validación:**  
+Validar si los entrenadores independientes comprenden el valor de Courtly como canal para promocionar sus servicios, gestionar su perfil profesional, publicar disponibilidad, recibir solicitudes, revisar pagos, consultar métricas y fortalecer su reputación mediante reseñas.
+
+**Perfil del entrevistado:**  
+Entrenadores personales o profesionales deportivos entre 22 y 45 años que ofrecen servicios de manera independiente, gestionan clientes por redes sociales, WhatsApp o contactos directos, y buscan mejorar su visibilidad y organización.
+
+**Producto a validar:**  
+Landing Page de Courtly y aplicación móvil orientada a entrenadores.
+
+**Flujos a validar:**  
+Registro e inicio de sesión como entrenador, creación o edición del perfil profesional, publicación de disponibilidad, gestión de solicitudes de entrenamiento, revisión de pagos, visualización de métricas, notificaciones y reseñas.
+
+**Preguntas de introducción**
+1. ¿Qué deporte o disciplina enseñas actualmente?
+2. ¿Cómo consigues nuevos alumnos o clientes?
+3. ¿Cómo organizas tus horarios y sesiones de entrenamiento?
+4. ¿Qué problemas tienes al coordinar pagos, horarios o cancelaciones?
+5. ¿Qué herramientas digitales utilizas para promocionarte o comunicarte con clientes?
+
+**Validación de la Landing Page**
+1. Al ver la Landing Page, ¿queda claro que Courtly también está dirigida a entrenadores?
+2. ¿La propuesta de valor para entrenadores te parece atractiva?
+3. ¿Qué beneficio te llamó más la atención?
+4. ¿La página transmite confianza para registrar tus servicios profesionales?
+5. ¿Qué información necesitarías ver antes de crear una cuenta como entrenador?
+
+**Validación de la aplicación móvil**
+1. ¿El registro como entrenador solicita información adecuada para crear tu perfil?
+2. ¿La pantalla de perfil profesional muestra datos relevantes para que un jugador te elija?
+3. ¿El flujo para publicar disponibilidad te parece fácil de entender?
+4. ¿La gestión de horarios disponibles responde a tu forma real de trabajar?
+5. ¿La pantalla de solicitudes de entrenamiento permite tomar decisiones rápidamente?
+6. ¿Aceptar o rechazar una solicitud te parece claro?
+7. ¿La información sobre pagos recibidos sería útil para tu gestión diaria?
+8. ¿Las métricas presentadas te ayudarían a entender tu rendimiento como entrenador?
+9. ¿Las reseñas de alumnos aportarían confianza a tu perfil?
+10. ¿Qué funcionalidad consideras indispensable para usar Courtly como herramienta de trabajo?
+
+**Tareas para el entrevistado**
+1. Recorre la Landing Page e identifica qué ofrece Courtly a los entrenadores.
+2. Simula el registro o inicio de sesión como entrenador.
+3. Revisa el perfil profesional y menciona qué información cambiarías o agregarías.
+4. Publica un bloque de disponibilidad.
+5. Revisa una solicitud de entrenamiento y decide si la aceptarías o rechazarías.
+6. Consulta la sección de pagos, métricas o reseñas.
+7. Explica si usarías Courtly para gestionar tu actividad profesional.
+
+**Criterios de observación**
+1. Comprensión del valor de Courtly para entrenadores.
+2. Claridad del proceso de registro profesional.
+3. Facilidad para publicar y administrar disponibilidad.
+4. Utilidad percibida de solicitudes, pagos, métricas y reseñas.
+5. Confianza en la plataforma como canal de captación de clientes.
+6. Barreras o preocupaciones para adoptar la aplicación.
+
+#### Estructura general de aplicación de las entrevistas
+
+Cada entrevista tendrá una duración aproximada de 15 a 25 minutos y será aplicada de forma remota o presencial. Primero se realizarán preguntas de contexto para conocer el perfil del entrevistado. Luego se presentará la Landing Page para validar comprensión, confianza y claridad de la propuesta. Finalmente, el usuario recorrerá los flujos principales de la aplicación móvil según su segmento, mientras el equipo observa su comportamiento, dudas, comentarios y dificultades.
+
+La información recolectada será utilizada para registrar hallazgos por segmento, identificar oportunidades de mejora en la experiencia de usuario y evaluar si la solución implementada responde adecuadamente a las necesidades de deportistas aficionados y entrenadores independientes.
+
+### 4.3.2. Registro de Entrevistas
+### 4.3.3. Evaluaciones según heurísticas
+
 ## Conclusiones y recomendaciones.
 
 ### Conclusiones
