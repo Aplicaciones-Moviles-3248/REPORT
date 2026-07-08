@@ -13124,7 +13124,9 @@ El Sprint 3 permitió consolidar el despliegue y la validación técnica de Cour
 
 Durante el Sprint 3, el equipo continuó trabajando en la evolución de las aplicaciones móviles de Courtly, enfocándose en la integración de funcionalidades pendientes, la mejora de flujos existentes y la validación de la comunicación con el backend. La colaboración se desarrolló principalmente sobre los repositorios `courtly_mobile_app`, `courtly_coaches_app` y `REPORT`, manteniendo una organización basada en responsabilidades funcionales y evidencias de avance en GitHub.
 
-A diferencia de Sprint anteriores, en esta etapa el trabajo se concentró en completar y ajustar funcionalidades móviles ya iniciadas, por lo que la colaboración no solo se refleja en la cantidad de commits, sino también en la revisión de flujos, integración de cambios, resolución de conflictos, validación con backend y consolidación de evidencias para la entrega.
+A diferencia de Sprints anteriores, en esta etapa el trabajo se concentró en completar y ajustar funcionalidades móviles ya iniciadas, por lo que la colaboración no solo se refleja en la cantidad de commits, sino también en la revisión de flujos, integración de cambios, resolución de conflictos, validación con backend y consolidación de evidencias para la entrega.
+
+Las estadísticas presentadas corresponden a la actividad visible en GitHub al cierre del Sprint 3. Estos valores permiten observar la evolución de cada repositorio hasta esta iteración, por lo que se interpretan junto con las funcionalidades, ramas, pull requests y evidencias desarrolladas durante el Sprint.
 
 ### Integrantes del equipo
 
@@ -13151,73 +13153,111 @@ Las principales líneas de trabajo fueron:
 **Interpretación:**  
 La distribución del trabajo muestra que la colaboración del Sprint no se limitó a una sola funcionalidad, sino que abarcó distintos aspectos del producto móvil. Cada integrante participó desde su responsabilidad asignada, ya sea en implementación, revisión, validación o documentación del avance realizado.
 
+### Repositorios trabajados durante el Sprint
+
+Durante el Sprint 3, la colaboración del equipo se evidenció principalmente en los siguientes repositorios:
+
+- `courtly_mobile_app`
+- `courtly_coaches_app`
+- `REPORT`
+
+**Interpretación:**  
+El repositorio `courtly_mobile_app` concentró el desarrollo de funcionalidades para la aplicación móvil de deportistas aficionados en Flutter. El repositorio `courtly_coaches_app` mantuvo el trabajo correspondiente a la aplicación orientada a entrenadores. Finalmente, el repositorio `REPORT` permitió consolidar la documentación, capturas, evidencias técnicas e interpretación del avance realizado durante el Sprint.
+
+**Captura:**  
+![Repositorios trabajados durante el Sprint 3](assets/chapter4/sp3-repositories.png)
+
 ### Repositorio 1: Deportistas Aficionados - Flutter
 
 - **Repositorio:** `https://github.com/Aplicaciones-Moviles-3248/courtly_mobile_app`
 - **Producto:** Aplicación móvil para deportistas aficionados.
 - **Tecnología principal:** Flutter.
-- **Evidencia de actividad:**
-  - Commits: `colocar cantidad`
-  - Branches: `colocar cantidad`
-  - Pull Requests: `colocar cantidad`
+- **Estadísticas de actividad visible al cierre del Sprint 3:**
+  - Commits: `67`
+  - Branches: `14`
+  - Pull Requests: `6`
 
 En este repositorio se concentró una parte importante del trabajo técnico del Sprint. Se realizaron ajustes e implementaciones relacionadas con funcionalidades móviles para deportistas, incluyendo navegación, consulta de información desde el backend, visualización de datos reales y mejora de flujos asociados a reservas, entrenadores, reseñas y pagos.
 
 **Interpretación:**  
 La actividad registrada en `courtly_mobile_app` evidencia el avance del equipo en la consolidación de la aplicación Flutter. Las ramas y commits muestran un trabajo incremental, mientras que los pull requests reflejan el proceso de integración y revisión de cambios antes de consolidarlos en la rama principal. Asimismo, la conexión con endpoints reales permitió reducir el uso de datos simulados y acercar la aplicación a un flujo funcional más completo.
 
-**Imagen de actividad del repositorio de deportistas**
+**Imagen principal del repositorio de deportistas**
 
-![Actividad repositorio deportistas Sprint 3](assets/chapter4/sp3-repo1.png)
+![Repositorio courtly_mobile_app Sprint 3](assets/chapter4/sp3-mobile-app-repo.png)
 
-**Imagen adicional del repositorio de deportistas**
+**Imagen de commits del repositorio de deportistas**
 
-![Detalle repositorio deportistas Sprint 3](assets/chapter4/sp3-repo1-app.png)
+![Commits courtly_mobile_app Sprint 3](assets/chapter4/sp3-mobile-app-commits.png)
+
+**Imagen de branches del repositorio de deportistas**
+
+![Branches courtly_mobile_app Sprint 3](assets/chapter4/sp3-mobile-app-branches.png)
+
+**Imagen de pull requests del repositorio de deportistas**
+
+![Pull Requests courtly_mobile_app Sprint 3](assets/chapter4/sp3-mobile-app-prs.png)
 
 ### Repositorio 2: Entrenadores - Android
 
 - **Repositorio:** `https://github.com/Aplicaciones-Moviles-3248/courtly_coaches_app`
 - **Producto:** Aplicación móvil para entrenadores.
-- **Tecnología principal:** Android.
-- **Evidencia de actividad:**
-  - Commits: `colocar cantidad`
-  - Branches: `colocar cantidad`
-  - Pull Requests: `colocar cantidad`
+- **Tecnología principal:** Android/Kotlin.
+- **Estadísticas de actividad visible al cierre del Sprint 3:**
+  - Commits: `39`
+  - Branches: `10`
+  - Pull Requests: `6`
 
 El repositorio `courtly_coaches_app` continuó representando el segmento de entrenadores dentro del ecosistema Courtly. Durante el Sprint, este repositorio permitió mantener separadas las responsabilidades de los usuarios entrenadores respecto a los deportistas aficionados, siguiendo la división funcional definida para el producto.
 
 **Interpretación:**  
 La existencia de un repositorio independiente para entrenadores permite que las funcionalidades de este segmento evolucionen de manera separada. Aunque la cantidad de actividad visible puede variar respecto al repositorio Flutter, su rol dentro del Sprint sigue siendo relevante porque sostiene la separación entre ambos tipos de usuarios y permite validar el producto desde dos perspectivas móviles.
 
-**Imagen de actividad del repositorio de entrenadores**
+**Imagen principal del repositorio de entrenadores**
 
-![Actividad repositorio entrenadores Sprint 3](assets/chapter4/sp3-repo2.png)
+![Repositorio courtly_coaches_app Sprint 3](assets/chapter4/sp3-coaches-app-repo.png)
 
-**Imagen adicional del repositorio de entrenadores**
+**Imagen de commits del repositorio de entrenadores**
 
-![Detalle repositorio entrenadores Sprint 3](assets/chapter4/sp3-repo2-app.png)
+![Commits courtly_coaches_app Sprint 3](assets/chapter4/sp3-coaches-app-commits.png)
+
+**Imagen de branches del repositorio de entrenadores**
+
+![Branches courtly_coaches_app Sprint 3](assets/chapter4/sp3-coaches-app-branches.png)
+
+**Imagen de pull requests del repositorio de entrenadores**
+
+![Pull Requests courtly_coaches_app Sprint 3](assets/chapter4/sp3-coaches-app-prs.png)
 
 ### Repositorio 3: Reporte del Proyecto
 
 - **Repositorio:** `https://github.com/Aplicaciones-Moviles-3248/REPORT`
 - **Producto:** Documentación del proyecto.
-- **Evidencia de actividad:**
-  - Commits: `colocar cantidad`
-  - Branches: `colocar cantidad`
-  - Pull Requests: `colocar cantidad`
+- **Estadísticas de actividad visible al cierre del Sprint 3:**
+  - Commits: `207`
+  - Branches: `18`
+  - Pull Requests: `26`
 
 El repositorio `REPORT` fue utilizado para consolidar la documentación del Sprint, integrar capturas, evidencias de ejecución, pruebas, despliegue, colaboración y análisis de los resultados obtenidos. Este repositorio permitió relacionar el trabajo técnico con los entregables requeridos para Sprint Review.
 
 **Interpretación:**  
 La actividad en `REPORT` evidencia la colaboración documental del equipo. Aunque los repositorios técnicos muestran la implementación, el reporte permite explicar el contexto de los cambios, registrar evidencias y sustentar el avance del Sprint. Por ello, este repositorio complementa la interpretación de la colaboración más allá del número de commits en código.
 
-**Imagen de actividad del repositorio REPORT**
+**Imagen principal del repositorio REPORT**
 
-![Actividad repositorio REPORT Sprint 3](assets/chapter4/sp3-report.png)
+![Repositorio REPORT Sprint 3](assets/chapter4/sp3-report.png)
 
-**Imagen adicional del repositorio REPORT**
+**Imagen de commits del repositorio REPORT**
 
-![Detalle repositorio REPORT Sprint 3](assets/chapter4/sp3-report-commits.png)
+![Commits REPORT Sprint 3](assets/chapter4/sp3-report-commits.png)
+
+**Imagen de branches del repositorio REPORT**
+
+![Branches REPORT Sprint 3](assets/chapter4/sp3-report-branches.png)
+
+**Imagen de pull requests del repositorio REPORT**
+
+![Pull Requests REPORT Sprint 3](assets/chapter4/sp3-report-prs.png)
 
 ### Pull requests, ramas e integración de cambios
 
@@ -13227,14 +13267,6 @@ Además, durante la integración se presentaron conflictos en archivos compartid
 
 **Interpretación:**  
 La presencia de ramas, pull requests y conflictos de integración evidencia un trabajo paralelo real dentro del equipo. La resolución de conflictos permitió conservar avances de distintos integrantes y consolidar una versión integrada del producto. Esto refleja una dinámica colaborativa más cercana a un entorno profesional de desarrollo, donde la integración y revisión de cambios es parte del proceso normal del Sprint.
-
-**Captura de pull requests**
-
-![Pull Requests Sprint 3](assets/chapter4/sp3-pull-requests.png)
-
-**Captura de ramas del repositorio**
-
-![Branches Sprint 3](assets/chapter4/sp3-branches.png)
 
 ### Análisis general de la colaboración del Sprint
 
