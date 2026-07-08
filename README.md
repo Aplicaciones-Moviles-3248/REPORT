@@ -714,6 +714,86 @@ INGENIERÍA DE SOFTWARE
     </td>
   </tr>
 </table>
+
+
+<h2>TB2</h2>
+
+<p>Para el desarrollo del informe perteneciente a la entrega TB2, se dividió la implementación de secciones del Capítulo IV en bloques de trabajo, asignando cada conjunto de secciones a un integrante del equipo.</p>
+
+<p align="center">
+  <img src="assets/chapter4/tb2.png" alt="Logo UPC" width="500">
+</p>
+
+<table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <td align="center"><strong>Integrante</strong></td>
+    <td align="center"><strong>Tareas Asignadas</strong></td>
+  </tr>
+
+  <!-- BLOQUE 1 -->
+  <tr>
+    <td>Camilla Leonor Espinoza Vivas</td>
+    <td>
+      <ul>
+        <li>4.2.3. Sprint 3</li>
+        <li>4.2.3.1. Sprint Planning 3</li>
+        <li>4.2.3.2. Sprint Backlog 3</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Pedro Jesús Nanfuñay Liza</td>
+    <td>
+      <ul>
+        <li>4.2.2.3. Development Evidence for Sprint Review</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Camilla Leonor Espinoza Vivas</td>
+    <td>
+      <ul>
+        <li>4.2.2.4. Testing Suite Evidence for Sprint Review</li> 
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Juan Carlos Angulo Abud</td>
+    <td>
+      <ul>        
+        <li>4.2.2.5. Execution Evidence for Sprint Review</li>  
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Fabricio Fabian Quispe Barzola</td>
+    <td>
+      <ul>
+        <li>4.2.2.6. Software Deployment Evidence for Sprint Review</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Camilla Leonor Espinoza Vivas</td>
+    <td>
+      <ul>
+        <li>4.2.2.7. Team Collaboration Insights during Sprint</li>  
+        <li>4.3. Validation Interviews</li>  
+        <li>4.3.1. Diseño de Entrevistas</li>  
+        <li>4.3.2. Registro de Entrevistas</li>  
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Fabricio Fabian Quispe Barzola</td>
+    <td>
+      <ul>
+        <li>4.3.3. Evaluaciones según heurísticas</li> 
+      </ul>
+    </td>
+  </tr>
+</table>
+
 <!--ÍNDICE-->
 # Contenido
 [Student Outcome](#student-outcome)
