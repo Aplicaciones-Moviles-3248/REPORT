@@ -1062,6 +1062,8 @@ INGENIERÍA DE SOFTWARE
                 Durante el desarrollo del Tb1, apliqué y actualicé mis conocimientos relacionados con el desarrollo del backend e implementación de pruebas de software para la automatización y validación de servicios REST. Pude reforzar conceptos vinculados al diseño e implementación de Unit Tests, Integration Tests y Acceptance Tests bajo el enfoque BDD, así como el uso de herramientas como JUnit, Mockito y Cucumber; asegurando una mejor comprensión de la calidad del software y de las prácticas necesarias para construir soluciones más confiables y mantenibles.<br>
                 AV2:<br>
                 Durante el desarrollo del AV2, apliqué y actualicé mis conocimientos en el proceso de desarrollo e implementación de funciones en el frontend, específicamente en el bounded context Bookings para permitir la reserva de canchas deportivas, así como, la cancelación de la misma, aplicando buenas prácticas de desarrollo de software y documentación.<br>
+                TB2: <br>
+                Durante el desarrollo de la TB2, apliqué y actualicé mis conocimientos en el desarrollo del frontend y backend, específicamente en la integración del bounded context Notifications para ambos artefactos, y la integración del bounded context Analytics en el frontend para los entrenadores, asegurando que estas funciones estén disponibles y manteniendo el flujo con el backend, aplicando buenas prácticas de desarrollo de software y documentación.
                 <br><strong>Eduardo Fabian Chacaliaza Minaya</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, actualizó y aplicó sus conocimientos en arquitectura de software y diseño centrado en el usuario mediante la aplicación de Lean UX, realizando entrevistas, definición de hipótesis y validación de necesidades. Asimismo, participó en la construcción del Context Mapping bajo el enfoque de Domain-Driven Design y en el modelado de los bounded contexts de IAM, Users y Notifications, desarrollando sus capas principales y los diagramas de soporte (componentes, clases y base de datos), lo que permitió una mejor comprensión de la organización y estructura del sistema.<br>
@@ -1071,6 +1073,8 @@ INGENIERÍA DE SOFTWARE
                 AV2:<br>
                 Durante el desarrollo del AV2, actualicé y apliqué conocimientos en autenticación móvil, consumo de APIs y persistencia de sesión para implementar correctamente los flujos de inicio de sesión, registro y recuperación del estado autenticado dentro de la aplicación. Asimismo, reforcé mis conocimientos en la construcción de perfiles profesionales y en la gestión de datos del entrenador, lo que permitió soportar la visualización y edición de su información en Android de forma coherente con la arquitectura del proyecto. Este proceso contribuyó a consolidar mis competencias en integración móvil con servicios backend y en el diseño de funcionalidades orientadas a usuarios con roles específicos dentro de Courtly.
                 <br>
+                TB2:<br>
+Durante el desarrollo del TB2, actualicé y apliqué conocimientos relacionados con el desarrollo de aplicaciones móviles, integración con servicios backend y validación funcional de flujos orientados a usuarios reales dentro del proyecto Courtly. Mi participación se enfocó principalmente en la aplicación Flutter para deportistas aficionados, implementando y ajustando funcionalidades asociadas al bounded context Coaches y Payments. En el flujo de entrenadores, trabajé en la visualización de coaches disponibles, integrando datos reales del backend como nombre, especialidad y disponibilidad, además de mantener elementos visuales temporales como imágenes y valoraciones mientras el backend no proporcionaba dicha información. Asimismo, participé en la implementación del flujo de pago de sesiones de entrenamiento aceptadas, permitiendo que el usuario visualice pagos pendientes desde el inicio y acceda a la pantalla de pagos para completar el proceso. También colaboré en la actualización de la URL del backend, validación de funcionamiento de endpoints, resolución de problemas relacionados con autenticación/token y documentación de evidencias para la entrega final. Este trabajo fortaleció mis conocimientos en Flutter, navegación, consumo de APIs REST, manejo de estados, integración entre aplicaciones móviles y validación de flujos funcionales en un entorno colaborativo.
            </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 AV1<br>
@@ -1117,12 +1121,17 @@ INGENIERÍA DE SOFTWARE
                 TB1:<br>
                 Durante el desarrollo del TB1, comprendí la importancia de mantener un aprendizaje constante en relación al desarrollo, despliegue e implementación de pruebas para el backend. Donde fue necesario investigar nuevas herramientas y entender diferentes enfoques de pruebas. Demostrando, la importancia de aprender continuamente para mejorar mis habilidades profesionales con el objetivo de desarrollar soluciones de software más sólidas, confiables y alineadas con buenas prácticas.<br>
                 AV2:<br>Durante el AV2, reconocí la importancia del aprendizaje constante de desarrollo en la parte frontend que permita a los usuarios acceder de manera satisfactoria a funciones de una aplicación, aplicando y reforzando mis conocimientos de desarrollo de software y testings apropiados que validen la disponibilidad y eficiencia de las funciones.<br>
+                TB2: <br>
+                Durante el desarrollo de la TB2, reconocí y comprendí sobre la importancia de mantener un continuo aprendizaje acerca del desarrollo de aplicaciones tanto en el apartado del frontend como el del backend, de manera de entregar soluciones de calidad a los usuarios y que les permita hacer uso de funciones que satisfagan las necesidades de los mismos.
                 <br><strong>Eduardo Fabian Chacaliaza Minaya</strong><br>
                 AV1:<br>
                 Durante el desarrollo del AV1, exploró y utilizó herramientas orientadas al modelado y diseño de software como Structurizr, PlantUML y Miro, integrándolas en la elaboración de diagramas C4, modelos de clases y actividades de Impact Mapping. Este proceso le permitió no solo mejorar la representación visual de la arquitectura del sistema, sino también afianzar su capacidad de organizar ideas, estructurar soluciones y documentar de manera más clara los distintos componentes del proyecto.<br>
                 TB1:<br>
                 Durante el desarrollo del TB1, reconoció la importancia del aprendizaje permanente al reforzar conocimientos en diseño UI/UX, desarrollo frontend, landing page y backend. Para cumplir con sus responsabilidades, tuvo que investigar y aplicar criterios de diseño visual, organización de interfaces, lineamientos de estilo y estructura de páginas web. Además, al colaborar en el desarrollo de código, fortaleció su capacidad para adaptarse a distintas áreas del proyecto, comprendiendo que una solución de software requiere aprendizaje continuo tanto en diseño como en implementación técnica, integración y validación del producto.<br>
-                AV2: <br>Durante el desarrollo del AV2, reconocí la importancia del aprendizaje permanente al profundizar en la integración de autenticación móvil, manejo de sesiones y consumo de servicios backend dentro de la aplicación. Fue necesario reforzar conocimientos sobre persistencia de sesión, validación de credenciales, gestión de estados autenticados y conexión con APIs REST para asegurar que el inicio de sesión funcionara correctamente y que la experiencia del usuario se mantuviera estable entre ejecuciones. Asimismo, en la implementación de la vista del entrenador, comprendí la necesidad de seguir fortaleciendo mis conocimientos en desarrollo Android, modelado de perfiles y organización de pantallas, lo que me permitió estructurar mejor la edición de datos, la navegación interna y la representación funcional de los flujos asociados al entrenador. Este proceso contribuyó a mejorar mi capacidad para adaptar soluciones móviles a requerimientos reales del proyecto y consolidó mi formación técnica dentro de un entorno de desarrollo colaborativo.<br>
+                AV2: <br>Durante el desarrollo del AV2, reconocí la importancia del aprendizaje permanente al profundizar en la integración de autenticación móvil, manejo de sesiones y consumo de servicios backend dentro de la aplicación. Fue necesario reforzar conocimientos sobre persistencia de sesión, validación de credenciales, gestión de estados autenticados y conexión con APIs REST para asegurar que el inicio de sesión funcionara correctamente y que la experiencia del usuario se mantuviera estable entre ejecuciones. Asimismo, en la implementación de la vista del entrenador, comprendí la necesidad de seguir fortaleciendo mis conocimientos en desarrollo Android, modelado de perfiles y organización de pantallas, lo que me permitió estructurar mejor la edición de datos, la navegación interna y la representación funcional de los flujos asociados al entrenador. Este proceso contribuyó a mejorar mi capacidad para adaptar soluciones móviles a requerimientos reales del proyecto y consolidó mi formación técnica dentro de un entorno de desarrollo colaborativo.
+                <br>
+                TB2:<br>
+Durante el desarrollo del TB2, reconocí la necesidad del aprendizaje permanente al enfrentar problemas reales de integración entre la aplicación Flutter, la aplicación Android de entrenadores y el backend desplegado. Fue necesario reforzar conocimientos sobre consumo de endpoints, manejo de tokens, estados de sesiones de entrenamiento, validación de pagos y actualización de configuraciones de API para adaptarnos al nuevo backend del proyecto. Asimismo, al implementar el flujo de visualización de entrenadores y pagos pendientes, comprendí que una funcionalidad móvil no depende únicamente de la interfaz, sino también de la correcta comunicación con servicios externos, la disponibilidad de datos reales y la coordinación con otros módulos del sistema. También fortalecí mis habilidades en control de versiones mediante el uso de ramas, commits y pull requests, así como en la validación de cambios antes de integrarlos al repositorio principal. Este proceso me permitió consolidar mi aprendizaje en desarrollo móvil, depuración de errores, integración backend-frontend y adaptación continua frente a cambios técnicos del proyecto.
             </td>
             <td style="border: 1px solid #ddd; vertical-align: top;">
                 AV1<br>
@@ -12968,7 +12977,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
     </tr>
     <tr>
       <td align="left" ><strong>Date</strong></td>
-      <td align="left">2026-06-27</td>
+      <td align="left">2026-07-06</td>
     </tr>
     <tr>
       <td align="left" ><strong>Time</strong></td>
@@ -12980,7 +12989,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
     </tr>
     <tr>
       <td align="left" ><strong>Prepared By</strong></td>
-      <td align="left">Fabricio Quispe, Equipo de Producto</td>
+      <td align="left">Camilla Espinoza</td>
     </tr>
     <tr>
       <td align="left" ><strong>Attendees (to planning meeting)</strong></td>
@@ -13045,7 +13054,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Crear la interfaz para que el jugador pueda calificar una cancha después de haber completado una reserva, incluyendo puntuación y comentario.</td>
       <td align="center">4</td>
       <td>Fabricio Quispe</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM09</td>
@@ -13055,7 +13064,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Implementar la pantalla para crear un partido, seleccionando deporte, cancha, fecha, horario y cantidad de participantes.</td>
       <td align="center">8</td>
       <td>Juan Carlos Angulo</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM10</td>
@@ -13065,7 +13074,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Permitir que el jugador visualice partidos abiertos y pueda unirse a uno disponible, validando cupos y estado del partido.</td>
       <td align="center">5</td>
       <td>Juan Carlos Angulo</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM14</td>
@@ -13075,7 +13084,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Implementar la vista para que el entrenador revise solicitudes recibidas y pueda aceptarlas o rechazarlas desde la aplicación móvil.</td>
       <td align="center">8</td>
       <td>Juan Carlos Angulo</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM15</td>
@@ -13085,7 +13094,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Desarrollar una pantalla para que el entrenador pueda consultar los pagos recibidos por sesiones aceptadas o completadas.</td>
       <td align="center">5</td>
       <td>Fabricio Quispe</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM16</td>
@@ -13095,7 +13104,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Implementar la visualización de reseñas y comentarios realizados por jugadores luego de una sesión completada con el entrenador.</td>
       <td align="center">4</td>
       <td>Juan Carlos Angulo</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM17</td>
@@ -13105,7 +13114,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Crear una sección móvil para consultar métricas de rendimiento del usuario, como sesiones, partidos, valoraciones o actividad registrada.</td>
       <td align="center">8</td>
       <td>Pedro Nanfuñay</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM18</td>
@@ -13115,7 +13124,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Configurar alertas dentro de la aplicación para informar sobre reservas, solicitudes, pagos, partidos y cambios importantes del usuario.</td>
       <td align="center">8</td>
       <td>Pedro Nanfuñay</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM22</td>
@@ -13125,7 +13134,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Crear la vista para que el jugador pueda buscar entrenadores disponibles, visualizando información básica, especialidad y disponibilidad.</td>
       <td align="center">8</td>
       <td>Eduardo Chacaliaza</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM23</td>
@@ -13135,7 +13144,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Permitir que el jugador solicite una sesión con un entrenador, seleccionando fecha, horario y detalle de la solicitud.</td>
       <td align="center">10</td>
       <td>Camilla Espinoza</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM24</td>
@@ -13145,7 +13154,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Desarrollar el flujo para que el jugador pueda pagar una sesión previamente aceptada por el entrenador, mostrando monto, confirmación y estado del pago.</td>
       <td align="center">8</td>
       <td>Eduardo Chacaliaza</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">USM25</td>
@@ -13155,7 +13164,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Agregar la opción para que el jugador califique al entrenador después de una sesión completada, incluyendo puntuación y comentario.</td>
       <td align="center">4</td>
       <td>Camilla Espinoza</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
     <tr>
       <td align="center">MAM-76</td>
@@ -13165,7 +13174,7 @@ La evidencia de actividad en ambos repositorios refleja una colaboración consta
       <td>Implementar un diálogo informativo de términos y condiciones dentro de la aplicación móvil, solicitando aceptación del usuario cuando corresponda.</td>
       <td align="center">3</td>
       <td>Fabricio Quispe</td>
-      <td align="center">Todo</td>
+      <td align="center">In Progress</td>
     </tr>
   </table>
 </div>
@@ -13661,7 +13670,9 @@ La información recolectada será utilizada para registrar hallazgos por segment
 
 #### Registro visual de la entrevista
 
-[imagen]
+<p align="center">
+  <img src="assets/chapter4/sg2-entrevista1.png" alt="Logo UPC" width="500">
+</p>
 
 #### Resumen descriptivo de la entrevista
 
@@ -13902,8 +13913,14 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad.
 **AV1**
 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQBp0Rku3Jm_QLhcTDAqpiiGAQ84dUBWLXi-aELkb3xl5Po?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=EX2vg6)
 
-**TP**
+**TB1**
 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCehaxPFdq9Tr-SZ-dhRXu_Ab0iCW2NektCLVhA-cATWJ4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dgp9us)
+
+**AV2**
+[**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQARjTmK1aD_RpMMN2eFMBlnAXfr9Pap9gSqnjXlAYMSl6Y?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=XSD6YK)
+
+**TB2**
+[**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQBoAB9uK1KyR7uBgw4e8C1gAaNrnXgelygJxs0lHW_qDsU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=0zSvd0)
 
 # Glosario
 
@@ -13971,4 +13988,9 @@ Anexo14. Repositorio del app-movil flutter [**link**](https://github.com/Aplicac
 
 Anexo15. Repositorio del app-movil android [**link**](https://github.com/Aplicaciones-Moviles-3248/courtly_coaches_app)
 
-Anexo12. Video de exposición AV2 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCDqplZWT49Ro3-8iLcTekjAVMtQHa_UoW-HmcS9oCFIDk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=vVvXyS)
+Anexo16. Video de exposición AV2 [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQCDqplZWT49Ro3-8iLcTekjAVMtQHa_UoW-HmcS9oCFIDk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=vVvXyS)
+
+Anexo17. Video about the product [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQArVxH6gDP2Sq-34s2woLr0AYJP0d13ZqJ4XzHEV6FyGS8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=4pUgLH)
+
+Anexo17. Video about the team [**link**](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214572_upc_edu_pe/IQBoAB9uK1KyR7uBgw4e8C1gAaNrnXgelygJxs0lHW_qDsU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=0zSvd0)
+
